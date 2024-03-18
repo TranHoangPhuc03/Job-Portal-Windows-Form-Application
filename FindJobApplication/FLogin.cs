@@ -1,0 +1,94 @@
+﻿using FindJobApplication.Daos;
+using FindJobApplication.Models;
+using Guna.UI2.WinForms;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace FindJobApplication
+{
+    public partial class FLogin : Form
+    {
+        public FLogin()
+        {
+            InitializeComponent();
+            txtPassword.Multiline = false;
+
+        }
+
+        private void pExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void llblSignUpUser_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+            FSignUp dishplaySignUp = new FSignUp();
+            dishplaySignUp.ShowDialog();
+            this.Show();
+        }
+
+        private void pNotHide_Click(object sender, EventArgs e)
+        {
+            txtPassword.Multiline = false;
+            pHide.BringToFront();
+        }
+
+        private void pHide_Click(object sender, EventArgs e)
+        {
+            txtPassword.Multiline = true;
+            pNotHide.BringToFront();
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            string email = this.txtUsername.Text;
+            string password = this.txtPassword.Text;
+
+            AccountDao accountDao = new AccountDao();
+            DataRow account = accountDao.findAccountByEmail(email);
+            if (account == null || email != (string)account["email"] || password != (string)account["password"])
+            {
+                MessageDialog.Show(this, "Your email or password is incorrect", "Login failed", MessageDialogStyle.Default);
+            }
+            else
+            {
+                UserRoleDao userRoleDao = new UserRoleDao();
+                string roleName = (userRoleDao.findUserRoleById((int)account["role_id"])["role_name"]).ToString();
+                int accountId = (int)account["id"];
+                int loginId = 0;
+                Form redirectForm = null;
+                switch (roleName)
+                {
+                    case "company":
+                        CompanyProfileDao companyProfileDao = new CompanyProfileDao();
+                        loginId = (int)companyProfileDao.findCompanyByAccountId(accountId)["id"];
+                        redirectForm = new FCompanyHome();
+                        break;
+
+                    case "user":
+                        UserProfileDao userProfileDao = new UserProfileDao();
+                        loginId = (int)userProfileDao.findUserByAccountId(accountId)["id"];
+                        redirectForm = new FHome();
+                        break;
+                    default:
+                        break;
+                }
+
+                Global.loginId = loginId;
+                Global.role = roleName;
+                
+                this.Hide();
+                redirectForm.ShowDialog();
+                this.Close();
+            }
+        }
+    }
+}
