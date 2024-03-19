@@ -1,5 +1,7 @@
-﻿using System;
+﻿using FindJobApplication.Daos;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,9 +18,7 @@ namespace FindJobApplication
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new FLogin());
-            Application.Run(new FCompanyJobEdit());
-            //Application.Run(new FHome());
+            Application.Run(new FLogin());
         }
     }
 }

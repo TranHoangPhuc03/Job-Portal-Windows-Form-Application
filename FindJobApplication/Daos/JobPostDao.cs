@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media.Imaging;
 
 namespace FindJobApplication.Daos
 {
@@ -42,6 +43,14 @@ namespace FindJobApplication.Daos
         {
             string sqlStr = String.Format("select * from job_post where id={0];", id);
             return (DataRow)db.Read(sqlStr).Rows[0];
+        }
+
+        public DataTable findByCompanyId(int id = 4)
+        {
+            string sqlStr = "select job_post_company.title, job_post_company.recruitment_number, job_post_company.salary, job_post_company.description, job_post_company.requirement, job_post_company.prioritize, job_post_company.benefit, job_post_company.post_date, job_post_company.expire_date, job_post_company.address, company_profile.name as company_name, location.name as location_name, year_experience.name as year_experience_name " +
+                            $"from(select * from job_post where company_id = {id}) as job_post_company, location, year_experience, company_profile " +
+                            "where job_post_company.location_id = location.id and job_post_company.year_experience_id = year_experience.id and job_post_company.company_id = company_profile.id;";
+            return db.Read(sqlStr);
         }
     }
 }
