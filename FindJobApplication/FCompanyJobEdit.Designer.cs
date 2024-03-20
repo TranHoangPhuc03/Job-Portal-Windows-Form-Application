@@ -43,7 +43,7 @@
             this.rTxtBenefits = new System.Windows.Forms.RichTextBox();
             this.lblNumberofRecruitment = new Guna.UI.WinForms.GunaLabel();
             this.lblWorkAddress = new Guna.UI.WinForms.GunaLabel();
-            this.guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.dtpExpireDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.lblApplicationDeadline = new Guna.UI.WinForms.GunaLabel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.lblBenefits = new Guna.UI.WinForms.GunaLabel();
@@ -110,7 +110,6 @@
             this.cbExperience.Margin = new System.Windows.Forms.Padding(2);
             this.cbExperience.Name = "cbExperience";
             this.cbExperience.Size = new System.Drawing.Size(208, 72);
-            this.cbExperience.StartIndex = 0;
             this.cbExperience.TabIndex = 15;
             // 
             // cbLocation
@@ -129,7 +128,6 @@
             this.cbLocation.Margin = new System.Windows.Forms.Padding(2);
             this.cbLocation.Name = "cbLocation";
             this.cbLocation.Size = new System.Drawing.Size(208, 72);
-            this.cbLocation.StartIndex = 0;
             this.cbLocation.TabIndex = 14;
             // 
             // lblJobDescription
@@ -231,21 +229,21 @@
             this.lblWorkAddress.TabIndex = 28;
             this.lblWorkAddress.Text = "Work address:";
             // 
-            // guna2DateTimePicker1
+            // dtpExpireDate
             // 
-            this.guna2DateTimePicker1.BorderRadius = 10;
-            this.guna2DateTimePicker1.Checked = true;
-            this.guna2DateTimePicker1.FillColor = System.Drawing.Color.White;
-            this.guna2DateTimePicker1.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.guna2DateTimePicker1.Location = new System.Drawing.Point(327, 732);
-            this.guna2DateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
-            this.guna2DateTimePicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.guna2DateTimePicker1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.guna2DateTimePicker1.Name = "guna2DateTimePicker1";
-            this.guna2DateTimePicker1.Size = new System.Drawing.Size(313, 39);
-            this.guna2DateTimePicker1.TabIndex = 27;
-            this.guna2DateTimePicker1.Value = new System.DateTime(2024, 3, 10, 0, 46, 43, 74);
+            this.dtpExpireDate.BorderRadius = 10;
+            this.dtpExpireDate.Checked = true;
+            this.dtpExpireDate.FillColor = System.Drawing.Color.White;
+            this.dtpExpireDate.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpExpireDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpExpireDate.Location = new System.Drawing.Point(327, 732);
+            this.dtpExpireDate.Margin = new System.Windows.Forms.Padding(2);
+            this.dtpExpireDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpExpireDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpExpireDate.Name = "dtpExpireDate";
+            this.dtpExpireDate.Size = new System.Drawing.Size(313, 39);
+            this.dtpExpireDate.TabIndex = 27;
+            this.dtpExpireDate.Value = new System.DateTime(2024, 3, 10, 0, 46, 43, 74);
             // 
             // lblApplicationDeadline
             // 
@@ -264,7 +262,7 @@
             this.guna2Panel1.Controls.Add(this.lblBenefits);
             this.guna2Panel1.Controls.Add(this.lblApplicationDeadline);
             this.guna2Panel1.Controls.Add(this.txtWorkAddress);
-            this.guna2Panel1.Controls.Add(this.guna2DateTimePicker1);
+            this.guna2Panel1.Controls.Add(this.dtpExpireDate);
             this.guna2Panel1.Controls.Add(this.lblWorkAddress);
             this.guna2Panel1.Controls.Add(this.txtNumberOfRecruitment);
             this.guna2Panel1.Controls.Add(this.lblNumberofRecruitment);
@@ -478,7 +476,7 @@
         private Guna.UI.WinForms.GunaLabel lblNumberofRecruitment;
         private Guna.UI2.WinForms.Guna2TextBox txtNumberOfRecruitment;
         private Guna.UI.WinForms.GunaLabel lblWorkAddress;
-        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpExpireDate;
         private Guna.UI.WinForms.GunaLabel lblApplicationDeadline;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2TextBox txtWorkAddress;
