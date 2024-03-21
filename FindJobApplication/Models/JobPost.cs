@@ -19,8 +19,16 @@ namespace FindJobApplication.Models
         int locationId;
         int companyId;
 
-        public int Id { get; }
-        public string Title { get; set; }
+        public JobPost() { }
+
+        public JobPost(int id, string title)
+        {
+            this.id = id;
+            this.title = title;
+        }
+
+        public int Id { get { return id; } }
+        public string Title { get { return title; } set { } }
         public int RecruitmentNumber { get; set; }
         public int Salary { get; set; }
         public string Description { get; set; }

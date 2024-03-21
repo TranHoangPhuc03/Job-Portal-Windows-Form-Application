@@ -69,6 +69,7 @@
   <ItemGroup>
     <Compile Include="Daos\AccountDao.cs" />
     <Compile Include="Daos\CompanyProfileDao.cs" />
+    <Compile Include="Daos\JobApplyDao.cs" />
     <Compile Include="Daos\JobPostDao.cs" />
     <Compile Include="Daos\LocationDao.cs" />
     <Compile Include="Daos\UserProfileDao.cs" />

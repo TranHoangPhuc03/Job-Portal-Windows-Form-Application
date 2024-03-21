@@ -20,15 +20,51 @@ create table user_profile (
 	id int primary key identity(1, 1),
 	user_account_id int,
 	name varchar(255) not null,
+	tittle varchar(255),
 	email varchar(255) not null unique,
 	phone_number varchar(20),
 	date_of_birth date,
 	gender varchar(20) default 'Male',
 	[address] text,
 	personal_link text,
-	user_image text
+	user_image text,
+	about_me text,
 
 	foreign key (user_account_id) references account(id)
+);
+
+create table user_education (
+	id int primary key identity(1, 1),
+	school_name varchar(255),
+	major varchar(255),
+	[from] date,
+	[to] date,
+	additional_details text,
+	user_profile_id int,
+
+	foreign key (user_profile_id) references user_profile(id),
+);
+
+create table user_work_experience (
+	id int primary key identity(1, 1),
+	job_title varchar(255),
+	company_name varchar(255),
+	[from] date,
+	[to] date,
+	user_profile_id int,
+
+	foreign key (user_profile_id) references user_profile(id)
+);
+
+create table user_personal_project (
+	id int primary key identity(1, 1),
+	project_name varchar(255),
+	[from] date,
+	[to] date,
+	description text,
+	user_profile_id int,
+
+	foreign key (user_profile_id) references user_profile(id)
 );
 
 create table company_profile (
@@ -54,14 +90,14 @@ create table position (
 	name varchar(255) not null unique,
 );
 
-create table [location] (
-	id int primary key identity(1, 1),
-	name varchar(255)
-);
-
 create table skill (
 	id int primary key identity(1, 1),
 	name varchar(255) not null
+);
+
+create table [location] (
+	id int primary key identity(1, 1),
+	name varchar(255)
 );
 
 create table year_experience (
@@ -95,6 +131,24 @@ create table job_skill (
 	skill_id int not null,
 
 	foreign key (job_post_id) references job_post(id),
+	foreign key (skill_id) references skill(id)
+);
+
+create table user_apply_job (
+	user_id int,
+	job_post_id int,
+	[status] varchar(50) default 'PENDING',
+	cover_letter text,
+
+	foreign key (user_id) references user_profile(id),
+	foreign key (job_post_id) references job_post(id)
+);
+
+create table user_skill (
+	user_profile_id int,
+	skill_id int,
+
+	foreign key (user_profile_id) references user_profile(id),
 	foreign key (skill_id) references skill(id)
 );
 
@@ -266,6 +320,7 @@ INSERT INTO skill(name) VALUES
 
 -- INSERT statements for year_experience table
 INSERT INTO year_experience(name) VALUES
+('All experience'),
 ('0-1 years'),
 ('1-3 years'),
 ('3-5 years'),
@@ -315,3 +370,17 @@ BEGIN
 
     SET @company_counter = @company_counter + 1;
 END;
+
+-- Insert statements for job_post table
+INSERT INTO job_post (title, recruitment_number, salary, [description], requirement, prioritize, benefit, post_date, expire_date, [address], year_experience_id, location_id, company_id)
+VALUES 
+('Software Engineer', 3, 80000, 'Seeking experienced software engineers proficient in Java and Python.', 'Bachelor''s degree in Computer Science or related field.', 'Experience with Agile methodologies preferred.', 'Competitive salary and benefits package.', '2024-03-20', '2024-04-20', '123 Main St, City, Country', 1, 1, 1),
+('Data Analyst', 2, 60000, 'Looking for data analysts with experience in SQL and data visualization tools.', 'Bachelor''s degree in Statistics or related field.', 'Strong analytical skills and attention to detail.', 'Flexible work schedule and remote work options.', '2024-03-20', '2024-04-20', '456 Oak Ave, City, Country', 2, 2, 2),
+('Marketing Manager', 1, 70000, 'Hiring a marketing manager to lead our marketing campaigns and initiatives.', 'Bachelor''s degree in Marketing or related field.', 'Experience with digital marketing and social media platforms.', 'Opportunity for career growth and advancement.', '2024-03-20', '2024-04-20', '789 Elm St, City, Country', 3, 3, 3),
+('Accountant', 2, 55000, 'Seeking skilled accountants with experience in financial analysis and reporting.', 'Bachelor''s degree in Accounting or Finance.', 'CPA certification preferred.', 'Health insurance and retirement benefits.', '2024-03-20', '2024-04-20', '101 Pine St, City, Country', 4, 4, 4),
+('Project Manager', 1, 75000, 'Looking for experienced project managers to oversee project timelines and budgets.', 'Bachelor''s degree in Business Administration or related field.', 'PMP certification preferred.', 'Opportunity to work with cross-functional teams.', '2024-03-20', '2024-04-20', '202 Oak St, City, Country', 5, 5, 5),
+('HR Coordinator', 1, 60000, 'Hiring an HR coordinator to manage employee relations and recruitment activities.', 'Bachelor''s degree in Human Resources or related field.', 'Experience with HRIS systems and talent acquisition.', 'Generous vacation and leave policies.', '2024-03-20', '2024-04-20', '303 Maple St, City, Country', 1, 6, 6),
+('Graphic Designer', 2, 65000, 'Seeking creative graphic designers with experience in Adobe Creative Suite.', 'Bachelor''s degree in Graphic Design or related field.', 'Portfolio showcasing design projects.', 'Flexible work environment and creative projects.', '2024-03-20', '2024-04-20', '404 Elm St, City, Country', 2, 7, 7),
+('Sales Representative', 3, 60000, 'Looking for energetic sales representatives to drive revenue growth.', 'Bachelor''s degree in Business or related field.', 'Proven track record of meeting sales targets.', 'Commission-based compensation and sales incentives.', '2024-03-20', '2024-04-20', '505 Cedar St, City, Country', 3, 8, 8),
+('Customer Service Specialist', 2, 50000, 'Hiring customer service specialists to assist customers with inquiries and issues.', 'High school diploma or equivalent.', 'Strong communication and problem-solving skills.', 'Training and career development opportunities.', '2024-03-20', '2024-04-20', '606 Birch St, City, Country', 4, 9, 9),
+('Legal Counsel', 1, 85000, 'Seeking experienced legal counsel to provide legal advice and support.', 'Juris Doctor (JD) degree and active bar membership.', 'Experience in corporate law and contract negotiation.', 'Competitive compensation and comprehensive benefits.', '2024-03-20', '2024-04-20', '707 Oak St, City, Country', 5, 10, 10);
