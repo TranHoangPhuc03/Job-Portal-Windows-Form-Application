@@ -76,7 +76,6 @@ namespace FindJobApplication
 
         private void btnPostJob_Click(object sender, EventArgs e)
         {
-            MessageDialog.Show(this, "Job post saved successfully", "Success", MessageDialogStyle.Light);
             JobPost jobPost = getJobPostInfo();
             jobPost.CompanyId = Global.loginId;
             JobPostDao jobPostDao = new JobPostDao();
