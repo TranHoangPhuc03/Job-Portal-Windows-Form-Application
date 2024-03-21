@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.pnlMain = new Guna.UI.WinForms.GunaElipsePanel();
+            this.pnlListPeopleAplly = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlTopTableJob = new Guna.UI2.WinForms.Guna2Panel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.lblID = new Guna.UI.WinForms.GunaLabel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblNamePeople = new Guna.UI.WinForms.GunaLabel();
             this.lblStatus = new Guna.UI.WinForms.GunaLabel();
             this.lblApplyAt = new Guna.UI.WinForms.GunaLabel();
-            this.pnlListPeopleAplly = new System.Windows.Forms.FlowLayoutPanel();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnBack = new Guna.UI.WinForms.GunaButton();
             this.pnlMain.SuspendLayout();
             this.pnlTopTableJob.SuspendLayout();
@@ -58,6 +58,13 @@
             this.pnlMain.Size = new System.Drawing.Size(1537, 844);
             this.pnlMain.TabIndex = 0;
             // 
+            // pnlListPeopleAplly
+            // 
+            this.pnlListPeopleAplly.Location = new System.Drawing.Point(0, 98);
+            this.pnlListPeopleAplly.Name = "pnlListPeopleAplly";
+            this.pnlListPeopleAplly.Size = new System.Drawing.Size(1534, 730);
+            this.pnlListPeopleAplly.TabIndex = 34;
+            // 
             // pnlTopTableJob
             // 
             this.pnlTopTableJob.BackColor = System.Drawing.SystemColors.ButtonFace;
@@ -77,6 +84,17 @@
             this.pnlTopTableJob.Size = new System.Drawing.Size(1531, 43);
             this.pnlTopTableJob.TabIndex = 33;
             // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.White;
+            this.pictureBox4.Image = global::FindJobApplication.Properties.Resources.status;
+            this.pictureBox4.Location = new System.Drawing.Point(1066, 3);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(62, 37);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 18;
+            this.pictureBox4.TabStop = false;
+            // 
             // lblID
             // 
             this.lblID.AutoSize = true;
@@ -87,6 +105,28 @@
             this.lblID.Size = new System.Drawing.Size(37, 30);
             this.lblID.TabIndex = 8;
             this.lblID.Text = "ID";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.White;
+            this.pictureBox2.Image = global::FindJobApplication.Properties.Resources.start_date1;
+            this.pictureBox2.Location = new System.Drawing.Point(427, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(62, 37);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 5;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
+            this.pictureBox1.Image = global::FindJobApplication.Properties.Resources.label;
+            this.pictureBox1.Location = new System.Drawing.Point(124, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(62, 37);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
             // 
             // lblNamePeople
             // 
@@ -124,46 +164,6 @@
             this.lblApplyAt.TabIndex = 1;
             this.lblApplyAt.Text = "Applied at";
             // 
-            // pnlListPeopleAplly
-            // 
-            this.pnlListPeopleAplly.Location = new System.Drawing.Point(0, 99);
-            this.pnlListPeopleAplly.Name = "pnlListPeopleAplly";
-            this.pnlListPeopleAplly.Size = new System.Drawing.Size(1534, 730);
-            this.pnlListPeopleAplly.TabIndex = 34;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackColor = System.Drawing.Color.White;
-            this.pictureBox4.Image = global::FindJobApplication.Properties.Resources.status;
-            this.pictureBox4.Location = new System.Drawing.Point(1066, 3);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(62, 37);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 18;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.White;
-            this.pictureBox2.Image = global::FindJobApplication.Properties.Resources.start_date1;
-            this.pictureBox2.Location = new System.Drawing.Point(427, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(62, 37);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 5;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.Image = global::FindJobApplication.Properties.Resources.label;
-            this.pictureBox1.Location = new System.Drawing.Point(124, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(62, 37);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
-            // 
             // btnBack
             // 
             this.btnBack.AnimationHoverSpeed = 0.07F;
@@ -198,6 +198,7 @@
             this.Controls.Add(this.pnlMain);
             this.Name = "UCCompanyListPeopleApply";
             this.Size = new System.Drawing.Size(1544, 851);
+            this.Load += new System.EventHandler(this.UCCompanyListPeopleApply_Load);
             this.pnlMain.ResumeLayout(false);
             this.pnlTopTableJob.ResumeLayout(false);
             this.pnlTopTableJob.PerformLayout();

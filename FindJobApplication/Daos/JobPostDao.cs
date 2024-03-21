@@ -52,5 +52,19 @@ namespace FindJobApplication.Daos
                             "where job_post_company.location_id = location.id and job_post_company.year_experience_id = year_experience.id and job_post_company.company_id = company_profile.id;";
             return db.Read(sqlStr);
         }
+
+        public DataTable countUserApply(int jobPostId)
+        {
+            string sqlStr = "select count(user_id) as number_user_apply " +
+                            "from user_apply_job " +
+                            $"where user_apply_job.job_post_id = {jobPostId};";
+            return db.Read(sqlStr);
+        }
+
+        public DataTable findUserProfileApply(int jobPostId)
+        {
+            string sqlStr = $"select * from user_profile, (select * from user_apply_job where job_post_id = {jobPostId}) as user_apply where user_profile.id = user_apply.user_id";
+            return db.Read(sqlStr);
+        }
     }
 }

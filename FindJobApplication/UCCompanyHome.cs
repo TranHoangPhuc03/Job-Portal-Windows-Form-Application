@@ -1,6 +1,7 @@
 ﻿using FindJobApplication.Daos;
 using FindJobApplication.Models;
 using Guna.UI.WinForms;
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,8 +19,9 @@ namespace FindJobApplication
         public UCCompanyHome()
         {
             InitializeComponent();
-            btnAllJob.PerformClick();
         }
+
+        public Guna2Button BtnAllJob { get { return btnAllJob; } }
 
         public void btnAllJob_Click(object sender, EventArgs e)
         {
@@ -27,15 +29,21 @@ namespace FindJobApplication
             JobPostDao jobPostDao = new JobPostDao();
             DataTable dt = jobPostDao.findByCompanyId(Global.loginId);
             List<UCCompanyJob> listUCCompanyJob = new List<UCCompanyJob>();
+            int cnt = 1;
             foreach (DataRow row in dt.Rows)
             {
+                
                 UCCompanyJob uCCompanyJob = new UCCompanyJob();
-                //uCCompanyJob.LblID.Text = row["id"].ToString();
+                int countApplied = (int)jobPostDao.countUserApply((int)row["id"]).Rows[0]["number_user_apply"];
+                uCCompanyJob.LblCountApplied.Text = countApplied.ToString();
+                uCCompanyJob.LblID.Text = (cnt++).ToString();
                 uCCompanyJob.LblNameJob.Text = row["title"].ToString();
                 uCCompanyJob.LblPostDate.Text = row["post_date"].ToString();
                 uCCompanyJob.LblExpirationDate.Text = row["expire_date"].ToString();
                 uCCompanyJob.LblSalary.Text = row["salary"].ToString();
                 listUCCompanyJob.Add(uCCompanyJob);
+                DataTable userApplied = jobPostDao.findUserProfileApply((int)row["id"]);
+                uCCompanyJob.Tag = userApplied;
             }
             this.fillDataToPanel(listUCCompanyJob);
         }

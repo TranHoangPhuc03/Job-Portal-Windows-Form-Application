@@ -15,7 +15,6 @@ namespace FindJobApplication
         public UCCompanyProfile()
         {
             InitializeComponent();
-            loadRecruitment();
             btnBack.Visible = false;
             pnlRecruitment.Visible = false;
         }

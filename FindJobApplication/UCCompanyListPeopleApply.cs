@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FindJobApplication.Daos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,27 +17,42 @@ namespace FindJobApplication
         {
             InitializeComponent();
             pnlListPeopleAplly.AutoScroll = true;
-            loadListPeople();
+        }
+        public UCCompanyListPeopleApply(object obj)
+        {
+            InitializeComponent();
+            pnlListPeopleAplly.AutoScroll = true;
+            this.Tag = obj;
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
         }
-        private void loadListPeople ()
+        private void loadListPeople<T> (List<T> dataControlList)
         {
             pnlListPeopleAplly.Controls.Clear();
-            List<UCCompanyPeopleApplied> list = new List<UCCompanyPeopleApplied>();
-            for (int i = 0; i <= 15; i++)
+            foreach (Object obj in dataControlList)
+            {
+                this.pnlListPeopleAplly.Controls.Add((Control)obj);
+            }
+        }
+
+        private void UCCompanyListPeopleApply_Load(object sender, EventArgs e)
+        {
+            DataTable dt = (DataTable)this.Tag;
+            int cnt = 1;
+            List<UCCompanyPeopleApplied> dataControlList = new List<UCCompanyPeopleApplied>();
+            foreach (DataRow row in dt.Rows)
             {
                 UCCompanyPeopleApplied uCCompanyPeopleApplied = new UCCompanyPeopleApplied();
-                uCCompanyPeopleApplied.LblId.Text = i.ToString();
-                uCCompanyPeopleApplied.LblNamePeople.Text = "David" + i.ToString();
-                uCCompanyPeopleApplied.LblDayApply.Text = DateTime.Now.ToString();
-                uCCompanyPeopleApplied.LblStatus.Text = "Pending";
-                list.Add(uCCompanyPeopleApplied);
-                pnlListPeopleAplly.Controls.Add(list[i]);
+                uCCompanyPeopleApplied.LblId.Text = (cnt++).ToString();
+                uCCompanyPeopleApplied.LblNamePeople.Text = row["name"].ToString();
+                uCCompanyPeopleApplied.LblDayApply.Text = row["applied_at"].ToString();
+                uCCompanyPeopleApplied.LblStatus.Text = row["status"].ToString();
+                dataControlList.Add(uCCompanyPeopleApplied);
             }
+            loadListPeople(dataControlList);
         }
     }
 }

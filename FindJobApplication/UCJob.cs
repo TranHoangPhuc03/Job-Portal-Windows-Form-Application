@@ -22,7 +22,7 @@ namespace FindJobApplication
             pbSave.BringToFront();
             this.Tag = jobPost;
         }
-        public GunaLinkLabel LinkLabelJob { get => lLblNameJob; set { lLblNameJob = value; } }
+        public new GunaLinkLabel LinkLabelJob { get => lLblNameJob; set { lLblNameJob = value; } }
         public GunaLinkLabel JobName { get => lLblNameJob; set { lLblNameJob = value; } }
         public new GunaLinkLabel CompanyName { get => lblNameCompany; set { lblNameCompany = value; } }
         public new Label Location { get => lblLocation; set { lblLocation = value; } }

@@ -24,10 +24,9 @@ namespace FindJobApplication
         public GunaLabel LblExpirationDate { get => lblExpirationDate; set { lblExpirationDate = value; } }
         public GunaLabel LblSalary { get => lblSalary; set { lblSalary = value; } }
         public GunaLinkLabel LblCountApplied { get => lblCountApplied; set {  lblCountApplied = value; } }
-
         private void lblCountApplied_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            UCCompanyListPeopleApply uCCompanyListPeopleApply = new UCCompanyListPeopleApply();
+            UCCompanyListPeopleApply uCCompanyListPeopleApply = new UCCompanyListPeopleApply(this.Tag);
             UCMain.Instance.PnlMid.Controls.Add(uCCompanyListPeopleApply);
             uCCompanyListPeopleApply.Location = new Point(UCMain.Instance.PnlMid.Width / 2 - uCCompanyListPeopleApply.Width / 2, 0);
             uCCompanyListPeopleApply.BringToFront();

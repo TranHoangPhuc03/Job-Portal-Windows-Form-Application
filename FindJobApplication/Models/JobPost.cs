@@ -28,7 +28,7 @@ namespace FindJobApplication.Models
         }
 
         public int Id { get { return id; } }
-        public string Title { get { return title; } set { } }
+        public string Title { get { return title; } set { this.title = value; } }
         public int RecruitmentNumber { get; set; }
         public int Salary { get; set; }
         public string Description { get; set; }

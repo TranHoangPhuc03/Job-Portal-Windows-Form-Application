@@ -28,7 +28,8 @@ namespace FindJobApplication
             JobApplyDao jobApplyDao = new JobApplyDao();
             string coverLetter = this.rtxtCoverLeter.Text;
             string status = "PENDING";
-            int res = jobApplyDao.saveUserApplyJob(Global.loginId, this.jobId, status, coverLetter);
+            DateTime appliedAt = DateTime.Now;
+            int res = jobApplyDao.saveUserApplyJob(appliedAt, Global.loginId, this.jobId, status, coverLetter);
             if (res > 0)
             {
                 MessageDialog.Show(this, "You applied succesfully", "Success", MessageDialogButtons.OK, MessageDialogStyle.Light);

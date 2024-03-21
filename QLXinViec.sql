@@ -139,6 +139,7 @@ create table user_apply_job (
 	job_post_id int,
 	[status] varchar(50) default 'PENDING',
 	cover_letter text,
+	applied_at date,
 
 	foreign key (user_id) references user_profile(id),
 	foreign key (job_post_id) references job_post(id)
