@@ -9,7 +9,7 @@ namespace FindJobApplication.DB
     {
         private SqlConnection conn = new SqlConnection(Properties.Settings.Default.connStr);
 
-        public DataTable Read(string sqlStr)
+        public DataTable Read(string sqlStr, params object[] parameters)
         {
             try
             {

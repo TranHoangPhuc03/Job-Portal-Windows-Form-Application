@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Guna.UI.WinForms;
+using Guna.UI2.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,7 +18,12 @@ namespace FindJobApplication
         {
             InitializeComponent();
         }
-
+        
+        public Guna2TextBox TxtSeach { get { return txtSearch; } }
+        public GunaComboBox CbLocation { get { return cbLocation; } }
+        public GunaComboBox CbExperince { get { return cbExperience; } }
+        public GunaComboBox CbSalary { get { return cbSalary; } }
+        public GunaButton BtnSearch { get { return btnSearch; } }
         private void btnSearch_Click(object sender, EventArgs e)
         {
 
