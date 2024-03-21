@@ -1,4 +1,6 @@
-﻿using Guna.UI.WinForms;
+﻿using FindJobApplication.Daos;
+using FindJobApplication.Models;
+using Guna.UI.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -7,6 +9,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using System.Windows.Forms;
 
 namespace FindJobApplication
@@ -51,7 +54,20 @@ namespace FindJobApplication
         }
         private void FCompanyHome_Load(object sender, EventArgs e)
         {
-
+            JobPostDao jobPostDao = new JobPostDao();
+            DataTable dt = jobPostDao.findByCompanyId(Global.loginId);
+            List<UCCompanyJob> listUCCompanyJob = new List<UCCompanyJob>();
+            foreach (DataRow row in dt.Rows)
+            {
+                UCCompanyJob uCCompanyJob = new UCCompanyJob();
+                //uCCompanyJob.LblID.Text = row["id"].ToString();
+                uCCompanyJob.LblNameJob.Text = row["title"].ToString();
+                uCCompanyJob.LblPostDate.Text = row["post_date"].ToString();
+                uCCompanyJob.LblExpirationDate.Text = row["expire_date"].ToString();
+                uCCompanyJob.LblSalary.Text = row["salary"].ToString();
+                listUCCompanyJob.Add(uCCompanyJob);
+            }
+            this.uCCompanyHome.fillDataToPanel(listUCCompanyJob);
         }
     }
 }

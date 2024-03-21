@@ -1,4 +1,6 @@
-﻿using Guna.UI.WinForms;
+﻿using FindJobApplication.Daos;
+using FindJobApplication.Models;
+using Guna.UI.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,20 +24,29 @@ namespace FindJobApplication
         public void btnAllJob_Click(object sender, EventArgs e)
         {
             pnlNumberOfApplicants.Controls.Clear();
-            List<UCCompanyJob> list = new List<UCCompanyJob>();
-            for (int i = 0; i <= 20; i++)
+            JobPostDao jobPostDao = new JobPostDao();
+            DataTable dt = jobPostDao.findByCompanyId(Global.loginId);
+            List<UCCompanyJob> listUCCompanyJob = new List<UCCompanyJob>();
+            foreach (DataRow row in dt.Rows)
             {
                 UCCompanyJob uCCompanyJob = new UCCompanyJob();
-                uCCompanyJob.LblID.Text = i.ToString();
-                uCCompanyJob.LblNameJob.Text ="Job " + i.ToString();
-                uCCompanyJob.LblPostDate.Text = DateTime.Now.AddDays(-i).ToShortDateString();
-                uCCompanyJob.LblExpirationDate.Text = DateTime.Now.AddDays(i).ToShortDateString();
-                uCCompanyJob.LblSalary.Text = (i*100).ToString();
-                list.Add(uCCompanyJob);
-                pnlNumberOfApplicants.Controls.Add(list[i]);
+                //uCCompanyJob.LblID.Text = row["id"].ToString();
+                uCCompanyJob.LblNameJob.Text = row["title"].ToString();
+                uCCompanyJob.LblPostDate.Text = row["post_date"].ToString();
+                uCCompanyJob.LblExpirationDate.Text = row["expire_date"].ToString();
+                uCCompanyJob.LblSalary.Text = row["salary"].ToString();
+                listUCCompanyJob.Add(uCCompanyJob);
+            }
+            this.fillDataToPanel(listUCCompanyJob);
+        }
+        public void fillDataToPanel<T>(List<T> dataControlList)
+        {
+            pnlNumberOfApplicants.Controls.Clear();
+            foreach (Object obj in dataControlList)
+            {
+                this.pnlNumberOfApplicants.Controls.Add((Control)obj);
             }
         }
-
         private void btnRecruitment_Click(object sender, EventArgs e)
         {
             FCompanyJobEdit fCompanyJobEdit = new FCompanyJobEdit();
