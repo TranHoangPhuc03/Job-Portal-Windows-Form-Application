@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.pnlListJob = new System.Windows.Forms.FlowLayoutPanel();
-            this.gunaComboBox3 = new Guna.UI.WinForms.GunaComboBox();
-            this.cBExperience = new Guna.UI.WinForms.GunaComboBox();
-            this.cBLocation = new Guna.UI.WinForms.GunaComboBox();
+            this.cbSalary = new Guna.UI.WinForms.GunaComboBox();
+            this.cbExperience = new Guna.UI.WinForms.GunaComboBox();
+            this.cbLocation = new Guna.UI.WinForms.GunaComboBox();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnSearch = new Guna.UI.WinForms.GunaButton();
             this.SuspendLayout();
@@ -48,92 +48,96 @@
             this.pnlListJob.Size = new System.Drawing.Size(1022, 476);
             this.pnlListJob.TabIndex = 41;
             // 
-            // gunaComboBox3
+            // cbSalary
             // 
-            this.gunaComboBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.cbSalary.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gunaComboBox3.BackColor = System.Drawing.Color.Transparent;
-            this.gunaComboBox3.BaseColor = System.Drawing.Color.White;
-            this.gunaComboBox3.BorderColor = System.Drawing.Color.Silver;
-            this.gunaComboBox3.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.gunaComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.gunaComboBox3.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaComboBox3.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaComboBox3.ForeColor = System.Drawing.Color.Black;
-            this.gunaComboBox3.FormattingEnabled = true;
-            this.gunaComboBox3.ItemHeight = 49;
-            this.gunaComboBox3.Items.AddRange(new object[] {
-            "All Salary",
-            "< 500$"});
-            this.gunaComboBox3.Location = new System.Drawing.Point(709, 7);
-            this.gunaComboBox3.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.gunaComboBox3.Name = "gunaComboBox3";
-            this.gunaComboBox3.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaComboBox3.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.gunaComboBox3.Radius = 10;
-            this.gunaComboBox3.Size = new System.Drawing.Size(156, 55);
-            this.gunaComboBox3.StartIndex = 0;
-            this.gunaComboBox3.TabIndex = 3;
+            this.cbSalary.BackColor = System.Drawing.Color.Transparent;
+            this.cbSalary.BaseColor = System.Drawing.Color.White;
+            this.cbSalary.BorderColor = System.Drawing.Color.Silver;
+            this.cbSalary.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbSalary.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSalary.FocusedColor = System.Drawing.Color.Empty;
+            this.cbSalary.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbSalary.ForeColor = System.Drawing.Color.Black;
+            this.cbSalary.FormattingEnabled = true;
+            this.cbSalary.ItemHeight = 49;
+            this.cbSalary.Items.AddRange(new object[] {
+            "All salary",
+            "Under 1000$",
+            "1000$ - 3000$",
+            "3000$ - 5000$",
+            "Over 5000$"});
+            this.cbSalary.Location = new System.Drawing.Point(709, 7);
+            this.cbSalary.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.cbSalary.Name = "cbSalary";
+            this.cbSalary.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.cbSalary.OnHoverItemForeColor = System.Drawing.Color.White;
+            this.cbSalary.Radius = 10;
+            this.cbSalary.Size = new System.Drawing.Size(156, 55);
+            this.cbSalary.StartIndex = 0;
+            this.cbSalary.TabIndex = 3;
             // 
-            // cBExperience
+            // cbExperience
             // 
-            this.cBExperience.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.cbExperience.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.cBExperience.BackColor = System.Drawing.Color.Transparent;
-            this.cBExperience.BaseColor = System.Drawing.Color.White;
-            this.cBExperience.BorderColor = System.Drawing.Color.Silver;
-            this.cBExperience.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cBExperience.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cBExperience.FocusedColor = System.Drawing.Color.Empty;
-            this.cBExperience.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cBExperience.ForeColor = System.Drawing.Color.Black;
-            this.cBExperience.FormattingEnabled = true;
-            this.cBExperience.ItemHeight = 49;
-            this.cBExperience.Items.AddRange(new object[] {
-            "All Experience",
+            this.cbExperience.BackColor = System.Drawing.Color.Transparent;
+            this.cbExperience.BaseColor = System.Drawing.Color.White;
+            this.cbExperience.BorderColor = System.Drawing.Color.Silver;
+            this.cbExperience.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbExperience.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbExperience.FocusedColor = System.Drawing.Color.Empty;
+            this.cbExperience.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbExperience.ForeColor = System.Drawing.Color.Black;
+            this.cbExperience.FormattingEnabled = true;
+            this.cbExperience.ItemHeight = 49;
+            this.cbExperience.Items.AddRange(new object[] {
+            "All experience",
             "< 1 year experience",
             "1 - 2 year experience",
             "2 - 3 year experience",
             "> 3 year experience"});
-            this.cBExperience.Location = new System.Drawing.Point(530, 6);
-            this.cBExperience.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.cBExperience.Name = "cBExperience";
-            this.cBExperience.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.cBExperience.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.cBExperience.Radius = 10;
-            this.cBExperience.Size = new System.Drawing.Size(156, 55);
-            this.cBExperience.StartIndex = 0;
-            this.cBExperience.TabIndex = 2;
+            this.cbExperience.Location = new System.Drawing.Point(530, 6);
+            this.cbExperience.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.cbExperience.Name = "cbExperience";
+            this.cbExperience.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.cbExperience.OnHoverItemForeColor = System.Drawing.Color.White;
+            this.cbExperience.Radius = 10;
+            this.cbExperience.Size = new System.Drawing.Size(156, 55);
+            this.cbExperience.StartIndex = 0;
+            this.cbExperience.TabIndex = 2;
             // 
-            // cBLocation
+            // cbLocation
             // 
-            this.cBLocation.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.cbLocation.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.cBLocation.BackColor = System.Drawing.Color.Transparent;
-            this.cBLocation.BaseColor = System.Drawing.Color.White;
-            this.cBLocation.BorderColor = System.Drawing.Color.Silver;
-            this.cBLocation.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cBLocation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cBLocation.FocusedColor = System.Drawing.Color.Empty;
-            this.cBLocation.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cBLocation.ForeColor = System.Drawing.Color.Black;
-            this.cBLocation.FormattingEnabled = true;
-            this.cBLocation.ItemHeight = 49;
-            this.cBLocation.Items.AddRange(new object[] {
+            this.cbLocation.BackColor = System.Drawing.Color.Transparent;
+            this.cbLocation.BaseColor = System.Drawing.Color.White;
+            this.cbLocation.BorderColor = System.Drawing.Color.Silver;
+            this.cbLocation.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbLocation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbLocation.FocusedColor = System.Drawing.Color.Empty;
+            this.cbLocation.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbLocation.ForeColor = System.Drawing.Color.Black;
+            this.cbLocation.FormattingEnabled = true;
+            this.cbLocation.IntegralHeight = false;
+            this.cbLocation.ItemHeight = 49;
+            this.cbLocation.Items.AddRange(new object[] {
             "All  location",
             "Ho Chi Minh City"});
-            this.cBLocation.Location = new System.Drawing.Point(351, 7);
-            this.cBLocation.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.cBLocation.Name = "cBLocation";
-            this.cBLocation.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.cBLocation.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.cBLocation.Radius = 10;
-            this.cBLocation.Size = new System.Drawing.Size(156, 55);
-            this.cBLocation.StartIndex = 0;
-            this.cBLocation.TabIndex = 1;
+            this.cbLocation.Location = new System.Drawing.Point(351, 7);
+            this.cbLocation.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.cbLocation.Name = "cbLocation";
+            this.cbLocation.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.cbLocation.OnHoverItemForeColor = System.Drawing.Color.White;
+            this.cbLocation.Radius = 10;
+            this.cbLocation.Size = new System.Drawing.Size(156, 55);
+            this.cbLocation.StartIndex = 0;
+            this.cbLocation.TabIndex = 1;
             // 
             // txtSearch
             // 
@@ -195,9 +199,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.gunaComboBox3);
-            this.Controls.Add(this.cBExperience);
-            this.Controls.Add(this.cBLocation);
+            this.Controls.Add(this.cbSalary);
+            this.Controls.Add(this.cbExperience);
+            this.Controls.Add(this.cbLocation);
             this.Controls.Add(this.pnlListJob);
             this.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.Name = "UCHome";
@@ -209,9 +213,9 @@
         #endregion
 
         private System.Windows.Forms.FlowLayoutPanel pnlListJob;
-        private Guna.UI.WinForms.GunaComboBox gunaComboBox3;
-        private Guna.UI.WinForms.GunaComboBox cBExperience;
-        private Guna.UI.WinForms.GunaComboBox cBLocation;
+        private Guna.UI.WinForms.GunaComboBox cbSalary;
+        private Guna.UI.WinForms.GunaComboBox cbExperience;
+        private Guna.UI.WinForms.GunaComboBox cbLocation;
         private Guna.UI.WinForms.GunaButton btnSearch;
         private Guna.UI2.WinForms.Guna2TextBox txtSearch;
     }

@@ -1,4 +1,7 @@
-﻿using System;
+﻿using FindJobApplication.Daos;
+using FindJobApplication.Models;
+using Guna.UI2.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,14 +15,29 @@ namespace FindJobApplication
 {
     public partial class FUserSubmitCV : Form
     {
-        public FUserSubmitCV()
+        private int jobId;
+        public FUserSubmitCV(JobPost jobPost)
         {
             InitializeComponent();
+            this.lblNameJob.Text = jobPost.Title;
+            this.jobId = jobPost.Id;
         }
 
         private void btnSendCv_Click(object sender, EventArgs e)
         {
-            this.Close();
+            JobApplyDao jobApplyDao = new JobApplyDao();
+            string coverLetter = this.rtxtCoverLeter.Text;
+            string status = "PENDING";
+            int res = jobApplyDao.saveUserApplyJob(Global.loginId, this.jobId, status, coverLetter);
+            if (res > 0)
+            {
+                MessageDialog.Show(this, "You applied succesfully", "Success", MessageDialogButtons.OK, MessageDialogStyle.Light);
+                this.Close();
+            }
+            else
+            {
+                MessageDialog.Show(this, "You applied unsuccessfully", "Error", MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Light);
+            }
         }
     }
 }

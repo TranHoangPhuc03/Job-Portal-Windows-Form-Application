@@ -8,21 +8,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FindJobApplication.Models;
 
 namespace FindJobApplication
 {
     public partial class UCJob : UserControl
     {
         public int count = 0;
-        public UCJob()
+        public UCJob() { }
+        public UCJob(JobPost jobPost)
         {
             InitializeComponent();
             pbSave.BringToFront();
+            this.Tag = jobPost;
         }
         public GunaLinkLabel LinkLabelJob { get => lLblNameJob; set { lLblNameJob = value; } }
         public GunaLinkLabel JobName { get => lLblNameJob; set { lLblNameJob = value; } }
-        public GunaLinkLabel CompanyName { get => lblNameCompany; set { lblNameCompany = value; } }
-        public Label Location { get => lblLocation; set { lblLocation = value; } }
+        public new GunaLinkLabel CompanyName { get => lblNameCompany; set { lblNameCompany = value; } }
+        public new Label Location { get => lblLocation; set { lblLocation = value; } }
         public Label Salary { get => lblSalary; set { lblSalary = value; } }
         public PictureBox PbSave { get => pbSave; }
 
@@ -43,7 +46,7 @@ namespace FindJobApplication
 
         private void btnApply_Click(object sender, EventArgs e)
         {
-            FUserSubmitCV fUserSubmitCV = new FUserSubmitCV();
+            FUserSubmitCV fUserSubmitCV = new FUserSubmitCV((JobPost)this.Tag);
             fUserSubmitCV.Show();
         }
 
