@@ -48,5 +48,14 @@ namespace FindJobApplication
             hideMenu();
             UCMain.Instance.updateStatus(btnSetting);
         }
+
+        private void btnFollowCV_Click(object sender, EventArgs e)
+        {
+            UCCompanyListCVFollowing uCCompanyListCVFollowing = new UCCompanyListCVFollowing();
+            UCMain.Instance.PnlMid.Controls.Clear();
+            UCMain.Instance.PnlMid.Controls.Add(uCCompanyListCVFollowing);
+            hideMenu();
+            UCMain.Instance.updateStatus(btnFollowCV);
+        }
     }
 }

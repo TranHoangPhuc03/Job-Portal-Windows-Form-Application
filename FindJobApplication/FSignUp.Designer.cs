@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FSignUp));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pLogo = new System.Windows.Forms.PictureBox();
             this.llblSignUpUser = new System.Windows.Forms.LinkLabel();
             this.lblAskSignUp = new System.Windows.Forms.Label();
             this.btnSignUp = new System.Windows.Forms.Button();
@@ -45,12 +46,13 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pHide = new System.Windows.Forms.PictureBox();
             this.pNotHide = new System.Windows.Forms.PictureBox();
-            this.pLogo = new System.Windows.Forms.PictureBox();
+            this.llblCompanySignUp = new System.Windows.Forms.LinkLabel();
+            this.lblAskCompanySignUp = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pHide)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pNotHide)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -63,12 +65,23 @@
             this.panel1.Size = new System.Drawing.Size(1086, 85);
             this.panel1.TabIndex = 23;
             // 
+            // pLogo
+            // 
+            this.pLogo.Image = global::FindJobApplication.Properties.Resources.job;
+            this.pLogo.InitialImage = ((System.Drawing.Image)(resources.GetObject("pLogo.InitialImage")));
+            this.pLogo.Location = new System.Drawing.Point(12, 12);
+            this.pLogo.Name = "pLogo";
+            this.pLogo.Size = new System.Drawing.Size(135, 62);
+            this.pLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pLogo.TabIndex = 23;
+            this.pLogo.TabStop = false;
+            // 
             // llblSignUpUser
             // 
             this.llblSignUpUser.AutoSize = true;
             this.llblSignUpUser.Cursor = System.Windows.Forms.Cursors.Hand;
             this.llblSignUpUser.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.llblSignUpUser.Location = new System.Drawing.Point(406, 607);
+            this.llblSignUpUser.Location = new System.Drawing.Point(403, 607);
             this.llblSignUpUser.Name = "llblSignUpUser";
             this.llblSignUpUser.Size = new System.Drawing.Size(156, 30);
             this.llblSignUpUser.TabIndex = 33;
@@ -221,22 +234,36 @@
             this.pNotHide.TabStop = false;
             this.pNotHide.Click += new System.EventHandler(this.pNotHide_Click);
             // 
-            // pLogo
+            // llblCompanySignUp
             // 
-            this.pLogo.Image = global::FindJobApplication.Properties.Resources.job;
-            this.pLogo.InitialImage = ((System.Drawing.Image)(resources.GetObject("pLogo.InitialImage")));
-            this.pLogo.Location = new System.Drawing.Point(12, 12);
-            this.pLogo.Name = "pLogo";
-            this.pLogo.Size = new System.Drawing.Size(135, 62);
-            this.pLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pLogo.TabIndex = 23;
-            this.pLogo.TabStop = false;
+            this.llblCompanySignUp.AutoSize = true;
+            this.llblCompanySignUp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.llblCompanySignUp.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.llblCompanySignUp.Location = new System.Drawing.Point(366, 652);
+            this.llblCompanySignUp.Name = "llblCompanySignUp";
+            this.llblCompanySignUp.Size = new System.Drawing.Size(143, 30);
+            this.llblCompanySignUp.TabIndex = 42;
+            this.llblCompanySignUp.TabStop = true;
+            this.llblCompanySignUp.Text = "Click Here!\r\n";
+            this.llblCompanySignUp.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblCompanySignUp_LinkClicked);
             // 
-            // DishplaySignUp
+            // lblAskCompanySignUp
+            // 
+            this.lblAskCompanySignUp.AutoSize = true;
+            this.lblAskCompanySignUp.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAskCompanySignUp.Location = new System.Drawing.Point(77, 652);
+            this.lblAskCompanySignUp.Name = "lblAskCompanySignUp";
+            this.lblAskCompanySignUp.Size = new System.Drawing.Size(283, 30);
+            this.lblAskCompanySignUp.TabIndex = 41;
+            this.lblAskCompanySignUp.Text = "If you are an employer";
+            // 
+            // FSignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1086, 703);
+            this.Controls.Add(this.llblCompanySignUp);
+            this.Controls.Add(this.lblAskCompanySignUp);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.pHide);
@@ -254,14 +281,14 @@
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtEmail);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "DishplaySignUp";
+            this.Name = "FSignUp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DishplaySignUp";
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pHide)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pNotHide)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -285,5 +312,7 @@
         private System.Windows.Forms.PictureBox pHide;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.LinkLabel llblCompanySignUp;
+        private System.Windows.Forms.Label lblAskCompanySignUp;
     }
 }

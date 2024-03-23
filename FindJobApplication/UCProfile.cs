@@ -12,6 +12,8 @@ namespace FindJobApplication
 {
     public partial class UCProfile : UserControl
     {
+        public static int statusBtnFollowUser = 1;
+
         UCUCUserProfileEducationAndWorkExperience uCEduaction = new UCUCUserProfileEducationAndWorkExperience();
         UCUCUserProfileEducationAndWorkExperience uCWorkExperience = new UCUCUserProfileEducationAndWorkExperience();
         UCUserProfileSkill uCUserProfileSkill = new UCUserProfileSkill();
@@ -22,6 +24,7 @@ namespace FindJobApplication
             InitializeComponent();
             panelProfile.AutoScroll = true;
             loadProfile();
+            btnBack.Visible = false;
         }
         public void loadProfile()
         {
@@ -32,6 +35,9 @@ namespace FindJobApplication
         }
         public void hideAllBtn()
         {
+            btnBack.Visible = true;
+            btnFollow.Visible = true;
+
             pbEducationEdit.Visible = false;
             pbIntroductionEdit.Visible = false;
             pbPersonalProjectEdit.Visible = false;
@@ -85,6 +91,27 @@ namespace FindJobApplication
         {
             FUserProfilePersonalProjectEdit fUserProfilePersonalProjectEdit = new FUserProfilePersonalProjectEdit();
             fUserProfilePersonalProjectEdit.Show();
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void btnFollow_Click(object sender, EventArgs e)
+        {
+            if (statusBtnFollowUser == 1)
+            {
+                btnFollow.Image = Properties.Resources.unFollow;
+                btnFollow.Text = "Following";
+                statusBtnFollowUser = 2;
+            }
+            else
+            {
+                btnFollow.Image = Properties.Resources.Follow;
+                btnFollow.Text = "Follow";
+                statusBtnFollowUser = 1;
+            }
         }
     }
 }

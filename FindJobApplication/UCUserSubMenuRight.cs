@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -56,6 +57,15 @@ namespace FindJobApplication
             UCMain.Instance.PnlMid.Controls.Add(uCSetting);
             hideMenu();
             UCMain.Instance.updateStatus(btnSetting);
+        }
+
+        private void btnFavouriteCompany_Click(object sender, EventArgs e)
+        {
+            UCUserListCompanyFollowing uCUserListCompanyFollowing = new UCUserListCompanyFollowing();
+            UCMain.Instance.PnlMid.Controls.Clear();
+            UCMain.Instance.PnlMid.Controls.Add(uCUserListCompanyFollowing);
+            hideMenu();
+            UCMain.Instance.updateStatus(btnFavouriteCompany);
         }
     }
 

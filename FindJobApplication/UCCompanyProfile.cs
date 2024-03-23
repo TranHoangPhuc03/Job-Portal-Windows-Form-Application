@@ -12,32 +12,19 @@ namespace FindJobApplication
 {
     public partial class UCCompanyProfile : UserControl
     {
+        public static int statusBtnFollowCompany = 1;
         public UCCompanyProfile()
         {
             InitializeComponent();
-            loadRecruitment();
             btnBack.Visible = false;
-            pnlRecruitment.Visible = false;
         }
         public void hideAllButton()
         {
             btnBack.Visible = true;
-            pnlRecruitment.Visible = true;
+            btnFollow.Visible = true;
             pbProfileEdit.Visible = false;
-            pbIntroductionEdit.Visible = false;
             pbTop3Edit.Visible = false;
-        }
-        public void loadRecruitment() 
-        {
-            pnlListJob.Controls.Clear();
-            List<UCJob> list = new List<UCJob>();
-            for (int i = 0; i <= 3; i++)
-            {
-                UCJob uCJob = new UCJob();
-                uCJob.LinkLabelJob.Text = "Job" + i.ToString();
-                list.Add(uCJob);
-                pnlListJob.Controls.Add(list[i]);
-            }
+            pBCompanyOverviewEdit.Visible = false;
         }
         private void btnBack_Click(object sender, EventArgs e)
         {
@@ -53,6 +40,22 @@ namespace FindJobApplication
         {
             FCompanyProfileInfomationEdit fCompanyProfileInfomationEdit = new FCompanyProfileInfomationEdit();
             fCompanyProfileInfomationEdit.Show();
+        }
+
+        private void btnFollow_Click(object sender, EventArgs e)
+        {
+            if (statusBtnFollowCompany == 1)
+            {
+                btnFollow.Image = Properties.Resources.unFollow;
+                btnFollow.Text = "Following";
+                statusBtnFollowCompany = 2;
+            }
+            else
+            {
+                btnFollow.Image = Properties.Resources.Follow;
+                btnFollow.Text = "Follow";
+                statusBtnFollowCompany = 1;
+            }
         }
     }
 }

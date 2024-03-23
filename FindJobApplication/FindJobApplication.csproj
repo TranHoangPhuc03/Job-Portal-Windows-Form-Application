@@ -99,6 +99,12 @@
     <Compile Include="FCompanySeeCV.Designer.cs">
       <DependentUpon>FCompanySeeCV.cs</DependentUpon>
     </Compile>
+    <Compile Include="FCompanySignUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FCompanySignUp.Designer.cs">
+      <DependentUpon>FCompanySignUp.cs</DependentUpon>
+    </Compile>
     <Compile Include="FHome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,6 +179,12 @@
     <Compile Include="UCCompany.Designer.cs">
       <DependentUpon>UCCompany.cs</DependentUpon>
     </Compile>
+    <Compile Include="UCCompanyCVFollowing.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCCompanyCVFollowing.Designer.cs">
+      <DependentUpon>UCCompanyCVFollowing.cs</DependentUpon>
+    </Compile>
     <Compile Include="UCCompanyHome.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -184,6 +196,12 @@
     </Compile>
     <Compile Include="UCCompanyJob.Designer.cs">
       <DependentUpon>UCCompanyJob.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCCompanyListCVFollowing.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCCompanyListCVFollowing.Designer.cs">
+      <DependentUpon>UCCompanyListCVFollowing.cs</DependentUpon>
     </Compile>
     <Compile Include="UCCompanyListPeopleApply.cs">
       <SubType>UserControl</SubType>
@@ -275,6 +293,18 @@
     <Compile Include="UCUCUserProfileEducationAndWorkExperience.Designer.cs">
       <DependentUpon>UCUCUserProfileEducationAndWorkExperience.cs</DependentUpon>
     </Compile>
+    <Compile Include="UCUserCompanyFollwing.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCUserCompanyFollwing.Designer.cs">
+      <DependentUpon>UCUserCompanyFollwing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCUserListCompanyFollowing.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCUserListCompanyFollowing.Designer.cs">
+      <DependentUpon>UCUserListCompanyFollowing.cs</DependentUpon>
+    </Compile>
     <Compile Include="UCUserProfileProject.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -304,6 +334,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FCompanySeeCV.resx">
       <DependentUpon>FCompanySeeCV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FCompanySignUp.resx">
+      <DependentUpon>FCompanySignUp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FHome.resx">
       <DependentUpon>FHome.cs</DependentUpon>
@@ -348,11 +381,17 @@
     <EmbeddedResource Include="UCCompany.resx">
       <DependentUpon>UCCompany.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UCCompanyCVFollowing.resx">
+      <DependentUpon>UCCompanyCVFollowing.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UCCompanyHome.resx">
       <DependentUpon>UCCompanyHome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCCompanyJob.resx">
       <DependentUpon>UCCompanyJob.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCCompanyListCVFollowing.resx">
+      <DependentUpon>UCCompanyListCVFollowing.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCCompanyListPeopleApply.resx">
       <DependentUpon>UCCompanyListPeopleApply.cs</DependentUpon>
@@ -398,6 +437,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UCUCUserProfileEducationAndWorkExperience.resx">
       <DependentUpon>UCUCUserProfileEducationAndWorkExperience.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCUserCompanyFollwing.resx">
+      <DependentUpon>UCUserCompanyFollwing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCUserListCompanyFollowing.resx">
+      <DependentUpon>UCUserListCompanyFollowing.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCUserProfileProject.resx">
       <DependentUpon>UCUserProfileProject.cs</DependentUpon>
@@ -632,6 +677,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\camera.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Follow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unFollow.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
