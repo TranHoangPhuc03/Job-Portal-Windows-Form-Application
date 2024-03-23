@@ -33,8 +33,13 @@ namespace FindJobApplication
         private void llblSignUpUser_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Close();
-            FLogin dishplayLogin = new FLogin();
-            dishplayLogin.Show();
+        }
+
+        private void llblCompanySignUp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+            FCompanySignUp fCompanySignUp = new FCompanySignUp();
+            fCompanySignUp.ShowDialog();
         }
     }
 }

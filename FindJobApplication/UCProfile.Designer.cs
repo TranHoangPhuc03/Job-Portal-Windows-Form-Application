@@ -30,6 +30,7 @@
         {
             this.pnlProfile = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlProfileInformation = new Guna.UI.WinForms.GunaElipsePanel();
+            this.btnBack = new Guna.UI.WinForms.GunaButton();
             this.pbProfileEdit = new System.Windows.Forms.PictureBox();
             this.lblProfileLink = new Guna.UI.WinForms.GunaLabel();
             this.lblProfileGender = new Guna.UI.WinForms.GunaLabel();
@@ -73,6 +74,7 @@
             this.pbPersonalProject = new System.Windows.Forms.PictureBox();
             this.pbPersonalProjectEdit = new System.Windows.Forms.PictureBox();
             this.lblPersonalProject = new Guna.UI.WinForms.GunaLabel();
+            this.btnFollow = new Guna.UI2.WinForms.Guna2Button();
             this.pnlProfile.SuspendLayout();
             this.pnlProfileInformation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbProfileEdit)).BeginInit();
@@ -119,6 +121,8 @@
             // 
             this.pnlProfileInformation.BackColor = System.Drawing.Color.Transparent;
             this.pnlProfileInformation.BaseColor = System.Drawing.Color.White;
+            this.pnlProfileInformation.Controls.Add(this.btnFollow);
+            this.pnlProfileInformation.Controls.Add(this.btnBack);
             this.pnlProfileInformation.Controls.Add(this.pbProfileEdit);
             this.pnlProfileInformation.Controls.Add(this.lblProfileLink);
             this.pnlProfileInformation.Controls.Add(this.lblProfileGender);
@@ -139,8 +143,35 @@
             this.pnlProfileInformation.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlProfileInformation.Name = "pnlProfileInformation";
             this.pnlProfileInformation.Radius = 10;
-            this.pnlProfileInformation.Size = new System.Drawing.Size(1503, 438);
+            this.pnlProfileInformation.Size = new System.Drawing.Size(1503, 484);
             this.pnlProfileInformation.TabIndex = 0;
+            // 
+            // btnBack
+            // 
+            this.btnBack.AnimationHoverSpeed = 0.07F;
+            this.btnBack.AnimationSpeed = 0.03F;
+            this.btnBack.BackColor = System.Drawing.Color.White;
+            this.btnBack.BaseColor = System.Drawing.Color.White;
+            this.btnBack.BorderColor = System.Drawing.Color.White;
+            this.btnBack.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnBack.FocusedColor = System.Drawing.Color.White;
+            this.btnBack.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.Color.Black;
+            this.btnBack.Image = global::FindJobApplication.Properties.Resources.back;
+            this.btnBack.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnBack.Location = new System.Drawing.Point(3, 2);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.OnHoverBaseColor = System.Drawing.Color.White;
+            this.btnBack.OnHoverBorderColor = System.Drawing.Color.Red;
+            this.btnBack.OnHoverForeColor = System.Drawing.Color.Red;
+            this.btnBack.OnHoverImage = null;
+            this.btnBack.OnPressedColor = System.Drawing.Color.White;
+            this.btnBack.Size = new System.Drawing.Size(160, 42);
+            this.btnBack.TabIndex = 33;
+            this.btnBack.Text = "Back";
+            this.btnBack.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // pbProfileEdit
             // 
@@ -161,7 +192,7 @@
             this.lblProfileLink.AutoSize = true;
             this.lblProfileLink.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProfileLink.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.lblProfileLink.Location = new System.Drawing.Point(820, 385);
+            this.lblProfileLink.Location = new System.Drawing.Point(816, 433);
             this.lblProfileLink.Name = "lblProfileLink";
             this.lblProfileLink.Size = new System.Drawing.Size(219, 28);
             this.lblProfileLink.TabIndex = 14;
@@ -172,7 +203,7 @@
             this.lblProfileGender.AutoSize = true;
             this.lblProfileGender.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProfileGender.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.lblProfileGender.Location = new System.Drawing.Point(820, 290);
+            this.lblProfileGender.Location = new System.Drawing.Point(816, 338);
             this.lblProfileGender.Name = "lblProfileGender";
             this.lblProfileGender.Size = new System.Drawing.Size(155, 28);
             this.lblProfileGender.TabIndex = 13;
@@ -183,7 +214,7 @@
             this.lblProfilePhoneNumber.AutoSize = true;
             this.lblProfilePhoneNumber.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProfilePhoneNumber.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.lblProfilePhoneNumber.Location = new System.Drawing.Point(820, 196);
+            this.lblProfilePhoneNumber.Location = new System.Drawing.Point(816, 244);
             this.lblProfilePhoneNumber.Name = "lblProfilePhoneNumber";
             this.lblProfilePhoneNumber.Size = new System.Drawing.Size(242, 28);
             this.lblProfilePhoneNumber.TabIndex = 12;
@@ -192,7 +223,7 @@
             // pbProfileLink
             // 
             this.pbProfileLink.Image = global::FindJobApplication.Properties.Resources.link;
-            this.pbProfileLink.Location = new System.Drawing.Point(776, 382);
+            this.pbProfileLink.Location = new System.Drawing.Point(772, 430);
             this.pbProfileLink.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pbProfileLink.Name = "pbProfileLink";
             this.pbProfileLink.Size = new System.Drawing.Size(37, 31);
@@ -203,7 +234,7 @@
             // pbProfileGender
             // 
             this.pbProfileGender.Image = global::FindJobApplication.Properties.Resources.gender;
-            this.pbProfileGender.Location = new System.Drawing.Point(776, 290);
+            this.pbProfileGender.Location = new System.Drawing.Point(772, 338);
             this.pbProfileGender.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pbProfileGender.Name = "pbProfileGender";
             this.pbProfileGender.Size = new System.Drawing.Size(37, 31);
@@ -214,7 +245,7 @@
             // pbProfilePhoneNumber
             // 
             this.pbProfilePhoneNumber.Image = global::FindJobApplication.Properties.Resources.telephone;
-            this.pbProfilePhoneNumber.Location = new System.Drawing.Point(776, 196);
+            this.pbProfilePhoneNumber.Location = new System.Drawing.Point(772, 244);
             this.pbProfilePhoneNumber.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pbProfilePhoneNumber.Name = "pbProfilePhoneNumber";
             this.pbProfilePhoneNumber.Size = new System.Drawing.Size(37, 31);
@@ -227,7 +258,7 @@
             this.lblProfileAddress.AutoSize = true;
             this.lblProfileAddress.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProfileAddress.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.lblProfileAddress.Location = new System.Drawing.Point(324, 385);
+            this.lblProfileAddress.Location = new System.Drawing.Point(320, 433);
             this.lblProfileAddress.Name = "lblProfileAddress";
             this.lblProfileAddress.Size = new System.Drawing.Size(252, 28);
             this.lblProfileAddress.TabIndex = 8;
@@ -238,7 +269,7 @@
             this.lblProfileDateOfBirth.AutoSize = true;
             this.lblProfileDateOfBirth.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProfileDateOfBirth.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.lblProfileDateOfBirth.Location = new System.Drawing.Point(324, 290);
+            this.lblProfileDateOfBirth.Location = new System.Drawing.Point(320, 338);
             this.lblProfileDateOfBirth.Name = "lblProfileDateOfBirth";
             this.lblProfileDateOfBirth.Size = new System.Drawing.Size(212, 28);
             this.lblProfileDateOfBirth.TabIndex = 7;
@@ -247,7 +278,7 @@
             // pbProfileAddress
             // 
             this.pbProfileAddress.Image = global::FindJobApplication.Properties.Resources.location1;
-            this.pbProfileAddress.Location = new System.Drawing.Point(280, 382);
+            this.pbProfileAddress.Location = new System.Drawing.Point(276, 430);
             this.pbProfileAddress.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pbProfileAddress.Name = "pbProfileAddress";
             this.pbProfileAddress.Size = new System.Drawing.Size(37, 31);
@@ -258,7 +289,7 @@
             // pbProfileDateOfBirth
             // 
             this.pbProfileDateOfBirth.Image = global::FindJobApplication.Properties.Resources.birthday_cake;
-            this.pbProfileDateOfBirth.Location = new System.Drawing.Point(280, 290);
+            this.pbProfileDateOfBirth.Location = new System.Drawing.Point(276, 338);
             this.pbProfileDateOfBirth.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pbProfileDateOfBirth.Name = "pbProfileDateOfBirth";
             this.pbProfileDateOfBirth.Size = new System.Drawing.Size(37, 31);
@@ -269,7 +300,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::FindJobApplication.Properties.Resources.email;
-            this.pictureBox1.Location = new System.Drawing.Point(280, 196);
+            this.pictureBox1.Location = new System.Drawing.Point(276, 244);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(37, 31);
@@ -282,7 +313,7 @@
             this.lblProfileEmail.AutoSize = true;
             this.lblProfileEmail.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProfileEmail.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.lblProfileEmail.Location = new System.Drawing.Point(324, 196);
+            this.lblProfileEmail.Location = new System.Drawing.Point(320, 244);
             this.lblProfileEmail.Name = "lblProfileEmail";
             this.lblProfileEmail.Size = new System.Drawing.Size(243, 28);
             this.lblProfileEmail.TabIndex = 3;
@@ -293,7 +324,7 @@
             this.lblProfileTitle.AutoSize = true;
             this.lblProfileTitle.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProfileTitle.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.lblProfileTitle.Location = new System.Drawing.Point(274, 82);
+            this.lblProfileTitle.Location = new System.Drawing.Point(270, 130);
             this.lblProfileTitle.Name = "lblProfileTitle";
             this.lblProfileTitle.Size = new System.Drawing.Size(132, 34);
             this.lblProfileTitle.TabIndex = 2;
@@ -304,7 +335,7 @@
             this.lblProfileName.AutoSize = true;
             this.lblProfileName.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProfileName.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.lblProfileName.Location = new System.Drawing.Point(273, 25);
+            this.lblProfileName.Location = new System.Drawing.Point(269, 73);
             this.lblProfileName.Name = "lblProfileName";
             this.lblProfileName.Size = new System.Drawing.Size(181, 39);
             this.lblProfileName.TabIndex = 1;
@@ -313,7 +344,7 @@
             // pbProfileAvatar
             // 
             this.pbProfileAvatar.Image = global::FindJobApplication.Properties.Resources.user__1_;
-            this.pbProfileAvatar.Location = new System.Drawing.Point(24, 25);
+            this.pbProfileAvatar.Location = new System.Drawing.Point(20, 73);
             this.pbProfileAvatar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pbProfileAvatar.Name = "pbProfileAvatar";
             this.pbProfileAvatar.Size = new System.Drawing.Size(219, 236);
@@ -330,7 +361,7 @@
             this.pnlIntroduction.Controls.Add(this.pbIntroduction);
             this.pnlIntroduction.Controls.Add(this.pbIntroductionEdit);
             this.pnlIntroduction.Controls.Add(this.lblIntroduction);
-            this.pnlIntroduction.Location = new System.Drawing.Point(3, 444);
+            this.pnlIntroduction.Location = new System.Drawing.Point(3, 490);
             this.pnlIntroduction.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlIntroduction.Name = "pnlIntroduction";
             this.pnlIntroduction.Radius = 10;
@@ -400,7 +431,7 @@
             this.pnlEducation.Controls.Add(this.pbEducation);
             this.pnlEducation.Controls.Add(this.pbEducationEdit);
             this.pnlEducation.Controls.Add(this.lblEducation);
-            this.pnlEducation.Location = new System.Drawing.Point(3, 775);
+            this.pnlEducation.Location = new System.Drawing.Point(3, 821);
             this.pnlEducation.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlEducation.Name = "pnlEducation";
             this.pnlEducation.Radius = 10;
@@ -465,7 +496,7 @@
             this.pnlWorkExperience.Controls.Add(this.pbWorkExperience);
             this.pnlWorkExperience.Controls.Add(this.pbWorkExperienceEdit);
             this.pnlWorkExperience.Controls.Add(this.lblWorkExperience);
-            this.pnlWorkExperience.Location = new System.Drawing.Point(3, 1105);
+            this.pnlWorkExperience.Location = new System.Drawing.Point(3, 1151);
             this.pnlWorkExperience.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlWorkExperience.Name = "pnlWorkExperience";
             this.pnlWorkExperience.Radius = 10;
@@ -523,7 +554,7 @@
             this.pnlSkills.Controls.Add(this.pbSkills);
             this.pnlSkills.Controls.Add(this.pbSkillsEdit);
             this.pnlSkills.Controls.Add(this.lblSkills);
-            this.pnlSkills.Location = new System.Drawing.Point(3, 1418);
+            this.pnlSkills.Location = new System.Drawing.Point(3, 1464);
             this.pnlSkills.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlSkills.Name = "pnlSkills";
             this.pnlSkills.Radius = 10;
@@ -581,7 +612,7 @@
             this.pnlPersonalProject.Controls.Add(this.pbPersonalProject);
             this.pnlPersonalProject.Controls.Add(this.pbPersonalProjectEdit);
             this.pnlPersonalProject.Controls.Add(this.lblPersonalProject);
-            this.pnlPersonalProject.Location = new System.Drawing.Point(3, 1680);
+            this.pnlPersonalProject.Location = new System.Drawing.Point(3, 1726);
             this.pnlPersonalProject.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlPersonalProject.Name = "pnlPersonalProject";
             this.pnlPersonalProject.Radius = 10;
@@ -630,6 +661,29 @@
             this.lblPersonalProject.Size = new System.Drawing.Size(273, 39);
             this.lblPersonalProject.TabIndex = 2;
             this.lblPersonalProject.Text = "Personal Project";
+            // 
+            // btnFollow
+            // 
+            this.btnFollow.BorderRadius = 10;
+            this.btnFollow.BorderThickness = 1;
+            this.btnFollow.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnFollow.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnFollow.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnFollow.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnFollow.FillColor = System.Drawing.Color.White;
+            this.btnFollow.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFollow.ForeColor = System.Drawing.Color.Black;
+            this.btnFollow.HoverState.FillColor = System.Drawing.Color.LightGray;
+            this.btnFollow.Image = global::FindJobApplication.Properties.Resources.Follow;
+            this.btnFollow.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnFollow.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnFollow.Location = new System.Drawing.Point(1227, 416);
+            this.btnFollow.Name = "btnFollow";
+            this.btnFollow.Size = new System.Drawing.Size(204, 45);
+            this.btnFollow.TabIndex = 35;
+            this.btnFollow.Text = "Follow";
+            this.btnFollow.Visible = false;
+            this.btnFollow.Click += new System.EventHandler(this.btnFollow_Click);
             // 
             // UCProfile
             // 
@@ -721,5 +775,7 @@
         public System.Windows.Forms.PictureBox pbWorkExperienceEdit;
         public System.Windows.Forms.PictureBox pbSkillsEdit;
         public System.Windows.Forms.PictureBox pbPersonalProjectEdit;
+        private Guna.UI.WinForms.GunaButton btnBack;
+        private Guna.UI2.WinForms.Guna2Button btnFollow;
     }
 }
