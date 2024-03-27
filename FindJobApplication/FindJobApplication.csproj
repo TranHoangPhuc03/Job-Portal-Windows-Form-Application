@@ -170,7 +170,12 @@
     <Compile Include="Models\JobPost.cs" />
     <Compile Include="Models\Location.cs" />
     <Compile Include="Models\Global.cs" />
+    <Compile Include="Models\UserApplyJob.cs" />
+    <Compile Include="Models\UserEducation.cs" />
+    <Compile Include="Models\UserPersonalProject.cs" />
     <Compile Include="Models\UserProfile.cs" />
+    <Compile Include="Models\UserSkill.cs" />
+    <Compile Include="Models\UserWorkExperience.cs" />
     <Compile Include="Models\YearExperience.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -684,6 +689,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\unFollow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BusinessLicenses\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

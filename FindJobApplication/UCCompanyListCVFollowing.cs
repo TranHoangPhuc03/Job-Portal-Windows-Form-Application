@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FindJobApplication.Daos;
+using FindJobApplication.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,14 +22,18 @@ namespace FindJobApplication
         private void UCCompanyListCVFollowing_Load(object sender, EventArgs e)
         {
             pnlListCVFollowing.Controls.Clear();
-            List<UCCompanyCVFollowing> list = new List<UCCompanyCVFollowing>();
-            for (int i = 0; i < 10; i++)
+            CompanyProfileDao companyProfileDao = new CompanyProfileDao();
+            DataTable dt = companyProfileDao.findAllUserFollowing(Global.loginId);
+            int cnt = 1;
+            foreach (DataRow dr in dt.Rows)
             {
+                UserProfileDao userProfileDao = new UserProfileDao();
+                UserProfile userProfile = userProfileDao.findUserById((int)dr["user_id"]);
                 UCCompanyCVFollowing uCCompanyCVFollowing = new UCCompanyCVFollowing();
-                uCCompanyCVFollowing.LblId.Text = i.ToString();
-                uCCompanyCVFollowing.LlblName.Text = "User" + i.ToString();
-                list.Add(uCCompanyCVFollowing);
-                pnlListCVFollowing.Controls.Add(list[i]);
+                uCCompanyCVFollowing.LblId.Text = (cnt++).ToString();
+                uCCompanyCVFollowing.LlblName.Text = userProfile.Name;
+                uCCompanyCVFollowing.Tag = userProfile.Id;
+                this.pnlListCVFollowing.Controls.Add(uCCompanyCVFollowing);
             }
         }
     }

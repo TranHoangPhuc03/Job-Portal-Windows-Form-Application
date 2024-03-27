@@ -27,5 +27,11 @@ namespace FindJobApplication.Daos
 
             return null;
         }
+
+        public int saveAccount(string email, string password, int roleId)
+        {
+            string sqlStr = $"insert into account(email, password, role_id) values ('{email}', '{password}', {roleId});";
+            return db.Excute(sqlStr);
+        }
     }
 }

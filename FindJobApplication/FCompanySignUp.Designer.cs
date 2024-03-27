@@ -50,6 +50,7 @@
             this.lblBusinessLicense = new System.Windows.Forms.Label();
             this.btnChooseFile = new Guna.UI2.WinForms.Guna2Button();
             this.lblStatus = new System.Windows.Forms.Label();
+            this.ofdBusinessLicense = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pHide)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pNotHide)).BeginInit();
@@ -60,9 +61,10 @@
             // 
             this.pLogo.Image = global::FindJobApplication.Properties.Resources.job;
             this.pLogo.InitialImage = ((System.Drawing.Image)(resources.GetObject("pLogo.InitialImage")));
-            this.pLogo.Location = new System.Drawing.Point(12, 12);
+            this.pLogo.Location = new System.Drawing.Point(8, 8);
+            this.pLogo.Margin = new System.Windows.Forms.Padding(2);
             this.pLogo.Name = "pLogo";
-            this.pLogo.Size = new System.Drawing.Size(135, 62);
+            this.pLogo.Size = new System.Drawing.Size(90, 40);
             this.pLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pLogo.TabIndex = 23;
             this.pLogo.TabStop = false;
@@ -70,9 +72,10 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(62, 461);
+            this.checkBox1.Location = new System.Drawing.Point(41, 300);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(22, 21);
+            this.checkBox1.Size = new System.Drawing.Size(15, 14);
             this.checkBox1.TabIndex = 57;
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
@@ -80,9 +83,10 @@
             // 
             this.pHide.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pHide.Image = global::FindJobApplication.Properties.Resources.hide;
-            this.pHide.Location = new System.Drawing.Point(506, 412);
+            this.pHide.Location = new System.Drawing.Point(337, 268);
+            this.pHide.Margin = new System.Windows.Forms.Padding(2);
             this.pHide.Name = "pHide";
-            this.pHide.Size = new System.Drawing.Size(33, 31);
+            this.pHide.Size = new System.Drawing.Size(22, 20);
             this.pHide.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pHide.TabIndex = 56;
             this.pHide.TabStop = false;
@@ -92,9 +96,10 @@
             // 
             this.pNotHide.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pNotHide.Image = global::FindJobApplication.Properties.Resources.visible;
-            this.pNotHide.Location = new System.Drawing.Point(506, 412);
+            this.pNotHide.Location = new System.Drawing.Point(337, 268);
+            this.pNotHide.Margin = new System.Windows.Forms.Padding(2);
             this.pNotHide.Name = "pNotHide";
-            this.pNotHide.Size = new System.Drawing.Size(33, 31);
+            this.pNotHide.Size = new System.Drawing.Size(22, 20);
             this.pNotHide.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pNotHide.TabIndex = 55;
             this.pNotHide.TabStop = false;
@@ -104,18 +109,20 @@
             // 
             this.lblNameCompany.AutoSize = true;
             this.lblNameCompany.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNameCompany.Location = new System.Drawing.Point(63, 153);
+            this.lblNameCompany.Location = new System.Drawing.Point(42, 99);
+            this.lblNameCompany.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNameCompany.Name = "lblNameCompany";
-            this.lblNameCompany.Size = new System.Drawing.Size(214, 30);
+            this.lblNameCompany.Size = new System.Drawing.Size(140, 21);
             this.lblNameCompany.TabIndex = 54;
             this.lblNameCompany.Text = "Name Company";
             // 
             // txtName
             // 
             this.txtName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(63, 200);
+            this.txtName.Location = new System.Drawing.Point(42, 130);
+            this.txtName.Margin = new System.Windows.Forms.Padding(2);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(438, 37);
+            this.txtName.Size = new System.Drawing.Size(293, 27);
             this.txtName.TabIndex = 53;
             // 
             // panel1
@@ -124,8 +131,9 @@
             this.panel1.Controls.Add(this.pLogo);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1064, 85);
+            this.panel1.Size = new System.Drawing.Size(709, 55);
             this.panel1.TabIndex = 43;
             // 
             // llblSignUpUser
@@ -133,9 +141,10 @@
             this.llblSignUpUser.AutoSize = true;
             this.llblSignUpUser.Cursor = System.Windows.Forms.Cursors.Hand;
             this.llblSignUpUser.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.llblSignUpUser.Location = new System.Drawing.Point(403, 589);
+            this.llblSignUpUser.Location = new System.Drawing.Point(269, 383);
+            this.llblSignUpUser.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.llblSignUpUser.Name = "llblSignUpUser";
-            this.llblSignUpUser.Size = new System.Drawing.Size(156, 30);
+            this.llblSignUpUser.Size = new System.Drawing.Size(101, 21);
             this.llblSignUpUser.TabIndex = 52;
             this.llblSignUpUser.TabStop = true;
             this.llblSignUpUser.Text = "Sign in now!";
@@ -145,9 +154,10 @@
             // 
             this.lblAskSignUp.AutoSize = true;
             this.lblAskSignUp.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAskSignUp.Location = new System.Drawing.Point(77, 589);
+            this.lblAskSignUp.Location = new System.Drawing.Point(51, 383);
+            this.lblAskSignUp.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAskSignUp.Name = "lblAskSignUp";
-            this.lblAskSignUp.Size = new System.Drawing.Size(320, 30);
+            this.lblAskSignUp.Size = new System.Drawing.Size(213, 21);
             this.lblAskSignUp.TabIndex = 51;
             this.lblAskSignUp.Text = "Already have an account";
             // 
@@ -158,20 +168,23 @@
             this.btnSignUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSignUp.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSignUp.ForeColor = System.Drawing.Color.White;
-            this.btnSignUp.Location = new System.Drawing.Point(62, 516);
+            this.btnSignUp.Location = new System.Drawing.Point(41, 335);
+            this.btnSignUp.Margin = new System.Windows.Forms.Padding(2);
             this.btnSignUp.Name = "btnSignUp";
-            this.btnSignUp.Size = new System.Drawing.Size(560, 43);
+            this.btnSignUp.Size = new System.Drawing.Size(373, 28);
             this.btnSignUp.TabIndex = 50;
             this.btnSignUp.Text = "Sign Up";
             this.btnSignUp.UseVisualStyleBackColor = false;
+            this.btnSignUp.Click += new System.EventHandler(this.btnSignUp_Click);
             // 
             // lblPresent
             // 
             this.lblPresent.AutoSize = true;
             this.lblPresent.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPresent.Location = new System.Drawing.Point(90, 457);
+            this.lblPresent.Location = new System.Drawing.Point(60, 297);
+            this.lblPresent.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPresent.Name = "lblPresent";
-            this.lblPresent.Size = new System.Drawing.Size(552, 46);
+            this.lblPresent.Size = new System.Drawing.Size(393, 38);
             this.lblPresent.TabIndex = 49;
             this.lblPresent.Text = "I have read and agree to ITviec’s Terms & Conditions \r\nand Privacy Policy in rela" +
     "tion to my privacy information.";
@@ -181,9 +194,10 @@
             this.lblIntro.AutoSize = true;
             this.lblIntro.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIntro.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblIntro.Location = new System.Drawing.Point(62, 99);
+            this.lblIntro.Location = new System.Drawing.Point(41, 64);
+            this.lblIntro.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblIntro.Name = "lblIntro";
-            this.lblIntro.Size = new System.Drawing.Size(268, 34);
+            this.lblIntro.Size = new System.Drawing.Size(181, 23);
             this.lblIntro.TabIndex = 48;
             this.lblIntro.Text = "Welcome to IT-Job";
             // 
@@ -191,9 +205,10 @@
             // 
             this.lblPassword.AutoSize = true;
             this.lblPassword.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.Location = new System.Drawing.Point(62, 358);
+            this.lblPassword.Location = new System.Drawing.Point(41, 233);
+            this.lblPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(122, 30);
+            this.lblPassword.Size = new System.Drawing.Size(82, 21);
             this.lblPassword.TabIndex = 47;
             this.lblPassword.Text = "Password";
             // 
@@ -201,55 +216,61 @@
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(544, 153);
+            this.lblEmail.Location = new System.Drawing.Point(363, 99);
+            this.lblEmail.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(78, 30);
+            this.lblEmail.Size = new System.Drawing.Size(51, 21);
             this.lblEmail.TabIndex = 46;
             this.lblEmail.Text = "Email";
             // 
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(62, 406);
+            this.txtPassword.Location = new System.Drawing.Point(41, 264);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtPassword.Multiline = true;
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(438, 37);
+            this.txtPassword.Size = new System.Drawing.Size(293, 25);
             this.txtPassword.TabIndex = 45;
             this.txtPassword.UseSystemPasswordChar = true;
             // 
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(544, 201);
+            this.txtEmail.Location = new System.Drawing.Point(363, 131);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(438, 37);
+            this.txtEmail.Size = new System.Drawing.Size(293, 27);
             this.txtEmail.TabIndex = 44;
             // 
             // lblTaxCode
             // 
             this.lblTaxCode.AutoSize = true;
             this.lblTaxCode.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTaxCode.Location = new System.Drawing.Point(63, 256);
+            this.lblTaxCode.Location = new System.Drawing.Point(42, 166);
+            this.lblTaxCode.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTaxCode.Name = "lblTaxCode";
-            this.lblTaxCode.Size = new System.Drawing.Size(123, 30);
+            this.lblTaxCode.Size = new System.Drawing.Size(82, 21);
             this.lblTaxCode.TabIndex = 59;
             this.lblTaxCode.Text = "Tax code";
             // 
             // txtTaxCode
             // 
             this.txtTaxCode.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTaxCode.Location = new System.Drawing.Point(63, 303);
+            this.txtTaxCode.Location = new System.Drawing.Point(42, 197);
+            this.txtTaxCode.Margin = new System.Windows.Forms.Padding(2);
             this.txtTaxCode.Name = "txtTaxCode";
-            this.txtTaxCode.Size = new System.Drawing.Size(438, 37);
+            this.txtTaxCode.Size = new System.Drawing.Size(293, 27);
             this.txtTaxCode.TabIndex = 58;
             // 
             // lblBusinessLicense
             // 
             this.lblBusinessLicense.AutoSize = true;
             this.lblBusinessLicense.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBusinessLicense.Location = new System.Drawing.Point(544, 256);
+            this.lblBusinessLicense.Location = new System.Drawing.Point(363, 166);
+            this.lblBusinessLicense.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblBusinessLicense.Name = "lblBusinessLicense";
-            this.lblBusinessLicense.Size = new System.Drawing.Size(206, 30);
+            this.lblBusinessLicense.Size = new System.Drawing.Size(130, 21);
             this.lblBusinessLicense.TabIndex = 61;
             this.lblBusinessLicense.Text = "Business License";
             // 
@@ -263,27 +284,30 @@
             this.btnChooseFile.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChooseFile.ForeColor = System.Drawing.Color.Black;
             this.btnChooseFile.HoverState.FillColor = System.Drawing.Color.Silver;
-            this.btnChooseFile.Location = new System.Drawing.Point(544, 303);
+            this.btnChooseFile.Location = new System.Drawing.Point(363, 197);
+            this.btnChooseFile.Margin = new System.Windows.Forms.Padding(2);
             this.btnChooseFile.Name = "btnChooseFile";
-            this.btnChooseFile.Size = new System.Drawing.Size(140, 37);
+            this.btnChooseFile.Size = new System.Drawing.Size(93, 24);
             this.btnChooseFile.TabIndex = 62;
             this.btnChooseFile.Text = "Choose file";
+            this.btnChooseFile.Click += new System.EventHandler(this.btnChooseFile_Click);
             // 
             // lblStatus
             // 
             this.lblStatus.AutoSize = true;
             this.lblStatus.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatus.Location = new System.Drawing.Point(702, 306);
+            this.lblStatus.Location = new System.Drawing.Point(468, 199);
+            this.lblStatus.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(259, 30);
+            this.lblStatus.Size = new System.Drawing.Size(167, 21);
             this.lblStatus.TabIndex = 63;
             this.lblStatus.Text = "There are no files yet";
             // 
             // FCompanySignUp
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1064, 657);
+            this.ClientSize = new System.Drawing.Size(709, 427);
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.btnChooseFile);
             this.Controls.Add(this.lblBusinessLicense);
@@ -304,6 +328,7 @@
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtEmail);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FCompanySignUp";
@@ -341,5 +366,6 @@
         private System.Windows.Forms.Label lblBusinessLicense;
         private Guna.UI2.WinForms.Guna2Button btnChooseFile;
         private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.OpenFileDialog ofdBusinessLicense;
     }
 }

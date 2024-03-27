@@ -42,9 +42,10 @@
             // 
             this.lblMajor.AutoSize = true;
             this.lblMajor.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMajor.Location = new System.Drawing.Point(3, 9);
+            this.lblMajor.Location = new System.Drawing.Point(2, 6);
+            this.lblMajor.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMajor.Name = "lblMajor";
-            this.lblMajor.Size = new System.Drawing.Size(239, 23);
+            this.lblMajor.Size = new System.Drawing.Size(165, 17);
             this.lblMajor.TabIndex = 0;
             this.lblMajor.Text = "Information technology";
             // 
@@ -52,9 +53,10 @@
             // 
             this.lblSchool.AutoSize = true;
             this.lblSchool.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSchool.Location = new System.Drawing.Point(3, 41);
+            this.lblSchool.Location = new System.Drawing.Point(2, 27);
+            this.lblSchool.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSchool.Name = "lblSchool";
-            this.lblSchool.Size = new System.Drawing.Size(557, 23);
+            this.lblSchool.Size = new System.Drawing.Size(400, 19);
             this.lblSchool.TabIndex = 1;
             this.lblSchool.Text = "Ho Chi Minh City University of Technology and Education";
             // 
@@ -62,9 +64,10 @@
             // 
             this.lblStartDay.AutoSize = true;
             this.lblStartDay.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStartDay.Location = new System.Drawing.Point(3, 73);
+            this.lblStartDay.Location = new System.Drawing.Point(2, 47);
+            this.lblStartDay.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblStartDay.Name = "lblStartDay";
-            this.lblStartDay.Size = new System.Drawing.Size(73, 23);
+            this.lblStartDay.Size = new System.Drawing.Size(54, 17);
             this.lblStartDay.TabIndex = 2;
             this.lblStartDay.Text = "9-2022";
             // 
@@ -72,9 +75,10 @@
             // 
             this.lblEndDay.AutoSize = true;
             this.lblEndDay.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEndDay.Location = new System.Drawing.Point(82, 73);
+            this.lblEndDay.Location = new System.Drawing.Point(109, 47);
+            this.lblEndDay.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEndDay.Name = "lblEndDay";
-            this.lblEndDay.Size = new System.Drawing.Size(54, 23);
+            this.lblEndDay.Size = new System.Drawing.Size(38, 17);
             this.lblEndDay.TabIndex = 3;
             this.lblEndDay.Text = "Now";
             // 
@@ -82,9 +86,10 @@
             // 
             this.pbDeleteEducationOrWork.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbDeleteEducationOrWork.Image = global::FindJobApplication.Properties.Resources.delete;
-            this.pbDeleteEducationOrWork.Location = new System.Drawing.Point(779, 9);
+            this.pbDeleteEducationOrWork.Location = new System.Drawing.Point(519, 6);
+            this.pbDeleteEducationOrWork.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pbDeleteEducationOrWork.Name = "pbDeleteEducationOrWork";
-            this.pbDeleteEducationOrWork.Size = new System.Drawing.Size(54, 35);
+            this.pbDeleteEducationOrWork.Size = new System.Drawing.Size(36, 23);
             this.pbDeleteEducationOrWork.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbDeleteEducationOrWork.TabIndex = 5;
             this.pbDeleteEducationOrWork.TabStop = false;
@@ -93,16 +98,17 @@
             // 
             this.pbEditEducationOrWork.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbEditEducationOrWork.Image = global::FindJobApplication.Properties.Resources.edit1;
-            this.pbEditEducationOrWork.Location = new System.Drawing.Point(719, 9);
+            this.pbEditEducationOrWork.Location = new System.Drawing.Point(479, 6);
+            this.pbEditEducationOrWork.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pbEditEducationOrWork.Name = "pbEditEducationOrWork";
-            this.pbEditEducationOrWork.Size = new System.Drawing.Size(54, 35);
+            this.pbEditEducationOrWork.Size = new System.Drawing.Size(36, 23);
             this.pbEditEducationOrWork.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbEditEducationOrWork.TabIndex = 4;
             this.pbEditEducationOrWork.TabStop = false;
             // 
             // UCUCUserProfileEducationAndWorkExperience
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pbDeleteEducationOrWork);
             this.Controls.Add(this.pbEditEducationOrWork);
@@ -110,8 +116,9 @@
             this.Controls.Add(this.lblStartDay);
             this.Controls.Add(this.lblSchool);
             this.Controls.Add(this.lblMajor);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "UCUCUserProfileEducationAndWorkExperience";
-            this.Size = new System.Drawing.Size(836, 115);
+            this.Size = new System.Drawing.Size(557, 75);
             ((System.ComponentModel.ISupportInitialize)(this.pbDeleteEducationOrWork)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEditEducationOrWork)).EndInit();
             this.ResumeLayout(false);

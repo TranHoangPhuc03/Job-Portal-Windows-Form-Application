@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FindJobApplication.Daos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,18 @@ namespace FindJobApplication
 {
     public partial class UCCompanySeeProfilePeople : UserControl
     {
+        private int jobPostId;
+        private int userId;
+
         public UCCompanySeeProfilePeople()
         {
             InitializeComponent();
+        }
+
+        public UCCompanySeeProfilePeople(Dictionary<string, int> obj) : this()
+        {
+            obj.TryGetValue("jobPostId", out this.jobPostId);
+            obj.TryGetValue("userId", out this.userId);
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -24,8 +34,17 @@ namespace FindJobApplication
 
         private void btnSeeCV_Click(object sender, EventArgs e)
         {
-            FCompanySeeCV fCompanySeeCV = new FCompanySeeCV();
+            FCompanySeeCV fCompanySeeCV = new FCompanySeeCV(this.userId);
             fCompanySeeCV.Show();
+        }
+
+        private void UCCompanySeeProfilePeople_Load(object sender, EventArgs e)
+        {
+            JobApplyDao jobApplyDao = new JobApplyDao();
+            DataRow dr = jobApplyDao.findByUserAppliedIdAndJobPostId(this.userId, this.jobPostId).Rows[0];
+            this.lblNamePeople.Text = dr["name"].ToString();
+            this.lblNameJob.Text = dr["title"].ToString();
+            this.rtxtCoverLetter.Text = dr["cover_letter"].ToString();
         }
     }
 }

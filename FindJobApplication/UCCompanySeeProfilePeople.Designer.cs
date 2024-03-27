@@ -51,9 +51,10 @@
             // 
             this.lblNamePeopleTitle.AutoSize = true;
             this.lblNamePeopleTitle.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNamePeopleTitle.Location = new System.Drawing.Point(62, 169);
+            this.lblNamePeopleTitle.Location = new System.Drawing.Point(41, 110);
+            this.lblNamePeopleTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNamePeopleTitle.Name = "lblNamePeopleTitle";
-            this.lblNamePeopleTitle.Size = new System.Drawing.Size(106, 34);
+            this.lblNamePeopleTitle.Size = new System.Drawing.Size(71, 22);
             this.lblNamePeopleTitle.TabIndex = 0;
             this.lblNamePeopleTitle.Text = "Name:";
             // 
@@ -75,10 +76,11 @@
             this.pnlMain.Controls.Add(this.lblCoverLetter);
             this.pnlMain.Controls.Add(this.lblNameJobTitle);
             this.pnlMain.Controls.Add(this.lblNamePeopleTitle);
-            this.pnlMain.Location = new System.Drawing.Point(3, 3);
+            this.pnlMain.Location = new System.Drawing.Point(2, 2);
+            this.pnlMain.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Radius = 10;
-            this.pnlMain.Size = new System.Drawing.Size(1538, 845);
+            this.pnlMain.Size = new System.Drawing.Size(1025, 549);
             this.pnlMain.TabIndex = 1;
             // 
             // btnDeny
@@ -92,10 +94,10 @@
             this.btnDeny.FillColor = System.Drawing.Color.White;
             this.btnDeny.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeny.ForeColor = System.Drawing.Color.Black;
-            this.btnDeny.Location = new System.Drawing.Point(1083, 737);
-            this.btnDeny.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnDeny.Location = new System.Drawing.Point(722, 479);
+            this.btnDeny.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnDeny.Name = "btnDeny";
-            this.btnDeny.Size = new System.Drawing.Size(140, 56);
+            this.btnDeny.Size = new System.Drawing.Size(93, 36);
             this.btnDeny.TabIndex = 39;
             this.btnDeny.Text = "Deny";
             // 
@@ -111,10 +113,10 @@
             this.btnAccept.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAccept.ForeColor = System.Drawing.Color.White;
             this.btnAccept.HoverState.FillColor = System.Drawing.Color.Chocolate;
-            this.btnAccept.Location = new System.Drawing.Point(1255, 737);
-            this.btnAccept.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnAccept.Location = new System.Drawing.Point(837, 479);
+            this.btnAccept.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnAccept.Name = "btnAccept";
-            this.btnAccept.Size = new System.Drawing.Size(182, 56);
+            this.btnAccept.Size = new System.Drawing.Size(121, 36);
             this.btnAccept.TabIndex = 40;
             this.btnAccept.Text = "Accept";
             // 
@@ -131,9 +133,10 @@
             this.btnSeeCV.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSeeCV.ForeColor = System.Drawing.Color.Black;
             this.btnSeeCV.HoverState.FillColor = System.Drawing.Color.LightGray;
-            this.btnSeeCV.Location = new System.Drawing.Point(408, 272);
+            this.btnSeeCV.Location = new System.Drawing.Point(272, 177);
+            this.btnSeeCV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSeeCV.Name = "btnSeeCV";
-            this.btnSeeCV.Size = new System.Drawing.Size(180, 45);
+            this.btnSeeCV.Size = new System.Drawing.Size(120, 29);
             this.btnSeeCV.TabIndex = 36;
             this.btnSeeCV.Text = "See CV";
             this.btnSeeCV.Click += new System.EventHandler(this.btnSeeCV_Click);
@@ -142,9 +145,10 @@
             // 
             this.lblNameJob.AutoSize = true;
             this.lblNameJob.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNameJob.Location = new System.Drawing.Point(402, 221);
+            this.lblNameJob.Location = new System.Drawing.Point(268, 144);
+            this.lblNameJob.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNameJob.Name = "lblNameJob";
-            this.lblNameJob.Size = new System.Drawing.Size(187, 34);
+            this.lblNameJob.Size = new System.Drawing.Size(124, 22);
             this.lblNameJob.TabIndex = 35;
             this.lblNameJob.Text = "Job applied:";
             // 
@@ -152,9 +156,10 @@
             // 
             this.lblNamePeople.AutoSize = true;
             this.lblNamePeople.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNamePeople.Location = new System.Drawing.Point(403, 169);
+            this.lblNamePeople.Location = new System.Drawing.Point(269, 110);
+            this.lblNamePeople.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNamePeople.Name = "lblNamePeople";
-            this.lblNamePeople.Size = new System.Drawing.Size(106, 34);
+            this.lblNamePeople.Size = new System.Drawing.Size(71, 22);
             this.lblNamePeople.TabIndex = 34;
             this.lblNamePeople.Text = "Name:";
             // 
@@ -171,15 +176,15 @@
             this.btnBack.ForeColor = System.Drawing.Color.Black;
             this.btnBack.Image = global::FindJobApplication.Properties.Resources.back;
             this.btnBack.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnBack.Location = new System.Drawing.Point(3, 2);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnBack.Location = new System.Drawing.Point(2, 1);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnBack.Name = "btnBack";
             this.btnBack.OnHoverBaseColor = System.Drawing.Color.White;
             this.btnBack.OnHoverBorderColor = System.Drawing.Color.Red;
             this.btnBack.OnHoverForeColor = System.Drawing.Color.Red;
             this.btnBack.OnHoverImage = null;
             this.btnBack.OnPressedColor = System.Drawing.Color.White;
-            this.btnBack.Size = new System.Drawing.Size(160, 42);
+            this.btnBack.Size = new System.Drawing.Size(107, 27);
             this.btnBack.TabIndex = 33;
             this.btnBack.Text = "Back";
             this.btnBack.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -189,32 +194,36 @@
             // 
             this.lblCVProfile.AutoSize = true;
             this.lblCVProfile.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCVProfile.Location = new System.Drawing.Point(61, 283);
+            this.lblCVProfile.Location = new System.Drawing.Point(41, 184);
+            this.lblCVProfile.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCVProfile.Name = "lblCVProfile";
-            this.lblCVProfile.Size = new System.Drawing.Size(157, 34);
+            this.lblCVProfile.Size = new System.Drawing.Size(103, 22);
             this.lblCVProfile.TabIndex = 7;
             this.lblCVProfile.Text = "CV Profile:";
             // 
             // guna2Separator3
             // 
             this.guna2Separator3.FillStyle = System.Drawing.Drawing2D.DashStyle.DashDotDot;
-            this.guna2Separator3.Location = new System.Drawing.Point(65, 354);
+            this.guna2Separator3.Location = new System.Drawing.Point(43, 230);
+            this.guna2Separator3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2Separator3.Name = "guna2Separator3";
-            this.guna2Separator3.Size = new System.Drawing.Size(1371, 10);
+            this.guna2Separator3.Size = new System.Drawing.Size(914, 6);
             this.guna2Separator3.TabIndex = 6;
             // 
             // guna2Separator2
             // 
-            this.guna2Separator2.Location = new System.Drawing.Point(24, 135);
+            this.guna2Separator2.Location = new System.Drawing.Point(16, 88);
+            this.guna2Separator2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2Separator2.Name = "guna2Separator2";
-            this.guna2Separator2.Size = new System.Drawing.Size(1481, 10);
+            this.guna2Separator2.Size = new System.Drawing.Size(987, 6);
             this.guna2Separator2.TabIndex = 5;
             // 
             // guna2Separator1
             // 
-            this.guna2Separator1.Location = new System.Drawing.Point(24, 675);
+            this.guna2Separator1.Location = new System.Drawing.Point(16, 439);
+            this.guna2Separator1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2Separator1.Name = "guna2Separator1";
-            this.guna2Separator1.Size = new System.Drawing.Size(1481, 10);
+            this.guna2Separator1.Size = new System.Drawing.Size(987, 6);
             this.guna2Separator1.TabIndex = 4;
             // 
             // rtxtCoverLetter
@@ -222,10 +231,11 @@
             this.rtxtCoverLetter.BackColor = System.Drawing.Color.White;
             this.rtxtCoverLetter.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtxtCoverLetter.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtxtCoverLetter.Location = new System.Drawing.Point(66, 437);
+            this.rtxtCoverLetter.Location = new System.Drawing.Point(44, 284);
+            this.rtxtCoverLetter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rtxtCoverLetter.Name = "rtxtCoverLetter";
             this.rtxtCoverLetter.ReadOnly = true;
-            this.rtxtCoverLetter.Size = new System.Drawing.Size(1371, 203);
+            this.rtxtCoverLetter.Size = new System.Drawing.Size(914, 132);
             this.rtxtCoverLetter.TabIndex = 3;
             this.rtxtCoverLetter.Text = resources.GetString("rtxtCoverLetter.Text");
             // 
@@ -233,9 +243,10 @@
             // 
             this.lblCoverLetter.AutoSize = true;
             this.lblCoverLetter.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCoverLetter.Location = new System.Drawing.Point(61, 377);
+            this.lblCoverLetter.Location = new System.Drawing.Point(41, 245);
+            this.lblCoverLetter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCoverLetter.Name = "lblCoverLetter";
-            this.lblCoverLetter.Size = new System.Drawing.Size(183, 34);
+            this.lblCoverLetter.Size = new System.Drawing.Size(126, 22);
             this.lblCoverLetter.TabIndex = 2;
             this.lblCoverLetter.Text = "CoverLetter:";
             // 
@@ -243,19 +254,22 @@
             // 
             this.lblNameJobTitle.AutoSize = true;
             this.lblNameJobTitle.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNameJobTitle.Location = new System.Drawing.Point(57, 221);
+            this.lblNameJobTitle.Location = new System.Drawing.Point(38, 144);
+            this.lblNameJobTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNameJobTitle.Name = "lblNameJobTitle";
-            this.lblNameJobTitle.Size = new System.Drawing.Size(187, 34);
+            this.lblNameJobTitle.Size = new System.Drawing.Size(124, 22);
             this.lblNameJobTitle.TabIndex = 1;
             this.lblNameJobTitle.Text = "Job applied:";
             // 
             // UCCompanySeeProfilePeople
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pnlMain);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "UCCompanySeeProfilePeople";
-            this.Size = new System.Drawing.Size(1544, 851);
+            this.Size = new System.Drawing.Size(1029, 553);
+            this.Load += new System.EventHandler(this.UCCompanySeeProfilePeople_Load);
             this.pnlMain.ResumeLayout(false);
             this.pnlMain.PerformLayout();
             this.ResumeLayout(false);

@@ -1,9 +1,13 @@
 ﻿using FindJobApplication.DB;
 using FindJobApplication.Models;
+using Guna.UI2.WinForms.Suite;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Data;
 using System.Linq;
+using System.Net;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media.Imaging;
@@ -33,7 +37,7 @@ namespace FindJobApplication.Daos
 
         public DataTable findAll()
         {
-            string sqlStr = "select job_post.id, job_post.title, job_post.recruitment_number, job_post.salary, job_post.description, job_post.requirement, job_post.prioritize, job_post.benefit, job_post.post_date, job_post.expire_date, job_post.address, company_profile.name as company_name, location.name as location_name, year_experience.name as year_experience_name " +
+            string sqlStr = "select job_post.id, job_post.title, job_post.recruitment_number, job_post.salary, job_post.description, job_post.requirement, job_post.prioritize, job_post.benefit, job_post.post_date, job_post.expire_date, job_post.address, company_profile.id as company_id, company_profile.name as company_name, location.name as location_name, year_experience.name as year_experience_name " +
                             "from job_post, location, year_experience, company_profile " +
                             "where job_post.location_id = location.id and job_post.year_experience_id = year_experience.id and job_post.company_id = company_profile.id;";
             return db.Read(sqlStr);
@@ -41,7 +45,7 @@ namespace FindJobApplication.Daos
 
         public DataRow findById(int id)
         {
-            string sqlStr = String.Format("select * from job_post where id=@Id;");
+            string sqlStr = $"select * from job_post where id={id};";
             return (DataRow)db.Read(sqlStr).Rows[0];
         }
 
@@ -50,6 +54,14 @@ namespace FindJobApplication.Daos
             string sqlStr = "select job_post_company.id, job_post_company.title, job_post_company.recruitment_number, job_post_company.salary, job_post_company.description, job_post_company.requirement, job_post_company.prioritize, job_post_company.benefit, job_post_company.post_date, job_post_company.expire_date, job_post_company.address, company_profile.name as company_name, location.name as location_name, year_experience.name as year_experience_name " +
                             $"from(select * from job_post where company_id = {id}) as job_post_company, location, year_experience, company_profile " +
                             "where job_post_company.location_id = location.id and job_post_company.year_experience_id = year_experience.id and job_post_company.company_id = company_profile.id;";
+            return db.Read(sqlStr);
+        }
+
+        public DataTable findByJobId(int id)
+        {
+            string sqlStr = "select job_post.id, job_post.title, job_post.recruitment_number, job_post.salary, job_post.description, job_post.requirement, job_post.prioritize, job_post.benefit, job_post.post_date, job_post.expire_date, job_post.address, company_profile.id as company_id, company_profile.name as company_name, location.name as location_name, year_experience.name as year_experience_name " +
+                           "from job_post, location, year_experience, company_profile " +
+                           $"where job_post.location_id = location.id and job_post.year_experience_id = year_experience.id and job_post.company_id = company_profile.id and job_post.id = {id};";
             return db.Read(sqlStr);
         }
 
@@ -65,6 +77,18 @@ namespace FindJobApplication.Daos
         {
             string sqlStr = $"select * from user_profile, (select * from user_apply_job where job_post_id = {jobPostId}) as user_apply where user_profile.id = user_apply.user_id";
             return db.Read(sqlStr);
+        }
+
+        public int deleteById(int jobPostId)
+        {
+            string sqlStr = $"delete from job_post where id={jobPostId};";
+            return db.Excute(sqlStr);
+        }
+
+        public int updateById(JobPost jobPost, int jobPostId)
+        {
+            string sqlStr = $@"UPDATE job_post SET title = '{jobPost.Title}', recruitment_number = {jobPost.RecruitmentNumber}, salary = {jobPost.Salary}, description = '{jobPost.Description}', requirement = '{jobPost.Requirement}', prioritize = '{jobPost.Prioritize}', benefit = '{jobPost.Benefit}', post_date = '{jobPost.PostDate:yyyy-MM-dd}', expire_date = '{jobPost.ExpireDate:yyyy-MM-dd}', address = '{jobPost.Address}', year_experience_id = {jobPost.YearExperienceId}, location_id = {jobPost.LocationId}, company_id = {jobPost.CompanyId} WHERE id = {jobPostId};";
+            return db.Excute(sqlStr);
         }
     }
 }

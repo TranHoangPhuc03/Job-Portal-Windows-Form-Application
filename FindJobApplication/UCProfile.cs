@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FindJobApplication.Daos;
+using FindJobApplication.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,7 +15,7 @@ namespace FindJobApplication
     public partial class UCProfile : UserControl
     {
         public static int statusBtnFollowUser = 1;
-
+        private int userId;
         UCUCUserProfileEducationAndWorkExperience uCEduaction = new UCUCUserProfileEducationAndWorkExperience();
         UCUCUserProfileEducationAndWorkExperience uCWorkExperience = new UCUCUserProfileEducationAndWorkExperience();
         UCUserProfileSkill uCUserProfileSkill = new UCUserProfileSkill();
@@ -23,16 +25,15 @@ namespace FindJobApplication
         {
             InitializeComponent();
             panelProfile.AutoScroll = true;
-            loadProfile();
             btnBack.Visible = false;
+            this.userId = Global.loginId;
         }
-        public void loadProfile()
+
+        public UCProfile(int userId) : this()
         {
-            pnlEducationDetail.Controls.Add(uCEduaction);
-            pnlWorkExperienceDetail.Controls.Add(uCWorkExperience);
-            pnlSkillDetail.Controls.Add(uCUserProfileSkill);
-            pnlProjectDetail.Controls.Add(uCUserProfileProject);
+            this.userId = userId;
         }
+
         public void hideAllBtn()
         {
             btnBack.Visible = true;
@@ -100,17 +101,57 @@ namespace FindJobApplication
 
         private void btnFollow_Click(object sender, EventArgs e)
         {
+            CompanyProfileDao companyProfileDao = new CompanyProfileDao();
             if (statusBtnFollowUser == 1)
             {
                 btnFollow.Image = Properties.Resources.unFollow;
                 btnFollow.Text = "Following";
                 statusBtnFollowUser = 2;
+                companyProfileDao.saveUserFollowing(Global.loginId, this.userId);
             }
             else
             {
                 btnFollow.Image = Properties.Resources.Follow;
                 btnFollow.Text = "Follow";
                 statusBtnFollowUser = 1;
+                companyProfileDao.deleteUserFollowing(Global.loginId, this.userId);
+            }
+        }
+
+        private void UCProfile_Load(object sender, EventArgs e)
+        {
+            UserProfileDao userProfileDao = new UserProfileDao();
+            UserProfile userProfile = userProfileDao.findUserById(this.userId);
+
+            this.lblProfileName.Text = userProfile.Name;
+            this.lblProfileEmail.Text = userProfile.Email;
+            this.lblProfileGender.Text = userProfile.Gender;
+            this.lblProfileDateOfBirth.Text = userProfile.DateOfBirth.ToString();
+            this.lblProfilePhoneNumber.Text = userProfile.PhoneNumber;
+            this.lblProfileAddress.Text = userProfile.Address;
+            this.lblProfileTitle.Text = userProfile.Title;
+            this.lblProfileLink.Text = userProfile.PersonalLink;
+            this.rtxtAboutMe.Text = userProfile.AboutMe;
+            this.pnlEducationDetail.Controls.Clear();
+            foreach (var item in userProfile.UserEducations)
+            {
+                UCUCUserProfileEducationAndWorkExperience uCUCUserProfileEducationAndWorkExperience = new UCUCUserProfileEducationAndWorkExperience(item);
+                this.pnlEducationDetail.Controls.Add(uCUCUserProfileEducationAndWorkExperience);
+            }
+            foreach (var item in userProfile.UserWorkExperiences)
+            {
+                UCUCUserProfileEducationAndWorkExperience uCUCUserProfileEducationAndWorkExperience = new UCUCUserProfileEducationAndWorkExperience(item);
+                this.pnlWorkExperienceDetail.Controls.Add(uCUCUserProfileEducationAndWorkExperience);
+            }
+            foreach (var item in userProfile.UserSkills)
+            {
+                UCUserProfileSkill uCUserProfileSkill = new UCUserProfileSkill(item);
+                this.pnlSkillDetail.Controls.Add(uCUserProfileSkill);
+            }
+            foreach(var item in userProfile.UserPersonalProjects)
+            {
+                UCUserProfileProject uCUserProfileProject = new UCUserProfileProject(item);
+                this.pnlProjectDetail.Controls.Add(uCUserProfileProject);
             }
         }
     }

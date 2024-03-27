@@ -25,7 +25,7 @@ namespace FindJobApplication
 
         private void pbSeeDetail_Click(object sender, EventArgs e)
         {
-            UCCompanySeeProfilePeople uCCompanySeeProfilePeople = new UCCompanySeeProfilePeople();
+            UCCompanySeeProfilePeople uCCompanySeeProfilePeople = new UCCompanySeeProfilePeople((Dictionary<string, int>)this.Tag);
             UCMain.Instance.PnlMid.Controls.Add(uCCompanySeeProfilePeople);
             uCCompanySeeProfilePeople.Location = new Point(UCMain.Instance.PnlMid.Width / 2 - uCCompanySeeProfilePeople.Width / 2, 0);
             uCCompanySeeProfilePeople.BringToFront();

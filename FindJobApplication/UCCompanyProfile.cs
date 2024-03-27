@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FindJobApplication.Daos;
+using FindJobApplication.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,12 +14,19 @@ namespace FindJobApplication
 {
     public partial class UCCompanyProfile : UserControl
     {
+        private int companyId;
         public static int statusBtnFollowCompany = 1;
         public UCCompanyProfile()
         {
             InitializeComponent();
             btnBack.Visible = false;
         }
+
+        public UCCompanyProfile(int companyId) : this()
+        {
+            this.companyId = companyId;
+        }
+
         public void hideAllButton()
         {
             btnBack.Visible = true;
@@ -56,6 +65,22 @@ namespace FindJobApplication
                 btnFollow.Text = "Follow";
                 statusBtnFollowCompany = 1;
             }
+        }
+
+        private void UCCompanyProfile_Load(object sender, EventArgs e)
+        {
+            CompanyProfileDao companyProfileDao = new CompanyProfileDao();
+            CompanyProfile companyProfile = companyProfileDao.findCompanyProfileById(this.companyId);
+
+            this.lblProfileCompany.Text = companyProfile.Name;
+            this.lblProfileAddress.Text = companyProfile.Address;
+            this.lblProfileCompanySize.Text = companyProfile.CompanySize.ToString();
+            this.lblProfilePhone.Text = companyProfile.PhoneNumber;
+            this.lblProfileDateEstablish.Text = companyProfile.DateEstablish.ToString("dd-MM-yyyy");
+            this.lblProfileEmail.Text = companyProfile.Email;
+            this.lblProfileLink.Text = companyProfile.CompanyLink;
+            this.rtxtTop3Reason.Text = companyProfile.Reason;
+            this.rTxtOverview.Text = companyProfile.Overview;
         }
     }
 }
