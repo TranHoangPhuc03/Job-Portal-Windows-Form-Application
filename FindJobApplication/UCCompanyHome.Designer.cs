@@ -35,6 +35,8 @@
             this.pnlNumberOfApplicants = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.pnlTopTableJob = new Guna.UI2.WinForms.Guna2Panel();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.lblID = new Guna.UI.WinForms.GunaLabel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -47,16 +49,14 @@
             this.btnExpiration = new Guna.UI2.WinForms.Guna2Button();
             this.btnStillRecruitment = new Guna.UI2.WinForms.Guna2Button();
             this.btnAllJob = new Guna.UI2.WinForms.Guna2Button();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.gunaElipsePanel1.SuspendLayout();
             this.pnlTableJob.SuspendLayout();
             this.pnlTopTableJob.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // gunaElipsePanel1
@@ -67,10 +67,11 @@
             this.gunaElipsePanel1.Controls.Add(this.btnExpiration);
             this.gunaElipsePanel1.Controls.Add(this.btnStillRecruitment);
             this.gunaElipsePanel1.Controls.Add(this.btnAllJob);
-            this.gunaElipsePanel1.Location = new System.Drawing.Point(7, 5);
+            this.gunaElipsePanel1.Location = new System.Drawing.Point(5, 3);
+            this.gunaElipsePanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gunaElipsePanel1.Name = "gunaElipsePanel1";
             this.gunaElipsePanel1.Radius = 15;
-            this.gunaElipsePanel1.Size = new System.Drawing.Size(1534, 843);
+            this.gunaElipsePanel1.Size = new System.Drawing.Size(1023, 548);
             this.gunaElipsePanel1.TabIndex = 0;
             // 
             // pnlTableJob
@@ -84,9 +85,10 @@
             this.pnlTableJob.Controls.Add(this.guna2Separator1);
             this.pnlTableJob.Controls.Add(this.pnlTopTableJob);
             this.pnlTableJob.FillColor = System.Drawing.SystemColors.ButtonFace;
-            this.pnlTableJob.Location = new System.Drawing.Point(12, 40);
+            this.pnlTableJob.Location = new System.Drawing.Point(8, 26);
+            this.pnlTableJob.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlTableJob.Name = "pnlTableJob";
-            this.pnlTableJob.Size = new System.Drawing.Size(1509, 791);
+            this.pnlTableJob.Size = new System.Drawing.Size(1006, 514);
             this.pnlTableJob.TabIndex = 3;
             // 
             // btnRecruitment
@@ -102,34 +104,38 @@
             this.btnRecruitment.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnRecruitment.ForeColor = System.Drawing.Color.White;
             this.btnRecruitment.HoverState.FillColor = System.Drawing.Color.Chocolate;
-            this.btnRecruitment.Location = new System.Drawing.Point(1311, 738);
+            this.btnRecruitment.Location = new System.Drawing.Point(874, 480);
+            this.btnRecruitment.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRecruitment.Name = "btnRecruitment";
-            this.btnRecruitment.Size = new System.Drawing.Size(180, 45);
+            this.btnRecruitment.Size = new System.Drawing.Size(120, 29);
             this.btnRecruitment.TabIndex = 5;
             this.btnRecruitment.Text = "Recruitment";
             this.btnRecruitment.Click += new System.EventHandler(this.btnRecruitment_Click);
             // 
             // guna2Separator2
             // 
-            this.guna2Separator2.Location = new System.Drawing.Point(21, 723);
+            this.guna2Separator2.Location = new System.Drawing.Point(14, 470);
+            this.guna2Separator2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2Separator2.Name = "guna2Separator2";
-            this.guna2Separator2.Size = new System.Drawing.Size(1472, 9);
+            this.guna2Separator2.Size = new System.Drawing.Size(981, 6);
             this.guna2Separator2.TabIndex = 4;
             // 
             // pnlNumberOfApplicants
             // 
             this.pnlNumberOfApplicants.AutoScroll = true;
             this.pnlNumberOfApplicants.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.pnlNumberOfApplicants.Location = new System.Drawing.Point(15, 77);
+            this.pnlNumberOfApplicants.Location = new System.Drawing.Point(10, 50);
+            this.pnlNumberOfApplicants.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlNumberOfApplicants.Name = "pnlNumberOfApplicants";
-            this.pnlNumberOfApplicants.Size = new System.Drawing.Size(1491, 638);
+            this.pnlNumberOfApplicants.Size = new System.Drawing.Size(994, 415);
             this.pnlNumberOfApplicants.TabIndex = 3;
             // 
             // guna2Separator1
             // 
-            this.guna2Separator1.Location = new System.Drawing.Point(26, 62);
+            this.guna2Separator1.Location = new System.Drawing.Point(17, 40);
+            this.guna2Separator1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2Separator1.Name = "guna2Separator1";
-            this.guna2Separator1.Size = new System.Drawing.Size(1466, 9);
+            this.guna2Separator1.Size = new System.Drawing.Size(977, 6);
             this.guna2Separator1.TabIndex = 2;
             // 
             // pnlTopTableJob
@@ -150,19 +156,45 @@
             this.pnlTopTableJob.Controls.Add(this.lblExpirationDate);
             this.pnlTopTableJob.Controls.Add(this.lblPostDate);
             this.pnlTopTableJob.FillColor = System.Drawing.Color.White;
-            this.pnlTopTableJob.Location = new System.Drawing.Point(21, 12);
+            this.pnlTopTableJob.Location = new System.Drawing.Point(14, 8);
+            this.pnlTopTableJob.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlTopTableJob.Name = "pnlTopTableJob";
-            this.pnlTopTableJob.Size = new System.Drawing.Size(1472, 43);
+            this.pnlTopTableJob.Size = new System.Drawing.Size(981, 28);
             this.pnlTopTableJob.TabIndex = 0;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.Color.White;
+            this.pictureBox5.Image = global::FindJobApplication.Properties.Resources.people;
+            this.pictureBox5.Location = new System.Drawing.Point(698, 2);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(41, 24);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 10;
+            this.pictureBox5.TabStop = false;
+            // 
+            // gunaLabel1
+            // 
+            this.gunaLabel1.AutoSize = true;
+            this.gunaLabel1.BackColor = System.Drawing.Color.White;
+            this.gunaLabel1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel1.Location = new System.Drawing.Point(738, 4);
+            this.gunaLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.gunaLabel1.Name = "gunaLabel1";
+            this.gunaLabel1.Size = new System.Drawing.Size(80, 21);
+            this.gunaLabel1.TabIndex = 9;
+            this.gunaLabel1.Text = "Quantity";
             // 
             // lblID
             // 
             this.lblID.AutoSize = true;
             this.lblID.BackColor = System.Drawing.Color.White;
             this.lblID.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblID.Location = new System.Drawing.Point(12, 6);
+            this.lblID.Location = new System.Drawing.Point(8, 4);
+            this.lblID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(37, 30);
+            this.lblID.Size = new System.Drawing.Size(27, 21);
             this.lblID.TabIndex = 8;
             this.lblID.Text = "ID";
             // 
@@ -170,9 +202,10 @@
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.White;
             this.pictureBox4.Image = global::FindJobApplication.Properties.Resources.salary2;
-            this.pictureBox4.Location = new System.Drawing.Point(843, 3);
+            this.pictureBox4.Location = new System.Drawing.Point(562, 2);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(62, 37);
+            this.pictureBox4.Size = new System.Drawing.Size(41, 24);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 7;
             this.pictureBox4.TabStop = false;
@@ -181,9 +214,10 @@
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.White;
             this.pictureBox3.Image = global::FindJobApplication.Properties.Resources.expired;
-            this.pictureBox3.Location = new System.Drawing.Point(542, 3);
+            this.pictureBox3.Location = new System.Drawing.Point(361, 2);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(62, 37);
+            this.pictureBox3.Size = new System.Drawing.Size(41, 24);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 6;
             this.pictureBox3.TabStop = false;
@@ -192,9 +226,10 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.White;
             this.pictureBox2.Image = global::FindJobApplication.Properties.Resources.start_date1;
-            this.pictureBox2.Location = new System.Drawing.Point(310, 3);
+            this.pictureBox2.Location = new System.Drawing.Point(207, 2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(62, 37);
+            this.pictureBox2.Size = new System.Drawing.Size(41, 24);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 5;
             this.pictureBox2.TabStop = false;
@@ -203,9 +238,10 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.Image = global::FindJobApplication.Properties.Resources.label;
-            this.pictureBox1.Location = new System.Drawing.Point(124, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(83, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(62, 37);
+            this.pictureBox1.Size = new System.Drawing.Size(41, 24);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
@@ -217,9 +253,10 @@
             this.lblNameJob.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNameJob.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lblNameJob.ImageKey = "(none)";
-            this.lblNameJob.Location = new System.Drawing.Point(184, 6);
+            this.lblNameJob.Location = new System.Drawing.Point(123, 4);
+            this.lblNameJob.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNameJob.Name = "lblNameJob";
-            this.lblNameJob.Size = new System.Drawing.Size(87, 30);
+            this.lblNameJob.Size = new System.Drawing.Size(58, 21);
             this.lblNameJob.TabIndex = 0;
             this.lblNameJob.Text = "Name";
             this.lblNameJob.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -229,9 +266,10 @@
             this.lblSalary.AutoSize = true;
             this.lblSalary.BackColor = System.Drawing.Color.White;
             this.lblSalary.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSalary.Location = new System.Drawing.Point(903, 6);
+            this.lblSalary.Location = new System.Drawing.Point(602, 4);
+            this.lblSalary.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSalary.Name = "lblSalary";
-            this.lblSalary.Size = new System.Drawing.Size(83, 30);
+            this.lblSalary.Size = new System.Drawing.Size(56, 21);
             this.lblSalary.TabIndex = 3;
             this.lblSalary.Text = "Salary";
             // 
@@ -240,9 +278,10 @@
             this.lblExpirationDate.AutoSize = true;
             this.lblExpirationDate.BackColor = System.Drawing.Color.White;
             this.lblExpirationDate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblExpirationDate.Location = new System.Drawing.Point(600, 6);
+            this.lblExpirationDate.Location = new System.Drawing.Point(400, 4);
+            this.lblExpirationDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblExpirationDate.Name = "lblExpirationDate";
-            this.lblExpirationDate.Size = new System.Drawing.Size(193, 30);
+            this.lblExpirationDate.Size = new System.Drawing.Size(131, 21);
             this.lblExpirationDate.TabIndex = 2;
             this.lblExpirationDate.Text = "Expiration Date";
             // 
@@ -251,9 +290,10 @@
             this.lblPostDate.AutoSize = true;
             this.lblPostDate.BackColor = System.Drawing.Color.White;
             this.lblPostDate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPostDate.Location = new System.Drawing.Point(370, 6);
+            this.lblPostDate.Location = new System.Drawing.Point(247, 4);
+            this.lblPostDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPostDate.Name = "lblPostDate";
-            this.lblPostDate.Size = new System.Drawing.Size(126, 30);
+            this.lblPostDate.Size = new System.Drawing.Size(86, 21);
             this.lblPostDate.TabIndex = 1;
             this.lblPostDate.Text = "Post Date";
             // 
@@ -270,12 +310,14 @@
             this.btnExpiration.FillColor = System.Drawing.SystemColors.ButtonFace;
             this.btnExpiration.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExpiration.ForeColor = System.Drawing.Color.Black;
-            this.btnExpiration.Location = new System.Drawing.Point(636, 9);
+            this.btnExpiration.Location = new System.Drawing.Point(424, 6);
+            this.btnExpiration.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnExpiration.Name = "btnExpiration";
-            this.btnExpiration.Size = new System.Drawing.Size(234, 62);
+            this.btnExpiration.Size = new System.Drawing.Size(156, 40);
             this.btnExpiration.TabIndex = 3;
             this.btnExpiration.Text = "Expiration";
             this.btnExpiration.TextOffset = new System.Drawing.Point(0, -15);
+            this.btnExpiration.Click += new System.EventHandler(this.btnExpiration_Click);
             // 
             // btnStillRecruitment
             // 
@@ -290,12 +332,14 @@
             this.btnStillRecruitment.FillColor = System.Drawing.SystemColors.ButtonFace;
             this.btnStillRecruitment.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStillRecruitment.ForeColor = System.Drawing.Color.Black;
-            this.btnStillRecruitment.Location = new System.Drawing.Point(396, 9);
+            this.btnStillRecruitment.Location = new System.Drawing.Point(264, 6);
+            this.btnStillRecruitment.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnStillRecruitment.Name = "btnStillRecruitment";
-            this.btnStillRecruitment.Size = new System.Drawing.Size(234, 62);
+            this.btnStillRecruitment.Size = new System.Drawing.Size(156, 40);
             this.btnStillRecruitment.TabIndex = 4;
             this.btnStillRecruitment.Text = "Still Recruitment";
             this.btnStillRecruitment.TextOffset = new System.Drawing.Point(0, -15);
+            this.btnStillRecruitment.Click += new System.EventHandler(this.btnStillRecruitment_Click);
             // 
             // btnAllJob
             // 
@@ -310,52 +354,32 @@
             this.btnAllJob.FillColor = System.Drawing.SystemColors.ButtonFace;
             this.btnAllJob.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAllJob.ForeColor = System.Drawing.Color.Black;
-            this.btnAllJob.Location = new System.Drawing.Point(156, 9);
+            this.btnAllJob.Location = new System.Drawing.Point(104, 6);
+            this.btnAllJob.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAllJob.Name = "btnAllJob";
-            this.btnAllJob.Size = new System.Drawing.Size(234, 62);
+            this.btnAllJob.Size = new System.Drawing.Size(156, 40);
             this.btnAllJob.TabIndex = 2;
             this.btnAllJob.Text = "All job";
             this.btnAllJob.TextOffset = new System.Drawing.Point(0, -15);
             this.btnAllJob.Click += new System.EventHandler(this.btnAllJob_Click);
             // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackColor = System.Drawing.Color.White;
-            this.pictureBox5.Image = global::FindJobApplication.Properties.Resources.people;
-            this.pictureBox5.Location = new System.Drawing.Point(1047, 3);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(62, 37);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 10;
-            this.pictureBox5.TabStop = false;
-            // 
-            // gunaLabel1
-            // 
-            this.gunaLabel1.AutoSize = true;
-            this.gunaLabel1.BackColor = System.Drawing.Color.White;
-            this.gunaLabel1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel1.Location = new System.Drawing.Point(1107, 6);
-            this.gunaLabel1.Name = "gunaLabel1";
-            this.gunaLabel1.Size = new System.Drawing.Size(115, 30);
-            this.gunaLabel1.TabIndex = 9;
-            this.gunaLabel1.Text = "Quantity";
-            // 
             // UCCompanyHome
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.gunaElipsePanel1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "UCCompanyHome";
-            this.Size = new System.Drawing.Size(1544, 851);
+            this.Size = new System.Drawing.Size(1029, 553);
             this.gunaElipsePanel1.ResumeLayout(false);
             this.pnlTableJob.ResumeLayout(false);
             this.pnlTopTableJob.ResumeLayout(false);
             this.pnlTopTableJob.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
 
         }

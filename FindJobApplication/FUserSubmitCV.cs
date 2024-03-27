@@ -29,6 +29,10 @@ namespace FindJobApplication
             string coverLetter = this.rtxtCoverLeter.Text;
             string status = "PENDING";
             DateTime appliedAt = DateTime.Now;
+            if (this.rbtnNewCv.Checked)
+            {
+                //Get cv file path
+            }
             int res = jobApplyDao.saveUserApplyJob(appliedAt, Global.loginId, this.jobId, status, coverLetter);
             if (res > 0)
             {

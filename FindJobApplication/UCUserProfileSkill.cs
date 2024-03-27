@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FindJobApplication.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,10 @@ namespace FindJobApplication
         public UCUserProfileSkill()
         {
             InitializeComponent();
+        }
+        public UCUserProfileSkill(UserSkill userSkill) : this()
+        {
+            this.btnSkill.Text = userSkill.SkillName;
         }
     }
 }

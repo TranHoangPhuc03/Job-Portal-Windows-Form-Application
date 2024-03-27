@@ -58,11 +58,14 @@ namespace FindJobApplication
             foreach (DataRow row in dt.Rows)
             {
                 JobPost jobPost = new JobPost(Convert.ToInt32(row["id"]), row["title"].ToString());
-                UCJob uCJob = new UCJob(jobPost);
+                UCJob uCJob = new UCJob();
                 uCJob.JobName.Text = row["title"].ToString();
                 uCJob.CompanyName.Text = row["company_name"].ToString();
                 uCJob.Location.Text = row["location_name"].ToString();
                 uCJob.Salary.Text = row["salary"].ToString();
+                uCJob.Tag = jobPost;
+                uCJob.LinkLabelJob.Tag = (int)row["id"];
+                uCJob.CompanyName.Tag = (int)row["company_id"];
                 jobList.Add(uCJob);
             }
             return jobList;

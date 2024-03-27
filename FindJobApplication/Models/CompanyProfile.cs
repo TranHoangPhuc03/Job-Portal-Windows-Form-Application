@@ -16,18 +16,44 @@ namespace FindJobApplication.Models
         private string companyLink;
         private string reason;
         private string overview;
+        private string businessLicense;
+
+        public CompanyProfile() { }
+        public CompanyProfile(int companyAccId, string name, string email, string businessLicense)
+        {
+            this.companyAcdId = companyAccId;
+            this.name = name;
+            this.email = email;
+            this.businessLicense = businessLicense;
+        }
+        public CompanyProfile(int id, int companyAcdId, string name, string email, string phoneNumber, string address, string companyImage, DateTime dateEstablish, int companySize, string companyLink, string reason, string overview)
+        {
+            this.id = id;
+            this.companyAcdId = companyAcdId;
+            this.name = name;
+            this.email = email;
+            this.phoneNumber = phoneNumber;
+            this.address = address;
+            this.companyImage = companyImage;
+            this.dateEstablish = dateEstablish;
+            this.companySize = companySize;
+            this.companyLink = companyLink;
+            this.reason = reason;
+            this.overview = overview;
+        }
 
         public int Id { get; }
-        public int CompanyAccId { get; }
-        public string Name { get; set; }
-        public string Email { get; set; }
-        public string PhoneNumber { get; set; }
-        public string Address { get; set; }
-        public string CompanyImage { get; set; }
-        public DateTime DateEstablish { get; set; }
-        public int CompanySize { get; set; }
-        public string CompanyLink { get; set; }
-        public string Reason { get; set; }
-        public string Overview { get; set; }
+        public int CompanyAccId { get => companyAcdId; }
+        public string Name { get => name; set => this.name = value; }
+        public string Email { get => email; set => this.email = value; }
+        public string PhoneNumber { get => phoneNumber; }
+        public string Address { get => address; }
+        public string CompanyImage { get => companyImage; }
+        public DateTime DateEstablish { get => dateEstablish; }
+        public int CompanySize { get => companySize; }
+        public string CompanyLink { get => companyLink; }
+        public string Reason { get => reason; }
+        public string Overview { get => overview; }
+        public string BusinessLicense { get => businessLicense; set => this.businessLicense = value; }
     }
 }

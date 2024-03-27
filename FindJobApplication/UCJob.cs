@@ -15,13 +15,12 @@ namespace FindJobApplication
     public partial class UCJob : UserControl
     {
         public int count = 0;
-        public UCJob() { }
-        public UCJob(JobPost jobPost)
+        public UCJob()
         {
             InitializeComponent();
             pbSave.BringToFront();
-            this.Tag = jobPost;
         }
+
         public new GunaLinkLabel LinkLabelJob { get => lLblNameJob; set { lLblNameJob = value; } }
         public GunaLinkLabel JobName { get => lLblNameJob; set { lLblNameJob = value; } }
         public new GunaLinkLabel CompanyName { get => lblNameCompany; set { lblNameCompany = value; } }
@@ -52,7 +51,7 @@ namespace FindJobApplication
 
         private void lLblNameJob_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            UCJobInformation uCJobInformation = new UCJobInformation();
+            UCJobInformation uCJobInformation = new UCJobInformation((int)(sender as Control).Tag);
             UCMain.Instance.PnlMid.Controls.Add(uCJobInformation);
             uCJobInformation.Location = new Point(UCMain.Instance.PnlMid.Width / 2 - uCJobInformation.Width / 2, 0);
             uCJobInformation.BringToFront();
@@ -60,7 +59,7 @@ namespace FindJobApplication
 
         private void lblNameCompany_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            UCCompanyProfile uCCompanyProfile = new UCCompanyProfile();
+            UCCompanyProfile uCCompanyProfile = new UCCompanyProfile((int)(sender as Control).Tag);
             UCMain.Instance.PnlMid.Controls.Add(uCCompanyProfile);
             uCCompanyProfile.hideAllButton();
             uCCompanyProfile.Location = new Point(UCMain.Instance.PnlMid.Width / 2 - uCCompanyProfile.Width / 2, 0);

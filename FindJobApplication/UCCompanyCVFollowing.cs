@@ -22,7 +22,7 @@ namespace FindJobApplication
 
         private void llblName_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            UCProfile uCProfile = new UCProfile();
+            UCProfile uCProfile = new UCProfile((int)this.Tag);
             UCMain.Instance.PnlMid.Controls.Add(uCProfile);
             uCProfile.hideAllBtn();
             uCProfile.BringToFront();

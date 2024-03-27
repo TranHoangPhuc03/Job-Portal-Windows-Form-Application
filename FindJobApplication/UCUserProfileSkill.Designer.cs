@@ -36,6 +36,7 @@
             this.btnSkill.BackColor = System.Drawing.Color.White;
             this.btnSkill.BorderRadius = 20;
             this.btnSkill.BorderThickness = 1;
+            this.btnSkill.DefaultAutoSize = true;
             this.btnSkill.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnSkill.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnSkill.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -47,20 +48,24 @@
             this.btnSkill.HoverState.CustomBorderColor = System.Drawing.Color.Black;
             this.btnSkill.HoverState.FillColor = System.Drawing.Color.White;
             this.btnSkill.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnSkill.Location = new System.Drawing.Point(3, 3);
+            this.btnSkill.Location = new System.Drawing.Point(2, 2);
+            this.btnSkill.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSkill.Name = "btnSkill";
-            this.btnSkill.Size = new System.Drawing.Size(117, 45);
+            this.btnSkill.Size = new System.Drawing.Size(57, 27);
             this.btnSkill.TabIndex = 0;
             this.btnSkill.Text = ".Net";
             // 
             // UCUserProfileSkill
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.Controls.Add(this.btnSkill);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "UCUserProfileSkill";
-            this.Size = new System.Drawing.Size(124, 52);
+            this.Size = new System.Drawing.Size(83, 34);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

@@ -42,9 +42,10 @@
             // 
             this.lblEndDay.AutoSize = true;
             this.lblEndDay.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEndDay.Location = new System.Drawing.Point(82, 46);
+            this.lblEndDay.Location = new System.Drawing.Point(88, 30);
+            this.lblEndDay.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEndDay.Name = "lblEndDay";
-            this.lblEndDay.Size = new System.Drawing.Size(54, 23);
+            this.lblEndDay.Size = new System.Drawing.Size(38, 17);
             this.lblEndDay.TabIndex = 9;
             this.lblEndDay.Text = "Now";
             // 
@@ -52,9 +53,10 @@
             // 
             this.lblStartDay.AutoSize = true;
             this.lblStartDay.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStartDay.Location = new System.Drawing.Point(3, 46);
+            this.lblStartDay.Location = new System.Drawing.Point(2, 30);
+            this.lblStartDay.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblStartDay.Name = "lblStartDay";
-            this.lblStartDay.Size = new System.Drawing.Size(73, 23);
+            this.lblStartDay.Size = new System.Drawing.Size(54, 17);
             this.lblStartDay.TabIndex = 8;
             this.lblStartDay.Text = "9-2022";
             // 
@@ -62,9 +64,10 @@
             // 
             this.lblNameProject.AutoSize = true;
             this.lblNameProject.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNameProject.Location = new System.Drawing.Point(3, 14);
+            this.lblNameProject.Location = new System.Drawing.Point(2, 9);
+            this.lblNameProject.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNameProject.Name = "lblNameProject";
-            this.lblNameProject.Size = new System.Drawing.Size(230, 23);
+            this.lblNameProject.Size = new System.Drawing.Size(161, 17);
             this.lblNameProject.TabIndex = 6;
             this.lblNameProject.Text = "Video viewing website";
             // 
@@ -72,9 +75,10 @@
             // 
             this.pbDeleteProject.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbDeleteProject.Image = global::FindJobApplication.Properties.Resources.delete;
-            this.pbDeleteProject.Location = new System.Drawing.Point(779, 14);
+            this.pbDeleteProject.Location = new System.Drawing.Point(519, 9);
+            this.pbDeleteProject.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pbDeleteProject.Name = "pbDeleteProject";
-            this.pbDeleteProject.Size = new System.Drawing.Size(54, 35);
+            this.pbDeleteProject.Size = new System.Drawing.Size(36, 23);
             this.pbDeleteProject.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbDeleteProject.TabIndex = 11;
             this.pbDeleteProject.TabStop = false;
@@ -83,9 +87,10 @@
             // 
             this.pbEditProject.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbEditProject.Image = global::FindJobApplication.Properties.Resources.edit1;
-            this.pbEditProject.Location = new System.Drawing.Point(719, 14);
+            this.pbEditProject.Location = new System.Drawing.Point(479, 9);
+            this.pbEditProject.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pbEditProject.Name = "pbEditProject";
-            this.pbEditProject.Size = new System.Drawing.Size(54, 35);
+            this.pbEditProject.Size = new System.Drawing.Size(36, 23);
             this.pbEditProject.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbEditProject.TabIndex = 10;
             this.pbEditProject.TabStop = false;
@@ -96,9 +101,10 @@
             this.lblSeeProject.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblSeeProject.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSeeProject.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.lblSeeProject.Location = new System.Drawing.Point(7, 73);
+            this.lblSeeProject.Location = new System.Drawing.Point(5, 47);
+            this.lblSeeProject.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSeeProject.Name = "lblSeeProject";
-            this.lblSeeProject.Size = new System.Drawing.Size(121, 23);
+            this.lblSeeProject.Size = new System.Drawing.Size(87, 19);
             this.lblSeeProject.TabIndex = 12;
             this.lblSeeProject.TabStop = true;
             this.lblSeeProject.Text = "See project";
@@ -106,7 +112,7 @@
             // 
             // UCUserProfileProject
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.lblSeeProject);
             this.Controls.Add(this.pbDeleteProject);
@@ -114,8 +120,9 @@
             this.Controls.Add(this.lblEndDay);
             this.Controls.Add(this.lblStartDay);
             this.Controls.Add(this.lblNameProject);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "UCUserProfileProject";
-            this.Size = new System.Drawing.Size(836, 115);
+            this.Size = new System.Drawing.Size(557, 75);
             ((System.ComponentModel.ISupportInitialize)(this.pbDeleteProject)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEditProject)).EndInit();
             this.ResumeLayout(false);

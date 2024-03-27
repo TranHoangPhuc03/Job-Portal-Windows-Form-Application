@@ -18,11 +18,11 @@ namespace FindJobApplication
             InitializeComponent();
             pnlListPeopleAplly.AutoScroll = true;
         }
-        public UCCompanyListPeopleApply(object obj)
+        public UCCompanyListPeopleApply(int jobPostId)
         {
             InitializeComponent();
             pnlListPeopleAplly.AutoScroll = true;
-            this.Tag = obj;
+            this.Tag = jobPostId;
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -40,7 +40,8 @@ namespace FindJobApplication
 
         private void UCCompanyListPeopleApply_Load(object sender, EventArgs e)
         {
-            DataTable dt = (DataTable)this.Tag;
+            JobPostDao jobPostDao = new JobPostDao();
+            DataTable dt = jobPostDao.findUserProfileApply((int)this.Tag);
             int cnt = 1;
             List<UCCompanyPeopleApplied> dataControlList = new List<UCCompanyPeopleApplied>();
             foreach (DataRow row in dt.Rows)
@@ -50,6 +51,10 @@ namespace FindJobApplication
                 uCCompanyPeopleApplied.LblNamePeople.Text = row["name"].ToString();
                 uCCompanyPeopleApplied.LblDayApply.Text = row["applied_at"].ToString();
                 uCCompanyPeopleApplied.LblStatus.Text = row["status"].ToString();
+                uCCompanyPeopleApplied.Tag = new Dictionary<string, int> { 
+                    { "jobPostId", (int)this.Tag },
+                    { "userId", (int)row["id"] } 
+                };
                 dataControlList.Add(uCCompanyPeopleApplied);
             }
             loadListPeople(dataControlList);

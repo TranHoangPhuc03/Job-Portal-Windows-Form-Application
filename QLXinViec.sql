@@ -20,7 +20,7 @@ create table user_profile (
 	id int primary key identity(1, 1),
 	user_account_id int,
 	name varchar(255) not null,
-	tittle varchar(255),
+	title varchar(255),
 	email varchar(255) not null unique,
 	phone_number varchar(20),
 	date_of_birth date,
@@ -80,16 +80,13 @@ create table company_profile (
 	company_link text,
 	reason text,
 	overview text,
+	tax_code varchar(20),
+	business_license text,
 
 	foreign key (company_account_id) references account(id)
 );
 
 --COMPANY + JOBs
-create table position (
-	id int primary key identity(1, 1),
-	name varchar(255) not null unique,
-);
-
 create table skill (
 	id int primary key identity(1, 1),
 	name varchar(255) not null
@@ -140,6 +137,7 @@ create table user_apply_job (
 	[status] varchar(50) default 'PENDING',
 	cover_letter text,
 	applied_at date,
+	cv_attach text,
 
 	foreign key (user_id) references user_profile(id),
 	foreign key (job_post_id) references job_post(id)
@@ -153,6 +151,13 @@ create table user_skill (
 	foreign key (skill_id) references skill(id)
 );
 
+create table company_following(
+	company_id int,
+	user_id int,
+
+	foreign key (user_id) references user_profile(id),
+	foreign key (company_id) references company_profile(id)
+);
 -- INSERT statements for user_role table
 INSERT INTO user_role (role_name) VALUES
 ('company'),

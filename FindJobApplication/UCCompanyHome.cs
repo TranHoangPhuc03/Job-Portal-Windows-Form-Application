@@ -34,16 +34,14 @@ namespace FindJobApplication
             {
                 
                 UCCompanyJob uCCompanyJob = new UCCompanyJob();
-                int countApplied = (int)jobPostDao.countUserApply((int)row["id"]).Rows[0]["number_user_apply"];
-                uCCompanyJob.LblCountApplied.Text = countApplied.ToString();
                 uCCompanyJob.LblID.Text = (cnt++).ToString();
                 uCCompanyJob.LblNameJob.Text = row["title"].ToString();
                 uCCompanyJob.LblPostDate.Text = row["post_date"].ToString();
                 uCCompanyJob.LblExpirationDate.Text = row["expire_date"].ToString();
                 uCCompanyJob.LblSalary.Text = row["salary"].ToString();
+                uCCompanyJob.LblCountApplied.Text = ((jobPostDao.countUserApply((int)row["id"])).Rows[0]["number_user_apply"]).ToString();
+                uCCompanyJob.Tag = row["id"];
                 listUCCompanyJob.Add(uCCompanyJob);
-                DataTable userApplied = jobPostDao.findUserProfileApply((int)row["id"]);
-                uCCompanyJob.Tag = userApplied;
             }
             this.fillDataToPanel(listUCCompanyJob);
         }
@@ -59,6 +57,56 @@ namespace FindJobApplication
         {
             FCompanyJobEdit fCompanyJobEdit = new FCompanyJobEdit();
             fCompanyJobEdit.Show();
+        }
+
+        private void btnStillRecruitment_Click(object sender, EventArgs e)
+        {
+            pnlNumberOfApplicants.Controls.Clear();
+            JobPostDao jobPostDao = new JobPostDao();
+            DataTable dt = jobPostDao.findByCompanyId(Global.loginId);
+            var results = dt.AsEnumerable()
+                            .Where(row => row.Field<DateTime>("expire_date") >= DateTime.Now);
+            List<UCCompanyJob> listUCCompanyJob = new List<UCCompanyJob>();
+            int cnt = 1;
+            foreach (DataRow row in results)
+            {
+
+                UCCompanyJob uCCompanyJob = new UCCompanyJob();
+                uCCompanyJob.LblID.Text = (cnt++).ToString();
+                uCCompanyJob.LblNameJob.Text = row["title"].ToString();
+                uCCompanyJob.LblPostDate.Text = row["post_date"].ToString();
+                uCCompanyJob.LblExpirationDate.Text = row["expire_date"].ToString();
+                uCCompanyJob.LblSalary.Text = row["salary"].ToString();
+                uCCompanyJob.LblCountApplied.Text = ((jobPostDao.countUserApply((int)row["id"])).Rows[0]["number_user_apply"]).ToString();
+                uCCompanyJob.Tag = row["id"];
+                listUCCompanyJob.Add(uCCompanyJob);
+            }
+            this.fillDataToPanel(listUCCompanyJob);
+        }
+
+        private void btnExpiration_Click(object sender, EventArgs e)
+        {
+            pnlNumberOfApplicants.Controls.Clear();
+            JobPostDao jobPostDao = new JobPostDao();
+            DataTable dt = jobPostDao.findByCompanyId(Global.loginId);
+            var results = dt.AsEnumerable()
+                            .Where(row => row.Field<DateTime>("expire_date") < DateTime.Now);
+            List<UCCompanyJob> listUCCompanyJob = new List<UCCompanyJob>();
+            int cnt = 1;
+            foreach (DataRow row in results)
+            {
+
+                UCCompanyJob uCCompanyJob = new UCCompanyJob();
+                uCCompanyJob.LblID.Text = (cnt++).ToString();
+                uCCompanyJob.LblNameJob.Text = row["title"].ToString();
+                uCCompanyJob.LblPostDate.Text = row["post_date"].ToString();
+                uCCompanyJob.LblExpirationDate.Text = row["expire_date"].ToString();
+                uCCompanyJob.LblSalary.Text = row["salary"].ToString();
+                uCCompanyJob.LblCountApplied.Text = ((jobPostDao.countUserApply((int)row["id"])).Rows[0]["number_user_apply"]).ToString();
+                uCCompanyJob.Tag = row["id"];
+                listUCCompanyJob.Add(uCCompanyJob);
+            }
+            this.fillDataToPanel(listUCCompanyJob);
         }
     }
 }
