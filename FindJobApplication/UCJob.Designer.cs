@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.pnlJob = new Guna.UI2.WinForms.Guna2Panel();
+            this.pnlSkill = new System.Windows.Forms.FlowLayoutPanel();
             this.lblNameCompany = new Guna.UI.WinForms.GunaLinkLabel();
             this.btnApply = new Guna.UI.WinForms.GunaButton();
             this.pbSave = new System.Windows.Forms.PictureBox();
@@ -53,6 +54,7 @@
             this.pnlJob.BorderColor = System.Drawing.Color.Silver;
             this.pnlJob.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dash;
             this.pnlJob.BorderThickness = 1;
+            this.pnlJob.Controls.Add(this.pnlSkill);
             this.pnlJob.Controls.Add(this.lblNameCompany);
             this.pnlJob.Controls.Add(this.btnApply);
             this.pnlJob.Controls.Add(this.pbSave);
@@ -65,8 +67,15 @@
             this.pnlJob.Controls.Add(this.pBCompany);
             this.pnlJob.Location = new System.Drawing.Point(0, 3);
             this.pnlJob.Name = "pnlJob";
-            this.pnlJob.Size = new System.Drawing.Size(739, 162);
+            this.pnlJob.Size = new System.Drawing.Size(739, 181);
             this.pnlJob.TabIndex = 0;
+            // 
+            // pnlSkill
+            // 
+            this.pnlSkill.Location = new System.Drawing.Point(137, 124);
+            this.pnlSkill.Name = "pnlSkill";
+            this.pnlSkill.Size = new System.Drawing.Size(323, 54);
+            this.pnlSkill.TabIndex = 23;
             // 
             // lblNameCompany
             // 
@@ -96,7 +105,7 @@
             this.btnApply.Image = null;
             this.btnApply.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnApply.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnApply.Location = new System.Drawing.Point(486, 110);
+            this.btnApply.Location = new System.Drawing.Point(486, 127);
             this.btnApply.Name = "btnApply";
             this.btnApply.OnHoverBaseColor = System.Drawing.Color.Chocolate;
             this.btnApply.OnHoverBorderColor = System.Drawing.Color.White;
@@ -114,7 +123,7 @@
             // 
             this.pbSave.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbSave.Image = global::FindJobApplication.Properties.Resources.like;
-            this.pbSave.Location = new System.Drawing.Point(646, 110);
+            this.pbSave.Location = new System.Drawing.Point(646, 127);
             this.pbSave.Name = "pbSave";
             this.pbSave.Size = new System.Drawing.Size(74, 44);
             this.pbSave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -199,7 +208,7 @@
             this.pBCompany.Image = global::FindJobApplication.Properties.Resources.job_search;
             this.pBCompany.Location = new System.Drawing.Point(19, 16);
             this.pBCompany.Name = "pBCompany";
-            this.pBCompany.Size = new System.Drawing.Size(79, 102);
+            this.pBCompany.Size = new System.Drawing.Size(79, 121);
             this.pBCompany.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pBCompany.TabIndex = 13;
             this.pBCompany.TabStop = false;
@@ -210,7 +219,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pnlJob);
             this.Name = "UCJob";
-            this.Size = new System.Drawing.Size(742, 168);
+            this.Size = new System.Drawing.Size(742, 187);
             this.pnlJob.ResumeLayout(false);
             this.pnlJob.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbSave)).EndInit();
@@ -235,5 +244,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private Guna.UI.WinForms.GunaLinkLabel lLblNameJob;
         private Guna.UI.WinForms.GunaPictureBox pBCompany;
+        private System.Windows.Forms.FlowLayoutPanel pnlSkill;
     }
 }

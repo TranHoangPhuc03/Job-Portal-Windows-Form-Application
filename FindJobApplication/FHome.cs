@@ -54,6 +54,10 @@ namespace FindJobApplication
 
         private List<UCJob> buildJobListFromDataTable(DataTable dt)
         {
+            UCUserProfileSkill skill1 = new UCUserProfileSkill();
+            UCUserProfileSkill skill2 = new UCUserProfileSkill();
+            UCUserProfileSkill skill3 = new UCUserProfileSkill();
+
             List<UCJob> jobList = new List<UCJob>();
             foreach (DataRow row in dt.Rows)
             {
@@ -66,6 +70,10 @@ namespace FindJobApplication
                 uCJob.Tag = jobPost;
                 uCJob.LinkLabelJob.Tag = (int)row["id"];
                 uCJob.CompanyName.Tag = (int)row["company_id"];
+                uCJob.PnlSkill.Controls.Add(skill1); // add skill
+                uCJob.PnlSkill.Controls.Add(skill2); // add skill
+                uCJob.PnlSkill.Controls.Add(skill3); // add skill
+
                 jobList.Add(uCJob);
             }
             return jobList;
