@@ -29,10 +29,11 @@
         private void InitializeComponent()
         {
             this.pnlMenu = new Guna.UI.WinForms.GunaElipsePanel();
-            this.btnSetting = new Guna.UI.WinForms.GunaButton();
             this.btnFavouriteCompany = new Guna.UI.WinForms.GunaButton();
             this.btnMyJob = new Guna.UI.WinForms.GunaButton();
             this.btnProfile = new Guna.UI.WinForms.GunaButton();
+            this.btnSocialPost = new Guna.UI.WinForms.GunaButton();
+            this.btnSetting = new Guna.UI.WinForms.GunaButton();
             this.pnlMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -41,6 +42,7 @@
             this.pnlMenu.BackColor = System.Drawing.Color.Transparent;
             this.pnlMenu.BaseColor = System.Drawing.Color.White;
             this.pnlMenu.Controls.Add(this.btnSetting);
+            this.pnlMenu.Controls.Add(this.btnSocialPost);
             this.pnlMenu.Controls.Add(this.btnFavouriteCompany);
             this.pnlMenu.Controls.Add(this.btnMyJob);
             this.pnlMenu.Controls.Add(this.btnProfile);
@@ -48,34 +50,8 @@
             this.pnlMenu.Location = new System.Drawing.Point(0, 0);
             this.pnlMenu.Name = "pnlMenu";
             this.pnlMenu.Radius = 10;
-            this.pnlMenu.Size = new System.Drawing.Size(249, 288);
+            this.pnlMenu.Size = new System.Drawing.Size(249, 372);
             this.pnlMenu.TabIndex = 30;
-            // 
-            // btnSetting
-            // 
-            this.btnSetting.AnimationHoverSpeed = 0.07F;
-            this.btnSetting.AnimationSpeed = 0.03F;
-            this.btnSetting.BaseColor = System.Drawing.Color.WhiteSmoke;
-            this.btnSetting.BorderColor = System.Drawing.Color.Black;
-            this.btnSetting.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSetting.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnSetting.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSetting.FocusedColor = System.Drawing.Color.Empty;
-            this.btnSetting.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSetting.ForeColor = System.Drawing.Color.Black;
-            this.btnSetting.Image = global::FindJobApplication.Properties.Resources.settingsSubmenu;
-            this.btnSetting.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnSetting.Location = new System.Drawing.Point(0, 222);
-            this.btnSetting.Name = "btnSetting";
-            this.btnSetting.OnHoverBaseColor = System.Drawing.Color.LightGray;
-            this.btnSetting.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnSetting.OnHoverForeColor = System.Drawing.Color.Black;
-            this.btnSetting.OnHoverImage = null;
-            this.btnSetting.OnPressedColor = System.Drawing.Color.DarkGray;
-            this.btnSetting.Size = new System.Drawing.Size(249, 66);
-            this.btnSetting.TabIndex = 5;
-            this.btnSetting.Text = "Setting";
-            this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);
             // 
             // btnFavouriteCompany
             // 
@@ -155,13 +131,65 @@
             this.btnProfile.Text = "CV Profile";
             this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
             // 
+            // btnSocialPost
+            // 
+            this.btnSocialPost.AnimationHoverSpeed = 0.07F;
+            this.btnSocialPost.AnimationSpeed = 0.03F;
+            this.btnSocialPost.BaseColor = System.Drawing.Color.WhiteSmoke;
+            this.btnSocialPost.BorderColor = System.Drawing.Color.Black;
+            this.btnSocialPost.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSocialPost.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnSocialPost.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSocialPost.FocusedColor = System.Drawing.Color.Empty;
+            this.btnSocialPost.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSocialPost.ForeColor = System.Drawing.Color.Black;
+            this.btnSocialPost.Image = global::FindJobApplication.Properties.Resources.paper_plane;
+            this.btnSocialPost.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnSocialPost.Location = new System.Drawing.Point(0, 222);
+            this.btnSocialPost.Name = "btnSocialPost";
+            this.btnSocialPost.OnHoverBaseColor = System.Drawing.Color.LightGray;
+            this.btnSocialPost.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnSocialPost.OnHoverForeColor = System.Drawing.Color.Black;
+            this.btnSocialPost.OnHoverImage = null;
+            this.btnSocialPost.OnPressedColor = System.Drawing.Color.DarkGray;
+            this.btnSocialPost.Size = new System.Drawing.Size(249, 74);
+            this.btnSocialPost.TabIndex = 32;
+            this.btnSocialPost.Text = "Social Post";
+            this.btnSocialPost.Click += new System.EventHandler(this.btnSocialPost_Click);
+            // 
+            // btnSetting
+            // 
+            this.btnSetting.AnimationHoverSpeed = 0.07F;
+            this.btnSetting.AnimationSpeed = 0.03F;
+            this.btnSetting.BaseColor = System.Drawing.Color.WhiteSmoke;
+            this.btnSetting.BorderColor = System.Drawing.Color.Black;
+            this.btnSetting.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSetting.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnSetting.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSetting.FocusedColor = System.Drawing.Color.Empty;
+            this.btnSetting.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSetting.ForeColor = System.Drawing.Color.Black;
+            this.btnSetting.Image = global::FindJobApplication.Properties.Resources.settingsSubmenu;
+            this.btnSetting.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnSetting.Location = new System.Drawing.Point(0, 296);
+            this.btnSetting.Name = "btnSetting";
+            this.btnSetting.OnHoverBaseColor = System.Drawing.Color.LightGray;
+            this.btnSetting.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnSetting.OnHoverForeColor = System.Drawing.Color.Black;
+            this.btnSetting.OnHoverImage = null;
+            this.btnSetting.OnPressedColor = System.Drawing.Color.DarkGray;
+            this.btnSetting.Size = new System.Drawing.Size(249, 74);
+            this.btnSetting.TabIndex = 33;
+            this.btnSetting.Text = "Setting";
+            this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);
+            // 
             // UCUserSubMenuRight
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pnlMenu);
             this.Name = "UCUserSubMenuRight";
-            this.Size = new System.Drawing.Size(249, 288);
+            this.Size = new System.Drawing.Size(249, 370);
             this.pnlMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -171,7 +199,8 @@
         private Guna.UI.WinForms.GunaElipsePanel pnlMenu;
         private Guna.UI.WinForms.GunaButton btnMyJob;
         private Guna.UI.WinForms.GunaButton btnProfile;
-        private Guna.UI.WinForms.GunaButton btnSetting;
         private Guna.UI.WinForms.GunaButton btnFavouriteCompany;
+        private Guna.UI.WinForms.GunaButton btnSetting;
+        private Guna.UI.WinForms.GunaButton btnSocialPost;
     }
 }

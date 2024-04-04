@@ -67,6 +67,15 @@ namespace FindJobApplication
             hideMenu();
             UCMain.Instance.updateStatus(btnFavouriteCompany);
         }
+
+        private void btnSocialPost_Click(object sender, EventArgs e)
+        {
+            UCSocialHistory uCSocialHistory = new UCSocialHistory();
+            UCMain.Instance.PnlMid.Controls.Clear();
+            UCMain.Instance.PnlMid.Controls.Add(uCSocialHistory);
+            hideMenu();
+            UCMain.Instance.updateStatus(btnSocialPost);
+        }
     }
 
 }

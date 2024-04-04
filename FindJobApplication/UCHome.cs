@@ -34,6 +34,7 @@ namespace FindJobApplication
             pnlListJob.Controls.Clear();
             foreach (Object obj in dataControlList)
             {
+              
                 this.pnlListJob.Controls.Add((Control)obj);
             }
         }

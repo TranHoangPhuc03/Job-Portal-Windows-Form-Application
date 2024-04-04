@@ -35,6 +35,8 @@ namespace FindJobApplication
         public GunaButton BtnUser { get => btnUser; set => btnUser = value; }
         public GunaButton BtnStatus { get => btnStatus; set => btnStatus = value; }
         public GunaButton BtnLogOut { get => btnSignOut; set => btnSignOut = value; }
+        public GunaButton BtnSocial { get => btnSocial; set => btnSocial = value; }
+
         public PictureBox PbHomeUser { get => pbHomeUser; set => pbHomeUser = value; }
 
         public void updateStatus(GunaButton button)
@@ -57,6 +59,14 @@ namespace FindJobApplication
             thisForm.Hide();
             fLogin.ShowDialog();
             thisForm.Close();
+        }
+
+        private void btnSocial_Click(object sender, EventArgs e)
+        {
+            UCSocial uCSocial = new UCSocial();
+            this.updateStatus(btnSocial);
+            this.PnlMid.Controls.Clear();
+            this.PnlMid.Controls.Add(uCSocial);
         }
     }
 }
