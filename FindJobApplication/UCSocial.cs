@@ -16,7 +16,7 @@ namespace FindJobApplication
         {
             InitializeComponent();
         }
-
+        public PictureBox PBAvatar { get => pBAvatar; set => pBAvatar = value; }
         private void UCSocial_Load(object sender, EventArgs e)
         {
             for (int i = 0; i < 10; i++)

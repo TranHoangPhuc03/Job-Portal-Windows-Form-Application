@@ -57,5 +57,23 @@ namespace FindJobApplication
             hideMenu();
             UCMain.Instance.updateStatus(btnFollowCV);
         }
+
+        private void btnSocialPost_Click(object sender, EventArgs e)
+        {
+            UCSocialHistory uCSocialHistory = new UCSocialHistory();
+            UCMain.Instance.PnlMid.Controls.Clear();
+            UCMain.Instance.PnlMid.Controls.Add(uCSocialHistory);
+            hideMenu();
+            UCMain.Instance.updateStatus(btnSocialPost);
+        }
+
+        private void btnSetting_Click_1(object sender, EventArgs e)
+        {
+            UCSetting uCSetting = new UCSetting();
+            UCMain.Instance.PnlMid.Controls.Clear();
+            UCMain.Instance.PnlMid.Controls.Add(uCSetting);
+            hideMenu();
+            UCMain.Instance.updateStatus(btnSetting);
+        }
     }
 }

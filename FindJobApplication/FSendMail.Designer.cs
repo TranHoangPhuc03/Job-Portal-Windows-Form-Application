@@ -73,9 +73,9 @@
             this.btnSendMail.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSendMail.ForeColor = System.Drawing.Color.White;
             this.btnSendMail.HoverState.FillColor = System.Drawing.Color.Chocolate;
-            this.btnSendMail.Location = new System.Drawing.Point(45, 689);
+            this.btnSendMail.Location = new System.Drawing.Point(847, 689);
             this.btnSendMail.Name = "btnSendMail";
-            this.btnSendMail.Size = new System.Drawing.Size(930, 45);
+            this.btnSendMail.Size = new System.Drawing.Size(144, 45);
             this.btnSendMail.TabIndex = 24;
             this.btnSendMail.Text = "Send";
             this.btnSendMail.Click += new System.EventHandler(this.btnSendMail_Click);

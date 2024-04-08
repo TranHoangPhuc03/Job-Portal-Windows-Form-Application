@@ -30,8 +30,8 @@
         {
             this.txtUpSocial = new Guna.UI2.WinForms.Guna2TextBox();
             this.pnlSocial = new System.Windows.Forms.FlowLayoutPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pBAvatar = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pBAvatar)).BeginInit();
             this.SuspendLayout();
             // 
             // txtUpSocial
@@ -65,27 +65,27 @@
             this.pnlSocial.Size = new System.Drawing.Size(1510, 722);
             this.pnlSocial.TabIndex = 2;
             // 
-            // pictureBox1
+            // pBAvatar
             // 
-            this.pictureBox1.Image = global::FindJobApplication.Properties.Resources.man;
-            this.pictureBox1.Location = new System.Drawing.Point(23, 17);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(68, 60);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            this.pBAvatar.Image = global::FindJobApplication.Properties.Resources.man;
+            this.pBAvatar.Location = new System.Drawing.Point(23, 17);
+            this.pBAvatar.Name = "pBAvatar";
+            this.pBAvatar.Size = new System.Drawing.Size(68, 60);
+            this.pBAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pBAvatar.TabIndex = 1;
+            this.pBAvatar.TabStop = false;
             // 
             // UCSocial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pnlSocial);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pBAvatar);
             this.Controls.Add(this.txtUpSocial);
             this.Name = "UCSocial";
             this.Size = new System.Drawing.Size(1547, 863);
             this.Load += new System.EventHandler(this.UCSocial_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBAvatar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -93,7 +93,7 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2TextBox txtUpSocial;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pBAvatar;
         private System.Windows.Forms.FlowLayoutPanel pnlSocial;
     }
 }

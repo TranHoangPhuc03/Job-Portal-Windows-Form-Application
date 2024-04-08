@@ -31,26 +31,26 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCMain));
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnlMenuTop = new Guna.UI.WinForms.GunaElipsePanel();
-            this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pnlMenu = new System.Windows.Forms.Panel();
-            this.pnlLogout = new System.Windows.Forms.Panel();
-            this.pnlMid = new System.Windows.Forms.Panel();
             this.btnStatus = new Guna.UI.WinForms.GunaButton();
             this.pbHomeUser = new System.Windows.Forms.PictureBox();
             this.btnUser = new Guna.UI.WinForms.GunaButton();
+            this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pnlMenu = new System.Windows.Forms.Panel();
             this.btnSocial = new Guna.UI.WinForms.GunaButton();
             this.btnMail = new Guna.UI.WinForms.GunaButton();
             this.btnHome = new Guna.UI.WinForms.GunaButton();
+            this.pnlLogout = new System.Windows.Forms.Panel();
             this.btnSignOut = new Guna.UI.WinForms.GunaButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pnlMid = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.pnlMenuTop.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbHomeUser)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlMenu.SuspendLayout();
             this.pnlLogout.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbHomeUser)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -75,59 +75,6 @@
             this.pnlMenuTop.Radius = 10;
             this.pnlMenuTop.Size = new System.Drawing.Size(1538, 62);
             this.pnlMenuTop.TabIndex = 2;
-            // 
-            // guna2Separator1
-            // 
-            this.guna2Separator1.BackColor = System.Drawing.Color.White;
-            this.guna2Separator1.Location = new System.Drawing.Point(12, 128);
-            this.guna2Separator1.Name = "guna2Separator1";
-            this.guna2Separator1.Size = new System.Drawing.Size(194, 9);
-            this.guna2Separator1.TabIndex = 4;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(220, 122);
-            this.panel1.TabIndex = 0;
-            // 
-            // pnlMenu
-            // 
-            this.pnlMenu.BackColor = System.Drawing.Color.White;
-            this.pnlMenu.Controls.Add(this.btnSocial);
-            this.pnlMenu.Controls.Add(this.btnMail);
-            this.pnlMenu.Controls.Add(this.btnHome);
-            this.pnlMenu.Controls.Add(this.guna2Separator1);
-            this.pnlMenu.Controls.Add(this.pnlLogout);
-            this.pnlMenu.Controls.Add(this.panel1);
-            this.pnlMenu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlMenu.Location = new System.Drawing.Point(0, 0);
-            this.pnlMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(220, 935);
-            this.pnlMenu.TabIndex = 7;
-            // 
-            // pnlLogout
-            // 
-            this.pnlLogout.Controls.Add(this.btnSignOut);
-            this.pnlLogout.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlLogout.Location = new System.Drawing.Point(0, 850);
-            this.pnlLogout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pnlLogout.Name = "pnlLogout";
-            this.pnlLogout.Size = new System.Drawing.Size(220, 85);
-            this.pnlLogout.TabIndex = 3;
-            // 
-            // pnlMid
-            // 
-            this.pnlMid.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(233)))), ((int)(((byte)(240)))));
-            this.pnlMid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMid.Location = new System.Drawing.Point(220, 72);
-            this.pnlMid.Name = "pnlMid";
-            this.pnlMid.Size = new System.Drawing.Size(1547, 863);
-            this.pnlMid.TabIndex = 10;
             // 
             // btnStatus
             // 
@@ -196,6 +143,54 @@
             this.btnUser.TabIndex = 28;
             this.btnUser.Text = "X Company ";
             // 
+            // guna2Separator1
+            // 
+            this.guna2Separator1.BackColor = System.Drawing.Color.White;
+            this.guna2Separator1.Location = new System.Drawing.Point(12, 128);
+            this.guna2Separator1.Name = "guna2Separator1";
+            this.guna2Separator1.Size = new System.Drawing.Size(194, 9);
+            this.guna2Separator1.TabIndex = 4;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(220, 122);
+            this.panel1.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = global::FindJobApplication.Properties.Resources.job;
+            this.pictureBox1.Location = new System.Drawing.Point(9, 11);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(204, 100);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pnlMenu
+            // 
+            this.pnlMenu.BackColor = System.Drawing.Color.White;
+            this.pnlMenu.Controls.Add(this.btnSocial);
+            this.pnlMenu.Controls.Add(this.btnMail);
+            this.pnlMenu.Controls.Add(this.btnHome);
+            this.pnlMenu.Controls.Add(this.guna2Separator1);
+            this.pnlMenu.Controls.Add(this.pnlLogout);
+            this.pnlMenu.Controls.Add(this.panel1);
+            this.pnlMenu.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlMenu.Location = new System.Drawing.Point(0, 0);
+            this.pnlMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlMenu.Name = "pnlMenu";
+            this.pnlMenu.Size = new System.Drawing.Size(220, 935);
+            this.pnlMenu.TabIndex = 7;
+            // 
             // btnSocial
             // 
             this.btnSocial.AnimationHoverSpeed = 0.07F;
@@ -246,6 +241,7 @@
             this.btnMail.TabIndex = 7;
             this.btnMail.Text = "Mail";
             this.btnMail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnMail.Click += new System.EventHandler(this.btnMail_Click);
             // 
             // btnHome
             // 
@@ -271,6 +267,16 @@
             this.btnHome.TabIndex = 5;
             this.btnHome.Text = "Home";
             this.btnHome.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // pnlLogout
+            // 
+            this.pnlLogout.Controls.Add(this.btnSignOut);
+            this.pnlLogout.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlLogout.Location = new System.Drawing.Point(0, 850);
+            this.pnlLogout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlLogout.Name = "pnlLogout";
+            this.pnlLogout.Size = new System.Drawing.Size(220, 85);
+            this.pnlLogout.TabIndex = 3;
             // 
             // btnSignOut
             // 
@@ -301,19 +307,14 @@
             this.btnSignOut.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnSignOut.Click += new System.EventHandler(this.btnSignOut_Click);
             // 
-            // pictureBox1
+            // pnlMid
             // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = global::FindJobApplication.Properties.Resources.job;
-            this.pictureBox1.Location = new System.Drawing.Point(9, 11);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(204, 100);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pnlMid.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(233)))), ((int)(((byte)(240)))));
+            this.pnlMid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlMid.Location = new System.Drawing.Point(220, 72);
+            this.pnlMid.Name = "pnlMid";
+            this.pnlMid.Size = new System.Drawing.Size(1547, 863);
+            this.pnlMid.TabIndex = 10;
             // 
             // UCMain
             // 
@@ -327,11 +328,11 @@
             this.Load += new System.EventHandler(this.UCMain_Load);
             this.panel2.ResumeLayout(false);
             this.pnlMenuTop.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbHomeUser)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlMenu.ResumeLayout(false);
             this.pnlLogout.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbHomeUser)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
