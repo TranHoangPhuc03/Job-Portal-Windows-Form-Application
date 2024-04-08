@@ -11,22 +11,22 @@ using System.Windows.Forms;
 
 namespace FindJobApplication
 {
-    public partial class UCSocialHistoryRow : UserControl
+    public partial class UCMailRow : UserControl
     {
-        public UCSocialHistoryRow()
+        public UCMailRow()
         {
             InitializeComponent();
         }
         public GunaLabel LblID { get => lblID; set => lblID = value; }
+        public GunaLabel LblFrom { get => lblFrom; set => lblFrom = value; }
         public GunaLabel LblTitle { get => lblTitle; set => lblTitle = value; }
-        public GunaLabel LblDatePots { get => lblDatePost; set => lblDatePost = value; }
+        public GunaLabel LblTime { get => lblTime; set => lblTime = value; }
 
-
-        private void pbEdit_Click(object sender, EventArgs e)
+        private void pbSeeDetail_Click(object sender, EventArgs e)
         {
-            FPostSocial fPostSocial = new FPostSocial();
-            fPostSocial.BtnPost.Text = "Save";
-            fPostSocial.Show();
+            UCMailDetail uCmailDetail = new UCMailDetail();
+            UCMain.Instance.PnlMid.Controls.Add(uCmailDetail);
+            uCmailDetail.BringToFront();
         }
     }
 }

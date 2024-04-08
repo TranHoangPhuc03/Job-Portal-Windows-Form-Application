@@ -68,5 +68,13 @@ namespace FindJobApplication
             this.PnlMid.Controls.Clear();
             this.PnlMid.Controls.Add(uCSocial);
         }
+
+        private void btnMail_Click(object sender, EventArgs e)
+        {
+            UCMail uCMail = new UCMail();
+            this.updateStatus(btnMail);
+            this.PnlMid.Controls.Clear();
+            this.PnlMid.Controls.Add(uCMail);
+        }
     }
 }

@@ -21,5 +21,14 @@ namespace FindJobApplication
         {
             this.btnSkill.Text = userSkill.SkillName;
         }
+        public void ShowBtnDelete()
+        {
+            pBDelete.Visible = true;
+            pBDelete.Enabled = true;
+        }
+        private void pBDelete_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
     }
 }

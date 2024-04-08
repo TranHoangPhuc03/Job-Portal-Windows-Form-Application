@@ -95,10 +95,10 @@
             this.btnCancel.FillColor = System.Drawing.Color.White;
             this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.Black;
-            this.btnCancel.Location = new System.Drawing.Point(632, 243);
+            this.btnCancel.Location = new System.Drawing.Point(619, 243);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(134, 56);
+            this.btnCancel.Size = new System.Drawing.Size(147, 56);
             this.btnCancel.TabIndex = 39;
             this.btnCancel.Text = "Cancel";
             // 

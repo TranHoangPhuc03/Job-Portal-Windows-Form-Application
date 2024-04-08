@@ -275,6 +275,18 @@
     <Compile Include="UCJobInformation.Designer.cs">
       <DependentUpon>UCJobInformation.cs</DependentUpon>
     </Compile>
+    <Compile Include="UCMail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCMail.Designer.cs">
+      <DependentUpon>UCMail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCMailDetail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCMailDetail.Designer.cs">
+      <DependentUpon>UCMailDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="UCMain.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -292,6 +304,12 @@
     </Compile>
     <Compile Include="UCProfile.Designer.cs">
       <DependentUpon>UCProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCMailRow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCMailRow.Designer.cs">
+      <DependentUpon>UCMailRow.cs</DependentUpon>
     </Compile>
     <Compile Include="UCSetting.cs">
       <SubType>UserControl</SubType>
@@ -467,6 +485,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UCJobInformation.resx">
       <DependentUpon>UCJobInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCMail.resx">
+      <DependentUpon>UCMail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCMailDetail.resx">
+      <DependentUpon>UCMailDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCMailRow.resx">
+      <DependentUpon>UCMailRow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCMain.resx">
       <DependentUpon>UCMain.cs</DependentUpon>
@@ -746,6 +773,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="BusinessLicenses\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\X.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Xoa.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
