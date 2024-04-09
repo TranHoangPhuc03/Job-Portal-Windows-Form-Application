@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace FindJobApplication.Daos
 {
@@ -17,15 +18,16 @@ namespace FindJobApplication.Daos
             db = new Database();
         }
 
-        public DataRow findUserRoleById(int id)
+        public string FindUserRoleById(int id)
         {
-            string sqlStr = $"select role_name from user_role where id={id}";
-            DataTable results = db.Read(sqlStr);
+            string sqlStr = "SELECT role_name FROM user_role WHERE id = @Id;";
+            Dictionary<string, object> parameters = new Dictionary<string, object> { { "@Id", id } };
+            DataTable results = db.Read(sqlStr, parameters);
+
             if (results.Rows.Count > 0)
             {
-                return results.Rows[0];
+                return results.Rows[0]["role_name"].ToString();
             }
-
             return null;
         }
     }

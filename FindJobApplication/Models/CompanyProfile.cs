@@ -16,17 +16,17 @@ namespace FindJobApplication.Models
         private string companyLink;
         private string reason;
         private string overview;
+        private string taxCode;
         private string businessLicense;
 
         public CompanyProfile() { }
-        public CompanyProfile(int companyAccId, string name, string email, string businessLicense)
+        public CompanyProfile(string name, string email, string businessLicense)
         {
-            this.companyAcdId = companyAccId;
             this.name = name;
             this.email = email;
             this.businessLicense = businessLicense;
         }
-        public CompanyProfile(int id, int companyAcdId, string name, string email, string phoneNumber, string address, string companyImage, DateTime dateEstablish, int companySize, string companyLink, string reason, string overview)
+        public CompanyProfile(int id, int companyAcdId, string name, string email, string phoneNumber, string address, string companyImage, DateTime dateEstablish, int companySize, string companyLink, string reason, string overview, string businessLicense, string taxCode)
         {
             this.id = id;
             this.companyAcdId = companyAcdId;
@@ -40,9 +40,11 @@ namespace FindJobApplication.Models
             this.companyLink = companyLink;
             this.reason = reason;
             this.overview = overview;
+            this.taxCode = taxCode;
+            this.businessLicense = businessLicense;
         }
 
-        public int Id { get; }
+        public int Id { get { return id; } }
         public int CompanyAccId { get => companyAcdId; }
         public string Name { get => name; set => this.name = value; }
         public string Email { get => email; set => this.email = value; }

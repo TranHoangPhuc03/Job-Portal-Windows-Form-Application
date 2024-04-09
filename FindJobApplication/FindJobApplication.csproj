@@ -166,11 +166,20 @@
     <Compile Include="FUserSubmitCV.Designer.cs">
       <DependentUpon>FUserSubmitCV.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mappers\CompanyProfileMapper.cs" />
+    <Compile Include="Mappers\JobPostMapper.cs" />
+    <Compile Include="Mappers\LocationMapper.cs" />
+    <Compile Include="Mappers\UserEducationMapper.cs" />
+    <Compile Include="Mappers\UserPersonalProjectMapper.cs" />
+    <Compile Include="Mappers\UserProfileMapper.cs" />
+    <Compile Include="Mappers\UserSkillMapper.cs" />
+    <Compile Include="Mappers\UserWorkExperienceMapper.cs" />
+    <Compile Include="Mappers\YearExperienceMapper.cs" />
     <Compile Include="Models\CompanyProfile.cs" />
+    <Compile Include="Models\JobApplyDetail.cs" />
     <Compile Include="Models\JobPost.cs" />
     <Compile Include="Models\Location.cs" />
     <Compile Include="Models\Global.cs" />
-    <Compile Include="Models\UserApplyJob.cs" />
     <Compile Include="Models\UserEducation.cs" />
     <Compile Include="Models\UserPersonalProject.cs" />
     <Compile Include="Models\UserProfile.cs" />

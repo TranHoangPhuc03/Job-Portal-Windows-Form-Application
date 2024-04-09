@@ -6,6 +6,8 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FindJobApplication.Mappers;
+using System.Drawing;
 
 namespace FindJobApplication.Daos
 {
@@ -18,67 +20,113 @@ namespace FindJobApplication.Daos
             db = new Database();
         }
 
-        public DataTable findAll()
+        public List<CompanyProfile> FindAllCompanyProfile()
         {
-            string sqlStr = "select * from company_profile;";
-            return db.Read(sqlStr);
+            string sqlStr = "SELECT * FROM company_profile;";
+            DataTable dt = db.Read(sqlStr);
+            List<CompanyProfile> list = new List<CompanyProfile>();
+
+            foreach (DataRow dr in dt.Rows)
+                list.Add(CompanyProfileMapper.MapToModel(dr));
+
+            return list;
         }
 
-        public DataRow findCompanyById (int id)
+        public CompanyProfile FindCompanyProfileById(int id)
         {
-            string sqlStr = String.Format("select * from company_profile where id={0}", id);
-            return (DataRow) db.Read(sqlStr).Rows[0];
-        }
+            string sqlStr = "SELECT * FROM company_profile WHERE id = @Id;";
+            Dictionary<string, object> parameters = new Dictionary<string, object> { { "@Id", id} };
+            DataRow dr = db.Read(sqlStr, parameters).Rows.Cast<DataRow>().FirstOrDefault();
 
-        public CompanyProfile findCompanyProfileById(int id)
-        {
-            string sqlStr = String.Format("select * from company_profile where id={0}", id);
-            DataRow dr = db.Read(sqlStr).Rows[0];
-            CompanyProfile companyProfile = new CompanyProfile(
-                (int)dr["id"],
-                (int)dr["company_account_id"],
-                dr["name"].ToString(),
-                dr["email"].ToString(),
-                dr["phone_number"].ToString(),
-                dr["address"].ToString(),
-                dr["company_image"].ToString(),
-                (DateTime)dr["date_establish"],
-                (int)dr["company_size"],
-                dr["company_link"].ToString(),
-                dr["reason"].ToString(),
-                dr["overview"].ToString()
-            );
+            CompanyProfile companyProfile = CompanyProfileMapper.MapToModel(dr);
 
             return companyProfile;
         }
 
-        public DataRow findCompanyByAccountId(int id)
+        public int FindCompanyIdByAccountId(int accountId)
         {
-            string sqlStr = $"select * from company_profile where company_account_id={id};";
-            return (DataRow)db.Read(sqlStr).Rows[0];
+            string sqlStr = "SELECT id FROM company_profile WHERE company_account_id = @AccountId;";
+            Dictionary<string, object> parameters = new Dictionary<string, object> { { "@AccountId", accountId } };
+            return (int) db.ExecuteScalar(sqlStr, parameters);
         }
 
-        public int saveCompanySignUp(CompanyProfile companyProfile)
+        public int SaveCompanySignUp(CompanyProfile companyProfile, string password)
         {
-            string sqlStr = $"INSERT INTO company_profile (company_account_id, name, email, business_license) VALUES ({companyProfile.CompanyAccId}, '{companyProfile.Name}', '{companyProfile.Email}', '{companyProfile.BusinessLicense}')";
-            return db.Excute(sqlStr);
+            string sqlStr = @"
+                            EXEC usp_RegisterCompanyAccount
+                                @Email,
+                                @Password,
+                                @Name,
+                                @BusinessLicense;";
+            Dictionary<string, object> paremeters = new Dictionary<string, object>
+            {
+                { "@Email", companyProfile.Email },
+                { "@Password",  password},
+                { "@Name", companyProfile.Name },
+                { "@BusinessLicense", companyProfile.BusinessLicense }
+            };
+            return db.Excute(sqlStr, paremeters);
         }
 
-        public DataTable findAllUserFollowing(int companyId)
+        public DataTable FindAllUserFollowing(int companyId)
         {
-            string sqlStr = $"select * from company_following where company_id={companyId};";
-            return db.Read(sqlStr);
+            string sqlStr = "SELECT * from company_following WHERE company_id = @CompanyId;";
+            Dictionary<string, object> parameters = new Dictionary<string, object> { { "@CompanyId", companyId } };
+
+            return db.Read(sqlStr, parameters);
         }
 
-        public int saveUserFollowing(int companyId, int userId)
+        public int SaveUserFollowing(int companyId, int userId)
         {
             string sqlStr = $"insert into company_following values ({companyId}, {userId});";
             return db.Excute(sqlStr);
         }
 
-        public int deleteUserFollowing(int companyId, int userId)
+        public int DeleteUserFollowing(int companyId, int userId)
         {
             string sqlStr = $"delete from company_following where company_id={companyId} and user_id={userId};";
+            return db.Excute(sqlStr);
+        }
+
+        public int UpdateCompanyReason(int companyId, string reason)
+        {
+            string sqlStr = "UPDATE company_profile SET reason = @Reason WHERE id = @CompanyId;";
+            Dictionary<string, object> parameters = new Dictionary<string, object>
+            {
+                { "@Reason", reason },
+                { "@CompanyId", companyId }
+            };
+
+            return db.Excute(sqlStr, parameters);
+        }
+
+        public int UpdateCompanyOverview(int companyId, string overview)
+        {
+            string sqlStr = "UPDATE company_profile SET overview = @Overview WHERE id = @CompanyId;";
+            Dictionary<string, object> parameters = new Dictionary<string, object>
+            {
+                { "@Overview", overview },
+                { "@CompanyId", companyId }
+            };
+
+            return db.Excute(sqlStr, parameters);
+        }
+
+        public int UpdateCompanyProfile(int companyId, CompanyProfile companyProfile)
+        {
+            string sqlStr = "UPDATE companu_profile SET name = @Name, email = @Email, phone_number = @PhoneNumber, address = @Address, company_size = @CompanySize, date_establish = @DateEstablish, address = @Address, company_link = @CompanyLink WHERE id = @CompanyId;";
+            Dictionary<string, object> parameters = new Dictionary<string, object>
+            {
+                { "@Name", companyProfile.Name },
+                { "@Email", companyProfile.Email },
+                { "@PhoneNumber", companyProfile.PhoneNumber },
+                { "@Address", companyProfile.Address },
+                { "@CompanySize", companyProfile.CompanySize },
+                { "@DateEstablish", companyProfile.DateEstablish },
+                { "@CompanyLink", companyProfile.CompanyLink },
+                { "@CompanyId", companyId }
+            };
+
             return db.Excute(sqlStr);
         }
     }

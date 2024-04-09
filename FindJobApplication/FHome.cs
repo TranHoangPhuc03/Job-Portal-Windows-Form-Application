@@ -52,20 +52,23 @@ namespace FindJobApplication
 
         }
 
-        private List<UCJob> buildJobListFromDataTable(DataTable dt)
+        private List<UCJob> BuildJobPostList(List<JobPost> list)
         {
             List<UCJob> jobList = new List<UCJob>();
-            foreach (DataRow row in dt.Rows)
+            LocationDao locationDao = new LocationDao();
+            YearExperienceDao yearExperienceDao = new YearExperienceDao();
+            var locationDict = locationDao.FindAllLocationDict();
+            var yearExperienceDict = yearExperienceDao.FindAllExperienceDict(); ;
+            foreach (JobPost jobpost in list)
             {
-                JobPost jobPost = new JobPost(Convert.ToInt32(row["id"]), row["title"].ToString());
                 UCJob uCJob = new UCJob();
-                uCJob.JobName.Text = row["title"].ToString();
-                uCJob.CompanyName.Text = row["company_name"].ToString();
-                uCJob.Location.Text = row["location_name"].ToString();
-                uCJob.Salary.Text = row["salary"].ToString();
-                uCJob.Tag = jobPost;
-                uCJob.LinkLabelJob.Tag = (int)row["id"];
-                uCJob.CompanyName.Tag = (int)row["company_id"];
+                uCJob.JobName.Text = jobpost.Title;
+                uCJob.CompanyName.Text = jobpost.CompanyName;
+                uCJob.Location.Text = locationDict[jobpost.LocationId].Name;
+                uCJob.Salary.Text = jobpost.Salary.ToString();
+                uCJob.Tag = jobpost;
+                uCJob.LinkLabelJob.Tag = jobpost.Id;
+                uCJob.CompanyName.Tag = jobpost.CompanyId;
                 jobList.Add(uCJob);
             }
             return jobList;
@@ -76,17 +79,16 @@ namespace FindJobApplication
             JobPostDao jobPostDao = new JobPostDao();
             YearExperienceDao yearExperienceDao = new YearExperienceDao();
             LocationDao locationDao = new LocationDao();
-            DataTable dt = jobPostDao.findAll();
 
             this.uCHome.CbLocation.ValueMember = "id";
             this.uCHome.CbLocation.DisplayMember = "name";
-            this.uCHome.CbLocation.DataSource = locationDao.findAll();
+            this.uCHome.CbLocation.DataSource = locationDao.FindAllLocationList();
 
             this.uCHome.CbExperince.ValueMember = "id";
             this.uCHome.CbExperince.DisplayMember = "name";
-            this.uCHome.CbExperince.DataSource = yearExperienceDao.findAll();
+            this.uCHome.CbExperince.DataSource = yearExperienceDao.FindAllExperienceList();
 
-            this.uCHome.fillDataToPanel(buildJobListFromDataTable(dt));
+            this.uCHome.fillDataToPanel(BuildJobPostList(jobPostDao.FindAllJobPost()));
         }
 
         private void btnMail_Click(object sender, EventArgs e)
@@ -106,15 +108,16 @@ namespace FindJobApplication
             int experienceId = this.uCHome.CbExperince.SelectedIndex;
             int salaryId = this.uCHome.CbSalary.SelectedIndex;
 
+            int index = 0;
             JobPostDao jobPostDao = new JobPostDao();
-            DataTable dt = jobPostDao.findAll();
-            foreach(DataRow row in dt.Rows)
+            var dt = jobPostDao.FindAllJobPost();
+            foreach(var row in dt)
             {
-                if (keyword != "" && !row["title"].ToString().Contains(keyword))
-                    row.Delete();
+                if (keyword != "" && !row.Title.Contains(keyword))
+                    dt.RemoveAt(index);
+                index++;
             }
-            dt.AcceptChanges();
-            this.uCHome.fillDataToPanel(buildJobListFromDataTable(dt));
+            this.uCHome.fillDataToPanel(dt);
         }
     }
 }

@@ -18,20 +18,26 @@ namespace FindJobApplication.Daos
             db = new Database();
         }
 
-        public DataRow findAccountByEmail(string email)
+        public DataRow FindAccountByEmail(string email)
         {
-            string sqlStr = $"select * from account where email='{email}';";
+            string sqlStr = "SELECT * FROM account WHERE email = @Email;";
 
-            if (db.Read(sqlStr).Rows.Count > 0)
-                return db.Read(sqlStr).Rows[0];
+            Dictionary<string, object> parameters = new Dictionary<string, object> { { "@Email", email } };
 
-            return null;
+            return db.Read(sqlStr, parameters).Rows.Cast<DataRow>().FirstOrDefault();
         }
 
-        public int saveAccount(string email, string password, int roleId)
+        public int SaveAccount(string email, string password, int roleId)
         {
-            string sqlStr = $"insert into account(email, password, role_id) values ('{email}', '{password}', {roleId});";
-            return db.Excute(sqlStr);
+            string sqlStr = "INSERT INTO account(email, password, role_id) VALUES (@Email, @Password, @RoleId);";
+            Dictionary<string, object> parameters = new Dictionary<string, object>
+            {
+                { "@Email", email },
+                { "@Password", password },
+                { "@RoleId", roleId }
+            };
+
+            return db.Excute(sqlStr, parameters);
         }
     }
 }

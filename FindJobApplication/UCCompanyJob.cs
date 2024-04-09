@@ -43,7 +43,7 @@ namespace FindJobApplication
         {
             int jobPostId = (int)this.Tag;
             JobPostDao jobPostDao = new JobPostDao();
-            int result = jobPostDao.deleteById(jobPostId);
+            int result = jobPostDao.DeleteJobPostById(jobPostId);
             if (result  > 0)
             {
                 MessageDialog.Show(this.ParentForm, "Delete recruitment post successfull", "Succes", MessageDialogButtons.OK, MessageDialogIcon.Information, MessageDialogStyle.Default);

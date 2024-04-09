@@ -70,7 +70,7 @@ namespace FindJobApplication
         private void UCCompanyProfile_Load(object sender, EventArgs e)
         {
             CompanyProfileDao companyProfileDao = new CompanyProfileDao();
-            CompanyProfile companyProfile = companyProfileDao.findCompanyProfileById(this.companyId);
+            CompanyProfile companyProfile = companyProfileDao.FindCompanyProfileById(this.companyId);
 
             this.lblProfileCompany.Text = companyProfile.Name;
             this.lblProfileAddress.Text = companyProfile.Address;
