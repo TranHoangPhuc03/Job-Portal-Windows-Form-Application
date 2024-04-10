@@ -120,6 +120,12 @@
     <Compile Include="FLogin.Designer.cs">
       <DependentUpon>FLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="FPostSocial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FPostSocial.Designer.cs">
+      <DependentUpon>FPostSocial.cs</DependentUpon>
+    </Compile>
     <Compile Include="FSignUp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -194,6 +200,12 @@
     <Compile Include="Models\YearExperience.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="FSendMail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FSendMail.Designer.cs">
+      <DependentUpon>FSendMail.cs</DependentUpon>
+    </Compile>
     <Compile Include="UCCompany.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -278,6 +290,18 @@
     <Compile Include="UCJobInformation.Designer.cs">
       <DependentUpon>UCJobInformation.cs</DependentUpon>
     </Compile>
+    <Compile Include="UCMail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCMail.Designer.cs">
+      <DependentUpon>UCMail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCMailDetail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCMailDetail.Designer.cs">
+      <DependentUpon>UCMailDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="UCMain.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -296,11 +320,41 @@
     <Compile Include="UCProfile.Designer.cs">
       <DependentUpon>UCProfile.cs</DependentUpon>
     </Compile>
+    <Compile Include="UCMailRow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCMailRow.Designer.cs">
+      <DependentUpon>UCMailRow.cs</DependentUpon>
+    </Compile>
     <Compile Include="UCSetting.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UCSetting.Designer.cs">
       <DependentUpon>UCSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCSocial.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCSocial.Designer.cs">
+      <DependentUpon>UCSocial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCSocialHistory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCSocialHistory.Designer.cs">
+      <DependentUpon>UCSocialHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCSocialHistoryRow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCSocialHistoryRow.Designer.cs">
+      <DependentUpon>UCSocialHistoryRow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCSocialPost.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCSocialPost.Designer.cs">
+      <DependentUpon>UCSocialPost.cs</DependentUpon>
     </Compile>
     <Compile Include="UCTopCompany.cs">
       <SubType>UserControl</SubType>
@@ -365,6 +419,9 @@
     <EmbeddedResource Include="FLogin.resx">
       <DependentUpon>FLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FPostSocial.resx">
+      <DependentUpon>FPostSocial.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FSignUp.resx">
       <DependentUpon>FSignUp.cs</DependentUpon>
     </EmbeddedResource>
@@ -399,6 +456,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="FSendMail.resx">
+      <DependentUpon>FSendMail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UCCompany.resx">
       <DependentUpon>UCCompany.cs</DependentUpon>
     </EmbeddedResource>
@@ -441,6 +501,15 @@
     <EmbeddedResource Include="UCJobInformation.resx">
       <DependentUpon>UCJobInformation.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UCMail.resx">
+      <DependentUpon>UCMail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCMailDetail.resx">
+      <DependentUpon>UCMailDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCMailRow.resx">
+      <DependentUpon>UCMailRow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UCMain.resx">
       <DependentUpon>UCMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -452,6 +521,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UCSetting.resx">
       <DependentUpon>UCSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCSocial.resx">
+      <DependentUpon>UCSocial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCSocialHistory.resx">
+      <DependentUpon>UCSocialHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCSocialHistoryRow.resx">
+      <DependentUpon>UCSocialHistoryRow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCSocialPost.resx">
+      <DependentUpon>UCSocialPost.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCTopCompany.resx">
       <DependentUpon>UCTopCompany.cs</DependentUpon>
@@ -707,6 +788,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="BusinessLicenses\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\X.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Xoa.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -54,6 +54,10 @@ namespace FindJobApplication
 
         private List<UCJob> BuildJobPostList(List<JobPost> list)
         {
+            UCUserProfileSkill skill1 = new UCUserProfileSkill();
+            UCUserProfileSkill skill2 = new UCUserProfileSkill();
+            UCUserProfileSkill skill3 = new UCUserProfileSkill();
+
             List<UCJob> jobList = new List<UCJob>();
             LocationDao locationDao = new LocationDao();
             YearExperienceDao yearExperienceDao = new YearExperienceDao();
@@ -62,13 +66,17 @@ namespace FindJobApplication
             foreach (JobPost jobpost in list)
             {
                 UCJob uCJob = new UCJob();
-                uCJob.JobName.Text = jobpost.Title;
-                uCJob.CompanyName.Text = jobpost.CompanyName;
-                uCJob.Location.Text = locationDict[jobpost.LocationId].Name;
-                uCJob.Salary.Text = jobpost.Salary.ToString();
-                uCJob.Tag = jobpost;
-                uCJob.LinkLabelJob.Tag = jobpost.Id;
-                uCJob.CompanyName.Tag = jobpost.CompanyId;
+                uCJob.JobName.Text = row["title"].ToString();
+                uCJob.CompanyName.Text = row["company_name"].ToString();
+                uCJob.Location.Text = row["location_name"].ToString();
+                uCJob.Salary.Text = row["salary"].ToString();
+                uCJob.Tag = jobPost;
+                uCJob.LinkLabelJob.Tag = (int)row["id"];
+                uCJob.CompanyName.Tag = (int)row["company_id"];
+                uCJob.PnlSkill.Controls.Add(skill1); // add skill
+                uCJob.PnlSkill.Controls.Add(skill2); // add skill
+                uCJob.PnlSkill.Controls.Add(skill3); // add skill
+
                 jobList.Add(uCJob);
             }
             return jobList;

@@ -29,11 +29,13 @@
         private void InitializeComponent()
         {
             this.btnSkill = new Guna.UI2.WinForms.Guna2Button();
+            this.pBDelete = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pBDelete)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSkill
             // 
-            this.btnSkill.BackColor = System.Drawing.Color.White;
+            this.btnSkill.BackColor = System.Drawing.Color.Transparent;
             this.btnSkill.BorderRadius = 20;
             this.btnSkill.BorderThickness = 1;
             this.btnSkill.DefaultAutoSize = true;
@@ -48,22 +50,35 @@
             this.btnSkill.HoverState.CustomBorderColor = System.Drawing.Color.Black;
             this.btnSkill.HoverState.FillColor = System.Drawing.Color.White;
             this.btnSkill.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnSkill.Location = new System.Drawing.Point(2, 2);
-            this.btnSkill.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSkill.Location = new System.Drawing.Point(3, 3);
             this.btnSkill.Name = "btnSkill";
-            this.btnSkill.Size = new System.Drawing.Size(57, 27);
+            this.btnSkill.Size = new System.Drawing.Size(73, 36);
             this.btnSkill.TabIndex = 0;
             this.btnSkill.Text = ".Net";
             // 
+            // pBDelete
+            // 
+            this.pBDelete.Enabled = false;
+            this.pBDelete.Image = global::FindJobApplication.Properties.Resources.Xoa;
+            this.pBDelete.Location = new System.Drawing.Point(82, 3);
+            this.pBDelete.Name = "pBDelete";
+            this.pBDelete.Size = new System.Drawing.Size(28, 36);
+            this.pBDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pBDelete.TabIndex = 1;
+            this.pBDelete.TabStop = false;
+            this.pBDelete.Visible = false;
+            this.pBDelete.Click += new System.EventHandler(this.pBDelete_Click);
+            // 
             // UCUserProfileSkill
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
+            this.Controls.Add(this.pBDelete);
             this.Controls.Add(this.btnSkill);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "UCUserProfileSkill";
-            this.Size = new System.Drawing.Size(83, 34);
+            this.Size = new System.Drawing.Size(113, 44);
+            ((System.ComponentModel.ISupportInitialize)(this.pBDelete)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -72,5 +87,6 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2Button btnSkill;
+        private System.Windows.Forms.PictureBox pBDelete;
     }
 }

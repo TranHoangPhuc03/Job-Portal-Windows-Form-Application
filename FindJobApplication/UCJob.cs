@@ -26,6 +26,7 @@ namespace FindJobApplication
         public new GunaLinkLabel CompanyName { get => lblNameCompany; set { lblNameCompany = value; } }
         public new Label Location { get => lblLocation; set { lblLocation = value; } }
         public Label Salary { get => lblSalary; set { lblSalary = value; } }
+        public FlowLayoutPanel PnlSkill { get => pnlSkill; set => pnlSkill = value; }
         public PictureBox PbSave { get => pbSave; }
 
         private void pbSave_Click(object sender, EventArgs e)

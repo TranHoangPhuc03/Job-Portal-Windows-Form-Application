@@ -28,31 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.cbLevel = new Guna.UI2.WinForms.Guna2ComboBox();
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
-            this.txtSkills = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblSkills = new Guna.UI.WinForms.GunaLabel();
             this.guna2Separator2 = new Guna.UI2.WinForms.Guna2Separator();
             this.guna2Separator3 = new Guna.UI2.WinForms.Guna2Separator();
             this.btnCancel = new Guna.UI2.WinForms.Guna2Button();
             this.btnSave = new Guna.UI2.WinForms.Guna2Button();
+            this.pnlSkill = new System.Windows.Forms.FlowLayoutPanel();
+            this.cbSkill = new Guna.UI2.WinForms.Guna2ComboBox();
             this.SuspendLayout();
-            // 
-            // cbLevel
-            // 
-            this.cbLevel.BackColor = System.Drawing.Color.Transparent;
-            this.cbLevel.BorderRadius = 10;
-            this.cbLevel.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbLevel.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbLevel.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbLevel.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbLevel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cbLevel.ItemHeight = 55;
-            this.cbLevel.Location = new System.Drawing.Point(547, 91);
-            this.cbLevel.Name = "cbLevel";
-            this.cbLevel.Size = new System.Drawing.Size(185, 61);
-            this.cbLevel.TabIndex = 1;
             // 
             // btnAdd
             // 
@@ -67,34 +51,12 @@
             this.btnAdd.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.OrangeRed;
             this.btnAdd.HoverState.FillColor = System.Drawing.Color.MistyRose;
-            this.btnAdd.Location = new System.Drawing.Point(781, 91);
+            this.btnAdd.Location = new System.Drawing.Point(263, 91);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.PressedColor = System.Drawing.Color.LightCoral;
             this.btnAdd.Size = new System.Drawing.Size(180, 61);
             this.btnAdd.TabIndex = 2;
             this.btnAdd.Text = "Add";
-            // 
-            // txtSkills
-            // 
-            this.txtSkills.BorderRadius = 10;
-            this.txtSkills.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSkills.DefaultText = "";
-            this.txtSkills.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtSkills.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtSkills.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSkills.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSkills.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSkills.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSkills.ForeColor = System.Drawing.Color.Black;
-            this.txtSkills.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSkills.Location = new System.Drawing.Point(31, 91);
-            this.txtSkills.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.txtSkills.Name = "txtSkills";
-            this.txtSkills.PasswordChar = '\0';
-            this.txtSkills.PlaceholderText = "Enter your skills";
-            this.txtSkills.SelectedText = "";
-            this.txtSkills.Size = new System.Drawing.Size(467, 62);
-            this.txtSkills.TabIndex = 36;
             // 
             // lblSkills
             // 
@@ -133,10 +95,10 @@
             this.btnCancel.FillColor = System.Drawing.Color.White;
             this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.Black;
-            this.btnCancel.Location = new System.Drawing.Point(632, 243);
+            this.btnCancel.Location = new System.Drawing.Point(619, 243);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(134, 56);
+            this.btnCancel.Size = new System.Drawing.Size(147, 56);
             this.btnCancel.TabIndex = 39;
             this.btnCancel.Text = "Cancel";
             // 
@@ -159,20 +121,43 @@
             this.btnSave.TabIndex = 40;
             this.btnSave.Text = "Save";
             // 
+            // pnlSkill
+            // 
+            this.pnlSkill.Location = new System.Drawing.Point(31, 162);
+            this.pnlSkill.Name = "pnlSkill";
+            this.pnlSkill.Size = new System.Drawing.Size(930, 54);
+            this.pnlSkill.TabIndex = 42;
+            // 
+            // cbSkill
+            // 
+            this.cbSkill.BackColor = System.Drawing.Color.Transparent;
+            this.cbSkill.BorderRadius = 10;
+            this.cbSkill.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbSkill.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSkill.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbSkill.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbSkill.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbSkill.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbSkill.ItemHeight = 55;
+            this.cbSkill.Location = new System.Drawing.Point(31, 91);
+            this.cbSkill.Name = "cbSkill";
+            this.cbSkill.Size = new System.Drawing.Size(185, 61);
+            this.cbSkill.TabIndex = 1;
+            // 
             // FUserProfileSkillsEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(992, 309);
+            this.Controls.Add(this.pnlSkill);
             this.Controls.Add(this.guna2Separator3);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.guna2Separator2);
             this.Controls.Add(this.lblSkills);
-            this.Controls.Add(this.txtSkills);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.cbLevel);
+            this.Controls.Add(this.cbSkill);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FUserProfileSkillsEdit";
@@ -184,13 +169,13 @@
         }
 
         #endregion
-        private Guna.UI2.WinForms.Guna2ComboBox cbLevel;
         private Guna.UI2.WinForms.Guna2Button btnAdd;
-        private Guna.UI2.WinForms.Guna2TextBox txtSkills;
         private Guna.UI.WinForms.GunaLabel lblSkills;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator2;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator3;
         private Guna.UI2.WinForms.Guna2Button btnCancel;
         private Guna.UI2.WinForms.Guna2Button btnSave;
+        private System.Windows.Forms.FlowLayoutPanel pnlSkill;
+        private Guna.UI2.WinForms.Guna2ComboBox cbSkill;
     }
 }
