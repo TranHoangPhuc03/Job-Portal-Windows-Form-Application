@@ -317,7 +317,7 @@ namespace FindJobApplication.Daos
         }
         public int DeleteUserEducation(UserEducation userEducation)
         {
-            string sqlStr = "DELETE user_education WHERE id = @Id";
+            string sqlStr = "DELETE FROM user_education WHERE id = @Id";
             Dictionary<string, object> parameters = new Dictionary<string, object>
             {
                 { "@Id", userEducation.Id }
@@ -327,7 +327,7 @@ namespace FindJobApplication.Daos
         }
         public int DeleteUserWorkExperience(UserWorkExperience userWorkExperience)
         {
-            string sqlStr = "DELETE user_work_experience WHERE id = @Id";
+            string sqlStr = "DELETE FROM user_work_experience WHERE id = @Id";
             Dictionary<string, object> parameters = new Dictionary<string, object>
             {
                 { "@Id", userWorkExperience.Id }
@@ -337,10 +337,97 @@ namespace FindJobApplication.Daos
         }
         public int DeleteUserPersonalProject(UserPersonalProject userPersonalProject)
         {
-            string sqlStr = "DELETE user_personal_project WHERE id = @Id";
+            string sqlStr = "DELETE FROM user_personal_project WHERE id = @Id";
             Dictionary<string, object> parameters = new Dictionary<string, object>
             {
                 { "@Id", userPersonalProject.Id }
+            };
+
+            return db.Excute(sqlStr, parameters);
+        }
+        public int SaveNewFavouriteJob(int jobPostId, int userId)
+        {
+            string sqlStr = @"
+                            INSERT INTO user_favourite_job(user_id, job_post_id)
+                            VALUES (@UserId, @JobPostId);";
+            Dictionary<string, object> parameters = new Dictionary<string, object>
+            {
+                { "@UserId", userId },
+                { "@JobPostId", jobPostId }
+            };
+
+            return db.Excute(sqlStr, parameters);
+        }
+        public int SaveNewFollowingCompany(int userAccountId, int companyAccountId)
+        {
+            string sqlStr = @"
+                            INSERT INTO following(company_id, user_id)
+                            VALUES (@CompanyAccountId, @UserAccountId);";
+            Dictionary<string, object> parameters = new Dictionary<string, object>
+            {
+                { "@CompanyAccountId", companyAccountId },
+                { "@UserAccountId", companyAccountId }
+            };
+
+            return db.Excute(sqlStr, parameters);
+        }
+        public List<int> FindAllJobPostIdFavourite(int userId)
+        {
+            string sqlStr = @"SELECT job_post_id
+                            FROM user_favourite_job
+                            WHERE user_id = @UserId;";
+            Dictionary<string, object> parameters = new Dictionary<string, object>
+            {
+                { "@UserId", userId },
+            };
+
+            DataTable dt = db.Read(sqlStr, parameters);
+            List<int> list = new List<int>();
+            foreach (DataRow dr in dt.Rows)
+                list.Add(Convert.ToInt32(dr["job_post_id"]));
+
+            return list;
+        }
+        public List<int> FindAllCompanyIdFollowing(int userAccountId)
+        {
+            string sqlStr = @"
+                            SELECT company_id
+                            FROM following
+                            WHERE user_id = @UserAccountId;";
+            Dictionary<string, object> parameters = new Dictionary<string, object>
+            {
+                { "@UserAccountId", userAccountId },
+            };
+
+            DataTable dt = db.Read(sqlStr, parameters);
+            List<int> list = new List<int>();
+            foreach (DataRow dr in dt.Rows)
+                list.Add(Convert.ToInt32(dr["company_id"]));
+
+            return list;
+        }
+        public int DeleteFavouriteJob(int jobPostId, int userId) 
+        {
+            string sqlStr = @"
+                            DELETE FROM user_favourite_job
+                            WHERE user_id = @UserId AND job_post_id = @JobPostId;";
+            Dictionary<string, object> parameters = new Dictionary<string, object>
+            {
+                { "@UserId", userId },
+                { "@JobPostId", jobPostId }
+            };
+
+            return db.Excute(sqlStr, parameters);
+        }
+        public int DeleteFollowingCompany(int companyAccoutnId, int userAccountId)
+        {
+            string sqlStr = @"
+                            DELETE FROM following
+                            WHERE company_id = @CompanyAccountId AND user_id = @UserAccountId;";
+            Dictionary<string, object> parameters = new Dictionary<string, object>
+            {
+                { "@CompanyAccountId", companyAccoutnId },
+                { "@UserAccountId", userAccountId }
             };
 
             return db.Excute(sqlStr, parameters);

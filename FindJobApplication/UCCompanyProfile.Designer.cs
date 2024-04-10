@@ -136,7 +136,7 @@
             this.btnFollow.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnFollow.ImageSize = new System.Drawing.Size(32, 32);
             this.btnFollow.Location = new System.Drawing.Point(838, 202);
-            this.btnFollow.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnFollow.Margin = new System.Windows.Forms.Padding(2);
             this.btnFollow.Name = "btnFollow";
             this.btnFollow.Size = new System.Drawing.Size(136, 29);
             this.btnFollow.TabIndex = 34;
@@ -152,7 +152,7 @@
             this.pnlListPicture.Controls.Add(this.pbCompany3);
             this.pnlListPicture.Controls.Add(this.pbCompany4);
             this.pnlListPicture.Location = new System.Drawing.Point(0, 243);
-            this.pnlListPicture.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlListPicture.Margin = new System.Windows.Forms.Padding(2);
             this.pnlListPicture.Name = "pnlListPicture";
             this.pnlListPicture.Size = new System.Drawing.Size(1003, 159);
             this.pnlListPicture.TabIndex = 33;
@@ -162,7 +162,7 @@
             this.pbCompany1.Image = global::FindJobApplication.Properties.Resources.VanPhong;
             this.pbCompany1.ImageRotate = 0F;
             this.pbCompany1.Location = new System.Drawing.Point(2, 2);
-            this.pbCompany1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbCompany1.Margin = new System.Windows.Forms.Padding(2);
             this.pbCompany1.Name = "pbCompany1";
             this.pbCompany1.Size = new System.Drawing.Size(245, 151);
             this.pbCompany1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -174,7 +174,7 @@
             this.pbCompany2.Image = global::FindJobApplication.Properties.Resources.VanPhong;
             this.pbCompany2.ImageRotate = 0F;
             this.pbCompany2.Location = new System.Drawing.Point(251, 2);
-            this.pbCompany2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbCompany2.Margin = new System.Windows.Forms.Padding(2);
             this.pbCompany2.Name = "pbCompany2";
             this.pbCompany2.Size = new System.Drawing.Size(245, 151);
             this.pbCompany2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -186,7 +186,7 @@
             this.pbCompany3.Image = global::FindJobApplication.Properties.Resources.VanPhong;
             this.pbCompany3.ImageRotate = 0F;
             this.pbCompany3.Location = new System.Drawing.Point(500, 2);
-            this.pbCompany3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbCompany3.Margin = new System.Windows.Forms.Padding(2);
             this.pbCompany3.Name = "pbCompany3";
             this.pbCompany3.Size = new System.Drawing.Size(245, 151);
             this.pbCompany3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -198,7 +198,7 @@
             this.pbCompany4.Image = global::FindJobApplication.Properties.Resources.VanPhong;
             this.pbCompany4.ImageRotate = 0F;
             this.pbCompany4.Location = new System.Drawing.Point(749, 2);
-            this.pbCompany4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbCompany4.Margin = new System.Windows.Forms.Padding(2);
             this.pbCompany4.Name = "pbCompany4";
             this.pbCompany4.Size = new System.Drawing.Size(245, 151);
             this.pbCompany4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -415,7 +415,7 @@
             this.pnlProfile.Controls.Add(this.gunaElipsePanel2);
             this.pnlProfile.Controls.Add(this.gunaElipsePanel3);
             this.pnlProfile.Location = new System.Drawing.Point(3, 3);
-            this.pnlProfile.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlProfile.Margin = new System.Windows.Forms.Padding(2);
             this.pnlProfile.Name = "pnlProfile";
             this.pnlProfile.Size = new System.Drawing.Size(1027, 535);
             this.pnlProfile.TabIndex = 0;
@@ -425,7 +425,7 @@
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.AutoSize = true;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(1007, 2);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(0, 0);
             this.flowLayoutPanel1.TabIndex = 4;
@@ -452,7 +452,7 @@
             this.rtxtTop3Reason.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtxtTop3Reason.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtxtTop3Reason.Location = new System.Drawing.Point(23, 74);
-            this.rtxtTop3Reason.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rtxtTop3Reason.Margin = new System.Windows.Forms.Padding(2);
             this.rtxtTop3Reason.Name = "rtxtTop3Reason";
             this.rtxtTop3Reason.ReadOnly = true;
             this.rtxtTop3Reason.Size = new System.Drawing.Size(851, 88);
@@ -474,7 +474,7 @@
             // guna2Separator2
             // 
             this.guna2Separator2.Location = new System.Drawing.Point(23, 57);
-            this.guna2Separator2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2Separator2.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Separator2.Name = "guna2Separator2";
             this.guna2Separator2.Size = new System.Drawing.Size(813, 6);
             this.guna2Separator2.TabIndex = 25;
@@ -502,6 +502,7 @@
             this.pbTop3Edit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbTop3Edit.TabIndex = 16;
             this.pbTop3Edit.TabStop = false;
+            this.pbTop3Edit.Click += new System.EventHandler(this.pbTop3Edit_Click);
             // 
             // gunaElipsePanel3
             // 
@@ -525,7 +526,7 @@
             this.rTxtOverview.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rTxtOverview.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rTxtOverview.Location = new System.Drawing.Point(23, 74);
-            this.rTxtOverview.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rTxtOverview.Margin = new System.Windows.Forms.Padding(2);
             this.rTxtOverview.Name = "rTxtOverview";
             this.rTxtOverview.ReadOnly = true;
             this.rTxtOverview.Size = new System.Drawing.Size(851, 88);
@@ -546,7 +547,7 @@
             // guna2Separator3
             // 
             this.guna2Separator3.Location = new System.Drawing.Point(23, 57);
-            this.guna2Separator3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2Separator3.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Separator3.Name = "guna2Separator3";
             this.guna2Separator3.Size = new System.Drawing.Size(813, 6);
             this.guna2Separator3.TabIndex = 25;
@@ -574,13 +575,14 @@
             this.pBCompanyOverviewEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pBCompanyOverviewEdit.TabIndex = 16;
             this.pBCompanyOverviewEdit.TabStop = false;
+            this.pBCompanyOverviewEdit.Click += new System.EventHandler(this.pBCompanyOverviewEdit_Click);
             // 
             // UCCompanyProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pnlProfile);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UCCompanyProfile";
             this.Size = new System.Drawing.Size(1031, 540);
             this.Load += new System.EventHandler(this.UCCompanyProfile_Load);

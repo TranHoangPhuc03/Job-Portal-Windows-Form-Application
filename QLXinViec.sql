@@ -36,6 +36,7 @@ CREATE TABLE user_profile (
 );
 
 CREATE TABLE user_education (
+	id INT PRIMARY KEY IDENTITY(1, 1),
 	school_name VARCHAR(255),
 	major VARCHAR(255),
 	[from] DATE,
@@ -47,6 +48,7 @@ CREATE TABLE user_education (
 );
 
 CREATE TABLE user_work_experience (
+	id INT PRIMARY KEY IDENTITY(1, 1),
 	job_title VARCHAR(255),
 	company_name VARCHAR(255),
 	[from] DATE,
@@ -56,7 +58,8 @@ CREATE TABLE user_work_experience (
 	FOREIGN KEY (user_profile_id) REFERENCES user_profile(id)
 );
 
-CREATE TABLE user_personal_project (
+CREATE TABLE user_personal_project(
+	id INT PRIMARY KEY IDENTITY(1, 1),
 	project_name VARCHAR(255),
 	[from] DATE,
 	[to] DATE,
@@ -64,6 +67,15 @@ CREATE TABLE user_personal_project (
 	user_profile_id INT,
 
 	FOREIGN KEY (user_profile_id) REFERENCES user_profile(id)
+);
+
+CREATE TABLE user_favourite_job(
+	[user_id] INT,
+	job_post_id INT,
+
+	FOREIGN KEY ([user_id]) REFERENCES user_profile(id),
+	FOREIGN KEY (job_post_id) REFERENCES job_post(id),
+	PRIMARY KEY ([user_id], job_post_id)
 );
 
 --COMPANY + JOB
@@ -93,7 +105,7 @@ CREATE TABLE skill (
 
 CREATE TABLE [location] (
 	id INT PRIMARY KEY IDENTITY(1, 1),
-	[nam]e VARCHAR(255)
+	[name] VARCHAR(255)
 );
 
 CREATE TABLE year_experience (
@@ -123,11 +135,12 @@ CREATE TABLE job_post (
 );
 
 CREATE TABLE job_skill (
-	job_post_id INT NOT NULL,
-	skill_id INT NOT NULL,
+	job_post_id INT,
+	skill_id INT,
 
 	FOREIGN KEY (job_post_id) REFERENCES job_post(id),
-	FOREIGN KEY (skill_id) REFERENCES skill(id)
+	FOREIGN KEY (skill_id) REFERENCES skill(id),
+	PRIMARY KEY (job_post_id, skill_id)
 );
 
 CREATE TABLE user_apply_job (
@@ -139,7 +152,8 @@ CREATE TABLE user_apply_job (
 	cv_attach TEXT,
 
 	FOREIGN KEY ([user_id]) REFERENCES user_profile(id),
-	FOREIGN KEY (job_post_id) REFERENCES job_post(id)
+	FOREIGN KEY (job_post_id) REFERENCES job_post(id),
+	PRIMARY KEY ([user_id], job_post_id)
 );
 
 CREATE TABLE user_skill (
@@ -147,19 +161,42 @@ CREATE TABLE user_skill (
 	skill_id INT,
 
 	FOREIGN KEY (user_profile_id) REFERENCES user_profile(id),
-	FOREIGN KEY (skill_id) REFERENCES skill(id)
+	FOREIGN KEY (skill_id) REFERENCES skill(id),
+	PRIMARY KEY (user_profile_id, skill_id)
 );
 
-CREATE TABLE company_following(
+CREATE TABLE [following](
 	company_id INT,
-	user_id INT,
+	[user_id] INT,
 
-	FOREIGN KEY (user_id) REFERENCES user_profile(id),
-	FOREIGN KEY (company_id) REFERENCES company_profile(id)
+	FOREIGN KEY ([user_id]) REFERENCES account(id),
+	FOREIGN KEY (company_id) REFERENCES account(id),
+	PRIMARY KEY([user_id], company_id)
 );
 
 --Social
+CREATE TABLE social_post(
+	id INT PRIMARY KEY IDENTITY(1, 1),
+	contents TEXT,
+	post_date DATE,
+	account_id INT,
 
+	FOREIGN KEY (account_id) REFERENCES account(id)
+);
+
+CREATE TABLE mail(
+	id INT PRIMARY KEY IDENTITY(1, 1),
+	[from] INT,
+	[to] INT,
+	title TEXT,
+	contents TEXT,
+	attach_file TEXT,
+	send_date DATE,
+
+	FOREIGN KEY ([from]) REFERENCES account(id),
+	FOREIGN KEY ([to]) REFERENCES account(id)
+);
+GO
 
 --PROCEDURE
 CREATE PROCEDURE usp_RegisterCompanyAccount
@@ -181,6 +218,7 @@ BEGIN
     INSERT INTO company_profile (company_account_id, name, email, business_license)
     VALUES (@CompanyAccountId, @Name, @Email, @BusinessLicense);
 END;
+GO
 
 CREATE PROCEDURE usp_RegisterUserAccount
     @Email VARCHAR(255),
@@ -200,3 +238,4 @@ BEGIN
     INSERT INTO user_profile (user_account_id, name, email)
     VALUES (@UserAccountId, @Name, @Email);
 END;
+GO

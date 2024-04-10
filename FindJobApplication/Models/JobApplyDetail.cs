@@ -10,9 +10,9 @@ namespace FindJobApplication.Models
 
     public static class ApplyStatus
     {
-        public static readonly string REJECTED = "REJECTED";
-        public static readonly string PENDING = "PENDING";
-        public static readonly string ACCEPTED = "ACCEPTED";
+        public static readonly string NOT_SELECTED = "Not selected";
+        public static readonly string PENDING = "Pending";
+        public static readonly string INTERVIEW = "Interview";
     }
     public class JobApplyDetail
     {

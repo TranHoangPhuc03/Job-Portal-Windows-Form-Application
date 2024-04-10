@@ -36,8 +36,8 @@
             this.txtNameCompany = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtEmail = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtPhoneNumber = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.guna2ComboBox2 = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.dtpDateEstablish = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.cbLocation = new Guna.UI2.WinForms.Guna2ComboBox();
             this.txtAddress = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtLink = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtCompanySize = new Guna.UI2.WinForms.Guna2TextBox();
@@ -56,18 +56,18 @@
             // 
             // guna2Separator2
             // 
-            this.guna2Separator2.Location = new System.Drawing.Point(0, 727);
-            this.guna2Separator2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.guna2Separator2.Location = new System.Drawing.Point(0, 473);
+            this.guna2Separator2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.guna2Separator2.Name = "guna2Separator2";
-            this.guna2Separator2.Size = new System.Drawing.Size(1012, 12);
+            this.guna2Separator2.Size = new System.Drawing.Size(675, 8);
             this.guna2Separator2.TabIndex = 10;
             // 
             // guna2Separator1
             // 
-            this.guna2Separator1.Location = new System.Drawing.Point(0, 58);
-            this.guna2Separator1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.guna2Separator1.Location = new System.Drawing.Point(0, 38);
+            this.guna2Separator1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.guna2Separator1.Name = "guna2Separator1";
-            this.guna2Separator1.Size = new System.Drawing.Size(1012, 12);
+            this.guna2Separator1.Size = new System.Drawing.Size(675, 8);
             this.guna2Separator1.TabIndex = 9;
             // 
             // btnSave
@@ -82,12 +82,13 @@
             this.btnSave.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.HoverState.FillColor = System.Drawing.Color.Chocolate;
-            this.btnSave.Location = new System.Drawing.Point(816, 747);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSave.Location = new System.Drawing.Point(544, 486);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(182, 56);
+            this.btnSave.Size = new System.Drawing.Size(121, 36);
             this.btnSave.TabIndex = 8;
             this.btnSave.Text = "Save";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnCancel
             // 
@@ -100,20 +101,22 @@
             this.btnCancel.FillColor = System.Drawing.Color.White;
             this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.Black;
-            this.btnCancel.Location = new System.Drawing.Point(665, 747);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCancel.Location = new System.Drawing.Point(443, 486);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(144, 56);
+            this.btnCancel.Size = new System.Drawing.Size(96, 36);
             this.btnCancel.TabIndex = 7;
             this.btnCancel.Text = "Cancel";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // lblCompanyDetails
             // 
             this.lblCompanyDetails.AutoSize = true;
             this.lblCompanyDetails.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCompanyDetails.Location = new System.Drawing.Point(12, 9);
+            this.lblCompanyDetails.Location = new System.Drawing.Point(8, 6);
+            this.lblCompanyDetails.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCompanyDetails.Name = "lblCompanyDetails";
-            this.lblCompanyDetails.Size = new System.Drawing.Size(246, 34);
+            this.lblCompanyDetails.Size = new System.Drawing.Size(170, 23);
             this.lblCompanyDetails.TabIndex = 6;
             this.lblCompanyDetails.Text = "Company details";
             // 
@@ -130,13 +133,13 @@
             this.txtNameCompany.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNameCompany.ForeColor = System.Drawing.Color.Black;
             this.txtNameCompany.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNameCompany.Location = new System.Drawing.Point(2, 215);
-            this.txtNameCompany.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txtNameCompany.Location = new System.Drawing.Point(1, 140);
+            this.txtNameCompany.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtNameCompany.Name = "txtNameCompany";
             this.txtNameCompany.PasswordChar = '\0';
             this.txtNameCompany.PlaceholderText = "Name company";
             this.txtNameCompany.SelectedText = "";
-            this.txtNameCompany.Size = new System.Drawing.Size(930, 62);
+            this.txtNameCompany.Size = new System.Drawing.Size(620, 40);
             this.txtNameCompany.TabIndex = 0;
             // 
             // txtEmail
@@ -152,13 +155,13 @@
             this.txtEmail.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.txtEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtEmail.Location = new System.Drawing.Point(2, 297);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txtEmail.Location = new System.Drawing.Point(1, 193);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.PasswordChar = '\0';
             this.txtEmail.PlaceholderText = "Email address";
             this.txtEmail.SelectedText = "";
-            this.txtEmail.Size = new System.Drawing.Size(450, 62);
+            this.txtEmail.Size = new System.Drawing.Size(300, 40);
             this.txtEmail.TabIndex = 3;
             // 
             // txtPhoneNumber
@@ -174,52 +177,52 @@
             this.txtPhoneNumber.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhoneNumber.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.txtPhoneNumber.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPhoneNumber.Location = new System.Drawing.Point(482, 297);
-            this.txtPhoneNumber.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txtPhoneNumber.Location = new System.Drawing.Point(321, 193);
+            this.txtPhoneNumber.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.PasswordChar = '\0';
             this.txtPhoneNumber.PlaceholderText = "Phone number";
             this.txtPhoneNumber.SelectedText = "";
-            this.txtPhoneNumber.Size = new System.Drawing.Size(450, 62);
+            this.txtPhoneNumber.Size = new System.Drawing.Size(300, 40);
             this.txtPhoneNumber.TabIndex = 4;
             // 
-            // guna2DateTimePicker1
+            // dtpDateEstablish
             // 
-            this.guna2DateTimePicker1.BackColor = System.Drawing.Color.White;
-            this.guna2DateTimePicker1.BorderRadius = 10;
-            this.guna2DateTimePicker1.Checked = true;
-            this.guna2DateTimePicker1.FillColor = System.Drawing.Color.White;
-            this.guna2DateTimePicker1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.guna2DateTimePicker1.Location = new System.Drawing.Point(2, 378);
-            this.guna2DateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2DateTimePicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.guna2DateTimePicker1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.guna2DateTimePicker1.Name = "guna2DateTimePicker1";
-            this.guna2DateTimePicker1.Size = new System.Drawing.Size(450, 64);
-            this.guna2DateTimePicker1.TabIndex = 5;
-            this.guna2DateTimePicker1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.guna2DateTimePicker1.Value = new System.DateTime(2024, 3, 7, 10, 12, 27, 872);
+            this.dtpDateEstablish.BackColor = System.Drawing.Color.White;
+            this.dtpDateEstablish.BorderRadius = 10;
+            this.dtpDateEstablish.Checked = true;
+            this.dtpDateEstablish.FillColor = System.Drawing.Color.White;
+            this.dtpDateEstablish.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDateEstablish.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDateEstablish.Location = new System.Drawing.Point(1, 246);
+            this.dtpDateEstablish.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.dtpDateEstablish.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpDateEstablish.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpDateEstablish.Name = "dtpDateEstablish";
+            this.dtpDateEstablish.Size = new System.Drawing.Size(300, 42);
+            this.dtpDateEstablish.TabIndex = 5;
+            this.dtpDateEstablish.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.dtpDateEstablish.Value = new System.DateTime(2024, 3, 7, 10, 12, 27, 872);
             // 
-            // guna2ComboBox2
+            // cbLocation
             // 
-            this.guna2ComboBox2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ComboBox2.BorderRadius = 10;
-            this.guna2ComboBox2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.guna2ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.guna2ComboBox2.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2ComboBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.guna2ComboBox2.ItemHeight = 57;
-            this.guna2ComboBox2.Items.AddRange(new object[] {
+            this.cbLocation.BackColor = System.Drawing.Color.Transparent;
+            this.cbLocation.BorderRadius = 10;
+            this.cbLocation.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbLocation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbLocation.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbLocation.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbLocation.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbLocation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbLocation.ItemHeight = 57;
+            this.cbLocation.Items.AddRange(new object[] {
             "Ho Chi Minh"});
-            this.guna2ComboBox2.Location = new System.Drawing.Point(2, 465);
-            this.guna2ComboBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2ComboBox2.Name = "guna2ComboBox2";
-            this.guna2ComboBox2.Size = new System.Drawing.Size(450, 63);
-            this.guna2ComboBox2.StartIndex = 0;
-            this.guna2ComboBox2.TabIndex = 7;
+            this.cbLocation.Location = new System.Drawing.Point(1, 302);
+            this.cbLocation.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.cbLocation.Name = "cbLocation";
+            this.cbLocation.Size = new System.Drawing.Size(301, 63);
+            this.cbLocation.StartIndex = 0;
+            this.cbLocation.TabIndex = 7;
             // 
             // txtAddress
             // 
@@ -234,13 +237,13 @@
             this.txtAddress.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAddress.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.txtAddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtAddress.Location = new System.Drawing.Point(482, 465);
-            this.txtAddress.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txtAddress.Location = new System.Drawing.Point(321, 302);
+            this.txtAddress.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.PasswordChar = '\0';
             this.txtAddress.PlaceholderText = "Address (Street, district,..)";
             this.txtAddress.SelectedText = "";
-            this.txtAddress.Size = new System.Drawing.Size(450, 62);
+            this.txtAddress.Size = new System.Drawing.Size(300, 40);
             this.txtAddress.TabIndex = 8;
             // 
             // txtLink
@@ -256,13 +259,13 @@
             this.txtLink.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLink.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.txtLink.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtLink.Location = new System.Drawing.Point(5, 551);
-            this.txtLink.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txtLink.Location = new System.Drawing.Point(3, 358);
+            this.txtLink.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtLink.Name = "txtLink";
             this.txtLink.PasswordChar = '\0';
             this.txtLink.PlaceholderText = "Company link (Linkedin, portfolio,...)";
             this.txtLink.SelectedText = "";
-            this.txtLink.Size = new System.Drawing.Size(930, 62);
+            this.txtLink.Size = new System.Drawing.Size(620, 40);
             this.txtLink.TabIndex = 9;
             // 
             // txtCompanySize
@@ -278,22 +281,23 @@
             this.txtCompanySize.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCompanySize.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.txtCompanySize.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCompanySize.Location = new System.Drawing.Point(482, 380);
-            this.txtCompanySize.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txtCompanySize.Location = new System.Drawing.Point(321, 247);
+            this.txtCompanySize.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtCompanySize.Name = "txtCompanySize";
             this.txtCompanySize.PasswordChar = '\0';
             this.txtCompanySize.PlaceholderText = "Company size";
             this.txtCompanySize.SelectedText = "";
-            this.txtCompanySize.Size = new System.Drawing.Size(450, 62);
+            this.txtCompanySize.Size = new System.Drawing.Size(300, 40);
             this.txtCompanySize.TabIndex = 10;
             // 
             // pbCompany1
             // 
             this.pbCompany1.Image = global::FindJobApplication.Properties.Resources.VanPhong;
             this.pbCompany1.ImageRotate = 0F;
-            this.pbCompany1.Location = new System.Drawing.Point(5, 640);
+            this.pbCompany1.Location = new System.Drawing.Point(3, 416);
+            this.pbCompany1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pbCompany1.Name = "pbCompany1";
-            this.pbCompany1.Size = new System.Drawing.Size(368, 232);
+            this.pbCompany1.Size = new System.Drawing.Size(245, 151);
             this.pbCompany1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbCompany1.TabIndex = 11;
             this.pbCompany1.TabStop = false;
@@ -304,9 +308,10 @@
             // 
             this.pbCompany2.Image = global::FindJobApplication.Properties.Resources.VanPhong;
             this.pbCompany2.ImageRotate = 0F;
-            this.pbCompany2.Location = new System.Drawing.Point(482, 640);
+            this.pbCompany2.Location = new System.Drawing.Point(321, 416);
+            this.pbCompany2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pbCompany2.Name = "pbCompany2";
-            this.pbCompany2.Size = new System.Drawing.Size(368, 232);
+            this.pbCompany2.Size = new System.Drawing.Size(245, 151);
             this.pbCompany2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbCompany2.TabIndex = 12;
             this.pbCompany2.TabStop = false;
@@ -317,9 +322,10 @@
             // 
             this.pbCompany4.Image = global::FindJobApplication.Properties.Resources.VanPhong;
             this.pbCompany4.ImageRotate = 0F;
-            this.pbCompany4.Location = new System.Drawing.Point(482, 889);
+            this.pbCompany4.Location = new System.Drawing.Point(321, 578);
+            this.pbCompany4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pbCompany4.Name = "pbCompany4";
-            this.pbCompany4.Size = new System.Drawing.Size(368, 232);
+            this.pbCompany4.Size = new System.Drawing.Size(245, 151);
             this.pbCompany4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbCompany4.TabIndex = 13;
             this.pbCompany4.TabStop = false;
@@ -330,9 +336,10 @@
             // 
             this.pbCompany3.Image = global::FindJobApplication.Properties.Resources.VanPhong;
             this.pbCompany3.ImageRotate = 0F;
-            this.pbCompany3.Location = new System.Drawing.Point(5, 889);
+            this.pbCompany3.Location = new System.Drawing.Point(3, 578);
+            this.pbCompany3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pbCompany3.Name = "pbCompany3";
-            this.pbCompany3.Size = new System.Drawing.Size(368, 232);
+            this.pbCompany3.Size = new System.Drawing.Size(245, 151);
             this.pbCompany3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbCompany3.TabIndex = 13;
             this.pbCompany3.TabStop = false;
@@ -350,15 +357,15 @@
             this.guna2Panel1.Controls.Add(this.txtCompanySize);
             this.guna2Panel1.Controls.Add(this.txtLink);
             this.guna2Panel1.Controls.Add(this.txtAddress);
-            this.guna2Panel1.Controls.Add(this.guna2ComboBox2);
-            this.guna2Panel1.Controls.Add(this.guna2DateTimePicker1);
+            this.guna2Panel1.Controls.Add(this.cbLocation);
+            this.guna2Panel1.Controls.Add(this.dtpDateEstablish);
             this.guna2Panel1.Controls.Add(this.txtPhoneNumber);
             this.guna2Panel1.Controls.Add(this.txtEmail);
             this.guna2Panel1.Controls.Add(this.txtNameCompany);
-            this.guna2Panel1.Location = new System.Drawing.Point(34, 93);
-            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.guna2Panel1.Location = new System.Drawing.Point(23, 60);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(964, 613);
+            this.guna2Panel1.Size = new System.Drawing.Size(643, 398);
             this.guna2Panel1.TabIndex = 5;
             // 
             // pbUser
@@ -372,31 +379,34 @@
             this.pbUser.ForeColor = System.Drawing.Color.White;
             this.pbUser.Image = global::FindJobApplication.Properties.Resources.user__1_;
             this.pbUser.ImageSize = new System.Drawing.Size(170, 170);
-            this.pbUser.Location = new System.Drawing.Point(386, 17);
+            this.pbUser.Location = new System.Drawing.Point(257, 11);
+            this.pbUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pbUser.Name = "pbUser";
             this.pbUser.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.pbUser.Size = new System.Drawing.Size(187, 190);
+            this.pbUser.Size = new System.Drawing.Size(125, 123);
             this.pbUser.TabIndex = 14;
             this.pbUser.MouseEnter += new System.EventHandler(this.pbUser_MouseEnter);
             this.pbUser.MouseLeave += new System.EventHandler(this.pbUser_MouseLeave);
             // 
             // FCompanyProfileInfomationEdit
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1012, 816);
+            this.ClientSize = new System.Drawing.Size(675, 530);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.guna2Separator2);
             this.Controls.Add(this.guna2Separator1);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.lblCompanyDetails);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FCompanyProfileInfomationEdit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FCompanyProfileInfomationEdit";
+            this.Load += new System.EventHandler(this.FCompanyProfileInfomationEdit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbCompany1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCompany2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCompany4)).EndInit();
@@ -416,8 +426,8 @@
         private Guna.UI2.WinForms.Guna2TextBox txtNameCompany;
         private Guna.UI2.WinForms.Guna2TextBox txtEmail;
         private Guna.UI2.WinForms.Guna2TextBox txtPhoneNumber;
-        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox2;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpDateEstablish;
+        private Guna.UI2.WinForms.Guna2ComboBox cbLocation;
         private Guna.UI2.WinForms.Guna2TextBox txtAddress;
         private Guna.UI2.WinForms.Guna2TextBox txtLink;
         private Guna.UI2.WinForms.Guna2TextBox txtCompanySize;

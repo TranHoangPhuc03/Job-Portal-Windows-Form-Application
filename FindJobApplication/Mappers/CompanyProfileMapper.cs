@@ -19,16 +19,16 @@ namespace FindJobApplication.Mappers
                 int companyAccountId = Convert.ToInt32(dr["company_account_id"]);
                 string name = dr["name"].ToString();
                 string email = dr["email"].ToString();
-                string phoneNumber = dr["phone_number"].ToString();
-                string address = dr["address"].ToString();
-                string companyImage = dr["company_image"].ToString();
-                DateTime dateEstablished = Convert.ToDateTime(dr["date_establish"]);
-                int companySize = Convert.ToInt32(dr["company_size"]);
-                string companyLink = dr["company_link"].ToString();
-                string reason = dr["reason"].ToString();
-                string overview = dr["overview"].ToString();
-                string taxCode = dr["tax_code"].ToString();
-                string businessLicense = dr["business_license"].ToString();
+                string phoneNumber = dr["phone_number"]?.ToString();
+                string address = dr["address"]?.ToString();
+                string companyImage = dr["company_image"]?.ToString();
+                DateTime? dateEstablished = dr["date_establish"] as DateTime?;
+                int companySize = (dr["company_size"] as int?) ?? 0;
+                string companyLink = dr["company_link"]?.ToString();
+                string reason = dr["reason"]?.ToString();
+                string overview = dr["overview"]?.ToString();
+                string taxCode = dr["tax_code"]?.ToString();
+                string businessLicense = dr["business_license"]?.ToString();
 
                 return new CompanyProfile(
                     id,

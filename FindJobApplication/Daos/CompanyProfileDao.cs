@@ -68,24 +68,44 @@ namespace FindJobApplication.Daos
             return db.Excute(sqlStr, paremeters);
         }
 
-        public DataTable FindAllUserFollowing(int companyId)
+        public List<int> FindAllUserIdFollowing(int companyAccountId)
         {
-            string sqlStr = "SELECT * from company_following WHERE company_id = @CompanyId;";
-            Dictionary<string, object> parameters = new Dictionary<string, object> { { "@CompanyId", companyId } };
+            string sqlStr = @"SELECT * FROM following WHERE company_id = @CompanyAccountId;";
+            Dictionary<string, object> parameters = new Dictionary<string, object>
+            {
+                { "@CompanyAccountId", companyAccountId }
+            };
 
-            return db.Read(sqlStr, parameters);
+            DataTable dt = db.Read(sqlStr, parameters);
+            List<int> list = new List<int>();
+            foreach (DataRow dr in dt.Rows)
+                list.Add(Convert.ToInt32(dr["user_id"]));
+
+            return list;
         }
 
-        public int SaveUserFollowing(int companyId, int userId)
+        public int SaveUserIdFollowing(int companyAccountId, int userAccountId)
         {
-            string sqlStr = $"insert into company_following values ({companyId}, {userId});";
-            return db.Excute(sqlStr);
+            string sqlStr = @"INSERT INTO following (company_id, account_id)
+                            VALUES (@CompanyAccountId, @UserAccountId);";
+            Dictionary<string, object> parameters = new Dictionary<string, object>
+            {
+                { "@CompanyAccountId", companyAccountId },
+                { "@UserAccountId", userAccountId },
+            };
+
+            return db.Excute(sqlStr, parameters);
         }
 
-        public int DeleteUserFollowing(int companyId, int userId)
+        public int DeleteUserIdFollowing(int companyAccountId, int userAccountId)
         {
-            string sqlStr = $"delete from company_following where company_id={companyId} and user_id={userId};";
-            return db.Excute(sqlStr);
+            string sqlStr = @"DELETE FROM following WHERE company_id=@CompanyAccountId AND user_id=@UserAccountId;";
+            Dictionary<string, object> parameters = new Dictionary<string, object>
+            {
+                { "@CompanyAccountId", companyAccountId },
+                { "@UserAccountId", userAccountId },
+            };
+            return db.Excute(sqlStr, parameters);
         }
 
         public int UpdateCompanyReason(int companyId, string reason)
@@ -114,7 +134,10 @@ namespace FindJobApplication.Daos
 
         public int UpdateCompanyProfile(int companyId, CompanyProfile companyProfile)
         {
-            string sqlStr = "UPDATE companu_profile SET name = @Name, email = @Email, phone_number = @PhoneNumber, address = @Address, company_size = @CompanySize, date_establish = @DateEstablish, address = @Address, company_link = @CompanyLink WHERE id = @CompanyId;";
+            string sqlStr = @"
+                            UPDATE company_profile
+                            SET name = @Name, email = @Email, phone_number = @PhoneNumber, address = @Address, company_size = @CompanySize, date_establish = @DateEstablish, company_link = @CompanyLink
+                            WHERE id = @CompanyId;";
             Dictionary<string, object> parameters = new Dictionary<string, object>
             {
                 { "@Name", companyProfile.Name },
@@ -127,7 +150,22 @@ namespace FindJobApplication.Daos
                 { "@CompanyId", companyId }
             };
 
-            return db.Excute(sqlStr);
+            return db.Excute(sqlStr, parameters);
+        }
+        public int UpdateUserApplyStatus(int userId, int jobPostId, string status)
+        {
+            string sqlStr = @"
+                            UPDATE user_apply_job
+                            SET status = @Status
+                            WHERE user_id = @UserId AND job_post_id = @JobPostId;";
+            Dictionary<string, object> parameters = new Dictionary<string, object>
+            {
+                { "@UserId", userId },
+                { "@JobPostId", jobPostId },
+                { "@Status", status }
+            };
+
+            return db.Excute(sqlStr, parameters);
         }
     }
 }

@@ -194,7 +194,7 @@ namespace FindJobApplication.Daos
         }
         public int DeleteJobPostById(int jobPostId)
         {
-            string sqlStr = $"DELETE job_post WHERE id=@JobPostId;";
+            string sqlStr = $"DELETE FROM job_post WHERE id=@JobPostId;";
             Dictionary<string, object> parameters = new Dictionary<string, object>
             {
                 { "@JobPostId", jobPostId },
