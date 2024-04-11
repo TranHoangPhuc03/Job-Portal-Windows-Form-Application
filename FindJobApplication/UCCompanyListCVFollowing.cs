@@ -23,12 +23,12 @@ namespace FindJobApplication
         {
             pnlListCVFollowing.Controls.Clear();
             CompanyProfileDao companyProfileDao = new CompanyProfileDao();
-            DataTable dt = companyProfileDao.findAllUserFollowing(Global.loginId);
+            List<int> userFollowingIds = companyProfileDao.FindAllUserIdFollowing(Global.loginId);
             int cnt = 1;
-            foreach (DataRow dr in dt.Rows)
+            foreach (int userId in userFollowingIds)
             {
                 UserProfileDao userProfileDao = new UserProfileDao();
-                UserProfile userProfile = userProfileDao.findUserById((int)dr["user_id"]);
+                UserProfile userProfile = userProfileDao.FindUserProfileById(userId);
                 UCCompanyCVFollowing uCCompanyCVFollowing = new UCCompanyCVFollowing();
                 uCCompanyCVFollowing.LblId.Text = (cnt++).ToString();
                 uCCompanyCVFollowing.LlblName.Text = userProfile.Name;

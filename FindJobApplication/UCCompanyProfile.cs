@@ -48,6 +48,7 @@ namespace FindJobApplication
         private void pbProfileEdit_Click(object sender, EventArgs e)
         {
             FCompanyProfileInfomationEdit fCompanyProfileInfomationEdit = new FCompanyProfileInfomationEdit();
+            fCompanyProfileInfomationEdit.FormClosed += UCCompanyProfile_Load;
             fCompanyProfileInfomationEdit.Show();
         }
 
@@ -70,17 +71,27 @@ namespace FindJobApplication
         private void UCCompanyProfile_Load(object sender, EventArgs e)
         {
             CompanyProfileDao companyProfileDao = new CompanyProfileDao();
-            CompanyProfile companyProfile = companyProfileDao.findCompanyProfileById(this.companyId);
+            CompanyProfile companyProfile = companyProfileDao.FindCompanyProfileById(this.companyId);
 
             this.lblProfileCompany.Text = companyProfile.Name;
             this.lblProfileAddress.Text = companyProfile.Address;
             this.lblProfileCompanySize.Text = companyProfile.CompanySize.ToString();
             this.lblProfilePhone.Text = companyProfile.PhoneNumber;
-            this.lblProfileDateEstablish.Text = companyProfile.DateEstablish.ToString("dd-MM-yyyy");
+            this.lblProfileDateEstablish.Text = companyProfile.DateEstablish?.ToString("dd-MM-yyyy");
             this.lblProfileEmail.Text = companyProfile.Email;
             this.lblProfileLink.Text = companyProfile.CompanyLink;
             this.rtxtTop3Reason.Text = companyProfile.Reason;
             this.rTxtOverview.Text = companyProfile.Overview;
+        }
+
+        private void pbTop3Edit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pBCompanyOverviewEdit_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

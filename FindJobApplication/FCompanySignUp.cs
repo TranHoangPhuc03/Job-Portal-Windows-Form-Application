@@ -55,7 +55,7 @@ namespace FindJobApplication
             string password = this.txtPassword.Text;
 
             AccountDao accountDao = new AccountDao();
-            int results = accountDao.saveAccount(email, password, 1);
+            int results = accountDao.SaveAccount(email, password, 1);
 
             if (results > 0)
             {
@@ -65,18 +65,6 @@ namespace FindJobApplication
             {
                 MessageDialog.Show(this, "Sign up failed", "Error", MessageDialogStyle.Default);
             }
-
-            int companyAccId = (int)accountDao.findAccountByEmail(email)["id"];
-            string companyName = this.txtName.Text;
-            string taxCode = this.txtTaxCode.Text;
-            var filePath = this.ofdBusinessLicense.FileName;
-            var folderPath = Path.Combine((new FileInfo(AppDomain.CurrentDomain.BaseDirectory)).Directory.Parent.Parent.FullName, "BusinessLicenses");
-            var destinationFilePath = Path.Combine(folderPath, Path.GetFileName(filePath));
-            File.Copy(filePath, destinationFilePath, true);
-
-            CompanyProfile companyProfile = new CompanyProfile(companyAccId, companyName, email, destinationFilePath);
-            CompanyProfileDao companyProfileDao = new CompanyProfileDao();
-            results = companyProfileDao.saveCompanySignUp(companyProfile);
         }
     }
 }

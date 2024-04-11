@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using FindJobApplication.DB;
 using FindJobApplication.Models;
+using FindJobApplication.Mappers;
 
 namespace FindJobApplication.Daos
 {
@@ -17,10 +18,30 @@ namespace FindJobApplication.Daos
             db = new Database();
         }
 
-        public DataTable findAll()
+        public List<Location> FindAllLocationList()
         {
-            string sqlStr = "select * from location;";
-            return db.Read(sqlStr);
+            string sqlStr = "SELECT * FROM location;";
+            List<Location> list = new List<Location>();
+            DataTable dt = db.Read(sqlStr);
+
+            foreach (DataRow dr in dt.Rows)
+                list.Add(LocationMapper.MapToModel(dr));
+
+            return list;
+        }
+
+        public Dictionary<int, Location> FindAllLocationDict()
+        {
+            string sqlStr = @"SELECT * FROM location;";
+            DataTable dt = db.Read(sqlStr);
+            Dictionary<int, Location> dict = new Dictionary<int, Location>();
+            foreach (DataRow dr in dt.Rows)
+            {
+                Location location = LocationMapper.MapToModel(dr);
+                dict.Add(location.Id, location);
+            }
+
+            return dict;
         }
     }
 }

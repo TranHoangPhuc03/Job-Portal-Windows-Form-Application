@@ -1,4 +1,5 @@
 ﻿using FindJobApplication.Daos;
+using FindJobApplication.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -19,9 +20,6 @@ namespace FindJobApplication
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FLogin());
-            //Application.Run(new FHome());
-           // Application.Run(new FCompanyHome());
-
         }
     }
 }

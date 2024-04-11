@@ -52,29 +52,29 @@ namespace FindJobApplication
 
             this.cbLocation.ValueMember = "id";
             this.cbLocation.DisplayMember = "name";
-            this.cbLocation.DataSource = locationDao.findAll();
+            this.cbLocation.DataSource = locationDao.FindAllLocationList();
 
             this.cbExperience.ValueMember = "id";
             this.cbExperience.DisplayMember = "name";
-            this.cbExperience.DataSource = yearExperienceDao.findAll();
+            this.cbExperience.DataSource = yearExperienceDao.FindAllExperienceList();
 
             if (this.Tag != null)
             {
                 int jobPostId = (int)this.Tag;
                 JobPostDao jobPostDao = new JobPostDao();
-                DataRow dr = jobPostDao.findById(jobPostId) as DataRow;
+                JobPost jobPost = jobPostDao.FindJobPostById(jobPostId);
 
-                this.txtNameJob.Text = dr["title"].ToString();
-                this.txtSalary.Text = dr["salary"].ToString();
-                this.rTxtBenefits.Text = dr["benefit"].ToString();
-                this.rTxtCandidateRequirements.Text = dr["requirement"].ToString();
-                this.rTxtJobDescription.Text = dr["description"].ToString();
-                this.rTxtPrioritize.Text = dr["prioritize"].ToString();
-                this.txtNumberOfRecruitment.Text = dr["recruitment_number"].ToString();
-                this.txtWorkAddress.Text = dr["address"].ToString();
-                this.cbExperience.SelectedIndex = (int)dr["year_experience_id"];
-                this.cbLocation.SelectedIndex = (int)dr["location_id"];
-                this.dtpExpireDate.Text = dr["expire_date"].ToString();
+                this.txtNameJob.Text = jobPost.Title;
+                this.txtSalary.Text = jobPost.Salary.ToString();
+                this.rTxtBenefits.Text = jobPost.Benefit;
+                this.rTxtCandidateRequirements.Text = jobPost.Requirement;
+                this.rTxtJobDescription.Text = jobPost.Description;
+                this.rTxtPrioritize.Text = jobPost.Prioritize;
+                this.txtNumberOfRecruitment.Text = jobPost.RecruitmentNumber.ToString();
+                this.txtWorkAddress.Text = jobPost.Address;
+                this.cbExperience.SelectedIndex = jobPost.YearExperienceId;
+                this.cbLocation.SelectedIndex = jobPost.LocationId;
+                this.dtpExpireDate.Text = jobPost.ExpireDate.ToString("dd-MM-yyyy");
 
                 if (this.formAction == "Update")
                 {
@@ -114,7 +114,7 @@ namespace FindJobApplication
             JobPostDao jobPostDao = new JobPostDao();
             if (this.formAction == "Create")
             {
-                int results = jobPostDao.save(jobPost);
+                int results = jobPostDao.SaveNewJobPost(jobPost);
                 if (results == 0)
                 {
                     MessageDialog.Show(this, "Failed to save the job post", "Failed", MessageDialogStyle.Light);
@@ -127,8 +127,7 @@ namespace FindJobApplication
             }
             else if (this.formAction == "Update")
             {
-                int jobPostId = (int)this.Tag;
-                int results = jobPostDao.updateById(jobPost, jobPostId);
+                int results = jobPostDao.UpdateJobPostById(jobPost);
                 if (results == 0)
                 {
                     MessageDialog.Show(this, "Failed to update the job post", "Error", MessageDialogStyle.Light);

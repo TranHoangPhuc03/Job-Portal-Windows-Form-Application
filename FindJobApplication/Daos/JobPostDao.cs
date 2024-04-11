@@ -11,6 +11,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media.Imaging;
+using FindJobApplication.Mappers;
 
 namespace FindJobApplication.Daos
 {
@@ -23,72 +24,221 @@ namespace FindJobApplication.Daos
             db = new Database();
         }
 
-        public int save(JobPost jobpost)
+        public int SaveNewJobPost(JobPost jobpost)
         {
+            string sqlStr = "INSERT INTO job_post (title, recruitment_number, salary, description, requirement, prioritize, benefit, post_date, expire_date, address, year_experience_id, location_id, company_id) " +
+                            "VALUES (@Title, @RecruitmentNumber, @Salary, @Description, @Requirement, @Prioritize, @Benefit, @PostDate, @ExpireDate, @Address, @YearExperienceId, @LocationId, @CompanyId)";
 
-            string sqlStr = String.Format("INSERT INTO job_post (title, recruitment_number, salary, description, requirement, prioritize, benefit, post_date, expire_date, address, year_experience_id, location_id, company_id) " +
-                              "VALUES ('{0}', {1}, {2}, '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', {10}, {11}, {12});",
-                              jobpost.Title, jobpost.RecruitmentNumber, jobpost.Salary, jobpost.Description, jobpost.Requirement, jobpost.Prioritize,
-                              jobpost.Benefit, jobpost.PostDate.ToString("yyyy-MM-dd HH:mm:ss"), jobpost.ExpireDate.ToString("yyyy-MM-dd HH:mm:ss"),
-                              jobpost.Address, jobpost.YearExperienceId, jobpost.LocationId, jobpost.CompanyId);
+            Dictionary<string, object> parameters = new Dictionary<string, object>
+            {
+                { "@Title", jobpost.Title },
+                { "@RecruitmentNumber", jobpost.RecruitmentNumber },
+                { "@Salary", jobpost.Salary },
+                { "@Description", jobpost.Description },
+                { "@Requirement", jobpost.Requirement },
+                { "@Prioritize", jobpost.Prioritize },
+                { "@Benefit", jobpost.Benefit },
+                { "@PostDate", jobpost.PostDate },
+                { "@ExpireDate", jobpost.ExpireDate },
+                { "@Address", jobpost.Address },
+                { "@YearExperienceId", jobpost.YearExperienceId },
+                { "@LocationId", jobpost.LocationId },
+                { "@CompanyId", jobpost.CompanyId }
+            };
 
-            return db.Excute(sqlStr);
+            return db.Execute(sqlStr, parameters);
         }
-
-        public DataTable findAll()
+        public List<JobPost> FindAllJobPost()
         {
-            string sqlStr = "select job_post.id, job_post.title, job_post.recruitment_number, job_post.salary, job_post.description, job_post.requirement, job_post.prioritize, job_post.benefit, job_post.post_date, job_post.expire_date, job_post.address, company_profile.id as company_id, company_profile.name as company_name, location.name as location_name, year_experience.name as year_experience_name " +
-                            "from job_post, location, year_experience, company_profile " +
-                            "where job_post.location_id = location.id and job_post.year_experience_id = year_experience.id and job_post.company_id = company_profile.id;";
-            return db.Read(sqlStr);
+            string sqlStr = @"
+                            SELECT
+                                job_post.id,
+                                job_post.title,
+                                job_post.recruitment_number,
+                                job_post.salary,
+                                job_post.description,
+                                job_post.requirement,
+                                job_post.prioritize,
+                                job_post.benefit,
+                                job_post.post_date,
+                                job_post.expire_date,
+                                job_post.address,
+                                company_profile.id AS company_id,
+                                company_profile.name AS company_name,
+                                location.id AS location_id,
+                                location.name AS location_name,
+                                year_experience.id AS year_experience_id,
+                                year_experience.name AS year_experience_name
+                            FROM 
+                                job_post
+                            INNER JOIN 
+                                location ON job_post.location_id = location.id
+                            INNER JOIN 
+                                year_experience ON job_post.year_experience_id = year_experience.id
+                            INNER JOIN 
+                                company_profile ON job_post.company_id = company_profile.id";
+            DataTable dt = db.Read(sqlStr);
+            List<JobPost> list = new List<JobPost>();
+            foreach (DataRow dr in dt.Rows)
+                list.Add(JobPostMapper.MapToModel(dr));
+
+            return list;
         }
-
-        public DataRow findById(int id)
+        public JobPost FindJobPostById(int jobPostId)
         {
-            string sqlStr = $"select * from job_post where id={id};";
-            return (DataRow)db.Read(sqlStr).Rows[0];
+            string sqlStr = @"
+                            SELECT
+                                job_post.id,
+                                job_post.title,
+                                job_post.recruitment_number,
+                                job_post.salary,
+                                job_post.description,
+                                job_post.requirement,
+                                job_post.prioritize,
+                                job_post.benefit,
+                                job_post.post_date,
+                                job_post.expire_date,
+                                job_post.address,
+                                company_profile.id AS company_id,
+                                company_profile.name AS company_name,
+                                location.id AS location_id,
+                                location.name AS location_name,
+                                year_experience.id AS year_experience_id,
+                                year_experience.name AS year_experience_name
+                            FROM 
+                                job_post
+                            INNER JOIN 
+                                location ON job_post.location_id = location.id
+                            INNER JOIN 
+                                year_experience ON job_post.year_experience_id = year_experience.id
+                            INNER JOIN 
+                                company_profile ON job_post.company_id = company_profile.id
+                            WHERE job_post.id = @Id";
+            Dictionary<string, object> parameters = new Dictionary<string, object>
+            {
+                { "@Id", jobPostId },
+            };
+            DataRow dr = db.Read(sqlStr, parameters).Rows.Cast<DataRow>().FirstOrDefault();
+            return JobPostMapper.MapToModel(dr);
         }
-
-        public DataTable findByCompanyId(int id)
+        public List<JobPost> FindAllJobPostByCompanyId(int companyId)
         {
-            string sqlStr = "select job_post_company.id, job_post_company.title, job_post_company.recruitment_number, job_post_company.salary, job_post_company.description, job_post_company.requirement, job_post_company.prioritize, job_post_company.benefit, job_post_company.post_date, job_post_company.expire_date, job_post_company.address, company_profile.name as company_name, location.name as location_name, year_experience.name as year_experience_name " +
-                            $"from(select * from job_post where company_id = {id}) as job_post_company, location, year_experience, company_profile " +
-                            "where job_post_company.location_id = location.id and job_post_company.year_experience_id = year_experience.id and job_post_company.company_id = company_profile.id;";
-            return db.Read(sqlStr);
+            string sqlStr = @"
+                            SELECT
+                                job_post.id,
+                                job_post.title,
+                                job_post.recruitment_number,
+                                job_post.salary,
+                                job_post.description,
+                                job_post.requirement,
+                                job_post.prioritize,
+                                job_post.benefit,
+                                job_post.post_date,
+                                job_post.expire_date,
+                                job_post.address,
+                                company_profile.id AS company_id,
+                                company_profile.name AS company_name,
+                                location.id AS location_id,
+                                location.name AS location_name,
+                                year_experience.id AS year_experience_id,
+                                year_experience.name AS year_experience_name
+                            FROM 
+                                job_post
+                            INNER JOIN 
+                                location ON job_post.location_id = location.id
+                            INNER JOIN 
+                                year_experience ON job_post.year_experience_id = year_experience.id
+                            INNER JOIN 
+                                company_profile ON job_post.company_id = company_profile.id
+                            WHERE company_profile.id = @CompanyId";
+            Dictionary<string, object> parameters = new Dictionary<string, object>
+            {
+                { "@CompanyId", companyId }
+            };
+            DataTable dt = db.Read(sqlStr, parameters);
+            List<JobPost> list = new List<JobPost>();
+            foreach (DataRow dr in dt.Rows)
+                list.Add(JobPostMapper.MapToModel(dr));
+
+            return list;
         }
-
-        public DataTable findByJobId(int id)
+        public int CountUserAppliedForOneJob(int jobPostId)
         {
-            string sqlStr = "select job_post.id, job_post.title, job_post.recruitment_number, job_post.salary, job_post.description, job_post.requirement, job_post.prioritize, job_post.benefit, job_post.post_date, job_post.expire_date, job_post.address, company_profile.id as company_id, company_profile.name as company_name, location.name as location_name, year_experience.name as year_experience_name " +
-                           "from job_post, location, year_experience, company_profile " +
-                           $"where job_post.location_id = location.id and job_post.year_experience_id = year_experience.id and job_post.company_id = company_profile.id and job_post.id = {id};";
-            return db.Read(sqlStr);
+            string sqlStr = @"
+                            SELECT count(user_id) as numer_user_apply
+                            FROM user_apply_job
+                            WHERE job_post_id = @JobPostId;";
+            Dictionary<string, object> parameters = new Dictionary<string, object>
+            {
+                { "@JobPostId", jobPostId },
+            };
+
+            return (int)db.ExecuteScalar(sqlStr, parameters);
         }
-
-        public DataTable countUserApply(int jobPostId)
+        public List<int> FindAllUserIdAppliedForOneJob(int jobPostId)
         {
-            string sqlStr = "select count(user_id) as number_user_apply " +
-                            "from user_apply_job " +
-                            $"where user_apply_job.job_post_id = {jobPostId};";
-            return db.Read(sqlStr);
+            string sqlStr = @"SELECT user_id
+                            FROM user_apply_job
+                            WHERE job_post_id = @JobPostId;";
+            Dictionary<string, object> parameters = new Dictionary<string, object>
+            {
+                { "@JobPostId", jobPostId },
+            };
+
+            DataTable dt = db.Read(sqlStr);
+            List<int> list = new List<int>();
+            foreach (DataRow dr in dt.Rows)
+                list.Add((int)dr["user_id"]);
+
+            return list;
         }
-
-        public DataTable findUserProfileApply(int jobPostId)
+        public int DeleteJobPostById(int jobPostId)
         {
-            string sqlStr = $"select * from user_profile, (select * from user_apply_job where job_post_id = {jobPostId}) as user_apply where user_profile.id = user_apply.user_id";
-            return db.Read(sqlStr);
+            string sqlStr = $"DELETE FROM job_post WHERE id=@JobPostId;";
+            Dictionary<string, object> parameters = new Dictionary<string, object>
+            {
+                { "@JobPostId", jobPostId },
+            };
+
+            return db.Execute(sqlStr);
         }
-
-        public int deleteById(int jobPostId)
+        public int UpdateJobPostById(JobPost jobPost)
         {
-            string sqlStr = $"delete from job_post where id={jobPostId};";
-            return db.Excute(sqlStr);
-        }
+            string sqlStr = $@"
+                            UPDATE job_post
+                            SET title = @Title, 
+                                recruitment_number = @RecruitmentNumber, 
+                                salary = @Salary, 
+                                description = @Description, 
+                                requirement = @Requirement, 
+                                prioritize = @Prioritize, 
+                                benefit = @Benefit, 
+                                post_date = @PostDate, 
+                                expire_date = @ExpireDate, 
+                                address = @Address, 
+                                year_experience_id = @YearExperienceId, 
+                                location_id = @LocationId, 
+                                company_id = @CompanyId
+                            WHERE id = @JobPostId;";
+            Dictionary<string, object> parameters = new Dictionary<string, object>
+            {
+                { "@Title", jobPost.Title },
+                { "@RecruitmentNumber", jobPost.RecruitmentNumber },
+                { "@Salary", jobPost.Salary },
+                { "@Description", jobPost.Description },
+                { "@Requirement", jobPost.Requirement },
+                { "@Prioritize", jobPost.Prioritize },
+                { "@Benefit", jobPost.Benefit },
+                { "@PostDate", jobPost.PostDate },
+                { "@ExpireDate", jobPost.ExpireDate },
+                { "@Address", jobPost.Address },
+                { "@YearExperienceId", jobPost.YearExperienceId },
+                { "@LocationId", jobPost.LocationId },
+                { "@CompanyId", jobPost.CompanyId },
+                { "@JobPostId", jobPost.Id }
+            };
 
-        public int updateById(JobPost jobPost, int jobPostId)
-        {
-            string sqlStr = $@"UPDATE job_post SET title = '{jobPost.Title}', recruitment_number = {jobPost.RecruitmentNumber}, salary = {jobPost.Salary}, description = '{jobPost.Description}', requirement = '{jobPost.Requirement}', prioritize = '{jobPost.Prioritize}', benefit = '{jobPost.Benefit}', post_date = '{jobPost.PostDate:yyyy-MM-dd}', expire_date = '{jobPost.ExpireDate:yyyy-MM-dd}', address = '{jobPost.Address}', year_experience_id = {jobPost.YearExperienceId}, location_id = {jobPost.LocationId}, company_id = {jobPost.CompanyId} WHERE id = {jobPostId};";
-            return db.Excute(sqlStr);
+            return db.Execute(sqlStr);
         }
     }
 }

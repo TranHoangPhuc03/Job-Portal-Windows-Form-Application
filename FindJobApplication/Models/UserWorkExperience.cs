@@ -9,6 +9,7 @@ namespace FindJobApplication.Models
 {
     public class UserWorkExperience
     {
+        private int id;
         private int userProfileId;
         private string jobTitle;
         private string companyName;
@@ -16,7 +17,7 @@ namespace FindJobApplication.Models
         private DateTime to;
 
         public UserWorkExperience() { }
-        public UserWorkExperience(int userProfileId, string jobTitle, string companyName, DateTime from, DateTime to)
+        public UserWorkExperience(int id, int userProfileId, string jobTitle, string companyName, DateTime from, DateTime to)
         {
             this.userProfileId = userProfileId;
             this.jobTitle = jobTitle;
@@ -25,7 +26,8 @@ namespace FindJobApplication.Models
             this.to = to;
         }
 
-        public int UserProfileID { get => userProfileId; }
+        public int Id { get => id; }
+        public int UserProfileId { get => userProfileId; }
         public string JobTitle { get => jobTitle; }
         public string CompanyName { get => companyName; }
         public DateTime From { get => from; }

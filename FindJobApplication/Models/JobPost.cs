@@ -4,7 +4,7 @@ namespace FindJobApplication.Models
 {
     public class JobPost
     {
-        private int id;
+        int id;
         string title;
         int recruitmentNumber;
         int salary;
@@ -18,6 +18,7 @@ namespace FindJobApplication.Models
         int yearExperienceId;
         int locationId;
         int companyId;
+        string companyName;
 
         public JobPost() { }
 
@@ -27,22 +28,38 @@ namespace FindJobApplication.Models
             this.title = title;
         }
 
-        public int Id { get { return id; } }
-        public string Title { get { return title; } set { this.title = value; } }
-        public int RecruitmentNumber { get; set; }
-        public int Salary { get; set; }
-        public string Description { get; set; }
-        public string Requirement { get; set; }
-        public string Prioritize { get; set; }
-        public string Benefit { get; set; }
-        public DateTime PostDate { get; set; }
-        public DateTime ExpireDate { get; set; }
-        public string Address { get; set; }
-        public int YearExperienceId { get; set; }
-        public int LocationId { get; set; }
-        public int CompanyId { get; set; }
+        public JobPost(int id, string title, int recruitmentNumber, int salary, string description, string requirement, string prioritize, string benefit, DateTime postDate, DateTime expireDate, string address, int yearExperienceId, int locationId, int companyId, string companyName) : this(id, title)
+        {
+            this.recruitmentNumber = recruitmentNumber;
+            this.salary = salary;
+            this.description = description;
+            this.requirement = requirement;
+            this.prioritize = prioritize;
+            this.benefit = benefit;
+            this.postDate = postDate;
+            this.expireDate = expireDate;
+            this.address = address;
+            this.yearExperienceId = yearExperienceId;
+            this.locationId = locationId;
+            this.companyId = companyId;
+            this.companyName = companyName;
+        }
 
-
+        public int Id { get => id; }
+        public string Title { get => title; }
+        public int RecruitmentNumber { get => recruitmentNumber; }
+        public int Salary { get => salary; }
+        public string Description { get => description; }
+        public string Requirement { get => requirement; }
+        public string Prioritize { get => prioritize; }
+        public string Benefit { get => benefit; }
+        public DateTime PostDate { get => postDate; set => this.PostDate = value; }
+        public DateTime ExpireDate { get => expireDate; }
+        public string Address { get => address; }
+        public int YearExperienceId { get => yearExperienceId; }
+        public int LocationId { get => locationId; }
+        public int CompanyId { get => companyId; set => this.CompanyId = value; }
+        public string CompanyName { get => companyName; }
 
     }
 }

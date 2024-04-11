@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FindJobApplication.Daos;
+using FindJobApplication.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,14 +21,11 @@ namespace FindJobApplication
         public PictureBox PBAvatar { get => pBAvatar; set => pBAvatar = value; }
         private void UCSocial_Load(object sender, EventArgs e)
         {
-            for (int i = 0; i < 10; i++)
+            SocialPostDao socialPostDao = new SocialPostDao();
+            List<SocialPost> socialPosts = socialPostDao.FindAllSocialPost();
+            foreach (SocialPost socialPost in socialPosts)
             {
-                UCSocialPost uCSocial = new UCSocialPost();
-                for (int j = 0; j < 5; j++) 
-                {
-                    UCUserProfileSkill skill = new UCUserProfileSkill();
-                    uCSocial.PnlSkill.Controls.Add(skill);
-                }
+                UCSocialPost uCSocial = new UCSocialPost(socialPost);
                 pnlSocial.Controls.Add(uCSocial);
             }
         }
@@ -34,6 +33,7 @@ namespace FindJobApplication
         private void txtUpSocial_MouseClick(object sender, MouseEventArgs e)
         {
             FPostSocial fPostSocial = new FPostSocial();
+            fPostSocial.FormClosed += this.UCSocial_Load;
             fPostSocial.Show();
         }
     }

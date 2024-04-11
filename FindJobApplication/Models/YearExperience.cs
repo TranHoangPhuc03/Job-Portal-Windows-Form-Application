@@ -3,11 +3,16 @@
     public class YearExperience
     {
         private int id;
-        private int from;
-        private int to;
+        private string name;
+
+        public YearExperience() { }
+        public YearExperience(int id, string name)
+        {
+            this.id = id;
+            this.name = name;
+        }
 
         public int Id { get; }
-        public int From { get; }
-        public int To { get; }
+        public string Name { get; }
     }
 }

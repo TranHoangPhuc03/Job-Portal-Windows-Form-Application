@@ -53,7 +53,7 @@ namespace FindJobApplication
             string password = this.txtPassword.Text;
 
             AccountDao accountDao = new AccountDao();
-            DataRow account = accountDao.findAccountByEmail(email);
+            DataRow account = accountDao.FindAccountByEmail(email);
             if (account == null || email != (string)account["email"] || password != (string)account["password"])
             {
                 MessageDialog.Show(this, "Your email or password is incorrect", "Login failed", MessageDialogStyle.Default);
@@ -61,7 +61,7 @@ namespace FindJobApplication
             else
             {
                 UserRoleDao userRoleDao = new UserRoleDao();
-                string roleName = (userRoleDao.findUserRoleById((int)account["role_id"])["role_name"]).ToString();
+                string roleName = userRoleDao.FindUserRoleById((int)account["role_id"]);
                 int accountId = (int)account["id"];
                 int loginId = 0;
                 Form redirectForm = null;
@@ -69,19 +69,20 @@ namespace FindJobApplication
                 {
                     case "company":
                         CompanyProfileDao companyProfileDao = new CompanyProfileDao();
-                        loginId = (int)companyProfileDao.findCompanyByAccountId(accountId)["id"];
+                        loginId = companyProfileDao.FindCompanyIdByAccountId(accountId);
                         redirectForm = new FCompanyHome();
                         break;
 
                     case "user":
                         UserProfileDao userProfileDao = new UserProfileDao();
-                        loginId = (int)userProfileDao.findUserByAccountId(accountId)["id"];
+                        loginId = userProfileDao.FindUserIdByAccountId(accountId);
                         redirectForm = new FHome();
                         break;
                     default:
                         break;
                 }
 
+                Global.accountId = accountId;
                 Global.loginId = loginId;
                 Global.role = roleName;
                 

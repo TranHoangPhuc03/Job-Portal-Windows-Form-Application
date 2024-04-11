@@ -8,23 +8,25 @@ namespace FindJobApplication.Models
 {
     public class UserPersonalProject
     {
-        private int userProfitId;
+        private int id;
+        private int userProfileId;
         private string projectName;
         private DateTime from;
         private DateTime to;
         private string description;
 
         public UserPersonalProject() { }
-        public UserPersonalProject(int userProfitId, string projectName, DateTime from, DateTime to, string description)
+        public UserPersonalProject(int id, int userProfitId, string projectName, DateTime from, DateTime to, string description)
         {
-            this.userProfitId = userProfitId;
+            this.userProfileId = userProfitId;
             this.projectName = projectName;
             this.from = from;
             this.to = to;
             this.description = description;
         }
 
-        public int UserProfitId { get => userProfitId; }
+        public int Id { get => id; }
+        public int UserProfileId { get => userProfileId; }
         public string ProjectName { get => projectName; }
         public DateTime From { get => from; }
         public DateTime To { get => to; }

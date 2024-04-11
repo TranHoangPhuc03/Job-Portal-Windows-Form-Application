@@ -27,20 +27,20 @@ namespace FindJobApplication
         {
             pnlNumberOfApplicants.Controls.Clear();
             JobPostDao jobPostDao = new JobPostDao();
-            DataTable dt = jobPostDao.findByCompanyId(Global.loginId);
+            List<JobPost> jobPosts = jobPostDao.FindAllJobPostByCompanyId(Global.loginId);
             List<UCCompanyJob> listUCCompanyJob = new List<UCCompanyJob>();
             int cnt = 1;
-            foreach (DataRow row in dt.Rows)
+            foreach (JobPost jobPost in jobPosts)
             {
                 
                 UCCompanyJob uCCompanyJob = new UCCompanyJob();
                 uCCompanyJob.LblID.Text = (cnt++).ToString();
-                uCCompanyJob.LblNameJob.Text = row["title"].ToString();
-                uCCompanyJob.LblPostDate.Text = row["post_date"].ToString();
-                uCCompanyJob.LblExpirationDate.Text = row["expire_date"].ToString();
-                uCCompanyJob.LblSalary.Text = row["salary"].ToString();
-                uCCompanyJob.LblCountApplied.Text = ((jobPostDao.countUserApply((int)row["id"])).Rows[0]["number_user_apply"]).ToString();
-                uCCompanyJob.Tag = row["id"];
+                uCCompanyJob.LblNameJob.Text = jobPost.Title;
+                uCCompanyJob.LblPostDate.Text = jobPost.PostDate.ToString("dd-MM-yyyy");
+                uCCompanyJob.LblExpirationDate.Text = jobPost.ExpireDate.ToString("dd-MM-yyyy");
+                uCCompanyJob.LblSalary.Text = jobPost.Salary.ToString();
+                uCCompanyJob.LblCountApplied.Text = (jobPostDao.CountUserAppliedForOneJob(jobPost.Id)).ToString();
+                uCCompanyJob.Tag = jobPost.Id;
                 listUCCompanyJob.Add(uCCompanyJob);
             }
             this.fillDataToPanel(listUCCompanyJob);
@@ -63,22 +63,21 @@ namespace FindJobApplication
         {
             pnlNumberOfApplicants.Controls.Clear();
             JobPostDao jobPostDao = new JobPostDao();
-            DataTable dt = jobPostDao.findByCompanyId(Global.loginId);
-            var results = dt.AsEnumerable()
-                            .Where(row => row.Field<DateTime>("expire_date") >= DateTime.Now);
+            List<JobPost> jobPosts = jobPostDao.FindAllJobPostByCompanyId(Global.loginId);
+            var results = jobPosts.Where(jobPost => jobPost.ExpireDate >= DateTime.Now);
+
             List<UCCompanyJob> listUCCompanyJob = new List<UCCompanyJob>();
             int cnt = 1;
-            foreach (DataRow row in results)
+            foreach (JobPost jobPost in results)
             {
-
                 UCCompanyJob uCCompanyJob = new UCCompanyJob();
                 uCCompanyJob.LblID.Text = (cnt++).ToString();
-                uCCompanyJob.LblNameJob.Text = row["title"].ToString();
-                uCCompanyJob.LblPostDate.Text = row["post_date"].ToString();
-                uCCompanyJob.LblExpirationDate.Text = row["expire_date"].ToString();
-                uCCompanyJob.LblSalary.Text = row["salary"].ToString();
-                uCCompanyJob.LblCountApplied.Text = ((jobPostDao.countUserApply((int)row["id"])).Rows[0]["number_user_apply"]).ToString();
-                uCCompanyJob.Tag = row["id"];
+                uCCompanyJob.LblNameJob.Text = jobPost.Title;
+                uCCompanyJob.LblPostDate.Text = jobPost.PostDate.ToString("dd-MM-yyyy");
+                uCCompanyJob.LblExpirationDate.Text = jobPost.ExpireDate.ToString("dd-MM-yyyy");
+                uCCompanyJob.LblSalary.Text = jobPost.Salary.ToString();
+                uCCompanyJob.LblCountApplied.Text = (jobPostDao.CountUserAppliedForOneJob(jobPost.Id)).ToString();
+                uCCompanyJob.Tag = jobPost.Id;
                 listUCCompanyJob.Add(uCCompanyJob);
             }
             this.fillDataToPanel(listUCCompanyJob);
@@ -88,22 +87,21 @@ namespace FindJobApplication
         {
             pnlNumberOfApplicants.Controls.Clear();
             JobPostDao jobPostDao = new JobPostDao();
-            DataTable dt = jobPostDao.findByCompanyId(Global.loginId);
-            var results = dt.AsEnumerable()
-                            .Where(row => row.Field<DateTime>("expire_date") < DateTime.Now);
+            List<JobPost> jobPosts = jobPostDao.FindAllJobPostByCompanyId(Global.loginId);
+            var results = jobPosts.Where(jobPost => jobPost.ExpireDate < DateTime.Now);
+
             List<UCCompanyJob> listUCCompanyJob = new List<UCCompanyJob>();
             int cnt = 1;
-            foreach (DataRow row in results)
+            foreach (JobPost jobPost in results)
             {
-
                 UCCompanyJob uCCompanyJob = new UCCompanyJob();
                 uCCompanyJob.LblID.Text = (cnt++).ToString();
-                uCCompanyJob.LblNameJob.Text = row["title"].ToString();
-                uCCompanyJob.LblPostDate.Text = row["post_date"].ToString();
-                uCCompanyJob.LblExpirationDate.Text = row["expire_date"].ToString();
-                uCCompanyJob.LblSalary.Text = row["salary"].ToString();
-                uCCompanyJob.LblCountApplied.Text = ((jobPostDao.countUserApply((int)row["id"])).Rows[0]["number_user_apply"]).ToString();
-                uCCompanyJob.Tag = row["id"];
+                uCCompanyJob.LblNameJob.Text = jobPost.Title;
+                uCCompanyJob.LblPostDate.Text = jobPost.PostDate.ToString("dd-MM-yyyy");
+                uCCompanyJob.LblExpirationDate.Text = jobPost.ExpireDate.ToString("dd-MM-yyyy");
+                uCCompanyJob.LblSalary.Text = jobPost.Salary.ToString();
+                uCCompanyJob.LblCountApplied.Text = (jobPostDao.CountUserAppliedForOneJob(jobPost.Id)).ToString();
+                uCCompanyJob.Tag = jobPost.Id;
                 listUCCompanyJob.Add(uCCompanyJob);
             }
             this.fillDataToPanel(listUCCompanyJob);

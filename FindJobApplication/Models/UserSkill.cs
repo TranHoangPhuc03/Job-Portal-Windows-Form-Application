@@ -10,18 +10,18 @@ namespace FindJobApplication.Models
     {
         private int userProfileId;
         private int skillId;
-        private string skillName;
+        private string name;
 
         public UserSkill() { }
-        public UserSkill(int userProfileId, int skillId, string skillName)
+        public UserSkill(int userProfileId, int skillId, string name)
         {
             this.userProfileId = userProfileId;
             this.skillId = skillId;
-            this.skillName = skillName;
+            this.name = name;
         }
 
         public int UserProfileId { get => userProfileId; }
         public int SkillId { get => skillId; }
-        public string SkillName { get => skillName; }
+        public string Name { get => name; }
     }
 }

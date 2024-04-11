@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="connStr" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Data Source=LOI;Initial Catalog=QLXinViec;Integrated Security=True;</Value>
+      <Value Profile="(Default)">Data Source=HUCPHOANG\SQLSERVER;Initial Catalog=QLXinViec;Integrated Security=True;</Value>
     </Setting>
   </Settings>
 </SettingsFile>

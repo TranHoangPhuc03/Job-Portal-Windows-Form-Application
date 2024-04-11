@@ -101,27 +101,13 @@ namespace FindJobApplication
 
         private void btnFollow_Click(object sender, EventArgs e)
         {
-            CompanyProfileDao companyProfileDao = new CompanyProfileDao();
-            if (statusBtnFollowUser == 1)
-            {
-                btnFollow.Image = Properties.Resources.unFollow;
-                btnFollow.Text = "Following";
-                statusBtnFollowUser = 2;
-                companyProfileDao.saveUserFollowing(Global.loginId, this.userId);
-            }
-            else
-            {
-                btnFollow.Image = Properties.Resources.Follow;
-                btnFollow.Text = "Follow";
-                statusBtnFollowUser = 1;
-                companyProfileDao.deleteUserFollowing(Global.loginId, this.userId);
-            }
+            
         }
 
         private void UCProfile_Load(object sender, EventArgs e)
         {
             UserProfileDao userProfileDao = new UserProfileDao();
-            UserProfile userProfile = userProfileDao.findUserById(this.userId);
+            UserProfile userProfile = userProfileDao.FindUserProfileById(this.userId);
 
             this.lblProfileName.Text = userProfile.Name;
             this.lblProfileEmail.Text = userProfile.Email;

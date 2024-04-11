@@ -17,16 +17,38 @@ namespace FindJobApplication.Daos
             db = new Database();
         }
 
-        public int saveUserApplyJob(DateTime appliedAt, int userId, int jobId, string status = "PENDING", string coverLetter = "")
+        public int SaveUserApplyJob(DateTime appliedAt, int userId, int jobPostId, string status = "PENDING", string coverLetter = "")
         {
-            string sqlStr = $"insert into user_apply_job(user_id, job_post_id, status, cover_letter, applied_at) values ({userId}, {jobId}, '{status}', '{coverLetter}', '{appliedAt.ToString("yyyy-MM-dd HH:mm:ss")}');";
-            return db.Excute(sqlStr);
+            string sqlStr = "INSERT INTO user_apply_job(user_id, job_post_id, status, cover_letter, applied_at) VALUES (@UserId, @JobPostId, @Status, @CoverLetter, @AppliedAt);";
+            Dictionary<string, object> parameters = new Dictionary<string, object>
+            {
+                { "@UserId", userId },
+                { "@JobPostId", jobPostId },
+                { "@Status", status },
+                { "@CoverLetter", coverLetter },
+                { "@AppliedAt", appliedAt }
+            };
+
+            return db.Execute(sqlStr, parameters);
         }
 
-        public DataTable findByUserAppliedIdAndJobPostId(int userId, int jobPostId)
+        public DataTable FindUserApplyJob(int userId, int jobPostId)
         {
-            string sqlStr = $"select user_apply_job.*, user_profile.name, job_post.title from user_apply_job, user_profile, job_post where user_apply_job.user_id = {userId} and user_apply_job.job_post_id = {jobPostId} and user_apply_job.user_id = user_profile.id and user_apply_job.job_post_id = job_post.id;";
+            string sqlStr = $"SELECT user_apply_job.*, user_profile.name, job_post.title from user_apply_job, user_profile, job_post WHERE user_apply_job.user_id = {userId} and user_apply_job.job_post_id = {jobPostId} and user_apply_job.user_id = user_profile.id and user_apply_job.job_post_id = job_post.id;";
             return db.Read(sqlStr);
+        }
+
+        public int UpdateUserApplyStatus(int userId, int jobPostId, string status)
+        {
+            string sqlStr = "UPDATE user_apply_job SET status = @Status WHERE user_id = @UserId AND job_post_id = @JobPostId";
+            Dictionary<string, object> parameters = new Dictionary<string, object>
+            {
+                { "@Status", status },
+                { "@UserId", userId },
+                { "@JobPostId", jobPostId}
+            };
+
+            return db.Execute(sqlStr, parameters);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Guna.UI.WinForms;
+﻿using FindJobApplication.Models;
+using Guna.UI.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,14 @@ namespace FindJobApplication
         public UCSocialHistoryRow()
         {
             InitializeComponent();
+        }
+
+        public UCSocialHistoryRow(int cnt, SocialPost socialPost) : this()
+        {
+            this.LblID.Text = cnt.ToString();
+            this.lblTitle.Text = socialPost.Title;
+            this.lblDatePost.Text = socialPost.PostDate.ToString("dd-MM-yyyy");
+            this.pbEdit.Tag = this.pBDelete.Tag = socialPost.Id;
         }
         public GunaLabel LblID { get => lblID; set => lblID = value; }
         public GunaLabel LblTitle { get => lblTitle; set => lblTitle = value; }
