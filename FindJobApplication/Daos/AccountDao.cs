@@ -37,7 +37,7 @@ namespace FindJobApplication.Daos
                 { "@RoleId", roleId }
             };
 
-            return db.Excute(sqlStr, parameters);
+            return db.Execute(sqlStr, parameters);
         }
     }
 }

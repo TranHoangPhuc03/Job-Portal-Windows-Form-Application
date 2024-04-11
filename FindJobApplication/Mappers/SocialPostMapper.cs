@@ -20,11 +20,12 @@ namespace FindJobApplication.Mappers
             try
             {
                 int id = Convert.ToInt32(dr["id"]);
+                string title = dr["title"].ToString();
                 DateTime postDate = Convert.ToDateTime(dr["post_date"]);
                 string contents = dr["contents"].ToString();
                 int accountId = Convert.ToInt32(dr["account_id"]);
 
-                return new SocialPost(id, postDate, contents, accountId);
+                return new SocialPost(id, title, postDate, contents, accountId);
             }
             catch (FormatException ex)
             {

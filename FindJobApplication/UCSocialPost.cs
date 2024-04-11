@@ -1,4 +1,6 @@
-﻿using Guna.UI2.WinForms;
+﻿using FindJobApplication.Daos;
+using FindJobApplication.Models;
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +18,20 @@ namespace FindJobApplication
         public UCSocialPost()
         {
             InitializeComponent();
+        }
+
+        public UCSocialPost(SocialPost socialPost) : this()
+        {
+            UserProfileDao userProfileDao = new UserProfileDao();
+            this.LlblName.Text = userProfileDao.FindUserProfileByAccountId(socialPost.AccountId).Name;
+            this.lblDatePost.Text = socialPost.PostDate.ToString("dd-MM-yyyy");
+            this.lblTitle.Text = socialPost.Title;
+            this.rtxtDescription.Text = socialPost.Contents;
+            foreach(Skill skill in socialPost.Skills)
+            {
+                UCUserProfileSkill uCUserProfileSkill = new UCUserProfileSkill(skill);
+                this.pnlSkill.Controls.Add(uCUserProfileSkill);
+            }
         }
 
         public Guna2Button BtnSendMail { get => btnSendMail; set => btnSendMail = value; }

@@ -82,6 +82,7 @@ namespace FindJobApplication
                         break;
                 }
 
+                Global.accountId = accountId;
                 Global.loginId = loginId;
                 Global.role = roleName;
                 

@@ -177,11 +177,21 @@ CREATE TABLE [following](
 --Social
 CREATE TABLE social_post(
 	id INT PRIMARY KEY IDENTITY(1, 1),
+	title TEXT,
 	contents TEXT,
 	post_date DATE,
 	account_id INT,
 
 	FOREIGN KEY (account_id) REFERENCES account(id)
+);
+
+CREATE TABLE social_post_skill(
+	social_post_id INT,
+	skill_id INT,
+
+	FOREIGN KEY (social_post_id) REFERENCES social_post(id),
+	FOREIGN KEY (skill_id) REFERENCES skill(id),
+	PRIMARY KEY (social_post_id, skill_id)
 );
 
 CREATE TABLE mail(

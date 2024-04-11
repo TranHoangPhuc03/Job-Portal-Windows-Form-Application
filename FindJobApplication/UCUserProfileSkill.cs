@@ -19,7 +19,12 @@ namespace FindJobApplication
         }
         public UCUserProfileSkill(UserSkill userSkill) : this()
         {
-            this.btnSkill.Text = userSkill.SkillName;
+            this.btnSkill.Text = userSkill.Name;
+        }
+
+        public UCUserProfileSkill(Skill skill) : this()
+        {
+            this.btnSkill.Text = skill.Name;
         }
         public void ShowBtnDelete()
         {

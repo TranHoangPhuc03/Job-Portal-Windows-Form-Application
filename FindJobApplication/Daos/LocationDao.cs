@@ -32,13 +32,13 @@ namespace FindJobApplication.Daos
 
         public Dictionary<int, Location> FindAllLocationDict()
         {
-            string sqlStr = "SELECT * FROM year_experience;";
+            string sqlStr = @"SELECT * FROM location;";
             DataTable dt = db.Read(sqlStr);
             Dictionary<int, Location> dict = new Dictionary<int, Location>();
             foreach (DataRow dr in dt.Rows)
             {
                 Location location = LocationMapper.MapToModel(dr);
-                dict[location.Id] = location;
+                dict.Add(location.Id, location);
             }
 
             return dict;

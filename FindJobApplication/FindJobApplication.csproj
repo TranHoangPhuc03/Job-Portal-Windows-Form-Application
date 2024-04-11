@@ -73,6 +73,7 @@
     <Compile Include="Daos\JobPostDao.cs" />
     <Compile Include="Daos\LocationDao.cs" />
     <Compile Include="Daos\MailDao.cs" />
+    <Compile Include="Daos\SkillDao.cs" />
     <Compile Include="Daos\SocialPostDao.cs" />
     <Compile Include="Daos\UserProfileDao.cs" />
     <Compile Include="Daos\UserRoleDao.cs" />
@@ -178,6 +179,7 @@
     <Compile Include="Mappers\JobPostMapper.cs" />
     <Compile Include="Mappers\LocationMapper.cs" />
     <Compile Include="Mappers\MailMapper.cs" />
+    <Compile Include="Mappers\SkillMapper.cs" />
     <Compile Include="Mappers\SocialPostMapper.cs" />
     <Compile Include="Mappers\UserEducationMapper.cs" />
     <Compile Include="Mappers\UserPersonalProjectMapper.cs" />
@@ -191,6 +193,7 @@
     <Compile Include="Models\Location.cs" />
     <Compile Include="Models\Global.cs" />
     <Compile Include="Models\Mail.cs" />
+    <Compile Include="Models\Skill.cs" />
     <Compile Include="Models\SocialPost.cs" />
     <Compile Include="Models\UserEducation.cs" />
     <Compile Include="Models\UserPersonalProject.cs" />

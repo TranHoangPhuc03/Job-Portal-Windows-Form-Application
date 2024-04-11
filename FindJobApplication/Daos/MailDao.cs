@@ -32,7 +32,7 @@ namespace FindJobApplication.Daos
                 { "@SendDate", mail.SendDate },
             };
 
-            return db.Excute(sqlStr, parameters);
+            return db.Execute(sqlStr, parameters);
         }
 
         public List<Mail> FindAllMailByOneAccount(int accountId)
@@ -72,7 +72,7 @@ namespace FindJobApplication.Daos
                 { "@MailId", mailId },
             };
 
-            return db.Excute(sqlStr, parameters);
+            return db.Execute(sqlStr, parameters);
         }
     }
 }

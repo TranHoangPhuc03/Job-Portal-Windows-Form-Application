@@ -1,4 +1,6 @@
-﻿using Guna.UI2.WinForms;
+﻿using FindJobApplication.Daos;
+using FindJobApplication.Models;
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,7 +22,46 @@ namespace FindJobApplication
         public Guna2Button BtnPost { get => btnPost; set => btnPost = value; }
         private void btnPost_Click(object sender, EventArgs e)
         {
+            List<Skill> list = new List<Skill>();
+            foreach (Control control in this.pnlSkill.Controls)
+            {
+                list.Add(control.Tag as Skill);
+            }
+            SocialPost socialPost = new SocialPost(
+                this.txtTitle.Text,
+                DateTime.Now,
+                this.rtxtStatus.Text,
+                Global.accountId,
+                list
+            );
+            SocialPostDao socialPostDao = new SocialPostDao();
+            int result = socialPostDao.SaveNewSocialPost(socialPost);
+            if (result > 0)
+            {
+                MessageDialog.Show(this, "Post success");
+            }
+            else
+            {
+                MessageDialog.Show(this, "Post failed");
+            }
+
             this.Close();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            Skill skill = new Skill((int)this.cbSkill.SelectedValue, this.cbSkill.Text);
+            UCUserProfileSkill uCUserProfileSkill = new UCUserProfileSkill(skill);
+            uCUserProfileSkill.Tag = skill;
+            this.pnlSkill.Controls.Add(uCUserProfileSkill);
+        }
+
+        private void FPostSocial_Load(object sender, EventArgs e)
+        {
+            SkillDao skillDao = new SkillDao();
+            this.cbSkill.ValueMember = "id";
+            this.cbSkill.DisplayMember = "name";
+            this.cbSkill.DataSource = skillDao.FindAllSkill();
         }
     }
 }

@@ -43,7 +43,7 @@ namespace FindJobApplication.DB
             return results;
         }
 
-        public int Excute(string sqlStr, Dictionary<string, object> parameters = null)
+        public int Execute(string sqlStr, Dictionary<string, object> parameters = null)
         {
             int results = 0;
             try

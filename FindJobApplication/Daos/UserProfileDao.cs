@@ -56,9 +56,23 @@ namespace FindJobApplication.Daos
 
             return userProfile;
         }
+        public UserProfile FindUserProfileByAccountId(int userAccountId)
+        {
+            string sqlStr = "SELECT * FROM user_profile WHERE user_account_id = @UserAccountId;";
+            Dictionary<string, object> parameters = new Dictionary<string, object> { { "@UserAccountId", userAccountId } };
+
+            DataRow dr = db.Read(sqlStr, parameters).Rows.Cast<DataRow>().FirstOrDefault();
+            UserProfile userProfile = UserProfileMapper.MapToModel(dr);
+            userProfile.UserEducations.AddRange(this.FindUserEducationByUserId(userProfile.Id));
+            userProfile.UserWorkExperiences.AddRange(this.FindUserWorkExperienceByUserId(userProfile.Id));
+            userProfile.UserPersonalProjects.AddRange(this.FindUserPersonalProjectByUserId(userProfile.Id));
+            userProfile.UserSkills.AddRange(this.FindUserSkillByUserId(userProfile.Id));
+
+            return userProfile;
+        }
         public int FindUserIdByAccountId(int accountId)
         {
-            string sqlStr = "SELECT id FROM user_profile WHERE company_account_id = @AccountId;";
+            string sqlStr = @"SELECT id FROM user_profile WHERE user_account_id = @AccountId;";
             Dictionary<string, object> parameters = new Dictionary<string, object> { { "@AccountId", accountId } };
             return (int)db.ExecuteScalar(sqlStr, parameters);
         }
@@ -144,7 +158,7 @@ namespace FindJobApplication.Daos
                 { "@Password", password },
                 { "@Name", userProfile.Name }
             };
-            return db.Excute(sqlStr, parameters);
+            return db.Execute(sqlStr, parameters);
         }
         public int SaveUserApplyJob(JobApplyDetail jobApplyDetail)
         {
@@ -161,7 +175,7 @@ namespace FindJobApplication.Daos
                 { "@CVAttach", jobApplyDetail.CVAttach }
             };
 
-            return db.Excute(sqlStr, parameters);
+            return db.Execute(sqlStr, parameters);
         }
         public int SaveUserEducation(UserEducation userEducation)
         {
@@ -179,7 +193,7 @@ namespace FindJobApplication.Daos
                 { "@AdditionalDetail", userEducation.AdditionalDetail }
             };
 
-            return db.Excute(sqlStr, parameters);
+            return db.Execute(sqlStr, parameters);
         }
         public int SaveUserWorkExperience(UserWorkExperience userWorkExperience)
         {
@@ -196,7 +210,7 @@ namespace FindJobApplication.Daos
                 { "@To", userWorkExperience.To },
             };
 
-            return db.Excute(sqlStr, parameters);
+            return db.Execute(sqlStr, parameters);
         }
         public int SaveUserPersonalProject(UserPersonalProject userPersonalProject)
         {
@@ -213,7 +227,7 @@ namespace FindJobApplication.Daos
                 { "@Description", userPersonalProject.Description },
             };
 
-            return db.Excute(sqlStr, parameters);
+            return db.Execute(sqlStr, parameters);
         }
         public int SaveUserSkill(UserSkill userSkill)
         {
@@ -227,7 +241,7 @@ namespace FindJobApplication.Daos
                 { "@SkillId", userSkill.SkillId }
             };
 
-            return db.Excute(sqlStr, parameters);
+            return db.Execute(sqlStr, parameters);
         }
         //User Infomation = Name, Birthday, Phone number, Avatar, ...
         public int UpdateUserInformation(UserProfile userProfile)
@@ -250,7 +264,7 @@ namespace FindJobApplication.Daos
                 { "@Id", userProfile.Id }
             };
 
-            return db.Excute(sqlStr, parameters);
+            return db.Execute(sqlStr, parameters);
         }
         public int UpdateUserEducation(UserEducation userEducation)
         {
@@ -268,7 +282,7 @@ namespace FindJobApplication.Daos
                 { "@AdditionalDetail", userEducation.AdditionalDetail }
             };
 
-            return db.Excute(sqlStr, parameters);
+            return db.Execute(sqlStr, parameters);
         }
         public int UpdateUserWorkExperience(UserWorkExperience userWorkExperience)
         {
@@ -285,7 +299,7 @@ namespace FindJobApplication.Daos
                 { "@To", userWorkExperience.To },
             };
 
-            return db.Excute(sqlStr, parameters);
+            return db.Execute(sqlStr, parameters);
         }
         public int UpdateUserPersonalProject(UserPersonalProject userPersonalProject)
         {
@@ -302,7 +316,7 @@ namespace FindJobApplication.Daos
                 { "@Description", userPersonalProject.Description },
             };
 
-            return db.Excute(sqlStr, parameters);
+            return db.Execute(sqlStr, parameters);
         }
         public int DeleteUserSkill(UserSkill userSkill)
         {
@@ -313,7 +327,7 @@ namespace FindJobApplication.Daos
                 { "@SkillId", userSkill.SkillId }
             };
 
-            return db.Excute(sqlStr, parameters);
+            return db.Execute(sqlStr, parameters);
         }
         public int DeleteUserEducation(UserEducation userEducation)
         {
@@ -323,7 +337,7 @@ namespace FindJobApplication.Daos
                 { "@Id", userEducation.Id }
             };
 
-            return db.Excute(sqlStr, parameters);
+            return db.Execute(sqlStr, parameters);
         }
         public int DeleteUserWorkExperience(UserWorkExperience userWorkExperience)
         {
@@ -333,7 +347,7 @@ namespace FindJobApplication.Daos
                 { "@Id", userWorkExperience.Id }
             };
 
-            return db.Excute(sqlStr, parameters);
+            return db.Execute(sqlStr, parameters);
         }
         public int DeleteUserPersonalProject(UserPersonalProject userPersonalProject)
         {
@@ -343,7 +357,7 @@ namespace FindJobApplication.Daos
                 { "@Id", userPersonalProject.Id }
             };
 
-            return db.Excute(sqlStr, parameters);
+            return db.Execute(sqlStr, parameters);
         }
         public int SaveNewFavouriteJob(int jobPostId, int userId)
         {
@@ -356,7 +370,7 @@ namespace FindJobApplication.Daos
                 { "@JobPostId", jobPostId }
             };
 
-            return db.Excute(sqlStr, parameters);
+            return db.Execute(sqlStr, parameters);
         }
         public int SaveNewFollowingCompany(int userAccountId, int companyAccountId)
         {
@@ -369,7 +383,7 @@ namespace FindJobApplication.Daos
                 { "@UserAccountId", companyAccountId }
             };
 
-            return db.Excute(sqlStr, parameters);
+            return db.Execute(sqlStr, parameters);
         }
         public List<int> FindAllJobPostIdFavourite(int userId)
         {
@@ -417,7 +431,7 @@ namespace FindJobApplication.Daos
                 { "@JobPostId", jobPostId }
             };
 
-            return db.Excute(sqlStr, parameters);
+            return db.Execute(sqlStr, parameters);
         }
         public int DeleteFollowingCompany(int companyAccoutnId, int userAccountId)
         {
@@ -430,7 +444,7 @@ namespace FindJobApplication.Daos
                 { "@UserAccountId", userAccountId }
             };
 
-            return db.Excute(sqlStr, parameters);
+            return db.Execute(sqlStr, parameters);
         }
     }
 }

@@ -10,6 +10,7 @@ namespace FindJobApplication.Models
 {
     public class Global
     {
+        public static int accountId;
         public static int loginId;
         public static string role;
     }

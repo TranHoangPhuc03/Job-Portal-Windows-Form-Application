@@ -14,7 +14,7 @@ namespace FindJobApplication.Models
         private string name;
         private string email;
         private string phoneNumber;
-        private DateTime dateOfBirth;
+        private DateTime? dateOfBirth;
         private string gender;
         private string address;
         private string personalLink;
@@ -34,7 +34,7 @@ namespace FindJobApplication.Models
             this.userSkills = new List<UserSkill>();
         }
 
-        public UserProfile(int id, int userAccId, string name, string email, string phoneNumber, DateTime dateOfBirth, string gender, string address, string personalLink, string userImage, string aboutMe, string title) : this()
+        public UserProfile(int id, int userAccId, string name, string email, string phoneNumber, DateTime? dateOfBirth, string gender, string address, string personalLink, string userImage, string aboutMe, string title) : this()
         {
             this.id = id;
             this.userAccId = userAccId;
@@ -60,7 +60,7 @@ namespace FindJobApplication.Models
         public string Name { get => this.name; }
         public string Email { get => this.email; }
         public string PhoneNumber { get; set; }
-        public DateTime DateOfBirth { get; set; }
+        public DateTime? DateOfBirth { get; set; }
         public string Gender { get; set; }
         public string Address { get; set; }
         public string PersonalLink { get; set; }

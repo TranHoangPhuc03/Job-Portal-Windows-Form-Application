@@ -65,7 +65,7 @@ namespace FindJobApplication.Daos
                 { "@Name", companyProfile.Name },
                 { "@BusinessLicense", companyProfile.BusinessLicense }
             };
-            return db.Excute(sqlStr, paremeters);
+            return db.Execute(sqlStr, paremeters);
         }
 
         public List<int> FindAllUserIdFollowing(int companyAccountId)
@@ -94,7 +94,7 @@ namespace FindJobApplication.Daos
                 { "@UserAccountId", userAccountId },
             };
 
-            return db.Excute(sqlStr, parameters);
+            return db.Execute(sqlStr, parameters);
         }
 
         public int DeleteUserIdFollowing(int companyAccountId, int userAccountId)
@@ -105,7 +105,7 @@ namespace FindJobApplication.Daos
                 { "@CompanyAccountId", companyAccountId },
                 { "@UserAccountId", userAccountId },
             };
-            return db.Excute(sqlStr, parameters);
+            return db.Execute(sqlStr, parameters);
         }
 
         public int UpdateCompanyReason(int companyId, string reason)
@@ -117,7 +117,7 @@ namespace FindJobApplication.Daos
                 { "@CompanyId", companyId }
             };
 
-            return db.Excute(sqlStr, parameters);
+            return db.Execute(sqlStr, parameters);
         }
 
         public int UpdateCompanyOverview(int companyId, string overview)
@@ -129,7 +129,7 @@ namespace FindJobApplication.Daos
                 { "@CompanyId", companyId }
             };
 
-            return db.Excute(sqlStr, parameters);
+            return db.Execute(sqlStr, parameters);
         }
 
         public int UpdateCompanyProfile(int companyId, CompanyProfile companyProfile)
@@ -150,7 +150,7 @@ namespace FindJobApplication.Daos
                 { "@CompanyId", companyId }
             };
 
-            return db.Excute(sqlStr, parameters);
+            return db.Execute(sqlStr, parameters);
         }
         public int UpdateUserApplyStatus(int userId, int jobPostId, string status)
         {
@@ -165,7 +165,7 @@ namespace FindJobApplication.Daos
                 { "@Status", status }
             };
 
-            return db.Excute(sqlStr, parameters);
+            return db.Execute(sqlStr, parameters);
         }
     }
 }

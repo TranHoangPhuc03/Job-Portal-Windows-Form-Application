@@ -46,7 +46,7 @@ namespace FindJobApplication.Daos
                 { "@CompanyId", jobpost.CompanyId }
             };
 
-            return db.Excute(sqlStr, parameters);
+            return db.Execute(sqlStr, parameters);
         }
         public List<JobPost> FindAllJobPost()
         {
@@ -200,7 +200,7 @@ namespace FindJobApplication.Daos
                 { "@JobPostId", jobPostId },
             };
 
-            return db.Excute(sqlStr);
+            return db.Execute(sqlStr);
         }
         public int UpdateJobPostById(JobPost jobPost)
         {
@@ -238,7 +238,7 @@ namespace FindJobApplication.Daos
                 { "@JobPostId", jobPost.Id }
             };
 
-            return db.Excute(sqlStr);
+            return db.Execute(sqlStr);
         }
     }
 }

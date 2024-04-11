@@ -29,7 +29,7 @@ namespace FindJobApplication.Daos
                 { "@AppliedAt", appliedAt }
             };
 
-            return db.Excute(sqlStr, parameters);
+            return db.Execute(sqlStr, parameters);
         }
 
         public DataTable FindUserApplyJob(int userId, int jobPostId)
@@ -48,7 +48,7 @@ namespace FindJobApplication.Daos
                 { "@JobPostId", jobPostId}
             };
 
-            return db.Excute(sqlStr, parameters);
+            return db.Execute(sqlStr, parameters);
         }
     }
 }

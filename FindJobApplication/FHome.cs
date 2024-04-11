@@ -63,16 +63,16 @@ namespace FindJobApplication
             YearExperienceDao yearExperienceDao = new YearExperienceDao();
             var locationDict = locationDao.FindAllLocationDict();
             var yearExperienceDict = yearExperienceDao.FindAllExperienceDict(); ;
-            foreach (JobPost jobpost in list)
+            foreach (JobPost jobPost in list)
             {
                 UCJob uCJob = new UCJob();
-                uCJob.JobName.Text = row["title"].ToString();
-                uCJob.CompanyName.Text = row["company_name"].ToString();
-                uCJob.Location.Text = row["location_name"].ToString();
-                uCJob.Salary.Text = row["salary"].ToString();
+                uCJob.JobName.Text = jobPost.Title;
+                uCJob.CompanyName.Text = jobPost.CompanyName;
+                uCJob.Location.Text = locationDict[jobPost.LocationId].Name;
+                uCJob.Salary.Text = jobPost.Salary.ToString();
                 uCJob.Tag = jobPost;
-                uCJob.LinkLabelJob.Tag = (int)row["id"];
-                uCJob.CompanyName.Tag = (int)row["company_id"];
+                uCJob.LinkLabelJob.Tag = jobPost.Id;
+                uCJob.CompanyName.Tag = jobPost.CompanyId;
                 uCJob.PnlSkill.Controls.Add(skill1); // add skill
                 uCJob.PnlSkill.Controls.Add(skill2); // add skill
                 uCJob.PnlSkill.Controls.Add(skill3); // add skill
