@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FindJobApplication.Models;
 
 namespace FindJobApplication
 {
@@ -40,24 +41,7 @@ namespace FindJobApplication
 
         private void UCCompanyListPeopleApply_Load(object sender, EventArgs e)
         {
-            //JobPostDao jobPostDao = new JobPostDao();
-            //List<JobPost> dt = jobPostDao.FindAllUserAppliedForOneJob((int)this.Tag);
-            //int cnt = 1;
-            //List<UCCompanyPeopleApplied> dataControlList = new List<UCCompanyPeopleApplied>();
-            //foreach (DataRow row in dt.Rows)
-            //{
-            //    UCCompanyPeopleApplied uCCompanyPeopleApplied = new UCCompanyPeopleApplied();
-            //    uCCompanyPeopleApplied.LblId.Text = (cnt++).ToString();
-            //    uCCompanyPeopleApplied.LblNamePeople.Text = row["name"].ToString();
-            //    uCCompanyPeopleApplied.LblDayApply.Text = row["applied_at"].ToString();
-            //    uCCompanyPeopleApplied.LblStatus.Text = row["status"].ToString();
-            //    uCCompanyPeopleApplied.Tag = new Dictionary<string, int> { 
-            //        { "jobPostId", (int)this.Tag },
-            //        { "userId", (int)row["id"] } 
-            //    };
-            //    dataControlList.Add(uCCompanyPeopleApplied);
-            //}
-            //loadListPeople(dataControlList);
+            
         }
     }
 }

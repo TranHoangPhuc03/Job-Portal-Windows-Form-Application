@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FindJobApplication.Models;
+using FindJobApplication.Daos;
 
 namespace FindJobApplication
 {
@@ -19,6 +20,19 @@ namespace FindJobApplication
         {
             InitializeComponent();
             pbSave.BringToFront();
+        }
+
+        public UCJob(JobPost jobPost) : this()
+        {
+            LocationDao locationDao = new LocationDao();
+            var locationDict = locationDao.FindAllLocationDict();
+            this.JobName.Text = jobPost.Title;
+            this.CompanyName.Text = jobPost.CompanyName;
+            this.Location.Text = locationDict[jobPost.LocationId].Name;
+            this.Salary.Text = jobPost.Salary.ToString();
+            this.Tag = jobPost;
+            this.LinkLabelJob.Tag = jobPost.Id;
+            this.CompanyName.Tag = jobPost.CompanyId;
         }
 
         public new GunaLinkLabel LinkLabelJob { get => lLblNameJob; set { lLblNameJob = value; } }

@@ -92,6 +92,7 @@
             this.pBDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pBDelete.TabIndex = 21;
             this.pBDelete.TabStop = false;
+            this.pBDelete.Click += new System.EventHandler(this.pBDelete_Click);
             // 
             // lblDatePost
             // 

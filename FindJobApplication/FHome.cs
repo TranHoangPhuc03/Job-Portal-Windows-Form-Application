@@ -96,7 +96,7 @@ namespace FindJobApplication
             this.uCHome.CbExperince.DisplayMember = "name";
             this.uCHome.CbExperince.DataSource = yearExperienceDao.FindAllExperienceList();
 
-            this.uCHome.fillDataToPanel(BuildJobPostList(jobPostDao.FindAllJobPost()));
+            this.uCHome.fillDataToPanel(jobPostDao.FindAllJobPost());
         }
 
         private void btnMail_Click(object sender, EventArgs e)
@@ -116,14 +116,11 @@ namespace FindJobApplication
             int experienceId = this.uCHome.CbExperince.SelectedIndex;
             int salaryId = this.uCHome.CbSalary.SelectedIndex;
 
-            int index = 0;
             JobPostDao jobPostDao = new JobPostDao();
-            var dt = jobPostDao.FindAllJobPost();
-            foreach(var row in dt)
+            List<JobPost> dt = jobPostDao.FindAllJobPost();
+            if (!string.IsNullOrEmpty(keyword))
             {
-                if (keyword != "" && !row.Title.Contains(keyword))
-                    dt.RemoveAt(index);
-                index++;
+                dt = dt.Where(row => row.Title.Contains(keyword)).ToList();
             }
             this.uCHome.fillDataToPanel(dt);
         }
