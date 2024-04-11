@@ -71,7 +71,7 @@ namespace FindJobApplication
                 uCJob.Location.Text = locationDict[jobPost.LocationId].Name;
                 uCJob.Salary.Text = jobPost.Salary.ToString();
                 uCJob.Tag = jobPost;
-                uCJob.LinkLabelJob.Tag = jobPost.Id;
+                uCJob.LLblNameJob.Tag = jobPost.Id;
                 uCJob.CompanyName.Tag = jobPost.CompanyId;
                 uCJob.PnlSkill.Controls.Add(skill1); // add skill
                 uCJob.PnlSkill.Controls.Add(skill2); // add skill
@@ -114,7 +114,6 @@ namespace FindJobApplication
             string keyword = this.uCHome.TxtSeach.Text;
             int locationId = this.uCHome.CbLocation.SelectedIndex;
             int experienceId = this.uCHome.CbExperince.SelectedIndex;
-            int salaryId = this.uCHome.CbSalary.SelectedIndex;
 
             JobPostDao jobPostDao = new JobPostDao();
             List<JobPost> dt = jobPostDao.FindAllJobPost();

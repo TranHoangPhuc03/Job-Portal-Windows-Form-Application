@@ -22,6 +22,7 @@ namespace FindJobApplication
         {
             InitializeComponent();
             txtPassword.Multiline = false;
+            lblStatus.Visible = false;
         }
 
         private void llblSignUpUser_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -29,22 +30,12 @@ namespace FindJobApplication
             this.Close();
         }
 
-        private void pNotHide_Click(object sender, EventArgs e)
-        {
-            txtPassword.Multiline = false;
-            pHide.BringToFront();
-        }
-        private void pHide_Click_1(object sender, EventArgs e)
-        {
-            txtPassword.Multiline = true;
-            pNotHide.BringToFront();
-        }
-
         private void btnChooseFile_Click(object sender, EventArgs e)
         {
             this.ofdBusinessLicense.Filter = "Image files (*.jpeg; *.jpg) | *.jpeg; *.jpg";
             if (this.ofdBusinessLicense.ShowDialog() == DialogResult.OK)
             {
+                lblStatus.Visible = true;
                 this.lblStatus.Text = this.ofdBusinessLicense.SafeFileName;
             }
         }
@@ -64,6 +55,20 @@ namespace FindJobApplication
             else
             {
                 MessageDialog.Show(this, "Sign up failed", "Error", MessageDialogStyle.Default);
+            }
+        }
+
+        private void lblShow_Click(object sender, EventArgs e)
+        {
+            if (lblShow.Text == "Show")
+            {
+                txtPassword.Multiline = true;
+                lblShow.Text = "Hide";
+            }
+            else
+            {
+                txtPassword.Multiline = false;
+                lblShow.Text = "Show";
             }
         }
     }

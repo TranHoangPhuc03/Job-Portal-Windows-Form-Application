@@ -18,24 +18,24 @@ namespace FindJobApplication
             txtPassword.Multiline = false;
         }
 
-        private void pHide_Click(object sender, EventArgs e)
-        {
-            txtPassword.Multiline = true;
-            pNotHide.BringToFront();
-        }
-
-        private void pNotHide_Click(object sender, EventArgs e)
-        {
-            txtPassword.Multiline = false;
-            pHide.BringToFront();
-        }
-
         private void llblSignUpUser_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Close();
         }
-
-        private void llblCompanySignUp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void lblShow_Click(object sender, EventArgs e)
+        {
+            if (lblShow.Text == "Show")
+            {
+                txtPassword.Multiline = true;
+                lblShow.Text = "Hide";
+            }
+            else
+            {
+                txtPassword.Multiline = false;
+                lblShow.Text = "Show";
+            }
+        }
+        private void llblCreateBussiness_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Hide();
             FCompanySignUp fCompanySignUp = new FCompanySignUp();

@@ -29,7 +29,7 @@ namespace FindJobApplication
             for (int i = 0; i < 10; i++)
             {
                 UCJob jobControl = new UCJob();
-                jobControl.LinkLabelJob.Text = "Job" + i.ToString();
+                jobControl.LLblNameJob.Text = "Job" + i.ToString();
                 jobControl.PbSave.Image = Properties.Resources.heart2;
                 list.Add(jobControl);
                 pnlListJob.Controls.Add(list[i]);

@@ -1,5 +1,6 @@
 ﻿using FindJobApplication.Models;
 using Guna.UI.WinForms;
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,16 +31,14 @@ namespace FindJobApplication
         {
             InitializeComponent();
         }
-        public Panel PnlMid { get => pnlMid; set => pnlMid = value; }
-        public GunaButton BtnHome { get => btnHome; set => btnHome = value; }
-        public GunaButton BtnUser { get => btnUser; set => btnUser = value; }
+        public Guna2CustomGradientPanel PnlMid { get => pnlMid; set => pnlMid = value; }
+        public Guna2Button BtnHome { get => btnHome; set => btnHome = value; }
+        public Guna2Button BtnUser { get => btnUser; set => btnUser = value; }
         public GunaButton BtnStatus { get => btnStatus; set => btnStatus = value; }
-        public GunaButton BtnLogOut { get => btnSignOut; set => btnSignOut = value; }
-        public GunaButton BtnSocial { get => btnSocial; set => btnSocial = value; }
-
+        public Guna2Button BtnLogOut { get => btnSignOut; set => btnSignOut = value; }
+        public Guna2Button BtnSocial { get => btnSocial; set => btnSocial = value; }
         public PictureBox PbHomeUser { get => pbHomeUser; set => pbHomeUser = value; }
-
-        public void updateStatus(GunaButton button)
+        public void updateStatus(Guna2Button button)
         {
             btnStatus.Image = button.Image;
             btnStatus.Text = button.Text;
@@ -75,6 +74,11 @@ namespace FindJobApplication
             this.updateStatus(btnMail);
             this.PnlMid.Controls.Clear();
             this.PnlMid.Controls.Add(uCMail);
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

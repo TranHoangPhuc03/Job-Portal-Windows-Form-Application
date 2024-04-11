@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FindJobApplication.Models;
 using FindJobApplication.Daos;
+using Guna.UI2.WinForms;
 
 namespace FindJobApplication
 {
@@ -31,16 +32,17 @@ namespace FindJobApplication
             this.Location.Text = locationDict[jobPost.LocationId].Name;
             this.Salary.Text = jobPost.Salary.ToString();
             this.Tag = jobPost;
-            this.LinkLabelJob.Tag = jobPost.Id;
+            this.LLblNameJob.Tag = jobPost.Id;
             this.CompanyName.Tag = jobPost.CompanyId;
         }
 
-        public new GunaLinkLabel LinkLabelJob { get => lLblNameJob; set { lLblNameJob = value; } }
+        public new GunaLinkLabel LLblNameJob { get => lLblNameJob; set { lLblNameJob = value; } }
         public GunaLinkLabel JobName { get => lLblNameJob; set { lLblNameJob = value; } }
         public new GunaLinkLabel CompanyName { get => lblNameCompany; set { lblNameCompany = value; } }
         public new Label Location { get => lblLocation; set { lblLocation = value; } }
         public Label Salary { get => lblSalary; set { lblSalary = value; } }
         public FlowLayoutPanel PnlSkill { get => pnlSkill; set => pnlSkill = value; }
+        public Guna2PictureBox PBCompany { get => pBCompany; set => pBCompany = value; }
         public PictureBox PbSave { get => pbSave; }
 
         private void pbSave_Click(object sender, EventArgs e)
@@ -79,6 +81,6 @@ namespace FindJobApplication
             uCCompanyProfile.hideAllButton();
             uCCompanyProfile.Location = new Point(UCMain.Instance.PnlMid.Width / 2 - uCCompanyProfile.Width / 2, 0);
             uCCompanyProfile.BringToFront();
-        }
+        }      
     }
 }

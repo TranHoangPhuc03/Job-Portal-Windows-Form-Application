@@ -29,52 +29,162 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCMain));
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.pnlMenuTop = new Guna.UI.WinForms.GunaElipsePanel();
-            this.btnStatus = new Guna.UI.WinForms.GunaButton();
-            this.pbHomeUser = new System.Windows.Forms.PictureBox();
-            this.btnUser = new Guna.UI.WinForms.GunaButton();
-            this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlMenu = new System.Windows.Forms.Panel();
-            this.btnSocial = new Guna.UI.WinForms.GunaButton();
-            this.btnMail = new Guna.UI.WinForms.GunaButton();
-            this.btnHome = new Guna.UI.WinForms.GunaButton();
-            this.pnlLogout = new System.Windows.Forms.Panel();
-            this.btnSignOut = new Guna.UI.WinForms.GunaButton();
-            this.pnlMid = new System.Windows.Forms.Panel();
-            this.panel2.SuspendLayout();
+            this.btnSignOut = new Guna.UI2.WinForms.Guna2Button();
+            this.btnSocial = new Guna.UI2.WinForms.Guna2Button();
+            this.btnMail = new Guna.UI2.WinForms.Guna2Button();
+            this.btnHome = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnStatus = new Guna.UI.WinForms.GunaButton();
+            this.pnlMenuTop = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.btnUser = new Guna.UI2.WinForms.Guna2Button();
+            this.pnlMid = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.pbHomeUser = new System.Windows.Forms.PictureBox();
+            this.pnlMenu.SuspendLayout();
+            this.guna2ShadowPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlMenuTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbHomeUser)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.pnlMenu.SuspendLayout();
-            this.pnlLogout.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel2
+            // pnlMenu
             // 
-            this.panel2.Controls.Add(this.pnlMenuTop);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(220, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1547, 72);
-            this.panel2.TabIndex = 8;
+            this.pnlMenu.BackColor = System.Drawing.Color.White;
+            this.pnlMenu.Controls.Add(this.btnSignOut);
+            this.pnlMenu.Controls.Add(this.btnSocial);
+            this.pnlMenu.Controls.Add(this.btnMail);
+            this.pnlMenu.Controls.Add(this.btnHome);
+            this.pnlMenu.Controls.Add(this.guna2ShadowPanel1);
+            this.pnlMenu.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlMenu.Location = new System.Drawing.Point(0, 0);
+            this.pnlMenu.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.pnlMenu.Name = "pnlMenu";
+            this.pnlMenu.Size = new System.Drawing.Size(248, 1024);
+            this.pnlMenu.TabIndex = 7;
             // 
-            // pnlMenuTop
+            // btnSignOut
             // 
-            this.pnlMenuTop.BackColor = System.Drawing.Color.Transparent;
-            this.pnlMenuTop.BaseColor = System.Drawing.Color.White;
-            this.pnlMenuTop.Controls.Add(this.btnStatus);
-            this.pnlMenuTop.Controls.Add(this.pbHomeUser);
-            this.pnlMenuTop.Controls.Add(this.btnUser);
-            this.pnlMenuTop.Location = new System.Drawing.Point(4, 5);
-            this.pnlMenuTop.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.pnlMenuTop.Name = "pnlMenuTop";
-            this.pnlMenuTop.Radius = 10;
-            this.pnlMenuTop.Size = new System.Drawing.Size(1538, 62);
-            this.pnlMenuTop.TabIndex = 2;
+            this.btnSignOut.BackColor = System.Drawing.Color.White;
+            this.btnSignOut.BorderRadius = 12;
+            this.btnSignOut.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSignOut.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSignOut.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSignOut.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSignOut.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSignOut.FillColor = System.Drawing.Color.White;
+            this.btnSignOut.Font = new System.Drawing.Font("Inter", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.btnSignOut.ForeColor = System.Drawing.Color.Black;
+            this.btnSignOut.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
+            this.btnSignOut.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnSignOut.HoverState.Image = global::FindJobApplication.Properties.Resources.sign_out_option_White;
+            this.btnSignOut.Image = global::FindJobApplication.Properties.Resources.sign_out_option;
+            this.btnSignOut.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnSignOut.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnSignOut.Location = new System.Drawing.Point(21, 947);
+            this.btnSignOut.Name = "btnSignOut";
+            this.btnSignOut.Size = new System.Drawing.Size(208, 65);
+            this.btnSignOut.TabIndex = 13;
+            this.btnSignOut.Text = "Log out";
+            this.btnSignOut.Click += new System.EventHandler(this.btnSignOut_Click);
+            // 
+            // btnSocial
+            // 
+            this.btnSocial.BackColor = System.Drawing.Color.White;
+            this.btnSocial.BorderRadius = 12;
+            this.btnSocial.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSocial.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSocial.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSocial.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSocial.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSocial.FillColor = System.Drawing.Color.White;
+            this.btnSocial.Font = new System.Drawing.Font("Inter", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.btnSocial.ForeColor = System.Drawing.Color.Black;
+            this.btnSocial.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
+            this.btnSocial.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnSocial.HoverState.Image = global::FindJobApplication.Properties.Resources.S_white;
+            this.btnSocial.Image = global::FindJobApplication.Properties.Resources.s;
+            this.btnSocial.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnSocial.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnSocial.Location = new System.Drawing.Point(21, 215);
+            this.btnSocial.Name = "btnSocial";
+            this.btnSocial.Size = new System.Drawing.Size(208, 65);
+            this.btnSocial.TabIndex = 12;
+            this.btnSocial.Text = "Social";
+            this.btnSocial.Click += new System.EventHandler(this.btnSocial_Click);
+            // 
+            // btnMail
+            // 
+            this.btnMail.BackColor = System.Drawing.Color.White;
+            this.btnMail.BorderRadius = 12;
+            this.btnMail.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMail.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnMail.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnMail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnMail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnMail.FillColor = System.Drawing.Color.White;
+            this.btnMail.Font = new System.Drawing.Font("Inter", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.btnMail.ForeColor = System.Drawing.Color.Black;
+            this.btnMail.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
+            this.btnMail.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnMail.HoverState.Image = global::FindJobApplication.Properties.Resources.emailWhite;
+            this.btnMail.Image = global::FindJobApplication.Properties.Resources.emailicon;
+            this.btnMail.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnMail.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnMail.Location = new System.Drawing.Point(21, 286);
+            this.btnMail.Name = "btnMail";
+            this.btnMail.Size = new System.Drawing.Size(208, 65);
+            this.btnMail.TabIndex = 11;
+            this.btnMail.Text = "Mail";
+            this.btnMail.Click += new System.EventHandler(this.btnMail_Click);
+            // 
+            // btnHome
+            // 
+            this.btnHome.BackColor = System.Drawing.Color.White;
+            this.btnHome.BorderRadius = 12;
+            this.btnHome.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnHome.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnHome.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnHome.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnHome.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnHome.FillColor = System.Drawing.Color.White;
+            this.btnHome.Font = new System.Drawing.Font("Inter", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.btnHome.ForeColor = System.Drawing.Color.Black;
+            this.btnHome.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
+            this.btnHome.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnHome.HoverState.Image = global::FindJobApplication.Properties.Resources.homeWhite;
+            this.btnHome.Image = global::FindJobApplication.Properties.Resources.home;
+            this.btnHome.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnHome.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnHome.Location = new System.Drawing.Point(21, 144);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Size = new System.Drawing.Size(208, 65);
+            this.btnHome.TabIndex = 10;
+            this.btnHome.Text = "Home";
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
+            // 
+            // guna2ShadowPanel1
+            // 
+            this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel1.Controls.Add(this.pictureBox1);
+            this.guna2ShadowPanel1.FillColor = System.Drawing.Color.White;
+            this.guna2ShadowPanel1.Location = new System.Drawing.Point(0, 0);
+            this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
+            this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
+            this.guna2ShadowPanel1.ShadowDepth = 50;
+            this.guna2ShadowPanel1.ShadowStyle = Guna.UI2.WinForms.Guna2ShadowPanel.ShadowMode.Dropped;
+            this.guna2ShadowPanel1.Size = new System.Drawing.Size(248, 80);
+            this.guna2ShadowPanel1.TabIndex = 9;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::FindJobApplication.Properties.Resources.Meta_Logo;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(245, 77);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // btnStatus
             // 
@@ -89,269 +199,108 @@
             this.btnStatus.ForeColor = System.Drawing.Color.Black;
             this.btnStatus.Image = ((System.Drawing.Image)(resources.GetObject("btnStatus.Image")));
             this.btnStatus.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnStatus.Location = new System.Drawing.Point(26, 9);
-            this.btnStatus.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnStatus.Location = new System.Drawing.Point(11, 7);
+            this.btnStatus.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnStatus.Name = "btnStatus";
             this.btnStatus.OnHoverBaseColor = System.Drawing.Color.White;
             this.btnStatus.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnStatus.OnHoverForeColor = System.Drawing.Color.Black;
             this.btnStatus.OnHoverImage = null;
             this.btnStatus.OnPressedColor = System.Drawing.Color.White;
-            this.btnStatus.Size = new System.Drawing.Size(160, 42);
+            this.btnStatus.Size = new System.Drawing.Size(250, 65);
             this.btnStatus.TabIndex = 30;
             // 
-            // pbHomeUser
+            // pnlMenuTop
             // 
-            this.pbHomeUser.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.pbHomeUser.Image = global::FindJobApplication.Properties.Resources.man;
-            this.pbHomeUser.Location = new System.Drawing.Point(1244, 9);
-            this.pbHomeUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pbHomeUser.Name = "pbHomeUser";
-            this.pbHomeUser.Size = new System.Drawing.Size(50, 42);
-            this.pbHomeUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbHomeUser.TabIndex = 29;
-            this.pbHomeUser.TabStop = false;
+            this.pnlMenuTop.BackColor = System.Drawing.Color.Transparent;
+            this.pnlMenuTop.BorderRadius = 16;
+            this.pnlMenuTop.Controls.Add(this.pbHomeUser);
+            this.pnlMenuTop.Controls.Add(this.btnUser);
+            this.pnlMenuTop.Controls.Add(this.btnStatus);
+            this.pnlMenuTop.CustomizableEdges.BottomRight = false;
+            this.pnlMenuTop.CustomizableEdges.TopLeft = false;
+            this.pnlMenuTop.CustomizableEdges.TopRight = false;
+            this.pnlMenuTop.Location = new System.Drawing.Point(257, 0);
+            this.pnlMenuTop.Name = "pnlMenuTop";
+            this.pnlMenuTop.Size = new System.Drawing.Size(1184, 80);
+            this.pnlMenuTop.TabIndex = 31;
             // 
             // btnUser
             // 
-            this.btnUser.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnUser.AnimationHoverSpeed = 0.07F;
-            this.btnUser.AnimationSpeed = 0.03F;
-            this.btnUser.BackColor = System.Drawing.Color.Transparent;
-            this.btnUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnUser.BaseColor = System.Drawing.Color.Transparent;
-            this.btnUser.BorderColor = System.Drawing.Color.Silver;
+            this.btnUser.BackColor = System.Drawing.Color.White;
+            this.btnUser.BorderRadius = 12;
             this.btnUser.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUser.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnUser.FocusedColor = System.Drawing.Color.Empty;
-            this.btnUser.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUser.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnUser.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnUser.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnUser.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnUser.FillColor = System.Drawing.Color.White;
+            this.btnUser.Font = new System.Drawing.Font("Inter", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.btnUser.ForeColor = System.Drawing.Color.Black;
-            this.btnUser.Image = global::FindJobApplication.Properties.Resources.arrow_down_sign_to_navigate2;
-            this.btnUser.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.btnUser.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnUser.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnUser.Location = new System.Drawing.Point(1299, 8);
-            this.btnUser.Margin = new System.Windows.Forms.Padding(10, 2, 3, 2);
+            this.btnUser.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
+            this.btnUser.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnUser.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnUser.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnUser.Location = new System.Drawing.Point(923, 7);
             this.btnUser.Name = "btnUser";
-            this.btnUser.OnHoverBaseColor = System.Drawing.Color.Gainsboro;
-            this.btnUser.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnUser.OnHoverForeColor = System.Drawing.Color.Black;
-            this.btnUser.OnHoverImage = null;
-            this.btnUser.OnPressedColor = System.Drawing.Color.Black;
-            this.btnUser.Radius = 10;
-            this.btnUser.Size = new System.Drawing.Size(231, 49);
-            this.btnUser.TabIndex = 28;
-            this.btnUser.Text = "X Company ";
-            // 
-            // guna2Separator1
-            // 
-            this.guna2Separator1.BackColor = System.Drawing.Color.White;
-            this.guna2Separator1.Location = new System.Drawing.Point(12, 128);
-            this.guna2Separator1.Name = "guna2Separator1";
-            this.guna2Separator1.Size = new System.Drawing.Size(194, 9);
-            this.guna2Separator1.TabIndex = 4;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(220, 122);
-            this.panel1.TabIndex = 0;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = global::FindJobApplication.Properties.Resources.job;
-            this.pictureBox1.Location = new System.Drawing.Point(9, 11);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(204, 100);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pnlMenu
-            // 
-            this.pnlMenu.BackColor = System.Drawing.Color.White;
-            this.pnlMenu.Controls.Add(this.btnSocial);
-            this.pnlMenu.Controls.Add(this.btnMail);
-            this.pnlMenu.Controls.Add(this.btnHome);
-            this.pnlMenu.Controls.Add(this.guna2Separator1);
-            this.pnlMenu.Controls.Add(this.pnlLogout);
-            this.pnlMenu.Controls.Add(this.panel1);
-            this.pnlMenu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlMenu.Location = new System.Drawing.Point(0, 0);
-            this.pnlMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(220, 935);
-            this.pnlMenu.TabIndex = 7;
-            // 
-            // btnSocial
-            // 
-            this.btnSocial.AnimationHoverSpeed = 0.07F;
-            this.btnSocial.AnimationSpeed = 0.03F;
-            this.btnSocial.BaseColor = System.Drawing.Color.White;
-            this.btnSocial.BorderColor = System.Drawing.Color.Black;
-            this.btnSocial.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnSocial.FocusedColor = System.Drawing.Color.Empty;
-            this.btnSocial.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSocial.ForeColor = System.Drawing.Color.Black;
-            this.btnSocial.Image = global::FindJobApplication.Properties.Resources.email1;
-            this.btnSocial.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnSocial.Location = new System.Drawing.Point(0, 280);
-            this.btnSocial.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSocial.Name = "btnSocial";
-            this.btnSocial.OnHoverBaseColor = System.Drawing.Color.LightGray;
-            this.btnSocial.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnSocial.OnHoverForeColor = System.Drawing.Color.Black;
-            this.btnSocial.OnHoverImage = null;
-            this.btnSocial.OnPressedColor = System.Drawing.Color.DarkGray;
-            this.btnSocial.Size = new System.Drawing.Size(220, 65);
-            this.btnSocial.TabIndex = 8;
-            this.btnSocial.Text = "Social";
-            this.btnSocial.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnSocial.Click += new System.EventHandler(this.btnSocial_Click);
-            // 
-            // btnMail
-            // 
-            this.btnMail.AnimationHoverSpeed = 0.07F;
-            this.btnMail.AnimationSpeed = 0.03F;
-            this.btnMail.BaseColor = System.Drawing.Color.White;
-            this.btnMail.BorderColor = System.Drawing.Color.Black;
-            this.btnMail.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnMail.FocusedColor = System.Drawing.Color.Empty;
-            this.btnMail.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMail.ForeColor = System.Drawing.Color.Black;
-            this.btnMail.Image = global::FindJobApplication.Properties.Resources.email1;
-            this.btnMail.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnMail.Location = new System.Drawing.Point(0, 211);
-            this.btnMail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnMail.Name = "btnMail";
-            this.btnMail.OnHoverBaseColor = System.Drawing.Color.LightGray;
-            this.btnMail.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnMail.OnHoverForeColor = System.Drawing.Color.Black;
-            this.btnMail.OnHoverImage = null;
-            this.btnMail.OnPressedColor = System.Drawing.Color.DarkGray;
-            this.btnMail.Size = new System.Drawing.Size(220, 65);
-            this.btnMail.TabIndex = 7;
-            this.btnMail.Text = "Mail";
-            this.btnMail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnMail.Click += new System.EventHandler(this.btnMail_Click);
-            // 
-            // btnHome
-            // 
-            this.btnHome.AnimationHoverSpeed = 0.07F;
-            this.btnHome.AnimationSpeed = 0.03F;
-            this.btnHome.BaseColor = System.Drawing.Color.White;
-            this.btnHome.BorderColor = System.Drawing.Color.Black;
-            this.btnHome.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnHome.FocusedColor = System.Drawing.Color.Empty;
-            this.btnHome.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHome.ForeColor = System.Drawing.Color.Black;
-            this.btnHome.Image = global::FindJobApplication.Properties.Resources.house;
-            this.btnHome.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnHome.Location = new System.Drawing.Point(0, 142);
-            this.btnHome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnHome.Name = "btnHome";
-            this.btnHome.OnHoverBaseColor = System.Drawing.Color.LightGray;
-            this.btnHome.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnHome.OnHoverForeColor = System.Drawing.Color.Black;
-            this.btnHome.OnHoverImage = null;
-            this.btnHome.OnPressedColor = System.Drawing.Color.DarkGray;
-            this.btnHome.Size = new System.Drawing.Size(220, 65);
-            this.btnHome.TabIndex = 5;
-            this.btnHome.Text = "Home";
-            this.btnHome.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // pnlLogout
-            // 
-            this.pnlLogout.Controls.Add(this.btnSignOut);
-            this.pnlLogout.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlLogout.Location = new System.Drawing.Point(0, 850);
-            this.pnlLogout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pnlLogout.Name = "pnlLogout";
-            this.pnlLogout.Size = new System.Drawing.Size(220, 85);
-            this.pnlLogout.TabIndex = 3;
-            // 
-            // btnSignOut
-            // 
-            this.btnSignOut.AnimationHoverSpeed = 0.07F;
-            this.btnSignOut.AnimationSpeed = 0.03F;
-            this.btnSignOut.BaseColor = System.Drawing.Color.White;
-            this.btnSignOut.BorderColor = System.Drawing.Color.Black;
-            this.btnSignOut.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSignOut.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnSignOut.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSignOut.FocusedColor = System.Drawing.Color.Empty;
-            this.btnSignOut.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSignOut.ForeColor = System.Drawing.Color.Black;
-            this.btnSignOut.Image = global::FindJobApplication.Properties.Resources.logout;
-            this.btnSignOut.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnSignOut.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnSignOut.Location = new System.Drawing.Point(0, 0);
-            this.btnSignOut.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSignOut.Name = "btnSignOut";
-            this.btnSignOut.OnHoverBaseColor = System.Drawing.Color.DarkGray;
-            this.btnSignOut.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnSignOut.OnHoverForeColor = System.Drawing.Color.Black;
-            this.btnSignOut.OnHoverImage = null;
-            this.btnSignOut.OnPressedColor = System.Drawing.Color.LightGray;
-            this.btnSignOut.Size = new System.Drawing.Size(220, 85);
-            this.btnSignOut.TabIndex = 0;
-            this.btnSignOut.Text = "Sign Out";
-            this.btnSignOut.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnSignOut.Click += new System.EventHandler(this.btnSignOut_Click);
+            this.btnUser.Size = new System.Drawing.Size(245, 65);
+            this.btnUser.TabIndex = 32;
+            this.btnUser.Text = "David Ngo";
+            this.btnUser.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // pnlMid
             // 
-            this.pnlMid.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(233)))), ((int)(((byte)(240)))));
-            this.pnlMid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMid.Location = new System.Drawing.Point(220, 72);
+            this.pnlMid.BorderRadius = 16;
+            this.pnlMid.CustomizableEdges.BottomLeft = false;
+            this.pnlMid.CustomizableEdges.BottomRight = false;
+            this.pnlMid.CustomizableEdges.TopRight = false;
+            this.pnlMid.Location = new System.Drawing.Point(257, 87);
             this.pnlMid.Name = "pnlMid";
-            this.pnlMid.Size = new System.Drawing.Size(1547, 863);
-            this.pnlMid.TabIndex = 10;
+            this.pnlMid.Size = new System.Drawing.Size(1184, 936);
+            this.pnlMid.TabIndex = 32;
+            // 
+            // pbHomeUser
+            // 
+            this.pbHomeUser.Image = global::FindJobApplication.Properties.Resources.man;
+            this.pbHomeUser.Location = new System.Drawing.Point(856, 14);
+            this.pbHomeUser.Name = "pbHomeUser";
+            this.pbHomeUser.Size = new System.Drawing.Size(59, 50);
+            this.pbHomeUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbHomeUser.TabIndex = 33;
+            this.pbHomeUser.TabStop = false;
             // 
             // UCMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pnlMid);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.pnlMenuTop);
             this.Controls.Add(this.pnlMenu);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UCMain";
-            this.Size = new System.Drawing.Size(1767, 935);
+            this.Size = new System.Drawing.Size(1440, 1024);
             this.Load += new System.EventHandler(this.UCMain_Load);
-            this.panel2.ResumeLayout(false);
+            this.pnlMenu.ResumeLayout(false);
+            this.guna2ShadowPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlMenuTop.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbHomeUser)).EndInit();
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.pnlMenu.ResumeLayout(false);
-            this.pnlLogout.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Panel panel2;
-        private Guna.UI.WinForms.GunaElipsePanel pnlMenuTop;
         private Guna.UI.WinForms.GunaButton btnStatus;
-        private System.Windows.Forms.PictureBox pbHomeUser;
-        private Guna.UI.WinForms.GunaButton btnUser;
-        private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel pnlMenu;
-        private Guna.UI.WinForms.GunaButton btnHome;
-        private System.Windows.Forms.Panel pnlLogout;
-        private Guna.UI.WinForms.GunaButton btnSignOut;
-        private Guna.UI.WinForms.GunaButton btnMail;
-        private System.Windows.Forms.Panel pnlMid;
-        private Guna.UI.WinForms.GunaButton btnSocial;
+        private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel1;
+        private Guna.UI2.WinForms.Guna2Button btnHome;
+        private Guna.UI2.WinForms.Guna2Button btnSocial;
+        private Guna.UI2.WinForms.Guna2Button btnMail;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private Guna.UI2.WinForms.Guna2Button btnSignOut;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel pnlMenuTop;
+        private Guna.UI2.WinForms.Guna2Button btnUser;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel pnlMid;
+        private System.Windows.Forms.PictureBox pbHomeUser;
     }
 }
