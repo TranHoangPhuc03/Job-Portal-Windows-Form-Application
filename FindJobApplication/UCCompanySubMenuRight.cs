@@ -38,7 +38,7 @@ namespace FindJobApplication
             UCMain.Instance.PnlMid.Controls.Clear();
             UCMain.Instance.PnlMid.Controls.Add(uCCompanyProfile);
             hideMenu();
-            UCMain.Instance.updateStatus(btnProfile);
+           // UCMain.Instance.updateStatus(btnProfile);
         }
 
         private void btnSetting_Click(object sender, EventArgs e)
@@ -47,7 +47,7 @@ namespace FindJobApplication
             UCMain.Instance.PnlMid.Controls.Clear();
             UCMain.Instance.PnlMid.Controls.Add(uCSetting);
             hideMenu();
-            UCMain.Instance.updateStatus(btnSetting);
+           // UCMain.Instance.updateStatus(btnSetting);
         }
 
         private void btnFollowCV_Click(object sender, EventArgs e)
@@ -56,7 +56,7 @@ namespace FindJobApplication
             UCMain.Instance.PnlMid.Controls.Clear();
             UCMain.Instance.PnlMid.Controls.Add(uCCompanyListCVFollowing);
             hideMenu();
-            UCMain.Instance.updateStatus(btnFollowCV);
+           // UCMain.Instance.updateStatus(btnFollowCV);
         }
 
         private void btnSocialPost_Click(object sender, EventArgs e)
@@ -65,7 +65,7 @@ namespace FindJobApplication
             UCMain.Instance.PnlMid.Controls.Clear();
             UCMain.Instance.PnlMid.Controls.Add(uCSocialHistory);
             hideMenu();
-            UCMain.Instance.updateStatus(btnSocialPost);
+          //  UCMain.Instance.updateStatus(btnSocialPost);
         }
 
         private void btnSetting_Click_1(object sender, EventArgs e)
@@ -74,7 +74,7 @@ namespace FindJobApplication
             UCMain.Instance.PnlMid.Controls.Clear();
             UCMain.Instance.PnlMid.Controls.Add(uCSetting);
             hideMenu();
-            UCMain.Instance.updateStatus(btnSetting);
+           // UCMain.Instance.updateStatus(btnSetting);
         }
     }
 }

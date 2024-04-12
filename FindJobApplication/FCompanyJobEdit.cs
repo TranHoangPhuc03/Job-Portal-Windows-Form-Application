@@ -74,7 +74,7 @@ namespace FindJobApplication
                 this.txtWorkAddress.Text = jobPost.Address;
                 this.cbExperience.SelectedIndex = jobPost.YearExperienceId;
                 this.cbLocation.SelectedIndex = jobPost.LocationId;
-                this.dtpExpireDate.Text = jobPost.ExpireDate.ToString("dd-MM-yyyy");
+                this.dtpExpireDate.Text = jobPost.ExpireDate.ToString();
 
                 if (this.formAction == "Update")
                 {
@@ -103,7 +103,6 @@ namespace FindJobApplication
                 }
 
             }
-            jobPost.PostDate = DateTime.Now;
             return jobPost;
         }
 
@@ -114,6 +113,7 @@ namespace FindJobApplication
             JobPostDao jobPostDao = new JobPostDao();
             if (this.formAction == "Create")
             {
+                jobPost.PostDate = DateTime.Now;
                 int results = jobPostDao.SaveNewJobPost(jobPost);
                 if (results == 0)
                 {

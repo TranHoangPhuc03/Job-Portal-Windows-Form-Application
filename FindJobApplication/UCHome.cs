@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FindJobApplication.Models;
 
 namespace FindJobApplication
 {
@@ -22,20 +23,19 @@ namespace FindJobApplication
         public Guna2TextBox TxtSeach { get { return txtSearch; } }
         public GunaComboBox CbLocation { get { return cbLocation; } }
         public GunaComboBox CbExperince { get { return cbExperience; } }
-        public GunaComboBox CbSalary { get { return cbSalary; } }
-        public GunaButton BtnSearch { get { return btnSearch; } }
+        public Guna2Button BtnSearch { get { return btnSearch; } }
         private void btnSearch_Click(object sender, EventArgs e)
         {
 
         }
 
-        public void fillDataToPanel<T>(List<T> dataControlList)
+        public void fillDataToPanel(List<JobPost> dataControlList)
         {
             pnlListJob.Controls.Clear();
-            foreach (Object obj in dataControlList)
+            foreach (JobPost obj in dataControlList)
             {
-              
-                this.pnlListJob.Controls.Add((Control)obj);
+                UCJob uCJob = new UCJob((JobPost)obj);
+                this.pnlListJob.Controls.Add(uCJob);
             }
         }
     }

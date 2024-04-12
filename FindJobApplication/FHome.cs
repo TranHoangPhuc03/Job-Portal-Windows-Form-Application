@@ -71,7 +71,7 @@ namespace FindJobApplication
                 uCJob.Location.Text = locationDict[jobPost.LocationId].Name;
                 uCJob.Salary.Text = jobPost.Salary.ToString();
                 uCJob.Tag = jobPost;
-                uCJob.LinkLabelJob.Tag = jobPost.Id;
+                uCJob.LLblNameJob.Tag = jobPost.Id;
                 uCJob.CompanyName.Tag = jobPost.CompanyId;
                 uCJob.PnlSkill.Controls.Add(skill1); // add skill
                 uCJob.PnlSkill.Controls.Add(skill2); // add skill
@@ -96,7 +96,7 @@ namespace FindJobApplication
             this.uCHome.CbExperince.DisplayMember = "name";
             this.uCHome.CbExperince.DataSource = yearExperienceDao.FindAllExperienceList();
 
-            this.uCHome.fillDataToPanel(BuildJobPostList(jobPostDao.FindAllJobPost()));
+            this.uCHome.fillDataToPanel(jobPostDao.FindAllJobPost());
         }
 
         private void btnMail_Click(object sender, EventArgs e)
@@ -114,16 +114,12 @@ namespace FindJobApplication
             string keyword = this.uCHome.TxtSeach.Text;
             int locationId = this.uCHome.CbLocation.SelectedIndex;
             int experienceId = this.uCHome.CbExperince.SelectedIndex;
-            int salaryId = this.uCHome.CbSalary.SelectedIndex;
 
-            int index = 0;
             JobPostDao jobPostDao = new JobPostDao();
-            var dt = jobPostDao.FindAllJobPost();
-            foreach(var row in dt)
+            List<JobPost> dt = jobPostDao.FindAllJobPost();
+            if (!string.IsNullOrEmpty(keyword))
             {
-                if (keyword != "" && !row.Title.Contains(keyword))
-                    dt.RemoveAt(index);
-                index++;
+                dt = dt.Where(row => row.Title.Contains(keyword)).ToList();
             }
             this.uCHome.fillDataToPanel(dt);
         }

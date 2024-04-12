@@ -45,21 +45,20 @@ namespace FindJobApplication.Models
             this.companyName = companyName;
         }
 
-        public int Id { get => id; }
-        public string Title { get => title; }
-        public int RecruitmentNumber { get => recruitmentNumber; }
-        public int Salary { get => salary; }
-        public string Description { get => description; }
-        public string Requirement { get => requirement; }
-        public string Prioritize { get => prioritize; }
-        public string Benefit { get => benefit; }
-        public DateTime PostDate { get => postDate; set => this.PostDate = value; }
-        public DateTime ExpireDate { get => expireDate; }
-        public string Address { get => address; }
-        public int YearExperienceId { get => yearExperienceId; }
-        public int LocationId { get => locationId; }
-        public int CompanyId { get => companyId; set => this.CompanyId = value; }
-        public string CompanyName { get => companyName; }
-
+        public int Id { get => id; set => id = value; }
+        public string Title { get => title; set => title = value; }
+        public int RecruitmentNumber { get => recruitmentNumber; set => recruitmentNumber = value; }
+        public int Salary { get => salary; set => salary = value; }
+        public string Description { get => description; set => description = value; }
+        public string Requirement { get => requirement; set => requirement = value; }
+        public string Prioritize { get => prioritize; set => prioritize = value; }
+        public string Benefit { get => benefit; set => benefit = value; }
+        public DateTime PostDate { get => postDate; set => postDate = value; }
+        public DateTime ExpireDate { get => expireDate; set => expireDate = value; }
+        public string Address { get => address; set => address = value; }
+        public int YearExperienceId { get => yearExperienceId; set => yearExperienceId = value; }
+        public int LocationId { get => locationId; set => locationId = value; }
+        public int CompanyId { get => companyId; set => companyId = value; }
+        public string CompanyName { get => companyName; set => companyName = value; }
     }
 }

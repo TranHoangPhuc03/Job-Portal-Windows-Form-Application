@@ -12,7 +12,7 @@
             this.name = name;
         }
 
-        public int Id { get; }
-        public string Name { get; }
+        public int Id { get => this.id; }
+        public string Name { get => this.name; }
     }
 }

@@ -233,6 +233,12 @@
     <Compile Include="UCCompanyJob.Designer.cs">
       <DependentUpon>UCCompanyJob.cs</DependentUpon>
     </Compile>
+    <Compile Include="UCCompanyJobRecruitment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCCompanyJobRecruitment.Designer.cs">
+      <DependentUpon>UCCompanyJobRecruitment.cs</DependentUpon>
+    </Compile>
     <Compile Include="UCCompanyListCVFollowing.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -473,6 +479,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UCCompanyJob.resx">
       <DependentUpon>UCCompanyJob.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCCompanyJobRecruitment.resx">
+      <DependentUpon>UCCompanyJobRecruitment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCCompanyListCVFollowing.resx">
       <DependentUpon>UCCompanyListCVFollowing.cs</DependentUpon>
@@ -797,6 +806,87 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Xoa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\signup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sigup2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\emailicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Social.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Meta-Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sign-out-option.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sign-out-option-White.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\homeWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\socialWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\emailWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\S-white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fpt_logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maps-and-flags.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dollar-symbol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vanphong2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\address.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\typeWork.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\timePost.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Company_mail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Company_phone-call.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Company_web.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Company_birthday-cake.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Company_people_size.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jobCount.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

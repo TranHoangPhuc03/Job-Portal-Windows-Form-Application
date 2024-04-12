@@ -238,7 +238,7 @@ namespace FindJobApplication.Daos
                 { "@JobPostId", jobPost.Id }
             };
 
-            return db.Execute(sqlStr);
+            return db.Execute(sqlStr, parameters);
         }
     }
 }
