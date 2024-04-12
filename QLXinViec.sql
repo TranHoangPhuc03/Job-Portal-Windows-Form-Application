@@ -7,6 +7,25 @@ CREATE TABLE user_role (
 	id INT PRIMARY KEY IDENTITY(1, 1),
 	role_name VARCHAR(255)
 );
+GO
+
+CREATE TABLE skill (
+	id INT PRIMARY KEY IDENTITY(1, 1),
+	[name] VARCHAR(255) NOT NULL
+);
+GO
+
+CREATE TABLE [location] (
+	id INT PRIMARY KEY IDENTITY(1, 1),
+	[name] VARCHAR(255)
+);
+GO
+
+CREATE TABLE year_experience (
+	id INT PRIMARY KEY IDENTITY(1, 1),
+	[name] VARCHAR(255)
+);
+GO
 
 CREATE TABLE account (
 	id INT PRIMARY KEY IDENTITY(1, 1),
@@ -16,6 +35,7 @@ CREATE TABLE account (
 
 	FOREIGN KEY (role_id) REFERENCES user_role(id)
 );
+GO
 
 --USER
 CREATE TABLE user_profile (
@@ -34,6 +54,7 @@ CREATE TABLE user_profile (
 
 	FOREIGN KEY (user_account_id) REFERENCES account(id)
 );
+GO
 
 CREATE TABLE user_education (
 	id INT PRIMARY KEY IDENTITY(1, 1),
@@ -46,6 +67,7 @@ CREATE TABLE user_education (
 
 	FOREIGN KEY (user_profile_id) REFERENCES user_profile(id),
 );
+GO
 
 CREATE TABLE user_work_experience (
 	id INT PRIMARY KEY IDENTITY(1, 1),
@@ -57,6 +79,7 @@ CREATE TABLE user_work_experience (
 
 	FOREIGN KEY (user_profile_id) REFERENCES user_profile(id)
 );
+GO
 
 CREATE TABLE user_personal_project(
 	id INT PRIMARY KEY IDENTITY(1, 1),
@@ -68,15 +91,7 @@ CREATE TABLE user_personal_project(
 
 	FOREIGN KEY (user_profile_id) REFERENCES user_profile(id)
 );
-
-CREATE TABLE user_favourite_job(
-	[user_id] INT,
-	job_post_id INT,
-
-	FOREIGN KEY ([user_id]) REFERENCES user_profile(id),
-	FOREIGN KEY (job_post_id) REFERENCES job_post(id),
-	PRIMARY KEY ([user_id], job_post_id)
-);
+GO
 
 --COMPANY + JOB
 CREATE TABLE company_profile (
@@ -97,21 +112,7 @@ CREATE TABLE company_profile (
 
 	FOREIGN KEY (company_account_id) REFERENCES account(id)
 );
-
-CREATE TABLE skill (
-	id INT PRIMARY KEY IDENTITY(1, 1),
-	[name] VARCHAR(255) NOT NULL
-);
-
-CREATE TABLE [location] (
-	id INT PRIMARY KEY IDENTITY(1, 1),
-	[name] VARCHAR(255)
-);
-
-CREATE TABLE year_experience (
-	id INT PRIMARY KEY IDENTITY(1, 1),
-	[name] VARCHAR(255)
-);
+GO
 
 CREATE TABLE job_post (
 	id INT PRIMARY KEY IDENTITY(1, 1),
@@ -133,6 +134,7 @@ CREATE TABLE job_post (
 	FOREIGN KEY (company_id) REFERENCES company_profile(id),
 	FOREIGN KEY (year_experience_id) REFERENCES year_experience(id)
 );
+GO
 
 CREATE TABLE job_skill (
 	job_post_id INT,
@@ -142,6 +144,7 @@ CREATE TABLE job_skill (
 	FOREIGN KEY (skill_id) REFERENCES skill(id),
 	PRIMARY KEY (job_post_id, skill_id)
 );
+GO
 
 CREATE TABLE user_apply_job (
 	[user_id] INT,
@@ -155,6 +158,7 @@ CREATE TABLE user_apply_job (
 	FOREIGN KEY (job_post_id) REFERENCES job_post(id),
 	PRIMARY KEY ([user_id], job_post_id)
 );
+GO
 
 CREATE TABLE user_skill (
 	user_profile_id INT,
@@ -164,6 +168,17 @@ CREATE TABLE user_skill (
 	FOREIGN KEY (skill_id) REFERENCES skill(id),
 	PRIMARY KEY (user_profile_id, skill_id)
 );
+GO
+
+CREATE TABLE user_favourite_job(
+	[user_id] INT,
+	job_post_id INT,
+
+	FOREIGN KEY ([user_id]) REFERENCES user_profile(id),
+	FOREIGN KEY (job_post_id) REFERENCES job_post(id),
+	PRIMARY KEY ([user_id], job_post_id)
+);
+GO
 
 CREATE TABLE [following](
 	company_id INT,
@@ -173,6 +188,7 @@ CREATE TABLE [following](
 	FOREIGN KEY (company_id) REFERENCES account(id),
 	PRIMARY KEY([user_id], company_id)
 );
+GO
 
 --Social
 CREATE TABLE social_post(
@@ -184,6 +200,7 @@ CREATE TABLE social_post(
 
 	FOREIGN KEY (account_id) REFERENCES account(id)
 );
+GO
 
 CREATE TABLE social_post_skill(
 	social_post_id INT,
@@ -193,6 +210,7 @@ CREATE TABLE social_post_skill(
 	FOREIGN KEY (skill_id) REFERENCES skill(id),
 	PRIMARY KEY (social_post_id, skill_id)
 );
+GO
 
 CREATE TABLE mail(
 	id INT PRIMARY KEY IDENTITY(1, 1),

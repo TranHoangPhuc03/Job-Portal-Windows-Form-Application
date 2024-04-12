@@ -5,6 +5,7 @@ INSERT INTO user_role (role_name)
 VALUES
 ('company'),
 ('user');
+GO
 
 -- INSERT statements for location TABLE
 INSERT INTO [location]([name])
@@ -74,6 +75,7 @@ VALUES
 ('Vinh Long'),
 ('Vinh Phuc'),
 ('Yen Bai');
+GO
 
 --INSERT statements for skill TABLE
 INSERT INTO skill([name])
@@ -163,6 +165,7 @@ VALUES
 ('VueJS'),
 ('Wordpress'),
 ('.NET');
+GO
 
 -- INSERT statements for year_experience TABLE
 INSERT INTO year_experience([name])
@@ -172,6 +175,7 @@ VALUES
 ('1-3 years'),
 ('3-5 years'),
 ('5+ years');
+GO
 
 -- Inserting 10 rows INTO the account TABLE
 DECLARE @counter INT = 1;
@@ -186,7 +190,7 @@ BEGIN
 
     SET @counter = @counter + 1;
 END;
-
+GO
 
 -- Inserting 30 rows INTO the user_profile TABLE
 DECLARE @user_counter INT = 6;
@@ -200,7 +204,7 @@ BEGIN
 
     SET @user_counter = @user_counter + 1;
 END;
-
+GO
 
 -- Inserting 30 rows INTO the company_profile TABLE
 DECLARE @company_counter INT = 1;
@@ -214,6 +218,7 @@ BEGIN
 
     SET @company_counter = @company_counter + 1;
 END;
+GO
 
 -- Insert statements for job_post TABLE
 INSERT INTO job_post (title, recruitment_number, salary, [description], requirement, prioritize, benefit, post_date, expire_date, [address], year_experience_id, location_id, company_id)
@@ -228,3 +233,4 @@ VALUES
 ('Sales Representative', 3, 60000, 'Looking for energetic sales representatives to drive revenue growth.', 'Bachelor''s degree in Business or related field.', 'Proven track record of meeting sales targets.', 'Commission-based compensation and sales incentives.', '2024-03-20', '2024-04-20', '505 Cedar St, City, Country', 3, 8, 3),
 ('Customer Service Specialist', 2, 50000, 'Hiring customer service specialists to assist customers with inquiries and issues.', 'High school diploma or equivalent.', 'Strong communication and problem-solving skills.', 'Training and career development opportunities.', '2024-03-20', '2024-04-20', '606 Birch St, City, Country', 4, 9, 4),
 ('Legal Counsel', 1, 85000, 'Seeking experienced legal counsel to provide legal advice and support.', 'Juris Doctor (JD) degree and active bar membership.', 'Experience in corporate law and contract negotiation.', 'Competitive compensation and comprehensive benefits.', '2024-03-20', '2024-04-20', '707 Oak St, City, Country', 5, 10, 5);
+GO
