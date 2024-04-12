@@ -31,15 +31,20 @@ namespace FindJobApplication
         {
             btnBack.Visible = true;
             btnFollow.Visible = true;
+            btnInbox.Visible = true ;
             pbProfileEdit.Visible = false;
             pbTop3Edit.Visible = false;
             pBCompanyOverviewEdit.Visible = false;
         }
         private void btnBack_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            Control parentControl = this.Parent;
+            if (parentControl != null)
+            {
+                parentControl.Controls.Remove(this);
+                this.Dispose();
+            }
         }
-
         private void pbIntroductionEdit_Click(object sender, EventArgs e)
         {
 
@@ -56,13 +61,11 @@ namespace FindJobApplication
         {
             if (statusBtnFollowCompany == 1)
             {
-                btnFollow.Image = Properties.Resources.unFollow;
                 btnFollow.Text = "Following";
                 statusBtnFollowCompany = 2;
             }
             else
             {
-                btnFollow.Image = Properties.Resources.Follow;
                 btnFollow.Text = "Follow";
                 statusBtnFollowCompany = 1;
             }
@@ -72,7 +75,9 @@ namespace FindJobApplication
         {
             CompanyProfileDao companyProfileDao = new CompanyProfileDao();
             CompanyProfile companyProfile = companyProfileDao.FindCompanyProfileById(this.companyId);
-
+            JobPostDao jobPostDao = new JobPostDao();   
+            int cnt = jobPostDao.FindAllJobPostByCompanyId(this.companyId).Count;
+            lblCountJob.Text = cnt.ToString();
             this.lblProfileCompany.Text = companyProfile.Name;
             this.lblProfileAddress.Text = companyProfile.Address;
             this.lblProfileCompanySize.Text = companyProfile.CompanySize.ToString();
@@ -92,6 +97,19 @@ namespace FindJobApplication
         private void pBCompanyOverviewEdit_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnInbox_Click(object sender, EventArgs e)
+        {
+            FSendMail fSendMail = new FSendMail();
+            fSendMail.Show();
+        }
+
+        private void btnSeeJob_Click(object sender, EventArgs e)
+        {
+            UCCompanyJobRecruitment uCCompanyJobRecruitment = new UCCompanyJobRecruitment(companyId);
+            UCMain.Instance.PnlMid.Controls.Add(uCCompanyJobRecruitment);
+            uCCompanyJobRecruitment.BringToFront();
         }
     }
 }

@@ -38,9 +38,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnStatus = new Guna.UI.WinForms.GunaButton();
             this.pnlMenuTop = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.pbHomeUser = new System.Windows.Forms.PictureBox();
             this.btnUser = new Guna.UI2.WinForms.Guna2Button();
             this.pnlMid = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.pbHomeUser = new System.Windows.Forms.PictureBox();
             this.pnlMenu.SuspendLayout();
             this.guna2ShadowPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -171,7 +171,8 @@
             this.guna2ShadowPanel1.Location = new System.Drawing.Point(0, 0);
             this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
             this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
-            this.guna2ShadowPanel1.ShadowDepth = 50;
+            this.guna2ShadowPanel1.ShadowDepth = 30;
+            this.guna2ShadowPanel1.ShadowShift = 4;
             this.guna2ShadowPanel1.ShadowStyle = Guna.UI2.WinForms.Guna2ShadowPanel.ShadowMode.Dropped;
             this.guna2ShadowPanel1.Size = new System.Drawing.Size(248, 80);
             this.guna2ShadowPanel1.TabIndex = 9;
@@ -179,7 +180,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::FindJobApplication.Properties.Resources.Meta_Logo;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(2, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(245, 77);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -217,6 +218,7 @@
             this.pnlMenuTop.Controls.Add(this.pbHomeUser);
             this.pnlMenuTop.Controls.Add(this.btnUser);
             this.pnlMenuTop.Controls.Add(this.btnStatus);
+            this.pnlMenuTop.CustomBorderThickness = new System.Windows.Forms.Padding(1);
             this.pnlMenuTop.CustomizableEdges.BottomRight = false;
             this.pnlMenuTop.CustomizableEdges.TopLeft = false;
             this.pnlMenuTop.CustomizableEdges.TopRight = false;
@@ -224,6 +226,16 @@
             this.pnlMenuTop.Name = "pnlMenuTop";
             this.pnlMenuTop.Size = new System.Drawing.Size(1184, 80);
             this.pnlMenuTop.TabIndex = 31;
+            // 
+            // pbHomeUser
+            // 
+            this.pbHomeUser.Image = global::FindJobApplication.Properties.Resources.man;
+            this.pbHomeUser.Location = new System.Drawing.Point(856, 14);
+            this.pbHomeUser.Name = "pbHomeUser";
+            this.pbHomeUser.Size = new System.Drawing.Size(59, 50);
+            this.pbHomeUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbHomeUser.TabIndex = 33;
+            this.pbHomeUser.TabStop = false;
             // 
             // btnUser
             // 
@@ -251,6 +263,7 @@
             // pnlMid
             // 
             this.pnlMid.BorderRadius = 16;
+            this.pnlMid.CustomBorderThickness = new System.Windows.Forms.Padding(1);
             this.pnlMid.CustomizableEdges.BottomLeft = false;
             this.pnlMid.CustomizableEdges.BottomRight = false;
             this.pnlMid.CustomizableEdges.TopRight = false;
@@ -258,16 +271,6 @@
             this.pnlMid.Name = "pnlMid";
             this.pnlMid.Size = new System.Drawing.Size(1184, 936);
             this.pnlMid.TabIndex = 32;
-            // 
-            // pbHomeUser
-            // 
-            this.pbHomeUser.Image = global::FindJobApplication.Properties.Resources.man;
-            this.pbHomeUser.Location = new System.Drawing.Point(856, 14);
-            this.pbHomeUser.Name = "pbHomeUser";
-            this.pbHomeUser.Size = new System.Drawing.Size(59, 50);
-            this.pbHomeUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbHomeUser.TabIndex = 33;
-            this.pbHomeUser.TabStop = false;
             // 
             // UCMain
             // 

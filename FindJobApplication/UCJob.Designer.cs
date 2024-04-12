@@ -108,6 +108,7 @@
             this.pbSave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbSave.TabIndex = 32;
             this.pbSave.TabStop = false;
+            this.pbSave.Click += new System.EventHandler(this.pbSave_Click);
             // 
             // btnApply
             // 
@@ -137,6 +138,7 @@
             this.btnApply.TabIndex = 33;
             this.btnApply.Text = "Apply";
             this.btnApply.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
             // 
             // pnlSkill
             // 
@@ -187,6 +189,7 @@
             this.lLblNameJob.TabIndex = 34;
             this.lLblNameJob.TabStop = true;
             this.lLblNameJob.Text = "Title";
+            this.lLblNameJob.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lLblNameJob_LinkClicked);
             // 
             // lblNameCompany
             // 
@@ -203,6 +206,7 @@
             this.lblNameCompany.TabIndex = 37;
             this.lblNameCompany.TabStop = true;
             this.lblNameCompany.Text = "FPT Corporation";
+            this.lblNameCompany.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblNameCompany_LinkClicked);
             // 
             // pictureBox2
             // 

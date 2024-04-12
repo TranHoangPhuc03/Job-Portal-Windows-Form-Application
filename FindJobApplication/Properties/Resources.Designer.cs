@@ -73,6 +73,16 @@ namespace FindJobApplication.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap address {
+            get {
+                object obj = ResourceManager.GetObject("address", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap arrow_down_sign_to_navigate {
             get {
                 object obj = ResourceManager.GetObject("arrow-down-sign-to-navigate", resourceCulture);
@@ -196,6 +206,56 @@ namespace FindJobApplication.Properties {
         internal static System.Drawing.Bitmap Company {
             get {
                 object obj = ResourceManager.GetObject("Company", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Company_birthday_cake {
+            get {
+                object obj = ResourceManager.GetObject("Company_birthday-cake", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Company_mail {
+            get {
+                object obj = ResourceManager.GetObject("Company_mail", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Company_people_size {
+            get {
+                object obj = ResourceManager.GetObject("Company_people_size", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Company_phone_call {
+            get {
+                object obj = ResourceManager.GetObject("Company_phone-call", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Company_web {
+            get {
+                object obj = ResourceManager.GetObject("Company_web", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -496,6 +556,16 @@ namespace FindJobApplication.Properties {
         internal static System.Drawing.Bitmap job_search {
             get {
                 object obj = ResourceManager.GetObject("job-search", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap jobCount {
+            get {
+                object obj = ResourceManager.GetObject("jobCount", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -893,6 +963,26 @@ namespace FindJobApplication.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap timePost {
+            get {
+                object obj = ResourceManager.GetObject("timePost", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap typeWork {
+            get {
+                object obj = ResourceManager.GetObject("typeWork", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap unFollow {
             get {
                 object obj = ResourceManager.GetObject("unFollow", resourceCulture);
@@ -936,6 +1026,16 @@ namespace FindJobApplication.Properties {
         internal static System.Drawing.Bitmap VanPhong {
             get {
                 object obj = ResourceManager.GetObject("VanPhong", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap vanphong2 {
+            get {
+                object obj = ResourceManager.GetObject("vanphong2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
