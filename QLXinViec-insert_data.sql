@@ -1,5 +1,6 @@
 USE QLXinViec;
-
+GO
+    
 -- INSERT statements for user_role TABLE
 INSERT INTO user_role (role_name)
 VALUES
