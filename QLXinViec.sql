@@ -1,7 +1,9 @@
 CREATE DATABASE QLXinViec;
-
+GO
+	
 USE QLXinViec;
-
+GO
+	
 --ACCOUNT
 CREATE TABLE user_role (
 	id INT PRIMARY KEY IDENTITY(1, 1),
