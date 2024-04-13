@@ -19,7 +19,12 @@ namespace FindJobApplication
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            Control parentControl = this.Parent;
+            if (parentControl != null)
+            {
+                parentControl.Controls.Remove(this);
+                this.Dispose();
+            }
         }
 
         private void btnFeedBack_Click(object sender, EventArgs e)

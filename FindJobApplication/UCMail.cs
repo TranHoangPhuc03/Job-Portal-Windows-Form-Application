@@ -22,6 +22,7 @@ namespace FindJobApplication
         }
         private void btnMailReceived_Click(object sender, EventArgs e)
         {
+            lblFrom.Text = "From";
             pnlListMail.Controls.Clear();
             for (int i = 0; i< 20; i++)
             {
@@ -33,6 +34,7 @@ namespace FindJobApplication
 
         private void btnMailSent_Click(object sender, EventArgs e)
         {
+            lblFrom.Text = "To";
             pnlListMail.Controls.Clear();
             for (int i = 0; i < 20; i++)
             {

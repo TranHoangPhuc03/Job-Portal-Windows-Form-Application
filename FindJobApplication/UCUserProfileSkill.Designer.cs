@@ -36,33 +36,36 @@
             // btnSkill
             // 
             this.btnSkill.BackColor = System.Drawing.Color.Transparent;
-            this.btnSkill.BorderRadius = 20;
+            this.btnSkill.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
+            this.btnSkill.BorderRadius = 15;
             this.btnSkill.BorderThickness = 1;
             this.btnSkill.DefaultAutoSize = true;
             this.btnSkill.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnSkill.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnSkill.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnSkill.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSkill.FillColor = System.Drawing.Color.White;
-            this.btnSkill.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSkill.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
+            this.btnSkill.Font = new System.Drawing.Font("Inter", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.btnSkill.ForeColor = System.Drawing.Color.Black;
             this.btnSkill.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btnSkill.HoverState.CustomBorderColor = System.Drawing.Color.Black;
             this.btnSkill.HoverState.FillColor = System.Drawing.Color.White;
             this.btnSkill.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnSkill.Location = new System.Drawing.Point(3, 3);
+            this.btnSkill.Location = new System.Drawing.Point(2, 2);
+            this.btnSkill.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSkill.Name = "btnSkill";
-            this.btnSkill.Size = new System.Drawing.Size(73, 36);
+            this.btnSkill.Size = new System.Drawing.Size(97, 29);
             this.btnSkill.TabIndex = 0;
-            this.btnSkill.Text = ".Net";
+            this.btnSkill.Text = "Back-end";
             // 
             // pBDelete
             // 
             this.pBDelete.Enabled = false;
             this.pBDelete.Image = global::FindJobApplication.Properties.Resources.Xoa;
-            this.pBDelete.Location = new System.Drawing.Point(82, 3);
+            this.pBDelete.Location = new System.Drawing.Point(104, 4);
+            this.pBDelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pBDelete.Name = "pBDelete";
-            this.pBDelete.Size = new System.Drawing.Size(28, 36);
+            this.pBDelete.Size = new System.Drawing.Size(25, 25);
             this.pBDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pBDelete.TabIndex = 1;
             this.pBDelete.TabStop = false;
@@ -71,13 +74,15 @@
             // 
             // UCUserProfileSkill
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.Controls.Add(this.pBDelete);
             this.Controls.Add(this.btnSkill);
+            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(33)))), ((int)(((byte)(56)))));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "UCUserProfileSkill";
-            this.Size = new System.Drawing.Size(113, 44);
+            this.Size = new System.Drawing.Size(135, 33);
             ((System.ComponentModel.ISupportInitialize)(this.pBDelete)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
