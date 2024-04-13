@@ -223,6 +223,9 @@
   <data name="label" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\label.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="post" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\post.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="dollar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dollar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -295,14 +298,17 @@
   <data name="Meta-Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Meta-Logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logout1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logout1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="jobCount" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\jobCount.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="signup" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\signup.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Nothing" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Nothing.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logout1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logout1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="arrow-down-sign-to-navigate2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\arrow-down-sign-to-navigate2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -342,6 +348,9 @@
   </data>
   <data name="settingsSubmenu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\settingsSubmenu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="nameJob" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\nameJob.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="socialWhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\socialWhite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -397,6 +406,9 @@
   <data name="telephone" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\telephone.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="BackIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BackIcon.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="user" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -421,7 +433,7 @@
   <data name="Social" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Social.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="jobCount" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\jobCount.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="eyeDetail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\eyeDetail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

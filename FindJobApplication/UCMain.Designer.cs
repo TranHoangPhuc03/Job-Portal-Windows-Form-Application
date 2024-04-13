@@ -196,10 +196,10 @@
             this.btnStatus.BorderColor = System.Drawing.Color.White;
             this.btnStatus.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnStatus.FocusedColor = System.Drawing.Color.White;
-            this.btnStatus.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStatus.Font = new System.Drawing.Font("Inter", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStatus.ForeColor = System.Drawing.Color.Black;
             this.btnStatus.Image = ((System.Drawing.Image)(resources.GetObject("btnStatus.Image")));
-            this.btnStatus.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnStatus.ImageSize = new System.Drawing.Size(32, 32);
             this.btnStatus.Location = new System.Drawing.Point(11, 7);
             this.btnStatus.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnStatus.Name = "btnStatus";

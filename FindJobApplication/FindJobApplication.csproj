@@ -888,5 +888,14 @@
   <ItemGroup>
     <None Include="Resources\jobCount.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BackIcon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nameJob.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\post.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
