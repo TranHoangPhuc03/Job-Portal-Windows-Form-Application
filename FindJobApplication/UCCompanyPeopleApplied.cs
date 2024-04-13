@@ -17,17 +17,16 @@ namespace FindJobApplication
         {
             InitializeComponent();
         }
-        public GunaLabel LblId { get => lblId; set => lblId = value; }
-        public GunaLabel LblNamePeople { get => lblNamePeople; set => lblNamePeople = value; }
-        public GunaLabel LblDayApply { get => lblDayApply; set => lblDayApply = value; }
+        public Label LblId { get => lblId; set => lblId = value; }
+        public Label LblNamePeople { get => lblNamePeople; set => lblNamePeople = value; }
+        public Label LblDayApply { get => lblDayApply; set => lblDayApply = value; }
 
-        public GunaLabel LblStatus { get => lblStatus; set => lblStatus = value; }
+        public Label LblStatus { get => lblStatus; set => lblStatus = value; }
 
         private void pbSeeDetail_Click(object sender, EventArgs e)
         {
             UCCompanySeeProfilePeople uCCompanySeeProfilePeople = new UCCompanySeeProfilePeople((Dictionary<string, int>)this.Tag);
             UCMain.Instance.PnlMid.Controls.Add(uCCompanySeeProfilePeople);
-            uCCompanySeeProfilePeople.Location = new Point(UCMain.Instance.PnlMid.Width / 2 - uCCompanySeeProfilePeople.Width / 2, 0);
             uCCompanySeeProfilePeople.BringToFront();
         }
     }

@@ -133,6 +133,16 @@ namespace FindJobApplication.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BackIcon {
+            get {
+                object obj = ResourceManager.GetObject("BackIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap birthday_cake {
             get {
                 object obj = ResourceManager.GetObject("birthday-cake", resourceCulture);
@@ -396,6 +406,16 @@ namespace FindJobApplication.Properties {
         internal static System.Drawing.Bitmap eye {
             get {
                 object obj = ResourceManager.GetObject("eye", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap eyeDetail {
+            get {
+                object obj = ResourceManager.GetObject("eyeDetail", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -703,6 +723,16 @@ namespace FindJobApplication.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap nameJob {
+            get {
+                object obj = ResourceManager.GetObject("nameJob", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Nothing {
             get {
                 object obj = ResourceManager.GetObject("Nothing", resourceCulture);
@@ -756,6 +786,16 @@ namespace FindJobApplication.Properties {
         internal static System.Drawing.Bitmap personal_profile1 {
             get {
                 object obj = ResourceManager.GetObject("personal-profile1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap post {
+            get {
+                object obj = ResourceManager.GetObject("post", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
