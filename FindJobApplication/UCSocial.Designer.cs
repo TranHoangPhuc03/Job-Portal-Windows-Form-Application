@@ -31,61 +31,80 @@
             this.txtUpSocial = new Guna.UI2.WinForms.Guna2TextBox();
             this.pnlSocial = new System.Windows.Forms.FlowLayoutPanel();
             this.pBAvatar = new System.Windows.Forms.PictureBox();
+            this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             ((System.ComponentModel.ISupportInitialize)(this.pBAvatar)).BeginInit();
+            this.guna2CustomGradientPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtUpSocial
             // 
-            this.txtUpSocial.BorderRadius = 10;
+            this.txtUpSocial.BorderRadius = 20;
+            this.txtUpSocial.BorderThickness = 0;
             this.txtUpSocial.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtUpSocial.DefaultText = "";
             this.txtUpSocial.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtUpSocial.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtUpSocial.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtUpSocial.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtUpSocial.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(247)))));
             this.txtUpSocial.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtUpSocial.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtUpSocial.Font = new System.Drawing.Font("Inter", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.txtUpSocial.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtUpSocial.Location = new System.Drawing.Point(111, 17);
-            this.txtUpSocial.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtUpSocial.Location = new System.Drawing.Point(96, 15);
+            this.txtUpSocial.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.txtUpSocial.Name = "txtUpSocial";
             this.txtUpSocial.PasswordChar = '\0';
-            this.txtUpSocial.PlaceholderText = "What you\'re thinking";
+            this.txtUpSocial.PlaceholderText = "What\'s on your mind?";
             this.txtUpSocial.ReadOnly = true;
             this.txtUpSocial.SelectedText = "";
-            this.txtUpSocial.Size = new System.Drawing.Size(1397, 60);
+            this.txtUpSocial.Size = new System.Drawing.Size(1050, 50);
             this.txtUpSocial.TabIndex = 0;
             this.txtUpSocial.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtUpSocial_MouseClick);
             // 
             // pnlSocial
             // 
             this.pnlSocial.AutoScroll = true;
-            this.pnlSocial.Location = new System.Drawing.Point(23, 102);
+            this.pnlSocial.Location = new System.Drawing.Point(3, 98);
+            this.pnlSocial.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlSocial.Name = "pnlSocial";
-            this.pnlSocial.Size = new System.Drawing.Size(1510, 722);
+            this.pnlSocial.Size = new System.Drawing.Size(1174, 813);
             this.pnlSocial.TabIndex = 2;
             // 
             // pBAvatar
             // 
             this.pBAvatar.Image = global::FindJobApplication.Properties.Resources.man;
-            this.pBAvatar.Location = new System.Drawing.Point(23, 17);
+            this.pBAvatar.Location = new System.Drawing.Point(24, 15);
+            this.pBAvatar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pBAvatar.Name = "pBAvatar";
-            this.pBAvatar.Size = new System.Drawing.Size(68, 60);
+            this.pBAvatar.Size = new System.Drawing.Size(50, 50);
             this.pBAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pBAvatar.TabIndex = 1;
             this.pBAvatar.TabStop = false;
             // 
+            // guna2CustomGradientPanel1
+            // 
+            this.guna2CustomGradientPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CustomGradientPanel1.BorderRadius = 10;
+            this.guna2CustomGradientPanel1.Controls.Add(this.pBAvatar);
+            this.guna2CustomGradientPanel1.Controls.Add(this.txtUpSocial);
+            this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(3, 3);
+            this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
+            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(1174, 80);
+            this.guna2CustomGradientPanel1.TabIndex = 3;
+            // 
             // UCSocial
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(247)))));
+            this.Controls.Add(this.guna2CustomGradientPanel1);
             this.Controls.Add(this.pnlSocial);
-            this.Controls.Add(this.pBAvatar);
-            this.Controls.Add(this.txtUpSocial);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "UCSocial";
-            this.Size = new System.Drawing.Size(1547, 863);
+            this.Size = new System.Drawing.Size(1184, 936);
             this.Load += new System.EventHandler(this.UCSocial_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pBAvatar)).EndInit();
+            this.guna2CustomGradientPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -95,5 +114,6 @@
         private Guna.UI2.WinForms.Guna2TextBox txtUpSocial;
         private System.Windows.Forms.PictureBox pBAvatar;
         private System.Windows.Forms.FlowLayoutPanel pnlSocial;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;
     }
 }

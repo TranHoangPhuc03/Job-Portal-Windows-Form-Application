@@ -27,7 +27,7 @@ namespace FindJobApplication
         {
             LocationDao locationDao = new LocationDao();
             var locationDict = locationDao.FindAllLocationDict();
-            this.JobName.Text = jobPost.Title;
+            this.JobName.Text = standardizeNames(jobPost.Title);
             this.CompanyName.Text = jobPost.CompanyName;
             this.Location.Text = locationDict[jobPost.LocationId].Name;
             this.Salary.Text = jobPost.Salary.ToString();
@@ -81,6 +81,18 @@ namespace FindJobApplication
             uCCompanyProfile.hideAllButton();
             uCCompanyProfile.Location = new Point(UCMain.Instance.PnlMid.Width / 2 - uCCompanyProfile.Width / 2, 0);
             uCCompanyProfile.BringToFront();
-        }      
+        }
+        public string standardizeNames(string name)
+        {
+            if (name.Length <= 16)
+            {
+                return name;
+            }
+            else
+            {
+                return name.Substring(0, 14) + "...";
+            }
+        }
+
     }
 }

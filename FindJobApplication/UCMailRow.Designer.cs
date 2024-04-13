@@ -28,93 +28,80 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pnlTopTableApplyJob = new Guna.UI.WinForms.GunaElipsePanel();
-            this.lblTime = new Guna.UI.WinForms.GunaLabel();
-            this.lblFrom = new Guna.UI.WinForms.GunaLabel();
-            this.lblID = new Guna.UI.WinForms.GunaLabel();
-            this.lblTitle = new Guna.UI.WinForms.GunaLabel();
+            this.guna2CustomGradientPanel2 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.lblTime = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.lblFrom = new System.Windows.Forms.Label();
+            this.lblID = new System.Windows.Forms.Label();
             this.pbSeeDetail = new System.Windows.Forms.PictureBox();
-            this.pnlTopTableApplyJob.SuspendLayout();
+            this.guna2CustomGradientPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbSeeDetail)).BeginInit();
             this.SuspendLayout();
             // 
-            // pnlTopTableApplyJob
+            // guna2CustomGradientPanel2
             // 
-            this.pnlTopTableApplyJob.BackColor = System.Drawing.Color.Transparent;
-            this.pnlTopTableApplyJob.BaseColor = System.Drawing.Color.White;
-            this.pnlTopTableApplyJob.Controls.Add(this.pbSeeDetail);
-            this.pnlTopTableApplyJob.Controls.Add(this.lblTime);
-            this.pnlTopTableApplyJob.Controls.Add(this.lblFrom);
-            this.pnlTopTableApplyJob.Controls.Add(this.lblID);
-            this.pnlTopTableApplyJob.Controls.Add(this.lblTitle);
-            this.pnlTopTableApplyJob.Location = new System.Drawing.Point(8, 3);
-            this.pnlTopTableApplyJob.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pnlTopTableApplyJob.Name = "pnlTopTableApplyJob";
-            this.pnlTopTableApplyJob.Radius = 10;
-            this.pnlTopTableApplyJob.Size = new System.Drawing.Size(1481, 43);
-            this.pnlTopTableApplyJob.TabIndex = 49;
+            this.guna2CustomGradientPanel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CustomGradientPanel2.BorderRadius = 10;
+            this.guna2CustomGradientPanel2.Controls.Add(this.pbSeeDetail);
+            this.guna2CustomGradientPanel2.Controls.Add(this.lblTime);
+            this.guna2CustomGradientPanel2.Controls.Add(this.lblTitle);
+            this.guna2CustomGradientPanel2.Controls.Add(this.lblFrom);
+            this.guna2CustomGradientPanel2.Controls.Add(this.lblID);
+            this.guna2CustomGradientPanel2.CustomBorderThickness = new System.Windows.Forms.Padding(10);
+            this.guna2CustomGradientPanel2.Location = new System.Drawing.Point(3, 7);
+            this.guna2CustomGradientPanel2.Name = "guna2CustomGradientPanel2";
+            this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(1140, 50);
+            this.guna2CustomGradientPanel2.TabIndex = 50;
             // 
             // lblTime
             // 
             this.lblTime.AutoSize = true;
-            this.lblTime.BackColor = System.Drawing.Color.Transparent;
-            this.lblTime.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTime.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lblTime.ImageKey = "(none)";
-            this.lblTime.Location = new System.Drawing.Point(1053, 8);
+            this.lblTime.Font = new System.Drawing.Font("Inter", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.lblTime.Location = new System.Drawing.Point(820, 13);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(70, 30);
-            this.lblTime.TabIndex = 15;
-            this.lblTime.Text = "Time";
-            this.lblTime.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // lblFrom
-            // 
-            this.lblFrom.AutoSize = true;
-            this.lblFrom.BackColor = System.Drawing.Color.White;
-            this.lblFrom.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFrom.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lblFrom.ImageKey = "(none)";
-            this.lblFrom.Location = new System.Drawing.Point(212, 8);
-            this.lblFrom.Name = "lblFrom";
-            this.lblFrom.Size = new System.Drawing.Size(72, 30);
-            this.lblFrom.TabIndex = 16;
-            this.lblFrom.Text = "From";
-            this.lblFrom.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // lblID
-            // 
-            this.lblID.AutoSize = true;
-            this.lblID.BackColor = System.Drawing.Color.White;
-            this.lblID.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblID.Location = new System.Drawing.Point(9, 8);
-            this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(37, 30);
-            this.lblID.TabIndex = 11;
-            this.lblID.Text = "ID";
+            this.lblTime.Size = new System.Drawing.Size(145, 25);
+            this.lblTime.TabIndex = 8;
+            this.lblTime.Text = "Recived Time";
             // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
-            this.lblTitle.BackColor = System.Drawing.Color.White;
-            this.lblTitle.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lblTitle.ImageKey = "(none)";
-            this.lblTitle.Location = new System.Drawing.Point(608, 8);
+            this.lblTitle.Font = new System.Drawing.Font("Inter", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.lblTitle.Location = new System.Drawing.Point(420, 13);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(60, 30);
-            this.lblTitle.TabIndex = 9;
+            this.lblTitle.Size = new System.Drawing.Size(55, 25);
+            this.lblTitle.TabIndex = 4;
             this.lblTitle.Text = "Title";
-            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // lblFrom
+            // 
+            this.lblFrom.AutoSize = true;
+            this.lblFrom.Font = new System.Drawing.Font("Inter", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.lblFrom.Location = new System.Drawing.Point(150, 13);
+            this.lblFrom.Name = "lblFrom";
+            this.lblFrom.Size = new System.Drawing.Size(63, 25);
+            this.lblFrom.TabIndex = 2;
+            this.lblFrom.Text = "From";
+            // 
+            // lblID
+            // 
+            this.lblID.AutoSize = true;
+            this.lblID.Font = new System.Drawing.Font("Inter", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.lblID.Location = new System.Drawing.Point(21, 13);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(22, 25);
+            this.lblID.TabIndex = 0;
+            this.lblID.Text = "1";
             // 
             // pbSeeDetail
             // 
             this.pbSeeDetail.BackColor = System.Drawing.Color.White;
             this.pbSeeDetail.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbSeeDetail.Image = global::FindJobApplication.Properties.Resources.eye;
-            this.pbSeeDetail.Location = new System.Drawing.Point(1399, 6);
+            this.pbSeeDetail.Image = global::FindJobApplication.Properties.Resources.eyeDetail;
+            this.pbSeeDetail.Location = new System.Drawing.Point(1074, 13);
+            this.pbSeeDetail.Margin = new System.Windows.Forms.Padding(2);
             this.pbSeeDetail.Name = "pbSeeDetail";
-            this.pbSeeDetail.Size = new System.Drawing.Size(79, 34);
+            this.pbSeeDetail.Size = new System.Drawing.Size(30, 30);
             this.pbSeeDetail.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbSeeDetail.TabIndex = 19;
             this.pbSeeDetail.TabStop = false;
@@ -122,13 +109,14 @@
             // 
             // UCMailRow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.pnlTopTableApplyJob);
+            this.Controls.Add(this.guna2CustomGradientPanel2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "UCMailRow";
-            this.Size = new System.Drawing.Size(1497, 49);
-            this.pnlTopTableApplyJob.ResumeLayout(false);
-            this.pnlTopTableApplyJob.PerformLayout();
+            this.Size = new System.Drawing.Size(1146, 63);
+            this.guna2CustomGradientPanel2.ResumeLayout(false);
+            this.guna2CustomGradientPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbSeeDetail)).EndInit();
             this.ResumeLayout(false);
 
@@ -136,11 +124,11 @@
 
         #endregion
 
-        private Guna.UI.WinForms.GunaElipsePanel pnlTopTableApplyJob;
-        private Guna.UI.WinForms.GunaLabel lblTime;
-        private Guna.UI.WinForms.GunaLabel lblFrom;
-        private Guna.UI.WinForms.GunaLabel lblID;
-        private Guna.UI.WinForms.GunaLabel lblTitle;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel2;
         private System.Windows.Forms.PictureBox pbSeeDetail;
+        private System.Windows.Forms.Label lblTime;
+        private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Label lblFrom;
+        private System.Windows.Forms.Label lblID;
     }
 }

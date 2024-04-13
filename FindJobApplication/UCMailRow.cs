@@ -17,10 +17,10 @@ namespace FindJobApplication
         {
             InitializeComponent();
         }
-        public GunaLabel LblID { get => lblID; set => lblID = value; }
-        public GunaLabel LblFrom { get => lblFrom; set => lblFrom = value; }
-        public GunaLabel LblTitle { get => lblTitle; set => lblTitle = value; }
-        public GunaLabel LblTime { get => lblTime; set => lblTime = value; }
+        public Label LblID { get => lblID; set => lblID = value; }
+        public Label LblFrom { get => lblFrom; set => lblFrom = value; }
+        public Label LblTitle { get => lblTitle; set => lblTitle = value; }
+        public Label LblTime { get => lblTime; set => lblTime = value; }
 
         private void pbSeeDetail_Click(object sender, EventArgs e)
         {
