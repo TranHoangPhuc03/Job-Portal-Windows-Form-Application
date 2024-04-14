@@ -1,12 +1,5 @@
 USE QLXinViec;
 GO
-    
--- INSERT statements for user_role TABLE
-INSERT INTO user_role (role_name)
-VALUES
-('company'),
-('user');
-GO
 
 -- INSERT statements for location TABLE
 INSERT INTO [location]([name])
@@ -184,45 +177,46 @@ WHILE @counter <= 10
 BEGIN
     DECLARE @email VARCHAR(255) = CONCAT('email', @counter, '@example.com');
     DECLARE @password VARCHAR(255) = CONCAT('password', @counter);
-    DECLARE @role_id INT = CASE WHEN @counter <= 5 THEN 1 ELSE 2 END; -- Assuming role_id 1 is for company and 2 is for user
+    DECLARE @role VARCHAR(20) = CASE WHEN @counter <= 5 THEN 'company' ELSE 'user' END;
+	DECLARE @name VARCHAR(255) = CONCAT('Account ', @counter);
 
-    INSERT INTO account (email, password, role_id) 
-    VALUES (@email, @password, @role_id);
+    INSERT INTO account (email, password, [role], [name]) 
+    VALUES (@email, @password, @role, @name);
 
     SET @counter = @counter + 1;
 END;
 GO
 
--- Inserting 30 rows INTO the user_profile TABLE
+-- Inserting 5 rows INTO the user_profile TABLE
 DECLARE @user_counter INT = 6;
 WHILE @user_counter <= 10
 BEGIN
-    DECLARE @user_email VARCHAR(255) = CONCAT('user_email', @user_counter, '@example.com');
-    DECLARE @user_name VARCHAR(255) = CONCAT('User', @user_counter);
+    DECLARE @user_name VARCHAR(255) = CONCAT('User ', @user_counter);
+	DECLARE @email VARCHAR(255) = CONCAT('email', @user_counter, '@example.com')
 
-    INSERT INTO user_profile (user_account_id, [name], email) 
-    VALUES (@user_counter, @user_name, @user_email);
+    INSERT INTO user_profile (account_id, [name], email) 
+    VALUES (@user_counter, @user_name, @email);
 
     SET @user_counter = @user_counter + 1;
 END;
 GO
 
--- Inserting 30 rows INTO the company_profile TABLE
+-- Inserting 5 rows INTO the company_profile TABLE
 DECLARE @company_counter INT = 1;
 WHILE @company_counter <= 5
 BEGIN
-    DECLARE @company_email VARCHAR(255) = CONCAT('company_email', @company_counter, '@example.com');
-    DECLARE @company_name VARCHAR(255) = CONCAT('Company', @company_counter);
+    DECLARE @company_name VARCHAR(255) = CONCAT('Company ', @company_counter);
+	DECLARE @email VARCHAR(255) = CONCAT('email', @company_counter, '@example.com')
 
-    INSERT INTO company_profile (company_account_id, [name], email)
-    VALUES (@company_counter, @company_name, @company_email);
+    INSERT INTO company_profile (account_id, [name], email)
+    VALUES (@company_counter, @company_name, @email);
 
     SET @company_counter = @company_counter + 1;
 END;
 GO
 
 -- Insert statements for job_post TABLE
-INSERT INTO job_post (title, recruitment_number, salary, [description], requirement, prioritize, benefit, post_date, expire_date, [address], year_experience_id, location_id, company_id)
+INSERT INTO job_post (title, recruitment_number, salary, [description], requirement, prioritize, benefit, post_date, expire_date, [address], year_experience_id, location_id, company_account_id)
 VALUES 
 ('Software Engineer', 3, 80000, 'Seeking experienced software engineers proficient in Java and Python.', 'Bachelor''s degree in Computer Science or related field.', 'Experience with Agile methodologies preferred.', 'Competitive salary and benefits package.', '2024-03-20', '2024-04-20', '123 Main St, City, Country', 1, 1, 1),
 ('Data Analyst', 2, 60000, 'Looking for data analysts with experience in SQL and data visualization tools.', 'Bachelor''s degree in Statistics or related field.', 'Strong analytical skills and attention to detail.', 'Flexible work schedule and remote work options.', '2024-03-20', '2024-04-20', '456 Oak Ave, City, Country', 2, 2, 2),

@@ -66,7 +66,7 @@ namespace FindJobApplication
         private void FCompanyProfileInfomationEdit_Load(object sender, EventArgs e)
         {
             CompanyProfileDao companyProfileDao = new CompanyProfileDao();
-            CompanyProfile companyProfile = companyProfileDao.FindCompanyProfileById(Global.loginId);
+            CompanyProfile companyProfile = companyProfileDao.FindCompanyProfileById(Session.accountId);
             this.txtNameCompany.Text = companyProfile.Name;
             this.txtEmail.Text = companyProfile.Email;
             this.txtPhoneNumber.Text = companyProfile.PhoneNumber;
@@ -84,6 +84,7 @@ namespace FindJobApplication
         private void btnSave_Click(object sender, EventArgs e)
         {
             CompanyProfile companyProfile = new CompanyProfile(
+                    Session.accountId,
                     this.txtNameCompany.Text,
                     this.txtEmail.Text,
                     this.txtPhoneNumber.Text,
@@ -94,7 +95,7 @@ namespace FindJobApplication
                 );
 
             CompanyProfileDao companyProfileDao = new CompanyProfileDao();
-            int result = companyProfileDao.UpdateCompanyProfile(Global.loginId, companyProfile);
+            int result = companyProfileDao.UpdateCompanyProfile(companyProfile);
             if (result > 0)
             {
                 MessageDialog.Show(this, "Update success");

@@ -1,4 +1,5 @@
 ﻿using FindJobApplication.DB;
+using FindJobApplication.Mappers;
 using FindJobApplication.Models;
 using System;
 using System.Collections.Generic;
@@ -18,23 +19,31 @@ namespace FindJobApplication.Daos
             db = new Database();
         }
 
-        public DataRow FindAccountByEmail(string email)
+        public Account FindAccountByEmail(string email)
         {
-            string sqlStr = "SELECT * FROM account WHERE email = @Email;";
+            string sqlStr = @"SELECT * FROM account WHERE email = @Email;";
 
             Dictionary<string, object> parameters = new Dictionary<string, object> { { "@Email", email } };
 
-            return db.Read(sqlStr, parameters).Rows.Cast<DataRow>().FirstOrDefault();
+            DataRow dr =  db.Read(sqlStr, parameters).Rows.Cast<DataRow>().FirstOrDefault();
+
+            if (dr == null)
+            {
+                return null;
+            }
+
+            return AccountMapper.MapToModel(dr);
         }
 
-        public int SaveAccount(string email, string password, int roleId)
+        public int SaveNewAccount(string email, string name, string password, string role)
         {
-            string sqlStr = "INSERT INTO account(email, password, role_id) VALUES (@Email, @Password, @RoleId);";
+            string sqlStr = "INSERT INTO account(email, name, password, role) VALUES (@Email, , @Name, @Password, @Role);";
             Dictionary<string, object> parameters = new Dictionary<string, object>
             {
                 { "@Email", email },
                 { "@Password", password },
-                { "@RoleId", roleId }
+                { "@Role", role },
+                {   "@Name", name }
             };
 
             return db.Execute(sqlStr, parameters);

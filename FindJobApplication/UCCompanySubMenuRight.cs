@@ -34,7 +34,7 @@ namespace FindJobApplication
 
         private void btnProfile_Click(object sender, EventArgs e)
         {
-            UCCompanyProfile uCCompanyProfile = new UCCompanyProfile(Global.loginId);
+            UCCompanyProfile uCCompanyProfile = new UCCompanyProfile(Session.accountId);
             UCMain.Instance.PnlMid.Controls.Clear();
             UCMain.Instance.PnlMid.Controls.Add(uCCompanyProfile);
             hideMenu();

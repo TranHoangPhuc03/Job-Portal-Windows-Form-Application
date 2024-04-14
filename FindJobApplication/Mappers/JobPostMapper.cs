@@ -19,9 +19,9 @@ namespace FindJobApplication.Mappers
 
             try
             {
-                int id = Convert.ToInt32(dr["id"]);
-                string title = dr["title"].ToString();
-                int recruitmentNumber = Convert.ToInt32(dr["recruitment_number"]);
+                int id = dr.Field<int>("id");
+                string title = dr.Field<string>("title");
+                int recruitmentNumber = dr.Field<int>("recruitment_number");
                 int salary = Convert.ToInt32(dr["salary"]);
                 string description = dr["description"].ToString();
                 string requirement = dr["requirement"].ToString();

@@ -8,10 +8,9 @@ using System.Web.UI;
 
 namespace FindJobApplication.Models
 {
-    public class Global
+    public class Session
     {
         public static int accountId;
-        public static int loginId;
         public static string role;
     }
 }

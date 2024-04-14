@@ -1,14 +1,7 @@
 CREATE DATABASE QLXinViec;
 GO
-	
+
 USE QLXinViec;
-GO
-	
---ACCOUNT
-CREATE TABLE user_role (
-	id INT PRIMARY KEY IDENTITY(1, 1),
-	role_name VARCHAR(255)
-);
 GO
 
 CREATE TABLE skill (
@@ -29,20 +22,19 @@ CREATE TABLE year_experience (
 );
 GO
 
+--ACCOUNT
 CREATE TABLE account (
 	id INT PRIMARY KEY IDENTITY(1, 1),
 	email VARCHAR(255) NOT NULL UNIQUE,
 	password VARCHAR(255) NOT NULL,
-	role_id INT,
-
-	FOREIGN KEY (role_id) REFERENCES user_role(id)
+	[name] VARCHAR(255) NOT NULL,
+	[role] VARCHAR(20),
 );
 GO
 
 --USER
 CREATE TABLE user_profile (
-	id INT PRIMARY KEY IDENTITY(1, 1),
-	user_account_id INT,
+	account_id INT,
 	[name] VARCHAR(255) NOT NULL,
 	title VARCHAR(255),
 	email VARCHAR(255) NOT NULL UNIQUE,
@@ -51,10 +43,10 @@ CREATE TABLE user_profile (
 	gender VARCHAR(20) DEFAULT 'Male',
 	[address] TEXT,
 	personal_link TEXT,
-	user_image TEXT,
+	user_image IMAGE,
 	about_me TEXT,
 
-	FOREIGN KEY (user_account_id) REFERENCES account(id)
+	FOREIGN KEY (account_id) REFERENCES account(id)
 );
 GO
 
@@ -65,9 +57,9 @@ CREATE TABLE user_education (
 	[from] DATE,
 	[to] DATE,
 	additional_details TEXT,
-	user_profile_id INT,
+	account_id INT,
 
-	FOREIGN KEY (user_profile_id) REFERENCES user_profile(id),
+	FOREIGN KEY (account_id) REFERENCES account(id),
 );
 GO
 
@@ -77,9 +69,9 @@ CREATE TABLE user_work_experience (
 	company_name VARCHAR(255),
 	[from] DATE,
 	[to] DATE,
-	user_profile_id INT,
+	account_id INT,
 
-	FOREIGN KEY (user_profile_id) REFERENCES user_profile(id)
+	FOREIGN KEY (account_id) REFERENCES account(id)
 );
 GO
 
@@ -89,21 +81,20 @@ CREATE TABLE user_personal_project(
 	[from] DATE,
 	[to] DATE,
 	description TEXT,
-	user_profile_id INT,
+	account_id INT,
 
-	FOREIGN KEY (user_profile_id) REFERENCES user_profile(id)
+	FOREIGN KEY (account_id) REFERENCES account(id)
 );
 GO
 
 --COMPANY + JOB
 CREATE TABLE company_profile (
-	id INT PRIMARY KEY IDENTITY(1, 1),
-	company_account_id INT,
+	account_id INT,
 	[name] VARCHAR(255) NOT NULL,
 	email VARCHAR(255) NOT NULL UNIQUE,
 	phone_number VARCHAR(20),
 	[address] TEXT,
-	company_image TEXT,
+	company_image IMAGE,
 	date_establish DATE,
 	company_size INT,
 	company_link TEXT,
@@ -112,7 +103,7 @@ CREATE TABLE company_profile (
 	tax_code VARCHAR(20),
 	business_license TEXT,
 
-	FOREIGN KEY (company_account_id) REFERENCES account(id)
+	FOREIGN KEY (account_id) REFERENCES account(id)
 );
 GO
 
@@ -130,10 +121,10 @@ CREATE TABLE job_post (
 	[address] TEXT,
 	year_experience_id INT,
 	location_id INT,
-	company_id INT NOT NULL,
+	company_account_id INT NOT NULL,
 	
 	FOREIGN KEY (location_id) REFERENCES [location](id),
-	FOREIGN KEY (company_id) REFERENCES company_profile(id),
+	FOREIGN KEY (company_account_id) REFERENCES account(id),
 	FOREIGN KEY (year_experience_id) REFERENCES year_experience(id)
 );
 GO
@@ -149,26 +140,26 @@ CREATE TABLE job_skill (
 GO
 
 CREATE TABLE user_apply_job (
-	[user_id] INT,
+	account_id INT,
 	job_post_id INT,
 	[status] VARCHAR(50),
 	cover_letter TEXT,
 	applied_at DATE,
 	cv_attach TEXT,
 
-	FOREIGN KEY ([user_id]) REFERENCES user_profile(id),
+	FOREIGN KEY (account_id) REFERENCES account(id),
 	FOREIGN KEY (job_post_id) REFERENCES job_post(id),
-	PRIMARY KEY ([user_id], job_post_id)
+	PRIMARY KEY (account_id, job_post_id)
 );
 GO
 
 CREATE TABLE user_skill (
-	user_profile_id INT,
+	account_id INT,
 	skill_id INT,
 
-	FOREIGN KEY (user_profile_id) REFERENCES user_profile(id),
+	FOREIGN KEY (account_id) REFERENCES account(id),
 	FOREIGN KEY (skill_id) REFERENCES skill(id),
-	PRIMARY KEY (user_profile_id, skill_id)
+	PRIMARY KEY (account_id, skill_id)
 );
 GO
 
@@ -176,19 +167,19 @@ CREATE TABLE user_favourite_job(
 	[user_id] INT,
 	job_post_id INT,
 
-	FOREIGN KEY ([user_id]) REFERENCES user_profile(id),
+	FOREIGN KEY ([user_id]) REFERENCES account(id),
 	FOREIGN KEY (job_post_id) REFERENCES job_post(id),
 	PRIMARY KEY ([user_id], job_post_id)
 );
 GO
 
 CREATE TABLE [following](
-	company_id INT,
-	[user_id] INT,
+	company_account_id INT,
+	user_account_id INT,
 
-	FOREIGN KEY ([user_id]) REFERENCES account(id),
-	FOREIGN KEY (company_id) REFERENCES account(id),
-	PRIMARY KEY([user_id], company_id)
+	FOREIGN KEY (user_account_id) REFERENCES account(id),
+	FOREIGN KEY (company_account_id) REFERENCES account(id),
+	PRIMARY KEY(user_account_id, company_account_id)
 );
 GO
 
@@ -238,15 +229,15 @@ AS
 BEGIN
     DECLARE @InsertedAccountId TABLE (id INT);
 
-    INSERT INTO account (email, [password], role_id)
-	OUTPUT INSERTED.id INTO @InsertedAccountId
-    VALUES (@Email, @Password, 1);
+    INSERT INTO account (email, [password], [role])
+		OUTPUT INSERTED.id INTO @InsertedAccountId
+    VALUES (@Email, @Password, 'company');
 
     DECLARE @CompanyAccountId INT;
     SELECT @CompanyAccountId = id FROM @InsertedAccountId;
 
-    INSERT INTO company_profile (company_account_id, name, email, business_license)
-    VALUES (@CompanyAccountId, @Name, @Email, @BusinessLicense);
+    INSERT INTO company_profile (account_id, [name], business_license)
+    VALUES (@CompanyAccountId, @Name, @BusinessLicense);
 END;
 GO
 
@@ -258,14 +249,14 @@ AS
 BEGIN
     DECLARE @InsertedAccountId TABLE (id INT);
 
-    INSERT INTO account (email, [password], role_id)
-	OUTPUT INSERTED.id INTO @InsertedAccountId
-    VALUES (@Email, @Password, 2);
+    INSERT INTO account (email, [password], [role])
+		OUTPUT INSERTED.id INTO @InsertedAccountId
+    VALUES (@Email, @Password, 'user');
 
     DECLARE @UserAccountId INT;
     SELECT @UserAccountId = id FROM @InsertedAccountId;
 
-    INSERT INTO user_profile (user_account_id, name, email)
-    VALUES (@UserAccountId, @Name, @Email);
+    INSERT INTO user_profile (account_id, [name])
+    VALUES (@UserAccountId, @Name);
 END;
 GO

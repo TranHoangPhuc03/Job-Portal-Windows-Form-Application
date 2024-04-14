@@ -33,7 +33,7 @@ namespace FindJobApplication
             {
                 //Get cv file path
             }
-            int res = jobApplyDao.SaveUserApplyJob(appliedAt, Global.loginId, this.jobId, status, coverLetter);
+            int res = jobApplyDao.SaveUserApplyJob(appliedAt, Session.accountId, this.jobId, status, coverLetter);
             if (res > 0)
             {
                 MessageDialog.Show(this, "You applied succesfully", "Success", MessageDialogButtons.OK, MessageDialogStyle.Light);
