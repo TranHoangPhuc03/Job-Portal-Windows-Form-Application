@@ -36,15 +36,6 @@ namespace FindJobApplication
             pbTop3Edit.Visible = false;
             pBCompanyOverviewEdit.Visible = false;
         }
-        private void btnBack_Click(object sender, EventArgs e)
-        {
-            Control parentControl = this.Parent;
-            if (parentControl != null)
-            {
-                parentControl.Controls.Remove(this);
-                this.Dispose();
-            }
-        }
         private void pbIntroductionEdit_Click(object sender, EventArgs e)
         {
 
@@ -110,6 +101,16 @@ namespace FindJobApplication
             UCCompanyJobRecruitment uCCompanyJobRecruitment = new UCCompanyJobRecruitment(companyId);
             UCMain.Instance.PnlMid.Controls.Add(uCCompanyJobRecruitment);
             uCCompanyJobRecruitment.BringToFront();
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            Control parentControl = this.Parent;
+            if (parentControl != null)
+            {
+                parentControl.Controls.Remove(this);
+                this.Dispose();
+            }
         }
     }
 }

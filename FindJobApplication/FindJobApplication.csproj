@@ -904,6 +904,31 @@
     <Content Include="Resources\alert-error.512x512.png" />
     <Content Include="Resources\alert-success.512x512.png" />
     <Content Include="Resources\alert-warning.512x480.png" />
+    <None Include="Resources\BackIcon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nameJob.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\post.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eyeDetail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mail_FromTo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mail_title.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mail_Calender.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Social_Mail.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

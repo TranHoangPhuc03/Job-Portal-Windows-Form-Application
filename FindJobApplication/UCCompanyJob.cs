@@ -19,11 +19,11 @@ namespace FindJobApplication
         {
             InitializeComponent();
         }
-        public GunaLabel LblID { get => lblId; set => lblId = value; }
-        public GunaLabel LblNameJob { get => lblNameJob; set => lblNameJob = value; }
-        public GunaLabel LblPostDate { get => lblPostDate; set => lblPostDate = value; }
-        public GunaLabel LblExpirationDate { get => lblExpirationDate; set => lblExpirationDate = value; }
-        public GunaLabel LblSalary { get => lblSalary; set => lblSalary = value; }
+        public Label LblID { get => lblId; set => lblId = value; }
+        public Label LblNameJob { get => lblNameJob; set => lblNameJob = value; }
+        public Label LblPostDate { get => lblPostDate; set => lblPostDate = value; }
+        public Label LblExpirationDate { get => lblExpirationDate; set => lblExpirationDate = value; }
+        public Label LblSalary { get => lblSalary; set => lblSalary = value; }
         public GunaLinkLabel LblCountApplied { get => lblCountApplied; set => lblCountApplied = value; }
         private void lblCountApplied_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {

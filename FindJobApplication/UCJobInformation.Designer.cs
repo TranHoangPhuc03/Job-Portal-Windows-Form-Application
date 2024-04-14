@@ -65,7 +65,7 @@
             this.rtxtTop3Reason = new System.Windows.Forms.RichTextBox();
             this.lblRequired = new System.Windows.Forms.Label();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
-            this.btnBack = new Guna.UI.WinForms.GunaButton();
+            this.btnBack = new Guna.UI2.WinForms.Guna2PictureBox();
             this.pnlMain.SuspendLayout();
             this.lblTimePost.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -78,6 +78,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbCompany2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCompany3)).BeginInit();
             this.guna2Panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlMain
@@ -506,29 +507,15 @@
             // 
             // btnBack
             // 
-            this.btnBack.AnimationHoverSpeed = 0.07F;
-            this.btnBack.AnimationSpeed = 0.03F;
-            this.btnBack.BackColor = System.Drawing.Color.Transparent;
-            this.btnBack.BaseColor = System.Drawing.Color.White;
-            this.btnBack.BorderColor = System.Drawing.Color.White;
             this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBack.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnBack.FocusedColor = System.Drawing.Color.White;
-            this.btnBack.Font = new System.Drawing.Font("Inter Medium", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.btnBack.ForeColor = System.Drawing.Color.Black;
-            this.btnBack.Image = global::FindJobApplication.Properties.Resources.back;
-            this.btnBack.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnBack.Location = new System.Drawing.Point(18, 12);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.btnBack.Image = global::FindJobApplication.Properties.Resources.BackIcon;
+            this.btnBack.ImageRotate = 0F;
+            this.btnBack.Location = new System.Drawing.Point(14, 12);
             this.btnBack.Name = "btnBack";
-            this.btnBack.OnHoverBaseColor = System.Drawing.Color.White;
-            this.btnBack.OnHoverBorderColor = System.Drawing.Color.Red;
-            this.btnBack.OnHoverForeColor = System.Drawing.Color.Red;
-            this.btnBack.OnHoverImage = null;
-            this.btnBack.OnPressedColor = System.Drawing.Color.White;
-            this.btnBack.Size = new System.Drawing.Size(136, 40);
-            this.btnBack.TabIndex = 31;
-            this.btnBack.Text = "Back";
+            this.btnBack.Size = new System.Drawing.Size(79, 49);
+            this.btnBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnBack.TabIndex = 46;
+            this.btnBack.TabStop = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // UCJobInformation
@@ -536,8 +523,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
-            this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.btnBack);
+            this.Controls.Add(this.pnlMain);
             this.Name = "UCJobInformation";
             this.Size = new System.Drawing.Size(1184, 936);
             this.Load += new System.EventHandler(this.UCJobInformation_Load);
@@ -555,12 +542,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbCompany3)).EndInit();
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBack)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private Guna.UI.WinForms.GunaButton btnBack;
         private System.Windows.Forms.FlowLayoutPanel pnlMain;
         private Guna.UI2.WinForms.Guna2Panel lblTimePost;
         private System.Windows.Forms.PictureBox pbSave;
@@ -597,5 +584,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private Guna.UI2.WinForms.Guna2PictureBox btnBack;
     }
 }
