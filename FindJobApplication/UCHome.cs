@@ -29,12 +29,12 @@ namespace FindJobApplication
 
         }
 
-        public void fillDataToPanel(List<JobPost> dataControlList)
+        public void fillJobPostToPanel(List<JobPost> jobPosts)
         {
             pnlListJob.Controls.Clear();
-            foreach (JobPost obj in dataControlList)
+            foreach (JobPost jobPost in jobPosts)
             {
-                UCJob uCJob = new UCJob((JobPost)obj);
+                UCJob uCJob = new UCJob(jobPost);
                 this.pnlListJob.Controls.Add(uCJob);
             }
         }

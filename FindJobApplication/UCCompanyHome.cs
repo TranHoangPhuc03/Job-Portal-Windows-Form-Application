@@ -27,7 +27,7 @@ namespace FindJobApplication
         {
             pnlNumberOfApplicants.Controls.Clear();
             JobPostDao jobPostDao = new JobPostDao();
-            List<JobPost> jobPosts = jobPostDao.FindAllJobPostByCompanyId(Global.loginId);
+            List<JobPost> jobPosts = jobPostDao.FindAllJobPostByCompanyId(Session.accountId);
             List<UCCompanyJob> listUCCompanyJob = new List<UCCompanyJob>();
             int cnt = 1;
             foreach (JobPost jobPost in jobPosts)
@@ -63,7 +63,7 @@ namespace FindJobApplication
         {
             pnlNumberOfApplicants.Controls.Clear();
             JobPostDao jobPostDao = new JobPostDao();
-            List<JobPost> jobPosts = jobPostDao.FindAllJobPostByCompanyId(Global.loginId);
+            List<JobPost> jobPosts = jobPostDao.FindAllJobPostByCompanyId(Session.accountId);
             var results = jobPosts.Where(jobPost => jobPost.ExpireDate >= DateTime.Now);
 
             List<UCCompanyJob> listUCCompanyJob = new List<UCCompanyJob>();
@@ -87,7 +87,7 @@ namespace FindJobApplication
         {
             pnlNumberOfApplicants.Controls.Clear();
             JobPostDao jobPostDao = new JobPostDao();
-            List<JobPost> jobPosts = jobPostDao.FindAllJobPostByCompanyId(Global.loginId);
+            List<JobPost> jobPosts = jobPostDao.FindAllJobPostByCompanyId(Session.accountId);
             var results = jobPosts.Where(jobPost => jobPost.ExpireDate < DateTime.Now);
 
             List<UCCompanyJob> listUCCompanyJob = new List<UCCompanyJob>();

@@ -31,7 +31,7 @@ namespace FindJobApplication
                 this.txtTitle.Text,
                 DateTime.Now,
                 this.rtxtStatus.Text,
-                Global.accountId,
+                Session.accountId,
                 list
             );
             SocialPostDao socialPostDao = new SocialPostDao();

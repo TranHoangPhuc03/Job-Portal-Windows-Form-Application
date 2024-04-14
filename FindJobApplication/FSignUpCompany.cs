@@ -16,17 +16,20 @@ using System.Windows.Forms;
 
 namespace FindJobApplication
 {
-    public partial class FCompanySignUp : Form
+    public partial class FSignUpCompany : Form
     {
-        public FCompanySignUp()
+        public FSignUpCompany()
         {
             InitializeComponent();
-            txtPassword.Multiline = false;
-            lblStatus.Visible = false;
+            lblFileName.Visible = false;
+            this.lblShow.TextAlign = ContentAlignment.MiddleCenter;
         }
 
-        private void llblSignUpUser_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void llblSignInUser_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            FLogin fLogin = new FLogin();
+            this.Hide();
+            fLogin.ShowDialog();
             this.Close();
         }
 
@@ -35,8 +38,8 @@ namespace FindJobApplication
             this.ofdBusinessLicense.Filter = "Image files (*.jpeg; *.jpg) | *.jpeg; *.jpg";
             if (this.ofdBusinessLicense.ShowDialog() == DialogResult.OK)
             {
-                lblStatus.Visible = true;
-                this.lblStatus.Text = this.ofdBusinessLicense.SafeFileName;
+                lblFileName.Visible = true;
+                this.lblFileName.Text = this.ofdBusinessLicense.SafeFileName;
             }
         }
 
@@ -44,9 +47,9 @@ namespace FindJobApplication
         {
             string email = this.txtEmail.Text;
             string password = this.txtPassword.Text;
-
+            string name = this.txtName.Text;
             AccountDao accountDao = new AccountDao();
-            int results = accountDao.SaveAccount(email, password, 1);
+            int results = accountDao.SaveNewAccount(email, name, password, AccountRole.Company);
 
             if (results > 0)
             {
@@ -62,12 +65,12 @@ namespace FindJobApplication
         {
             if (lblShow.Text == "Show")
             {
-                txtPassword.Multiline = true;
+                this.txtPassword.PasswordChar = '\0';
                 lblShow.Text = "Hide";
             }
             else
             {
-                txtPassword.Multiline = false;
+                this.txtPassword.PasswordChar = '*';
                 lblShow.Text = "Show";
             }
         }

@@ -63,8 +63,8 @@ namespace FindJobApplication.Daos
                                 job_post.post_date,
                                 job_post.expire_date,
                                 job_post.address,
-                                company_profile.id AS company_id,
-                                company_profile.name AS company_name,
+                                account.id AS company_id,
+                                account.[name] AS company_name,
                                 location.id AS location_id,
                                 location.name AS location_name,
                                 year_experience.id AS year_experience_id,
@@ -75,8 +75,8 @@ namespace FindJobApplication.Daos
                                 location ON job_post.location_id = location.id
                             INNER JOIN 
                                 year_experience ON job_post.year_experience_id = year_experience.id
-                            INNER JOIN 
-                                company_profile ON job_post.company_id = company_profile.id";
+                            INNER JOIN
+                                account ON job_post.company_account_id = account.id";
             DataTable dt = db.Read(sqlStr);
             List<JobPost> list = new List<JobPost>();
             foreach (DataRow dr in dt.Rows)
