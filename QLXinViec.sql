@@ -29,6 +29,7 @@ CREATE TABLE account (
 	password VARCHAR(255) NOT NULL,
 	[name] VARCHAR(255) NOT NULL,
 	[role] VARCHAR(20),
+	avatar IMAGE,
 );
 GO
 
@@ -43,7 +44,6 @@ CREATE TABLE user_profile (
 	gender VARCHAR(20) DEFAULT 'Male',
 	[address] TEXT,
 	personal_link TEXT,
-	user_image IMAGE,
 	about_me TEXT,
 
 	FOREIGN KEY (account_id) REFERENCES account(id)
@@ -94,7 +94,6 @@ CREATE TABLE company_profile (
 	email VARCHAR(255) NOT NULL UNIQUE,
 	phone_number VARCHAR(20),
 	[address] TEXT,
-	company_image IMAGE,
 	date_establish DATE,
 	company_size INT,
 	company_link TEXT,
@@ -219,44 +218,46 @@ CREATE TABLE mail(
 );
 GO
 
+CREATE TABLE company_image(
+	id INT PRIMARY KEY IDENTITY(1, 1),
+	company_account_id INT,
+	company_image IMAGE,
+
+	FOREIGN KEY (company_account_id) REFERENCES account(id)
+);
+GO
+
 --PROCEDURE
 CREATE PROCEDURE usp_RegisterCompanyAccount
     @Email VARCHAR(255),
     @Password VARCHAR(255),
     @Name VARCHAR(255),
+	@Avatar IMAGE,
     @BusinessLicense TEXT
 AS
 BEGIN
     DECLARE @InsertedAccountId TABLE (id INT);
 
-    INSERT INTO account (email, [password], [role])
+    INSERT INTO account (email, [password], [name], [role], avatar)
 		OUTPUT INSERTED.id INTO @InsertedAccountId
-    VALUES (@Email, @Password, 'company');
+    VALUES (@Email, @Password, @Name, 'company', @Avatar);
 
     DECLARE @CompanyAccountId INT;
     SELECT @CompanyAccountId = id FROM @InsertedAccountId;
 
-    INSERT INTO company_profile (account_id, [name], business_license)
-    VALUES (@CompanyAccountId, @Name, @BusinessLicense);
+    INSERT INTO company_profile (account_id, business_license)
+    VALUES (@CompanyAccountId, @BusinessLicense);
 END;
 GO
 
 CREATE PROCEDURE usp_RegisterUserAccount
     @Email VARCHAR(255),
     @Password VARCHAR(255),
-    @Name VARCHAR(255)
+    @Name VARCHAR(255),
+	  @Avatar IMAGE
 AS
 BEGIN
-    DECLARE @InsertedAccountId TABLE (id INT);
-
-    INSERT INTO account (email, [password], [role])
-		OUTPUT INSERTED.id INTO @InsertedAccountId
-    VALUES (@Email, @Password, 'user');
-
-    DECLARE @UserAccountId INT;
-    SELECT @UserAccountId = id FROM @InsertedAccountId;
-
-    INSERT INTO user_profile (account_id, [name])
-    VALUES (@UserAccountId, @Name);
+    INSERT INTO account (email, [password], [name], [role], avatar)
+    VALUES (@Email, @Password, @Name, 'user', @Avatar);
 END;
 GO
