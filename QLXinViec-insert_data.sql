@@ -229,3 +229,38 @@ VALUES
 ('Customer Service Specialist', 2, 50000, 'Hiring customer service specialists to assist customers with inquiries and issues.', 'High school diploma or equivalent.', 'Strong communication and problem-solving skills.', 'Training and career development opportunities.', '2024-03-20', '2024-04-20', '606 Birch St, City, Country', 4, 9, 4),
 ('Legal Counsel', 1, 85000, 'Seeking experienced legal counsel to provide legal advice and support.', 'Juris Doctor (JD) degree and active bar membership.', 'Experience in corporate law and contract negotiation.', 'Competitive compensation and comprehensive benefits.', '2024-03-20', '2024-04-20', '707 Oak St, City, Country', 5, 10, 5);
 GO
+
+--Insert skills for the job
+INSERT INTO job_skill(job_post_id, skill_id)
+VALUES
+(1, 38),
+(1, 6),
+(1, 43),
+(2, 14),
+(2, 69),
+(2, 30),
+(3, 2),
+(3, 76),
+(3, 85),
+(4, 52),
+(4, 10),
+(4, 25),
+(5, 25),
+(5, 2),
+(5, 49),
+(6, 21),
+(6, 14),
+(6, 63),
+(7, 39),
+(7, 10),
+(7, 78),
+(8, 13),
+(8, 68),
+(8, 16),
+(9, 58),
+(9, 19),
+(9, 64),
+(10, 68),
+(10, 43),
+(10, 4);
+GO
