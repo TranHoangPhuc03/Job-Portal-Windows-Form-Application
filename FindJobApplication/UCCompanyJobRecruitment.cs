@@ -35,15 +35,15 @@ namespace FindJobApplication
 
         public void fillDataToPanel(List<JobPost> dataControlList)
         {
-            int cnt = 0;
-            pnlListJob.Controls.Clear(); 
-            foreach (JobPost obj in dataControlList)
-            {
-                cnt++;
-                UCJob uCJob = new UCJob((JobPost)obj);
-                this.pnlListJob.Controls.Add(uCJob);
-            }
-            lblCountJob.Text = cnt.ToString();
+            //int cnt = 0;
+            //pnlListJob.Controls.Clear(); 
+            //foreach (JobPost obj in dataControlList)
+            //{
+            //    cnt++;
+            //    UCJob uCJob = new UCJob((JobPost)obj);
+            //    this.pnlListJob.Controls.Add(uCJob);
+            //}
+            //lblCountJob.Text = cnt.ToString();
         }
 
         private void UCCompanyJobRecruitment_Load(object sender, EventArgs e)

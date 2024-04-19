@@ -81,7 +81,8 @@
             this.btnSignOut.Image = global::FindJobApplication.Properties.Resources.sign_out_option;
             this.btnSignOut.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnSignOut.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnSignOut.Location = new System.Drawing.Point(21, 947);
+            this.btnSignOut.Location = new System.Drawing.Point(20, 946);
+            this.btnSignOut.Margin = new System.Windows.Forms.Padding(0);
             this.btnSignOut.Name = "btnSignOut";
             this.btnSignOut.Size = new System.Drawing.Size(208, 65);
             this.btnSignOut.TabIndex = 13;
@@ -106,7 +107,8 @@
             this.btnSocial.Image = global::FindJobApplication.Properties.Resources.s;
             this.btnSocial.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnSocial.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnSocial.Location = new System.Drawing.Point(21, 215);
+            this.btnSocial.Location = new System.Drawing.Point(20, 222);
+            this.btnSocial.Margin = new System.Windows.Forms.Padding(0);
             this.btnSocial.Name = "btnSocial";
             this.btnSocial.Size = new System.Drawing.Size(208, 65);
             this.btnSocial.TabIndex = 12;
@@ -131,7 +133,8 @@
             this.btnMail.Image = global::FindJobApplication.Properties.Resources.emailicon;
             this.btnMail.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnMail.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnMail.Location = new System.Drawing.Point(21, 286);
+            this.btnMail.Location = new System.Drawing.Point(20, 303);
+            this.btnMail.Margin = new System.Windows.Forms.Padding(0);
             this.btnMail.Name = "btnMail";
             this.btnMail.Size = new System.Drawing.Size(208, 65);
             this.btnMail.TabIndex = 11;
@@ -156,7 +159,8 @@
             this.btnHome.Image = global::FindJobApplication.Properties.Resources.home;
             this.btnHome.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnHome.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnHome.Location = new System.Drawing.Point(21, 144);
+            this.btnHome.Location = new System.Drawing.Point(20, 141);
+            this.btnHome.Margin = new System.Windows.Forms.Padding(0);
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(208, 65);
             this.btnHome.TabIndex = 10;
@@ -180,9 +184,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::FindJobApplication.Properties.Resources.Meta_Logo;
-            this.pictureBox1.Location = new System.Drawing.Point(2, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(245, 77);
+            this.pictureBox1.Size = new System.Drawing.Size(248, 80);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -222,7 +227,8 @@
             this.pnlMenuTop.CustomizableEdges.BottomRight = false;
             this.pnlMenuTop.CustomizableEdges.TopLeft = false;
             this.pnlMenuTop.CustomizableEdges.TopRight = false;
-            this.pnlMenuTop.Location = new System.Drawing.Point(257, 0);
+            this.pnlMenuTop.Location = new System.Drawing.Point(256, 0);
+            this.pnlMenuTop.Margin = new System.Windows.Forms.Padding(0);
             this.pnlMenuTop.Name = "pnlMenuTop";
             this.pnlMenuTop.Size = new System.Drawing.Size(1184, 80);
             this.pnlMenuTop.TabIndex = 31;
@@ -267,9 +273,10 @@
             this.pnlMid.CustomizableEdges.BottomLeft = false;
             this.pnlMid.CustomizableEdges.BottomRight = false;
             this.pnlMid.CustomizableEdges.TopRight = false;
-            this.pnlMid.Location = new System.Drawing.Point(257, 87);
+            this.pnlMid.Location = new System.Drawing.Point(256, 88);
+            this.pnlMid.Margin = new System.Windows.Forms.Padding(0);
             this.pnlMid.Name = "pnlMid";
-            this.pnlMid.Size = new System.Drawing.Size(1184, 936);
+            this.pnlMid.Size = new System.Drawing.Size(1184, 935);
             this.pnlMid.TabIndex = 32;
             // 
             // UCMain

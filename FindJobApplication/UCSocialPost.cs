@@ -29,7 +29,7 @@ namespace FindJobApplication
             this.rtxtDescription.Text = socialPost.Contents;
             foreach(Skill skill in socialPost.Skills)
             {
-                UCUserProfileSkill uCUserProfileSkill = new UCUserProfileSkill(skill);
+                UCSkillTag uCUserProfileSkill = new UCSkillTag(skill);
                 this.pnlSkill.Controls.Add(uCUserProfileSkill);
             }
         }

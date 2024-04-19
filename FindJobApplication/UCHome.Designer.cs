@@ -1,4 +1,6 @@
-﻿namespace FindJobApplication
+﻿using System.Windows.Forms;
+
+namespace FindJobApplication
 {
     partial class UCHome
     {
@@ -28,24 +30,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pnlListJob = new System.Windows.Forms.FlowLayoutPanel();
             this.cbExperience = new Guna.UI.WinForms.GunaComboBox();
             this.cbLocation = new Guna.UI.WinForms.GunaComboBox();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnSearch = new Guna.UI2.WinForms.Guna2Button();
+            this.pnlListJob = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
-            // 
-            // pnlListJob
-            // 
-            this.pnlListJob.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlListJob.AutoScroll = true;
-            this.pnlListJob.Location = new System.Drawing.Point(30, 183);
-            this.pnlListJob.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pnlListJob.Name = "pnlListJob";
-            this.pnlListJob.Size = new System.Drawing.Size(1716, 1255);
-            this.pnlListJob.TabIndex = 41;
             // 
             // cbExperience
             // 
@@ -69,13 +59,13 @@
             "1 - 2 year experience",
             "2 - 3 year experience",
             "> 3 year experience"});
-            this.cbExperience.Location = new System.Drawing.Point(711, 28);
-            this.cbExperience.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbExperience.Location = new System.Drawing.Point(494, 38);
+            this.cbExperience.Margin = new System.Windows.Forms.Padding(0);
             this.cbExperience.Name = "cbExperience";
             this.cbExperience.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cbExperience.OnHoverItemForeColor = System.Drawing.Color.White;
             this.cbExperience.Radius = 4;
-            this.cbExperience.Size = new System.Drawing.Size(334, 44);
+            this.cbExperience.Size = new System.Drawing.Size(224, 44);
             this.cbExperience.StartIndex = 0;
             this.cbExperience.TabIndex = 2;
             // 
@@ -99,13 +89,13 @@
             this.cbLocation.Items.AddRange(new object[] {
             "All  location",
             "Ho Chi Minh City"});
-            this.cbLocation.Location = new System.Drawing.Point(1128, 28);
-            this.cbLocation.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbLocation.Location = new System.Drawing.Point(772, 38);
+            this.cbLocation.Margin = new System.Windows.Forms.Padding(0);
             this.cbLocation.Name = "cbLocation";
             this.cbLocation.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cbLocation.OnHoverItemForeColor = System.Drawing.Color.White;
             this.cbLocation.Radius = 4;
-            this.cbLocation.Size = new System.Drawing.Size(325, 44);
+            this.cbLocation.Size = new System.Drawing.Size(218, 44);
             this.cbLocation.StartIndex = 0;
             this.cbLocation.TabIndex = 1;
             // 
@@ -124,13 +114,13 @@
             this.txtSearch.ForeColor = System.Drawing.Color.Black;
             this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSearch.IconLeft = global::FindJobApplication.Properties.Resources.find;
-            this.txtSearch.Location = new System.Drawing.Point(30, 28);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(9, 8, 9, 8);
+            this.txtSearch.Location = new System.Drawing.Point(40, 38);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(0);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PasswordChar = '\0';
             this.txtSearch.PlaceholderText = "Search (Ex: Java, C#, Backend, ...)";
             this.txtSearch.SelectedText = "";
-            this.txtSearch.Size = new System.Drawing.Size(600, 66);
+            this.txtSearch.Size = new System.Drawing.Size(400, 43);
             this.txtSearch.TabIndex = 42;
             // 
             // btnSearch
@@ -143,43 +133,51 @@
             this.btnSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
-            this.btnSearch.Font = new System.Drawing.Font("Inter SemiBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Font = new System.Drawing.Font("Inter SemiBold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.White;
             this.btnSearch.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
             this.btnSearch.HoverState.ForeColor = System.Drawing.Color.White;
             this.btnSearch.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnSearch.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnSearch.Location = new System.Drawing.Point(1536, 28);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSearch.Location = new System.Drawing.Point(1044, 38);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(0);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(166, 62);
+            this.btnSearch.Size = new System.Drawing.Size(100, 40);
             this.btnSearch.TabIndex = 43;
             this.btnSearch.Text = "Search";
             // 
+            // pnlListJob
+            // 
+            this.pnlListJob.AutoScroll = true;
+            this.pnlListJob.Location = new System.Drawing.Point(20, 119);
+            this.pnlListJob.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlListJob.Name = "pnlListJob";
+            this.pnlListJob.Size = new System.Drawing.Size(1144, 816);
+            this.pnlListJob.TabIndex = 44;
+            // 
             // UCHome
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
+            this.Controls.Add(this.pnlListJob);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.cbLocation);
-            this.Controls.Add(this.pnlListJob);
             this.Controls.Add(this.cbExperience);
             this.DoubleBuffered = true;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "UCHome";
-            this.Size = new System.Drawing.Size(1776, 1438);
+            this.Size = new System.Drawing.Size(1184, 935);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.FlowLayoutPanel pnlListJob;
         private Guna.UI.WinForms.GunaComboBox cbExperience;
         private Guna.UI.WinForms.GunaComboBox cbLocation;
         private Guna.UI2.WinForms.Guna2TextBox txtSearch;
         private Guna.UI2.WinForms.Guna2Button btnSearch;
+        private FlowLayoutPanel pnlListJob;
     }
 }

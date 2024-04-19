@@ -23,7 +23,7 @@ namespace FindJobApplication
             pbSave.BringToFront();
         }
 
-        public UCJob(JobPost jobPost) : this()
+        public UCJob(JobPost jobPost, List<Skill> skills) : this()
         {
             LocationDao locationDao = new LocationDao();
             var locationDict = locationDao.FindAllLocationDict();
@@ -34,6 +34,22 @@ namespace FindJobApplication
             this.Tag = jobPost;
             this.LLblNameJob.Tag = jobPost.Id;
             this.CompanyName.Tag = jobPost.CompanyId;
+            foreach (Skill skill in skills)
+            {
+                UCSkillTag uCSkillTag = new UCSkillTag(skill);
+                this.pnlSkill.Controls.Add(uCSkillTag);
+
+                if (this.pnlSkill.PreferredSize.Width > this.pnlSkill.Width)
+                {
+                    this.pnlSkill.Controls.RemoveAt(this.pnlSkill.Controls.Count - 1);
+
+                    Label etc = new Label();
+                    etc.Font = new System.Drawing.Font("Inter", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+                    etc.Text = "...";
+                    etc.Height = 28;
+                    this.pnlSkill.Controls.Add(etc);
+                }
+            }
         }
 
         public new GunaLinkLabel LLblNameJob { get => lLblNameJob; set { lLblNameJob = value; } }

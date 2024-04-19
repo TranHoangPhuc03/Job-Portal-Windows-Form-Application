@@ -18,7 +18,7 @@ namespace FindJobApplication
         private int userId;
         UCUCUserProfileEducationAndWorkExperience uCEduaction = new UCUCUserProfileEducationAndWorkExperience();
         UCUCUserProfileEducationAndWorkExperience uCWorkExperience = new UCUCUserProfileEducationAndWorkExperience();
-        UCUserProfileSkill uCUserProfileSkill = new UCUserProfileSkill();
+        UCSkillTag uCUserProfileSkill = new UCSkillTag();
         UCUserProfileProject uCUserProfileProject = new UCUserProfileProject();
 
         public UCProfile()
@@ -131,7 +131,7 @@ namespace FindJobApplication
             }
             foreach (var item in userProfile.UserSkills)
             {
-                UCUserProfileSkill uCUserProfileSkill = new UCUserProfileSkill(item);
+                UCSkillTag uCUserProfileSkill = new UCSkillTag(item);
                 this.pnlSkillDetail.Controls.Add(uCUserProfileSkill);
             }
             foreach(var item in userProfile.UserPersonalProjects)

@@ -51,38 +51,9 @@ namespace FindJobApplication
 
         }
 
-        private List<UCJob> BuildJobPostList(List<JobPost> list)
-        {
-            UCUserProfileSkill skill1 = new UCUserProfileSkill();
-            UCUserProfileSkill skill2 = new UCUserProfileSkill();
-            UCUserProfileSkill skill3 = new UCUserProfileSkill();
-
-            List<UCJob> jobList = new List<UCJob>();
-            LocationDao locationDao = new LocationDao();
-            YearExperienceDao yearExperienceDao = new YearExperienceDao();
-            var locationDict = locationDao.FindAllLocationDict();
-            var yearExperienceDict = yearExperienceDao.FindAllExperienceDict(); ;
-            foreach (JobPost jobPost in list)
-            {
-                UCJob uCJob = new UCJob();
-                uCJob.JobName.Text = jobPost.Title;
-                uCJob.CompanyName.Text = jobPost.CompanyName;
-                uCJob.Location.Text = locationDict[jobPost.LocationId].Name;
-                uCJob.Salary.Text = jobPost.Salary.ToString();
-                uCJob.Tag = jobPost;
-                uCJob.LLblNameJob.Tag = jobPost.Id;
-                uCJob.CompanyName.Tag = jobPost.CompanyId;
-                uCJob.PnlSkill.Controls.Add(skill1); // add skill
-                uCJob.PnlSkill.Controls.Add(skill2); // add skill
-                uCJob.PnlSkill.Controls.Add(skill3); // add skill
-
-                jobList.Add(uCJob);
-            }
-            return jobList;
-        }
-
         private void FHome_Load(object sender, EventArgs e)
         {
+            this.Hide();
             JobPostDao jobPostDao = new JobPostDao();
             YearExperienceDao yearExperienceDao = new YearExperienceDao();
             LocationDao locationDao = new LocationDao();
@@ -96,6 +67,7 @@ namespace FindJobApplication
             this.uCHome.CbExperince.DataSource = yearExperienceDao.FindAllExperienceList();
 
             this.uCHome.fillJobPostToPanel(jobPostDao.FindAllJobPost());
+            this.Show();
         }
 
         private void jobFilterSearch(object sender, EventArgs e)

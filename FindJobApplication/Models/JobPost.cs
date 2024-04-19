@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Windows.Documents;
 
 namespace FindJobApplication.Models
 {
@@ -19,10 +21,13 @@ namespace FindJobApplication.Models
         int locationId;
         int companyId;
         string companyName;
+        List<int> skillID;
+        public JobPost()
+        {
+            this.skillID = new List<int>();
+        }
 
-        public JobPost() { }
-
-        public JobPost(int id, string title)
+        public JobPost(int id, string title) : this()
         {
             this.id = id;
             this.title = title;
@@ -60,5 +65,6 @@ namespace FindJobApplication.Models
         public int LocationId { get => locationId; set => locationId = value; }
         public int CompanyId { get => companyId; set => companyId = value; }
         public string CompanyName { get => companyName; set => companyName = value; }
+        public List<int> SkillID { get => skillID; }
     }
 }

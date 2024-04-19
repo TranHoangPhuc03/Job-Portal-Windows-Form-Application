@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FindJobApplication.Models;
+using FindJobApplication.Daos;
 
 namespace FindJobApplication
 {
@@ -31,12 +32,22 @@ namespace FindJobApplication
 
         public void fillJobPostToPanel(List<JobPost> jobPosts)
         {
-            pnlListJob.Controls.Clear();
+            this.pnlListJob.Controls.Clear();
+            this.pnlListJob.SuspendLayout();
+            SkillDao skillDao = new SkillDao();
+            List<Skill> skills = skillDao.FindAllSkill();
+
             foreach (JobPost jobPost in jobPosts)
             {
-                UCJob uCJob = new UCJob(jobPost);
+                List<Skill> filteredSkill = new List<Skill>();
+                foreach(int skillId in jobPost.SkillID)
+                {
+                    filteredSkill.Add(skills.FirstOrDefault(o => o.Id == skillId));
+                }
+                UCJob uCJob = new UCJob(jobPost, filteredSkill);
                 this.pnlListJob.Controls.Add(uCJob);
             }
+            this.pnlListJob.ResumeLayout();
         }
     }
 }

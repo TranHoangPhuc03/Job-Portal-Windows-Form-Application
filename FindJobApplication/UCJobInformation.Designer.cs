@@ -66,6 +66,7 @@
             this.lblRequired = new System.Windows.Forms.Label();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.btnBack = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.pnlSkill = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlMain.SuspendLayout();
             this.lblTimePost.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -95,6 +96,7 @@
             // 
             this.lblTimePost.AllowDrop = true;
             this.lblTimePost.BackColor = System.Drawing.Color.White;
+            this.lblTimePost.Controls.Add(this.pnlSkill);
             this.lblTimePost.Controls.Add(this.pictureBox4);
             this.lblTimePost.Controls.Add(this.pictureBox2);
             this.lblTimePost.Controls.Add(this.pictureBox1);
@@ -518,6 +520,15 @@
             this.btnBack.TabStop = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // pnlSkill
+            // 
+            this.pnlSkill.Location = new System.Drawing.Point(121, 717);
+            this.pnlSkill.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlSkill.Name = "pnlSkill";
+            this.pnlSkill.Size = new System.Drawing.Size(1009, 36);
+            this.pnlSkill.TabIndex = 42;
+            this.pnlSkill.WrapContents = false;
+            // 
             // UCJobInformation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -585,5 +596,6 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox2;
         private Guna.UI2.WinForms.Guna2PictureBox btnBack;
+        private System.Windows.Forms.FlowLayoutPanel pnlSkill;
     }
 }
