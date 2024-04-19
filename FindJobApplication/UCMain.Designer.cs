@@ -255,7 +255,7 @@
             this.btnUser.ImageSize = new System.Drawing.Size(32, 32);
             this.btnUser.Location = new System.Drawing.Point(923, 7);
             this.btnUser.Name = "btnUser";
-            this.btnUser.Size = new System.Drawing.Size(245, 65);
+            this.btnUser.Size = new System.Drawing.Size(225, 65);
             this.btnUser.TabIndex = 32;
             this.btnUser.Text = "David Ngo";
             this.btnUser.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;

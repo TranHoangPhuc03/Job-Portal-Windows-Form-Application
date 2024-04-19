@@ -15,6 +15,8 @@ namespace FindJobApplication
 {
     public partial class FCompanyProfileInfomationEdit : Form
     {
+        Image img = Properties.Resources.fpt_logo1;
+
         public FCompanyProfileInfomationEdit()
         {
             InitializeComponent();
@@ -26,7 +28,7 @@ namespace FindJobApplication
         }
         private void pbCompany1_MouseEnter(object sender, EventArgs e)
         {
-            pbCompany1.Image = Properties.Resources.camera;
+            pbCompany1.Image = Properties.Resources.camera_Edit1;
 
         }
         private void pbCompany2_MouseLeave(object sender, EventArgs e)
@@ -35,7 +37,7 @@ namespace FindJobApplication
         }
         private void pbCompany2_MouseEnter(object sender, EventArgs e)
         {
-            pbCompany2.Image = Properties.Resources.camera;
+            pbCompany2.Image = Properties.Resources.camera_Edit1;
 
         }
         private void pbCompany3_MouseLeave(object sender, EventArgs e)
@@ -44,7 +46,7 @@ namespace FindJobApplication
         }
         private void pbCompany3_MouseEnter(object sender, EventArgs e)
         {
-            pbCompany3.Image = Properties.Resources.camera;
+            pbCompany3.Image = Properties.Resources.camera_Edit1;
 
         }
         private void pbCompany4_MouseLeave(object sender, EventArgs e)
@@ -53,15 +55,15 @@ namespace FindJobApplication
         }
         private void pbCompany4_MouseEnter(object sender, EventArgs e)
         {
-            pbCompany4.Image = Properties.Resources.camera;
+            pbCompany4.Image = Properties.Resources.camera_Edit1;
         }
         private void pbUser_MouseEnter(object sender, EventArgs e)
         {
-            pbUser.Image = Properties.Resources.camera;
+            pbUser.Image = Properties.Resources.camera_Edit1;
         }
         private void pbUser_MouseLeave(object sender, EventArgs e)
         {
-            pbUser.Image = Properties.Resources.user__1_;
+            pbUser.Image = img;
         }
         private void FCompanyProfileInfomationEdit_Load(object sender, EventArgs e)
         {

@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
-            this.lblSkills = new Guna.UI.WinForms.GunaLabel();
-            this.guna2Separator2 = new Guna.UI2.WinForms.Guna2Separator();
-            this.guna2Separator3 = new Guna.UI2.WinForms.Guna2Separator();
-            this.btnCancel = new Guna.UI2.WinForms.Guna2Button();
-            this.btnSave = new Guna.UI2.WinForms.Guna2Button();
             this.pnlSkill = new System.Windows.Forms.FlowLayoutPanel();
             this.cbSkill = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.btnCancel = new Guna.UI2.WinForms.Guna2Button();
+            this.btnSave = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
+            this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
+            this.guna2Separator2 = new Guna.UI2.WinForms.Guna2Separator();
             this.SuspendLayout();
             // 
             // btnAdd
@@ -51,84 +51,20 @@
             this.btnAdd.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.OrangeRed;
             this.btnAdd.HoverState.FillColor = System.Drawing.Color.MistyRose;
-            this.btnAdd.Location = new System.Drawing.Point(175, 59);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAdd.Location = new System.Drawing.Point(170, 132);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.PressedColor = System.Drawing.Color.LightCoral;
-            this.btnAdd.Size = new System.Drawing.Size(120, 61);
+            this.btnAdd.Size = new System.Drawing.Size(126, 45);
             this.btnAdd.TabIndex = 2;
             this.btnAdd.Text = "Add";
             // 
-            // lblSkills
-            // 
-            this.lblSkills.AutoSize = true;
-            this.lblSkills.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSkills.Location = new System.Drawing.Point(8, 6);
-            this.lblSkills.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblSkills.Name = "lblSkills";
-            this.lblSkills.Size = new System.Drawing.Size(61, 26);
-            this.lblSkills.TabIndex = 37;
-            this.lblSkills.Text = "Skills";
-            // 
-            // guna2Separator2
-            // 
-            this.guna2Separator2.Location = new System.Drawing.Point(-2, 34);
-            this.guna2Separator2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.guna2Separator2.Name = "guna2Separator2";
-            this.guna2Separator2.Size = new System.Drawing.Size(663, 8);
-            this.guna2Separator2.TabIndex = 38;
-            // 
-            // guna2Separator3
-            // 
-            this.guna2Separator3.Location = new System.Drawing.Point(0, 202);
-            this.guna2Separator3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.guna2Separator3.Name = "guna2Separator3";
-            this.guna2Separator3.Size = new System.Drawing.Size(663, 8);
-            this.guna2Separator3.TabIndex = 41;
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.BorderRadius = 10;
-            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnCancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnCancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnCancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnCancel.FillColor = System.Drawing.Color.White;
-            this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.ForeColor = System.Drawing.Color.Black;
-            this.btnCancel.Location = new System.Drawing.Point(415, 215);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(98, 36);
-            this.btnCancel.TabIndex = 39;
-            this.btnCancel.Text = "Cancel";
-            // 
-            // btnSave
-            // 
-            this.btnSave.BorderRadius = 10;
-            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSave.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnSave.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnSave.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnSave.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSave.FillColor = System.Drawing.Color.OrangeRed;
-            this.btnSave.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.HoverState.FillColor = System.Drawing.Color.Chocolate;
-            this.btnSave.Location = new System.Drawing.Point(517, 215);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(121, 36);
-            this.btnSave.TabIndex = 40;
-            this.btnSave.Text = "Save";
-            // 
             // pnlSkill
             // 
-            this.pnlSkill.Location = new System.Drawing.Point(21, 155);
-            this.pnlSkill.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlSkill.Location = new System.Drawing.Point(21, 196);
+            this.pnlSkill.Margin = new System.Windows.Forms.Padding(2);
             this.pnlSkill.Name = "pnlSkill";
-            this.pnlSkill.Size = new System.Drawing.Size(620, 25);
+            this.pnlSkill.Size = new System.Drawing.Size(620, 62);
             this.pnlSkill.TabIndex = 42;
             // 
             // cbSkill
@@ -141,32 +77,98 @@
             this.cbSkill.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbSkill.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbSkill.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cbSkill.ItemHeight = 55;
-            this.cbSkill.Location = new System.Drawing.Point(21, 59);
-            this.cbSkill.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbSkill.ItemHeight = 39;
+            this.cbSkill.Location = new System.Drawing.Point(19, 132);
+            this.cbSkill.Margin = new System.Windows.Forms.Padding(2);
             this.cbSkill.Name = "cbSkill";
-            this.cbSkill.Size = new System.Drawing.Size(125, 61);
+            this.cbSkill.Size = new System.Drawing.Size(125, 45);
             this.cbSkill.TabIndex = 1;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BorderRadius = 10;
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnCancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnCancel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(247)))));
+            this.btnCancel.Font = new System.Drawing.Font("Inter", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.Black;
+            this.btnCancel.Location = new System.Drawing.Point(379, 320);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(124, 45);
+            this.btnCancel.TabIndex = 54;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.BorderRadius = 6;
+            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSave.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSave.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSave.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSave.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSave.FillColor = System.Drawing.Color.OrangeRed;
+            this.btnSave.Font = new System.Drawing.Font("Inter", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.HoverState.FillColor = System.Drawing.Color.Chocolate;
+            this.btnSave.Location = new System.Drawing.Point(525, 320);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(126, 45);
+            this.btnSave.TabIndex = 53;
+            this.btnSave.Text = "Save";
+            // 
+            // guna2Separator1
+            // 
+            this.guna2Separator1.Location = new System.Drawing.Point(11, 283);
+            this.guna2Separator1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.guna2Separator1.Name = "guna2Separator1";
+            this.guna2Separator1.Size = new System.Drawing.Size(659, 8);
+            this.guna2Separator1.TabIndex = 52;
+            // 
+            // gunaLabel1
+            // 
+            this.gunaLabel1.AutoSize = true;
+            this.gunaLabel1.Font = new System.Drawing.Font("Inter", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.gunaLabel1.Location = new System.Drawing.Point(5, 37);
+            this.gunaLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.gunaLabel1.Name = "gunaLabel1";
+            this.gunaLabel1.Size = new System.Drawing.Size(89, 34);
+            this.gunaLabel1.TabIndex = 56;
+            this.gunaLabel1.Text = "Skills";
+            // 
+            // guna2Separator2
+            // 
+            this.guna2Separator2.Location = new System.Drawing.Point(5, 93);
+            this.guna2Separator2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.guna2Separator2.Name = "guna2Separator2";
+            this.guna2Separator2.Size = new System.Drawing.Size(659, 8);
+            this.guna2Separator2.TabIndex = 55;
             // 
             // FUserProfileSkillsEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(661, 260);
-            this.Controls.Add(this.pnlSkill);
-            this.Controls.Add(this.guna2Separator3);
+            this.ClientSize = new System.Drawing.Size(681, 391);
+            this.Controls.Add(this.gunaLabel1);
+            this.Controls.Add(this.guna2Separator2);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.guna2Separator2);
-            this.Controls.Add(this.lblSkills);
+            this.Controls.Add(this.guna2Separator1);
+            this.Controls.Add(this.pnlSkill);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.cbSkill);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FUserProfileSkillsEdit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FUserProfileSkillsEdit";
+            this.Text = "Skills Edit";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -174,12 +176,12 @@
 
         #endregion
         private Guna.UI2.WinForms.Guna2Button btnAdd;
-        private Guna.UI.WinForms.GunaLabel lblSkills;
-        private Guna.UI2.WinForms.Guna2Separator guna2Separator2;
-        private Guna.UI2.WinForms.Guna2Separator guna2Separator3;
-        private Guna.UI2.WinForms.Guna2Button btnCancel;
-        private Guna.UI2.WinForms.Guna2Button btnSave;
         private System.Windows.Forms.FlowLayoutPanel pnlSkill;
         private Guna.UI2.WinForms.Guna2ComboBox cbSkill;
+        private Guna.UI2.WinForms.Guna2Button btnCancel;
+        private Guna.UI2.WinForms.Guna2Button btnSave;
+        private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
+        private Guna.UI.WinForms.GunaLabel gunaLabel1;
+        private Guna.UI2.WinForms.Guna2Separator guna2Separator2;
     }
 }

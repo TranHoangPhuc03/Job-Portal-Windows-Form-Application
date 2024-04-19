@@ -37,7 +37,9 @@
             this.llblSignUpUser = new Guna.UI.WinForms.GunaLinkLabel();
             this.lblAskCreate = new System.Windows.Forms.Label();
             this.lblShow = new System.Windows.Forms.Label();
+            this.btnClose = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             this.SuspendLayout();
             // 
             // lblIntro
@@ -178,12 +180,26 @@
             this.lblShow.Text = "Show";
             this.lblShow.Click += new System.EventHandler(this.lblShow_Click);
             // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.Transparent;
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.Image = global::FindJobApplication.Properties.Resources.Xoa;
+            this.btnClose.Location = new System.Drawing.Point(1413, 2);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(24, 24);
+            this.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnClose.TabIndex = 49;
+            this.btnClose.TabStop = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // FLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(247)))));
             this.ClientSize = new System.Drawing.Size(1440, 1024);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.lblShow);
             this.Controls.Add(this.lblAskCreate);
             this.Controls.Add(this.llblSignUpUser);
@@ -194,6 +210,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblIntro);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(33)))), ((int)(((byte)(56)))));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -201,6 +218,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DishplayLogin";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -216,6 +234,7 @@
         private Guna.UI.WinForms.GunaLinkLabel llblSignUpUser;
         private System.Windows.Forms.Label lblAskCreate;
         private System.Windows.Forms.Label lblShow;
+        private System.Windows.Forms.PictureBox btnClose;
     }
 }
 

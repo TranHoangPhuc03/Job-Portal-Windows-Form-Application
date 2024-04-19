@@ -28,41 +28,40 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pnlTopTableApplyJob = new Guna.UI.WinForms.GunaElipsePanel();
+            this.llblNameCompany = new Guna.UI.WinForms.GunaLinkLabel();
             this.lblStatus = new Guna.UI.WinForms.GunaLabel();
             this.lblDayApply = new Guna.UI.WinForms.GunaLabel();
-            this.lblID = new Guna.UI.WinForms.GunaLabel();
             this.llblNameJob = new Guna.UI.WinForms.GunaLinkLabel();
-            this.llblNameCompany = new Guna.UI.WinForms.GunaLinkLabel();
-            this.pnlTopTableApplyJob.SuspendLayout();
+            this.guna2CustomGradientPanel2 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.lblID = new System.Windows.Forms.Label();
+            this.guna2CustomGradientPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pnlTopTableApplyJob
+            // llblNameCompany
             // 
-            this.pnlTopTableApplyJob.BackColor = System.Drawing.Color.Transparent;
-            this.pnlTopTableApplyJob.BaseColor = System.Drawing.Color.White;
-            this.pnlTopTableApplyJob.Controls.Add(this.llblNameCompany);
-            this.pnlTopTableApplyJob.Controls.Add(this.llblNameJob);
-            this.pnlTopTableApplyJob.Controls.Add(this.lblStatus);
-            this.pnlTopTableApplyJob.Controls.Add(this.lblDayApply);
-            this.pnlTopTableApplyJob.Controls.Add(this.lblID);
-            this.pnlTopTableApplyJob.Location = new System.Drawing.Point(3, 2);
-            this.pnlTopTableApplyJob.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pnlTopTableApplyJob.Name = "pnlTopTableApplyJob";
-            this.pnlTopTableApplyJob.Radius = 10;
-            this.pnlTopTableApplyJob.Size = new System.Drawing.Size(1481, 45);
-            this.pnlTopTableApplyJob.TabIndex = 45;
+            this.llblNameCompany.AutoSize = true;
+            this.llblNameCompany.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.llblNameCompany.Font = new System.Drawing.Font("Inter", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.llblNameCompany.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.llblNameCompany.Location = new System.Drawing.Point(385, 13);
+            this.llblNameCompany.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.llblNameCompany.Name = "llblNameCompany";
+            this.llblNameCompany.Size = new System.Drawing.Size(107, 25);
+            this.llblNameCompany.TabIndex = 18;
+            this.llblNameCompany.TabStop = true;
+            this.llblNameCompany.Text = "Company";
             // 
             // lblStatus
             // 
             this.lblStatus.AutoSize = true;
             this.lblStatus.BackColor = System.Drawing.Color.White;
-            this.lblStatus.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatus.Font = new System.Drawing.Font("Inter", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.lblStatus.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lblStatus.ImageKey = "(none)";
-            this.lblStatus.Location = new System.Drawing.Point(1239, 8);
+            this.lblStatus.Location = new System.Drawing.Point(948, 13);
+            this.lblStatus.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(82, 30);
+            this.lblStatus.Size = new System.Drawing.Size(76, 25);
             this.lblStatus.TabIndex = 16;
             this.lblStatus.Text = "Status";
             this.lblStatus.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -71,73 +70,77 @@
             // 
             this.lblDayApply.AutoSize = true;
             this.lblDayApply.BackColor = System.Drawing.Color.White;
-            this.lblDayApply.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDayApply.Font = new System.Drawing.Font("Inter", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.lblDayApply.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lblDayApply.ImageKey = "(none)";
-            this.lblDayApply.Location = new System.Drawing.Point(856, 8);
+            this.lblDayApply.Location = new System.Drawing.Point(630, 13);
+            this.lblDayApply.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDayApply.Name = "lblDayApply";
-            this.lblDayApply.Size = new System.Drawing.Size(137, 30);
+            this.lblDayApply.Size = new System.Drawing.Size(113, 25);
             this.lblDayApply.TabIndex = 14;
             this.lblDayApply.Text = "Applied at";
             this.lblDayApply.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // lblID
-            // 
-            this.lblID.AutoSize = true;
-            this.lblID.BackColor = System.Drawing.Color.White;
-            this.lblID.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblID.Location = new System.Drawing.Point(9, 8);
-            this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(37, 30);
-            this.lblID.TabIndex = 11;
-            this.lblID.Text = "ID";
             // 
             // llblNameJob
             // 
             this.llblNameJob.AutoSize = true;
             this.llblNameJob.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.llblNameJob.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.llblNameJob.Font = new System.Drawing.Font("Inter", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.llblNameJob.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.llblNameJob.Location = new System.Drawing.Point(206, 8);
+            this.llblNameJob.Location = new System.Drawing.Point(65, 13);
+            this.llblNameJob.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.llblNameJob.Name = "llblNameJob";
-            this.llblNameJob.Size = new System.Drawing.Size(87, 30);
+            this.llblNameJob.Size = new System.Drawing.Size(70, 25);
             this.llblNameJob.TabIndex = 17;
             this.llblNameJob.TabStop = true;
             this.llblNameJob.Text = "Name";
             // 
-            // llblNameCompany
+            // guna2CustomGradientPanel2
             // 
-            this.llblNameCompany.AutoSize = true;
-            this.llblNameCompany.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.llblNameCompany.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.llblNameCompany.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.llblNameCompany.Location = new System.Drawing.Point(479, 8);
-            this.llblNameCompany.Name = "llblNameCompany";
-            this.llblNameCompany.Size = new System.Drawing.Size(133, 30);
-            this.llblNameCompany.TabIndex = 18;
-            this.llblNameCompany.TabStop = true;
-            this.llblNameCompany.Text = "Company";
+            this.guna2CustomGradientPanel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CustomGradientPanel2.BorderRadius = 10;
+            this.guna2CustomGradientPanel2.Controls.Add(this.lblStatus);
+            this.guna2CustomGradientPanel2.Controls.Add(this.llblNameCompany);
+            this.guna2CustomGradientPanel2.Controls.Add(this.lblDayApply);
+            this.guna2CustomGradientPanel2.Controls.Add(this.llblNameJob);
+            this.guna2CustomGradientPanel2.Controls.Add(this.lblID);
+            this.guna2CustomGradientPanel2.CustomBorderThickness = new System.Windows.Forms.Padding(10);
+            this.guna2CustomGradientPanel2.Location = new System.Drawing.Point(3, 4);
+            this.guna2CustomGradientPanel2.Name = "guna2CustomGradientPanel2";
+            this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(1140, 50);
+            this.guna2CustomGradientPanel2.TabIndex = 46;
+            // 
+            // lblID
+            // 
+            this.lblID.AutoSize = true;
+            this.lblID.Font = new System.Drawing.Font("Inter", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.lblID.Location = new System.Drawing.Point(21, 13);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(33, 25);
+            this.lblID.TabIndex = 0;
+            this.lblID.Text = "ID";
             // 
             // UCJobApply
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.pnlTopTableApplyJob);
+            this.BackColor = System.Drawing.Color.Transparent;
+            this.Controls.Add(this.guna2CustomGradientPanel2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UCJobApply";
-            this.Size = new System.Drawing.Size(1497, 49);
-            this.pnlTopTableApplyJob.ResumeLayout(false);
-            this.pnlTopTableApplyJob.PerformLayout();
+            this.Size = new System.Drawing.Size(1147, 59);
+            this.guna2CustomGradientPanel2.ResumeLayout(false);
+            this.guna2CustomGradientPanel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private Guna.UI.WinForms.GunaElipsePanel pnlTopTableApplyJob;
         private Guna.UI.WinForms.GunaLabel lblStatus;
         private Guna.UI.WinForms.GunaLabel lblDayApply;
-        private Guna.UI.WinForms.GunaLabel lblID;
         private Guna.UI.WinForms.GunaLinkLabel llblNameJob;
         private Guna.UI.WinForms.GunaLinkLabel llblNameCompany;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel2;
+        private System.Windows.Forms.Label lblID;
     }
 }

@@ -17,10 +17,11 @@ namespace FindJobApplication
         {
             InitializeComponent();
         }
-        public GunaLabel LblId { get => lblID; set => lblID = value; }
+        public Label LblId { get => lblID; set => lblID = value; }
         public GunaLinkLabel LlblNameJob { get => llblNameJob; set => llblNameJob = value; }
         public GunaLinkLabel LlblNameCompany { get => llblNameCompany; set => llblNameCompany = value; }
         public GunaLabel LblDayApply { get => lblDayApply; set => lblDayApply = value; }
         public GunaLabel LblStatus { get => lblStatus; set => lblStatus = value; }
+
     }
 }

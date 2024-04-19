@@ -25,14 +25,14 @@ namespace FindJobApplication
         }
         public void LoadCV()
         {
-            UCProfile uCProfile = new UCProfile(this.userId);
-            uCProfile.hideAllBtn();
-            this.Controls.Add(uCProfile);
+            //UCProfile uCProfile = new UCProfile(this.userId);
+            //uCProfile.hideAllBtn();
+            //this.Controls.Add(uCProfile);
         }
 
         private void FCompanySeeCV_Load(object sender, EventArgs e)
         {
-            LoadCV();
+           // LoadCV();
         }
     }
 }

@@ -97,6 +97,24 @@
     <Compile Include="FCompanyProfileInfomationEdit.Designer.cs">
       <DependentUpon>FCompanyProfileInfomationEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="FCompanyProfileOverviewEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FCompanyProfileOverviewEdit.Designer.cs">
+      <DependentUpon>FCompanyProfileOverviewEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FCompanyProfileTop3Reasons.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FCompanyProfileTop3Reasons.Designer.cs">
+      <DependentUpon>FCompanyProfileTop3Reasons.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FCompanyScheduleAnInterview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FCompanyScheduleAnInterview.Designer.cs">
+      <DependentUpon>FCompanyScheduleAnInterview.cs</DependentUpon>
+    </Compile>
     <Compile Include="FCompanySeeCV.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -415,6 +433,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FCompanyProfileInfomationEdit.resx">
       <DependentUpon>FCompanyProfileInfomationEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FCompanyProfileOverviewEdit.resx">
+      <DependentUpon>FCompanyProfileOverviewEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FCompanyProfileTop3Reasons.resx">
+      <DependentUpon>FCompanyProfileTop3Reasons.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FCompanyScheduleAnInterview.resx">
+      <DependentUpon>FCompanyScheduleAnInterview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FCompanySeeCV.resx">
       <DependentUpon>FCompanySeeCV.cs</DependentUpon>
@@ -914,6 +941,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Social_Mail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CV.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Male_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cameraEdit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\camera_Edit.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

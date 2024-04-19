@@ -71,5 +71,10 @@ namespace FindJobApplication
                 lblShow.Text = "Show";
             }
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

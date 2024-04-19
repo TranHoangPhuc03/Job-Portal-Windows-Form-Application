@@ -34,8 +34,12 @@ namespace FindJobApplication
 
         private void btnSeeCV_Click(object sender, EventArgs e)
         {
-            FCompanySeeCV fCompanySeeCV = new FCompanySeeCV(this.userId);
-            fCompanySeeCV.Show();
+            UCProfile uCProfile = new UCProfile(this.userId);
+            UCMain.Instance.PnlMid.Controls.Add(uCProfile);
+            uCProfile.hideAllBtn();
+            uCProfile.BringToFront();
+            //FCompanySeeCV fCompanySeeCV = new FCompanySeeCV(this.userId);
+            //fCompanySeeCV.Show();
         }
 
         private void UCCompanySeeProfilePeople_Load(object sender, EventArgs e)
@@ -45,6 +49,12 @@ namespace FindJobApplication
             this.lblNamePeople.Text = dr["name"].ToString();
             this.lblNameJob.Text = dr["title"].ToString();
             this.rtxtCoverLetter.Text = dr["cover_letter"].ToString();
+        }
+
+        private void btnAccept_Click(object sender, EventArgs e)
+        {
+            FCompanyScheduleAnInterview fCompanyScheduleAnInterview = new FCompanyScheduleAnInterview();    
+            fCompanyScheduleAnInterview.Show();
         }
     }
 }
