@@ -46,5 +46,10 @@ namespace FindJobApplication
             fCompanySignUp.ShowDialog();
             this.Close();
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

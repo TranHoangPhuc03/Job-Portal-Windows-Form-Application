@@ -20,11 +20,15 @@ namespace FindJobApplication
 
         private void btnListJobSave_Click(object sender, EventArgs e)
         {
-            changeColorButton(btnListJobSave, btnListJobApply);
-            pnlListJob.Controls.Clear();
-            pnlTopTableApplyJob.Hide();
-            pnlListJob.Height = 783;
-            pnlListJob.Location = new Point(3, 62);
+            btnListJobSave.FillColor = Color.FromArgb(255, 75, 43);
+            btnListJobSave.ForeColor = Color.White;
+            btnListJobSave.HoverState.FillColor = Color.FromArgb(255, 75, 43);
+            btnListJobApply.FillColor = Color.White;
+            btnListJobApply.ForeColor = Color.FromArgb(255, 75, 43);
+            btnListJobApply.HoverState.FillColor = Color.WhiteSmoke;
+            pnlListJobSave.BringToFront();
+            pnlListJobSave.Controls.Clear();
+
             List<UCJob> list = new List<UCJob>();
             for (int i = 0; i < 10; i++)
             {
@@ -32,16 +36,22 @@ namespace FindJobApplication
                 jobControl.LLblNameJob.Text = "Job" + i.ToString();
                 jobControl.PbSave.Image = Properties.Resources.heart2;
                 list.Add(jobControl);
-                pnlListJob.Controls.Add(list[i]);
+                pnlListJobSave.Controls.Add(list[i]);
             }
         }
         private void btnListJobApply_Click(object sender, EventArgs e)
         {
-            pnlTopTableApplyJob.Show();
-            changeColorButton(btnListJobApply, btnListJobSave);
-            pnlListJob.Controls.Clear();
-            pnlListJob.Height = 740;
-            pnlListJob.Location = new Point(3, 109);
+            btnListJobApply.FillColor = Color.FromArgb(255, 75, 43);
+            btnListJobApply.ForeColor = Color.White;
+            btnListJobApply.HoverState.FillColor = Color.FromArgb(255, 75, 43);
+
+            btnListJobSave.FillColor = Color.White;
+            btnListJobSave.ForeColor = Color.FromArgb(255, 75, 43);
+            btnListJobSave.HoverState.FillColor = Color.WhiteSmoke;
+            pnlListJobSave.SendToBack();
+            pnlListJobApply.Controls.Clear();
+            pnlListJobSave.Controls.Clear();
+
             List<UCJobApply> list = new List<UCJobApply>();
             for (int i = 0; i < 10; i++)
             {
@@ -52,20 +62,9 @@ namespace FindJobApplication
                 uCJobApply.LblStatus.Text = "Denied";
                 uCJobApply.LblDayApply.Text = DateTime.Now.ToString();
                 list.Add(uCJobApply);
-                pnlListJob.Controls.Add(list[i]);
+                pnlListJobApply.Controls.Add(list[i]);
             }
         }
-        private void changeColorButton(GunaButton buttonClick, GunaButton buttonNonClick)
-        {
-            buttonClick.ForeColor = Color.Red;
-            buttonClick.OnHoverForeColor = Color.Red;
-            buttonClick.OnHoverForeColor = Color.Red;
-
-            buttonNonClick.ForeColor = Color.Black;
-            buttonNonClick.OnHoverForeColor = Color.Black;
-            buttonNonClick.OnHoverForeColor = Color.Black;
-        }
-
         private void UCMyJob_Load(object sender, EventArgs e)
         {
             btnListJobSave_Click(sender, e);

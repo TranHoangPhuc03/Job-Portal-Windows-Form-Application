@@ -28,99 +28,111 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pnlTopTableApplyJob = new Guna.UI.WinForms.GunaElipsePanel();
-            this.lblNameCompany = new Guna.UI.WinForms.GunaLabel();
-            this.lblID = new Guna.UI.WinForms.GunaLabel();
-            this.pnlListCompanyFollowing = new System.Windows.Forms.FlowLayoutPanel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pnlTopTableApplyJob.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.guna2CustomGradientPanel2 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pnlListCompanyFollowing = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.guna2CustomGradientPanel1.SuspendLayout();
+            this.guna2CustomGradientPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // pnlTopTableApplyJob
+            // guna2CustomGradientPanel1
             // 
-            this.pnlTopTableApplyJob.BackColor = System.Drawing.Color.Transparent;
-            this.pnlTopTableApplyJob.BaseColor = System.Drawing.Color.White;
-            this.pnlTopTableApplyJob.Controls.Add(this.pictureBox2);
-            this.pnlTopTableApplyJob.Controls.Add(this.lblNameCompany);
-            this.pnlTopTableApplyJob.Controls.Add(this.lblID);
-            this.pnlTopTableApplyJob.Location = new System.Drawing.Point(3, 2);
-            this.pnlTopTableApplyJob.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pnlTopTableApplyJob.Name = "pnlTopTableApplyJob";
-            this.pnlTopTableApplyJob.Radius = 10;
-            this.pnlTopTableApplyJob.Size = new System.Drawing.Size(1538, 43);
-            this.pnlTopTableApplyJob.TabIndex = 46;
+            this.guna2CustomGradientPanel1.BorderRadius = 10;
+            this.guna2CustomGradientPanel1.Controls.Add(this.guna2CustomGradientPanel2);
+            this.guna2CustomGradientPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(247)))));
+            this.guna2CustomGradientPanel1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(247)))));
+            this.guna2CustomGradientPanel1.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(247)))));
+            this.guna2CustomGradientPanel1.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(247)))));
+            this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(12, 10);
+            this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
+            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(1150, 78);
+            this.guna2CustomGradientPanel1.TabIndex = 50;
             // 
-            // lblNameCompany
+            // guna2CustomGradientPanel2
             // 
-            this.lblNameCompany.AutoSize = true;
-            this.lblNameCompany.BackColor = System.Drawing.Color.White;
-            this.lblNameCompany.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNameCompany.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lblNameCompany.ImageKey = "(none)";
-            this.lblNameCompany.Location = new System.Drawing.Point(214, 8);
-            this.lblNameCompany.Name = "lblNameCompany";
-            this.lblNameCompany.Size = new System.Drawing.Size(133, 30);
-            this.lblNameCompany.TabIndex = 12;
-            this.lblNameCompany.Text = "Company";
-            this.lblNameCompany.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.guna2CustomGradientPanel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CustomGradientPanel2.BorderRadius = 10;
+            this.guna2CustomGradientPanel2.Controls.Add(this.label2);
+            this.guna2CustomGradientPanel2.Controls.Add(this.guna2PictureBox1);
+            this.guna2CustomGradientPanel2.Controls.Add(this.label1);
+            this.guna2CustomGradientPanel2.CustomBorderThickness = new System.Windows.Forms.Padding(10);
+            this.guna2CustomGradientPanel2.Location = new System.Drawing.Point(5, 15);
+            this.guna2CustomGradientPanel2.Name = "guna2CustomGradientPanel2";
+            this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(1140, 50);
+            this.guna2CustomGradientPanel2.TabIndex = 0;
             // 
-            // lblID
+            // label2
             // 
-            this.lblID.AutoSize = true;
-            this.lblID.BackColor = System.Drawing.Color.White;
-            this.lblID.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblID.Location = new System.Drawing.Point(9, 8);
-            this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(37, 30);
-            this.lblID.TabIndex = 11;
-            this.lblID.Text = "ID";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Inter", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(105, 13);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(107, 25);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Company";
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.Image = global::FindJobApplication.Properties.Resources.Company;
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(65, 10);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(30, 30);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox1.TabIndex = 1;
+            this.guna2PictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Inter", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(21, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(33, 25);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "ID";
             // 
             // pnlListCompanyFollowing
             // 
-            this.pnlListCompanyFollowing.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlListCompanyFollowing.AutoScroll = true;
-            this.pnlListCompanyFollowing.Location = new System.Drawing.Point(3, 49);
-            this.pnlListCompanyFollowing.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlListCompanyFollowing.BorderRadius = 10;
+            this.pnlListCompanyFollowing.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(247)))));
+            this.pnlListCompanyFollowing.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(247)))));
+            this.pnlListCompanyFollowing.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(247)))));
+            this.pnlListCompanyFollowing.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(247)))));
+            this.pnlListCompanyFollowing.Location = new System.Drawing.Point(12, 103);
             this.pnlListCompanyFollowing.Name = "pnlListCompanyFollowing";
-            this.pnlListCompanyFollowing.Size = new System.Drawing.Size(1537, 800);
-            this.pnlListCompanyFollowing.TabIndex = 45;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.White;
-            this.pictureBox2.Image = global::FindJobApplication.Properties.Resources.Company;
-            this.pictureBox2.Location = new System.Drawing.Point(154, 5);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(62, 37);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 13;
-            this.pictureBox2.TabStop = false;
+            this.pnlListCompanyFollowing.Size = new System.Drawing.Size(1150, 844);
+            this.pnlListCompanyFollowing.TabIndex = 51;
             // 
             // UCUserListCompanyFollowing
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.pnlTopTableApplyJob);
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.pnlListCompanyFollowing);
+            this.Controls.Add(this.guna2CustomGradientPanel1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "UCUserListCompanyFollowing";
-            this.Size = new System.Drawing.Size(1544, 851);
+            this.Size = new System.Drawing.Size(1298, 968);
             this.Load += new System.EventHandler(this.UCUserListCompanyFollowing_Load);
-            this.pnlTopTableApplyJob.ResumeLayout(false);
-            this.pnlTopTableApplyJob.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.guna2CustomGradientPanel1.ResumeLayout(false);
+            this.guna2CustomGradientPanel2.ResumeLayout(false);
+            this.guna2CustomGradientPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private Guna.UI.WinForms.GunaElipsePanel pnlTopTableApplyJob;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private Guna.UI.WinForms.GunaLabel lblNameCompany;
-        private Guna.UI.WinForms.GunaLabel lblID;
-        private System.Windows.Forms.FlowLayoutPanel pnlListCompanyFollowing;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel2;
+        private System.Windows.Forms.Label label2;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel pnlListCompanyFollowing;
     }
 }

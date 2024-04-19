@@ -12,6 +12,7 @@ namespace FindJobApplication
 {
     public partial class FUserProfileInformationEdit : Form
     {
+        Image img = Properties.Resources.Male_1;
         public FUserProfileInformationEdit()
         {
             InitializeComponent();
@@ -24,12 +25,17 @@ namespace FindJobApplication
 
         private void pbUser_MouseEnter(object sender, EventArgs e)
         {
-            pbUser.Image = Properties.Resources.camera;
+            pbUser.Image = Properties.Resources.camera_Edit1;
         }
 
         private void pbUser_MouseLeave(object sender, EventArgs e)
         {
-            pbUser.Image = Properties.Resources.user__1_;
+            pbUser.Image = img;
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

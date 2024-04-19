@@ -17,7 +17,7 @@ namespace FindJobApplication
         {
             InitializeComponent();
         }
-        public GunaLabel LblId { get => lblID; set => lblID = value; }
+        public Label LblId { get => lblID; set => lblID = value; }
         public GunaLinkLabel LlblNameCompany { get => llblNameCompany; set => llblNameCompany = value; }
 
         private void llblNameCompany_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -25,7 +25,6 @@ namespace FindJobApplication
             UCCompanyProfile uCCompanyProfile = new UCCompanyProfile();
             UCMain.Instance.PnlMid.Controls.Add(uCCompanyProfile);
             uCCompanyProfile.hideAllButton();
-            uCCompanyProfile.Location = new Point(UCMain.Instance.PnlMid.Width / 2 - uCCompanyProfile.Width / 2, 0);
             uCCompanyProfile.BringToFront();
         }
     }

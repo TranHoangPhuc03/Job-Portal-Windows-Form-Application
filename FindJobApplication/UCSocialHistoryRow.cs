@@ -28,9 +28,9 @@ namespace FindJobApplication
             this.lblDatePost.Text = socialPost.PostDate.ToString("dd-MM-yyyy");
             this.Tag = socialPost.Id;
         }
-        public GunaLabel LblID { get => lblID; set => lblID = value; }
-        public GunaLabel LblTitle { get => lblTitle; set => lblTitle = value; }
-        public GunaLabel LblDatePots { get => lblDatePost; set => lblDatePost = value; }
+        public Label LblID { get => lblID; set => lblID = value; }
+        public Label LblTitle { get => lblTitle; set => lblTitle = value; }
+        public Label LblDatePots { get => lblDatePost; set => lblDatePost = value; }
 
 
         private void pbEdit_Click(object sender, EventArgs e)

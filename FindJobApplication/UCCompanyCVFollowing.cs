@@ -17,7 +17,7 @@ namespace FindJobApplication
         {
             InitializeComponent();
         }
-        public GunaLabel LblId { get => lblID; set => lblID = value; }
+        public Label LblId { get => lblID; set => lblID = value; }
         public GunaLinkLabel LlblName { get => llblName; set => llblName = value; }
 
         private void llblName_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

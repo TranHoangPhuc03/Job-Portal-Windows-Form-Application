@@ -112,5 +112,10 @@ namespace FindJobApplication
             }
             this.uCHome.fillJobPostToPanel(dt);
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -30,6 +30,7 @@
         {
             Guna.UI.WinForms.GunaElipsePanel pnlProfileInformation;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCCompanyProfile));
+            this.btnBack = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnSeeJob = new Guna.UI2.WinForms.Guna2Button();
             this.lblCountJob = new Guna.UI.WinForms.GunaLabel();
             this.lblRecruitment = new Guna.UI.WinForms.GunaLabel();
@@ -73,9 +74,9 @@
             this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
             this.rtxtTop3Reason = new System.Windows.Forms.RichTextBox();
             this.pbTop3Edit = new System.Windows.Forms.PictureBox();
-            this.btnBack = new Guna.UI2.WinForms.Guna2PictureBox();
             pnlProfileInformation = new Guna.UI.WinForms.GunaElipsePanel();
             pnlProfileInformation.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.pnlListPicture.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCompany1)).BeginInit();
@@ -95,7 +96,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pBCompanyOverviewEdit)).BeginInit();
             this.gunaElipsePanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbTop3Edit)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlProfileInformation
@@ -135,6 +135,19 @@
             pnlProfileInformation.Radius = 10;
             pnlProfileInformation.Size = new System.Drawing.Size(1158, 996);
             pnlProfileInformation.TabIndex = 3;
+            // 
+            // btnBack
+            // 
+            this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBack.Image = global::FindJobApplication.Properties.Resources.BackIcon;
+            this.btnBack.ImageRotate = 0F;
+            this.btnBack.Location = new System.Drawing.Point(14, 12);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(79, 49);
+            this.btnBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnBack.TabIndex = 45;
+            this.btnBack.TabStop = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // btnSeeJob
             // 
@@ -681,19 +694,7 @@
             this.pbTop3Edit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbTop3Edit.TabIndex = 16;
             this.pbTop3Edit.TabStop = false;
-            // 
-            // btnBack
-            // 
-            this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBack.Image = global::FindJobApplication.Properties.Resources.BackIcon;
-            this.btnBack.ImageRotate = 0F;
-            this.btnBack.Location = new System.Drawing.Point(14, 12);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(79, 49);
-            this.btnBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnBack.TabIndex = 45;
-            this.btnBack.TabStop = false;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            this.pbTop3Edit.Click += new System.EventHandler(this.pbTop3Edit_Click);
             // 
             // UCCompanyProfile
             // 
@@ -707,6 +708,7 @@
             this.Load += new System.EventHandler(this.UCCompanyProfile_Load);
             pnlProfileInformation.ResumeLayout(false);
             pnlProfileInformation.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.pnlListPicture.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbCompany1)).EndInit();
@@ -729,7 +731,6 @@
             this.gunaElipsePanel2.ResumeLayout(false);
             this.gunaElipsePanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbTop3Edit)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnBack)).EndInit();
             this.ResumeLayout(false);
 
         }

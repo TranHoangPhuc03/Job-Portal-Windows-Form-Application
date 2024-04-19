@@ -82,12 +82,14 @@ namespace FindJobApplication
 
         private void pbTop3Edit_Click(object sender, EventArgs e)
         {
-
+            FCompanyProfileTop3Reasons fCompanyProfileTop3Reasons = new FCompanyProfileTop3Reasons();
+            fCompanyProfileTop3Reasons.Show();
         }
 
         private void pBCompanyOverviewEdit_Click(object sender, EventArgs e)
         {
-
+            FCompanyProfileOverviewEdit fCompanyProfileOverviewEdit = new FCompanyProfileOverviewEdit();
+            fCompanyProfileOverviewEdit.Show();
         }
 
         private void btnInbox_Click(object sender, EventArgs e)

@@ -114,6 +114,7 @@
             this.btnAccept.Size = new System.Drawing.Size(150, 60);
             this.btnAccept.TabIndex = 40;
             this.btnAccept.Text = "Accept";
+            this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
             // 
             // btnSeeCV
             // 

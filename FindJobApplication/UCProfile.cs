@@ -96,12 +96,26 @@ namespace FindJobApplication
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            Control parentControl = this.Parent;
+            if (parentControl != null)
+            {
+                parentControl.Controls.Remove(this);
+                this.Dispose();
+            }
         }
 
         private void btnFollow_Click(object sender, EventArgs e)
         {
-            
+            if (statusBtnFollowUser == 1)
+            {
+                btnFollow.Text = "Following";
+                statusBtnFollowUser = 2;
+            }
+            else
+            {
+                btnFollow.Text = "Follow";
+                statusBtnFollowUser = 1;
+            }
         }
 
         private void UCProfile_Load(object sender, EventArgs e)
@@ -139,6 +153,12 @@ namespace FindJobApplication
                 UCUserProfileProject uCUserProfileProject = new UCUserProfileProject(item);
                 this.pnlProjectDetail.Controls.Add(uCUserProfileProject);
             }
+        }
+
+        private void btnInbox_Click(object sender, EventArgs e)
+        {
+            FSendMail fSendMail = new FSendMail();
+            fSendMail.Show();
         }
     }
 }
