@@ -23,7 +23,7 @@ namespace FindJobApplication
         {
             pnlListCVFollowing.Controls.Clear();
             CompanyProfileDao companyProfileDao = new CompanyProfileDao();
-            List<int> userFollowingIds = companyProfileDao.FindAllUserIdFollowing(Global.loginId);
+            List<int> userFollowingIds = companyProfileDao.FindAllUserIdFollowing(Session.accountId);
             int cnt = 1;
             foreach (int userId in userFollowingIds)
             {
@@ -32,7 +32,7 @@ namespace FindJobApplication
                 UCCompanyCVFollowing uCCompanyCVFollowing = new UCCompanyCVFollowing();
                 uCCompanyCVFollowing.LblId.Text = (cnt++).ToString();
                 uCCompanyCVFollowing.LlblName.Text = userProfile.Name;
-                uCCompanyCVFollowing.Tag = userProfile.Id;
+                uCCompanyCVFollowing.Tag = userProfile.ID;
                 this.pnlListCVFollowing.Controls.Add(uCCompanyCVFollowing);
             }
         }

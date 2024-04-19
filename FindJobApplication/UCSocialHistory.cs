@@ -23,7 +23,7 @@ namespace FindJobApplication
         {
             SocialPostDao socialPostDao = new SocialPostDao();
             List<SocialPost> list = socialPostDao.FindAllSocialPost();
-            List<SocialPost> filteredList = list.Where(post => post.AccountId == Global.accountId).ToList();
+            List<SocialPost> filteredList = list.Where(post => post.AccountId == Session.accountId).ToList();
             int cnt = 1;
             foreach (SocialPost socialPost in filteredList)
             {

@@ -25,7 +25,6 @@ namespace FindJobApplication
             this.Controls.Add(uCMain);
             this.uCMain.BtnHome.Click += btnHome_Click;
             this.uCMain.BtnUser.Click += btnUser_Click;
-            this.uCMain.BtnLogOut.Click += btnLogOut_Click;
             this.uCMain.BtnHome.PerformClick();
             customForUser();
         }
@@ -96,17 +95,7 @@ namespace FindJobApplication
             this.uCHome.CbExperince.DisplayMember = "name";
             this.uCHome.CbExperince.DataSource = yearExperienceDao.FindAllExperienceList();
 
-            this.uCHome.fillDataToPanel(jobPostDao.FindAllJobPost());
-        }
-
-        private void btnMail_Click(object sender, EventArgs e)
-        {
-            uCMain.updateStatus(uCMain.BtnHome);
-            uCMain.PnlMid.Controls.Clear();
-        }
-        private void btnLogOut_Click(object sender, EventArgs e)
-        {
-            this.Close();
+            this.uCHome.fillJobPostToPanel(jobPostDao.FindAllJobPost());
         }
 
         private void jobFilterSearch(object sender, EventArgs e)
@@ -121,7 +110,7 @@ namespace FindJobApplication
             {
                 dt = dt.Where(row => row.Title.Contains(keyword)).ToList();
             }
-            this.uCHome.fillDataToPanel(dt);
+            this.uCHome.fillJobPostToPanel(dt);
         }
 
         private void btnClose_Click(object sender, EventArgs e)

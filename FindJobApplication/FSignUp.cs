@@ -15,31 +15,36 @@ namespace FindJobApplication
         public FSignUp()
         {
             InitializeComponent();
-            txtPassword.Multiline = false;
+            this.ActiveControl = this.txtName;
+            this.lblShow.TextAlign = ContentAlignment.MiddleCenter;
         }
 
-        private void llblSignUpUser_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void llblSignInUser_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            FLogin fLogin = new FLogin();
+            this.Hide();
+            fLogin.ShowDialog();
             this.Close();
         }
         private void lblShow_Click(object sender, EventArgs e)
         {
             if (lblShow.Text == "Show")
             {
-                txtPassword.Multiline = true;
+                this.txtPassword.PasswordChar = '\0';
                 lblShow.Text = "Hide";
             }
             else
             {
-                txtPassword.Multiline = false;
+                this.txtPassword.PasswordChar = '*';
                 lblShow.Text = "Show";
             }
         }
         private void llblCreateBussiness_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            FSignUpCompany fCompanySignUp = new FSignUpCompany();
             this.Hide();
-            FCompanySignUp fCompanySignUp = new FCompanySignUp();
             fCompanySignUp.ShowDialog();
+            this.Close();
         }
 
         private void btnClose_Click(object sender, EventArgs e)

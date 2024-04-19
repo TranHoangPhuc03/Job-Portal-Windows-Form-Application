@@ -31,10 +31,10 @@ namespace FindJobApplication.Daos
             foreach (DataRow dr in dt.Rows)
             {
                 UserProfile userProfile = UserProfileMapper.MapToModel(dr);
-                userProfile.UserEducations.AddRange(this.FindUserEducationByUserId(userProfile.Id));
-                userProfile.UserWorkExperiences.AddRange(this.FindUserWorkExperienceByUserId(userProfile.Id));
-                userProfile.UserPersonalProjects.AddRange(this.FindUserPersonalProjectByUserId(userProfile.Id));
-                userProfile.UserSkills.AddRange(this.FindUserSkillByUserId(userProfile.Id));
+                userProfile.UserEducations.AddRange(this.FindUserEducationByUserId(userProfile.ID));
+                userProfile.UserWorkExperiences.AddRange(this.FindUserWorkExperienceByUserId(userProfile.ID));
+                userProfile.UserPersonalProjects.AddRange(this.FindUserPersonalProjectByUserId(userProfile.ID));
+                userProfile.UserSkills.AddRange(this.FindUserSkillByUserId(userProfile.ID));
 
                 list.Add(userProfile);
                 
@@ -49,10 +49,10 @@ namespace FindJobApplication.Daos
 
             DataRow dr = db.Read(sqlStr, parameters).Rows.Cast<DataRow>().FirstOrDefault();
             UserProfile userProfile = UserProfileMapper.MapToModel(dr);
-            userProfile.UserEducations.AddRange(this.FindUserEducationByUserId(userProfile.Id));
-            userProfile.UserWorkExperiences.AddRange(this.FindUserWorkExperienceByUserId(userProfile.Id));
-            userProfile.UserPersonalProjects.AddRange(this.FindUserPersonalProjectByUserId(userProfile.Id));
-            userProfile.UserSkills.AddRange(this.FindUserSkillByUserId(userProfile.Id));
+            userProfile.UserEducations.AddRange(this.FindUserEducationByUserId(userProfile.ID));
+            userProfile.UserWorkExperiences.AddRange(this.FindUserWorkExperienceByUserId(userProfile.ID));
+            userProfile.UserPersonalProjects.AddRange(this.FindUserPersonalProjectByUserId(userProfile.ID));
+            userProfile.UserSkills.AddRange(this.FindUserSkillByUserId(userProfile.ID));
 
             return userProfile;
         }
@@ -63,10 +63,10 @@ namespace FindJobApplication.Daos
 
             DataRow dr = db.Read(sqlStr, parameters).Rows.Cast<DataRow>().FirstOrDefault();
             UserProfile userProfile = UserProfileMapper.MapToModel(dr);
-            userProfile.UserEducations.AddRange(this.FindUserEducationByUserId(userProfile.Id));
-            userProfile.UserWorkExperiences.AddRange(this.FindUserWorkExperienceByUserId(userProfile.Id));
-            userProfile.UserPersonalProjects.AddRange(this.FindUserPersonalProjectByUserId(userProfile.Id));
-            userProfile.UserSkills.AddRange(this.FindUserSkillByUserId(userProfile.Id));
+            userProfile.UserEducations.AddRange(this.FindUserEducationByUserId(userProfile.ID));
+            userProfile.UserWorkExperiences.AddRange(this.FindUserWorkExperienceByUserId(userProfile.ID));
+            userProfile.UserPersonalProjects.AddRange(this.FindUserPersonalProjectByUserId(userProfile.ID));
+            userProfile.UserSkills.AddRange(this.FindUserSkillByUserId(userProfile.ID));
 
             return userProfile;
         }
@@ -261,7 +261,7 @@ namespace FindJobApplication.Daos
                 { "@PersonalLink", userProfile.PersonalLink },
                 { "@AboutMe", userProfile.AboutMe },
                 { "@Title", userProfile.Title },
-                { "@Id", userProfile.Id }
+                { "@Id", userProfile.ID }
             };
 
             return db.Execute(sqlStr, parameters);

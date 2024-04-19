@@ -26,7 +26,7 @@ namespace FindJobApplication
             InitializeComponent();
             panelProfile.AutoScroll = true;
             btnBack.Visible = false;
-            this.userId = Global.loginId;
+            this.userId = Session.accountId;
         }
 
         public UCProfile(int userId) : this()

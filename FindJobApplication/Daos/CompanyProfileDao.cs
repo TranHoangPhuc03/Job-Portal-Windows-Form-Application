@@ -22,7 +22,10 @@ namespace FindJobApplication.Daos
 
         public List<CompanyProfile> FindAllCompanyProfile()
         {
-            string sqlStr = "SELECT * FROM company_profile;";
+            string sqlStr = @"
+                            SELECT *
+                            FROM account, company_profile
+                            WHERE account.id = company_profile.account_id;";
             DataTable dt = db.Read(sqlStr);
             List<CompanyProfile> list = new List<CompanyProfile>();
 
@@ -34,20 +37,17 @@ namespace FindJobApplication.Daos
 
         public CompanyProfile FindCompanyProfileById(int id)
         {
-            string sqlStr = "SELECT * FROM company_profile WHERE id = @Id;";
+            string sqlStr = @"
+                            SELECT *
+                            FROM account, company_profile
+                            WHERE account.id = @Id AND account.id = company_profile.account_id;";
+            ;
             Dictionary<string, object> parameters = new Dictionary<string, object> { { "@Id", id} };
             DataRow dr = db.Read(sqlStr, parameters).Rows.Cast<DataRow>().FirstOrDefault();
 
             CompanyProfile companyProfile = CompanyProfileMapper.MapToModel(dr);
 
             return companyProfile;
-        }
-
-        public int FindCompanyIdByAccountId(int accountId)
-        {
-            string sqlStr = "SELECT id FROM company_profile WHERE company_account_id = @AccountId;";
-            Dictionary<string, object> parameters = new Dictionary<string, object> { { "@AccountId", accountId } };
-            return (int) db.ExecuteScalar(sqlStr, parameters);
         }
 
         public int SaveCompanySignUp(CompanyProfile companyProfile, string password)
@@ -70,7 +70,10 @@ namespace FindJobApplication.Daos
 
         public List<int> FindAllUserIdFollowing(int companyAccountId)
         {
-            string sqlStr = @"SELECT * FROM following WHERE company_id = @CompanyAccountId;";
+            string sqlStr = @"
+                            SELECT *
+                            FROM following 
+                            WHERE company_id = @CompanyAccountId;";
             Dictionary<string, object> parameters = new Dictionary<string, object>
             {
                 { "@CompanyAccountId", companyAccountId }
@@ -110,11 +113,14 @@ namespace FindJobApplication.Daos
 
         public int UpdateCompanyReason(int companyId, string reason)
         {
-            string sqlStr = "UPDATE company_profile SET reason = @Reason WHERE id = @CompanyId;";
+            string sqlStr = @"
+                            UPDATE company_profile
+                            SET reason = @Reason
+                            WHERE account_id = @CompanyAccountId;";
             Dictionary<string, object> parameters = new Dictionary<string, object>
             {
                 { "@Reason", reason },
-                { "@CompanyId", companyId }
+                { "@CompanyAccountId", companyId }
             };
 
             return db.Execute(sqlStr, parameters);
@@ -122,22 +128,28 @@ namespace FindJobApplication.Daos
 
         public int UpdateCompanyOverview(int companyId, string overview)
         {
-            string sqlStr = "UPDATE company_profile SET overview = @Overview WHERE id = @CompanyId;";
+            string sqlStr = @"
+                            UPDATE company_profile
+                            SET overview = @Overview
+                            WHERE account_id = @CompanyAccountId;";
             Dictionary<string, object> parameters = new Dictionary<string, object>
             {
                 { "@Overview", overview },
-                { "@CompanyId", companyId }
+                { "@CompanyAccountId", companyId }
             };
 
             return db.Execute(sqlStr, parameters);
         }
 
-        public int UpdateCompanyProfile(int companyId, CompanyProfile companyProfile)
+        public int UpdateCompanyProfile(CompanyProfile companyProfile)
         {
             string sqlStr = @"
+                            UPDATE account
+                            SET name = @Name, email = @Email
+                            WHERE account_id = @CompanyAccountId;
                             UPDATE company_profile
-                            SET name = @Name, email = @Email, phone_number = @PhoneNumber, address = @Address, company_size = @CompanySize, date_establish = @DateEstablish, company_link = @CompanyLink
-                            WHERE id = @CompanyId;";
+                            SET phone_number = @PhoneNumber, address = @Address, company_size = @CompanySize, date_establish = @DateEstablish, company_link = @CompanyLink
+                            WHERE account_id = @CompanyAccountId;";
             Dictionary<string, object> parameters = new Dictionary<string, object>
             {
                 { "@Name", companyProfile.Name },
@@ -147,7 +159,7 @@ namespace FindJobApplication.Daos
                 { "@CompanySize", companyProfile.CompanySize },
                 { "@DateEstablish", companyProfile.DateEstablish },
                 { "@CompanyLink", companyProfile.CompanyLink },
-                { "@CompanyId", companyId }
+                { "@CompanyAccountId", companyProfile.ID }
             };
 
             return db.Execute(sqlStr, parameters);
