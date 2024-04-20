@@ -19,7 +19,12 @@ namespace FindJobApplication
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+<<<<<<< HEAD
+           // Application.Run(new FLogin());
+            Application.Run(new FHome());
+=======
            Application.Run(new FLogin());
+>>>>>>> 83d6e7c68be127793323ed3a0233aef83c474efd
 
         }
     }

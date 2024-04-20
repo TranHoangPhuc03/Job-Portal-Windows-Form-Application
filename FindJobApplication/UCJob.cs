@@ -70,7 +70,6 @@ namespace FindJobApplication
         {
             UCJobInformation uCJobInformation = new UCJobInformation((int)(sender as Control).Tag);
             UCMain.Instance.PnlMid.Controls.Add(uCJobInformation);
-            uCJobInformation.Location = new Point(UCMain.Instance.PnlMid.Width / 2 - uCJobInformation.Width / 2, 0);
             uCJobInformation.BringToFront();
         }
 
@@ -79,7 +78,6 @@ namespace FindJobApplication
             UCCompanyProfile uCCompanyProfile = new UCCompanyProfile((int)(sender as Control).Tag);
             UCMain.Instance.PnlMid.Controls.Add(uCCompanyProfile);
             uCCompanyProfile.hideAllButton();
-            uCCompanyProfile.Location = new Point(UCMain.Instance.PnlMid.Width / 2 - uCCompanyProfile.Width / 2, 0);
             uCCompanyProfile.BringToFront();
         }
         public string standardizeNames(string name)

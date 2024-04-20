@@ -46,9 +46,10 @@
             this.pnlMenu.Controls.Add(this.btnProfile);
             this.pnlMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlMenu.Location = new System.Drawing.Point(0, 0);
+            this.pnlMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlMenu.Name = "pnlMenu";
             this.pnlMenu.Radius = 10;
-            this.pnlMenu.Size = new System.Drawing.Size(249, 296);
+            this.pnlMenu.Size = new System.Drawing.Size(225, 192);
             this.pnlMenu.TabIndex = 31;
             // 
             // btnSetting
@@ -65,14 +66,15 @@
             this.btnSetting.ForeColor = System.Drawing.Color.Black;
             this.btnSetting.Image = global::FindJobApplication.Properties.Resources.settingsSubmenu;
             this.btnSetting.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnSetting.Location = new System.Drawing.Point(0, 222);
+            this.btnSetting.Location = new System.Drawing.Point(0, 144);
+            this.btnSetting.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSetting.Name = "btnSetting";
             this.btnSetting.OnHoverBaseColor = System.Drawing.Color.LightGray;
             this.btnSetting.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnSetting.OnHoverForeColor = System.Drawing.Color.Black;
             this.btnSetting.OnHoverImage = null;
             this.btnSetting.OnPressedColor = System.Drawing.Color.DarkGray;
-            this.btnSetting.Size = new System.Drawing.Size(249, 74);
+            this.btnSetting.Size = new System.Drawing.Size(225, 48);
             this.btnSetting.TabIndex = 34;
             this.btnSetting.Text = "Setting";
             this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click_1);
@@ -91,14 +93,15 @@
             this.btnSocialPost.ForeColor = System.Drawing.Color.Black;
             this.btnSocialPost.Image = global::FindJobApplication.Properties.Resources.paper_plane;
             this.btnSocialPost.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnSocialPost.Location = new System.Drawing.Point(0, 148);
+            this.btnSocialPost.Location = new System.Drawing.Point(0, 96);
+            this.btnSocialPost.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSocialPost.Name = "btnSocialPost";
             this.btnSocialPost.OnHoverBaseColor = System.Drawing.Color.LightGray;
             this.btnSocialPost.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnSocialPost.OnHoverForeColor = System.Drawing.Color.Black;
             this.btnSocialPost.OnHoverImage = null;
             this.btnSocialPost.OnPressedColor = System.Drawing.Color.DarkGray;
-            this.btnSocialPost.Size = new System.Drawing.Size(249, 74);
+            this.btnSocialPost.Size = new System.Drawing.Size(225, 48);
             this.btnSocialPost.TabIndex = 33;
             this.btnSocialPost.Text = "Social Post";
             this.btnSocialPost.Click += new System.EventHandler(this.btnSocialPost_Click);
@@ -117,14 +120,15 @@
             this.btnFollowCV.ForeColor = System.Drawing.Color.Black;
             this.btnFollowCV.Image = global::FindJobApplication.Properties.Resources.man;
             this.btnFollowCV.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnFollowCV.Location = new System.Drawing.Point(0, 74);
+            this.btnFollowCV.Location = new System.Drawing.Point(0, 48);
+            this.btnFollowCV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnFollowCV.Name = "btnFollowCV";
             this.btnFollowCV.OnHoverBaseColor = System.Drawing.Color.LightGray;
             this.btnFollowCV.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnFollowCV.OnHoverForeColor = System.Drawing.Color.Black;
             this.btnFollowCV.OnHoverImage = null;
             this.btnFollowCV.OnPressedColor = System.Drawing.Color.DarkGray;
-            this.btnFollowCV.Size = new System.Drawing.Size(249, 74);
+            this.btnFollowCV.Size = new System.Drawing.Size(225, 48);
             this.btnFollowCV.TabIndex = 4;
             this.btnFollowCV.Text = "CV Following";
             this.btnFollowCV.Click += new System.EventHandler(this.btnFollowCV_Click);
@@ -144,24 +148,26 @@
             this.btnProfile.Image = global::FindJobApplication.Properties.Resources.office_building;
             this.btnProfile.ImageSize = new System.Drawing.Size(20, 20);
             this.btnProfile.Location = new System.Drawing.Point(0, 0);
+            this.btnProfile.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnProfile.Name = "btnProfile";
             this.btnProfile.OnHoverBaseColor = System.Drawing.Color.LightGray;
             this.btnProfile.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnProfile.OnHoverForeColor = System.Drawing.Color.Black;
             this.btnProfile.OnHoverImage = null;
             this.btnProfile.OnPressedColor = System.Drawing.Color.DarkGray;
-            this.btnProfile.Size = new System.Drawing.Size(249, 74);
+            this.btnProfile.Size = new System.Drawing.Size(225, 48);
             this.btnProfile.TabIndex = 1;
             this.btnProfile.Text = "Profile";
             this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
             // 
             // UCCompanySubMenuRight
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pnlMenu);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "UCCompanySubMenuRight";
-            this.Size = new System.Drawing.Size(249, 298);
+            this.Size = new System.Drawing.Size(225, 194);
             this.pnlMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 

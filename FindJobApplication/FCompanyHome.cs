@@ -34,8 +34,7 @@ namespace FindJobApplication
             uCMain.BtnUser.Text = "AXON";
             uCMain.PbHomeUser.Image = Properties.Resources.Company;
             uCMain.PnlMid.Controls.Add(uCCompanySubMenuRight);
-            uCCompanySubMenuRight.Location = new Point(uCMain.PnlMid.Width - uCCompanySubMenuRight.Width, 0);
-            Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            uCCompanySubMenuRight.Location = new Point(923, 0);
             uCCompanySubMenuRight.hideMenu();
         }
         private void btnHome_Click(object sender, EventArgs e)

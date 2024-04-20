@@ -40,6 +40,9 @@
     <Reference Include="FontAwesome.Sharp, Version=5.8.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\FontAwesome.Sharp.5.8.3\lib\net40\FontAwesome.Sharp.dll</HintPath>
     </Reference>
+    <Reference Include="Guna.Charts.WinForms, Version=1.0.9.0, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.Charts.WinForms.1.0.9\lib\net48\Guna.Charts.WinForms.dll</HintPath>
+    </Reference>
     <Reference Include="Guna.UI">
       <HintPath>..\packages\Guna.UI WinForms\.net 4.0\Guna.UI.dll</HintPath>
     </Reference>
@@ -392,6 +395,12 @@
     <Compile Include="UCTopCompany.Designer.cs">
       <DependentUpon>UCTopCompany.cs</DependentUpon>
     </Compile>
+    <Compile Include="UCTopTrending.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCTopTrending.Designer.cs">
+      <DependentUpon>UCTopTrending.cs</DependentUpon>
+    </Compile>
     <Compile Include="UCUCUserProfileEducationAndWorkExperience.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -584,6 +593,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UCTopCompany.resx">
       <DependentUpon>UCTopCompany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCTopTrending.resx">
+      <DependentUpon>UCTopTrending.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCUCUserProfileEducationAndWorkExperience.resx">
       <DependentUpon>UCUCUserProfileEducationAndWorkExperience.cs</DependentUpon>
@@ -968,6 +980,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\camera_Edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trending.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trendingwhite.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
