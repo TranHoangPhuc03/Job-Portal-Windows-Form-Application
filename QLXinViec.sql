@@ -173,12 +173,12 @@ CREATE TABLE user_favourite_job(
 GO
 
 CREATE TABLE [following](
-	company_account_id INT,
-	user_account_id INT,
+	account_following INT,
+	account_followed INT,
 
-	FOREIGN KEY (user_account_id) REFERENCES account(id),
-	FOREIGN KEY (company_account_id) REFERENCES account(id),
-	PRIMARY KEY(user_account_id, company_account_id)
+	FOREIGN KEY (account_following) REFERENCES account(id),
+	FOREIGN KEY (account_followed) REFERENCES account(id),
+	PRIMARY KEY(account_following, account_followed)
 );
 GO
 
