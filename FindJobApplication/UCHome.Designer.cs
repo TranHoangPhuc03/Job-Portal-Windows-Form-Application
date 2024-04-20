@@ -1,4 +1,6 @@
-﻿namespace FindJobApplication
+﻿using System.Windows.Forms;
+
+namespace FindJobApplication
 {
     partial class UCHome
     {
@@ -28,11 +30,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pnlListJob = new System.Windows.Forms.FlowLayoutPanel();
             this.cbExperience = new Guna.UI.WinForms.GunaComboBox();
             this.cbLocation = new Guna.UI.WinForms.GunaComboBox();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnSearch = new Guna.UI2.WinForms.Guna2Button();
+            this.pnlListJob = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
             // pnlListJob
@@ -143,7 +145,7 @@
             this.btnSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
-            this.btnSearch.Font = new System.Drawing.Font("Inter SemiBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Font = new System.Drawing.Font("Inter SemiBold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.White;
             this.btnSearch.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
             this.btnSearch.HoverState.ForeColor = System.Drawing.Color.White;
@@ -155,15 +157,24 @@
             this.btnSearch.TabIndex = 43;
             this.btnSearch.Text = "Search";
             // 
+            // pnlListJob
+            // 
+            this.pnlListJob.AutoScroll = true;
+            this.pnlListJob.Location = new System.Drawing.Point(20, 119);
+            this.pnlListJob.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlListJob.Name = "pnlListJob";
+            this.pnlListJob.Size = new System.Drawing.Size(1144, 816);
+            this.pnlListJob.TabIndex = 44;
+            // 
             // UCHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
+            this.Controls.Add(this.pnlListJob);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.cbLocation);
-            this.Controls.Add(this.pnlListJob);
             this.Controls.Add(this.cbExperience);
             this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
@@ -174,11 +185,10 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.FlowLayoutPanel pnlListJob;
         private Guna.UI.WinForms.GunaComboBox cbExperience;
         private Guna.UI.WinForms.GunaComboBox cbLocation;
         private Guna.UI2.WinForms.Guna2TextBox txtSearch;
         private Guna.UI2.WinForms.Guna2Button btnSearch;
+        private FlowLayoutPanel pnlListJob;
     }
 }

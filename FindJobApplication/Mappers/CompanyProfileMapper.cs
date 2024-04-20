@@ -21,7 +21,7 @@ namespace FindJobApplication.Mappers
                 string phoneNumber = dr.Field<string>("phone_number");
                 string address = dr.Field<string>("address");
                 string companyImage = dr.Field<string>("company_image");
-                DateTime dateEstablished = dr.Field<DateTime>("date_establish");
+                DateTime? dateEstablished = dr.Field<DateTime?>("date_establish");
                 int companySize = dr.Field<int?>("company_size") ?? 0;
                 string companyLink = dr.Field<string>("company_link");
                 string reason = dr.Field<string>("reason");

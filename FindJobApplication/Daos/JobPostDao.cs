@@ -80,7 +80,12 @@ namespace FindJobApplication.Daos
             DataTable dt = db.Read(sqlStr);
             List<JobPost> list = new List<JobPost>();
             foreach (DataRow dr in dt.Rows)
-                list.Add(JobPostMapper.MapToModel(dr));
+            {
+                JobPost jobPost = JobPostMapper.MapToModel(dr);
+                List<int> skills = FindAllJobPostSkill(jobPost.Id);
+                jobPost.SkillID.AddRange(skills);
+                list.Add(jobPost);
+            }
 
             return list;
         }
@@ -99,8 +104,8 @@ namespace FindJobApplication.Daos
                                 job_post.post_date,
                                 job_post.expire_date,
                                 job_post.address,
-                                company_profile.id AS company_id,
-                                company_profile.name AS company_name,
+                                account.id AS company_id,
+                                account.[name] AS company_name,
                                 location.id AS location_id,
                                 location.name AS location_name,
                                 year_experience.id AS year_experience_id,
@@ -112,7 +117,7 @@ namespace FindJobApplication.Daos
                             INNER JOIN 
                                 year_experience ON job_post.year_experience_id = year_experience.id
                             INNER JOIN 
-                                company_profile ON job_post.company_id = company_profile.id
+                                account ON job_post.company_account_id = account.id
                             WHERE job_post.id = @Id";
             Dictionary<string, object> parameters = new Dictionary<string, object>
             {
@@ -239,6 +244,24 @@ namespace FindJobApplication.Daos
             };
 
             return db.Execute(sqlStr, parameters);
+        }
+        public List<int> FindAllJobPostSkill(int jobPostId)
+        {
+            string sqlStr = @"
+                            SELECT *
+                            FROM job_skill
+                            WHERE job_post_id = @Id";
+            Dictionary<string, object> parameters = new Dictionary<string, object>
+            {
+                { "@Id", jobPostId },
+            };
+
+            DataTable dt = db.Read(sqlStr, parameters);
+            List<int> list = new List<int>();
+            foreach (DataRow dr in dt.Rows)
+                list.Add(dr.Field<int>("skill_id"));
+
+            return list;
         }
     }
 }

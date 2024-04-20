@@ -31,7 +31,7 @@ namespace FindJobApplication.Models
             this.companyLink = companyLink;
         }
 
-        public CompanyProfile(int id, string name, string email, string phoneNumber, string address, string companyImage, DateTime dateEstablished, int companySize, string companyLink, string reason, string overview, string taxCode, string businessLicense) : base(id, email, name)
+        public CompanyProfile(int id, string name, string email, string phoneNumber, string address, string companyImage, DateTime? dateEstablished, int companySize, string companyLink, string reason, string overview, string taxCode, string businessLicense) : base(id, email, name)
         {
             this.phoneNumber = phoneNumber;
             this.address = address;
@@ -45,7 +45,7 @@ namespace FindJobApplication.Models
             this.businessLicense = businessLicense;
         }
 
-        public CompanyProfile (int id, string name, string email, string phoneNumber, string address, int companySize, DateTime dateEstablish, string companyLink) : base(id, email, name)
+        public CompanyProfile (int id, string name, string email, string phoneNumber, string address, int companySize, DateTime? dateEstablish, string companyLink) : base(id, email, name)
         {
             this.phoneNumber = phoneNumber;
             this.address = address;
