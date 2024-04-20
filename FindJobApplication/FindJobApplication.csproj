@@ -37,6 +37,9 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CustomFlowLayoutPanel">
+      <HintPath>..\..\..\..\csharp_workspace\CustomFlowLayoutPanel\bin\Release\CustomFlowLayoutPanel.exe</HintPath>
+    </Reference>
     <Reference Include="FontAwesome.Sharp, Version=5.8.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\FontAwesome.Sharp.5.8.3\lib\net40\FontAwesome.Sharp.dll</HintPath>
     </Reference>
@@ -154,6 +157,12 @@
     <Compile Include="FSignUp.Designer.cs">
       <DependentUpon>FSignUp.cs</DependentUpon>
     </Compile>
+    <Compile Include="FTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FTest.Designer.cs">
+      <DependentUpon>FTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="FUserProfilePersonalProjectEdit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -232,6 +241,14 @@
     </Compile>
     <Compile Include="FSendMail.Designer.cs">
       <DependentUpon>FSendMail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UCNavigationButton.cs">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UCCompany.cs">
       <SubType>UserControl</SubType>
@@ -425,17 +442,20 @@
     <Compile Include="UCUserProfileProject.Designer.cs">
       <DependentUpon>UCUserProfileProject.cs</DependentUpon>
     </Compile>
-    <Compile Include="UCUserProfileSkill.cs">
+    <Compile Include="UCSkillTag.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UCUserProfileSkill.Designer.cs">
-      <DependentUpon>UCUserProfileSkill.cs</DependentUpon>
+    <Compile Include="UCSkillTag.Designer.cs">
+      <DependentUpon>UCSkillTag.cs</DependentUpon>
     </Compile>
     <Compile Include="UCUserSubMenuRight.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UCUserSubMenuRight.Designer.cs">
       <DependentUpon>UCUserSubMenuRight.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCNavigationButton.Designer.cs">
+      <DependentUpon>UCNavigationButton.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils\DialogBox.cs">
       <SubType>Form</SubType>
@@ -479,6 +499,9 @@
     <EmbeddedResource Include="FSignUp.resx">
       <DependentUpon>FSignUp.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FTest.resx">
+      <DependentUpon>FTest.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FUserProfilePersonalProjectEdit.resx">
       <DependentUpon>FUserProfilePersonalProjectEdit.cs</DependentUpon>
     </EmbeddedResource>
@@ -502,14 +525,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="FSendMail.resx">
       <DependentUpon>FSendMail.cs</DependentUpon>
     </EmbeddedResource>
@@ -609,11 +627,14 @@
     <EmbeddedResource Include="UCUserProfileProject.resx">
       <DependentUpon>UCUserProfileProject.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UCUserProfileSkill.resx">
-      <DependentUpon>UCUserProfileSkill.cs</DependentUpon>
+    <EmbeddedResource Include="UCSkillTag.resx">
+      <DependentUpon>UCSkillTag.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCUserSubMenuRight.resx">
       <DependentUpon>UCUserSubMenuRight.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCNavigationButton.resx">
+      <DependentUpon>UCNavigationButton.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Utils\DialogBox.resx">
       <DependentUpon>DialogBox.cs</DependentUpon>
@@ -943,6 +964,13 @@
     <Content Include="Resources\alert-error.512x512.png" />
     <Content Include="Resources\alert-success.512x512.png" />
     <Content Include="Resources\alert-warning.512x480.png" />
+    <Content Include="Resources\default-avatar.png" />
+    <None Include="Resources\social1.png" />
+    <None Include="Resources\heart-regular1.png" />
+    <None Include="Resources\heart-solid1.png" />
+    <None Include="Resources\heart-solid.png" />
+    <None Include="Resources\location-dot-solid.png" />
+    <None Include="Resources\heart-regular.png" />
     <None Include="Resources\BackIcon.jpg" />
   </ItemGroup>
   <ItemGroup>

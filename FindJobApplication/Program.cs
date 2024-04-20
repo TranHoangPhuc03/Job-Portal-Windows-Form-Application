@@ -3,6 +3,7 @@ using FindJobApplication.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -19,13 +20,7 @@ namespace FindJobApplication
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-<<<<<<< HEAD
-           // Application.Run(new FLogin());
-            Application.Run(new FHome());
-=======
-           Application.Run(new FLogin());
->>>>>>> 83d6e7c68be127793323ed3a0233aef83c474efd
-
+            Application.Run(new FLogin());
         }
     }
 }

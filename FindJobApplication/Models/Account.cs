@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
+using System.Drawing;
+using System.IO;
 
 namespace FindJobApplication.Models
 {
@@ -14,7 +16,9 @@ namespace FindJobApplication.Models
         private string password;
         private string name;
         private string role;
-
+        private Image avatar = Image.FromFile(Path.GetFullPath(
+                Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..\\..\\Resources", "default-avatar.png"))
+            );
         public Account(string email, string password, string name, string role)
         {
             this.email = email;
@@ -93,6 +97,24 @@ namespace FindJobApplication.Models
             if (string.IsNullOrEmpty(value))
             {
                 throw new ArgumentException($"{fieldName} cannot be empty.");
+            }
+        }
+
+        public Image Avatar {
+            get => avatar;
+            set
+            {
+                if (value == null)
+                    throw new ArgumentException("Image cannot be empty.");
+
+                try
+                {
+                    avatar = value;
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Error loading image");
+                }
             }
         }
     }

@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 namespace FindJobApplication.Models
 {
     public  class AccountRole
-    {   
-        public static string Company = "company";
-        public static string User = "user";
+    {
+        public const string Company = "company";
+        public const string User = "user";
     }
 }

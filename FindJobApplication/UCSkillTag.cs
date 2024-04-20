@@ -11,18 +11,18 @@ using System.Windows.Forms;
 
 namespace FindJobApplication
 {
-    public partial class UCUserProfileSkill : UserControl
+    public partial class UCSkillTag : UserControl
     {
-        public UCUserProfileSkill()
+        public UCSkillTag()
         {
             InitializeComponent();
         }
-        public UCUserProfileSkill(UserSkill userSkill) : this()
+        public UCSkillTag(UserSkill userSkill) : this()
         {
             this.btnSkill.Text = userSkill.Name;
         }
 
-        public UCUserProfileSkill(Skill skill) : this()
+        public UCSkillTag(Skill skill) : this()
         {
             this.btnSkill.Text = skill.Name;
         }

@@ -51,7 +51,7 @@ namespace FindJobApplication
         private void btnAdd_Click(object sender, EventArgs e)
         {
             Skill skill = new Skill((int)this.cbSkill.SelectedValue, this.cbSkill.Text);
-            UCUserProfileSkill uCUserProfileSkill = new UCUserProfileSkill(skill);
+            UCSkillTag uCUserProfileSkill = new UCSkillTag(skill);
             uCUserProfileSkill.Tag = skill;
             this.pnlSkill.Controls.Add(uCUserProfileSkill);
         }
