@@ -157,6 +157,12 @@
     <Compile Include="FSignUp.Designer.cs">
       <DependentUpon>FSignUp.cs</DependentUpon>
     </Compile>
+    <Compile Include="FTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FTest.Designer.cs">
+      <DependentUpon>FTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="FUserProfilePersonalProjectEdit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -240,6 +246,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UCNavigationButton.cs">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UCCompany.cs">
       <SubType>UserControl</SubType>
@@ -445,6 +454,9 @@
     <Compile Include="UCUserSubMenuRight.Designer.cs">
       <DependentUpon>UCUserSubMenuRight.cs</DependentUpon>
     </Compile>
+    <Compile Include="UCNavigationButton.Designer.cs">
+      <DependentUpon>UCNavigationButton.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utils\DialogBox.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -486,6 +498,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FSignUp.resx">
       <DependentUpon>FSignUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FTest.resx">
+      <DependentUpon>FTest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FUserProfilePersonalProjectEdit.resx">
       <DependentUpon>FUserProfilePersonalProjectEdit.cs</DependentUpon>
@@ -617,6 +632,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UCUserSubMenuRight.resx">
       <DependentUpon>UCUserSubMenuRight.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCNavigationButton.resx">
+      <DependentUpon>UCNavigationButton.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Utils\DialogBox.resx">
       <DependentUpon>DialogBox.cs</DependentUpon>
