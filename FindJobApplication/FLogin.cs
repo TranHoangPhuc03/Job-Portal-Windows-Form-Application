@@ -18,54 +18,47 @@ namespace FindJobApplication
         public FLogin()
         {
             InitializeComponent();
-            txtPassword.Multiline = false;
-
+            this.ActiveControl = this.txtEmail;
+            this.lblShow.TextAlign = ContentAlignment.MiddleCenter;
+            this.AcceptButton = btnLogin;
         }
         private void llblSignUpUser_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            this.Hide();
             FSignUp dishplaySignUp = new FSignUp();
+            this.Hide();
             dishplaySignUp.ShowDialog();
-            this.Show();
+            this.Close();
         }
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string email = this.txtUsername.Text;
+            string email = this.txtEmail.Text;
             string password = this.txtPassword.Text;
 
             AccountDao accountDao = new AccountDao();
-            DataRow account = accountDao.FindAccountByEmail(email);
-            if (account == null || email != (string)account["email"] || password != (string)account["password"])
+            Account account = accountDao.FindAccountByEmail(email);
+
+            if (account == null || account.Password != password)
             {
                 MessageDialog.Show(this, "Your email or password is incorrect", "Login failed", MessageDialogStyle.Default);
             }
             else
             {
-                UserRoleDao userRoleDao = new UserRoleDao();
-                string roleName = userRoleDao.FindUserRoleById((int)account["role_id"]);
-                int accountId = (int)account["id"];
-                int loginId = 0;
                 Form redirectForm = null;
-                switch (roleName)
+                switch (account.Role)
                 {
                     case "company":
-                        CompanyProfileDao companyProfileDao = new CompanyProfileDao();
-                        loginId = companyProfileDao.FindCompanyIdByAccountId(accountId);
                         redirectForm = new FCompanyHome();
                         break;
 
                     case "user":
-                        UserProfileDao userProfileDao = new UserProfileDao();
-                        loginId = userProfileDao.FindUserIdByAccountId(accountId);
                         redirectForm = new FHome();
                         break;
                     default:
                         break;
                 }
 
-                Global.accountId = accountId;
-                Global.loginId = loginId;
-                Global.role = roleName;
+                Session.accountId = account.ID;
+                Session.role = account.Role;
                 
                 this.Hide();
                 redirectForm.ShowDialog();
@@ -82,13 +75,13 @@ namespace FindJobApplication
         {
             if (lblShow.Text == "Show")
             {
-                txtPassword.Multiline = true;
-                lblShow.Text = "Hide";
+                this.txtPassword.PasswordChar = '\0';
+                this.lblShow.Text = "Hide";
             }
             else
             {
-                txtPassword.Multiline = false;
-                lblShow.Text = "Show";
+                this.txtPassword.PasswordChar = '*';
+                this.lblShow.Text = "Show";
             }
         }
 

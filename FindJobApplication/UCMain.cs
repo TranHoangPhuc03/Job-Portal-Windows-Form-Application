@@ -50,8 +50,8 @@ namespace FindJobApplication
 
         private void btnSignOut_Click(object sender, EventArgs e)
         {
-            Global.loginId = 0;
-            Global.role = "";
+            Session.accountId = 0;
+            Session.role = "";
 
             FLogin fLogin = new FLogin();
             Form thisForm = (Form)this.TopLevelControl;

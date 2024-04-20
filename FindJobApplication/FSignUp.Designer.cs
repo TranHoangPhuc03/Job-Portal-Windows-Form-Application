@@ -28,12 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblShow = new System.Windows.Forms.Label();
             this.btnLogin = new Guna.UI2.WinForms.Guna2Button();
-            this.txtPassword = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtEmail = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtName = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnSignUp = new System.Windows.Forms.Label();
@@ -44,31 +40,23 @@
             this.gunaSeparator1 = new Guna.UI.WinForms.GunaSeparator();
             this.label5 = new System.Windows.Forms.Label();
             this.llblCreateBussiness = new Guna.UI.WinForms.GunaLinkLabel();
-            this.llblSignUpUser = new Guna.UI.WinForms.GunaLinkLabel();
+            this.llblSignIn = new Guna.UI.WinForms.GunaLinkLabel();
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnClose = new System.Windows.Forms.PictureBox();
+            this.txtName = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtEmail = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtPassword = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lblShow = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lblShow
-            // 
-            this.lblShow.AutoSize = true;
-            this.lblShow.BackColor = System.Drawing.Color.White;
-            this.lblShow.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblShow.Font = new System.Drawing.Font("Inter", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.lblShow.Location = new System.Drawing.Point(1187, 529);
-            this.lblShow.Name = "lblShow";
-            this.lblShow.Size = new System.Drawing.Size(51, 19);
-            this.lblShow.TabIndex = 56;
-            this.lblShow.Text = "Show";
-            this.lblShow.Click += new System.EventHandler(this.lblShow_Click);
             // 
             // btnLogin
             // 
             this.btnLogin.BackColor = System.Drawing.Color.Transparent;
             this.btnLogin.BorderRadius = 4;
+            this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogin.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnLogin.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnLogin.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -79,53 +67,8 @@
             this.btnLogin.Location = new System.Drawing.Point(815, 606);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(432, 45);
-            this.btnLogin.TabIndex = 52;
+            this.btnLogin.TabIndex = 4;
             this.btnLogin.Text = "Sign Up";
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.BorderRadius = 4;
-            this.txtPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPassword.DefaultText = "";
-            this.txtPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPassword.Font = new System.Drawing.Font("Inter", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.txtPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPassword.Location = new System.Drawing.Point(815, 512);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '●';
-            this.txtPassword.PlaceholderText = "password";
-            this.txtPassword.SelectedText = "";
-            this.txtPassword.Size = new System.Drawing.Size(432, 50);
-            this.txtPassword.TabIndex = 51;
-            this.txtPassword.TextOffset = new System.Drawing.Point(10, 5);
-            this.txtPassword.UseSystemPasswordChar = true;
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.BorderRadius = 4;
-            this.txtEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtEmail.DefaultText = "";
-            this.txtEmail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtEmail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtEmail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtEmail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtEmail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtEmail.Font = new System.Drawing.Font("Inter", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.txtEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtEmail.Location = new System.Drawing.Point(815, 404);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.PasswordChar = '\0';
-            this.txtEmail.PlaceholderText = "example@email.com";
-            this.txtEmail.SelectedText = "";
-            this.txtEmail.Size = new System.Drawing.Size(432, 50);
-            this.txtEmail.TabIndex = 50;
-            this.txtEmail.TextOffset = new System.Drawing.Point(10, 0);
             // 
             // label1
             // 
@@ -138,28 +81,6 @@
             this.label1.Size = new System.Drawing.Size(505, 58);
             this.label1.TabIndex = 49;
             this.label1.Text = "Create your account";
-            // 
-            // txtName
-            // 
-            this.txtName.BorderRadius = 4;
-            this.txtName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtName.DefaultText = "";
-            this.txtName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtName.Font = new System.Drawing.Font("Inter", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.txtName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtName.Location = new System.Drawing.Point(815, 291);
-            this.txtName.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.txtName.Name = "txtName";
-            this.txtName.PasswordChar = '\0';
-            this.txtName.PlaceholderText = "Your name";
-            this.txtName.SelectedText = "";
-            this.txtName.Size = new System.Drawing.Size(432, 50);
-            this.txtName.TabIndex = 57;
-            this.txtName.TextOffset = new System.Drawing.Point(10, 0);
             // 
             // label2
             // 
@@ -261,6 +182,7 @@
             // llblCreateBussiness
             // 
             this.llblCreateBussiness.AutoSize = true;
+            this.llblCreateBussiness.Cursor = System.Windows.Forms.Cursors.Hand;
             this.llblCreateBussiness.Font = new System.Drawing.Font("Inter SemiBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.llblCreateBussiness.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.llblCreateBussiness.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
@@ -272,19 +194,20 @@
             this.llblCreateBussiness.Text = "Create a bussiness account\r\n";
             this.llblCreateBussiness.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblCreateBussiness_LinkClicked);
             // 
-            // llblSignUpUser
+            // llblSignIn
             // 
-            this.llblSignUpUser.AutoSize = true;
-            this.llblSignUpUser.Font = new System.Drawing.Font("Inter SemiBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.llblSignUpUser.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.llblSignUpUser.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
-            this.llblSignUpUser.Location = new System.Drawing.Point(1106, 831);
-            this.llblSignUpUser.Name = "llblSignUpUser";
-            this.llblSignUpUser.Size = new System.Drawing.Size(114, 19);
-            this.llblSignUpUser.TabIndex = 69;
-            this.llblSignUpUser.TabStop = true;
-            this.llblSignUpUser.Text = "Please sign in";
-            this.llblSignUpUser.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblSignUpUser_LinkClicked);
+            this.llblSignIn.AutoSize = true;
+            this.llblSignIn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.llblSignIn.Font = new System.Drawing.Font("Inter SemiBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.llblSignIn.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.llblSignIn.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
+            this.llblSignIn.Location = new System.Drawing.Point(1106, 831);
+            this.llblSignIn.Name = "llblSignIn";
+            this.llblSignIn.Size = new System.Drawing.Size(114, 19);
+            this.llblSignIn.TabIndex = 69;
+            this.llblSignIn.TabStop = true;
+            this.llblSignIn.Text = "Please sign in";
+            this.llblSignIn.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblSignInUser_LinkClicked);
             // 
             // label6
             // 
@@ -309,26 +232,12 @@
             this.pictureBox1.TabIndex = 40;
             this.pictureBox1.TabStop = false;
             // 
-            // btnClose
-            // 
-            this.btnClose.BackColor = System.Drawing.Color.Transparent;
-            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClose.Image = global::FindJobApplication.Properties.Resources.Xoa;
-            this.btnClose.Location = new System.Drawing.Point(1412, 2);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(24, 24);
-            this.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnClose.TabIndex = 70;
-            this.btnClose.TabStop = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
             // FSignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(247)))));
             this.ClientSize = new System.Drawing.Size(1440, 1024);
-            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.llblSignUpUser);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.llblCreateBussiness);
@@ -341,11 +250,7 @@
             this.Controls.Add(this.btnSignUp);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtName);
-            this.Controls.Add(this.lblShow);
             this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -363,12 +268,8 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label lblShow;
         private Guna.UI2.WinForms.Guna2Button btnLogin;
-        private Guna.UI2.WinForms.Guna2TextBox txtPassword;
-        private Guna.UI2.WinForms.Guna2TextBox txtEmail;
         private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2TextBox txtName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label btnSignUp;
@@ -379,9 +280,8 @@
         private Guna.UI.WinForms.GunaSeparator gunaSeparator1;
         private System.Windows.Forms.Label label5;
         private Guna.UI.WinForms.GunaLinkLabel llblCreateBussiness;
-        private Guna.UI.WinForms.GunaLinkLabel llblSignUpUser;
+        private Guna.UI.WinForms.GunaLinkLabel llblSignIn;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox btnClose;
     }
 }

@@ -109,7 +109,7 @@ namespace FindJobApplication
         private void btnPostJob_Click(object sender, EventArgs e)
         {
             JobPost jobPost = getJobPostInfo();
-            jobPost.CompanyId = Global.loginId;
+            jobPost.CompanyId = Session.accountId;
             JobPostDao jobPostDao = new JobPostDao();
             if (this.formAction == "Create")
             {

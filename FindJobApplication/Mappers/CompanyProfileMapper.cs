@@ -15,37 +15,35 @@ namespace FindJobApplication.Mappers
 
             try
             {
-                int id = Convert.ToInt32(dr["id"]);
-                int companyAccountId = Convert.ToInt32(dr["company_account_id"]);
-                string name = dr["name"].ToString();
-                string email = dr["email"].ToString();
-                string phoneNumber = dr["phone_number"]?.ToString();
-                string address = dr["address"]?.ToString();
-                string companyImage = dr["company_image"]?.ToString();
-                DateTime? dateEstablished = dr["date_establish"] as DateTime?;
-                int companySize = (dr["company_size"] as int?) ?? 0;
-                string companyLink = dr["company_link"]?.ToString();
-                string reason = dr["reason"]?.ToString();
-                string overview = dr["overview"]?.ToString();
-                string taxCode = dr["tax_code"]?.ToString();
-                string businessLicense = dr["business_license"]?.ToString();
+                int id = dr.Field<int>("id");
+                string name = dr.Field<string>("name");
+                string email = dr.Field<string>("email");
+                string phoneNumber = dr.Field<string>("phone_number");
+                string address = dr.Field<string>("address");
+                string companyImage = dr.Field<string>("company_image");
+                DateTime dateEstablished = dr.Field<DateTime>("date_establish");
+                int companySize = dr.Field<int?>("company_size") ?? 0;
+                string companyLink = dr.Field<string>("company_link");
+                string reason = dr.Field<string>("reason");
+                string overview = dr.Field<string>("overview");
+                string taxCode = dr.Field<string>("tax_code");
+                string businessLicense = dr.Field<string>("business_license");
 
                 return new CompanyProfile(
-                    id,
-                    companyAccountId,
-                    name,
-                    email,
-                    phoneNumber,
-                    address,
-                    companyImage,
-                    dateEstablished,
-                    companySize,
-                    companyLink,
-                    reason,
-                    overview,
-                    taxCode,
-                    businessLicense
-                );
+                        id,
+                        name,
+                        email,
+                        phoneNumber,
+                        address,
+                        companyImage,
+                        dateEstablished,
+                        companySize,
+                        companyLink,
+                        reason,
+                        overview,
+                        taxCode,
+                        businessLicense
+                    );
             }
             catch (FormatException ex)
             {
