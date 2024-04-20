@@ -1,4 +1,7 @@
-﻿using System;
+﻿using FindJobApplication.Daos;
+using FindJobApplication.Models;
+using Guna.UI2.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -31,12 +34,12 @@ namespace FindJobApplication
             if (lblShow.Text == "Show")
             {
                 this.txtPassword.PasswordChar = '\0';
-                lblShow.Text = "Hide";
+                this.lblShow.Text = "Hide";
             }
             else
             {
                 this.txtPassword.PasswordChar = '*';
-                lblShow.Text = "Show";
+                this.lblShow.Text = "Show";
             }
         }
         private void llblCreateBussiness_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -47,9 +50,22 @@ namespace FindJobApplication
             this.Close();
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+        private void btnSignup_Click(object sender, EventArgs e)
         {
-            this.Close();
+            string email = this.txtEmail.Text;
+            string password = this.txtPassword.Text;
+            string name = this.txtName.Text;
+            AccountDao accountDao = new AccountDao();
+            int results = accountDao.SaveNewAccount(email, name, password, AccountRole.User);
+
+            if (results > 0)
+            {
+                MessageDialog.Show(this, "Sign up successful", "Success", MessageDialogStyle.Default);
+            }
+            else
+            {
+                MessageDialog.Show(this, "Sign up failed", "Error", MessageDialogStyle.Default);
+            }
         }
     }
 }

@@ -46,7 +46,6 @@
             this.btnSocial = new Guna.UI2.WinForms.Guna2Button();
             this.pnlNavbar = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.pnlTools.SuspendLayout();
             this.tpnlUserNav.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbUserImage)).BeginInit();
@@ -58,10 +57,8 @@
             // 
             // pnlTools
             // 
-            this.pnlTools.BackColor = System.Drawing.Color.White;
+            this.pnlTools.BackColor = System.Drawing.Color.Transparent;
             this.pnlTools.BorderRadius = 16;
-            this.pnlTools.Controls.Add(this.tpnlUserNav);
-            this.pnlTools.Controls.Add(this.tableLayoutPanel1);
             this.pnlTools.Location = new System.Drawing.Point(256, 0);
             this.pnlTools.Margin = new System.Windows.Forms.Padding(0);
             this.pnlTools.Name = "pnlTools";
@@ -73,10 +70,10 @@
             // 
             this.tpnlUserNav.ColumnCount = 1;
             this.tpnlUserNav.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tpnlUserNav.Controls.Add(this.guna2Button4, 0, 0);
             this.tpnlUserNav.Controls.Add(this.guna2Button3, 0, 2);
             this.tpnlUserNav.Controls.Add(this.guna2Button1, 0, 1);
-            this.tpnlUserNav.Controls.Add(this.guna2Button4, 0, 0);
-            this.tpnlUserNav.Location = new System.Drawing.Point(914, 69);
+            this.tpnlUserNav.Location = new System.Drawing.Point(1170, 71);
             this.tpnlUserNav.Margin = new System.Windows.Forms.Padding(0);
             this.tpnlUserNav.Name = "tpnlUserNav";
             this.tpnlUserNav.RowCount = 3;
@@ -160,7 +157,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanel1.Controls.Add(this.lblUsername, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.pbUserImage, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(914, 9);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(1170, 11);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
@@ -410,11 +407,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1440, 1024);
-            this.Controls.Add(this.pnlMain);
+            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.tpnlUserNav);
             this.Controls.Add(this.guna2PictureBox1);
             this.Controls.Add(this.pnlLogout);
             this.Controls.Add(this.pnlNavbar);
             this.Controls.Add(this.pnlTools);
+            this.Controls.Add(this.pnlMain);
             this.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -422,7 +421,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Recruitment Application";
             this.Load += new System.EventHandler(this.FHome_Load);
-            this.pnlTools.ResumeLayout(false);
             this.tpnlUserNav.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

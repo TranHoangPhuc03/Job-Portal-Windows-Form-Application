@@ -19,14 +19,13 @@ namespace FindJobApplication
         {
             InitializeComponent();
             this.ActiveControl = this.txtEmail;
-            this.lblShow.TextAlign = ContentAlignment.MiddleCenter;
             this.AcceptButton = btnLogin;
         }
         private void llblSignUpUser_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            FSignUp dishplaySignUp = new FSignUp();
+            FSignUp fSignUp = new FSignUp();
             this.Hide();
-            dishplaySignUp.ShowDialog();
+            fSignUp.ShowDialog();
             this.Close();
         }
         private void btnLogin_Click(object sender, EventArgs e)

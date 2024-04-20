@@ -21,11 +21,10 @@ namespace FindJobApplication
         public FSignUpCompany()
         {
             InitializeComponent();
-            lblFileName.Visible = false;
-            this.lblShow.TextAlign = ContentAlignment.MiddleCenter;
+            this.ActiveControl = this.txtName;
         }
 
-        private void llblSignInUser_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void llblSignIn_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             FLogin fLogin = new FLogin();
             this.Hide();
@@ -38,8 +37,7 @@ namespace FindJobApplication
             this.ofdBusinessLicense.Filter = "Image files (*.jpeg; *.jpg) | *.jpeg; *.jpg";
             if (this.ofdBusinessLicense.ShowDialog() == DialogResult.OK)
             {
-                lblFileName.Visible = true;
-                this.lblFileName.Text = this.ofdBusinessLicense.SafeFileName;
+                
             }
         }
 
@@ -73,11 +71,6 @@ namespace FindJobApplication
                 this.txtPassword.PasswordChar = '*';
                 lblShow.Text = "Show";
             }
-        }
-
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }
