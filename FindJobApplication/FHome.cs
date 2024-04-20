@@ -34,8 +34,7 @@ namespace FindJobApplication
             uCMain.BtnUser.Text = "David Beckham";
             uCMain.PbHomeUser.Image = Properties.Resources.man;
             uCMain.PnlMid.Controls.Add(uCUserSubMenuRight);
-            uCUserSubMenuRight.Location = new Point(uCMain.PnlMid.Width - uCUserSubMenuRight.Width, 0);
-            Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            uCUserSubMenuRight.Location = new Point(923, 0);
             uCUserSubMenuRight.hideMenu();
         }
         private void btnHome_Click(object sender, EventArgs e)
@@ -43,15 +42,12 @@ namespace FindJobApplication
             uCMain.updateStatus(uCMain.BtnHome);
             uCMain.PnlMid.Controls.Clear();
             uCMain.PnlMid.Controls.Add(uCHome);
-            uCHome.Location = new Point(uCMain.PnlMid.Width / 2 - uCHome.Width / 2, 0);
             uCHome.BtnSearch.Click += jobFilterSearch;
         }
         private void btnUser_Click(object sender, EventArgs e)
         {
             uCUserSubMenuRight.hideAndShowSubMenu();
-
         }
-
         private List<UCJob> BuildJobPostList(List<JobPost> list)
         {
             UCUserProfileSkill skill1 = new UCUserProfileSkill();

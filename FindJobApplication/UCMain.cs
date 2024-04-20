@@ -37,7 +37,7 @@ namespace FindJobApplication
         public GunaButton BtnStatus { get => btnStatus; set => btnStatus = value; }
         public Guna2Button BtnLogOut { get => btnSignOut; set => btnSignOut = value; }
         public Guna2Button BtnSocial { get => btnSocial; set => btnSocial = value; }
-        public PictureBox PbHomeUser { get => pbHomeUser; set => pbHomeUser = value; }
+        public Guna2CirclePictureBox PbHomeUser { get => pbHomeUser; set => pbHomeUser = value; }
         public void updateStatus(Guna2Button button)
         {
             btnStatus.Image = button.Image;
@@ -77,6 +77,19 @@ namespace FindJobApplication
         }
 
         private void btnHome_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnTopTrending_Click(object sender, EventArgs e)
+        {
+            UCTopTrending uCTopTrending = new UCTopTrending();
+            this.updateStatus(btnTopTrending);
+            this.PnlMid.Controls.Clear();
+            this.PnlMid.Controls.Add(uCTopTrending);
+        }
+
+        private void btnUser_Click(object sender, EventArgs e)
         {
 
         }
