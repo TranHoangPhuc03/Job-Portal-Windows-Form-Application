@@ -81,6 +81,7 @@
     <Compile Include="Daos\MailDao.cs" />
     <Compile Include="Daos\SkillDao.cs" />
     <Compile Include="Daos\SocialPostDao.cs" />
+    <Compile Include="Daos\TopTrendingDao.cs" />
     <Compile Include="Daos\UserProfileDao.cs" />
     <Compile Include="Daos\UserRoleDao.cs" />
     <Compile Include="Daos\YearExperienceDao.cs" />

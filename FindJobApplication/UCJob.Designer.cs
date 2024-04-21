@@ -29,18 +29,17 @@
         private void InitializeComponent()
         {
             this.pnlJob = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.btnSave = new Guna.UI2.WinForms.Guna2ImageCheckBox();
+            this.pnlSkill = new System.Windows.Forms.FlowLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblSalary = new System.Windows.Forms.Label();
-            this.pbSave = new System.Windows.Forms.PictureBox();
             this.pnlPicture = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.pBCompany = new Guna.UI2.WinForms.Guna2PictureBox();
             this.lLblNameJob = new Guna.UI.WinForms.GunaLinkLabel();
             this.lblNameCompany = new Guna.UI.WinForms.GunaLinkLabel();
             this.lblLocation = new System.Windows.Forms.Label();
-            this.pnlSkill = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlJob.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSave)).BeginInit();
             this.pnlPicture.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBCompany)).BeginInit();
             this.SuspendLayout();
@@ -51,10 +50,10 @@
             this.pnlJob.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
             this.pnlJob.BorderRadius = 24;
             this.pnlJob.BorderThickness = 1;
+            this.pnlJob.Controls.Add(this.btnSave);
             this.pnlJob.Controls.Add(this.pnlSkill);
             this.pnlJob.Controls.Add(this.pictureBox1);
             this.pnlJob.Controls.Add(this.lblSalary);
-            this.pnlJob.Controls.Add(this.pbSave);
             this.pnlJob.Controls.Add(this.pnlPicture);
             this.pnlJob.Controls.Add(this.lLblNameJob);
             this.pnlJob.Controls.Add(this.lblNameCompany);
@@ -65,6 +64,31 @@
             this.pnlJob.Padding = new System.Windows.Forms.Padding(12);
             this.pnlJob.Size = new System.Drawing.Size(521, 204);
             this.pnlJob.TabIndex = 2;
+            // 
+            // btnSave
+            // 
+            this.btnSave.CheckedState.Image = global::FindJobApplication.Properties.Resources.heart21;
+            this.btnSave.CheckedState.ImageSize = new System.Drawing.Size(36, 36);
+            this.btnSave.HoverState.ImageSize = new System.Drawing.Size(36, 36);
+            this.btnSave.Image = global::FindJobApplication.Properties.Resources.like;
+            this.btnSave.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnSave.ImageRotate = 0F;
+            this.btnSave.ImageSize = new System.Drawing.Size(36, 36);
+            this.btnSave.Location = new System.Drawing.Point(461, 153);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.PressedState.ImageSize = new System.Drawing.Size(36, 36);
+            this.btnSave.Size = new System.Drawing.Size(45, 41);
+            this.btnSave.TabIndex = 42;
+            this.btnSave.CheckedChanged += new System.EventHandler(this.btnSave_CheckedChanged);
+            // 
+            // pnlSkill
+            // 
+            this.pnlSkill.Location = new System.Drawing.Point(208, 158);
+            this.pnlSkill.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlSkill.Name = "pnlSkill";
+            this.pnlSkill.Size = new System.Drawing.Size(233, 36);
+            this.pnlSkill.TabIndex = 41;
+            this.pnlSkill.WrapContents = false;
             // 
             // pictureBox1
             // 
@@ -92,19 +116,6 @@
             this.lblSalary.TabIndex = 31;
             this.lblSalary.Text = "$ 10000";
             this.lblSalary.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // pbSave
-            // 
-            this.pbSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbSave.Image = global::FindJobApplication.Properties.Resources.heart_regular1;
-            this.pbSave.Location = new System.Drawing.Point(464, 158);
-            this.pbSave.Margin = new System.Windows.Forms.Padding(0);
-            this.pbSave.Name = "pbSave";
-            this.pbSave.Size = new System.Drawing.Size(36, 36);
-            this.pbSave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbSave.TabIndex = 32;
-            this.pbSave.TabStop = false;
-            this.pbSave.Click += new System.EventHandler(this.pbSave_Click);
             // 
             // pnlPicture
             // 
@@ -179,15 +190,6 @@
             this.lblLocation.TabIndex = 36;
             this.lblLocation.Text = "Ho Chi Minh";
             // 
-            // pnlSkill
-            // 
-            this.pnlSkill.Location = new System.Drawing.Point(208, 158);
-            this.pnlSkill.Margin = new System.Windows.Forms.Padding(0);
-            this.pnlSkill.Name = "pnlSkill";
-            this.pnlSkill.Size = new System.Drawing.Size(233, 36);
-            this.pnlSkill.TabIndex = 41;
-            this.pnlSkill.WrapContents = false;
-            // 
             // UCJob
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -200,7 +202,6 @@
             this.pnlJob.ResumeLayout(false);
             this.pnlJob.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSave)).EndInit();
             this.pnlPicture.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pBCompany)).EndInit();
             this.ResumeLayout(false);
@@ -211,7 +212,6 @@
 
         private Guna.UI2.WinForms.Guna2CustomGradientPanel pnlJob;
         private System.Windows.Forms.Label lblSalary;
-        private System.Windows.Forms.PictureBox pbSave;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel pnlPicture;
         private Guna.UI2.WinForms.Guna2PictureBox pBCompany;
         private Guna.UI.WinForms.GunaLinkLabel lLblNameJob;
@@ -219,5 +219,6 @@
         private System.Windows.Forms.Label lblLocation;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.FlowLayoutPanel pnlSkill;
+        private Guna.UI2.WinForms.Guna2ImageCheckBox btnSave;
     }
 }

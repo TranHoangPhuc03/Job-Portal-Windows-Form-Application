@@ -16,15 +16,14 @@ namespace FindJobApplication
 {
     public partial class UCJob : UserControl
     {
-        public int count = 0;
+        int idJob;
         public UCJob()
         {
             InitializeComponent();
-            pbSave.BringToFront();
         }
-
         public UCJob(JobPost jobPost, List<Skill> skills) : this()
         {
+            this.idJob = jobPost.Id;
             LocationDao locationDao = new LocationDao();
             var locationDict = locationDao.FindAllLocationDict();
             this.JobName.Text = standardizeNames(jobPost.Title);
@@ -50,6 +49,7 @@ namespace FindJobApplication
                     this.pnlSkill.Controls.Add(etc);
                 }
             }
+            if (isFavouriteJob(jobPost.Id)) btnSave.Checked = true;
         }
 
         public new GunaLinkLabel LLblNameJob { get => lLblNameJob; set { lLblNameJob = value; } }
@@ -59,22 +59,7 @@ namespace FindJobApplication
         public Label Salary { get => lblSalary; set { lblSalary = value; } }
         public FlowLayoutPanel PnlSkill { get => pnlSkill; set => pnlSkill = value; }
         public Guna2PictureBox PBCompany { get => pBCompany; set => pBCompany = value; }
-        public PictureBox PbSave { get => pbSave; }
-
-        private void pbSave_Click(object sender, EventArgs e)
-        {
-            if (count%2 == 0)
-            {
-                count++;
-                pbSave.Image = Properties.Resources.heart2;
-
-            }
-            else
-            {
-                count++;
-                pbSave.Image = Properties.Resources.like;
-            }
-        }
+        public Guna2ImageCheckBox BtnSave { get => btnSave; set => btnSave = value; }
 
         private void btnApply_Click(object sender, EventArgs e)
         {
@@ -85,14 +70,14 @@ namespace FindJobApplication
         private void lLblNameJob_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             UCJobInformation uCJobInformation = new UCJobInformation((int)(sender as Control).Tag);
-            UCMain.Instance.PnlMid.Controls.Add(uCJobInformation);
+            FHome.Instance.PnlMain.Controls.Add(uCJobInformation);
             uCJobInformation.BringToFront();
         }
 
         private void lblNameCompany_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             UCCompanyProfile uCCompanyProfile = new UCCompanyProfile((int)(sender as Control).Tag);
-            UCMain.Instance.PnlMid.Controls.Add(uCCompanyProfile);
+            FHome.Instance.PnlMain.Controls.Add(uCCompanyProfile);
             uCCompanyProfile.hideAllButton();
             uCCompanyProfile.BringToFront();
         }
@@ -108,5 +93,35 @@ namespace FindJobApplication
             }
         }
 
+        private void btnSave_CheckedChanged(object sender, EventArgs e)
+        {
+            UserProfileDao userProfileDao = new UserProfileDao();
+
+            if (btnSave.Checked == true)
+            {
+                if (!isFavouriteJob(idJob))
+                {
+                    userProfileDao.SaveNewFavouriteJob(idJob, Session.accountId);
+                }
+            }
+            else
+            {
+                if (isFavouriteJob(idJob))
+                {
+                    userProfileDao.DeleteFavouriteJob(idJob, Session.accountId);
+                }
+            }
+        }
+        private bool isFavouriteJob(int jobId)
+        {
+            UserProfileDao userProfileDao = new UserProfileDao();
+            List<int> jobIds = userProfileDao.FindAllJobPostIdFavourite(Session.accountId);
+            foreach (int idJob in jobIds)
+            {
+                if (idJob == jobId)
+                    return true;
+            }
+            return false;
+        }
     }
 }

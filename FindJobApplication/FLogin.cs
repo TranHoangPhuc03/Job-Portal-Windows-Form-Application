@@ -45,7 +45,7 @@ namespace FindJobApplication
                 Form redirectForm = null;
                 switch (account.Role)
                 {
-                    case "company":
+                    case "company":    
                         redirectForm = new FCompanyHome();
                         break;
 

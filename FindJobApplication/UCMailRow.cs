@@ -25,7 +25,7 @@ namespace FindJobApplication
         private void pbSeeDetail_Click(object sender, EventArgs e)
         {
             UCMailDetail uCmailDetail = new UCMailDetail();
-            UCMain.Instance.PnlMid.Controls.Add(uCmailDetail);
+            FHome.Instance.PnlMain.Controls.Add(uCmailDetail);
             uCmailDetail.BringToFront();
         }
     }

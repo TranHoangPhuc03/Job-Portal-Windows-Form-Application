@@ -34,7 +34,7 @@ namespace FindJobApplication
             {
                 UCJob jobControl = new UCJob();
                 jobControl.LLblNameJob.Text = "Job" + i.ToString();
-                jobControl.PbSave.Image = Properties.Resources.heart2;
+                jobControl.BtnSave.Checked = true;
                 list.Add(jobControl);
                 pnlListJobSave.Controls.Add(list[i]);
             }

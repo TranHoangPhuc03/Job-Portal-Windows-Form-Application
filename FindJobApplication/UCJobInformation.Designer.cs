@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCJobInformation));
             this.pnlMain = new System.Windows.Forms.FlowLayoutPanel();
             this.lblTimePost = new Guna.UI2.WinForms.Guna2Panel();
+            this.pnlSkill = new System.Windows.Forms.FlowLayoutPanel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -40,7 +41,6 @@
             this.lblTypeWork = new System.Windows.Forms.Label();
             this.lblWorkAddress = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pbSave = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.pbCompany1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.pbCompany2 = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -66,14 +66,13 @@
             this.lblRequired = new System.Windows.Forms.Label();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.btnBack = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.pnlSkill = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnSave = new Guna.UI2.WinForms.Guna2ImageCheckBox();
             this.pnlMain.SuspendLayout();
             this.lblTimePost.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSave)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCompany1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCompany2)).BeginInit();
@@ -96,6 +95,7 @@
             // 
             this.lblTimePost.AllowDrop = true;
             this.lblTimePost.BackColor = System.Drawing.Color.White;
+            this.lblTimePost.Controls.Add(this.btnSave);
             this.lblTimePost.Controls.Add(this.pnlSkill);
             this.lblTimePost.Controls.Add(this.pictureBox4);
             this.lblTimePost.Controls.Add(this.pictureBox2);
@@ -106,7 +106,6 @@
             this.lblTimePost.Controls.Add(this.lblTypeWork);
             this.lblTimePost.Controls.Add(this.lblWorkAddress);
             this.lblTimePost.Controls.Add(this.pictureBox3);
-            this.lblTimePost.Controls.Add(this.pbSave);
             this.lblTimePost.Controls.Add(this.flowLayoutPanel1);
             this.lblTimePost.Controls.Add(this.btnApply);
             this.lblTimePost.Controls.Add(this.lblSalary);
@@ -116,6 +115,15 @@
             this.lblTimePost.Name = "lblTimePost";
             this.lblTimePost.Size = new System.Drawing.Size(1154, 783);
             this.lblTimePost.TabIndex = 0;
+            // 
+            // pnlSkill
+            // 
+            this.pnlSkill.Location = new System.Drawing.Point(121, 717);
+            this.pnlSkill.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlSkill.Name = "pnlSkill";
+            this.pnlSkill.Size = new System.Drawing.Size(1009, 36);
+            this.pnlSkill.TabIndex = 42;
+            this.pnlSkill.WrapContents = false;
             // 
             // pictureBox4
             // 
@@ -217,18 +225,6 @@
             this.pictureBox3.TabIndex = 31;
             this.pictureBox3.TabStop = false;
             // 
-            // pbSave
-            // 
-            this.pbSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbSave.Image = global::FindJobApplication.Properties.Resources.like;
-            this.pbSave.Location = new System.Drawing.Point(1061, 233);
-            this.pbSave.Margin = new System.Windows.Forms.Padding(2);
-            this.pbSave.Name = "pbSave";
-            this.pbSave.Size = new System.Drawing.Size(69, 62);
-            this.pbSave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbSave.TabIndex = 10;
-            this.pbSave.TabStop = false;
-            // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.pbCompany1);
@@ -284,13 +280,14 @@
             this.btnApply.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnApply.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnApply.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(75)))), ((int)(((byte)(43)))));
-            this.btnApply.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnApply.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.btnApply.ForeColor = System.Drawing.Color.White;
             this.btnApply.Location = new System.Drawing.Point(52, 233);
             this.btnApply.Name = "btnApply";
             this.btnApply.Size = new System.Drawing.Size(990, 62);
             this.btnApply.TabIndex = 3;
             this.btnApply.Text = "Apply now";
+            this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
             // 
             // lblSalary
             // 
@@ -520,14 +517,21 @@
             this.btnBack.TabStop = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // pnlSkill
+            // btnSave
             // 
-            this.pnlSkill.Location = new System.Drawing.Point(121, 717);
-            this.pnlSkill.Margin = new System.Windows.Forms.Padding(0);
-            this.pnlSkill.Name = "pnlSkill";
-            this.pnlSkill.Size = new System.Drawing.Size(1009, 36);
-            this.pnlSkill.TabIndex = 42;
-            this.pnlSkill.WrapContents = false;
+            this.btnSave.CheckedState.Image = global::FindJobApplication.Properties.Resources.heart21;
+            this.btnSave.CheckedState.ImageSize = new System.Drawing.Size(50, 50);
+            this.btnSave.HoverState.ImageSize = new System.Drawing.Size(50, 50);
+            this.btnSave.Image = global::FindJobApplication.Properties.Resources.like;
+            this.btnSave.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnSave.ImageRotate = 0F;
+            this.btnSave.ImageSize = new System.Drawing.Size(50, 50);
+            this.btnSave.Location = new System.Drawing.Point(1062, 233);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.PressedState.ImageSize = new System.Drawing.Size(50, 50);
+            this.btnSave.Size = new System.Drawing.Size(68, 62);
+            this.btnSave.TabIndex = 43;
+            this.btnSave.CheckedChanged += new System.EventHandler(this.btnSave_CheckedChanged);
             // 
             // UCJobInformation
             // 
@@ -546,7 +550,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSave)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbCompany1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCompany2)).EndInit();
@@ -561,7 +564,6 @@
         #endregion
         private System.Windows.Forms.FlowLayoutPanel pnlMain;
         private Guna.UI2.WinForms.Guna2Panel lblTimePost;
-        private System.Windows.Forms.PictureBox pbSave;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private Guna.UI2.WinForms.Guna2Button btnApply;
         private System.Windows.Forms.Label lblSalary;
@@ -597,5 +599,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private Guna.UI2.WinForms.Guna2PictureBox btnBack;
         private System.Windows.Forms.FlowLayoutPanel pnlSkill;
+        private Guna.UI2.WinForms.Guna2ImageCheckBox btnSave;
     }
 }
