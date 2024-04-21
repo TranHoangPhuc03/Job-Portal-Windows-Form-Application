@@ -37,18 +37,6 @@ namespace FindJobApplication
             this.pnlListJob = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
-            // pnlListJob
-            // 
-            this.pnlListJob.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlListJob.AutoScroll = true;
-            this.pnlListJob.Location = new System.Drawing.Point(20, 94);
-            this.pnlListJob.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.pnlListJob.Name = "pnlListJob";
-            this.pnlListJob.Size = new System.Drawing.Size(1144, 818);
-            this.pnlListJob.TabIndex = 41;
-            // 
             // cbExperience
             // 
             this.cbExperience.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -159,6 +147,9 @@ namespace FindJobApplication
             // 
             // pnlListJob
             // 
+            this.pnlListJob.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlListJob.AutoScroll = true;
             this.pnlListJob.Location = new System.Drawing.Point(20, 119);
             this.pnlListJob.Margin = new System.Windows.Forms.Padding(0);
@@ -180,6 +171,7 @@ namespace FindJobApplication
             this.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.Name = "UCHome";
             this.Size = new System.Drawing.Size(1184, 935);
+            this.Load += new System.EventHandler(this.UCHome_Load);
             this.ResumeLayout(false);
 
         }

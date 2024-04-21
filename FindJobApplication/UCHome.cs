@@ -30,12 +30,16 @@ namespace FindJobApplication
 
         }
 
+
+
         public void fillJobPostToPanel(List<JobPost> jobPosts)
         {
             this.pnlListJob.Controls.Clear();
-            this.pnlListJob.SuspendLayout();
+
             SkillDao skillDao = new SkillDao();
+            UserProfileDao userProfileDao = new UserProfileDao();
             List<Skill> skills = skillDao.FindAllSkill();
+            List<int> favouriteJobs = userProfileDao.FindAllJobPostIdFavourite(Session.accountId);
 
             foreach (JobPost jobPost in jobPosts)
             {
@@ -44,10 +48,28 @@ namespace FindJobApplication
                 {
                     filteredSkill.Add(skills.FirstOrDefault(o => o.Id == skillId));
                 }
-                UCJob uCJob = new UCJob(jobPost, filteredSkill);
+                bool isFavourite = favouriteJobs.Contains(jobPost.Id);
+
+                UCJob uCJob = new UCJob(jobPost, filteredSkill, isFavourite);
                 this.pnlListJob.Controls.Add(uCJob);
             }
-            this.pnlListJob.ResumeLayout();
+        }
+
+        private void UCHome_Load(object sender, EventArgs e)
+        {
+            JobPostDao jobPostDao = new JobPostDao();
+            YearExperienceDao yearExperienceDao = new YearExperienceDao();
+            LocationDao locationDao = new LocationDao();
+
+            this.CbLocation.ValueMember = "id";
+            this.CbLocation.DisplayMember = "name";
+            this.CbLocation.DataSource = locationDao.FindAllLocationList();
+
+            this.CbExperince.ValueMember = "id";
+            this.CbExperince.DisplayMember = "name";
+            this.CbExperince.DataSource = yearExperienceDao.FindAllExperienceList();
+
+            this.fillJobPostToPanel(jobPostDao.FindAllJobPost());
         }
     }
 }
