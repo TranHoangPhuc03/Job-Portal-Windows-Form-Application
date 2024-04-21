@@ -375,12 +375,13 @@ namespace FindJobApplication.Daos
         public int SaveNewFollowingCompany(int userAccountId, int companyAccountId)
         {
             string sqlStr = @"
-                            INSERT INTO following(company_id, user_id)
-                            VALUES (@CompanyAccountId, @UserAccountId);";
+                            INSERT INTO following(account_following, account_followed)
+                            VALUES (@UserAccountId, @CompanyAccountId);";
             Dictionary<string, object> parameters = new Dictionary<string, object>
             {
-                { "@CompanyAccountId", companyAccountId },
-                { "@UserAccountId", companyAccountId }
+                { "@UserAccountId", userAccountId },
+                { "@CompanyAccountId", companyAccountId }
+                
             };
 
             return db.Execute(sqlStr, parameters);
@@ -405,9 +406,9 @@ namespace FindJobApplication.Daos
         public List<int> FindAllCompanyIdFollowing(int userAccountId)
         {
             string sqlStr = @"
-                            SELECT company_id
+                            SELECT account_followed
                             FROM following
-                            WHERE user_id = @UserAccountId;";
+                            WHERE account_following = @UserAccountId;";
             Dictionary<string, object> parameters = new Dictionary<string, object>
             {
                 { "@UserAccountId", userAccountId },
@@ -416,7 +417,7 @@ namespace FindJobApplication.Daos
             DataTable dt = db.Read(sqlStr, parameters);
             List<int> list = new List<int>();
             foreach (DataRow dr in dt.Rows)
-                list.Add(Convert.ToInt32(dr["company_id"]));
+                list.Add(Convert.ToInt32(dr["account_followed"]));
 
             return list;
         }
@@ -433,11 +434,11 @@ namespace FindJobApplication.Daos
 
             return db.Execute(sqlStr, parameters);
         }
-        public int DeleteFollowingCompany(int companyAccoutnId, int userAccountId)
+        public int DeleteFollowingCompany(int userAccountId, int companyAccoutnId)
         {
             string sqlStr = @"
                             DELETE FROM following
-                            WHERE company_id = @CompanyAccountId AND user_id = @UserAccountId;";
+                            WHERE account_followed = @CompanyAccountId AND account_following = @UserAccountId;";
             Dictionary<string, object> parameters = new Dictionary<string, object>
             {
                 { "@CompanyAccountId", companyAccoutnId },

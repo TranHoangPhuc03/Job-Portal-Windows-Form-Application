@@ -71,9 +71,9 @@ namespace FindJobApplication.Daos
         public List<int> FindAllUserIdFollowing(int companyAccountId)
         {
             string sqlStr = @"
-                            SELECT *
+                            SELECT account_followed
                             FROM following 
-                            WHERE company_id = @CompanyAccountId;";
+                            WHERE account_following = @CompanyAccountId;";
             Dictionary<string, object> parameters = new Dictionary<string, object>
             {
                 { "@CompanyAccountId", companyAccountId }
@@ -82,14 +82,14 @@ namespace FindJobApplication.Daos
             DataTable dt = db.Read(sqlStr, parameters);
             List<int> list = new List<int>();
             foreach (DataRow dr in dt.Rows)
-                list.Add(Convert.ToInt32(dr["user_id"]));
+                list.Add(Convert.ToInt32(dr["account_followed"]));
 
             return list;
         }
 
         public int SaveUserIdFollowing(int companyAccountId, int userAccountId)
         {
-            string sqlStr = @"INSERT INTO following (company_id, account_id)
+            string sqlStr = @"INSERT INTO following (account_following, account_followed)
                             VALUES (@CompanyAccountId, @UserAccountId);";
             Dictionary<string, object> parameters = new Dictionary<string, object>
             {
@@ -102,7 +102,7 @@ namespace FindJobApplication.Daos
 
         public int DeleteUserIdFollowing(int companyAccountId, int userAccountId)
         {
-            string sqlStr = @"DELETE FROM following WHERE company_id=@CompanyAccountId AND user_id=@UserAccountId;";
+            string sqlStr = @"DELETE FROM following WHERE account_following=@CompanyAccountId AND account_followed=@UserAccountId;";
             Dictionary<string, object> parameters = new Dictionary<string, object>
             {
                 { "@CompanyAccountId", companyAccountId },

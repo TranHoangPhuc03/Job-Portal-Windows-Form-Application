@@ -15,7 +15,6 @@ namespace FindJobApplication
     public partial class UCCompanyProfile : UserControl
     {
         private int companyId;
-        public static int statusBtnFollowCompany = 1;
         public UCCompanyProfile()
         {
             InitializeComponent();
@@ -50,15 +49,16 @@ namespace FindJobApplication
 
         private void btnFollow_Click(object sender, EventArgs e)
         {
-            if (statusBtnFollowCompany == 1)
+            UserProfileDao userProfileDao = new UserProfileDao();
+            if (btnFollow.Text == "Following")
             {
-                btnFollow.Text = "Following";
-                statusBtnFollowCompany = 2;
+                btnFollow.Text = "Follow";
+                userProfileDao.DeleteFollowingCompany(Session.accountId, companyId);
             }
             else
             {
-                btnFollow.Text = "Follow";
-                statusBtnFollowCompany = 1;
+                btnFollow.Text = "Following";
+                userProfileDao.SaveNewFollowingCompany(Session.accountId, companyId);
             }
         }
 
@@ -78,6 +78,10 @@ namespace FindJobApplication
             this.lblProfileLink.Text = companyProfile.CompanyLink;
             this.rtxtTop3Reason.Text = companyProfile.Reason;
             this.rTxtOverview.Text = companyProfile.Overview;
+            if (isFollowing(companyId))
+            {
+                btnFollow.Text = "Following";
+            }
         }
 
         private void pbTop3Edit_Click(object sender, EventArgs e)
@@ -113,6 +117,17 @@ namespace FindJobApplication
                 parentControl.Controls.Remove(this);
                 this.Dispose();
             }
+        }
+        private bool isFollowing(int id)
+        {
+            UserProfileDao userProfileDao = new UserProfileDao();
+            List<int> followeds = userProfileDao.FindAllCompanyIdFollowing(Session.accountId);
+            foreach (int followed in followeds)
+            {
+                if (followed == id)
+                    return true;
+            }
+            return false;
         }
     }
 }

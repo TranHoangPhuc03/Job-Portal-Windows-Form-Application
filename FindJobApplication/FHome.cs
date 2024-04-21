@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FindJobApplication.Models;
+using Guna.UI2.WinForms;
 
 namespace FindJobApplication
 {
@@ -17,20 +18,32 @@ namespace FindJobApplication
     {
         UCHome uCHome = new UCHome();
         UCUserSubMenuRight uCUserSubMenuRight = new UCUserSubMenuRight();
-
+        static FHome _obj;
         public FHome()
         {
             InitializeComponent();
-            customForUser();
         }
-        private void customForUser ()
+        public static FHome Instance
         {
-            Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            uCUserSubMenuRight.hideMenu();
+            get
+            {
+                if (_obj == null)
+                {
+                    _obj = new FHome();
+                }
+                return _obj;
+            } 
         }
+        public Guna2CustomGradientPanel PnlMain { get => pnlMain; set => pnlMain = value; }
+
+
         private void btnHome_Click(object sender, EventArgs e)
         {
-            uCHome.BtnSearch.Click += jobFilterSearch;
+            pnlMain.Controls.Clear();
+            JobPostDao jobPostDao = new JobPostDao();
+
+            this.uCHome.fillJobPostToPanel(jobPostDao.FindAllJobPost());
+            this.pnlMain.Controls.Add(uCHome);
         }
         private void btnUser_Click(object sender, EventArgs e)
         {
@@ -39,6 +52,7 @@ namespace FindJobApplication
 
         private void FHome_Load(object sender, EventArgs e)
         {
+            _obj = this;
             this.Hide();
             JobPostDao jobPostDao = new JobPostDao();
             YearExperienceDao yearExperienceDao = new YearExperienceDao();
@@ -75,6 +89,62 @@ namespace FindJobApplication
         private void pbUserImage_Click(object sender, EventArgs e)
         {
             this.tpnlUserNav.AutoSize ^= true;
+        }
+
+        private void btnSocial_Click(object sender, EventArgs e)
+        {
+            UCSocial uCSocial = new UCSocial();
+            this.pnlMain.Controls.Clear();
+            this.pnlMain.Controls.Add(uCSocial);
+        }
+
+        private void btnMail_Click(object sender, EventArgs e)
+        {
+            UCMail uCMail = new UCMail();
+            this.pnlMain.Controls.Clear();
+            this.pnlMain.Controls.Add(uCMail);
+        }
+
+        private void btnTrending_Click(object sender, EventArgs e)
+        {
+            UCTopTrending uCTopTrending = new UCTopTrending();
+            this.pnlMain.Controls.Clear();
+            this.pnlMain.Controls.Add(uCTopTrending);
+        }
+
+        private void btnProfile_Click(object sender, EventArgs e)
+        {
+            UCProfile uCProfile = new UCProfile();
+            this.pnlMain.Controls.Clear();
+            this.pnlMain.Controls.Add(uCProfile);
+        }
+
+        private void btnFavourites_Click(object sender, EventArgs e)
+        {
+            UCUserListCompanyFollowing uCUserListCompanyFollowing = new UCUserListCompanyFollowing();
+            this.pnlMain.Controls.Clear();
+            this.pnlMain.Controls.Add(uCUserListCompanyFollowing);
+        }
+
+        private void btnMyJob_Click(object sender, EventArgs e)
+        {
+            UCMyJob uCMyJob = new UCMyJob();
+            this.pnlMain.Controls.Clear();
+            this.pnlMain.Controls.Add(uCMyJob);
+        }
+
+        private void btnHistorySocial_Click(object sender, EventArgs e)
+        {
+            UCSocialHistory uCSocialHistory = new UCSocialHistory();
+            this.pnlMain.Controls.Clear();
+            this.pnlMain.Controls.Add(uCSocialHistory);
+        }
+
+        private void btnSetting_Click(object sender, EventArgs e)
+        {
+            UCSetting uCSetting = new UCSetting();
+            this.pnlMain.Controls.Clear();
+            this.pnlMain.Controls.Add(uCSetting);
         }
     }
 }

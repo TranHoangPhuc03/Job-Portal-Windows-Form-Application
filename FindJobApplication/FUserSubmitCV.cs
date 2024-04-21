@@ -44,5 +44,10 @@ namespace FindJobApplication
                 MessageDialog.Show(this, "You applied unsuccessfully", "Error", MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Light);
             }
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
