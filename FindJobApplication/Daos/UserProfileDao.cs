@@ -362,7 +362,7 @@ namespace FindJobApplication.Daos
         public int SaveNewFavouriteJob(int jobPostId, int userId)
         {
             string sqlStr = @"
-                            INSERT INTO user_favourite_job(user_id, job_post_id)
+                            INSERT INTO user_favourite_job(account_id, job_post_id)
                             VALUES (@UserId, @JobPostId);";
             Dictionary<string, object> parameters = new Dictionary<string, object>
             {
@@ -390,7 +390,7 @@ namespace FindJobApplication.Daos
         {
             string sqlStr = @"SELECT job_post_id
                             FROM user_favourite_job
-                            WHERE user_id = @UserId;";
+                            WHERE account_id = @UserId;";
             Dictionary<string, object> parameters = new Dictionary<string, object>
             {
                 { "@UserId", userId },
@@ -425,7 +425,7 @@ namespace FindJobApplication.Daos
         {
             string sqlStr = @"
                             DELETE FROM user_favourite_job
-                            WHERE user_id = @UserId AND job_post_id = @JobPostId;";
+                            WHERE account_id = @UserId AND job_post_id = @JobPostId;";
             Dictionary<string, object> parameters = new Dictionary<string, object>
             {
                 { "@UserId", userId },

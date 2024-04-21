@@ -21,7 +21,7 @@ namespace FindJobApplication
         {
             InitializeComponent();
         }
-        public UCJob(JobPost jobPost, List<Skill> skills) : this()
+        public UCJob(JobPost jobPost, List<Skill> skills, bool isFavourite) : this()
         {
             this.idJob = jobPost.Id;
             LocationDao locationDao = new LocationDao();
@@ -33,6 +33,7 @@ namespace FindJobApplication
             this.Tag = jobPost;
             this.LLblNameJob.Tag = jobPost.Id;
             this.CompanyName.Tag = jobPost.CompanyId;
+
             foreach (Skill skill in skills)
             {
                 UCSkillTag uCSkillTag = new UCSkillTag(skill);
@@ -49,7 +50,8 @@ namespace FindJobApplication
                     this.pnlSkill.Controls.Add(etc);
                 }
             }
-            if (isFavouriteJob(jobPost.Id)) btnSave.Checked = true;
+
+            btnSave.Checked = isFavourite;
         }
 
         public new GunaLinkLabel LLblNameJob { get => lLblNameJob; set { lLblNameJob = value; } }
@@ -93,35 +95,18 @@ namespace FindJobApplication
             }
         }
 
-        private void btnSave_CheckedChanged(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e)
         {
             UserProfileDao userProfileDao = new UserProfileDao();
 
             if (btnSave.Checked == true)
             {
-                if (!isFavouriteJob(idJob))
-                {
-                    userProfileDao.SaveNewFavouriteJob(idJob, Session.accountId);
-                }
+                userProfileDao.SaveNewFavouriteJob(idJob, Session.accountId);
             }
             else
             {
-                if (isFavouriteJob(idJob))
-                {
-                    userProfileDao.DeleteFavouriteJob(idJob, Session.accountId);
-                }
+                userProfileDao.DeleteFavouriteJob(idJob, Session.accountId);
             }
-        }
-        private bool isFavouriteJob(int jobId)
-        {
-            UserProfileDao userProfileDao = new UserProfileDao();
-            List<int> jobIds = userProfileDao.FindAllJobPostIdFavourite(Session.accountId);
-            foreach (int idJob in jobIds)
-            {
-                if (idJob == jobId)
-                    return true;
-            }
-            return false;
         }
     }
 }

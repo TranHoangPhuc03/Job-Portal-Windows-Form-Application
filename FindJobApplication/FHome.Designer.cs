@@ -60,7 +60,6 @@
             // 
             // tpnlUserNav
             // 
-            this.tpnlUserNav.AutoSize = true;
             this.tpnlUserNav.ColumnCount = 1;
             this.tpnlUserNav.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tpnlUserNav.Controls.Add(this.btnHistorySocial, 0, 4);
@@ -78,7 +77,7 @@
             this.tpnlUserNav.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tpnlUserNav.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tpnlUserNav.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tpnlUserNav.Size = new System.Drawing.Size(250, 250);
+            this.tpnlUserNav.Size = new System.Drawing.Size(250, 0);
             this.tpnlUserNav.TabIndex = 5;
             // 
             // btnHistorySocial
@@ -120,7 +119,7 @@
             this.btnSetting.Location = new System.Drawing.Point(0, 200);
             this.btnSetting.Margin = new System.Windows.Forms.Padding(0);
             this.btnSetting.Name = "btnSetting";
-            this.btnSetting.Size = new System.Drawing.Size(250, 50);
+            this.btnSetting.Size = new System.Drawing.Size(250, 20);
             this.btnSetting.TabIndex = 7;
             this.btnSetting.Text = "Setting";
             this.btnSetting.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -281,6 +280,7 @@
             this.guna2Button2.Text = "Logout";
             this.guna2Button2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button2.TextOffset = new System.Drawing.Point(50, 0);
+            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // tpnlNavBtn
             // 
@@ -535,7 +535,6 @@
             this.pnlNavbar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

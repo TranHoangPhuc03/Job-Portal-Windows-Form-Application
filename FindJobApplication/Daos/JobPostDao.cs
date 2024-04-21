@@ -170,7 +170,7 @@ namespace FindJobApplication.Daos
         public int CountUserAppliedForOneJob(int jobPostId)
         {
             string sqlStr = @"
-                            SELECT count(user_id) as numer_user_apply
+                            SELECT count(account_id) as numer_user_apply
                             FROM user_apply_job
                             WHERE job_post_id = @JobPostId;";
             Dictionary<string, object> parameters = new Dictionary<string, object>
@@ -182,7 +182,7 @@ namespace FindJobApplication.Daos
         }
         public List<int> FindAllUserIdAppliedForOneJob(int jobPostId)
         {
-            string sqlStr = @"SELECT user_id
+            string sqlStr = @"SELECT account_id
                             FROM user_apply_job
                             WHERE job_post_id = @JobPostId;";
             Dictionary<string, object> parameters = new Dictionary<string, object>
@@ -193,7 +193,7 @@ namespace FindJobApplication.Daos
             DataTable dt = db.Read(sqlStr);
             List<int> list = new List<int>();
             foreach (DataRow dr in dt.Rows)
-                list.Add((int)dr["user_id"]);
+                list.Add((int)dr["account_id"]);
 
             return list;
         }

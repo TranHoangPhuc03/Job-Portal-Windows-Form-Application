@@ -79,7 +79,7 @@
             this.btnSave.PressedState.ImageSize = new System.Drawing.Size(36, 36);
             this.btnSave.Size = new System.Drawing.Size(45, 41);
             this.btnSave.TabIndex = 42;
-            this.btnSave.CheckedChanged += new System.EventHandler(this.btnSave_CheckedChanged);
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // pnlSkill
             // 

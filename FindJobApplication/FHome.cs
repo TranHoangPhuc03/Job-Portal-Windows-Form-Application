@@ -54,19 +54,6 @@ namespace FindJobApplication
         {
             _obj = this;
             this.Hide();
-            JobPostDao jobPostDao = new JobPostDao();
-            YearExperienceDao yearExperienceDao = new YearExperienceDao();
-            LocationDao locationDao = new LocationDao();
-
-            this.uCHome.CbLocation.ValueMember = "id";
-            this.uCHome.CbLocation.DisplayMember = "name";
-            this.uCHome.CbLocation.DataSource = locationDao.FindAllLocationList();
-
-            this.uCHome.CbExperince.ValueMember = "id";
-            this.uCHome.CbExperince.DisplayMember = "name";
-            this.uCHome.CbExperince.DataSource = yearExperienceDao.FindAllExperienceList();
-
-            this.uCHome.fillJobPostToPanel(jobPostDao.FindAllJobPost());
             this.pnlMain.Controls.Add(uCHome);
             this.Show();
         }
@@ -145,6 +132,18 @@ namespace FindJobApplication
             UCSetting uCSetting = new UCSetting();
             this.pnlMain.Controls.Clear();
             this.pnlMain.Controls.Add(uCSetting);
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            Session.accountId = 0;
+            Session.role = "";
+
+            FLogin fLogin = new FLogin();
+            Form thisForm = (Form)this.TopLevelControl;
+            thisForm.Hide();
+            fLogin.ShowDialog();
+            thisForm.Close();
         }
     }
 }

@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -52,19 +53,27 @@ namespace FindJobApplication
 
         private void btnSignup_Click(object sender, EventArgs e)
         {
-            string email = this.txtEmail.Text;
-            string password = this.txtPassword.Text;
-            string name = this.txtName.Text;
-            AccountDao accountDao = new AccountDao();
-            int results = accountDao.SaveNewAccount(email, name, password, AccountRole.User);
+            try
+            {
+                string email = this.txtEmail.Text;
+                string password = this.txtPassword.Text;
+                string name = this.txtName.Text;
+                Account account = new Account(email, password, name, AccountRole.User);
+                AccountDao accountDao = new AccountDao();
+                int results = accountDao.SaveNewAccount(account.Email, account.Name, account.Password, account.Role);
 
-            if (results > 0)
-            {
-                MessageDialog.Show(this, "Sign up successful", "Success", MessageDialogStyle.Default);
+                if (results > 0)
+                {
+                    MessageDialog.Show(this, "Sign up successful", "Success", MessageDialogStyle.Default);
+                }
+                else
+                {
+                    MessageDialog.Show(this, "Sign up failed", "Error", MessageDialogStyle.Default);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageDialog.Show(this, "Sign up failed", "Error", MessageDialogStyle.Default);
+                MessageBox.Show(ex.Message);
             }
         }
     }
