@@ -18,7 +18,7 @@ namespace FindJobApplication.Daos
         }
         public DataTable TopFiveJobTrending()
         {
-            string sqlStr = $"SELECT TOP 5 job_post_id, title as nameTop, COUNT(job_post_id) AS cnt \r\nFROM user_apply_job \r\nINNER JOIN job_post ON job_post_id = id \r\nGROUP BY job_post_id, title \r\nORDER BY cnt DESC";
+            string sqlStr = @"SELECT TOP 5 job_post_id, title as nameTop, COUNT(job_post_id) AS cnt \r\nFROM user_apply_job \r\nINNER JOIN job_post ON job_post_id = id \r\nGROUP BY job_post_id, title \r\nORDER BY cnt DESC";
             return db.Read(sqlStr);
         }
         public DataTable TopFiveCompanyTrending() 

@@ -39,7 +39,7 @@
             this.lblUsername = new System.Windows.Forms.Label();
             this.pbUserImage = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.pnlLogout = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnLogout = new Guna.UI2.WinForms.Guna2Button();
             this.tpnlNavBtn = new System.Windows.Forms.TableLayoutPanel();
             this.btnTrending = new Guna.UI2.WinForms.Guna2Button();
             this.btnSocial = new Guna.UI2.WinForms.Guna2Button();
@@ -243,7 +243,7 @@
             // 
             this.pnlLogout.BackColor = System.Drawing.Color.White;
             this.pnlLogout.BorderRadius = 16;
-            this.pnlLogout.Controls.Add(this.guna2Button2);
+            this.pnlLogout.Controls.Add(this.btnLogout);
             this.pnlLogout.Location = new System.Drawing.Point(0, 934);
             this.pnlLogout.Margin = new System.Windows.Forms.Padding(0);
             this.pnlLogout.Name = "pnlLogout";
@@ -251,36 +251,36 @@
             this.pnlLogout.Size = new System.Drawing.Size(248, 90);
             this.pnlLogout.TabIndex = 4;
             // 
-            // guna2Button2
+            // btnLogout
             // 
-            this.guna2Button2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2Button2.BorderRadius = 12;
-            this.guna2Button2.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.guna2Button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Button2.CustomImages.CheckedImage = global::FindJobApplication.Properties.Resources.sign_out_option_White;
-            this.guna2Button2.CustomImages.HoveredImage = global::FindJobApplication.Properties.Resources.sign_out_option_White;
-            this.guna2Button2.CustomImages.Image = global::FindJobApplication.Properties.Resources.sign_out_option;
-            this.guna2Button2.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button2.CustomImages.ImageSize = new System.Drawing.Size(40, 40);
-            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.FillColor = System.Drawing.Color.White;
-            this.guna2Button2.Font = new System.Drawing.Font("Inter", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.guna2Button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(33)))), ((int)(((byte)(56)))));
-            this.guna2Button2.ImageSize = new System.Drawing.Size(40, 40);
-            this.guna2Button2.Location = new System.Drawing.Point(20, 13);
-            this.guna2Button2.Margin = new System.Windows.Forms.Padding(0);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(208, 65);
-            this.guna2Button2.TabIndex = 2;
-            this.guna2Button2.Text = "Logout";
-            this.guna2Button2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button2.TextOffset = new System.Drawing.Point(50, 0);
-            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
+            this.btnLogout.BorderRadius = 12;
+            this.btnLogout.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogout.CustomImages.CheckedImage = global::FindJobApplication.Properties.Resources.sign_out_option_White;
+            this.btnLogout.CustomImages.HoveredImage = global::FindJobApplication.Properties.Resources.sign_out_option_White;
+            this.btnLogout.CustomImages.Image = global::FindJobApplication.Properties.Resources.sign_out_option;
+            this.btnLogout.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnLogout.CustomImages.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnLogout.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnLogout.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnLogout.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnLogout.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnLogout.FillColor = System.Drawing.Color.White;
+            this.btnLogout.Font = new System.Drawing.Font("Inter", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.btnLogout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(33)))), ((int)(((byte)(56)))));
+            this.btnLogout.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnLogout.Location = new System.Drawing.Point(20, 13);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(0);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(208, 65);
+            this.btnLogout.TabIndex = 2;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnLogout.TextOffset = new System.Drawing.Point(50, 0);
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // tpnlNavBtn
             // 
@@ -546,7 +546,7 @@
         private Guna.UI2.WinForms.Guna2Button btnHome;
         private Guna.UI2.WinForms.Guna2Button btnSocial;
         private Guna.UI2.WinForms.Guna2Button btnMail;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2Button btnLogout;
         private System.Windows.Forms.TableLayoutPanel tpnlUserNav;
         private Guna.UI2.WinForms.Guna2Button btnMyJob;
         private Guna.UI2.WinForms.Guna2Button btnFavourites;

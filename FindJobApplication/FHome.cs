@@ -134,7 +134,7 @@ namespace FindJobApplication
             this.pnlMain.Controls.Add(uCSetting);
         }
 
-        private void guna2Button2_Click(object sender, EventArgs e)
+        private void btnLogout_Click(object sender, EventArgs e)
         {
             Session.accountId = 0;
             Session.role = "";
