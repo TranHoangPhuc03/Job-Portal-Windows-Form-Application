@@ -264,3 +264,28 @@ VALUES
 (10, 43),
 (10, 4);
 GO
+
+--Insert statements into user_apply_job
+INSERT INTO user_apply_job (account_id, job_post_id, [status], applied_at)
+VALUES
+(6, 1, 'Rejected', DATEADD(day, -1 * ABS(CHECKSUM(NEWID())) % 20, '2024-04-22')),
+(7, 1, 'Pending', DATEADD(day, -1 * ABS(CHECKSUM(NEWID())) % 20, '2024-04-22')),
+(8, 1, 'Interview', DATEADD(day, -1 * ABS(CHECKSUM(NEWID())) % 20, '2024-04-22')),
+(9, 1, 'Approved', DATEADD(day, -1 * ABS(CHECKSUM(NEWID())) % 20, '2024-04-22')),
+(10, 1, 'Rejected', DATEADD(day, -1 * ABS(CHECKSUM(NEWID())) % 20, '2024-04-22')),
+(6, 2, 'Pending', DATEADD(day, -1 * ABS(CHECKSUM(NEWID())) % 20, '2024-04-22')),
+(7, 2, 'Interview', DATEADD(day, -1 * ABS(CHECKSUM(NEWID())) % 20, '2024-04-22')),
+(8, 2, 'Approved', DATEADD(day, -1 * ABS(CHECKSUM(NEWID())) % 20, '2024-04-22')),
+(9, 2, 'Rejected', DATEADD(day, -1 * ABS(CHECKSUM(NEWID())) % 20, '2024-04-22')),
+(10, 2, 'Pending', DATEADD(day, -1 * ABS(CHECKSUM(NEWID())) % 20, '2024-04-22')),
+(6, 3, 'Interview', DATEADD(day, -1 * ABS(CHECKSUM(NEWID())) % 20, '2024-04-22')),
+(7, 3, 'Approved', DATEADD(day, -1 * ABS(CHECKSUM(NEWID())) % 20, '2024-04-22')),
+(8, 3, 'Rejected', DATEADD(day, -1 * ABS(CHECKSUM(NEWID())) % 20, '2024-04-22')),
+(9, 3, 'Pending', DATEADD(day, -1 * ABS(CHECKSUM(NEWID())) % 20, '2024-04-22')),
+(10, 3, 'Interview', DATEADD(day, -1 * ABS(CHECKSUM(NEWID())) % 20, '2024-04-22')),
+(6, 4, 'Approved', DATEADD(day, -1 * ABS(CHECKSUM(NEWID())) % 20, '2024-04-22')),
+(7, 4, 'Rejected', DATEADD(day, -1 * ABS(CHECKSUM(NEWID())) % 20, '2024-04-22')),
+(8, 4, 'Pending', DATEADD(day, -1 * ABS(CHECKSUM(NEWID())) % 20, '2024-04-22')),
+(9, 4, 'Interview', DATEADD(day, -1 * ABS(CHECKSUM(NEWID())) % 20, '2024-04-22')),
+(10, 4, 'Approved', DATEADD(day, -1 * ABS(CHECKSUM(NEWID())) % 20, '2024-04-22'));
+GO

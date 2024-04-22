@@ -180,6 +180,24 @@ namespace FindJobApplication.Daos
 
             return (int)db.ExecuteScalar(sqlStr, parameters);
         }
+        public Dictionary<string, int> CountEachAppliedStatus(int jobPostId)
+        {
+            string sqlStr = @"
+                            SELECT [status], COUNT(account_id) AS quantity
+                            FROM user_apply_job
+                            WHERE job_post_id = @JobPostId
+                            GROUP BY [status];";
+            Dictionary<string, object> parameters = new Dictionary<string, object>
+            {
+                { "@JobPostId", jobPostId },
+            };
+
+            Dictionary<string, int> dict = new Dictionary<string, int>();
+            DataTable dt = db.Read(sqlStr, parameters);
+            foreach (DataRow dr in dt.Rows)
+                dict.Add(dr[0].ToString(), Convert.ToInt32(dr[1]));
+            return dict;
+        }
         public List<int> FindAllUserIdAppliedForOneJob(int jobPostId)
         {
             string sqlStr = @"SELECT account_id
