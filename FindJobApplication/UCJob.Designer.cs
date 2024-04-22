@@ -196,7 +196,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pnlJob);
             this.DoubleBuffered = true;
-            this.Margin = new System.Windows.Forms.Padding(20, 16, 20, 16);
+            this.Margin = new System.Windows.Forms.Padding(0, 0, 12, 16);
             this.Name = "UCJob";
             this.Size = new System.Drawing.Size(521, 204);
             this.pnlJob.ResumeLayout(false);

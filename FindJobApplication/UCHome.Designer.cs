@@ -33,15 +33,15 @@ namespace FindJobApplication
             this.cbExperience = new Guna.UI.WinForms.GunaComboBox();
             this.cbLocation = new Guna.UI.WinForms.GunaComboBox();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btnSearch = new Guna.UI2.WinForms.Guna2Button();
             this.pnlListJob = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnSearch = new Guna.UI2.WinForms.Guna2Button();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // cbExperience
             // 
-            this.cbExperience.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbExperience.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbExperience.BackColor = System.Drawing.Color.Transparent;
             this.cbExperience.BaseColor = System.Drawing.Color.White;
             this.cbExperience.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
@@ -49,7 +49,7 @@ namespace FindJobApplication
             this.cbExperience.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbExperience.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbExperience.FocusedColor = System.Drawing.Color.Empty;
-            this.cbExperience.Font = new System.Drawing.Font("Inter", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbExperience.Font = new System.Drawing.Font("Inter", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.cbExperience.ForeColor = System.Drawing.Color.Black;
             this.cbExperience.FormattingEnabled = true;
             this.cbExperience.ItemHeight = 38;
@@ -59,21 +59,20 @@ namespace FindJobApplication
             "1 - 2 year experience",
             "2 - 3 year experience",
             "> 3 year experience"});
-            this.cbExperience.Location = new System.Drawing.Point(474, 18);
-            this.cbExperience.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.cbExperience.Location = new System.Drawing.Point(520, 6);
+            this.cbExperience.Margin = new System.Windows.Forms.Padding(27, 0, 27, 0);
+            this.cbExperience.MaximumSize = new System.Drawing.Size(230, 0);
             this.cbExperience.Name = "cbExperience";
-            this.cbExperience.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.cbExperience.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
             this.cbExperience.OnHoverItemForeColor = System.Drawing.Color.White;
             this.cbExperience.Radius = 4;
-            this.cbExperience.Size = new System.Drawing.Size(224, 44);
+            this.cbExperience.Size = new System.Drawing.Size(230, 44);
             this.cbExperience.StartIndex = 0;
             this.cbExperience.TabIndex = 2;
             // 
             // cbLocation
             // 
-            this.cbLocation.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbLocation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbLocation.BackColor = System.Drawing.Color.Transparent;
             this.cbLocation.BaseColor = System.Drawing.Color.White;
             this.cbLocation.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
@@ -81,7 +80,7 @@ namespace FindJobApplication
             this.cbLocation.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbLocation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLocation.FocusedColor = System.Drawing.Color.Empty;
-            this.cbLocation.Font = new System.Drawing.Font("Inter", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbLocation.Font = new System.Drawing.Font("Inter", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.cbLocation.ForeColor = System.Drawing.Color.Black;
             this.cbLocation.FormattingEnabled = true;
             this.cbLocation.IntegralHeight = false;
@@ -89,18 +88,20 @@ namespace FindJobApplication
             this.cbLocation.Items.AddRange(new object[] {
             "All  location",
             "Ho Chi Minh City"});
-            this.cbLocation.Location = new System.Drawing.Point(752, 18);
-            this.cbLocation.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.cbLocation.Location = new System.Drawing.Point(804, 6);
+            this.cbLocation.Margin = new System.Windows.Forms.Padding(27, 0, 27, 0);
+            this.cbLocation.MaximumSize = new System.Drawing.Size(250, 0);
             this.cbLocation.Name = "cbLocation";
-            this.cbLocation.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.cbLocation.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
             this.cbLocation.OnHoverItemForeColor = System.Drawing.Color.White;
             this.cbLocation.Radius = 4;
-            this.cbLocation.Size = new System.Drawing.Size(218, 44);
+            this.cbLocation.Size = new System.Drawing.Size(186, 44);
             this.cbLocation.StartIndex = 0;
             this.cbLocation.TabIndex = 1;
             // 
             // txtSearch
             // 
+            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSearch.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
             this.txtSearch.BorderRadius = 4;
             this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -110,45 +111,23 @@ namespace FindJobApplication
             this.txtSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch.Font = new System.Drawing.Font("Inter", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Font = new System.Drawing.Font("Inter", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.txtSearch.ForeColor = System.Drawing.Color.Black;
             this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSearch.IconLeft = global::FindJobApplication.Properties.Resources.find;
-            this.txtSearch.Location = new System.Drawing.Point(20, 18);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.txtSearch.Location = new System.Drawing.Point(0, 6);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(0, 0, 27, 0);
+            this.txtSearch.MinimumSize = new System.Drawing.Size(0, 44);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PasswordChar = '\0';
             this.txtSearch.PlaceholderText = "Search (Ex: Java, C#, Backend, ...)";
             this.txtSearch.SelectedText = "";
-            this.txtSearch.Size = new System.Drawing.Size(400, 43);
+            this.txtSearch.Size = new System.Drawing.Size(466, 44);
             this.txtSearch.TabIndex = 42;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackColor = System.Drawing.Color.Transparent;
-            this.btnSearch.BorderRadius = 4;
-            this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSearch.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnSearch.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
-            this.btnSearch.Font = new System.Drawing.Font("Inter SemiBold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
-            this.btnSearch.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnSearch.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnSearch.Location = new System.Drawing.Point(1024, 18);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(111, 40);
-            this.btnSearch.TabIndex = 43;
-            this.btnSearch.Text = "Search";
             // 
             // pnlListJob
             // 
-            this.pnlListJob.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.pnlListJob.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlListJob.AutoScroll = true;
             this.pnlListJob.Location = new System.Drawing.Point(20, 119);
@@ -157,21 +136,66 @@ namespace FindJobApplication
             this.pnlListJob.Size = new System.Drawing.Size(1144, 816);
             this.pnlListJob.TabIndex = 44;
             // 
+            // btnSearch
+            // 
+            this.btnSearch.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnSearch.BackColor = System.Drawing.Color.Transparent;
+            this.btnSearch.BorderRadius = 4;
+            this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearch.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSearch.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
+            this.btnSearch.Font = new System.Drawing.Font("Inter SemiBold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
+            this.btnSearch.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnSearch.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnSearch.Location = new System.Drawing.Point(1044, 6);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(27, 0, 0, 0);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(100, 44);
+            this.btnSearch.TabIndex = 43;
+            this.btnSearch.Text = "Search";
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.ColumnCount = 4;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.Controls.Add(this.txtSearch, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnSearch, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.cbExperience, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.cbLocation, 2, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(20, 44);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1144, 56);
+            this.tableLayoutPanel1.TabIndex = 45;
+            // 
             // UCHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Transparent;
+            this.AutoSize = true;
+            this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.pnlListJob);
-            this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.txtSearch);
-            this.Controls.Add(this.cbLocation);
-            this.Controls.Add(this.cbExperience);
             this.DoubleBuffered = true;
-            this.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "UCHome";
+            this.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
             this.Size = new System.Drawing.Size(1184, 935);
             this.Load += new System.EventHandler(this.UCHome_Load);
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -180,7 +204,8 @@ namespace FindJobApplication
         private Guna.UI.WinForms.GunaComboBox cbExperience;
         private Guna.UI.WinForms.GunaComboBox cbLocation;
         private Guna.UI2.WinForms.Guna2TextBox txtSearch;
-        private Guna.UI2.WinForms.Guna2Button btnSearch;
         private FlowLayoutPanel pnlListJob;
+        private Guna.UI2.WinForms.Guna2Button btnSearch;
+        private TableLayoutPanel tableLayoutPanel1;
     }
 }
