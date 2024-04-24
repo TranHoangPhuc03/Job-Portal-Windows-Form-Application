@@ -38,6 +38,8 @@
             // 
             // txtUpSocial
             // 
+            this.txtUpSocial.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtUpSocial.BorderRadius = 20;
             this.txtUpSocial.BorderThickness = 0;
             this.txtUpSocial.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -51,7 +53,7 @@
             this.txtUpSocial.Font = new System.Drawing.Font("Inter", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.txtUpSocial.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtUpSocial.Location = new System.Drawing.Point(96, 15);
-            this.txtUpSocial.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtUpSocial.Margin = new System.Windows.Forms.Padding(7);
             this.txtUpSocial.Name = "txtUpSocial";
             this.txtUpSocial.PasswordChar = '\0';
             this.txtUpSocial.PlaceholderText = "What\'s on your mind?";
@@ -63,9 +65,11 @@
             // 
             // pnlSocial
             // 
+            this.pnlSocial.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlSocial.AutoScroll = true;
             this.pnlSocial.Location = new System.Drawing.Point(3, 98);
-            this.pnlSocial.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlSocial.Margin = new System.Windows.Forms.Padding(2);
             this.pnlSocial.Name = "pnlSocial";
             this.pnlSocial.Size = new System.Drawing.Size(1174, 813);
             this.pnlSocial.TabIndex = 2;
@@ -74,7 +78,7 @@
             // 
             this.pBAvatar.Image = global::FindJobApplication.Properties.Resources.man;
             this.pBAvatar.Location = new System.Drawing.Point(24, 15);
-            this.pBAvatar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pBAvatar.Margin = new System.Windows.Forms.Padding(2);
             this.pBAvatar.Name = "pBAvatar";
             this.pBAvatar.Size = new System.Drawing.Size(50, 50);
             this.pBAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -83,6 +87,8 @@
             // 
             // guna2CustomGradientPanel1
             // 
+            this.guna2CustomGradientPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2CustomGradientPanel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2CustomGradientPanel1.BorderRadius = 10;
             this.guna2CustomGradientPanel1.Controls.Add(this.pBAvatar);
@@ -96,10 +102,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(247)))));
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.guna2CustomGradientPanel1);
             this.Controls.Add(this.pnlSocial);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UCSocial";
             this.Size = new System.Drawing.Size(1184, 936);
             this.Load += new System.EventHandler(this.UCSocial_Load);

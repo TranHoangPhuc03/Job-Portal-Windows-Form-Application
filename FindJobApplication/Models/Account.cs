@@ -90,7 +90,10 @@ namespace FindJobApplication.Models
                 this.name = value;
             }
         }
-        public string Role { get => this.role; }
+        public string Role { 
+            get => this.role;
+            set => this.role = value;
+        }
 
         private void ValidateNotEmpty(string value, string fieldName)
         {

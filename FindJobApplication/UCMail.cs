@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Guna.UI2.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,7 +16,11 @@ namespace FindJobApplication
         public UCMail()
         {
             InitializeComponent();
+            this.Dock = DockStyle.Fill;
         }
+
+        public Guna2CustomGradientPanel PnlListMail { get => pnlListMail; }
+
         private void UCMail_Load(object sender, EventArgs e)
         {
             btnMailReceived_Click(sender, e);

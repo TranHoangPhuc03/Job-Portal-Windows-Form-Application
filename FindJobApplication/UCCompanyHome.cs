@@ -19,38 +19,30 @@ namespace FindJobApplication
         public UCCompanyHome()
         {
             InitializeComponent();
+            this.Dock = DockStyle.Fill;
         }
 
-        public Guna2Button BtnAllJob { get { return btnAllJob; } }
+        public Guna2Button BtnAllJob { get => btnAllJob; }
 
-        public void btnAllJob_Click(object sender, EventArgs e)
+        public void UCCompanyHome_Load(object sender, EventArgs e)
         {
-            pnlNumberOfApplicants.Controls.Clear();
             JobPostDao jobPostDao = new JobPostDao();
-            List<JobPost> jobPosts = jobPostDao.FindAllJobPostByCompanyId(Session.accountId);
-            List<UCCompanyJob> listUCCompanyJob = new List<UCCompanyJob>();
+            fillDataToPanel(jobPostDao.FindAllJobPostByCompanyId(Session.accountId));
+            
+        }
+        public void fillDataToPanel(List<JobPost> jobPosts)
+        {
+            this.pnlJobPostedList.Controls.Clear();
+            JobPostDao jobPostDao = new JobPostDao();
             int cnt = 1;
             foreach (JobPost jobPost in jobPosts)
             {
-                
-                UCCompanyJob uCCompanyJob = new UCCompanyJob();
-                uCCompanyJob.LblID.Text = (cnt++).ToString();
-                uCCompanyJob.LblNameJob.Text = jobPost.Title;
-                uCCompanyJob.LblPostDate.Text = jobPost.PostDate.ToString("dd-MM-yyyy");
-                uCCompanyJob.LblExpirationDate.Text = jobPost.ExpireDate.ToString("dd-MM-yyyy");
-                uCCompanyJob.LblSalary.Text = jobPost.Salary.ToString();
-                uCCompanyJob.LblCountApplied.Text = (jobPostDao.CountUserAppliedForOneJob(jobPost.Id)).ToString();
-                uCCompanyJob.Tag = jobPost.Id;
-                listUCCompanyJob.Add(uCCompanyJob);
-            }
-            this.fillDataToPanel(listUCCompanyJob);
-        }
-        public void fillDataToPanel<T>(List<T> dataControlList)
-        {
-            pnlNumberOfApplicants.Controls.Clear();
-            foreach (Object obj in dataControlList)
-            {
-                this.pnlNumberOfApplicants.Controls.Add((Control)obj);
+                int nApplicants = jobPostDao.CountUserAppliedForOneJob(jobPost.Id);
+                UCCompanyJob uCCompanyJob = new UCCompanyJob(jobPost, cnt++, nApplicants);
+                int currentRow = this.pnlJobPostedList.RowCount - 1;
+                this.pnlJobPostedList.Controls.Add(uCCompanyJob, currentRow, 0);
+                this.pnlJobPostedList.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+                this.pnlJobPostedList.RowCount++;
             }
         }
         private void btnRecruitment_Click(object sender, EventArgs e)
@@ -59,57 +51,20 @@ namespace FindJobApplication
             fCompanyJobEdit.Show();
         }
 
-        private void btnStillRecruitment_Click(object sender, EventArgs e)
+        private void btnStillRecruitment_Click(object sender, EventArgs e)  
         {
-            pnlNumberOfApplicants.Controls.Clear();
             JobPostDao jobPostDao = new JobPostDao();
             List<JobPost> jobPosts = jobPostDao.FindAllJobPostByCompanyId(Session.accountId);
-            var results = jobPosts.Where(jobPost => jobPost.ExpireDate >= DateTime.Now);
-
-            List<UCCompanyJob> listUCCompanyJob = new List<UCCompanyJob>();
-            int cnt = 1;
-            foreach (JobPost jobPost in results)
-            {
-                UCCompanyJob uCCompanyJob = new UCCompanyJob();
-                uCCompanyJob.LblID.Text = (cnt++).ToString();
-                uCCompanyJob.LblNameJob.Text = jobPost.Title;
-                uCCompanyJob.LblPostDate.Text = jobPost.PostDate.ToString("dd-MM-yyyy");
-                uCCompanyJob.LblExpirationDate.Text = jobPost.ExpireDate.ToString("dd-MM-yyyy");
-                uCCompanyJob.LblSalary.Text = jobPost.Salary.ToString();
-                uCCompanyJob.LblCountApplied.Text = (jobPostDao.CountUserAppliedForOneJob(jobPost.Id)).ToString();
-                uCCompanyJob.Tag = jobPost.Id;
-                listUCCompanyJob.Add(uCCompanyJob);
-            }
-            this.fillDataToPanel(listUCCompanyJob);
+            List<JobPost> filtered = jobPosts.Where(row => row.ExpireDate >= DateTime.Today).ToList();
+            fillDataToPanel(filtered);
         }
 
         private void btnExpiration_Click(object sender, EventArgs e)
         {
-            pnlNumberOfApplicants.Controls.Clear();
             JobPostDao jobPostDao = new JobPostDao();
             List<JobPost> jobPosts = jobPostDao.FindAllJobPostByCompanyId(Session.accountId);
-            var results = jobPosts.Where(jobPost => jobPost.ExpireDate < DateTime.Now);
-
-            List<UCCompanyJob> listUCCompanyJob = new List<UCCompanyJob>();
-            int cnt = 1;
-            foreach (JobPost jobPost in results)
-            {
-                UCCompanyJob uCCompanyJob = new UCCompanyJob();
-                uCCompanyJob.LblID.Text = (cnt++).ToString();
-                uCCompanyJob.LblNameJob.Text = jobPost.Title;
-                uCCompanyJob.LblPostDate.Text = jobPost.PostDate.ToString("dd-MM-yyyy");
-                uCCompanyJob.LblExpirationDate.Text = jobPost.ExpireDate.ToString("dd-MM-yyyy");
-                uCCompanyJob.LblSalary.Text = jobPost.Salary.ToString();
-                uCCompanyJob.LblCountApplied.Text = (jobPostDao.CountUserAppliedForOneJob(jobPost.Id)).ToString();
-                uCCompanyJob.Tag = jobPost.Id;
-                listUCCompanyJob.Add(uCCompanyJob);
-            }
-            this.fillDataToPanel(listUCCompanyJob);
-        }
-
-        private void guna2CustomGradientPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
+            List<JobPost> filtered = jobPosts.Where(row => row.ExpireDate < DateTime.Today).ToList();
+            fillDataToPanel(filtered);
         }
     }
 }

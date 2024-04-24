@@ -44,7 +44,7 @@
             this.btnAllJob = new Guna.UI2.WinForms.Guna2Button();
             this.btnStillRecruitment = new Guna.UI2.WinForms.Guna2Button();
             this.btnExpiration = new Guna.UI2.WinForms.Guna2Button();
-            this.pnlNumberOfApplicants = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.pnlJobPostedList = new System.Windows.Forms.TableLayoutPanel();
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.guna2CustomGradientPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).BeginInit();
@@ -55,6 +55,7 @@
             // 
             // btnRecruitment
             // 
+            this.btnRecruitment.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRecruitment.BorderColor = System.Drawing.Color.DarkGray;
             this.btnRecruitment.BorderRadius = 6;
             this.btnRecruitment.BorderThickness = 1;
@@ -76,6 +77,8 @@
             // 
             // guna2CustomGradientPanel1
             // 
+            this.guna2CustomGradientPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2CustomGradientPanel1.BorderRadius = 10;
             this.guna2CustomGradientPanel1.Controls.Add(this.guna2CustomGradientPanel2);
             this.guna2CustomGradientPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(247)))));
@@ -86,10 +89,11 @@
             this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
             this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(1150, 78);
             this.guna2CustomGradientPanel1.TabIndex = 6;
-            this.guna2CustomGradientPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2CustomGradientPanel1_Paint);
             // 
             // guna2CustomGradientPanel2
             // 
+            this.guna2CustomGradientPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2CustomGradientPanel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2CustomGradientPanel2.BorderRadius = 10;
             this.guna2CustomGradientPanel2.Controls.Add(this.label6);
@@ -289,24 +293,28 @@
             this.btnExpiration.TextOffset = new System.Drawing.Point(0, -15);
             this.btnExpiration.Click += new System.EventHandler(this.btnExpiration_Click);
             // 
-            // pnlNumberOfApplicants
+            // pnlJobPostedList
             // 
-            this.pnlNumberOfApplicants.BorderRadius = 10;
-            this.pnlNumberOfApplicants.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(247)))));
-            this.pnlNumberOfApplicants.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(247)))));
-            this.pnlNumberOfApplicants.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(247)))));
-            this.pnlNumberOfApplicants.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(247)))));
-            this.pnlNumberOfApplicants.Location = new System.Drawing.Point(17, 144);
-            this.pnlNumberOfApplicants.Name = "pnlNumberOfApplicants";
-            this.pnlNumberOfApplicants.Size = new System.Drawing.Size(1150, 695);
-            this.pnlNumberOfApplicants.TabIndex = 38;
+            this.pnlJobPostedList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlJobPostedList.AutoSize = true;
+            this.pnlJobPostedList.ColumnCount = 1;
+            this.pnlJobPostedList.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.pnlJobPostedList.Location = new System.Drawing.Point(17, 144);
+            this.pnlJobPostedList.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlJobPostedList.Name = "pnlJobPostedList";
+            this.pnlJobPostedList.RowCount = 1;
+            this.pnlJobPostedList.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.pnlJobPostedList.Size = new System.Drawing.Size(1150, 695);
+            this.pnlJobPostedList.TabIndex = 38;
             // 
             // UCCompanyHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Transparent;
-            this.Controls.Add(this.pnlNumberOfApplicants);
+            this.AutoSize = true;
+            this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.pnlJobPostedList);
             this.Controls.Add(this.guna2CustomGradientPanel1);
             this.Controls.Add(this.btnExpiration);
             this.Controls.Add(this.btnStillRecruitment);
@@ -315,7 +323,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UCCompanyHome";
             this.Size = new System.Drawing.Size(1184, 936);
-            this.Load += new System.EventHandler(this.btnAllJob_Click);
+            this.Load += new System.EventHandler(this.UCCompanyHome_Load);
             this.guna2CustomGradientPanel1.ResumeLayout(false);
             this.guna2CustomGradientPanel2.ResumeLayout(false);
             this.guna2CustomGradientPanel2.PerformLayout();
@@ -324,6 +332,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -333,7 +342,6 @@
         private Guna.UI2.WinForms.Guna2Button btnAllJob;
         private Guna.UI2.WinForms.Guna2Button btnStillRecruitment;
         private Guna.UI2.WinForms.Guna2Button btnExpiration;
-        private Guna.UI2.WinForms.Guna2CustomGradientPanel pnlNumberOfApplicants;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel2;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private System.Windows.Forms.Label label1;
@@ -345,5 +353,6 @@
         private System.Windows.Forms.Label label4;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox3;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TableLayoutPanel pnlJobPostedList;
     }
 }

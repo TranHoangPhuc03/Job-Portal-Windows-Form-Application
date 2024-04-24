@@ -17,6 +17,7 @@ namespace FindJobApplication
         public UCSocial()
         {
             InitializeComponent();
+            this.Dock = DockStyle.Fill;
         }
         public PictureBox PBAvatar { get => pBAvatar; set => pBAvatar = value; }
         private void UCSocial_Load(object sender, EventArgs e)

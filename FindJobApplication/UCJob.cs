@@ -14,16 +14,21 @@ using Guna.UI2.WinForms;
 
 namespace FindJobApplication
 {
+    public delegate void NameJobClickedEventHandler(object sender, EventArgs e, UCJobInformation uCJobInformation);
+    public delegate void NameCompanyClickedEventHandler(object sender, EventArgs e, UCCompanyProfile uCCompanyProfile);
     public partial class UCJob : UserControl
     {
-        int idJob;
+        private int jobPostId;
+        public event NameJobClickedEventHandler NameJobClicked;
+        public event NameCompanyClickedEventHandler NameCompanyClicked;
+
         public UCJob()
         {
             InitializeComponent();
         }
         public UCJob(JobPost jobPost, List<Skill> skills, bool isFavourite) : this()
         {
-            this.idJob = jobPost.Id;
+            this.jobPostId = jobPost.Id;
             LocationDao locationDao = new LocationDao();
             var locationDict = locationDao.FindAllLocationDict();
             this.JobName.Text = standardizeNames(jobPost.Title);
@@ -71,17 +76,14 @@ namespace FindJobApplication
 
         private void lLblNameJob_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            UCJobInformation uCJobInformation = new UCJobInformation((int)(sender as Control).Tag);
-            FHome.Instance.PnlMain.Controls.Add(uCJobInformation);
-            uCJobInformation.BringToFront();
+            UCJobInformation uCJobInformation = new UCJobInformation(this.jobPostId);
+            NameJobClicked?.Invoke(sender, EventArgs.Empty, uCJobInformation);
         }
 
         private void lblNameCompany_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            UCCompanyProfile uCCompanyProfile = new UCCompanyProfile((int)(sender as Control).Tag);
-            FHome.Instance.PnlMain.Controls.Add(uCCompanyProfile);
-            uCCompanyProfile.hideAllButton();
-            uCCompanyProfile.BringToFront();
+            UCCompanyProfile uCCompanyProfile = new UCCompanyProfile(this.jobPostId);
+            NameCompanyClicked?.Invoke(sender, EventArgs.Empty, uCCompanyProfile);
         }
         public string standardizeNames(string name)
         {
@@ -101,11 +103,11 @@ namespace FindJobApplication
 
             if (btnSave.Checked == true)
             {
-                userProfileDao.SaveNewFavouriteJob(idJob, Session.accountId);
+                userProfileDao.SaveNewFavouriteJob(jobPostId, Session.accountId);
             }
             else
             {
-                userProfileDao.DeleteFavouriteJob(idJob, Session.accountId);
+                userProfileDao.DeleteFavouriteJob(jobPostId, Session.accountId);
             }
         }
     }

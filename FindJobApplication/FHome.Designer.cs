@@ -51,6 +51,7 @@
             this.pnlMain = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.ucUserSubMenu = new FindJobApplication.UCUserSubMenuRight();
             this.tpnlUserNav.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbUserImage)).BeginInit();
@@ -523,6 +524,7 @@
             this.pnlMain.Padding = new System.Windows.Forms.Padding(8, 8, 0, 0);
             this.pnlMain.Size = new System.Drawing.Size(1184, 935);
             this.pnlMain.TabIndex = 36;
+            this.pnlMain.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.pnlMain_ControlAdded);
             // 
             // tableLayoutPanel2
             // 
@@ -557,12 +559,22 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(248, 944);
             this.tableLayoutPanel3.TabIndex = 5;
             // 
+            // ucUserSubMenu
+            // 
+            this.ucUserSubMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ucUserSubMenu.Location = new System.Drawing.Point(1170, 71);
+            this.ucUserSubMenu.Margin = new System.Windows.Forms.Padding(0);
+            this.ucUserSubMenu.Name = "ucUserSubMenu";
+            this.ucUserSubMenu.Size = new System.Drawing.Size(250, 0);
+            this.ucUserSubMenu.TabIndex = 0;
+            // 
             // FHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(247)))));
             this.ClientSize = new System.Drawing.Size(1440, 1024);
+            this.Controls.Add(this.ucUserSubMenu);
             this.Controls.Add(this.tableLayoutPanel3);
             this.Controls.Add(this.tpnlUserNav);
             this.Controls.Add(this.pnlTools);
@@ -616,5 +628,6 @@
         private Guna.UI2.WinForms.Guna2Button btnTrending;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private UCUserSubMenuRight ucUserSubMenu;
     }
 }

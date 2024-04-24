@@ -1,4 +1,5 @@
 ﻿using FindJobApplication.Daos;
+using FindJobApplication.Models;
 using Guna.UI.WinForms;
 using Guna.UI2.WinForms;
 using System;
@@ -18,6 +19,18 @@ namespace FindJobApplication
         public UCCompanyJob()
         {
             InitializeComponent();
+            this.Dock = DockStyle.Fill;
+        }
+
+        public UCCompanyJob(JobPost jobPost, int id, int nApplicants) : this()
+        {
+            lblId.Text = id.ToString();
+            lblNameJob.Text = jobPost.Title;
+            lblPostDate.Text = jobPost.PostDate.ToString("dd-MM-yyyy");
+            lblExpirationDate.Text = jobPost.ExpireDate.ToString("dd-MM-yyyy");
+            lblSalary.Text = jobPost.Salary.ToString();
+            lblCountApplied.Text = nApplicants.ToString();
+            this.Tag = jobPost.Id;
         }
         public Label LblID { get => lblId; set => lblId = value; }
         public Label LblNameJob { get => lblNameJob; set => lblNameJob = value; }

@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.guna2CustomGradientPanel2 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.pbSeeDetail = new System.Windows.Forms.PictureBox();
             this.lblTime = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblFrom = new System.Windows.Forms.Label();
             this.lblID = new System.Windows.Forms.Label();
-            this.pbSeeDetail = new System.Windows.Forms.PictureBox();
             this.guna2CustomGradientPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbSeeDetail)).BeginInit();
             this.SuspendLayout();
@@ -52,6 +52,20 @@
             this.guna2CustomGradientPanel2.Name = "guna2CustomGradientPanel2";
             this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(1140, 50);
             this.guna2CustomGradientPanel2.TabIndex = 50;
+            // 
+            // pbSeeDetail
+            // 
+            this.pbSeeDetail.BackColor = System.Drawing.Color.White;
+            this.pbSeeDetail.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbSeeDetail.Image = global::FindJobApplication.Properties.Resources.eyeDetail;
+            this.pbSeeDetail.Location = new System.Drawing.Point(1074, 13);
+            this.pbSeeDetail.Margin = new System.Windows.Forms.Padding(2);
+            this.pbSeeDetail.Name = "pbSeeDetail";
+            this.pbSeeDetail.Size = new System.Drawing.Size(30, 30);
+            this.pbSeeDetail.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbSeeDetail.TabIndex = 19;
+            this.pbSeeDetail.TabStop = false;
+            this.pbSeeDetail.Click += new System.EventHandler(this.pbSeeDetail_Click);
             // 
             // lblTime
             // 
@@ -93,26 +107,12 @@
             this.lblID.TabIndex = 0;
             this.lblID.Text = "1";
             // 
-            // pbSeeDetail
-            // 
-            this.pbSeeDetail.BackColor = System.Drawing.Color.White;
-            this.pbSeeDetail.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbSeeDetail.Image = global::FindJobApplication.Properties.Resources.eyeDetail;
-            this.pbSeeDetail.Location = new System.Drawing.Point(1074, 13);
-            this.pbSeeDetail.Margin = new System.Windows.Forms.Padding(2);
-            this.pbSeeDetail.Name = "pbSeeDetail";
-            this.pbSeeDetail.Size = new System.Drawing.Size(30, 30);
-            this.pbSeeDetail.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbSeeDetail.TabIndex = 19;
-            this.pbSeeDetail.TabStop = false;
-            this.pbSeeDetail.Click += new System.EventHandler(this.pbSeeDetail_Click);
-            // 
             // UCMailRow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.guna2CustomGradientPanel2);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UCMailRow";
             this.Size = new System.Drawing.Size(1146, 63);
             this.guna2CustomGradientPanel2.ResumeLayout(false);

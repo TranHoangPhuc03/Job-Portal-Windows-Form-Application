@@ -19,18 +19,28 @@ namespace FindJobApplication
         public UCHome()
         {
             InitializeComponent();
+            this.Dock = DockStyle.Fill;
         }
         
-        public Guna2TextBox TxtSeach { get { return txtSearch; } }
-        public GunaComboBox CbLocation { get { return cbLocation; } }
-        public GunaComboBox CbExperince { get { return cbExperience; } }
-        public Guna2Button BtnSearch { get { return btnSearch; } }
+        public Guna2TextBox TxtSeach { get => txtSearch; }
+        public GunaComboBox CbLocation { get => cbLocation; }
+        public GunaComboBox CbExperince { get => cbExperience; }
+        public Guna2Button BtnSearch { get => btnSearch; }
+        public FlowLayoutPanel PnlListJob { get => pnlListJob; }
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            string keyword = this.TxtSeach.Text;
+            int locationId = this.CbLocation.SelectedIndex;
+            int experienceId = this.CbExperince.SelectedIndex;
 
+            JobPostDao jobPostDao = new JobPostDao();
+            List<JobPost> dt = jobPostDao.FindAllJobPost();
+            if (!string.IsNullOrEmpty(keyword))
+            {
+                dt = dt.Where(row => row.Title.Contains(keyword)).ToList();
+            }
+            this.fillJobPostToPanel(dt);
         }
-
-
 
         public void fillJobPostToPanel(List<JobPost> jobPosts)
         {
