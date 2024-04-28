@@ -39,8 +39,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnMailSent = new Guna.UI2.WinForms.Guna2Button();
             this.btnMailReceived = new Guna.UI2.WinForms.Guna2Button();
-            this.pnlListMail = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.btnComposeEmail = new Guna.UI2.WinForms.Guna2Button();
+            this.pnlListMail = new System.Windows.Forms.TableLayoutPanel();
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.guna2CustomGradientPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).BeginInit();
@@ -207,20 +207,6 @@
             this.btnMailReceived.TextOffset = new System.Drawing.Point(0, -15);
             this.btnMailReceived.Click += new System.EventHandler(this.btnMailReceived_Click);
             // 
-            // pnlListMail
-            // 
-            this.pnlListMail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlListMail.BorderRadius = 10;
-            this.pnlListMail.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(247)))));
-            this.pnlListMail.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(247)))));
-            this.pnlListMail.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(247)))));
-            this.pnlListMail.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(247)))));
-            this.pnlListMail.Location = new System.Drawing.Point(17, 146);
-            this.pnlListMail.Name = "pnlListMail";
-            this.pnlListMail.Size = new System.Drawing.Size(1150, 690);
-            this.pnlListMail.TabIndex = 55;
-            // 
             // btnComposeEmail
             // 
             this.btnComposeEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -248,6 +234,22 @@
             this.btnComposeEmail.TabIndex = 45;
             this.btnComposeEmail.Text = "Compose";
             this.btnComposeEmail.Click += new System.EventHandler(this.btnComposeEmail_Click);
+            // 
+            // pnlListMail
+            // 
+            this.pnlListMail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlListMail.AutoScroll = true;
+            this.pnlListMail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(247)))));
+            this.pnlListMail.ColumnCount = 1;
+            this.pnlListMail.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.pnlListMail.Location = new System.Drawing.Point(17, 146);
+            this.pnlListMail.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlListMail.Name = "pnlListMail";
+            this.pnlListMail.RowCount = 1;
+            this.pnlListMail.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.pnlListMail.Size = new System.Drawing.Size(1150, 690);
+            this.pnlListMail.TabIndex = 55;
             // 
             // UCMail
             // 
@@ -287,6 +289,6 @@
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Button btnMailSent;
         private Guna.UI2.WinForms.Guna2Button btnMailReceived;
-        private Guna.UI2.WinForms.Guna2CustomGradientPanel pnlListMail;
+        private System.Windows.Forms.TableLayoutPanel pnlListMail;
     }
 }

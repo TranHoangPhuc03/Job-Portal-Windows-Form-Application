@@ -19,7 +19,7 @@ namespace FindJobApplication
             this.Dock = DockStyle.Fill;
         }
 
-        public Guna2CustomGradientPanel PnlListMail { get => pnlListMail; }
+        public TableLayoutPanel PnlListMail { get => pnlListMail; }
 
         private void UCMail_Load(object sender, EventArgs e)
         {
@@ -29,12 +29,14 @@ namespace FindJobApplication
         {
             lblFrom.Text = "From";
             pnlListMail.Controls.Clear();
+            pnlListMail.SuspendLayout();
             for (int i = 0; i< 20; i++)
             {
                 UCMailRow row = new UCMailRow();
-                row.LblID.Text = i.ToString();
+                row.LblID.Text = (i+1).ToString();
                 pnlListMail.Controls.Add(row);
             }
+            pnlListMail.ResumeLayout();
         }
 
         private void btnMailSent_Click(object sender, EventArgs e)
@@ -44,7 +46,7 @@ namespace FindJobApplication
             for (int i = 0; i < 20; i++)
             {
                 UCMailRow row = new UCMailRow();
-                row.LblID.Text = i.ToString();
+                row.LblID.Text = (i+1).ToString();
                 pnlListMail.Controls.Add(row);
             }
         }

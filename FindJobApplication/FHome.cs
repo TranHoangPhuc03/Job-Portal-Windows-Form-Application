@@ -66,7 +66,6 @@ namespace FindJobApplication
         private void btnMail_Click(object sender, EventArgs e)
         {
             UCMail uCMail = new UCMail();
-            
             this.pnlMain.Controls.Add(uCMail);
 
             foreach (var row in uCMail.PnlListMail.Controls)

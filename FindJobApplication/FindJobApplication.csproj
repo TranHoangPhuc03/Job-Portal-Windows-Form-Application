@@ -40,6 +40,12 @@
     <Reference Include="CustomFlowLayoutPanel">
       <HintPath>..\..\..\..\csharp_workspace\CustomFlowLayoutPanel\bin\Release\CustomFlowLayoutPanel.exe</HintPath>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="FontAwesome.Sharp, Version=5.8.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\FontAwesome.Sharp.5.8.3\lib\net40\FontAwesome.Sharp.dll</HintPath>
     </Reference>
@@ -56,9 +62,12 @@
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
@@ -86,6 +95,24 @@
     <Compile Include="Daos\UserRoleDao.cs" />
     <Compile Include="Daos\YearExperienceDao.cs" />
     <Compile Include="Database\Database.cs" />
+    <Compile Include="Entities\Account.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Account.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\account.cs">
+      <DependentUpon>Account.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Account.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Account.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Account1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Account.tt</DependentUpon>
+    </Compile>
     <Compile Include="FCompanyHome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -623,6 +650,13 @@
       <DependentUpon>DialogBox.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.manifest" />
+    <EntityDeploy Include="Entities\Account.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Account.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Entities\Account.edmx.diagram">
+      <DependentUpon>Account.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -944,6 +978,16 @@
     <None Include="Resources\jobCount.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Entities\Account.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Account.Context.cs</LastGenOutput>
+      <DependentUpon>Account.edmx</DependentUpon>
+    </Content>
+    <Content Include="Entities\Account.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Account.edmx</DependentUpon>
+      <LastGenOutput>Account1.cs</LastGenOutput>
+    </Content>
     <Content Include="Resources\alert-error.512x512.png" />
     <Content Include="Resources\alert-success.512x512.png" />
     <Content Include="Resources\alert-warning.512x480.png" />
@@ -1000,6 +1044,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\trendingwhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

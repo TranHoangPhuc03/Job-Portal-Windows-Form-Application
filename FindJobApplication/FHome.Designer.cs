@@ -514,10 +514,6 @@
             this.pnlMain.CustomizableEdges.BottomLeft = false;
             this.pnlMain.CustomizableEdges.BottomRight = false;
             this.pnlMain.CustomizableEdges.TopRight = false;
-            this.pnlMain.FillColor = System.Drawing.Color.Transparent;
-            this.pnlMain.FillColor2 = System.Drawing.Color.Transparent;
-            this.pnlMain.FillColor3 = System.Drawing.Color.Transparent;
-            this.pnlMain.FillColor4 = System.Drawing.Color.Transparent;
             this.pnlMain.Location = new System.Drawing.Point(256, 87);
             this.pnlMain.Margin = new System.Windows.Forms.Padding(0);
             this.pnlMain.Name = "pnlMain";
@@ -580,6 +576,7 @@
             this.Controls.Add(this.pnlTools);
             this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.tableLayoutPanel2);
+            this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;

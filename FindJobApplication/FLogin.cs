@@ -1,4 +1,5 @@
 ﻿using FindJobApplication.Daos;
+using FindJobApplication.Entities;
 using FindJobApplication.Models;
 using Guna.UI2.WinForms;
 using System;
@@ -34,16 +35,16 @@ namespace FindJobApplication
             string password = this.txtPassword.Text;
 
             AccountDao accountDao = new AccountDao();
-            Account account = accountDao.FindAccountByEmail(email);
+            account account = accountDao.FindAccountByEmail(email);
 
-            if (account == null || account.Password != password)
+            if (account == null || account.password != password)
             {
                 MessageDialog.Show(this, "Your email or password is incorrect", "Login failed", MessageDialogStyle.Default);
             }
             else
             {
                 Form redirectForm = null;
-                switch (account.Role)
+                switch (account.role)
                 {
                     case "company":    
                         redirectForm = new FCompanyHome();
@@ -56,8 +57,8 @@ namespace FindJobApplication
                         break;
                 }
 
-                Session.accountId = account.ID;
-                Session.role = account.Role;
+                Session.accountId = account.id;
+                Session.role = account.role;
                 
                 this.Hide();
                 redirectForm.ShowDialog();

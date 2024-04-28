@@ -40,6 +40,8 @@
             // 
             // guna2CustomGradientPanel2
             // 
+            this.guna2CustomGradientPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2CustomGradientPanel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2CustomGradientPanel2.BorderRadius = 10;
             this.guna2CustomGradientPanel2.Controls.Add(this.pbSeeDetail);
