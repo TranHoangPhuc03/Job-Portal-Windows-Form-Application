@@ -1,7 +1,4 @@
-﻿using FindJobApplication.DB;
-using FindJobApplication.Entities;
-using FindJobApplication.Mappers;
-using FindJobApplication.Models;
+﻿using FindJobApplication.Entities;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -13,37 +10,32 @@ namespace FindJobApplication.Daos
 {
     public class AccountDao
     {
-        private Database db = null;
+        private QLXinViecDFContext db = null;
 
         public AccountDao()
         {
-            db = new Database();
+            db = new QLXinViecDFContext();
         }
 
-        public account FindAccountByEmail(string email)
+        public Account FindAccountByEmail(string email)
         {
-            using (var dbcontext = new AccountContext())
-            {
-                var result = from q in dbcontext.accounts
-                             where q.email == email
-                             select q;
+            var result = db.Accounts.Where(row => row.Email == email);
 
-                return result.First() ?? null;
-            }
+            return result.FirstOrDefault();
         }
 
         public int SaveNewAccount(string email, string name, string password, string role)
         {
-            string sqlStr = "INSERT INTO account(email, name, password, role) VALUES (@Email, , @Name, @Password, @Role);";
-            Dictionary<string, object> parameters = new Dictionary<string, object>
+            Account account = new Account
             {
-                { "@Email", email },
-                { "@Password", password },
-                { "@Role", role },
-                {   "@Name", name }
+                Email = email,
+                Name = name,
+                Password = password,
+                Role = role
             };
 
-            return db.Execute(sqlStr, parameters);
+            db.Accounts.Add(account);
+            return db.SaveChanges();
         }
     }
 }

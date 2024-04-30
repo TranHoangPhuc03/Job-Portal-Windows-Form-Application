@@ -1,5 +1,6 @@
 ﻿using FindJobApplication.Daos;
-using FindJobApplication.Models;
+using FindJobApplication.Entities;
+using FindJobApplication.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,15 +22,15 @@ namespace FindJobApplication
 
         private void UCSocialHistory_Load(object sender, EventArgs e)
         {
-            SocialPostDao socialPostDao = new SocialPostDao();
-            List<SocialPost> list = socialPostDao.FindAllSocialPost();
-            List<SocialPost> filteredList = list.Where(post => post.AccountId == Session.accountId).ToList();
-            int cnt = 1;
-            foreach (SocialPost socialPost in filteredList)
-            {
-                UCSocialHistoryRow row = new UCSocialHistoryRow(cnt++, socialPost);
-                pnlListSocial.Controls.Add(row);
-            }
+            //SocialPostDao socialPostDao = new SocialPostDao();
+            //List<SocialPost> list = socialPostDao.FindAllSocialPost();
+            //List<SocialPost> filteredList = list.Where(post => post.AccountId == Session.account.Id).ToList();
+            //int cnt = 1;
+            //foreach (SocialPost socialPost in filteredList)
+            //{
+            //    UCSocialHistoryRow row = new UCSocialHistoryRow(cnt++, socialPost);
+            //    pnlListSocial.Controls.Add(row);
+            //}
         }
     }
 }

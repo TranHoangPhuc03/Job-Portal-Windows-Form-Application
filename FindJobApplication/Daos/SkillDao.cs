@@ -1,35 +1,24 @@
-﻿using FindJobApplication.DB;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using FindJobApplication.Models;
-using FindJobApplication.Mappers;
+using FindJobApplication.Entities;
 
 namespace FindJobApplication.Daos
 {
     public class SkillDao
     {
-        Database db = null;
+        private QLXinViecDFContext db = null;
         public SkillDao()
         {
-            db = new Database();
+            db = new QLXinViecDFContext();
         }
 
-        public List<Skill> FindAllSkill()
+        public ICollection<Skill> FindAllSkill()
         {
-            string sqlStr = @"SELECT * FROM skill";
-
-            DataTable dt = db.Read(sqlStr);
-            List<Skill> list = new List<Skill>();
-            foreach (DataRow dr in dt.Rows)
-            {
-                list.Add(SkillMapper.MapToModel(dr));
-            }
-
-            return list;
+            return db.Skills.ToList();
         }
     }
 }

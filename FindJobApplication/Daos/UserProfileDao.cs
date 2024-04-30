@@ -1,451 +1,100 @@
-﻿using FindJobApplication.DB;
-using FindJobApplication.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using FindJobApplication.Mappers;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using System.Xml.Linq;
+using FindJobApplication.Entities;
+using Microsoft.VisualBasic.ApplicationServices;
 
 namespace FindJobApplication.Daos
 {
     public class UserProfileDao
     {
-        private Database db = null;
+        private QLXinViecDFContext db = null;
 
         public UserProfileDao()
         {
-            db = new Database();
+            db = new QLXinViecDFContext();
         }
 
-        public List<UserProfile> FindAllUserProfile()
+        public ICollection<UserProfile> FindAllUserProfile()
         {
-            string sqlStr = "SELECT * FROM user_profile;";
-                          
-            DataTable dt = db.Read(sqlStr);
-            List<UserProfile> list = new List<UserProfile>();
+            var results = db.UserProfiles.ToList();
 
-            foreach (DataRow dr in dt.Rows)
-            {
-                UserProfile userProfile = UserProfileMapper.MapToModel(dr);
-                userProfile.UserEducations.AddRange(this.FindUserEducationByUserId(userProfile.ID));
-                userProfile.UserWorkExperiences.AddRange(this.FindUserWorkExperienceByUserId(userProfile.ID));
-                userProfile.UserPersonalProjects.AddRange(this.FindUserPersonalProjectByUserId(userProfile.ID));
-                userProfile.UserSkills.AddRange(this.FindUserSkillByUserId(userProfile.ID));
-
-                list.Add(userProfile);
-                
-            }
-
-            return list;
+            return results.ToList();
         }
-        public UserProfile FindUserProfileById(int userId)
+
+        public UserProfile FindUserProfileByAccountId(int userId)
         {
-            string sqlStr = "SELECT * FROM user_profile WHERE id = @UserId;";
-            Dictionary<string, object> parameters = new Dictionary<string, object> { { "@UserId", userId } };
+            var result = db.UserProfiles.Single(row => row.Id == userId);
 
-            DataRow dr = db.Read(sqlStr, parameters).Rows.Cast<DataRow>().FirstOrDefault();
-            UserProfile userProfile = UserProfileMapper.MapToModel(dr);
-            userProfile.UserEducations.AddRange(this.FindUserEducationByUserId(userProfile.ID));
-            userProfile.UserWorkExperiences.AddRange(this.FindUserWorkExperienceByUserId(userProfile.ID));
-            userProfile.UserPersonalProjects.AddRange(this.FindUserPersonalProjectByUserId(userProfile.ID));
-            userProfile.UserSkills.AddRange(this.FindUserSkillByUserId(userProfile.ID));
-
-            return userProfile;
+            return result;
         }
-        public UserProfile FindUserProfileByAccountId(int userAccountId)
-        {
-            string sqlStr = "SELECT * FROM user_profile WHERE user_account_id = @UserAccountId;";
-            Dictionary<string, object> parameters = new Dictionary<string, object> { { "@UserAccountId", userAccountId } };
 
-            DataRow dr = db.Read(sqlStr, parameters).Rows.Cast<DataRow>().FirstOrDefault();
-            UserProfile userProfile = UserProfileMapper.MapToModel(dr);
-            userProfile.UserEducations.AddRange(this.FindUserEducationByUserId(userProfile.ID));
-            userProfile.UserWorkExperiences.AddRange(this.FindUserWorkExperienceByUserId(userProfile.ID));
-            userProfile.UserPersonalProjects.AddRange(this.FindUserPersonalProjectByUserId(userProfile.ID));
-            userProfile.UserSkills.AddRange(this.FindUserSkillByUserId(userProfile.ID));
-
-            return userProfile;
-        }
-        public int FindUserIdByAccountId(int accountId)
-        {
-            string sqlStr = @"SELECT id FROM user_profile WHERE user_account_id = @AccountId;";
-            Dictionary<string, object> parameters = new Dictionary<string, object> { { "@AccountId", accountId } };
-            return (int)db.ExecuteScalar(sqlStr, parameters);
-        }
-        public List<UserEducation> FindUserEducationByUserId(int userId)
-        {
-            string sqlStr = "SELECT * FROM user_education WHERE user_profile_id = @UserProfileId;";
-            Dictionary<string, object> parameters = new Dictionary<string, object>
-            {
-                { "@UserProfileId", userId },
-            };
-
-            List<UserEducation> list = new List<UserEducation> ();
-            DataTable dt = db.Read(sqlStr, parameters);
-            foreach (DataRow dr in dt.Rows)
-                list.Add(UserEducationMapper.MapToModel(dr));
-
-            return list;
-        }
-        public List<UserWorkExperience> FindUserWorkExperienceByUserId(int userId)
-        {
-            string sqlStr = "SELECT * FROM user_work_experience WHERE user_profile_id = @UserProfileId;";
-            Dictionary<string, object> parameters = new Dictionary<string, object>
-            {
-                { "@UserProfileId", userId },
-            };
-
-            List<UserWorkExperience> list = new List<UserWorkExperience>();
-            DataTable dt = db.Read(sqlStr, parameters);
-            foreach (DataRow dr in dt.Rows)
-                list.Add(UserWorkExperienceMapper.MapToModel(dr));
-
-            return list;
-        }
-        public List<UserPersonalProject> FindUserPersonalProjectByUserId(int userId)
-        {
-            string sqlStr = "SELECT * FROM user_personal_project WHERE user_profile_id = @UserProfileId;";
-            Dictionary<string, object> parameters = new Dictionary<string, object>
-            {
-                { "@UserProfileId", userId },
-            };
-
-            List<UserPersonalProject> list = new List<UserPersonalProject>();
-            DataTable dt = db.Read(sqlStr, parameters);
-            foreach (DataRow dr in dt.Rows)
-                list.Add(UserPersonalProjectMapper.MapToModel(dr));
-
-            return list;
-        }
-        public List<UserSkill> FindUserSkillByUserId(int userId)
-        {
-            string sqlStr = @"
-                            SELECT
-	                            user_skill.user_profile_id,
-	                            skill.id AS skill_id,
-                                skill.name AS skill_name
-                            FROM 
-	                            user_skill
-                            INNER JOIN skill on user_skill.skill_id = skill.id
-                            WHERE user_skill.user_profile_id = @UserProfileId";
-            Dictionary<string, object> parameters = new Dictionary<string, object>
-            {
-                { "@UserProfileId", userId },
-            };
-
-            List<UserSkill> list = new List<UserSkill>();
-            DataTable dt = db.Read(sqlStr, parameters);
-            foreach (DataRow dr in dt.Rows)
-                list.Add(UserSkillMapper.MapToModel(dr));
-
-            return list;
-        }
-        //Saving after submit sign up form
-        public int SaveUserSignUp(UserProfile userProfile, string password)
-        {
-            string sqlStr = @"
-                            EXEC usp_RegisterUserAccount
-                                @Email,
-                                @Password,
-                                @Name;";
-             Dictionary<string, object> parameters = new Dictionary<string, object>()
-            {
-                { "@Email", userProfile.Email },
-                { "@Password", password },
-                { "@Name", userProfile.Name }
-            };
-            return db.Execute(sqlStr, parameters);
-        }
-        public int SaveUserApplyJob(JobApplyDetail jobApplyDetail)
-        {
-            string sqlStr = @"
-                            INSERT INTO user_apply_job
-                            VALUES (@UserId, @JobPostId, @Status, @CoverLetter, @AppliedAt, @CVAttach)";
-            Dictionary<string, object> parameters = new Dictionary<string, object>
-            {
-                { "@UserId", jobApplyDetail.UserId },
-                { "@JobPostId", jobApplyDetail.JobPostId },
-                { "@Status", jobApplyDetail.Status },
-                { "@CoverLetter", jobApplyDetail.CoverLetter },
-                { "@AppliedAt", jobApplyDetail.AppliedAt },
-                { "@CVAttach", jobApplyDetail.CVAttach }
-            };
-
-            return db.Execute(sqlStr, parameters);
-        }
         public int SaveUserEducation(UserEducation userEducation)
         {
-            string sqlStr = @"
-                            INSERT INTO user_education (user_profile_id, school_name, major, [from], [to], additional_details)
-                            VALUES (@UserProfileId, @SchoolName, @Major, @From, @To, @AdditionalDetail)";
-
-            Dictionary<string, object> parameters = new Dictionary<string, object>
-            {
-                { "@UserProfileId", userEducation.UserProfileId },
-                { "@SchoolName", userEducation.SchoolName },
-                { "@Major", userEducation.Major },
-                { "@From", userEducation.From },
-                { "@To", userEducation.To },
-                { "@AdditionalDetail", userEducation.AdditionalDetail }
-            };
-
-            return db.Execute(sqlStr, parameters);
+            db.UserEducations.Add(userEducation);
+            return db.SaveChanges();
         }
         public int SaveUserWorkExperience(UserWorkExperience userWorkExperience)
         {
-            string sqlStr = @"
-                            INSERT INTO user_work_experience (user_profile_id, job_title, company_name, [from], [to])
-                            VALUES (@UserProfileId, @JobTitle, @CompanyName, @From, @To)";
-
-            Dictionary<string, object> parameters = new Dictionary<string, object>
-            {
-                { "@UserProfileId", userWorkExperience.UserProfileId },
-                { "@JobTitle", userWorkExperience.JobTitle },
-                { "@CompanyName", userWorkExperience.CompanyName },
-                { "@From", userWorkExperience.From },
-                { "@To", userWorkExperience.To },
-            };
-
-            return db.Execute(sqlStr, parameters);
+            db.UserWorkExperiences.Add(userWorkExperience);
+            return db.SaveChanges();
         }
         public int SaveUserPersonalProject(UserPersonalProject userPersonalProject)
         {
-            string sqlStr = @"
-                            INSERT INTO user_personal_project (user_profile_id, project_name, [from], [to], description)
-                            VALUES (@UserProfileId, @ProjectName, @From, @To, @Description)";
-
-            Dictionary<string, object> parameters = new Dictionary<string, object>
-            {
-                { "@UserProfileId", userPersonalProject.UserProfileId },
-                { "@ProjectName", userPersonalProject.ProjectName },
-                { "@From", userPersonalProject.From },
-                { "@To", userPersonalProject.To },
-                { "@Description", userPersonalProject.Description },
-            };
-
-            return db.Execute(sqlStr, parameters);
+            db.UserPersonalProjects.Add(userPersonalProject);
+            return db.SaveChanges();
         }
-        public int SaveUserSkill(UserSkill userSkill)
+        public int SaveUserSkill(int skillId)
         {
-            string sqlStr = @"
-                            INSERT INTO user_skill (user_profile_id, skill_id)
-                            VALUES (@UserProfileId, @SkillId);";
-
-            Dictionary<string, object> parameters = new Dictionary<string, object>
-            {
-                { "@UserProfileId", userSkill.UserProfileId },
-                { "@SkillId", userSkill.SkillId }
-            };
-
-            return db.Execute(sqlStr, parameters);
+            return db.SaveChanges();
         }
-        //User Infomation = Name, Birthday, Phone number, Avatar, ...
-        public int UpdateUserInformation(UserProfile userProfile)
+        public int SaveUserFollowJob(int userId, int jobPostId)
         {
-            string sqlStr = @"
-                            UPDATE user_profile
-                            SET name = @Name, email = @Email, phone_number = @PhoneNumber, date_of_birth = @DateOfBirth, gender = @Gender, address = @Address, personal_link = @PersonalLink, about_me = @AboutMe, title = @Title
-                            WHERE id = @Id";
-            Dictionary<string, object> parameters = new Dictionary<string, object>
-            {
-                { "@Name", userProfile.Name },
-                { "@Email", userProfile.Email },
-                { "@PhoneNumber", userProfile.PhoneNumber },
-                { "@DateOfBirth", userProfile.DateOfBirth },
-                { "@Gender", userProfile.Gender },
-                { "@Address", userProfile.Address },
-                { "@PersonalLink", userProfile.PersonalLink },
-                { "@AboutMe", userProfile.AboutMe },
-                { "@Title", userProfile.Title },
-                { "@Id", userProfile.ID }
-            };
-
-            return db.Execute(sqlStr, parameters);
+            var userProfile = FindUserProfileByAccountId(userId);
+            var jobPost = db.JobPosts.Find(jobPostId);
+            userProfile.JobPosts.Add(jobPost);
+            return db.SaveChanges();
         }
-        public int UpdateUserEducation(UserEducation userEducation)
+        public int UpdateUserProfile(UserProfile userProfile)
         {
-            string sqlStr = @"
-                            UPDATE user_education
-                            SET school_name = @SchoolName, major = @Major, from = @From, to = @To, addtional_details = @AdditionalDetails
-                            WHERE id = @Id";
-            Dictionary<string, object> parameters = new Dictionary<string, object>
-            {
-                { "@Id", userEducation.Id },
-                { "@SchoolName", userEducation.SchoolName },
-                { "@Major", userEducation.Major },
-                { "@From", userEducation.From },
-                { "@To", userEducation.To },
-                { "@AdditionalDetail", userEducation.AdditionalDetail }
-            };
-
-            return db.Execute(sqlStr, parameters);
+            db.UserProfiles.Attach(userProfile);
+            return db.SaveChanges();
         }
-        public int UpdateUserWorkExperience(UserWorkExperience userWorkExperience)
+        
+        public int DeleteUserEducation(int id)
         {
-            string sqlStr = @"
-                            UPDATE user_work_experience
-                            SET job_title = @JobTitle, company_name = @CompanyName, from = @From, to = @To
-                            WHERE id = @Id";
-            Dictionary<string, object> parameters = new Dictionary<string, object>
-            {
-                { "@Id", userWorkExperience.Id },
-                { "@JobTitle", userWorkExperience.JobTitle },
-                { "@CompanyName", userWorkExperience.CompanyName },
-                { "@From", userWorkExperience.From },
-                { "@To", userWorkExperience.To },
-            };
-
-            return db.Execute(sqlStr, parameters);
+            var userEducation = db.UserEducations.Find(id);
+            db.UserEducations.Remove(userEducation);
+            db.UserEducations.Attach(userEducation);
+            return db.SaveChanges();
         }
-        public int UpdateUserPersonalProject(UserPersonalProject userPersonalProject)
+        public int DeleteUserWorkExperience(int id)
         {
-            string sqlStr = @"
-                            UPDATE user_personal_project
-                            SET project_name = @ProjectName, from = @From, to = @To, description = @Description
-                            WHERE id = @Id";
-            Dictionary<string, object> parameters = new Dictionary<string, object>
-            {
-                { "@Id", userPersonalProject.Id },
-                { "@ProjectName", userPersonalProject.ProjectName },
-                { "@From", userPersonalProject.From },
-                { "@To", userPersonalProject.To },
-                { "@Description", userPersonalProject.Description },
-            };
-
-            return db.Execute(sqlStr, parameters);
+            var userWorkExperience = db.UserWorkExperiences.Find(id);
+            db.UserWorkExperiences.Remove(userWorkExperience);
+            db.UserWorkExperiences.Attach(userWorkExperience);
+            return db.SaveChanges();
         }
-        public int DeleteUserSkill(UserSkill userSkill)
+        public int DeleteUserPersonalProject(int id)
         {
-            string sqlStr = @"DELETE FROM user_skill WHERE user_profile_id = @UserProfileId AND skill_id = @SkillId;";
-            Dictionary<string, object> parameters = new Dictionary<string, object>
-            {
-                { "@UserProfileId", userSkill.UserProfileId },
-                { "@SkillId", userSkill.SkillId }
-            };
-
-            return db.Execute(sqlStr, parameters);
+            var userPersonalProject = db.UserPersonalProjects.Find(id);
+            db.UserPersonalProjects.Remove(userPersonalProject);
+            db.UserPersonalProjects.Attach(userPersonalProject);
+            return db.SaveChanges();
         }
-        public int DeleteUserEducation(UserEducation userEducation)
+
+        public int DeleteUserFollowJob(int userId, int jobPostId)
         {
-            string sqlStr = "DELETE FROM user_education WHERE id = @Id";
-            Dictionary<string, object> parameters = new Dictionary<string, object>
-            {
-                { "@Id", userEducation.Id }
-            };
-
-            return db.Execute(sqlStr, parameters);
-        }
-        public int DeleteUserWorkExperience(UserWorkExperience userWorkExperience)
-        {
-            string sqlStr = "DELETE FROM user_work_experience WHERE id = @Id";
-            Dictionary<string, object> parameters = new Dictionary<string, object>
-            {
-                { "@Id", userWorkExperience.Id }
-            };
-
-            return db.Execute(sqlStr, parameters);
-        }
-        public int DeleteUserPersonalProject(UserPersonalProject userPersonalProject)
-        {
-            string sqlStr = "DELETE FROM user_personal_project WHERE id = @Id";
-            Dictionary<string, object> parameters = new Dictionary<string, object>
-            {
-                { "@Id", userPersonalProject.Id }
-            };
-
-            return db.Execute(sqlStr, parameters);
-        }
-        public int SaveNewFavouriteJob(int jobPostId, int userId)
-        {
-            string sqlStr = @"
-                            INSERT INTO user_favourite_job(account_id, job_post_id)
-                            VALUES (@UserId, @JobPostId);";
-            Dictionary<string, object> parameters = new Dictionary<string, object>
-            {
-                { "@UserId", userId },
-                { "@JobPostId", jobPostId }
-            };
-
-            return db.Execute(sqlStr, parameters);
-        }
-        public int SaveNewFollowingCompany(int userAccountId, int companyAccountId)
-        {
-            string sqlStr = @"
-                            INSERT INTO following(account_following, account_followed)
-                            VALUES (@UserAccountId, @CompanyAccountId);";
-            Dictionary<string, object> parameters = new Dictionary<string, object>
-            {
-                { "@UserAccountId", userAccountId },
-                { "@CompanyAccountId", companyAccountId }
-                
-            };
-
-            return db.Execute(sqlStr, parameters);
-        }
-        public List<int> FindAllJobPostIdFavourite(int userId)
-        {
-            string sqlStr = @"SELECT job_post_id
-                            FROM user_favourite_job
-                            WHERE account_id = @UserId;";
-            Dictionary<string, object> parameters = new Dictionary<string, object>
-            {
-                { "@UserId", userId },
-            };
-
-            DataTable dt = db.Read(sqlStr, parameters);
-            List<int> list = new List<int>();
-            foreach (DataRow dr in dt.Rows)
-                list.Add(Convert.ToInt32(dr["job_post_id"]));
-
-            return list;
-        }
-        public List<int> FindAllCompanyIdFollowing(int userAccountId)
-        {
-            string sqlStr = @"
-                            SELECT account_followed
-                            FROM following
-                            WHERE account_following = @UserAccountId;";
-            Dictionary<string, object> parameters = new Dictionary<string, object>
-            {
-                { "@UserAccountId", userAccountId },
-            };
-
-            DataTable dt = db.Read(sqlStr, parameters);
-            List<int> list = new List<int>();
-            foreach (DataRow dr in dt.Rows)
-                list.Add(Convert.ToInt32(dr["account_followed"]));
-
-            return list;
-        }
-        public int DeleteFavouriteJob(int jobPostId, int userId) 
-        {
-            string sqlStr = @"
-                            DELETE FROM user_favourite_job
-                            WHERE account_id = @UserId AND job_post_id = @JobPostId;";
-            Dictionary<string, object> parameters = new Dictionary<string, object>
-            {
-                { "@UserId", userId },
-                { "@JobPostId", jobPostId }
-            };
-
-            return db.Execute(sqlStr, parameters);
-        }
-        public int DeleteFollowingCompany(int userAccountId, int companyAccoutnId)
-        {
-            string sqlStr = @"
-                            DELETE FROM following
-                            WHERE account_followed = @CompanyAccountId AND account_following = @UserAccountId;";
-            Dictionary<string, object> parameters = new Dictionary<string, object>
-            {
-                { "@CompanyAccountId", companyAccoutnId },
-                { "@UserAccountId", userAccountId }
-            };
-
-            return db.Execute(sqlStr, parameters);
+            var userProfile = FindUserProfileByAccountId(userId);
+            var jobPost = db.JobPosts.Find(jobPostId);
+            userProfile.JobPosts.Remove(jobPost);
+            db.UserProfiles.Attach(userProfile);
+            return db.SaveChanges();
         }
     }
 }

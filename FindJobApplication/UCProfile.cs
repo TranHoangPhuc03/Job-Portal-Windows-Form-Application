@@ -1,5 +1,6 @@
 ﻿using FindJobApplication.Daos;
-using FindJobApplication.Models;
+using FindJobApplication.Entities;
+using FindJobApplication.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,7 +16,8 @@ namespace FindJobApplication
 {
     public partial class UCProfile : UserControl
     {
-        private int userId;
+        private UserProfile userProfile;
+        private UserProfileDao userProfileDao = new UserProfileDao();
         UCUCUserProfileEducationAndWorkExperience uCEduaction = new UCUCUserProfileEducationAndWorkExperience();
         UCUCUserProfileEducationAndWorkExperience uCWorkExperience = new UCUCUserProfileEducationAndWorkExperience();
         UCSkillTag uCUserProfileSkill = new UCSkillTag();
@@ -26,12 +28,15 @@ namespace FindJobApplication
             InitializeComponent();
             panelProfile.AutoScroll = true;
             btnBack.Visible = false;
-            this.userId = Session.accountId;
+            Dock = DockStyle.Fill;
+            pnlProfile.HorizontalScroll.Maximum = 0;
+            pnlProfile.AutoScroll = false;
+            pnlProfile.VerticalScroll.Visible = true;
+            pnlProfile.AutoScroll = true;
         }
-
         public UCProfile(int userId) : this()
         {
-            this.userId = userId;
+            userProfile = userProfileDao.FindUserProfileByAccountId(userId);
         }
 
         public void hideAllBtn()
@@ -106,55 +111,53 @@ namespace FindJobApplication
 
         private void btnFollow_Click(object sender, EventArgs e)
         {
-            CompanyProfileDao companyProfileDao = new CompanyProfileDao();
-            if (btnFollow.Text == "Following")
-            {
-                btnFollow.Text = "Follow";
-                companyProfileDao.DeleteUserIdFollowing(Session.accountId, userId);
-            }
-            else
-            {
-                btnFollow.Text = "Following";
-                companyProfileDao.SaveUserIdFollowing(Session.accountId, userId);
-            }
+            //CompanyProfileDao companyProfileDao = new CompanyProfileDao();
+            //if (btnFollow.Text == "Following")
+            //{
+            //    btnFollow.Text = "Follow";
+            //    companyProfileDao.DeleteUserIdFollowing(Session.account.Id, userId);
+            //}
+            //else
+            //{
+            //    btnFollow.Text = "Following";
+            //    companyProfileDao.SaveUserIdFollowing(Session.account.Id, userId);
+            //}
         }
 
         private void UCProfile_Load(object sender, EventArgs e)
         {
-            UserProfileDao userProfileDao = new UserProfileDao();
-            UserProfile userProfile = userProfileDao.FindUserProfileById(this.userId);
-
-            this.lblProfileName.Text = userProfile.Name;
-            this.lblProfileEmail.Text = userProfile.Email;
-            this.lblProfileGender.Text = userProfile.Gender;
-            this.lblProfileDateOfBirth.Text = userProfile.DateOfBirth.ToString();
-            this.lblProfilePhoneNumber.Text = userProfile.PhoneNumber;
-            this.lblProfileAddress.Text = userProfile.Address;
-            this.lblProfileTitle.Text = userProfile.Title;
-            this.lblProfileLink.Text = userProfile.PersonalLink;
-            this.rtxtAboutMe.Text = userProfile.AboutMe;
-            this.pnlEducationDetail.Controls.Clear();
+            pbProfileAvatar.Image = ImageUtils.FromBytesToImage(userProfile.Account.Avatar);
+            lblProfileName.Text = Session.account.Name;
+            lblProfileEmail.Text = Session.account.Email;
+            lblProfileGender.Text = userProfile.Gender;
+            lblProfileDateOfBirth.Text = userProfile.DateOfBirth.ToString();
+            lblProfilePhoneNumber.Text = userProfile.PhoneNumber;
+            lblProfileAddress.Text = userProfile.Address;
+            lblProfileTitle.Text = userProfile.Title;
+            lblProfileLink.Text = userProfile.PersonalLink;
+            rtxtAboutMe.Text = userProfile.AboutMe;
+            pnlEducationDetail.Controls.Clear();
             foreach (var item in userProfile.UserEducations)
             {
                 UCUCUserProfileEducationAndWorkExperience uCUCUserProfileEducationAndWorkExperience = new UCUCUserProfileEducationAndWorkExperience(item);
-                this.pnlEducationDetail.Controls.Add(uCUCUserProfileEducationAndWorkExperience);
+                pnlEducationDetail.Controls.Add(uCUCUserProfileEducationAndWorkExperience);
             }
             foreach (var item in userProfile.UserWorkExperiences)
             {
                 UCUCUserProfileEducationAndWorkExperience uCUCUserProfileEducationAndWorkExperience = new UCUCUserProfileEducationAndWorkExperience(item);
-                this.pnlWorkExperienceDetail.Controls.Add(uCUCUserProfileEducationAndWorkExperience);
+                pnlWorkExperienceDetail.Controls.Add(uCUCUserProfileEducationAndWorkExperience);
             }
-            foreach (var item in userProfile.UserSkills)
+            foreach (var item in userProfile.Skills)
             {
                 UCSkillTag uCUserProfileSkill = new UCSkillTag(item);
-                this.pnlSkillDetail.Controls.Add(uCUserProfileSkill);
+                pnlSkillDetail.Controls.Add(uCUserProfileSkill);
             }
             foreach(var item in userProfile.UserPersonalProjects)
             {
                 UCUserProfileProject uCUserProfileProject = new UCUserProfileProject(item);
-                this.pnlProjectDetail.Controls.Add(uCUserProfileProject);
+                pnlProjectDetail.Controls.Add(uCUserProfileProject);
             }
-            if (isFollowing(userId))
+            if (isFollowing(userProfile.Id))
             {
                 btnFollow.Text = "Following";
             }
@@ -165,17 +168,9 @@ namespace FindJobApplication
             FSendMail fSendMail = new FSendMail();
             fSendMail.Show();
         }
-        private bool isFollowing(int id)
+        private bool isFollowing(int userId)
         {
-            CompanyProfileDao companyProfileDao = new CompanyProfileDao();
-
-            List<int> followeds = companyProfileDao.FindAllUserIdFollowing(Session.accountId);
-            foreach (int followed in followeds)
-            {
-                if (followed == id)
-                    return true;
-            }
-            return false;
+            return Session.account.Accounts.Where(row => row.Id == userId).Any();
         }
     }
 }

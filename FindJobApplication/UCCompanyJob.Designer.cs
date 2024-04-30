@@ -44,6 +44,7 @@
             // 
             // lblCountApplied
             // 
+            this.lblCountApplied.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCountApplied.AutoSize = true;
             this.lblCountApplied.BackColor = System.Drawing.Color.White;
             this.lblCountApplied.Font = new System.Drawing.Font("Inter", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
@@ -59,6 +60,7 @@
             // 
             // pbEdit
             // 
+            this.pbEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pbEdit.BackColor = System.Drawing.Color.White;
             this.pbEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbEdit.Image = global::FindJobApplication.Properties.Resources.edit1;
@@ -73,6 +75,7 @@
             // 
             // pBDelete
             // 
+            this.pBDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pBDelete.BackColor = System.Drawing.Color.White;
             this.pBDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pBDelete.Image = global::FindJobApplication.Properties.Resources.delete;
@@ -107,6 +110,7 @@
             // 
             // lblSalary
             // 
+            this.lblSalary.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSalary.AutoSize = true;
             this.lblSalary.Font = new System.Drawing.Font("Inter", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.lblSalary.Location = new System.Drawing.Point(830, 13);
@@ -117,6 +121,7 @@
             // 
             // lblExpirationDate
             // 
+            this.lblExpirationDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblExpirationDate.AutoSize = true;
             this.lblExpirationDate.Font = new System.Drawing.Font("Inter", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.lblExpirationDate.Location = new System.Drawing.Point(605, 13);
@@ -127,6 +132,7 @@
             // 
             // lblPostDate
             // 
+            this.lblPostDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPostDate.AutoSize = true;
             this.lblPostDate.Font = new System.Drawing.Font("Inter", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.lblPostDate.Location = new System.Drawing.Point(385, 13);

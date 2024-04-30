@@ -290,3 +290,128 @@ VALUES
 (9, 4, 'Interview', DATEADD(day, -1 * ABS(CHECKSUM(NEWID())) % 20, '2024-04-22')),
 (10, 4, 'Approved', DATEADD(day, -1 * ABS(CHECKSUM(NEWID())) % 20, '2024-04-22'));
 GO
+
+--Insert account avatar
+UPDATE account 
+SET avatar = (
+        SELECT BulkColumn 
+        FROM Openrowset( Bulk 'E:\SPKT\LapTrinhWindows\FindJobApplication\avatars\account_1.png', Single_Blob) AS img
+)
+WHERE id = 1;
+GO
+UPDATE account 
+SET avatar = (
+        SELECT BulkColumn 
+        FROM Openrowset( Bulk 'E:\SPKT\LapTrinhWindows\FindJobApplication\avatars\account_2.png', Single_Blob) AS img
+)
+WHERE id = 2;
+GO
+UPDATE account 
+SET avatar = (
+        SELECT BulkColumn 
+        FROM Openrowset( Bulk 'E:\SPKT\LapTrinhWindows\FindJobApplication\avatars\account_3.png', Single_Blob) AS img
+)
+WHERE id = 3;
+GO
+UPDATE account 
+SET avatar = (
+        SELECT BulkColumn 
+        FROM Openrowset( Bulk 'E:\SPKT\LapTrinhWindows\FindJobApplication\avatars\account_4.png', Single_Blob) AS img
+)
+WHERE id = 4;
+GO
+UPDATE account 
+SET avatar = (
+        SELECT BulkColumn 
+        FROM Openrowset( Bulk 'E:\SPKT\LapTrinhWindows\FindJobApplication\avatars\account_5.png', Single_Blob) AS img
+)
+WHERE id = 5;
+GO
+UPDATE account 
+SET avatar = (
+        SELECT BulkColumn 
+        FROM Openrowset( Bulk 'E:\SPKT\LapTrinhWindows\FindJobApplication\avatars\account_6.jpg', Single_Blob) AS img
+)
+WHERE id = 6;
+GO
+UPDATE account 
+SET avatar = (
+        SELECT BulkColumn 
+        FROM Openrowset( Bulk 'E:\SPKT\LapTrinhWindows\FindJobApplication\avatars\account_7.jpg', Single_Blob) AS img
+)
+WHERE id = 7;
+GO
+UPDATE account 
+SET avatar = (
+        SELECT BulkColumn 
+        FROM Openrowset( Bulk 'E:\SPKT\LapTrinhWindows\FindJobApplication\avatars\account_8.jpg', Single_Blob) AS img
+)
+WHERE id = 8;
+GO
+UPDATE account 
+SET avatar = (
+        SELECT BulkColumn 
+        FROM Openrowset( Bulk 'E:\SPKT\LapTrinhWindows\FindJobApplication\avatars\account_9.jpg', Single_Blob) AS img
+)
+WHERE id = 9;
+GO
+UPDATE account 
+SET avatar = (
+        SELECT BulkColumn 
+        FROM Openrowset( Bulk 'E:\SPKT\LapTrinhWindows\FindJobApplication\avatars\account_10.jpg', Single_Blob) AS img
+)
+WHERE id = 10;
+GO
+
+--Insert an user profile
+UPDATE Account
+SET [Name] = 'Elon Musk'
+WHERE Id = 6;
+GO
+
+UPDATE UserProfile
+SET 
+	DateOfBirth = '1971-06-28',
+	PhoneNumber = '0123456789'
+WHERE Id = 6;
+GO
+
+INSERT INTO UserEducation (SchoolName, Major, [From], [To], Detail, UserId)
+VALUES
+('HCMCUTE', 'Computer science', '2021-08-01', '2025-08-01', 'Engineer degree', 6),
+('HCMCUTE', 'Artificial Intelligence', '2021-08-01', '2025-08-01', 'Engineer degree', 6);
+GO
+
+INSERT INTO UserSkill (UserId, SkillId)
+VALUES
+(6, 1),
+(6, 2),
+(6, 9);
+GO
+
+INSERT INTO UserPersonalProject (ProjectName, [From], [To], [Description], UserId)
+VALUES
+('Pomodoro Timer', '2023-08-01', '2023-08-20', 'Pomodoro', 6);
+GO
+
+--Insert Company Profile
+UPDATE Account
+SET [Name] = 'FPT Software'
+WHERE Id = 1;
+GO
+UPDATE Account
+SET [Name] = 'CMC Telecom'
+WHERE Id = 2;
+GO
+UPDATE Account
+SET [Name] = 'Cybersoft'
+WHERE Id = 3;
+GO
+UPDATE Account
+SET [Name] = 'TMA Solutions'
+WHERE Id = 4;
+GO
+UPDATE Account
+SET [Name] = 'KMS Technology'
+WHERE Id = 5;
+GO

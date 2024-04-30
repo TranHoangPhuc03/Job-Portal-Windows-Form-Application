@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using FindJobApplication.Models;
+using FindJobApplication.Entities;
+using FindJobApplication.Utils;
 
 namespace FindJobApplication
 {
@@ -28,7 +29,7 @@ namespace FindJobApplication
 
         private void btnProfile_Click(object sender, EventArgs e)
         {
-            UCCompanyProfile uCCompanyProfile = new UCCompanyProfile(Session.accountId);
+            UCCompanyProfile uCCompanyProfile = new UCCompanyProfile(Session.account.Id);
             UCMain.Instance.PnlMid.Controls.Clear();
             UCMain.Instance.PnlMid.Controls.Add(uCCompanyProfile);
             hideMenu();

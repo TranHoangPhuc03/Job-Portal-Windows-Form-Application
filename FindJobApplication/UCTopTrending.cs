@@ -1,6 +1,7 @@
 ﻿using FindJobApplication;
 using FindJobApplication.Daos;
-using FindJobApplication.Models;
+using FindJobApplication.Entities;
+using FindJobApplication.Utils;
 using Guna.Charts.WinForms;
 using Guna.UI.WinForms;
 using Guna.UI2.WinForms;
@@ -18,12 +19,15 @@ namespace FindJobApplication
 {
     public partial class UCTopTrending : UserControl
     {
-        TopTrendingDao topTrendingDao = new TopTrendingDao();
+        public event FillToMainPanelHandler FillToMainPanelClicked;
+
+        CompanyProfileDao companyProfileDao = new CompanyProfileDao();
+        JobPostDao jobPostDao = new JobPostDao();
 
         public UCTopTrending()
         {
             InitializeComponent();
-            this.Dock = DockStyle.Fill;
+            Dock = DockStyle.Fill;
             Load_Data_Top_5();
         }
         private void Load_Data_Top_5()
@@ -31,44 +35,79 @@ namespace FindJobApplication
             BDTop5.DataPoints.Clear();
             chartTop5.Datasets.Clear();
 
-            DataTable dt = new DataTable(); 
-            List<GunaLinkLabel> links = new List<GunaLinkLabel> { llblTop1, llblTop2, llblTop3, llblTop4, llblTop5};
+            List<GunaLinkLabel> links = new List<GunaLinkLabel> { llblTop1, llblTop2, llblTop3, llblTop4, llblTop5 };
             List<Guna2Button> btns = new List<Guna2Button> { btnTop1, btnTop2, btnTop3, btnTop4, btnTop5 };
-            for(int i = 0; i < links.Count; i++)
-            {
-                btns[i].Visible = true;
-                links[i].Visible = true;
-            }
+            int numberOfItemsToShow = 5;
+
             if (cbbSelectTopTrending.SelectedIndex == 0)
             {
-                dt = topTrendingDao.TopFiveJobTrending();
+                var results = jobPostDao.FindTopMostFollowedJob(numberOfItemsToShow);
                 BDTop5.Label = "Top 5 Job Apply";
-            }
-            else 
-            {
-                dt = topTrendingDao.TopFiveCompanyTrending();
-                BDTop5.Label = "Top 5 Company";
-
-            }
-            int cnt = 0;
-            if (dt.Rows.Count < 5)
-            {
-                for (int i = 4; i >= dt.Rows.Count; i--)
+                for (int i = 0; i < results.Count; i++)
                 {
-                    btns[i].Visible = false;
-                    links[i].Visible = false;
+                    if (i < results.Count)
+                    {
+                        btns[i].Visible = true;
+                        links[i].Visible = true;
+                    }
+                    else
+                    {
+                        btns[i].Visible = false;
+                        links[i].Visible = false;
+                    }
+                }
+
+                if (results.Count > 0)
+                {
+                    lblbTop1.Text = results.First().Title;
+                }
+                int index = 0;
+                foreach (var item in results)
+                {
+                    string name = item.Title;
+                    int count = item.UserProfiles.Count;
+                    BDTop5.DataPoints.Add("", count);
+                    links[index].Text = name;
+                    index++;
+
                 }
             }
-            if (dt.Rows.Count > 0) lblbTop1.Text = dt.Rows[0]["nameTop"].ToString();
-            foreach (DataRow row in dt.Rows)
+            else
             {
-                string name = row["nameTop"].ToString();
-                int count = Convert.ToInt32(row["cnt"]);
-                BDTop5.DataPoints.Add("", count);
-                links[cnt].Text = name;
-                cnt++;
+                var results = companyProfileDao.FindTopFollowedCompany(numberOfItemsToShow);
+                BDTop5.Label = "Top 5 Company";
+                for (int i = 0; i < results.Count; i++)
+                {
+                    if (i < results.Count)
+                    {
+                        btns[i].Visible = true;
+                        links[i].Visible = true;
+                    }
+                    else
+                    {
+                        btns[i].Visible = false;
+                        links[i].Visible = false;
+                    }
+                }
 
+                if (results.Count > 0) {
+                    lblbTop1.Text = results.First().Account.Name;
+                }
+                int index = 0;
+                foreach (var item in results)
+                {
+                    string name = item.Account.Name;
+                    int count = item.Account.Accounts.Count;
+                    BDTop5.DataPoints.Add("", count);
+                    links[index].Text = name;
+                    index++;
+
+                }
             }
+
+            
+
+            
             chartTop5.Datasets.Add(BDTop5);
             chartTop5.Update();
         }
@@ -107,23 +146,24 @@ namespace FindJobApplication
         }
         public void loadDetail(Label lbl)
         {
+            int numberOfItemsToShow = 5;
             int row = int.Parse(lbl.Name[lbl.Name.Length - 1].ToString());
             if (cbbSelectTopTrending.SelectedIndex == 0)
             {
-                UCJobInformation uCJobInformation = new UCJobInformation((int)topTrendingDao.TopFiveJobTrending().Rows[row - 1]["job_post_id"]);
-                FHome.Instance.PnlMain.Controls.Add(uCJobInformation);
-                uCJobInformation.BringToFront();
-                MessageBox.Show("hi");
+                var jobPost = jobPostDao.FindTopMostFollowedJob(numberOfItemsToShow).ElementAt(row);
+                UCJobInformation uCJobInformation = new UCJobInformation(
+                    jobPost,
+                    Session.account.UserProfile.JobPosts.Contains(jobPost)
+                );
+                FillToMainPanelClicked?.Invoke(this, uCJobInformation);
             }
             else
             {
-                UCCompanyProfile uCCompanyProfile = new UCCompanyProfile((int)topTrendingDao.TopFiveJobTrending().Rows[row - 1]["idCompany"]);
-                
-                uCCompanyProfile.hideAllButton();
-                uCCompanyProfile.BringToFront();
+                var companyProfile = companyProfileDao.FindTopFollowedCompany(numberOfItemsToShow).ElementAt(row);
+                UCCompanyProfile uCCompanyProfile = new UCCompanyProfile(companyProfile.Id);
+                FillToMainPanelClicked?.Invoke(this, uCCompanyProfile);
+
             }
-
-
         }
 
         private void cbbSelectTopTrending_SelectedIndexChanged(object sender, EventArgs e)

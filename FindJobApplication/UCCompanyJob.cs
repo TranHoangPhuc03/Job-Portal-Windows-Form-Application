@@ -1,5 +1,4 @@
 ﻿using FindJobApplication.Daos;
-using FindJobApplication.Models;
 using Guna.UI.WinForms;
 using Guna.UI2.WinForms;
 using System;
@@ -11,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FindJobApplication.Entities;
 
 namespace FindJobApplication
 {

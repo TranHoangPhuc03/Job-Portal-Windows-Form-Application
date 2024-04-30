@@ -30,6 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCJobInformation));
             this.lblTimePost = new Guna.UI2.WinForms.Guna2Panel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.pbCompany3 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.pbCompany2 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.pbCompany1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.pnlSkill = new System.Windows.Forms.FlowLayoutPanel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -40,13 +44,12 @@
             this.lblTypeWork = new System.Windows.Forms.Label();
             this.lblWorkAddress = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pbCompany1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.pbCompany2 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.pbCompany3 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.btnApply = new Guna.UI2.WinForms.Guna2Button();
             this.lblSalary = new System.Windows.Forms.Label();
             this.lblNameCompany = new System.Windows.Forms.Label();
             this.lblNameJob = new System.Windows.Forms.Label();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnSave = new Guna.UI2.WinForms.Guna2ImageCheckBox();
+            this.btnApply = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.lblBenefit = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -65,22 +68,19 @@
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.btnBack = new Guna.UI2.WinForms.Guna2PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnSave = new Guna.UI2.WinForms.Guna2ImageCheckBox();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.lblTimePost.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCompany3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCompany2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCompany1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCompany1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCompany2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCompany3)).BeginInit();
+            this.tableLayoutPanel3.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTimePost
@@ -105,18 +105,85 @@
             this.lblTimePost.Controls.Add(this.lblNameJob);
             this.lblTimePost.Controls.Add(this.tableLayoutPanel3);
             this.lblTimePost.Location = new System.Drawing.Point(0, 0);
-            this.lblTimePost.Margin = new System.Windows.Forms.Padding(0);
+            this.lblTimePost.Margin = new System.Windows.Forms.Padding(0, 0, 20, 0);
             this.lblTimePost.Name = "lblTimePost";
-            this.lblTimePost.Size = new System.Drawing.Size(1184, 783);
+            this.lblTimePost.Size = new System.Drawing.Size(1164, 783);
             this.lblTimePost.TabIndex = 0;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel2.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tableLayoutPanel2.ColumnCount = 3;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel2.Controls.Add(this.pbCompany3, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.pbCompany2, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.pbCompany1, 0, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(52, 314);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1075, 244);
+            this.tableLayoutPanel2.TabIndex = 44;
+            // 
+            // pbCompany3
+            // 
+            this.pbCompany3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbCompany3.BorderRadius = 4;
+            this.pbCompany3.Image = global::FindJobApplication.Properties.Resources.vanphong2;
+            this.pbCompany3.ImageRotate = 0F;
+            this.pbCompany3.Location = new System.Drawing.Point(720, 4);
+            this.pbCompany3.Name = "pbCompany3";
+            this.pbCompany3.Size = new System.Drawing.Size(351, 236);
+            this.pbCompany3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbCompany3.TabIndex = 34;
+            this.pbCompany3.TabStop = false;
+            // 
+            // pbCompany2
+            // 
+            this.pbCompany2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbCompany2.BorderRadius = 4;
+            this.pbCompany2.Image = global::FindJobApplication.Properties.Resources.vanphong2;
+            this.pbCompany2.ImageRotate = 0F;
+            this.pbCompany2.Location = new System.Drawing.Point(359, 1);
+            this.pbCompany2.Margin = new System.Windows.Forms.Padding(0);
+            this.pbCompany2.Name = "pbCompany2";
+            this.pbCompany2.Size = new System.Drawing.Size(357, 242);
+            this.pbCompany2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbCompany2.TabIndex = 33;
+            this.pbCompany2.TabStop = false;
+            // 
+            // pbCompany1
+            // 
+            this.pbCompany1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbCompany1.BorderRadius = 4;
+            this.pbCompany1.Image = global::FindJobApplication.Properties.Resources.vanphong2;
+            this.pbCompany1.ImageRotate = 0F;
+            this.pbCompany1.Location = new System.Drawing.Point(1, 1);
+            this.pbCompany1.Margin = new System.Windows.Forms.Padding(0);
+            this.pbCompany1.Name = "pbCompany1";
+            this.pbCompany1.Size = new System.Drawing.Size(357, 242);
+            this.pbCompany1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbCompany1.TabIndex = 32;
+            this.pbCompany1.TabStop = false;
             // 
             // pnlSkill
             // 
             this.pnlSkill.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlSkill.Location = new System.Drawing.Point(121, 717);
+            this.pnlSkill.Location = new System.Drawing.Point(108, 711);
             this.pnlSkill.Margin = new System.Windows.Forms.Padding(0);
             this.pnlSkill.Name = "pnlSkill";
-            this.pnlSkill.Size = new System.Drawing.Size(1027, 36);
+            this.pnlSkill.Size = new System.Drawing.Size(1015, 36);
             this.pnlSkill.TabIndex = 42;
             this.pnlSkill.WrapContents = false;
             // 
@@ -163,7 +230,7 @@
             this.guna2Separator4.FillColor = System.Drawing.Color.Black;
             this.guna2Separator4.Location = new System.Drawing.Point(47, 770);
             this.guna2Separator4.Name = "guna2Separator4";
-            this.guna2Separator4.Size = new System.Drawing.Size(1078, 10);
+            this.guna2Separator4.Size = new System.Drawing.Size(1049, 10);
             this.guna2Separator4.TabIndex = 36;
             // 
             // lblSkill
@@ -218,72 +285,6 @@
             this.pictureBox3.TabIndex = 31;
             this.pictureBox3.TabStop = false;
             // 
-            // pbCompany1
-            // 
-            this.pbCompany1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbCompany1.BorderRadius = 4;
-            this.pbCompany1.Image = global::FindJobApplication.Properties.Resources.vanphong2;
-            this.pbCompany1.ImageRotate = 0F;
-            this.pbCompany1.Location = new System.Drawing.Point(1, 1);
-            this.pbCompany1.Margin = new System.Windows.Forms.Padding(0);
-            this.pbCompany1.Name = "pbCompany1";
-            this.pbCompany1.Size = new System.Drawing.Size(366, 242);
-            this.pbCompany1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbCompany1.TabIndex = 32;
-            this.pbCompany1.TabStop = false;
-            // 
-            // pbCompany2
-            // 
-            this.pbCompany2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbCompany2.BorderRadius = 4;
-            this.pbCompany2.Image = global::FindJobApplication.Properties.Resources.vanphong2;
-            this.pbCompany2.ImageRotate = 0F;
-            this.pbCompany2.Location = new System.Drawing.Point(368, 1);
-            this.pbCompany2.Margin = new System.Windows.Forms.Padding(0);
-            this.pbCompany2.Name = "pbCompany2";
-            this.pbCompany2.Size = new System.Drawing.Size(366, 242);
-            this.pbCompany2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbCompany2.TabIndex = 33;
-            this.pbCompany2.TabStop = false;
-            // 
-            // pbCompany3
-            // 
-            this.pbCompany3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbCompany3.BorderRadius = 4;
-            this.pbCompany3.Image = global::FindJobApplication.Properties.Resources.vanphong2;
-            this.pbCompany3.ImageRotate = 0F;
-            this.pbCompany3.Location = new System.Drawing.Point(738, 4);
-            this.pbCompany3.Name = "pbCompany3";
-            this.pbCompany3.Size = new System.Drawing.Size(362, 236);
-            this.pbCompany3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbCompany3.TabIndex = 34;
-            this.pbCompany3.TabStop = false;
-            // 
-            // btnApply
-            // 
-            this.btnApply.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnApply.BorderRadius = 6;
-            this.btnApply.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnApply.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnApply.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnApply.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnApply.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(75)))), ((int)(((byte)(43)))));
-            this.btnApply.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.btnApply.ForeColor = System.Drawing.Color.White;
-            this.btnApply.Location = new System.Drawing.Point(3, 3);
-            this.btnApply.Name = "btnApply";
-            this.btnApply.Size = new System.Drawing.Size(1006, 56);
-            this.btnApply.TabIndex = 3;
-            this.btnApply.Text = "Apply now";
-            this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
-            // 
             // lblSalary
             // 
             this.lblSalary.AutoSize = true;
@@ -319,6 +320,60 @@
             this.lblNameJob.TabIndex = 0;
             this.lblNameJob.Text = "Solution Architect (Java, Spring)";
             // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel3.ColumnCount = 2;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel3.Controls.Add(this.btnSave, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btnApply, 0, 0);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(52, 233);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1075, 62);
+            this.tableLayoutPanel3.TabIndex = 45;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSave.CheckedState.Image = global::FindJobApplication.Properties.Resources.heart21;
+            this.btnSave.CheckedState.ImageSize = new System.Drawing.Size(50, 50);
+            this.btnSave.HoverState.ImageSize = new System.Drawing.Size(50, 50);
+            this.btnSave.Image = global::FindJobApplication.Properties.Resources.like;
+            this.btnSave.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnSave.ImageRotate = 0F;
+            this.btnSave.ImageSize = new System.Drawing.Size(50, 50);
+            this.btnSave.Location = new System.Drawing.Point(986, 3);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.PressedState.ImageSize = new System.Drawing.Size(50, 50);
+            this.btnSave.Size = new System.Drawing.Size(86, 56);
+            this.btnSave.TabIndex = 43;
+            this.btnSave.CheckedChanged += new System.EventHandler(this.btnSave_CheckedChanged);
+            // 
+            // btnApply
+            // 
+            this.btnApply.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnApply.BorderRadius = 6;
+            this.btnApply.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnApply.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnApply.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnApply.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnApply.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(75)))), ((int)(((byte)(43)))));
+            this.btnApply.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.btnApply.ForeColor = System.Drawing.Color.White;
+            this.btnApply.Location = new System.Drawing.Point(3, 3);
+            this.btnApply.Name = "btnApply";
+            this.btnApply.Size = new System.Drawing.Size(977, 56);
+            this.btnApply.TabIndex = 3;
+            this.btnApply.Text = "Apply now";
+            this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
+            // 
             // guna2Panel2
             // 
             this.guna2Panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -340,9 +395,10 @@
             this.guna2Panel2.Controls.Add(this.rtxtTop3Reason);
             this.guna2Panel2.Controls.Add(this.lblRequired);
             this.guna2Panel2.Controls.Add(this.guna2Separator1);
-            this.guna2Panel2.Location = new System.Drawing.Point(3, 786);
+            this.guna2Panel2.Location = new System.Drawing.Point(0, 783);
+            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(0, 0, 20, 0);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(1178, 2099);
+            this.guna2Panel2.Size = new System.Drawing.Size(1164, 2099);
             this.guna2Panel2.TabIndex = 7;
             // 
             // lblBenefit
@@ -376,7 +432,7 @@
             this.guna2Separator3.FillStyle = System.Drawing.Drawing2D.DashStyle.Dot;
             this.guna2Separator3.Location = new System.Drawing.Point(43, 1515);
             this.guna2Separator3.Name = "guna2Separator3";
-            this.guna2Separator3.Size = new System.Drawing.Size(1084, 10);
+            this.guna2Separator3.Size = new System.Drawing.Size(1052, 10);
             this.guna2Separator3.TabIndex = 47;
             // 
             // lblPrioritize
@@ -410,7 +466,7 @@
             this.guna2Separator2.FillStyle = System.Drawing.Drawing2D.DashStyle.Dot;
             this.guna2Separator2.Location = new System.Drawing.Point(43, 643);
             this.guna2Separator2.Name = "guna2Separator2";
-            this.guna2Separator2.Size = new System.Drawing.Size(1084, 10);
+            this.guna2Separator2.Size = new System.Drawing.Size(1052, 10);
             this.guna2Separator2.TabIndex = 44;
             // 
             // label2
@@ -448,7 +504,7 @@
             this.rtxtBenefit.Margin = new System.Windows.Forms.Padding(2);
             this.rtxtBenefit.Name = "rtxtBenefit";
             this.rtxtBenefit.ReadOnly = true;
-            this.rtxtBenefit.Size = new System.Drawing.Size(970, 342);
+            this.rtxtBenefit.Size = new System.Drawing.Size(938, 342);
             this.rtxtBenefit.TabIndex = 40;
             this.rtxtBenefit.Text = resources.GetString("rtxtBenefit.Text");
             // 
@@ -463,7 +519,7 @@
             this.rtxtPrioritize.Margin = new System.Windows.Forms.Padding(2);
             this.rtxtPrioritize.Name = "rtxtPrioritize";
             this.rtxtPrioritize.ReadOnly = true;
-            this.rtxtPrioritize.Size = new System.Drawing.Size(970, 352);
+            this.rtxtPrioritize.Size = new System.Drawing.Size(938, 352);
             this.rtxtPrioritize.TabIndex = 39;
             this.rtxtPrioritize.Text = resources.GetString("rtxtPrioritize.Text");
             // 
@@ -478,7 +534,7 @@
             this.rtxtRequired.Margin = new System.Windows.Forms.Padding(2);
             this.rtxtRequired.Name = "rtxtRequired";
             this.rtxtRequired.ReadOnly = true;
-            this.rtxtRequired.Size = new System.Drawing.Size(970, 261);
+            this.rtxtRequired.Size = new System.Drawing.Size(938, 261);
             this.rtxtRequired.TabIndex = 37;
             this.rtxtRequired.Text = resources.GetString("rtxtRequired.Text");
             // 
@@ -493,7 +549,7 @@
             this.rtxtJobDescription.Margin = new System.Windows.Forms.Padding(2);
             this.rtxtJobDescription.Name = "rtxtJobDescription";
             this.rtxtJobDescription.ReadOnly = true;
-            this.rtxtJobDescription.Size = new System.Drawing.Size(976, 297);
+            this.rtxtJobDescription.Size = new System.Drawing.Size(944, 297);
             this.rtxtJobDescription.TabIndex = 36;
             this.rtxtJobDescription.Text = resources.GetString("rtxtJobDescription.Text");
             // 
@@ -508,7 +564,7 @@
             this.rtxtTop3Reason.Margin = new System.Windows.Forms.Padding(2);
             this.rtxtTop3Reason.Name = "rtxtTop3Reason";
             this.rtxtTop3Reason.ReadOnly = true;
-            this.rtxtTop3Reason.Size = new System.Drawing.Size(976, 125);
+            this.rtxtTop3Reason.Size = new System.Drawing.Size(944, 125);
             this.rtxtTop3Reason.TabIndex = 35;
             this.rtxtTop3Reason.Text = "We build a professional & fun working environment.\nWe focus on your growth, yes t" +
     "he long-term growth.\nWe develop the future-ready digital bank platform.";
@@ -532,7 +588,7 @@
             this.guna2Separator1.FillStyle = System.Drawing.Drawing2D.DashStyle.Dot;
             this.guna2Separator1.Location = new System.Drawing.Point(44, 223);
             this.guna2Separator1.Name = "guna2Separator1";
-            this.guna2Separator1.Size = new System.Drawing.Size(1084, 10);
+            this.guna2Separator1.Size = new System.Drawing.Size(1052, 10);
             this.guna2Separator1.TabIndex = 11;
             // 
             // btnBack
@@ -555,8 +611,8 @@
             this.tableLayoutPanel1.AutoScroll = true;
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.guna2Panel2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.lblTimePost, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.guna2Panel2, 0, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 67);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -566,61 +622,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1184, 866);
             this.tableLayoutPanel1.TabIndex = 47;
             // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel2.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tableLayoutPanel2.ColumnCount = 3;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel2.Controls.Add(this.pbCompany3, 2, 0);
-            this.tableLayoutPanel2.Controls.Add(this.pbCompany2, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.pbCompany1, 0, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(52, 314);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1104, 244);
-            this.tableLayoutPanel2.TabIndex = 44;
-            // 
-            // btnSave
-            // 
-            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSave.CheckedState.Image = global::FindJobApplication.Properties.Resources.heart21;
-            this.btnSave.CheckedState.ImageSize = new System.Drawing.Size(50, 50);
-            this.btnSave.HoverState.ImageSize = new System.Drawing.Size(50, 50);
-            this.btnSave.Image = global::FindJobApplication.Properties.Resources.like;
-            this.btnSave.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnSave.ImageRotate = 0F;
-            this.btnSave.ImageSize = new System.Drawing.Size(50, 50);
-            this.btnSave.Location = new System.Drawing.Point(1015, 3);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.PressedState.ImageSize = new System.Drawing.Size(50, 50);
-            this.btnSave.Size = new System.Drawing.Size(86, 56);
-            this.btnSave.TabIndex = 43;
-            this.btnSave.CheckedChanged += new System.EventHandler(this.btnSave_CheckedChanged);
-            // 
-            // tableLayoutPanel3
-            // 
-            this.tableLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel3.ColumnCount = 2;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel3.Controls.Add(this.btnSave, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.btnApply, 0, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(52, 233);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 1;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1104, 62);
-            this.tableLayoutPanel3.TabIndex = 45;
-            // 
             // UCJobInformation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -628,24 +629,25 @@
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.btnBack);
+            this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "UCJobInformation";
-            this.Size = new System.Drawing.Size(1184, 936);
+            this.Size = new System.Drawing.Size(1184, 935);
             this.Load += new System.EventHandler(this.UCJobInformation_Load);
             this.lblTimePost.ResumeLayout(false);
             this.lblTimePost.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbCompany3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCompany2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCompany1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCompany1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCompany2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCompany3)).EndInit();
+            this.tableLayoutPanel3.ResumeLayout(false);
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

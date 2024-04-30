@@ -60,8 +60,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblProfileEmail = new Guna.UI.WinForms.GunaLabel();
             this.lblProfileCompany = new Guna.UI.WinForms.GunaLabel();
-            this.pnlProfile = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.gunaElipsePanel3 = new Guna.UI.WinForms.GunaElipsePanel();
             this.guna2Separator5 = new Guna.UI2.WinForms.Guna2Separator();
             this.guna2Separator3 = new Guna.UI2.WinForms.Guna2Separator();
@@ -74,6 +72,7 @@
             this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
             this.rtxtTop3Reason = new System.Windows.Forms.RichTextBox();
             this.pbTop3Edit = new System.Windows.Forms.PictureBox();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             pnlProfileInformation = new Guna.UI.WinForms.GunaElipsePanel();
             pnlProfileInformation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
@@ -91,18 +90,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbProfileAddress)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbProfileDateOfBirth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.pnlProfile.SuspendLayout();
             this.gunaElipsePanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBCompanyOverviewEdit)).BeginInit();
             this.gunaElipsePanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbTop3Edit)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlProfileInformation
             // 
+            pnlProfileInformation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             pnlProfileInformation.BackColor = System.Drawing.Color.Transparent;
             pnlProfileInformation.BaseColor = System.Drawing.Color.White;
-            pnlProfileInformation.Controls.Add(this.btnBack);
             pnlProfileInformation.Controls.Add(this.btnSeeJob);
             pnlProfileInformation.Controls.Add(this.lblCountJob);
             pnlProfileInformation.Controls.Add(this.lblRecruitment);
@@ -129,11 +129,11 @@
             pnlProfileInformation.Controls.Add(this.lblProfileEmail);
             pnlProfileInformation.Controls.Add(this.lblProfileCompany);
             pnlProfileInformation.Cursor = System.Windows.Forms.Cursors.Arrow;
-            pnlProfileInformation.Location = new System.Drawing.Point(2, 1);
-            pnlProfileInformation.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            pnlProfileInformation.Location = new System.Drawing.Point(0, 0);
+            pnlProfileInformation.Margin = new System.Windows.Forms.Padding(0);
             pnlProfileInformation.Name = "pnlProfileInformation";
             pnlProfileInformation.Radius = 10;
-            pnlProfileInformation.Size = new System.Drawing.Size(1158, 996);
+            pnlProfileInformation.Size = new System.Drawing.Size(1167, 999);
             pnlProfileInformation.TabIndex = 3;
             // 
             // btnBack
@@ -236,6 +236,8 @@
             // 
             // pnlListPicture
             // 
+            this.pnlListPicture.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlListPicture.Controls.Add(this.pbCompany1);
             this.pnlListPicture.Controls.Add(this.pbCompany2);
             this.pnlListPicture.Controls.Add(this.pbCompany3);
@@ -283,6 +285,8 @@
             // 
             // guna2Separator4
             // 
+            this.guna2Separator4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Separator4.FillColor = System.Drawing.Color.Black;
             this.guna2Separator4.FillStyle = System.Drawing.Drawing2D.DashStyle.Dash;
             this.guna2Separator4.Location = new System.Drawing.Point(44, 438);
@@ -304,6 +308,8 @@
             // 
             // guna2Separator1
             // 
+            this.guna2Separator1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Separator1.FillColor = System.Drawing.Color.Black;
             this.guna2Separator1.Location = new System.Drawing.Point(44, 349);
             this.guna2Separator1.Name = "guna2Separator1";
@@ -366,7 +372,7 @@
             this.pbProfileEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pbProfileEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbProfileEdit.Image = global::FindJobApplication.Properties.Resources.edit;
-            this.pbProfileEdit.Location = new System.Drawing.Point(1062, 365);
+            this.pbProfileEdit.Location = new System.Drawing.Point(1071, 365);
             this.pbProfileEdit.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.pbProfileEdit.Name = "pbProfileEdit";
             this.pbProfileEdit.Size = new System.Drawing.Size(54, 38);
@@ -525,32 +531,10 @@
             this.lblProfileCompany.TabIndex = 1;
             this.lblProfileCompany.Text = "FPT Software";
             // 
-            // pnlProfile
-            // 
-            this.pnlProfile.AutoScroll = true;
-            this.pnlProfile.BackColor = System.Drawing.Color.Transparent;
-            this.pnlProfile.Controls.Add(pnlProfileInformation);
-            this.pnlProfile.Controls.Add(this.flowLayoutPanel1);
-            this.pnlProfile.Controls.Add(this.gunaElipsePanel3);
-            this.pnlProfile.Controls.Add(this.gunaElipsePanel2);
-            this.pnlProfile.Location = new System.Drawing.Point(-1, 0);
-            this.pnlProfile.Margin = new System.Windows.Forms.Padding(2);
-            this.pnlProfile.Name = "pnlProfile";
-            this.pnlProfile.Size = new System.Drawing.Size(1184, 937);
-            this.pnlProfile.TabIndex = 0;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.AutoSize = true;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(1164, 2);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(0, 0);
-            this.flowLayoutPanel1.TabIndex = 4;
-            // 
             // gunaElipsePanel3
             // 
+            this.gunaElipsePanel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gunaElipsePanel3.BackColor = System.Drawing.Color.Transparent;
             this.gunaElipsePanel3.BaseColor = System.Drawing.Color.White;
             this.gunaElipsePanel3.Controls.Add(this.guna2Separator5);
@@ -558,11 +542,11 @@
             this.gunaElipsePanel3.Controls.Add(this.gunaLabel1);
             this.gunaElipsePanel3.Controls.Add(this.rTxtOverview);
             this.gunaElipsePanel3.Controls.Add(this.pBCompanyOverviewEdit);
-            this.gunaElipsePanel3.Location = new System.Drawing.Point(2, 999);
-            this.gunaElipsePanel3.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.gunaElipsePanel3.Location = new System.Drawing.Point(0, 999);
+            this.gunaElipsePanel3.Margin = new System.Windows.Forms.Padding(0);
             this.gunaElipsePanel3.Name = "gunaElipsePanel3";
             this.gunaElipsePanel3.Radius = 10;
-            this.gunaElipsePanel3.Size = new System.Drawing.Size(1158, 541);
+            this.gunaElipsePanel3.Size = new System.Drawing.Size(1167, 541);
             this.gunaElipsePanel3.TabIndex = 11;
             // 
             // guna2Separator5
@@ -613,7 +597,7 @@
             this.pBCompanyOverviewEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pBCompanyOverviewEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pBCompanyOverviewEdit.Image = global::FindJobApplication.Properties.Resources.edit;
-            this.pBCompanyOverviewEdit.Location = new System.Drawing.Point(1062, 19);
+            this.pBCompanyOverviewEdit.Location = new System.Drawing.Point(1071, 19);
             this.pBCompanyOverviewEdit.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.pBCompanyOverviewEdit.Name = "pBCompanyOverviewEdit";
             this.pBCompanyOverviewEdit.Size = new System.Drawing.Size(54, 38);
@@ -624,6 +608,8 @@
             // 
             // gunaElipsePanel2
             // 
+            this.gunaElipsePanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gunaElipsePanel2.BackColor = System.Drawing.Color.Transparent;
             this.gunaElipsePanel2.BaseColor = System.Drawing.Color.White;
             this.gunaElipsePanel2.Controls.Add(this.guna2Separator2);
@@ -631,11 +617,11 @@
             this.gunaElipsePanel2.Controls.Add(this.gunaLabel3);
             this.gunaElipsePanel2.Controls.Add(this.rtxtTop3Reason);
             this.gunaElipsePanel2.Controls.Add(this.pbTop3Edit);
-            this.gunaElipsePanel2.Location = new System.Drawing.Point(2, 1542);
-            this.gunaElipsePanel2.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.gunaElipsePanel2.Location = new System.Drawing.Point(0, 1540);
+            this.gunaElipsePanel2.Margin = new System.Windows.Forms.Padding(0);
             this.gunaElipsePanel2.Name = "gunaElipsePanel2";
             this.gunaElipsePanel2.Radius = 10;
-            this.gunaElipsePanel2.Size = new System.Drawing.Size(1158, 299);
+            this.gunaElipsePanel2.Size = new System.Drawing.Size(1167, 299);
             this.gunaElipsePanel2.TabIndex = 12;
             // 
             // guna2Separator2
@@ -687,7 +673,7 @@
             this.pbTop3Edit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pbTop3Edit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbTop3Edit.Image = global::FindJobApplication.Properties.Resources.edit;
-            this.pbTop3Edit.Location = new System.Drawing.Point(1062, 35);
+            this.pbTop3Edit.Location = new System.Drawing.Point(1071, 35);
             this.pbTop3Edit.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.pbTop3Edit.Name = "pbTop3Edit";
             this.pbTop3Edit.Size = new System.Drawing.Size(54, 38);
@@ -696,15 +682,35 @@
             this.pbTop3Edit.TabStop = false;
             this.pbTop3Edit.Click += new System.EventHandler(this.pbTop3Edit_Click);
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.AutoScroll = true;
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.gunaElipsePanel3, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.gunaElipsePanel2, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(pnlProfileInformation, 0, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 67);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1184, 866);
+            this.tableLayoutPanel1.TabIndex = 46;
+            // 
             // UCCompanyProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Transparent;
-            this.Controls.Add(this.pnlProfile);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.btnBack);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "UCCompanyProfile";
-            this.Size = new System.Drawing.Size(1184, 937);
+            this.Size = new System.Drawing.Size(1184, 936);
             this.Load += new System.EventHandler(this.UCCompanyProfile_Load);
             pnlProfileInformation.ResumeLayout(false);
             pnlProfileInformation.PerformLayout();
@@ -723,21 +729,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbProfileAddress)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbProfileDateOfBirth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.pnlProfile.ResumeLayout(false);
-            this.pnlProfile.PerformLayout();
             this.gunaElipsePanel3.ResumeLayout(false);
             this.gunaElipsePanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBCompanyOverviewEdit)).EndInit();
             this.gunaElipsePanel2.ResumeLayout(false);
             this.gunaElipsePanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbTop3Edit)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.FlowLayoutPanel pnlProfile;
         private System.Windows.Forms.PictureBox pbProfileEdit;
         private Guna.UI.WinForms.GunaLabel lblProfileLink;
         private Guna.UI.WinForms.GunaLabel lblProfileCompanySize;
@@ -752,7 +755,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private Guna.UI.WinForms.GunaLabel lblProfileEmail;
         private Guna.UI.WinForms.GunaLabel lblProfileCompany;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private Guna.UI.WinForms.GunaElipsePanel gunaElipsePanel3;
         private System.Windows.Forms.RichTextBox rTxtOverview;
         public System.Windows.Forms.PictureBox pBCompanyOverviewEdit;
@@ -781,5 +783,6 @@
         private Guna.UI.WinForms.GunaLabel lblCountJob;
         private Guna.UI.WinForms.GunaLabel lblRecruitment;
         private Guna.UI2.WinForms.Guna2PictureBox btnBack;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }

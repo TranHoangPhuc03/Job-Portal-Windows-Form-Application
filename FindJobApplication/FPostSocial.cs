@@ -1,5 +1,5 @@
 ﻿using FindJobApplication.Daos;
-using FindJobApplication.Models;
+using FindJobApplication.Utils;
 using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FindJobApplication.Entities;
 
 namespace FindJobApplication
 {
@@ -22,38 +23,35 @@ namespace FindJobApplication
         public Guna2Button BtnPost { get => btnPost; set => btnPost = value; }
         private void btnPost_Click(object sender, EventArgs e)
         {
-            List<Skill> list = new List<Skill>();
-            foreach (Control control in this.pnlSkill.Controls)
-            {
-                list.Add(control.Tag as Skill);
-            }
-            SocialPost socialPost = new SocialPost(
-                this.txtTitle.Text,
-                DateTime.Now,
-                this.rtxtStatus.Text,
-                Session.accountId,
-                list
-            );
-            SocialPostDao socialPostDao = new SocialPostDao();
-            int result = socialPostDao.SaveNewSocialPost(socialPost);
-            if (result > 0)
-            {
-                MessageDialog.Show(this, "Post success");
-            }
-            else
-            {
-                MessageDialog.Show(this, "Post failed");
-            }
+            //List<Skill> list = new List<Skill>();
+            //foreach (Control control in this.pnlSkill.Controls)
+            //{
+            //    list.Add(control.Tag as Skill);
+            //}
+            //SocialPost socialPost = new SocialPost(
+            //    this.txtTitle.Text,
+            //    DateTime.Now,
+            //    this.rtxtStatus.Text,
+            //    Session.account.Id,
+            //    list
+            //);
+            //SocialPostDao socialPostDao = new SocialPostDao();
+            //int result = socialPostDao.SaveNewSocialPost(socialPost);
+            //if (result > 0)
+            //{
+            //    MessageDialog.Show(this, "Post success");
+            //}
+            //else
+            //{
+            //    MessageDialog.Show(this, "Post failed");
+            //}
 
-            this.Close();
+            //this.Close();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            Skill skill = new Skill((int)this.cbSkill.SelectedValue, this.cbSkill.Text);
-            UCSkillTag uCUserProfileSkill = new UCSkillTag(skill);
-            uCUserProfileSkill.Tag = skill;
-            this.pnlSkill.Controls.Add(uCUserProfileSkill);
+            
         }
 
         private void FPostSocial_Load(object sender, EventArgs e)

@@ -8,9 +8,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using FindJobApplication.Models;
 using FindJobApplication.Daos;
 using Guna.UI2.WinForms;
+using FindJobApplication.Utils;
+using FindJobApplication.Entities;
 
 namespace FindJobApplication
 {
@@ -18,41 +19,40 @@ namespace FindJobApplication
     public delegate void NameCompanyClickedEventHandler(object sender, EventArgs e, UCCompanyProfile uCCompanyProfile);
     public partial class UCJob : UserControl
     {
-        private int jobPostId;
         public event NameJobClickedEventHandler NameJobClicked;
         public event NameCompanyClickedEventHandler NameCompanyClicked;
+
+        UserProfileDao userProfileDao = new UserProfileDao();
 
         public UCJob()
         {
             InitializeComponent();
         }
-        public UCJob(JobPost jobPost, List<Skill> skills, bool isFavourite) : this()
+        public UCJob(JobPost jobPost, bool isFavourite) : this()
         {
-            this.jobPostId = jobPost.Id;
-            LocationDao locationDao = new LocationDao();
-            var locationDict = locationDao.FindAllLocationDict();
-            this.JobName.Text = standardizeNames(jobPost.Title);
-            this.CompanyName.Text = jobPost.CompanyName;
-            this.Location.Text = locationDict[jobPost.LocationId].Name;
-            this.Salary.Text = jobPost.Salary.ToString();
-            this.Tag = jobPost;
-            this.LLblNameJob.Tag = jobPost.Id;
-            this.CompanyName.Tag = jobPost.CompanyId;
+            Tag = jobPost;
+            pBCompany.Image = ImageUtils.FromBytesToImage(jobPost.CompanyProfile.Account.Avatar);
+            JobName.Text = standardizeNames(jobPost.Title);
+            CompanyName.Text = jobPost.CompanyProfile.Account.Name;
+            Location.Text = jobPost.Location.Name;
+            Salary.Text = jobPost.Salary.ToString();
+            LLblNameJob.Tag = jobPost.Id;
+            CompanyName.Tag = jobPost.CompanyId;
 
-            foreach (Skill skill in skills)
+            foreach (Skill skill in jobPost.Skills)
             {
                 UCSkillTag uCSkillTag = new UCSkillTag(skill);
-                this.pnlSkill.Controls.Add(uCSkillTag);
+                pnlSkill.Controls.Add(uCSkillTag);
 
-                if (this.pnlSkill.PreferredSize.Width > this.pnlSkill.Width)
+                if (pnlSkill.PreferredSize.Width > pnlSkill.Width)
                 {
-                    this.pnlSkill.Controls.RemoveAt(this.pnlSkill.Controls.Count - 1);
+                    pnlSkill.Controls.RemoveAt(pnlSkill.Controls.Count - 1);
 
                     Label etc = new Label();
                     etc.Font = new System.Drawing.Font("Inter", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
                     etc.Text = "...";
                     etc.Height = 28;
-                    this.pnlSkill.Controls.Add(etc);
+                    pnlSkill.Controls.Add(etc);
                 }
             }
 
@@ -70,19 +70,19 @@ namespace FindJobApplication
 
         private void btnApply_Click(object sender, EventArgs e)
         {
-            FUserSubmitCV fUserSubmitCV = new FUserSubmitCV((JobPost)this.Tag);
+            FUserSubmitCV fUserSubmitCV = new FUserSubmitCV((JobPost)Tag);
             fUserSubmitCV.Show();
         }
 
         private void lLblNameJob_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            UCJobInformation uCJobInformation = new UCJobInformation(this.jobPostId);
+            UCJobInformation uCJobInformation = new UCJobInformation(Tag as JobPost, btnSave.Checked);
             NameJobClicked?.Invoke(sender, EventArgs.Empty, uCJobInformation);
         }
 
         private void lblNameCompany_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            UCCompanyProfile uCCompanyProfile = new UCCompanyProfile(this.jobPostId);
+            UCCompanyProfile uCCompanyProfile = new UCCompanyProfile((int)lblNameCompany.Tag);
             NameCompanyClicked?.Invoke(sender, EventArgs.Empty, uCCompanyProfile);
         }
         public string standardizeNames(string name)
@@ -99,15 +99,13 @@ namespace FindJobApplication
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            UserProfileDao userProfileDao = new UserProfileDao();
-
             if (btnSave.Checked == true)
             {
-                userProfileDao.SaveNewFavouriteJob(jobPostId, Session.accountId);
+                userProfileDao.SaveUserFollowJob(Session.account.Id, (Tag as JobPost).Id);
             }
             else
             {
-                userProfileDao.DeleteFavouriteJob(jobPostId, Session.accountId);
+                userProfileDao.DeleteUserFollowJob(Session.account.Id, (Tag as JobPost).Id);
             }
         }
     }

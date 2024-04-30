@@ -1,183 +1,87 @@
-﻿using FindJobApplication.DB;
-using FindJobApplication.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using FindJobApplication.Mappers;
 using System.Drawing;
+using FindJobApplication.Entities;
+using System.CodeDom.Compiler;
 
 namespace FindJobApplication.Daos
 {
     public class CompanyProfileDao
     {
-        private Database db = null;
+        private QLXinViecDFContext db = null;
 
         public CompanyProfileDao()
         {
-            db = new Database();
+            db = new QLXinViecDFContext();
         }
 
-        public List<CompanyProfile> FindAllCompanyProfile()
+        public ICollection<CompanyProfile> FindAllCompanyProfile()
         {
-            string sqlStr = @"
-                            SELECT *
-                            FROM account, company_profile
-                            WHERE account.id = company_profile.account_id;";
-            DataTable dt = db.Read(sqlStr);
-            List<CompanyProfile> list = new List<CompanyProfile>();
-
-            foreach (DataRow dr in dt.Rows)
-                list.Add(CompanyProfileMapper.MapToModel(dr));
-
-            return list;
+            return db.CompanyProfiles.ToList();
         }
 
-        public CompanyProfile FindCompanyProfileById(int id)
+        public CompanyProfile FindCompanyProfileByAccountId(int accountId)
         {
-            string sqlStr = @"
-                            SELECT *
-                            FROM account, company_profile
-                            WHERE account.id = @Id AND account.id = company_profile.account_id;";
-            ;
-            Dictionary<string, object> parameters = new Dictionary<string, object> { { "@Id", id} };
-            DataRow dr = db.Read(sqlStr, parameters).Rows.Cast<DataRow>().FirstOrDefault();
-
-            CompanyProfile companyProfile = CompanyProfileMapper.MapToModel(dr);
-
-            return companyProfile;
+            var result = from q in db.CompanyProfiles
+                         where q.Id == accountId
+                         select q;
+            return result.FirstOrDefault();
         }
 
         public int SaveCompanySignUp(CompanyProfile companyProfile, string password)
         {
-            string sqlStr = @"
-                            EXEC usp_RegisterCompanyAccount
-                                @Email,
-                                @Password,
-                                @Name,
-                                @BusinessLicense;";
-            Dictionary<string, object> paremeters = new Dictionary<string, object>
-            {
-                { "@Email", companyProfile.Email },
-                { "@Password",  password},
-                { "@Name", companyProfile.Name },
-                { "@BusinessLicense", companyProfile.BusinessLicense }
-            };
-            return db.Execute(sqlStr, paremeters);
+            return 0;
         }
 
         public List<int> FindAllUserIdFollowing(int companyAccountId)
         {
-            string sqlStr = @"
-                            SELECT account_followed
-                            FROM following 
-                            WHERE account_following = @CompanyAccountId;";
-            Dictionary<string, object> parameters = new Dictionary<string, object>
-            {
-                { "@CompanyAccountId", companyAccountId }
-            };
-
-            DataTable dt = db.Read(sqlStr, parameters);
-            List<int> list = new List<int>();
-            foreach (DataRow dr in dt.Rows)
-                list.Add(Convert.ToInt32(dr["account_followed"]));
-
-            return list;
+            return null;
         }
 
         public int SaveUserIdFollowing(int companyAccountId, int userAccountId)
         {
-            string sqlStr = @"INSERT INTO following (account_following, account_followed)
-                            VALUES (@CompanyAccountId, @UserAccountId);";
-            Dictionary<string, object> parameters = new Dictionary<string, object>
-            {
-                { "@CompanyAccountId", companyAccountId },
-                { "@UserAccountId", userAccountId },
-            };
-
-            return db.Execute(sqlStr, parameters);
+            return 0;
         }
 
         public int DeleteUserIdFollowing(int companyAccountId, int userAccountId)
         {
-            string sqlStr = @"DELETE FROM following WHERE account_following=@CompanyAccountId AND account_followed=@UserAccountId;";
-            Dictionary<string, object> parameters = new Dictionary<string, object>
-            {
-                { "@CompanyAccountId", companyAccountId },
-                { "@UserAccountId", userAccountId },
-            };
-            return db.Execute(sqlStr, parameters);
+            return 0;
         }
 
         public int UpdateCompanyReason(int companyId, string reason)
         {
-            string sqlStr = @"
-                            UPDATE company_profile
-                            SET reason = @Reason
-                            WHERE account_id = @CompanyAccountId;";
-            Dictionary<string, object> parameters = new Dictionary<string, object>
-            {
-                { "@Reason", reason },
-                { "@CompanyAccountId", companyId }
-            };
-
-            return db.Execute(sqlStr, parameters);
+            var companyProfile = FindCompanyProfileByAccountId(companyId);
+            companyProfile.Reason = reason;
+            return db.SaveChanges();
         }
 
         public int UpdateCompanyOverview(int companyId, string overview)
         {
-            string sqlStr = @"
-                            UPDATE company_profile
-                            SET overview = @Overview
-                            WHERE account_id = @CompanyAccountId;";
-            Dictionary<string, object> parameters = new Dictionary<string, object>
-            {
-                { "@Overview", overview },
-                { "@CompanyAccountId", companyId }
-            };
-
-            return db.Execute(sqlStr, parameters);
+            var companyProfile = FindCompanyProfileByAccountId(companyId);
+            companyProfile.Overview = overview;
+            return db.SaveChanges();
         }
 
         public int UpdateCompanyProfile(CompanyProfile companyProfile)
         {
-            string sqlStr = @"
-                            UPDATE account
-                            SET name = @Name, email = @Email
-                            WHERE account_id = @CompanyAccountId;
-                            UPDATE company_profile
-                            SET phone_number = @PhoneNumber, address = @Address, company_size = @CompanySize, date_establish = @DateEstablish, company_link = @CompanyLink
-                            WHERE account_id = @CompanyAccountId;";
-            Dictionary<string, object> parameters = new Dictionary<string, object>
-            {
-                { "@Name", companyProfile.Name },
-                { "@Email", companyProfile.Email },
-                { "@PhoneNumber", companyProfile.PhoneNumber },
-                { "@Address", companyProfile.Address },
-                { "@CompanySize", companyProfile.CompanySize },
-                { "@DateEstablish", companyProfile.DateEstablish },
-                { "@CompanyLink", companyProfile.CompanyLink },
-                { "@CompanyAccountId", companyProfile.ID }
-            };
-
-            return db.Execute(sqlStr, parameters);
+            return 0;
         }
         public int UpdateUserApplyStatus(int userId, int jobPostId, string status)
         {
-            string sqlStr = @"
-                            UPDATE user_apply_job
-                            SET status = @Status
-                            WHERE user_id = @UserId AND job_post_id = @JobPostId;";
-            Dictionary<string, object> parameters = new Dictionary<string, object>
-            {
-                { "@UserId", userId },
-                { "@JobPostId", jobPostId },
-                { "@Status", status }
-            };
+            return 0;
+        }
 
-            return db.Execute(sqlStr, parameters);
+        public ICollection<CompanyProfile> FindTopFollowedCompany(int top)
+        {
+            var results = from q in db.CompanyProfiles
+                          orderby q.Account.Accounts.Count descending
+                          select q;
+
+            return results.Take(top).ToList();
         }
     }
 }

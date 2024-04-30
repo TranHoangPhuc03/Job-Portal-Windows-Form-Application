@@ -1,4 +1,5 @@
-﻿using FindJobApplication.Models;
+﻿using FindJobApplication.Entities;
+using FindJobApplication.Utils;
 using Guna.UI.WinForms;
 using Guna.UI2.WinForms;
 using System;
@@ -50,8 +51,7 @@ namespace FindJobApplication
 
         private void btnSignOut_Click(object sender, EventArgs e)
         {
-            Session.accountId = 0;
-            Session.role = "";
+            Session.account = null;
 
             FLogin fLogin = new FLogin();
             Form thisForm = (Form)this.TopLevelControl;

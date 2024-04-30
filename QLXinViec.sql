@@ -168,7 +168,7 @@ CREATE TABLE UserFollowJob(
 );
 GO
 
-CREATE TABLE Following(
+CREATE TABLE [Following](
 	FollowingId INT NOT NULL,
 	FollowedId INT NOT NULL,
 
@@ -219,6 +219,6 @@ CREATE TABLE CompanyImage(
 	CompanyId INT NOT NULL,
 	[ImageContent] IMAGE,
 
-	FOREIGN KEY (CompanyId) REFERENCES Account(Id)
+	FOREIGN KEY (CompanyId) REFERENCES CompanyProfile(Id)
 );
 GO

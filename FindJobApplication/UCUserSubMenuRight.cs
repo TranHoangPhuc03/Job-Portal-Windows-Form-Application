@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FindJobApplication.Utils;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,28 +12,24 @@ using System.Windows.Forms;
 
 namespace FindJobApplication
 {
+    public delegate void FillToMainPanelHandler (object sender, UserControl uc);
+    
     public partial class UCUserSubMenuRight : UserControl
     {
+        public event FillToMainPanelHandler FillToMainPanelClicked;
         public UCUserSubMenuRight()
         {
             InitializeComponent();
         }
-        public void hideMenu()
-        {
-            this.Visible = false;
-        }
-        public void hideAndShowSubMenu(object sender)
+
+        public void HideAndShowSubMenu(object sender)
         {
             (sender as UserControl).AutoSize ^= true;
         }
 
         public void btnProfile_Click(object sender, EventArgs e)
         {
-            UCProfile uCProfile = new UCProfile();
-            UCMain.Instance.PnlMid.Controls.Clear();
-            UCMain.Instance.PnlMid.Controls.Add(uCProfile);
-            hideMenu();
-           // UCMain.Instance.updateStatus(btnProfile);
+            FillToMainPanelClicked?.Invoke(this, new UCProfile(Session.account.Id));
         }
 
         private void btnMyJob_Click(object sender, EventArgs e)
@@ -40,7 +37,6 @@ namespace FindJobApplication
             UCMyJob uCMyJob = new UCMyJob();
             UCMain.Instance.PnlMid.Controls.Clear();
             UCMain.Instance.PnlMid.Controls.Add(uCMyJob);
-            hideMenu();
            // UCMain.Instance.updateStatus(btnMyJob);
         }
 
@@ -49,7 +45,6 @@ namespace FindJobApplication
             UCSetting uCSetting = new UCSetting();
             UCMain.Instance.PnlMid.Controls.Clear();
             UCMain.Instance.PnlMid.Controls.Add(uCSetting);
-            hideMenu();
            // UCMain.Instance.updateStatus(btnSetting);
         }
 
@@ -58,7 +53,6 @@ namespace FindJobApplication
             UCUserListCompanyFollowing uCUserListCompanyFollowing = new UCUserListCompanyFollowing();
             UCMain.Instance.PnlMid.Controls.Clear();
             UCMain.Instance.PnlMid.Controls.Add(uCUserListCompanyFollowing);
-            hideMenu();
            // UCMain.Instance.updateStatus(btnFavouriteCompany);
         }
 
@@ -67,7 +61,6 @@ namespace FindJobApplication
             UCSocialHistory uCSocialHistory = new UCSocialHistory();
             UCMain.Instance.PnlMid.Controls.Clear();
             UCMain.Instance.PnlMid.Controls.Add(uCSocialHistory);
-            hideMenu();
            // UCMain.Instance.updateStatus(btnSocialPost);
         }
     }

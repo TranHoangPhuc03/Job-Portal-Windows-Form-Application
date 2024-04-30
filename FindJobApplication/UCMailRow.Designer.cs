@@ -57,6 +57,7 @@
             // 
             // pbSeeDetail
             // 
+            this.pbSeeDetail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pbSeeDetail.BackColor = System.Drawing.Color.White;
             this.pbSeeDetail.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbSeeDetail.Image = global::FindJobApplication.Properties.Resources.eyeDetail;
@@ -71,6 +72,7 @@
             // 
             // lblTime
             // 
+            this.lblTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTime.AutoSize = true;
             this.lblTime.Font = new System.Drawing.Font("Inter", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.lblTime.Location = new System.Drawing.Point(820, 13);
@@ -81,6 +83,7 @@
             // 
             // lblTitle
             // 
+            this.lblTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Inter", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.lblTitle.Location = new System.Drawing.Point(420, 13);
