@@ -15,12 +15,9 @@ using FindJobApplication.Entities;
 
 namespace FindJobApplication
 {
-    public delegate void NameJobClickedEventHandler(object sender, EventArgs e, UCJobInformation uCJobInformation);
-    public delegate void NameCompanyClickedEventHandler(object sender, EventArgs e, UCCompanyProfile uCCompanyProfile);
     public partial class UCJob : UserControl
     {
-        public event NameJobClickedEventHandler NameJobClicked;
-        public event NameCompanyClickedEventHandler NameCompanyClicked;
+        public event FillToMainPanelHandler FillToMainPanelClicked;
 
         UserProfileDao userProfileDao = new UserProfileDao();
 
@@ -77,13 +74,13 @@ namespace FindJobApplication
         private void lLblNameJob_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             UCJobInformation uCJobInformation = new UCJobInformation(Tag as JobPost, btnSave.Checked);
-            NameJobClicked?.Invoke(sender, EventArgs.Empty, uCJobInformation);
+            FillToMainPanelClicked?.Invoke(sender, uCJobInformation);
         }
 
         private void lblNameCompany_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             UCCompanyProfile uCCompanyProfile = new UCCompanyProfile((int)lblNameCompany.Tag);
-            NameCompanyClicked?.Invoke(sender, EventArgs.Empty, uCCompanyProfile);
+            FillToMainPanelClicked?.Invoke(sender, uCCompanyProfile);
         }
         public string standardizeNames(string name)
         {

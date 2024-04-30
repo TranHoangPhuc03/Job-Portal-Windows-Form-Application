@@ -24,7 +24,6 @@ namespace FindJobApplication
 
         public void AddControl(UserControl uc)
         {
-            pnlMain.Controls.Clear();
             var fillToMainPanelEvent = uc.GetType().GetEvent("FillToMainPanelClicked");
 
             if (fillToMainPanelEvent != null)
@@ -34,6 +33,7 @@ namespace FindJobApplication
             }
 
             pnlMain.Controls.Add(uc);
+            uc.BringToFront();
         }
     }
 }

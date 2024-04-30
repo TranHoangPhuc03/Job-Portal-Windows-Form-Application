@@ -17,7 +17,7 @@ namespace FindJobApplication
 {
     public partial class UCHome : UserControl
     {
-        Control parentContainer = null;
+        UCPanelMain parentContainer = null;
         public UCHome()
         {
             InitializeComponent();
@@ -60,8 +60,8 @@ namespace FindJobApplication
             {
                 bool isFavourite = favourites.Contains(jobPost.Id);
                 UCJob uCJob = new UCJob(jobPost, isFavourite);
-                uCJob.NameJobClicked += UCJob_SeeDetailClicked;
-                uCJob.NameCompanyClicked += UCCompany_SeeDetailClicked;
+                uCJob.FillToMainPanelClicked += FillToParentPanel;
+                uCJob.FillToMainPanelClicked += FillToParentPanel;
                 pnlListJob.Controls.Add(uCJob);
             }
         }
@@ -85,17 +85,12 @@ namespace FindJobApplication
 
         private void UCHome_ParentChanged(object sender, EventArgs e)
         {
-            parentContainer = Parent;
+            parentContainer = Parent.Parent as UCPanelMain;
         }
 
-        private void UCJob_SeeDetailClicked(object sender, EventArgs e, UCJobInformation uCJobInformation)
+        private void FillToParentPanel(object sender, UserControl uc)
         {
-            parentContainer.Controls.Add(uCJobInformation);
-        }
-
-        private void UCCompany_SeeDetailClicked(object sender, EventArgs e, UCCompanyProfile uCCompanyProfile)
-        {
-            parentContainer.Controls.Add(uCCompanyProfile);
+            parentContainer.AddControl(uc);
         }
     }
 }
