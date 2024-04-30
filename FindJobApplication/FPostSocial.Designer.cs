@@ -141,7 +141,7 @@
             this.btnAdd.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.OrangeRed;
             this.btnAdd.HoverState.FillColor = System.Drawing.Color.MistyRose;
-            this.btnAdd.Location = new System.Drawing.Point(185, 482);
+            this.btnAdd.Location = new System.Drawing.Point(241, 482);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.PressedColor = System.Drawing.Color.LightCoral;
@@ -155,16 +155,18 @@
             this.cbSkill.BackColor = System.Drawing.Color.Transparent;
             this.cbSkill.BorderRadius = 10;
             this.cbSkill.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbSkill.DropDownHeight = 312;
             this.cbSkill.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSkill.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbSkill.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbSkill.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbSkill.Font = new System.Drawing.Font("Inter", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.cbSkill.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbSkill.IntegralHeight = false;
             this.cbSkill.ItemHeight = 39;
             this.cbSkill.Location = new System.Drawing.Point(32, 482);
             this.cbSkill.Margin = new System.Windows.Forms.Padding(2);
             this.cbSkill.Name = "cbSkill";
-            this.cbSkill.Size = new System.Drawing.Size(125, 45);
+            this.cbSkill.Size = new System.Drawing.Size(205, 45);
             this.cbSkill.TabIndex = 60;
             // 
             // rtxtStatus

@@ -10,55 +10,69 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.UI.WebControls;
+using System.Windows.Controls;
 using System.Windows.Forms;
 
 namespace FindJobApplication
 {
     public partial class FCompanyHome : Form
     {
-        UCCompanyHome uCCompanyHome = new UCCompanyHome();
-        UCCompanySubMenuRight uCCompanySubMenuRight = new UCCompanySubMenuRight();
-        UCMain uCMain = new UCMain();
         public FCompanyHome()
         {
             InitializeComponent();
-            this.Controls.Add(uCMain);
-            uCMain.BtnHome.Click += btnHome_Click;
-            uCMain.BtnUser.Click += btnUser_Click;
-            uCMain.BtnLogOut.Click += btnLogOut_Click;
-            uCMain.BtnHome.PerformClick();
-            customForCompany();
         }
-        private void customForCompany()
-        {
-            uCMain.BtnUser.Text = "AXON";
-            uCMain.PbHomeUser.Image = Properties.Resources.Company;
-            uCMain.PnlMid.Controls.Add(uCCompanySubMenuRight);
-            uCCompanySubMenuRight.Location = new Point(923, 0);
-            uCCompanySubMenuRight.hideMenu();
-        }
-        private void btnHome_Click(object sender, EventArgs e)
-        {
-            uCMain.updateStatus(uCMain.BtnHome);
-            uCMain.PnlMid.Controls.Clear();
-            uCMain.PnlMid.Controls.Add(uCCompanyHome);
-        }
-        private void btnUser_Click(object sender, EventArgs e)
-        {
-            uCCompanySubMenuRight.hideAndShowSubMenu();
-        }
+
         private void btnLogOut_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Session.accountId = 0;
+            Session.role = "";
+
+            FLogin fLogin = new FLogin();
+            Form thisForm = (Form)this.TopLevelControl;
+            thisForm.Hide();
+            fLogin.ShowDialog();
+            thisForm.Close();
         }
         private void FCompanyHome_Load(object sender, EventArgs e)
         {
-            this.uCCompanyHome.BtnAllJob.PerformClick();
+            btnHome.PerformClick();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void pbUserImage_Click(object sender, EventArgs e)
+        {
+            this.ucCompanySubMenuRight.hideAndShowSubMenu(this.ucCompanySubMenuRight);
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            UCCompanyHome uCCompanyHome = new UCCompanyHome();
+            pnlMain.Controls.Add(uCCompanyHome);
+        }
+
+        private void btnSocial_Click(object sender, EventArgs e)
+        {
+            UCSocial uCSocial = new UCSocial();
+            this.pnlMain.Controls.Clear();
+            this.pnlMain.Controls.Add(uCSocial);
+        }
+
+        private void btnMail_Click(object sender, EventArgs e)
+        {
+            UCMail uCMail = new UCMail();
+            this.pnlMain.Controls.Clear();
+            this.pnlMain.Controls.Add(uCMail);
+        }
+
+        private void pnlMain_ControlAdded(object sender, ControlEventArgs e)
+        {
+            var currentPanel = sender as System.Windows.Forms.Panel;
+            int lastIndex = currentPanel.Controls.Count - 1;
+            currentPanel.Controls[lastIndex].BringToFront();
         }
     }
 }

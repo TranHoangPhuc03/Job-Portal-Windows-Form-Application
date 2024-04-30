@@ -87,6 +87,8 @@
             // 
             // pnTupleTableJob
             // 
+            this.pnTupleTableJob.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnTupleTableJob.BackColor = System.Drawing.Color.Transparent;
             this.pnTupleTableJob.BorderRadius = 10;
             this.pnTupleTableJob.Controls.Add(this.pbEdit);
@@ -157,6 +159,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.pnTupleTableJob);
             this.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);

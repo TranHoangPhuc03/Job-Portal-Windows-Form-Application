@@ -11,11 +11,16 @@ using System.Windows.Forms;
 
 namespace FindJobApplication
 {
+    public delegate void SeeDetailClickedEventHandler(object sender, EventArgs e, UCMailDetail ucMailDetail);
+
     public partial class UCMailRow : UserControl
     {
+        public event SeeDetailClickedEventHandler SeeDetailClicked;
+
         public UCMailRow()
         {
             InitializeComponent();
+            this.Dock = DockStyle.Fill;
         }
         public Label LblID { get => lblID; set => lblID = value; }
         public Label LblFrom { get => lblFrom; set => lblFrom = value; }
@@ -25,8 +30,7 @@ namespace FindJobApplication
         private void pbSeeDetail_Click(object sender, EventArgs e)
         {
             UCMailDetail uCmailDetail = new UCMailDetail();
-            FHome.Instance.PnlMain.Controls.Add(uCmailDetail);
-            uCmailDetail.BringToFront();
+            SeeDetailClicked?.Invoke(this, EventArgs.Empty, uCmailDetail);
         }
     }
 }

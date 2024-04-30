@@ -16,7 +16,6 @@ namespace FindJobApplication
 {
     public partial class FHome : Form
     {
-        UCHome uCHome = new UCHome();
         UCUserSubMenuRight uCUserSubMenuRight = new UCUserSubMenuRight();
         static FHome _obj;
         public FHome()
@@ -39,99 +38,96 @@ namespace FindJobApplication
 
         private void btnHome_Click(object sender, EventArgs e)
         {
+            UCHome uCHome = new UCHome();
             pnlMain.Controls.Clear();
-            JobPostDao jobPostDao = new JobPostDao();
-
-            this.uCHome.fillJobPostToPanel(jobPostDao.FindAllJobPost());
             this.pnlMain.Controls.Add(uCHome);
-        }
-        private void btnUser_Click(object sender, EventArgs e)
-        {
-            uCUserSubMenuRight.hideAndShowSubMenu();
+            foreach (var row in uCHome.PnlListJob.Controls)
+            {
+                if (row is UCJob uCJob)
+                {
+                    uCJob.NameJobClicked += UCJob_SeeDetailClicked;
+                    uCJob.NameCompanyClicked += UCCompany_SeeDetailClicked;
+                }
+            }
         }
 
         private void FHome_Load(object sender, EventArgs e)
         {
             _obj = this;
-            this.Hide();
-            this.pnlMain.Controls.Add(uCHome);
-            this.Show();
-        }
-
-        private void jobFilterSearch(object sender, EventArgs e)
-        {
-            string keyword = this.uCHome.TxtSeach.Text;
-            int locationId = this.uCHome.CbLocation.SelectedIndex;
-            int experienceId = this.uCHome.CbExperince.SelectedIndex;
-
-            JobPostDao jobPostDao = new JobPostDao();
-            List<JobPost> dt = jobPostDao.FindAllJobPost();
-            if (!string.IsNullOrEmpty(keyword))
-            {
-                dt = dt.Where(row => row.Title.Contains(keyword)).ToList();
-            }
-            this.uCHome.fillJobPostToPanel(dt);
-        }
-
-        private void pbUserImage_Click(object sender, EventArgs e)
-        {
-            this.tpnlUserNav.AutoSize ^= true;
+            btnHome.PerformClick();
         }
 
         private void btnSocial_Click(object sender, EventArgs e)
         {
             UCSocial uCSocial = new UCSocial();
-            this.pnlMain.Controls.Clear();
             this.pnlMain.Controls.Add(uCSocial);
         }
 
         private void btnMail_Click(object sender, EventArgs e)
         {
             UCMail uCMail = new UCMail();
-            this.pnlMain.Controls.Clear();
             this.pnlMain.Controls.Add(uCMail);
+
+            foreach (var row in uCMail.PnlListMail.Controls)
+            {
+                if (row is UCMailRow uCMailRow)
+                {
+                    uCMailRow.SeeDetailClicked += UCMailRow_SeeDetailClicked;
+                }
+            }
+
         }
 
         private void btnTrending_Click(object sender, EventArgs e)
         {
             UCTopTrending uCTopTrending = new UCTopTrending();
-            this.pnlMain.Controls.Clear();
             this.pnlMain.Controls.Add(uCTopTrending);
         }
 
         private void btnProfile_Click(object sender, EventArgs e)
         {
             UCProfile uCProfile = new UCProfile();
-            this.pnlMain.Controls.Clear();
             this.pnlMain.Controls.Add(uCProfile);
         }
 
         private void btnFavourites_Click(object sender, EventArgs e)
         {
             UCUserListCompanyFollowing uCUserListCompanyFollowing = new UCUserListCompanyFollowing();
-            this.pnlMain.Controls.Clear();
+            
             this.pnlMain.Controls.Add(uCUserListCompanyFollowing);
         }
 
         private void btnMyJob_Click(object sender, EventArgs e)
         {
             UCMyJob uCMyJob = new UCMyJob();
-            this.pnlMain.Controls.Clear();
             this.pnlMain.Controls.Add(uCMyJob);
         }
 
         private void btnHistorySocial_Click(object sender, EventArgs e)
         {
             UCSocialHistory uCSocialHistory = new UCSocialHistory();
-            this.pnlMain.Controls.Clear();
             this.pnlMain.Controls.Add(uCSocialHistory);
         }
 
         private void btnSetting_Click(object sender, EventArgs e)
         {
             UCSetting uCSetting = new UCSetting();
-            this.pnlMain.Controls.Clear();
             this.pnlMain.Controls.Add(uCSetting);
+        }
+
+        private void UCMailRow_SeeDetailClicked(object sender, EventArgs e, UCMailDetail uCMailDetail)
+        {
+            this.pnlMain.Controls.Add(uCMailDetail);
+        }
+
+        private void UCJob_SeeDetailClicked(object sender, EventArgs e, UCJobInformation uCJobInformation)
+        {
+            this.pnlMain.Controls.Add(uCJobInformation);
+        }
+
+        private void UCCompany_SeeDetailClicked(object sender, EventArgs e, UCCompanyProfile uCCompanyProfile)
+        {
+            this.pnlMain.Controls.Add(uCCompanyProfile);
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -144,6 +140,18 @@ namespace FindJobApplication
             thisForm.Hide();
             fLogin.ShowDialog();
             thisForm.Close();
+        }
+
+        private void pbUserImage_Click(object sender, EventArgs e)
+        {
+            this.uCUserSubMenuRight.hideAndShowSubMenu(this.ucUserSubMenu);
+        }
+
+        private void pnlMain_ControlAdded(object sender, ControlEventArgs e)
+        {
+            var currentPanel = sender as System.Windows.Forms.Panel;
+            int lastIndex = currentPanel.Controls.Count - 1;
+            currentPanel.Controls[lastIndex].BringToFront();
         }
     }
 }

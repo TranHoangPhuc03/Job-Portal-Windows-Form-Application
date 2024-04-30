@@ -21,15 +21,9 @@ namespace FindJobApplication
         {
             this.Visible = false;
         }
-        public void hideAndShowSubMenu()
+        public void hideAndShowSubMenu(object sender)
         {
-            if (!this.Visible)
-            {
-                UCMain.Instance.PnlMid.Controls.Add(this);
-                this.BringToFront();
-            }
-
-            this.Visible = !this.Visible;
+            (sender as UserControl).AutoSize ^= true;
         }
 
         private void btnProfile_Click(object sender, EventArgs e)

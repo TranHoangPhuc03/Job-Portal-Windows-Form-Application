@@ -13,7 +13,7 @@ namespace FindJobApplication
         public UCJobInformation()
         {
             InitializeComponent();
-            pnlMain.AutoScroll = true;
+            this.Dock = DockStyle.Fill;
         }
 
         public UCJobInformation(int jobPostId) : this()

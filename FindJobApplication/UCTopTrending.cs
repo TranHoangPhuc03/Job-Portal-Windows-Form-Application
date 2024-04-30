@@ -23,6 +23,7 @@ namespace FindJobApplication
         public UCTopTrending()
         {
             InitializeComponent();
+            this.Dock = DockStyle.Fill;
             Load_Data_Top_5();
         }
         private void Load_Data_Top_5()

@@ -19,6 +19,7 @@ namespace FindJobApplication
         public UCSocialHistoryRow()
         {
             InitializeComponent();
+            this.Dock = DockStyle.Fill;
         }
 
         public UCSocialHistoryRow(int cnt, SocialPost socialPost) : this()

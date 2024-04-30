@@ -49,6 +49,9 @@
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.pnlTools = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.pnlMain = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.ucUserSubMenu = new FindJobApplication.UCUserSubMenuRight();
             this.tpnlUserNav.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbUserImage)).BeginInit();
@@ -56,10 +59,14 @@
             this.tpnlNavBtn.SuspendLayout();
             this.pnlNavbar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            this.pnlTools.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tpnlUserNav
             // 
+            this.tpnlUserNav.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.tpnlUserNav.ColumnCount = 1;
             this.tpnlUserNav.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tpnlUserNav.Controls.Add(this.btnHistorySocial, 0, 4);
@@ -197,13 +204,14 @@
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.BackColor = System.Drawing.Color.White;
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 190F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanel1.Controls.Add(this.lblUsername, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.pbUserImage, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(1170, 11);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(914, 11);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
@@ -244,8 +252,8 @@
             this.pnlLogout.BackColor = System.Drawing.Color.White;
             this.pnlLogout.BorderRadius = 16;
             this.pnlLogout.Controls.Add(this.btnLogout);
-            this.pnlLogout.Location = new System.Drawing.Point(0, 934);
-            this.pnlLogout.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlLogout.Location = new System.Drawing.Point(0, 854);
+            this.pnlLogout.Margin = new System.Windows.Forms.Padding(0, 7, 0, 0);
             this.pnlLogout.Name = "pnlLogout";
             this.pnlLogout.Padding = new System.Windows.Forms.Padding(20, 15, 20, 15);
             this.pnlLogout.Size = new System.Drawing.Size(248, 90);
@@ -454,8 +462,8 @@
             this.pnlNavbar.BackColor = System.Drawing.Color.White;
             this.pnlNavbar.BorderRadius = 16;
             this.pnlNavbar.Controls.Add(this.tpnlNavBtn);
-            this.pnlNavbar.Location = new System.Drawing.Point(0, 87);
-            this.pnlNavbar.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlNavbar.Location = new System.Drawing.Point(0, 7);
+            this.pnlNavbar.Margin = new System.Windows.Forms.Padding(0, 7, 0, 0);
             this.pnlNavbar.Name = "pnlNavbar";
             this.pnlNavbar.Padding = new System.Windows.Forms.Padding(20, 54, 20, 54);
             this.pnlNavbar.Size = new System.Drawing.Size(248, 840);
@@ -480,8 +488,11 @@
             // 
             // pnlTools
             // 
+            this.pnlTools.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlTools.BackColor = System.Drawing.Color.Transparent;
             this.pnlTools.BorderRadius = 16;
+            this.pnlTools.Controls.Add(this.tableLayoutPanel1);
             this.pnlTools.CustomBorderThickness = new System.Windows.Forms.Padding(1);
             this.pnlTools.CustomizableEdges.BottomRight = false;
             this.pnlTools.CustomizableEdges.TopLeft = false;
@@ -489,11 +500,15 @@
             this.pnlTools.Location = new System.Drawing.Point(256, 0);
             this.pnlTools.Margin = new System.Windows.Forms.Padding(0);
             this.pnlTools.Name = "pnlTools";
+            this.pnlTools.Padding = new System.Windows.Forms.Padding(20);
             this.pnlTools.Size = new System.Drawing.Size(1184, 80);
             this.pnlTools.TabIndex = 35;
             // 
             // pnlMain
             // 
+            this.pnlMain.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlMain.BackColor = System.Drawing.Color.Transparent;
             this.pnlMain.BorderRadius = 16;
             this.pnlMain.CustomBorderThickness = new System.Windows.Forms.Padding(1);
             this.pnlMain.CustomizableEdges.BottomLeft = false;
@@ -502,8 +517,52 @@
             this.pnlMain.Location = new System.Drawing.Point(256, 87);
             this.pnlMain.Margin = new System.Windows.Forms.Padding(0);
             this.pnlMain.Name = "pnlMain";
+            this.pnlMain.Padding = new System.Windows.Forms.Padding(8, 8, 0, 0);
             this.pnlMain.Size = new System.Drawing.Size(1184, 935);
             this.pnlMain.TabIndex = 36;
+            this.pnlMain.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.pnlMain_ControlAdded);
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.AutoSize = true;
+            this.tableLayoutPanel2.BackColor = System.Drawing.Color.Transparent;
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.Controls.Add(this.guna2PictureBox1, 1, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1440, 80);
+            this.tableLayoutPanel2.TabIndex = 0;
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 1;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Controls.Add(this.pnlLogout, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.pnlNavbar, 0, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 80);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 2;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(248, 944);
+            this.tableLayoutPanel3.TabIndex = 5;
+            // 
+            // ucUserSubMenu
+            // 
+            this.ucUserSubMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ucUserSubMenu.Location = new System.Drawing.Point(1170, 71);
+            this.ucUserSubMenu.Margin = new System.Windows.Forms.Padding(0);
+            this.ucUserSubMenu.Name = "ucUserSubMenu";
+            this.ucUserSubMenu.Size = new System.Drawing.Size(250, 0);
+            this.ucUserSubMenu.TabIndex = 0;
             // 
             // FHome
             // 
@@ -511,19 +570,20 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(247)))));
             this.ClientSize = new System.Drawing.Size(1440, 1024);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.ucUserSubMenu);
+            this.Controls.Add(this.tableLayoutPanel3);
             this.Controls.Add(this.tpnlUserNav);
-            this.Controls.Add(this.guna2PictureBox1);
-            this.Controls.Add(this.pnlLogout);
-            this.Controls.Add(this.pnlNavbar);
             this.Controls.Add(this.pnlTools);
             this.Controls.Add(this.pnlMain);
+            this.Controls.Add(this.tableLayoutPanel2);
+            this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FHome";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Recruitment Application";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FHome_Load);
             this.tpnlUserNav.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -534,7 +594,11 @@
             this.pnlNavbar.ResumeLayout(false);
             this.pnlNavbar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            this.pnlTools.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -559,5 +623,8 @@
         private Guna.UI2.WinForms.Guna2Button btnHistorySocial;
         private Guna.UI2.WinForms.Guna2Button btnSetting;
         private Guna.UI2.WinForms.Guna2Button btnTrending;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private UCUserSubMenuRight ucUserSubMenu;
     }
 }
