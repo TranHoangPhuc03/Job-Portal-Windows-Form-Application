@@ -2,7 +2,7 @@ USE QLXinViec;
 GO
 
 -- INSERT statements for location TABLE
-INSERT INTO [location]([name])
+INSERT INTO [Location]([Name])
 VALUES
 ('All location'),
 ('Ha Noi'),
@@ -72,7 +72,7 @@ VALUES
 GO
 
 --INSERT statements for skill TABLE
-INSERT INTO skill([name])
+INSERT INTO Skill([Name])
 VALUES
 ('Agile'),
 ('Android'),
@@ -162,7 +162,7 @@ VALUES
 GO
 
 -- INSERT statements for year_experience TABLE
-INSERT INTO year_experience([name])
+INSERT INTO YearExperience([Name])
 VALUES
 ('All experience'),
 ('0-1 years'),
@@ -180,7 +180,7 @@ BEGIN
     DECLARE @role VARCHAR(20) = CASE WHEN @counter <= 5 THEN 'company' ELSE 'user' END;
 	DECLARE @name VARCHAR(255) = CONCAT('Account ', @counter);
 
-    INSERT INTO account (email, password, [role], [name]) 
+    INSERT INTO Account (Email, [Password], [Role], [Name]) 
     VALUES (@email, @password, @role, @name);
 
     SET @counter = @counter + 1;
@@ -191,11 +191,8 @@ GO
 DECLARE @user_counter INT = 6;
 WHILE @user_counter <= 10
 BEGIN
-    DECLARE @user_name VARCHAR(255) = CONCAT('User ', @user_counter);
-	DECLARE @email VARCHAR(255) = CONCAT('email', @user_counter, '@example.com')
-
-    INSERT INTO user_profile (account_id, [name], email) 
-    VALUES (@user_counter, @user_name, @email);
+    INSERT INTO UserProfile (Id) 
+    VALUES (@user_counter);
 
     SET @user_counter = @user_counter + 1;
 END;
@@ -205,18 +202,22 @@ GO
 DECLARE @company_counter INT = 1;
 WHILE @company_counter <= 5
 BEGIN
-    DECLARE @company_name VARCHAR(255) = CONCAT('Company ', @company_counter);
-	DECLARE @email VARCHAR(255) = CONCAT('email', @company_counter, '@example.com')
-
-    INSERT INTO company_profile (account_id, [name], email)
-    VALUES (@company_counter, @company_name, @email);
+    INSERT INTO CompanyProfile (Id)
+    VALUES (@company_counter);
 
     SET @company_counter = @company_counter + 1;
 END;
 GO
 
+--Insert statements for user_education table
+INSERT INTO UserEducation(SchoolName, Major, [From], [To], Detail, UserId)
+VALUES
+('HCMCUTE', 'Computer Sciene', '2021-08-01', '2025-08-01', 'Engineer degree', 6),
+('HCMCUTE', 'Artificial Intelligence', '2021-08-01', '2025-08-01', 'Engineer degree', 6);
+GO
+
 -- Insert statements for job_post TABLE
-INSERT INTO job_post (title, recruitment_number, salary, [description], requirement, prioritize, benefit, post_date, expire_date, [address], year_experience_id, location_id, company_account_id)
+INSERT INTO JobPost (Title, RecruitmentNumber, Salary, [Description], Requirement, Prioritize, Benefit, PostDate, [ExpireDate], [Address], YearExperienceId, Locationid, CompanyId)
 VALUES 
 ('Software Engineer', 3, 80000, 'Seeking experienced software engineers proficient in Java and Python.', 'Bachelor''s degree in Computer Science or related field.', 'Experience with Agile methodologies preferred.', 'Competitive salary and benefits package.', '2024-03-20', '2024-04-20', '123 Main St, City, Country', 1, 1, 1),
 ('Data Analyst', 2, 60000, 'Looking for data analysts with experience in SQL and data visualization tools.', 'Bachelor''s degree in Statistics or related field.', 'Strong analytical skills and attention to detail.', 'Flexible work schedule and remote work options.', '2024-03-20', '2024-04-20', '456 Oak Ave, City, Country', 2, 2, 2),
@@ -231,7 +232,7 @@ VALUES
 GO
 
 --Insert skills for the job
-INSERT INTO job_skill(job_post_id, skill_id)
+INSERT INTO JobSkill(JobPostId, SkillId)
 VALUES
 (1, 38),
 (1, 6),
@@ -266,7 +267,7 @@ VALUES
 GO
 
 --Insert statements into user_apply_job
-INSERT INTO user_apply_job (account_id, job_post_id, [status], applied_at)
+INSERT INTO UserApplyJob (UserId, JobPostId, [Status], AppliedAt)
 VALUES
 (6, 1, 'Rejected', DATEADD(day, -1 * ABS(CHECKSUM(NEWID())) % 20, '2024-04-22')),
 (7, 1, 'Pending', DATEADD(day, -1 * ABS(CHECKSUM(NEWID())) % 20, '2024-04-22')),
@@ -288,4 +289,129 @@ VALUES
 (8, 4, 'Pending', DATEADD(day, -1 * ABS(CHECKSUM(NEWID())) % 20, '2024-04-22')),
 (9, 4, 'Interview', DATEADD(day, -1 * ABS(CHECKSUM(NEWID())) % 20, '2024-04-22')),
 (10, 4, 'Approved', DATEADD(day, -1 * ABS(CHECKSUM(NEWID())) % 20, '2024-04-22'));
+GO
+
+--Insert account avatar
+UPDATE account 
+SET avatar = (
+        SELECT BulkColumn 
+        FROM Openrowset( Bulk 'E:\SPKT\LapTrinhWindows\FindJobApplication\avatars\account_1.png', Single_Blob) AS img
+)
+WHERE id = 1;
+GO
+UPDATE account 
+SET avatar = (
+        SELECT BulkColumn 
+        FROM Openrowset( Bulk 'E:\SPKT\LapTrinhWindows\FindJobApplication\avatars\account_2.png', Single_Blob) AS img
+)
+WHERE id = 2;
+GO
+UPDATE account 
+SET avatar = (
+        SELECT BulkColumn 
+        FROM Openrowset( Bulk 'E:\SPKT\LapTrinhWindows\FindJobApplication\avatars\account_3.png', Single_Blob) AS img
+)
+WHERE id = 3;
+GO
+UPDATE account 
+SET avatar = (
+        SELECT BulkColumn 
+        FROM Openrowset( Bulk 'E:\SPKT\LapTrinhWindows\FindJobApplication\avatars\account_4.png', Single_Blob) AS img
+)
+WHERE id = 4;
+GO
+UPDATE account 
+SET avatar = (
+        SELECT BulkColumn 
+        FROM Openrowset( Bulk 'E:\SPKT\LapTrinhWindows\FindJobApplication\avatars\account_5.png', Single_Blob) AS img
+)
+WHERE id = 5;
+GO
+UPDATE account 
+SET avatar = (
+        SELECT BulkColumn 
+        FROM Openrowset( Bulk 'E:\SPKT\LapTrinhWindows\FindJobApplication\avatars\account_6.jpg', Single_Blob) AS img
+)
+WHERE id = 6;
+GO
+UPDATE account 
+SET avatar = (
+        SELECT BulkColumn 
+        FROM Openrowset( Bulk 'E:\SPKT\LapTrinhWindows\FindJobApplication\avatars\account_7.jpg', Single_Blob) AS img
+)
+WHERE id = 7;
+GO
+UPDATE account 
+SET avatar = (
+        SELECT BulkColumn 
+        FROM Openrowset( Bulk 'E:\SPKT\LapTrinhWindows\FindJobApplication\avatars\account_8.jpg', Single_Blob) AS img
+)
+WHERE id = 8;
+GO
+UPDATE account 
+SET avatar = (
+        SELECT BulkColumn 
+        FROM Openrowset( Bulk 'E:\SPKT\LapTrinhWindows\FindJobApplication\avatars\account_9.jpg', Single_Blob) AS img
+)
+WHERE id = 9;
+GO
+UPDATE account 
+SET avatar = (
+        SELECT BulkColumn 
+        FROM Openrowset( Bulk 'E:\SPKT\LapTrinhWindows\FindJobApplication\avatars\account_10.jpg', Single_Blob) AS img
+)
+WHERE id = 10;
+GO
+
+--Insert an user profile
+UPDATE Account
+SET [Name] = 'Elon Musk'
+WHERE Id = 6;
+GO
+
+UPDATE UserProfile
+SET 
+	DateOfBirth = '1971-06-28',
+	PhoneNumber = '0123456789'
+WHERE Id = 6;
+GO
+
+INSERT INTO UserEducation (SchoolName, Major, [From], [To], Detail, UserId)
+VALUES
+('HCMCUTE', 'Computer science', '2021-08-01', '2025-08-01', 'Engineer degree', 6),
+('HCMCUTE', 'Artificial Intelligence', '2021-08-01', '2025-08-01', 'Engineer degree', 6);
+GO
+
+INSERT INTO UserSkill (UserId, SkillId)
+VALUES
+(6, 1),
+(6, 2),
+(6, 9);
+GO
+
+INSERT INTO UserPersonalProject (ProjectName, [From], [To], [Description], UserId)
+VALUES
+('Pomodoro Timer', '2023-08-01', '2023-08-20', 'Pomodoro', 6);
+GO
+
+--Insert Company Profile
+UPDATE Account
+SET [Name] = 'FPT Software'
+WHERE Id = 1;
+GO
+UPDATE Account
+SET [Name] = 'CMC Telecom'
+WHERE Id = 2;
+GO
+UPDATE Account
+SET [Name] = 'Cybersoft'
+WHERE Id = 3;
+GO
+UPDATE Account
+SET [Name] = 'TMA Solutions'
+WHERE Id = 4;
+GO
+UPDATE Account
+SET [Name] = 'KMS Technology'
+WHERE Id = 5;
 GO

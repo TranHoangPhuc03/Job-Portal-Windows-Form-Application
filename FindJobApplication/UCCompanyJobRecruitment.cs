@@ -1,5 +1,4 @@
 ﻿using FindJobApplication.Daos;
-using FindJobApplication.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FindJobApplication.Entities;
 
 namespace FindJobApplication
 {
@@ -49,7 +49,7 @@ namespace FindJobApplication
         private void UCCompanyJobRecruitment_Load(object sender, EventArgs e)
         {
             JobPostDao jobPostDao = new JobPostDao();
-            fillDataToPanel(jobPostDao.FindAllJobPostByCompanyId(companyId));
+            //fillDataToPanel(jobPostDao.FindAllJobPostByCompanyId(companyId));
         }
     }
 }

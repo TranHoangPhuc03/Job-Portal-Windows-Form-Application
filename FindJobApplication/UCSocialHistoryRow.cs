@@ -1,5 +1,5 @@
 ﻿using FindJobApplication.Daos;
-using FindJobApplication.Models;
+using FindJobApplication.Entities;
 using Guna.UI.WinForms;
 using Guna.UI2.WinForms;
 using System;
@@ -22,12 +22,12 @@ namespace FindJobApplication
             this.Dock = DockStyle.Fill;
         }
 
-        public UCSocialHistoryRow(int cnt, SocialPost socialPost) : this()
+        public UCSocialHistoryRow(int cnt, object socialPost) : this()
         {
-            this.LblID.Text = cnt.ToString();
-            this.lblTitle.Text = socialPost.Title;
-            this.lblDatePost.Text = socialPost.PostDate.ToString("dd-MM-yyyy");
-            this.Tag = socialPost.Id;
+            //this.LblID.Text = cnt.ToString();
+            //this.lblTitle.Text = socialPost.Title;
+            //this.lblDatePost.Text = socialPost.PostDate.ToString("dd-MM-yyyy");
+            //this.Tag = socialPost.Id;
         }
         public Label LblID { get => lblID; set => lblID = value; }
         public Label LblTitle { get => lblTitle; set => lblTitle = value; }
@@ -43,16 +43,16 @@ namespace FindJobApplication
 
         private void pBDelete_Click(object sender, EventArgs e)
         {
-            SocialPostDao socialPostDao = new SocialPostDao();
-            int result = socialPostDao.DeleteSocialPostById(Convert.ToInt32(this.Tag));
-            if (result > 0)
-            {
-                MessageDialog.Show(this.ParentForm, "Delete success");
-            }
-            else
-            {
-                MessageDialog.Show(this.ParentForm, "Delete failed");
-            }
+            //SocialPostDao socialPostDao = new SocialPostDao();
+            //int result = socialPostDao.DeleteSocialPostById(Convert.ToInt32(this.Tag));
+            //if (result > 0)
+            //{
+            //    MessageDialog.Show(this.ParentForm, "Delete success");
+            //}
+            //else
+            //{
+            //    MessageDialog.Show(this.ParentForm, "Delete failed");
+            //}
         }
     }
 }

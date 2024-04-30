@@ -1,4 +1,4 @@
-﻿using FindJobApplication.Models;
+﻿using FindJobApplication.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,15 +17,11 @@ namespace FindJobApplication
         {
             InitializeComponent();
         }
-        public UCSkillTag(UserSkill userSkill) : this()
-        {
-            this.btnSkill.Text = userSkill.Name;
-        }
-
         public UCSkillTag(Skill skill) : this()
         {
             this.btnSkill.Text = skill.Name;
         }
+
         public void ShowBtnDelete()
         {
             pBDelete.Visible = true;

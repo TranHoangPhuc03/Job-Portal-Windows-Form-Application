@@ -1,5 +1,4 @@
 ﻿using FindJobApplication.Daos;
-using FindJobApplication.Models;
 using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
@@ -11,6 +10,8 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FindJobApplication.Entities;
+using FindJobApplication.Utils;
 
 namespace FindJobApplication
 {
@@ -58,7 +59,13 @@ namespace FindJobApplication
                 string email = this.txtEmail.Text;
                 string password = this.txtPassword.Text;
                 string name = this.txtName.Text;
-                Account account = new Account(email, password, name, AccountRole.User);
+                Account account = new Account()
+                {
+                    Email = email,
+                    Password = password,
+                    Name = name,
+                    Role = AccountRole.User
+                };
                 AccountDao accountDao = new AccountDao();
                 int results = accountDao.SaveNewAccount(account.Email, account.Name, account.Password, account.Role);
 

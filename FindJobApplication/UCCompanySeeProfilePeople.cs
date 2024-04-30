@@ -44,11 +44,11 @@ namespace FindJobApplication
 
         private void UCCompanySeeProfilePeople_Load(object sender, EventArgs e)
         {
-            JobApplyDao jobApplyDao = new JobApplyDao();
-            DataRow dr = jobApplyDao.FindUserApplyJob(this.userId, this.jobPostId).Rows[0];
-            this.lblNamePeople.Text = dr["name"].ToString();
-            this.lblNameJob.Text = dr["title"].ToString();
-            this.rtxtCoverLetter.Text = dr["cover_letter"].ToString();
+            //JobApplyDao jobApplyDao = new JobApplyDao();
+            //DataRow dr = jobApplyDao.FindUserApplyJob(this.userId, this.jobPostId).Rows[0];
+            //this.lblNamePeople.Text = dr["name"].ToString();
+            //this.lblNameJob.Text = dr["title"].ToString();
+            //this.rtxtCoverLetter.Text = dr["cover_letter"].ToString();
         }
 
         private void btnAccept_Click(object sender, EventArgs e)

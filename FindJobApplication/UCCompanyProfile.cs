@@ -1,5 +1,6 @@
 ﻿using FindJobApplication.Daos;
-using FindJobApplication.Models;
+using FindJobApplication.Entities;
+using FindJobApplication.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,7 +19,11 @@ namespace FindJobApplication
         public UCCompanyProfile()
         {
             InitializeComponent();
-            btnBack.Visible = false;
+            Dock = DockStyle.Fill;
+            tableLayoutPanel1.HorizontalScroll.Maximum = 0;
+            tableLayoutPanel1.AutoScroll = false;
+            tableLayoutPanel1.VerticalScroll.Visible = false;
+            tableLayoutPanel1.AutoScroll = true;
         }
 
         public UCCompanyProfile(int companyId) : this()
@@ -49,32 +54,23 @@ namespace FindJobApplication
 
         private void btnFollow_Click(object sender, EventArgs e)
         {
-            UserProfileDao userProfileDao = new UserProfileDao();
-            if (btnFollow.Text == "Following")
-            {
-                btnFollow.Text = "Follow";
-                userProfileDao.DeleteFollowingCompany(Session.accountId, companyId);
-            }
-            else
-            {
-                btnFollow.Text = "Following";
-                userProfileDao.SaveNewFollowingCompany(Session.accountId, companyId);
-            }
+
         }
 
         private void UCCompanyProfile_Load(object sender, EventArgs e)
         {
             CompanyProfileDao companyProfileDao = new CompanyProfileDao();
-            CompanyProfile companyProfile = companyProfileDao.FindCompanyProfileById(this.companyId);
+            CompanyProfile companyProfile = companyProfileDao.FindCompanyProfileByAccountId(this.companyId);
             JobPostDao jobPostDao = new JobPostDao();   
             int cnt = jobPostDao.FindAllJobPostByCompanyId(this.companyId).Count;
+            pbProfileAvatar.Image = ImageUtils.FromBytesToImage(companyProfile.Account.Avatar);
             lblCountJob.Text = cnt.ToString();
-            this.lblProfileCompany.Text = companyProfile.Name;
+            this.lblProfileCompany.Text = companyProfile.Account.Name;
             this.lblProfileAddress.Text = companyProfile.Address;
             this.lblProfileCompanySize.Text = companyProfile.CompanySize.ToString();
             this.lblProfilePhone.Text = companyProfile.PhoneNumber;
             this.lblProfileDateEstablish.Text = companyProfile.DateEstablish?.ToString("dd-MM-yyyy");
-            this.lblProfileEmail.Text = companyProfile.Email;
+            this.lblProfileEmail.Text = companyProfile.Account.Email;
             this.lblProfileLink.Text = companyProfile.CompanyLink;
             this.rtxtTop3Reason.Text = companyProfile.Reason;
             this.rTxtOverview.Text = companyProfile.Overview;
@@ -120,13 +116,6 @@ namespace FindJobApplication
         }
         private bool isFollowing(int id)
         {
-            UserProfileDao userProfileDao = new UserProfileDao();
-            List<int> followeds = userProfileDao.FindAllCompanyIdFollowing(Session.accountId);
-            foreach (int followed in followeds)
-            {
-                if (followed == id)
-                    return true;
-            }
             return false;
         }
     }

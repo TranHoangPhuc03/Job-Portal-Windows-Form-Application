@@ -84,6 +84,7 @@
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Inter", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(860, 13);
@@ -94,6 +95,7 @@
             // 
             // guna2PictureBox4
             // 
+            this.guna2PictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2PictureBox4.Image = global::FindJobApplication.Properties.Resources.Mail_Calender;
             this.guna2PictureBox4.ImageRotate = 0F;
             this.guna2PictureBox4.Location = new System.Drawing.Point(820, 10);
@@ -105,6 +107,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Inter", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(460, 13);
@@ -115,6 +118,7 @@
             // 
             // guna2PictureBox2
             // 
+            this.guna2PictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2PictureBox2.Image = global::FindJobApplication.Properties.Resources.Mail_title;
             this.guna2PictureBox2.ImageRotate = 0F;
             this.guna2PictureBox2.Location = new System.Drawing.Point(420, 10);
@@ -161,6 +165,9 @@
             this.btnMailSent.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(75)))), ((int)(((byte)(43)))));
             this.btnMailSent.BorderRadius = 25;
             this.btnMailSent.BorderThickness = 1;
+            this.btnMailSent.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnMailSent.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(75)))), ((int)(((byte)(43)))));
+            this.btnMailSent.CheckedState.ForeColor = System.Drawing.Color.White;
             this.btnMailSent.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMailSent.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnMailSent.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -187,15 +194,19 @@
             this.btnMailReceived.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(75)))), ((int)(((byte)(43)))));
             this.btnMailReceived.BorderRadius = 25;
             this.btnMailReceived.BorderThickness = 1;
+            this.btnMailReceived.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnMailReceived.Checked = true;
+            this.btnMailReceived.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(75)))), ((int)(((byte)(43)))));
+            this.btnMailReceived.CheckedState.ForeColor = System.Drawing.Color.White;
             this.btnMailReceived.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMailReceived.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnMailReceived.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnMailReceived.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnMailReceived.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnMailReceived.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(75)))), ((int)(((byte)(43)))));
+            this.btnMailReceived.FillColor = System.Drawing.Color.White;
             this.btnMailReceived.Font = new System.Drawing.Font("Inter", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.btnMailReceived.ForeColor = System.Drawing.Color.White;
-            this.btnMailReceived.HoverState.FillColor = System.Drawing.Color.OrangeRed;
+            this.btnMailReceived.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(75)))), ((int)(((byte)(43)))));
+            this.btnMailReceived.HoverState.FillColor = System.Drawing.Color.WhiteSmoke;
             this.btnMailReceived.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnMailReceived.ImageSize = new System.Drawing.Size(32, 32);
             this.btnMailReceived.Location = new System.Drawing.Point(120, 19);

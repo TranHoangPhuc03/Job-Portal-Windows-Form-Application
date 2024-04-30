@@ -1,5 +1,5 @@
 ﻿using FindJobApplication.Daos;
-using FindJobApplication.Models;
+using FindJobApplication.Utils;
 using Guna.UI.WinForms;
 using System;
 using System.Collections.Generic;
@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Web.UI.WebControls;
 using System.Windows.Controls;
 using System.Windows.Forms;
+using FindJobApplication.Entities;
 
 namespace FindJobApplication
 {
@@ -24,8 +25,7 @@ namespace FindJobApplication
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
-            Session.accountId = 0;
-            Session.role = "";
+            Session.account = null;
 
             FLogin fLogin = new FLogin();
             Form thisForm = (Form)this.TopLevelControl;
@@ -35,6 +35,8 @@ namespace FindJobApplication
         }
         private void FCompanyHome_Load(object sender, EventArgs e)
         {
+            lblUsername.Text = Session.account.Name;
+            pbUserImage.Image = ImageUtils.FromBytesToImage(Session.account.Avatar);
             btnHome.PerformClick();
         }
 

@@ -9,17 +9,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using FindJobApplication.Models;
 using FindJobApplication.Daos;
+using FindJobApplication.Entities;
+using FindJobApplication.Utils;
 
 namespace FindJobApplication
 {
     public partial class UCHome : UserControl
     {
+        UCPanelMain parentContainer = null;
         public UCHome()
         {
             InitializeComponent();
-            this.Dock = DockStyle.Fill;
+            Dock = DockStyle.Fill;
         }
         
         public Guna2TextBox TxtSeach { get => txtSearch; }
@@ -29,12 +31,12 @@ namespace FindJobApplication
         public FlowLayoutPanel PnlListJob { get => pnlListJob; }
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            string keyword = this.TxtSeach.Text;
-            int locationId = this.CbLocation.SelectedIndex;
-            int experienceId = this.CbExperince.SelectedIndex;
+            string keyword = TxtSeach.Text;
+            int locationId = CbLocation.SelectedIndex;
+            int experienceId = CbExperince.SelectedIndex;
 
             JobPostDao jobPostDao = new JobPostDao();
-            List<JobPost> dt = jobPostDao.FindAllJobPost();
+            ICollection<JobPost> dt = jobPostDao.FindAllJobPost();
             if (!string.IsNullOrEmpty(keyword))
             {
                 dt = dt.Where(row => row.Title.Contains(keyword)).ToList();
@@ -42,26 +44,25 @@ namespace FindJobApplication
             this.fillJobPostToPanel(dt);
         }
 
-        public void fillJobPostToPanel(List<JobPost> jobPosts)
+        public void fillJobPostToPanel(ICollection<JobPost> jobPosts)
         {
-            this.pnlListJob.Controls.Clear();
+            pnlListJob.Controls.Clear();
 
-            SkillDao skillDao = new SkillDao();
             UserProfileDao userProfileDao = new UserProfileDao();
-            List<Skill> skills = skillDao.FindAllSkill();
-            List<int> favouriteJobs = userProfileDao.FindAllJobPostIdFavourite(Session.accountId);
-
+            var favourites = new HashSet<int> (
+                userProfileDao
+                .FindUserProfileByAccountId(Session.account.Id)
+                .JobPosts
+                .Select(row => row.Id)
+                .ToList()
+            );
             foreach (JobPost jobPost in jobPosts)
             {
-                List<Skill> filteredSkill = new List<Skill>();
-                foreach(int skillId in jobPost.SkillID)
-                {
-                    filteredSkill.Add(skills.FirstOrDefault(o => o.Id == skillId));
-                }
-                bool isFavourite = favouriteJobs.Contains(jobPost.Id);
-
-                UCJob uCJob = new UCJob(jobPost, filteredSkill, isFavourite);
-                this.pnlListJob.Controls.Add(uCJob);
+                bool isFavourite = favourites.Contains(jobPost.Id);
+                UCJob uCJob = new UCJob(jobPost, isFavourite);
+                uCJob.FillToMainPanelClicked += FillToParentPanel;
+                uCJob.FillToMainPanelClicked += FillToParentPanel;
+                pnlListJob.Controls.Add(uCJob);
             }
         }
 
@@ -71,15 +72,25 @@ namespace FindJobApplication
             YearExperienceDao yearExperienceDao = new YearExperienceDao();
             LocationDao locationDao = new LocationDao();
 
-            this.CbLocation.ValueMember = "id";
-            this.CbLocation.DisplayMember = "name";
-            this.CbLocation.DataSource = locationDao.FindAllLocationList();
+            CbLocation.ValueMember = "id";
+            CbLocation.DisplayMember = "name";
+            CbLocation.DataSource = locationDao.FindAllLocationList();
 
-            this.CbExperince.ValueMember = "id";
-            this.CbExperince.DisplayMember = "name";
-            this.CbExperince.DataSource = yearExperienceDao.FindAllExperienceList();
+            CbExperince.ValueMember = "id";
+            CbExperince.DisplayMember = "name";
+            CbExperince.DataSource = yearExperienceDao.FindAllExperience();
 
-            this.fillJobPostToPanel(jobPostDao.FindAllJobPost());
+            fillJobPostToPanel(jobPostDao.FindAllJobPost());
+        }
+
+        private void UCHome_ParentChanged(object sender, EventArgs e)
+        {
+            parentContainer = Parent.Parent as UCPanelMain;
+        }
+
+        private void FillToParentPanel(object sender, UserControl uc)
+        {
+            parentContainer.AddControl(uc);
         }
     }
 }

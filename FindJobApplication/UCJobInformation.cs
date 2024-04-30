@@ -1,56 +1,59 @@
 ﻿using FindJobApplication.Daos;
-using FindJobApplication.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
+using FindJobApplication.Utils;
+using FindJobApplication.Entities;
 
 namespace FindJobApplication
 {
     public partial class UCJobInformation : UserControl
     {
-        private int jobPostId;
+        private readonly JobPost jobPost = null;
+        private readonly bool isFavourite = false;
         public UCJobInformation()
         {
             InitializeComponent();
-            this.Dock = DockStyle.Fill;
+            Dock = DockStyle.Fill;
+            tableLayoutPanel1.HorizontalScroll.Maximum = 0;
+            tableLayoutPanel1.AutoScroll = false;
+            tableLayoutPanel1.VerticalScroll.Visible = false;
+            tableLayoutPanel1.AutoScroll = true;
         }
 
-        public UCJobInformation(int jobPostId) : this()
+        public UCJobInformation(JobPost jobPost, bool isFavourite) : this()
         {
-            this.jobPostId = jobPostId;
+            this.jobPost = jobPost;
+            this.isFavourite = isFavourite;
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            Control parentControl = this.Parent;
+            Control parentControl = Parent;
             if (parentControl != null)
             {
                 parentControl.Controls.Remove(this);
-                this.Dispose();
+                Dispose();
             }
         }
 
         private void UCJobInformation_Load(object sender, EventArgs e)
         {
-            JobPostDao jobPostDao = new JobPostDao();
-            JobPost jobPost = jobPostDao.FindJobPostById(this.jobPostId);
-            this.lblNameJob.Text = jobPost.Title;
-            this.lblNameCompany.Text = jobPost.CompanyName;
-            this.lblSalary.Text = jobPost.Salary.ToString();
-            this.rtxtJobDescription.Text = jobPost.Description;
-            this.rtxtRequired.Text = jobPost.Requirement;
-            this.rtxtPrioritize.Text = jobPost.Prioritize;
-            this.rtxtBenefit.Text = jobPost.Benefit;
-            this.lblPostDate.Text = jobPost.PostDate.ToString("dd-MM-yyyy");
-            this.lblWorkAddress.Text = jobPost.Address;
-            if (isFavouriteJob(jobPost.Id)) btnSave.Checked = true;
+            lblNameJob.Text = jobPost.Title;
+            lblNameCompany.Text = jobPost.CompanyProfile.Account.Name;
+            lblSalary.Text = jobPost.Salary.ToString();
+            rtxtJobDescription.Text = jobPost.Description;
+            rtxtRequired.Text = jobPost.Requirement;
+            rtxtPrioritize.Text = jobPost.Prioritize;
+            rtxtBenefit.Text = jobPost.Benefit;
+            lblPostDate.Text = jobPost.PostDate.ToString("dd-MM-yyyy");
+            lblWorkAddress.Text = jobPost.Address;
+            btnSave.Checked = isFavourite;
         }
 
         private void btnApply_Click(object sender, EventArgs e)
         {
-            JobPostDao jobPostDao = new JobPostDao();
-            JobPost jobPost = jobPostDao.FindJobPostById(this.jobPostId);
             FUserSubmitCV fUserSubmitCV = new FUserSubmitCV(jobPost);
             fUserSubmitCV.Show();
         }
@@ -58,29 +61,14 @@ namespace FindJobApplication
         private void btnSave_CheckedChanged(object sender, EventArgs e)
         {
             UserProfileDao userProfileDao = new UserProfileDao();
-
             if (btnSave.Checked == true)
             {
-                if (!isFavouriteJob(jobPostId))
-                {
-                    userProfileDao.SaveNewFavouriteJob(jobPostId, Session.accountId);
-                }
+                    userProfileDao.SaveUserFollowJob(Session.account.Id, jobPost.Id);
             }
             else
             {
-                userProfileDao.DeleteFavouriteJob(jobPostId, Session.accountId);
+                userProfileDao.DeleteUserFollowJob(Session.account.Id, jobPost.Id);
             }
-        }
-        private bool isFavouriteJob(int jobId)
-        {
-            UserProfileDao userProfileDao = new UserProfileDao();
-            List<int> jobIds = userProfileDao.FindAllJobPostIdFavourite(Session.accountId);
-            foreach (int idJob in jobIds)
-            {
-                if (idJob == jobId)
-                    return true;
-            }
-            return false;
         }
     }
 }

@@ -48,10 +48,10 @@
             this.pnlNavbar = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.pnlTools = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.pnlMain = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.ucUserSubMenu = new FindJobApplication.UCUserSubMenuRight();
+            this.ucPanelMain = new FindJobApplication.UCPanelMain();
             this.tpnlUserNav.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbUserImage)).BeginInit();
@@ -504,24 +504,6 @@
             this.pnlTools.Size = new System.Drawing.Size(1184, 80);
             this.pnlTools.TabIndex = 35;
             // 
-            // pnlMain
-            // 
-            this.pnlMain.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlMain.BackColor = System.Drawing.Color.Transparent;
-            this.pnlMain.BorderRadius = 16;
-            this.pnlMain.CustomBorderThickness = new System.Windows.Forms.Padding(1);
-            this.pnlMain.CustomizableEdges.BottomLeft = false;
-            this.pnlMain.CustomizableEdges.BottomRight = false;
-            this.pnlMain.CustomizableEdges.TopRight = false;
-            this.pnlMain.Location = new System.Drawing.Point(256, 87);
-            this.pnlMain.Margin = new System.Windows.Forms.Padding(0);
-            this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Padding = new System.Windows.Forms.Padding(8, 8, 0, 0);
-            this.pnlMain.Size = new System.Drawing.Size(1184, 935);
-            this.pnlMain.TabIndex = 36;
-            this.pnlMain.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.pnlMain_ControlAdded);
-            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.AutoSize = true;
@@ -564,6 +546,17 @@
             this.ucUserSubMenu.Size = new System.Drawing.Size(250, 0);
             this.ucUserSubMenu.TabIndex = 0;
             // 
+            // ucPanelMain
+            // 
+            this.ucPanelMain.BackColor = System.Drawing.Color.Transparent;
+            this.ucPanelMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucPanelMain.Location = new System.Drawing.Point(248, 80);
+            this.ucPanelMain.Margin = new System.Windows.Forms.Padding(8, 8, 0, 0);
+            this.ucPanelMain.Name = "ucPanelMain";
+            this.ucPanelMain.Padding = new System.Windows.Forms.Padding(8, 8, 0, 0);
+            this.ucPanelMain.Size = new System.Drawing.Size(1192, 944);
+            this.ucPanelMain.TabIndex = 36;
+            // 
             // FHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -571,10 +564,10 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(247)))));
             this.ClientSize = new System.Drawing.Size(1440, 1024);
             this.Controls.Add(this.ucUserSubMenu);
+            this.Controls.Add(this.ucPanelMain);
             this.Controls.Add(this.tableLayoutPanel3);
             this.Controls.Add(this.tpnlUserNav);
             this.Controls.Add(this.pnlTools);
-            this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.tableLayoutPanel2);
             this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
@@ -619,12 +612,12 @@
         private System.Windows.Forms.Label lblUsername;
         private Guna.UI2.WinForms.Guna2CirclePictureBox pbUserImage;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel pnlTools;
-        private Guna.UI2.WinForms.Guna2CustomGradientPanel pnlMain;
         private Guna.UI2.WinForms.Guna2Button btnHistorySocial;
         private Guna.UI2.WinForms.Guna2Button btnSetting;
         private Guna.UI2.WinForms.Guna2Button btnTrending;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private UCUserSubMenuRight ucUserSubMenu;
+        private UCPanelMain ucPanelMain;
     }
 }

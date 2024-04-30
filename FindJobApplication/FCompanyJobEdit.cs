@@ -1,5 +1,5 @@
 ﻿using FindJobApplication.Daos;
-using FindJobApplication.Models;
+using FindJobApplication.Utils;
 using Guna.UI2.WinForms;
 using System;
 using System.Collections;
@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.UI.Design;
 using System.Windows.Forms;
+using FindJobApplication.Entities;
 
 namespace FindJobApplication
 {
@@ -56,7 +57,7 @@ namespace FindJobApplication
 
             this.cbExperience.ValueMember = "id";
             this.cbExperience.DisplayMember = "name";
-            this.cbExperience.DataSource = yearExperienceDao.FindAllExperienceList();
+            this.cbExperience.DataSource = yearExperienceDao.FindAllExperience();
 
             if (this.Tag != null)
             {
@@ -109,7 +110,7 @@ namespace FindJobApplication
         private void btnPostJob_Click(object sender, EventArgs e)
         {
             JobPost jobPost = getJobPostInfo();
-            jobPost.CompanyId = Session.accountId;
+            jobPost.CompanyId = Session.account.Id;
             JobPostDao jobPostDao = new JobPostDao();
             if (this.formAction == "Create")
             {

@@ -195,6 +195,7 @@ namespace FindJobApplication
             this.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
             this.Size = new System.Drawing.Size(1184, 935);
             this.Load += new System.EventHandler(this.UCHome_Load);
+            this.ParentChanged += new System.EventHandler(this.UCHome_ParentChanged);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 

@@ -1,5 +1,5 @@
 ﻿using FindJobApplication.Daos;
-using FindJobApplication.Models;
+using FindJobApplication.Entities;
 using System;
 using System.Collections.Generic;
 using System.Data;
