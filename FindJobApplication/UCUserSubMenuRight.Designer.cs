@@ -31,9 +31,9 @@
             this.pnlMenu = new Guna.UI.WinForms.GunaElipsePanel();
             this.btnSetting = new Guna.UI.WinForms.GunaButton();
             this.btnSocialPost = new Guna.UI.WinForms.GunaButton();
-            this.btnFavouriteCompany = new Guna.UI.WinForms.GunaButton();
             this.btnMyJob = new Guna.UI.WinForms.GunaButton();
             this.btnProfile = new Guna.UI.WinForms.GunaButton();
+            this.btnFavouriteCompany = new Guna.UI.WinForms.GunaButton();
             this.pnlMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,10 +48,10 @@
             this.pnlMenu.Controls.Add(this.btnProfile);
             this.pnlMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlMenu.Location = new System.Drawing.Point(0, 0);
-            this.pnlMenu.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlMenu.Margin = new System.Windows.Forms.Padding(0);
             this.pnlMenu.Name = "pnlMenu";
             this.pnlMenu.Radius = 10;
-            this.pnlMenu.Size = new System.Drawing.Size(250, 242);
+            this.pnlMenu.Size = new System.Drawing.Size(250, 250);
             this.pnlMenu.TabIndex = 30;
             // 
             // btnSetting
@@ -110,34 +110,6 @@
             this.btnSocialPost.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnSocialPost.Click += new System.EventHandler(this.btnSocialPost_Click);
             // 
-            // btnFavouriteCompany
-            // 
-            this.btnFavouriteCompany.AnimationHoverSpeed = 0.07F;
-            this.btnFavouriteCompany.AnimationSpeed = 0.03F;
-            this.btnFavouriteCompany.BaseColor = System.Drawing.Color.WhiteSmoke;
-            this.btnFavouriteCompany.BorderColor = System.Drawing.Color.Black;
-            this.btnFavouriteCompany.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFavouriteCompany.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnFavouriteCompany.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnFavouriteCompany.FocusedColor = System.Drawing.Color.Empty;
-            this.btnFavouriteCompany.Font = new System.Drawing.Font("Inter", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.btnFavouriteCompany.ForeColor = System.Drawing.Color.Black;
-            this.btnFavouriteCompany.Image = null;
-            this.btnFavouriteCompany.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnFavouriteCompany.Location = new System.Drawing.Point(0, 100);
-            this.btnFavouriteCompany.Margin = new System.Windows.Forms.Padding(2);
-            this.btnFavouriteCompany.Name = "btnFavouriteCompany";
-            this.btnFavouriteCompany.OnHoverBaseColor = System.Drawing.Color.LightGray;
-            this.btnFavouriteCompany.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnFavouriteCompany.OnHoverForeColor = System.Drawing.Color.Black;
-            this.btnFavouriteCompany.OnHoverImage = null;
-            this.btnFavouriteCompany.OnPressedColor = System.Drawing.Color.DarkGray;
-            this.btnFavouriteCompany.Size = new System.Drawing.Size(250, 50);
-            this.btnFavouriteCompany.TabIndex = 4;
-            this.btnFavouriteCompany.Text = "Favourite";
-            this.btnFavouriteCompany.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnFavouriteCompany.Click += new System.EventHandler(this.btnFavouriteCompany_Click);
-            // 
             // btnMyJob
             // 
             this.btnMyJob.AnimationHoverSpeed = 0.07F;
@@ -194,6 +166,34 @@
             this.btnProfile.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
             // 
+            // btnFavouriteCompany
+            // 
+            this.btnFavouriteCompany.AnimationHoverSpeed = 0.07F;
+            this.btnFavouriteCompany.AnimationSpeed = 0.03F;
+            this.btnFavouriteCompany.BaseColor = System.Drawing.Color.WhiteSmoke;
+            this.btnFavouriteCompany.BorderColor = System.Drawing.Color.Black;
+            this.btnFavouriteCompany.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFavouriteCompany.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnFavouriteCompany.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnFavouriteCompany.FocusedColor = System.Drawing.Color.Empty;
+            this.btnFavouriteCompany.Font = new System.Drawing.Font("Inter", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.btnFavouriteCompany.ForeColor = System.Drawing.Color.Black;
+            this.btnFavouriteCompany.Image = null;
+            this.btnFavouriteCompany.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnFavouriteCompany.Location = new System.Drawing.Point(0, 100);
+            this.btnFavouriteCompany.Margin = new System.Windows.Forms.Padding(2);
+            this.btnFavouriteCompany.Name = "btnFavouriteCompany";
+            this.btnFavouriteCompany.OnHoverBaseColor = System.Drawing.Color.LightGray;
+            this.btnFavouriteCompany.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnFavouriteCompany.OnHoverForeColor = System.Drawing.Color.Black;
+            this.btnFavouriteCompany.OnHoverImage = null;
+            this.btnFavouriteCompany.OnPressedColor = System.Drawing.Color.DarkGray;
+            this.btnFavouriteCompany.Size = new System.Drawing.Size(250, 50);
+            this.btnFavouriteCompany.TabIndex = 4;
+            this.btnFavouriteCompany.Text = "Favourite";
+            this.btnFavouriteCompany.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnFavouriteCompany.Click += new System.EventHandler(this.btnFavouriteCompany_Click);
+            // 
             // UCUserSubMenuRight
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -211,8 +211,8 @@
         private Guna.UI.WinForms.GunaElipsePanel pnlMenu;
         private Guna.UI.WinForms.GunaButton btnMyJob;
         private Guna.UI.WinForms.GunaButton btnProfile;
-        private Guna.UI.WinForms.GunaButton btnFavouriteCompany;
         private Guna.UI.WinForms.GunaButton btnSetting;
         private Guna.UI.WinForms.GunaButton btnSocialPost;
+        private Guna.UI.WinForms.GunaButton btnFavouriteCompany;
     }
 }

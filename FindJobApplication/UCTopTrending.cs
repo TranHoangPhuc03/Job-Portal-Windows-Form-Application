@@ -19,7 +19,7 @@ namespace FindJobApplication
 {
     public partial class UCTopTrending : UserControl
     {
-        public event FillToMainPanelHandler FillToMainPanelClicked;
+        public event FillToMainPanelHandler FillToMainPanelClicked = UCPanelMain.UC_RequiredAddControl;
 
         CompanyProfileDao companyProfileDao = new CompanyProfileDao();
         JobPostDao jobPostDao = new JobPostDao();
@@ -41,9 +41,9 @@ namespace FindJobApplication
 
             if (cbbSelectTopTrending.SelectedIndex == 0)
             {
-                var results = jobPostDao.FindTopMostFollowedJob(numberOfItemsToShow);
+                var results = jobPostDao.FindTopMostJobApplied(numberOfItemsToShow);
                 BDTop5.Label = "Top 5 Job Apply";
-                for (int i = 0; i < results.Count; i++)
+                for (int i = 0; i < numberOfItemsToShow; i++)
                 {
                     if (i < results.Count)
                     {
@@ -65,7 +65,7 @@ namespace FindJobApplication
                 foreach (var item in results)
                 {
                     string name = item.Title;
-                    int count = item.UserProfiles.Count;
+                    int count = item.UserApplyJobs.Count;
                     BDTop5.DataPoints.Add("", count);
                     links[index].Text = name;
                     index++;
@@ -76,7 +76,7 @@ namespace FindJobApplication
             {
                 var results = companyProfileDao.FindTopFollowedCompany(numberOfItemsToShow);
                 BDTop5.Label = "Top 5 Company";
-                for (int i = 0; i < results.Count; i++)
+                for (int i = 0; i < numberOfItemsToShow; i++)
                 {
                     if (i < results.Count)
                     {
@@ -148,18 +148,17 @@ namespace FindJobApplication
         {
             int numberOfItemsToShow = 5;
             int row = int.Parse(lbl.Name[lbl.Name.Length - 1].ToString());
+            int index = row - 1;
             if (cbbSelectTopTrending.SelectedIndex == 0)
             {
-                var jobPost = jobPostDao.FindTopMostFollowedJob(numberOfItemsToShow).ElementAt(row);
-                UCJobInformation uCJobInformation = new UCJobInformation(
-                    jobPost,
-                    Session.account.UserProfile.JobPosts.Contains(jobPost)
-                );
+                var jobPost = jobPostDao.FindTopMostJobApplied(numberOfItemsToShow).ElementAt(index);
+                bool isFavourite = Session.account.UserProfile.JobPosts.Any(q => q.Id == jobPost.Id);
+                UCJobInformation uCJobInformation = new UCJobInformation(jobPost, isFavourite);
                 FillToMainPanelClicked?.Invoke(this, uCJobInformation);
             }
             else
             {
-                var companyProfile = companyProfileDao.FindTopFollowedCompany(numberOfItemsToShow).ElementAt(row);
+                var companyProfile = companyProfileDao.FindTopFollowedCompany(numberOfItemsToShow).ElementAt(index);
                 UCCompanyProfile uCCompanyProfile = new UCCompanyProfile(companyProfile.Id);
                 FillToMainPanelClicked?.Invoke(this, uCCompanyProfile);
 

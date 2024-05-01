@@ -58,12 +58,12 @@ namespace FindJobApplication
             fUserSubmitCV.Show();
         }
 
-        private void btnSave_CheckedChanged(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e)
         {
             UserProfileDao userProfileDao = new UserProfileDao();
             if (btnSave.Checked == true)
             {
-                    userProfileDao.SaveUserFollowJob(Session.account.Id, jobPost.Id);
+                userProfileDao.SaveUserFollowJob(Session.account.Id, jobPost.Id);
             }
             else
             {

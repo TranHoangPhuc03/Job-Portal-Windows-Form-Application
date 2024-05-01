@@ -77,11 +77,15 @@ namespace FindJobApplication.Daos
 
         public ICollection<CompanyProfile> FindTopFollowedCompany(int top)
         {
-            var results = from q in db.CompanyProfiles
-                          orderby q.Account.Accounts.Count descending
-                          select q;
+            var results = db.UserProfiles
+                .SelectMany(row => row.Account.Account1)
+                .GroupBy(row => row.CompanyProfile.Id)
+                .OrderByDescending(gp => gp.Count())
+                .Take(top)
+                .Select(gp => gp.FirstOrDefault().CompanyProfile)
+                .ToList();
 
-            return results.Take(top).ToList();
+            return results;
         }
     }
 }
