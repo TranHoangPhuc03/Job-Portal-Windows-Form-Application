@@ -21,16 +21,13 @@ namespace FindJobApplication
         public UCCompanyHome()
         {
             InitializeComponent();
-            this.Dock = DockStyle.Fill;
+            Dock = DockStyle.Fill;
         }
-
-        public Guna2Button BtnAllJob { get => btnAllJob; }
 
         public void UCCompanyHome_Load(object sender, EventArgs e)
         {
             ICollection<JobPost> jobPosts = jobPostDao.FindAllJobPostByCompanyId(Session.account.Id);
             fillDataToPanel(jobPosts);
-
         }
         public void fillDataToPanel(ICollection<JobPost> jobPosts)
         {

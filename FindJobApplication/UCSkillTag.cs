@@ -19,7 +19,8 @@ namespace FindJobApplication
         }
         public UCSkillTag(Skill skill) : this()
         {
-            this.btnSkill.Text = skill.Name;
+            btnSkill.Text = skill.Name;
+            Tag = skill;
         }
 
         public void ShowBtnDelete()
@@ -33,7 +34,7 @@ namespace FindJobApplication
             if (parentControl != null)
             {
                 parentControl.Controls.Remove(this);
-                this.Dispose();
+                Dispose();
             }
         }
     }

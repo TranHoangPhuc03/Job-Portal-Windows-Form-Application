@@ -18,19 +18,25 @@ namespace FindJobApplication
         public UCSocialHistory()
         {
             InitializeComponent();
+            Dock = DockStyle.Fill;
         }
 
         private void UCSocialHistory_Load(object sender, EventArgs e)
         {
-            //SocialPostDao socialPostDao = new SocialPostDao();
-            //List<SocialPost> list = socialPostDao.FindAllSocialPost();
-            //List<SocialPost> filteredList = list.Where(post => post.AccountId == Session.account.Id).ToList();
-            //int cnt = 1;
-            //foreach (SocialPost socialPost in filteredList)
-            //{
-            //    UCSocialHistoryRow row = new UCSocialHistoryRow(cnt++, socialPost);
-            //    pnlListSocial.Controls.Add(row);
-            //}
+            SocialPostDao socialPostDao = new SocialPostDao();
+            ICollection<SocialPost> socialPosts = socialPostDao.FindSocialPostOfAnUser(Session.account.Id);
+            int cnt = 1;
+            pnlMain.Controls.Clear();
+            pnlMain.RowCount = 0;
+            pnlMain.SuspendLayout();
+            foreach (var post in socialPosts)
+            {
+                pnlMain.RowCount += 1;
+                UCSocialHistoryRow row = new UCSocialHistoryRow(cnt++, post);
+                pnlMain.Controls.Add(row);
+            }
+            pnlMain.RowCount += 1;
+            pnlMain.ResumeLayout();
         }
     }
 }

@@ -35,9 +35,9 @@
             this.lblDatePost = new Guna.UI.WinForms.GunaLabel();
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.btnSendMail = new Guna.UI2.WinForms.Guna2Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbAvatar = new System.Windows.Forms.PictureBox();
             this.guna2CustomGradientPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAvatar)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -67,8 +67,10 @@
             // 
             // pnlSkill
             // 
+            this.pnlSkill.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlSkill.Location = new System.Drawing.Point(25, 189);
-            this.pnlSkill.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlSkill.Margin = new System.Windows.Forms.Padding(2);
             this.pnlSkill.Name = "pnlSkill";
             this.pnlSkill.Size = new System.Drawing.Size(768, 35);
             this.pnlSkill.TabIndex = 5;
@@ -79,7 +81,7 @@
             this.rtxtDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtxtDescription.Font = new System.Drawing.Font("Inter", 15.15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtxtDescription.Location = new System.Drawing.Point(24, 107);
-            this.rtxtDescription.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rtxtDescription.Margin = new System.Windows.Forms.Padding(2);
             this.rtxtDescription.Name = "rtxtDescription";
             this.rtxtDescription.ReadOnly = true;
             this.rtxtDescription.Size = new System.Drawing.Size(1039, 66);
@@ -99,22 +101,27 @@
             // 
             // guna2CustomGradientPanel1
             // 
+            this.guna2CustomGradientPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2CustomGradientPanel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2CustomGradientPanel1.BorderRadius = 10;
             this.guna2CustomGradientPanel1.Controls.Add(this.btnSendMail);
             this.guna2CustomGradientPanel1.Controls.Add(this.lblTitle);
             this.guna2CustomGradientPanel1.Controls.Add(this.pnlSkill);
-            this.guna2CustomGradientPanel1.Controls.Add(this.pictureBox1);
+            this.guna2CustomGradientPanel1.Controls.Add(this.pbAvatar);
             this.guna2CustomGradientPanel1.Controls.Add(this.rtxtDescription);
             this.guna2CustomGradientPanel1.Controls.Add(this.llblName);
             this.guna2CustomGradientPanel1.Controls.Add(this.lblDatePost);
-            this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(3, 3);
+            this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(0, 0);
+            this.guna2CustomGradientPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
-            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(1174, 233);
+            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(1184, 238);
             this.guna2CustomGradientPanel1.TabIndex = 4;
             // 
             // btnSendMail
             // 
+            this.btnSendMail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSendMail.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(75)))), ((int)(((byte)(43)))));
             this.btnSendMail.BorderRadius = 30;
             this.btnSendMail.BorderThickness = 1;
@@ -136,16 +143,16 @@
             this.btnSendMail.Text = "Mail";
             this.btnSendMail.Click += new System.EventHandler(this.btnSendMail_Click);
             // 
-            // pictureBox1
+            // pbAvatar
             // 
-            this.pictureBox1.Image = global::FindJobApplication.Properties.Resources.man;
-            this.pictureBox1.Location = new System.Drawing.Point(24, 19);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.pbAvatar.Image = global::FindJobApplication.Properties.Resources.man;
+            this.pbAvatar.Location = new System.Drawing.Point(24, 19);
+            this.pbAvatar.Margin = new System.Windows.Forms.Padding(2);
+            this.pbAvatar.Name = "pbAvatar";
+            this.pbAvatar.Size = new System.Drawing.Size(50, 50);
+            this.pbAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbAvatar.TabIndex = 2;
+            this.pbAvatar.TabStop = false;
             // 
             // UCSocialPost
             // 
@@ -153,19 +160,19 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(247)))));
             this.Controls.Add(this.guna2CustomGradientPanel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UCSocialPost";
-            this.Size = new System.Drawing.Size(1179, 238);
+            this.Size = new System.Drawing.Size(1184, 238);
             this.guna2CustomGradientPanel1.ResumeLayout(false);
             this.guna2CustomGradientPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAvatar)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private Guna.UI.WinForms.GunaLabel lblDatePost;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbAvatar;
         private System.Windows.Forms.FlowLayoutPanel pnlSkill;
         private System.Windows.Forms.RichTextBox rtxtDescription;
         private Guna.UI.WinForms.GunaLinkLabel llblName;

@@ -47,6 +47,8 @@
             // 
             // pnlMain
             // 
+            this.pnlMain.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlMain.BackColor = System.Drawing.Color.Transparent;
             this.pnlMain.BaseColor = System.Drawing.Color.White;
             this.pnlMain.Controls.Add(this.gunaLabel1);
@@ -65,7 +67,6 @@
             this.pnlMain.Radius = 10;
             this.pnlMain.Size = new System.Drawing.Size(1184, 870);
             this.pnlMain.TabIndex = 1;
-            this.pnlMain.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // gunaLabel1
             // 
@@ -80,6 +81,7 @@
             // 
             // btnDeny
             // 
+            this.btnDeny.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDeny.BorderRadius = 10;
             this.btnDeny.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDeny.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -98,6 +100,7 @@
             // 
             // btnAccept
             // 
+            this.btnAccept.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAccept.BorderRadius = 6;
             this.btnAccept.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAccept.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -173,6 +176,8 @@
             // 
             // rtxtCoverLetter
             // 
+            this.rtxtCoverLetter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.rtxtCoverLetter.BackColor = System.Drawing.Color.White;
             this.rtxtCoverLetter.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtxtCoverLetter.Font = new System.Drawing.Font("Inter", 19.65F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -217,6 +222,7 @@
             this.btnBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnBack.TabIndex = 47;
             this.btnBack.TabStop = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // UCCompanySeeProfilePeople
             // 

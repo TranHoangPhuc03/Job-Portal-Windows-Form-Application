@@ -24,7 +24,7 @@ namespace FindJobApplication.Entities
         public string Title { get; set; }
         public string Contents { get; set; }
         public System.DateTime PostDate { get; set; }
-        public Nullable<int> AccountID { get; set; }
+        public int AccountID { get; set; }
     
         public virtual Account Account { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

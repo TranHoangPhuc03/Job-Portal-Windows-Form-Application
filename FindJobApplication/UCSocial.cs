@@ -1,5 +1,6 @@
 ﻿using FindJobApplication.Daos;
 using FindJobApplication.Entities;
+using FindJobApplication.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,21 +15,29 @@ namespace FindJobApplication
 {
     public partial class UCSocial : UserControl
     {
+        SocialPostDao socialPostDao = new SocialPostDao();
+
         public UCSocial()
         {
             InitializeComponent();
-            this.Dock = DockStyle.Fill;
+            Dock = DockStyle.Fill;
+            pBAvatar.Image = ImageUtils.FromBytesToImage(Session.account.Avatar);
         }
-        public PictureBox PBAvatar { get => pBAvatar; set => pBAvatar = value; }
         private void UCSocial_Load(object sender, EventArgs e)
         {
-            //SocialPostDao socialPostDao = new SocialPostDao();
-            //List<SocialPost> socialPosts = socialPostDao.FindAllSocialPost();
-            //foreach (SocialPost socialPost in socialPosts)
-            //{
-            //    UCSocialPost uCSocial = new UCSocialPost(socialPost);
-            //    pnlSocial.Controls.Add(uCSocial);
-            //}
+            ICollection<SocialPost> socialPosts = socialPostDao.FindAllSocialPost();
+            pnlSocial.Controls.Clear();
+            pnlSocial.RowCount = 0;
+            pnlSocial.SuspendLayout();
+            foreach (var socialPost in socialPosts)
+            {
+                pnlSocial.RowCount += 1;
+
+                UCSocialPost uCSocial = new UCSocialPost(socialPost);
+                pnlSocial.Controls.Add(uCSocial);
+            }
+            pnlSocial.RowCount += 1;
+            pnlSocial.ResumeLayout();
         }
 
         private void txtUpSocial_MouseClick(object sender, MouseEventArgs e)

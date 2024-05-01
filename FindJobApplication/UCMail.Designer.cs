@@ -134,9 +134,9 @@
             this.lblFrom.Font = new System.Drawing.Font("Inter", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.lblFrom.Location = new System.Drawing.Point(190, 13);
             this.lblFrom.Name = "lblFrom";
-            this.lblFrom.Size = new System.Drawing.Size(63, 25);
+            this.lblFrom.Size = new System.Drawing.Size(36, 25);
             this.lblFrom.TabIndex = 2;
-            this.lblFrom.Text = "From";
+            this.lblFrom.Text = "To";
             // 
             // guna2PictureBox1
             // 

@@ -41,10 +41,10 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.lblUsername = new System.Windows.Forms.Label();
             this.pbUserImage = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.pnlMain = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.ucCompanySubMenuRight = new FindJobApplication.UCCompanySubMenuRight();
+            this.ucPanelMain = new FindJobApplication.UCPanelMain();
             this.tableLayoutPanel3.SuspendLayout();
             this.pnlLogout.SuspendLayout();
             this.pnlNavbar.SuspendLayout();
@@ -321,28 +321,6 @@
             this.pbUserImage.TabStop = false;
             this.pbUserImage.Click += new System.EventHandler(this.pbUserImage_Click);
             // 
-            // pnlMain
-            // 
-            this.pnlMain.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlMain.BackColor = System.Drawing.Color.Transparent;
-            this.pnlMain.BorderRadius = 16;
-            this.pnlMain.CustomBorderThickness = new System.Windows.Forms.Padding(1);
-            this.pnlMain.CustomizableEdges.BottomLeft = false;
-            this.pnlMain.CustomizableEdges.BottomRight = false;
-            this.pnlMain.CustomizableEdges.TopRight = false;
-            this.pnlMain.FillColor = System.Drawing.Color.Transparent;
-            this.pnlMain.FillColor2 = System.Drawing.Color.Transparent;
-            this.pnlMain.FillColor3 = System.Drawing.Color.Transparent;
-            this.pnlMain.FillColor4 = System.Drawing.Color.Transparent;
-            this.pnlMain.Location = new System.Drawing.Point(256, 87);
-            this.pnlMain.Margin = new System.Windows.Forms.Padding(0);
-            this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Padding = new System.Windows.Forms.Padding(8, 8, 0, 0);
-            this.pnlMain.Size = new System.Drawing.Size(1184, 935);
-            this.pnlMain.TabIndex = 41;
-            this.pnlMain.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.pnlMain_ControlAdded);
-            // 
             // guna2PictureBox1
             // 
             this.guna2PictureBox1.BackColor = System.Drawing.Color.White;
@@ -386,16 +364,27 @@
             this.ucCompanySubMenuRight.Size = new System.Drawing.Size(250, 0);
             this.ucCompanySubMenuRight.TabIndex = 42;
             // 
+            // ucPanelMain
+            // 
+            this.ucPanelMain.BackColor = System.Drawing.Color.Transparent;
+            this.ucPanelMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucPanelMain.Location = new System.Drawing.Point(248, 80);
+            this.ucPanelMain.Margin = new System.Windows.Forms.Padding(0);
+            this.ucPanelMain.Name = "ucPanelMain";
+            this.ucPanelMain.Padding = new System.Windows.Forms.Padding(8, 8, 0, 0);
+            this.ucPanelMain.Size = new System.Drawing.Size(1192, 944);
+            this.ucPanelMain.TabIndex = 43;
+            // 
             // FCompanyHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(247)))));
             this.ClientSize = new System.Drawing.Size(1440, 1024);
+            this.Controls.Add(this.ucPanelMain);
             this.Controls.Add(this.ucCompanySubMenuRight);
             this.Controls.Add(this.tableLayoutPanel3);
             this.Controls.Add(this.pnlTools);
-            this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.tableLayoutPanel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -434,9 +423,9 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label lblUsername;
         private Guna.UI2.WinForms.Guna2CirclePictureBox pbUserImage;
-        private Guna.UI2.WinForms.Guna2CustomGradientPanel pnlMain;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private UCCompanySubMenuRight ucCompanySubMenuRight;
+        private UCPanelMain ucPanelMain;
     }
 }

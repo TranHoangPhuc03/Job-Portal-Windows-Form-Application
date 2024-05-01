@@ -22,13 +22,11 @@ namespace FindJobApplication
         public FHome()
         {
             InitializeComponent();
-            ucUserSubMenu.FillToMainPanelClicked += UCPanelMain.UC_RequiredAddControl;
         }
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            UCHome uCHome = new UCHome();
-            ucPanelMain.AddControl(uCHome);
+            ucPanelMain.AddControl(new UCHome());
         }
 
         private void FHome_Load(object sender, EventArgs e)
@@ -40,65 +38,37 @@ namespace FindJobApplication
 
         private void btnSocial_Click(object sender, EventArgs e)
         {
-            UCSocial uCSocial = new UCSocial();
-            ucPanelMain.AddControl(uCSocial);
+            ucPanelMain.AddControl(new UCSocial());
         }
 
         private void btnMail_Click(object sender, EventArgs e)
         {
-            UCMail uCMail = new UCMail();
-            ucPanelMain.AddControl(uCMail);
-
-            foreach (var row in uCMail.PnlListMail.Controls)
-            {
-                if (row is UCMailRow uCMailRow)
-                {
-                    uCMailRow.SeeDetailClicked += UCMailRow_SeeDetailClicked;
-                }
-            }
-
+            ucPanelMain.AddControl(new UCMail());
         }
 
         private void btnTrending_Click(object sender, EventArgs e)
         {
-            UCTopTrending uCTopTrending = new UCTopTrending();
-            ucPanelMain.AddControl(uCTopTrending);
+            ucPanelMain.AddControl(new UCTopTrending());
         }
 
         private void btnProfile_Click(object sender, EventArgs e)
         {
-            UCProfile uCProfile = new UCProfile();
-            ucPanelMain.AddControl(uCProfile);
+            ucPanelMain.AddControl(new UCProfile());
         }
 
         private void btnFavourites_Click(object sender, EventArgs e)
         {
-            UCUserListCompanyFollowing uCUserListCompanyFollowing = new UCUserListCompanyFollowing();
-            
-            ucPanelMain.AddControl(uCUserListCompanyFollowing);
+            ucPanelMain.AddControl(new UCUserListCompanyFollowing());
         }
 
         private void btnMyJob_Click(object sender, EventArgs e)
         {
-            UCMyJob uCMyJob = new UCMyJob();
-            ucPanelMain.AddControl(uCMyJob);
+            ucPanelMain.AddControl(new UCMyJob());
         }
 
         private void btnHistorySocial_Click(object sender, EventArgs e)
         {
-            UCSocialHistory uCSocialHistory = new UCSocialHistory();
-            ucPanelMain.AddControl(uCSocialHistory);
-        }
-
-        private void btnSetting_Click(object sender, EventArgs e)
-        {
-            UCSetting uCSetting = new UCSetting();
-            ucPanelMain.AddControl(uCSetting);
-        }
-
-        private void UCMailRow_SeeDetailClicked(object sender, EventArgs e, UCMailDetail uCMailDetail)
-        {
-            ucPanelMain.AddControl(uCMailDetail);
+            ucPanelMain.AddControl(new UCSocialHistory());
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -106,7 +76,7 @@ namespace FindJobApplication
             Session.account = null;
 
             FLogin fLogin = new FLogin();
-            Form thisForm = (Form)this.TopLevelControl;
+            Form thisForm = (Form)TopLevelControl;
             thisForm.Hide();
             fLogin.ShowDialog();
             thisForm.Close();
@@ -114,7 +84,7 @@ namespace FindJobApplication
 
         private void pbUserImage_Click(object sender, EventArgs e)
         {
-            this.uCUserSubMenuRight.HideAndShowSubMenu(this.ucUserSubMenu);
+            uCUserSubMenuRight.HideAndShowSubMenu(ucUserSubMenu);
         }
     }
 }

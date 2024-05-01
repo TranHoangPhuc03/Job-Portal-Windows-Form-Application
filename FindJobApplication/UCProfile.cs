@@ -128,6 +128,7 @@ namespace FindJobApplication
         {
             pbProfileAvatar.Image = ImageUtils.FromBytesToImage(userProfile.Account.Avatar);
             lblProfileName.Text = Session.account.Name;
+            lblProfileTitle.Text = userProfile.Title;
             lblProfileEmail.Text = Session.account.Email;
             lblProfileGender.Text = userProfile.Gender;
             lblProfileDateOfBirth.Text = userProfile.DateOfBirth.ToString();

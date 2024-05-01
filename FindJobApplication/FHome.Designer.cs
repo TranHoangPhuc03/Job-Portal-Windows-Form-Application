@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FHome));
             this.tpnlUserNav = new System.Windows.Forms.TableLayoutPanel();
             this.btnHistorySocial = new Guna.UI2.WinForms.Guna2Button();
-            this.btnSetting = new Guna.UI2.WinForms.Guna2Button();
             this.btnProfile = new Guna.UI2.WinForms.Guna2Button();
             this.btnFavourites = new Guna.UI2.WinForms.Guna2Button();
             this.btnMyJob = new Guna.UI2.WinForms.Guna2Button();
@@ -70,7 +69,6 @@
             this.tpnlUserNav.ColumnCount = 1;
             this.tpnlUserNav.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tpnlUserNav.Controls.Add(this.btnHistorySocial, 0, 4);
-            this.tpnlUserNav.Controls.Add(this.btnSetting, 0, 4);
             this.tpnlUserNav.Controls.Add(this.btnProfile, 0, 0);
             this.tpnlUserNav.Controls.Add(this.btnFavourites, 0, 1);
             this.tpnlUserNav.Controls.Add(this.btnMyJob, 0, 2);
@@ -109,29 +107,6 @@
             this.btnHistorySocial.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnHistorySocial.TextOffset = new System.Drawing.Point(50, 0);
             this.btnHistorySocial.Click += new System.EventHandler(this.btnHistorySocial_Click);
-            // 
-            // btnSetting
-            // 
-            this.btnSetting.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSetting.BackColor = System.Drawing.Color.White;
-            this.btnSetting.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnSetting.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnSetting.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnSetting.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSetting.FillColor = System.Drawing.Color.White;
-            this.btnSetting.Font = new System.Drawing.Font("Inter", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.btnSetting.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(33)))), ((int)(((byte)(56)))));
-            this.btnSetting.Location = new System.Drawing.Point(0, 200);
-            this.btnSetting.Margin = new System.Windows.Forms.Padding(0);
-            this.btnSetting.Name = "btnSetting";
-            this.btnSetting.Size = new System.Drawing.Size(250, 20);
-            this.btnSetting.TabIndex = 7;
-            this.btnSetting.Text = "Setting";
-            this.btnSetting.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnSetting.TextOffset = new System.Drawing.Point(50, 0);
-            this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);
             // 
             // btnProfile
             // 
@@ -613,7 +588,6 @@
         private Guna.UI2.WinForms.Guna2CirclePictureBox pbUserImage;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel pnlTools;
         private Guna.UI2.WinForms.Guna2Button btnHistorySocial;
-        private Guna.UI2.WinForms.Guna2Button btnSetting;
         private Guna.UI2.WinForms.Guna2Button btnTrending;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;

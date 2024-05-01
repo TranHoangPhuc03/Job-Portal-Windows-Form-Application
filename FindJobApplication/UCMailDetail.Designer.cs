@@ -30,13 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCMailDetail));
             this.pnlMain = new Guna.UI.WinForms.GunaElipsePanel();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.guna2Separator2 = new Guna.UI2.WinForms.Guna2Separator();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.btnSeeCV = new Guna.UI2.WinForms.Guna2Button();
             this.btnRespone = new Guna.UI2.WinForms.Guna2Button();
             this.lblTitle = new Guna.UI.WinForms.GunaLabel();
-            this.lblTO = new Guna.UI.WinForms.GunaLabel();
+            this.lblTo = new Guna.UI.WinForms.GunaLabel();
             this.lblFrom = new Guna.UI.WinForms.GunaLabel();
             this.lbl3 = new Guna.UI.WinForms.GunaLabel();
             this.lbl1 = new Guna.UI.WinForms.GunaLabel();
@@ -44,7 +45,6 @@
             this.lblLetter = new Guna.UI.WinForms.GunaLabel();
             this.lbl2 = new Guna.UI.WinForms.GunaLabel();
             this.btnBack = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.pnlMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
             this.SuspendLayout();
@@ -60,7 +60,7 @@
             this.pnlMain.Controls.Add(this.btnSeeCV);
             this.pnlMain.Controls.Add(this.btnRespone);
             this.pnlMain.Controls.Add(this.lblTitle);
-            this.pnlMain.Controls.Add(this.lblTO);
+            this.pnlMain.Controls.Add(this.lblTo);
             this.pnlMain.Controls.Add(this.lblFrom);
             this.pnlMain.Controls.Add(this.lbl3);
             this.pnlMain.Controls.Add(this.lbl1);
@@ -73,6 +73,27 @@
             this.pnlMain.Radius = 10;
             this.pnlMain.Size = new System.Drawing.Size(1184, 868);
             this.pnlMain.TabIndex = 2;
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(75)))), ((int)(((byte)(43)))));
+            this.guna2Button1.BorderRadius = 6;
+            this.guna2Button1.BorderThickness = 1;
+            this.guna2Button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.FillColor = System.Drawing.Color.White;
+            this.guna2Button1.Font = new System.Drawing.Font("Inter", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.guna2Button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(75)))), ((int)(((byte)(43)))));
+            this.guna2Button1.HoverState.FillColor = System.Drawing.Color.LightGray;
+            this.guna2Button1.Location = new System.Drawing.Point(224, 718);
+            this.guna2Button1.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Size = new System.Drawing.Size(144, 40);
+            this.guna2Button1.TabIndex = 47;
+            this.guna2Button1.Text = "Photo";
             // 
             // gunaLabel1
             // 
@@ -143,7 +164,7 @@
             this.btnRespone.Size = new System.Drawing.Size(150, 60);
             this.btnRespone.TabIndex = 39;
             this.btnRespone.Text = "Response";
-            this.btnRespone.Click += new System.EventHandler(this.btnFeedBack_Click);
+            this.btnRespone.Click += new System.EventHandler(this.btnResponse_Click);
             // 
             // lblTitle
             // 
@@ -156,16 +177,16 @@
             this.lblTitle.TabIndex = 41;
             this.lblTitle.Text = "Apply Job";
             // 
-            // lblTO
+            // lblTo
             // 
-            this.lblTO.AutoSize = true;
-            this.lblTO.Font = new System.Drawing.Font("Inter", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.lblTO.Location = new System.Drawing.Point(300, 88);
-            this.lblTO.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblTO.Name = "lblTO";
-            this.lblTO.Size = new System.Drawing.Size(168, 29);
-            this.lblTO.TabIndex = 35;
-            this.lblTO.Text = "FPT Software";
+            this.lblTo.AutoSize = true;
+            this.lblTo.Font = new System.Drawing.Font("Inter", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.lblTo.Location = new System.Drawing.Point(300, 88);
+            this.lblTo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTo.Name = "lblTo";
+            this.lblTo.Size = new System.Drawing.Size(168, 29);
+            this.lblTo.TabIndex = 35;
+            this.lblTo.Text = "FPT Software";
             // 
             // lblFrom
             // 
@@ -248,27 +269,6 @@
             this.btnBack.TabStop = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // guna2Button1
-            // 
-            this.guna2Button1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(75)))), ((int)(((byte)(43)))));
-            this.guna2Button1.BorderRadius = 6;
-            this.guna2Button1.BorderThickness = 1;
-            this.guna2Button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.White;
-            this.guna2Button1.Font = new System.Drawing.Font("Inter", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.guna2Button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(75)))), ((int)(((byte)(43)))));
-            this.guna2Button1.HoverState.FillColor = System.Drawing.Color.LightGray;
-            this.guna2Button1.Location = new System.Drawing.Point(224, 718);
-            this.guna2Button1.Margin = new System.Windows.Forms.Padding(2);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(144, 40);
-            this.guna2Button1.TabIndex = 47;
-            this.guna2Button1.Text = "Photo";
-            // 
             // UCMailDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -290,7 +290,7 @@
 
         private Guna.UI.WinForms.GunaElipsePanel pnlMain;
         private Guna.UI2.WinForms.Guna2Button btnRespone;
-        private Guna.UI.WinForms.GunaLabel lblTO;
+        private Guna.UI.WinForms.GunaLabel lblTo;
         private Guna.UI.WinForms.GunaLabel lblFrom;
         private Guna.UI.WinForms.GunaLabel lbl3;
         private System.Windows.Forms.RichTextBox rtxtLetter;

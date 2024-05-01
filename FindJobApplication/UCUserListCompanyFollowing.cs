@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FindJobApplication.Daos;
+using FindJobApplication.Utils;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,23 +14,26 @@ namespace FindJobApplication
 {
     public partial class UCUserListCompanyFollowing : UserControl
     {
+        UserProfileDao userProfileDao = new UserProfileDao();
         public UCUserListCompanyFollowing()
         {
             InitializeComponent();
+            Dock = DockStyle.Fill;
         }
 
         private void UCUserListCompanyFollowing_Load(object sender, EventArgs e)
         {
-            pnlListCompanyFollowing.Controls.Clear();
-            List<UCUserCompanyFollwing> list = new List<UCUserCompanyFollwing>();
-            for (int i = 0; i < 10; i++)
+            var companyFollowingList = userProfileDao.FindAllCompanyFollowingByUser(Session.account.Id);
+            pnlMain.Controls.Clear();
+            pnlMain.RowCount = 0;
+            for (int i = 0; i < companyFollowingList.Count; ++i)
             {
-                UCUserCompanyFollwing uCUserCompanyFollwing = new UCUserCompanyFollwing();
-                uCUserCompanyFollwing.LblId.Text = i.ToString();
-                uCUserCompanyFollwing.LlblNameCompany.Text = "Comapy" + i.ToString();
-                list.Add(uCUserCompanyFollwing);
-                pnlListCompanyFollowing.Controls.Add(list[i]);
+                pnlMain.RowCount += 1;
+                UCUserCompanyFollwing row = new UCUserCompanyFollwing(i + 1, companyFollowingList.ElementAt(i));
+                pnlMain.Controls.Add(row);
             }
+            pnlMain.RowCount += 1;
+            
         }
     }
 }

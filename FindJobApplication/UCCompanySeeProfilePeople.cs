@@ -1,4 +1,5 @@
 ﻿using FindJobApplication.Daos;
+using FindJobApplication.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,42 +14,43 @@ namespace FindJobApplication
 {
     public partial class UCCompanySeeProfilePeople : UserControl
     {
-        private int jobPostId;
-        private int userId;
+        public FillToMainPanelHandler FillToMainPanelClicked = UCPanelMain.UC_RequiredAddControl;
+        private UserApplyJob user = null;
 
         public UCCompanySeeProfilePeople()
         {
             InitializeComponent();
+            Dock = DockStyle.Fill;
         }
 
-        public UCCompanySeeProfilePeople(Dictionary<string, int> obj) : this()
+        public UCCompanySeeProfilePeople(UserApplyJob user) : this()
         {
-            obj.TryGetValue("jobPostId", out this.jobPostId);
-            obj.TryGetValue("userId", out this.userId);
+            this.user = user;
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            Control parentControl = Parent;
+            if (parentControl != null)
+            {
+                parentControl.Controls.Remove(this);
+                Dispose();
+            }
         }
 
         private void btnSeeCV_Click(object sender, EventArgs e)
         {
-            UCProfile uCProfile = new UCProfile(this.userId);
-            UCMain.Instance.PnlMid.Controls.Add(uCProfile);
-            uCProfile.hideAllBtn();
-            uCProfile.BringToFront();
+            UCProfile uCProfile = new UCProfile(user.UserId);
+            FillToMainPanelClicked?.Invoke(this, uCProfile);
             //FCompanySeeCV fCompanySeeCV = new FCompanySeeCV(this.userId);
             //fCompanySeeCV.Show();
         }
 
         private void UCCompanySeeProfilePeople_Load(object sender, EventArgs e)
         {
-            //JobApplyDao jobApplyDao = new JobApplyDao();
-            //DataRow dr = jobApplyDao.FindUserApplyJob(this.userId, this.jobPostId).Rows[0];
-            //this.lblNamePeople.Text = dr["name"].ToString();
-            //this.lblNameJob.Text = dr["title"].ToString();
-            //this.rtxtCoverLetter.Text = dr["cover_letter"].ToString();
+            lblNamePeople.Text = user.UserProfile.Account.Name;
+            lblNameJob.Text = user.JobPost.Title;
+            rtxtCoverLetter.Text = user.CoverLetter;
         }
 
         private void btnAccept_Click(object sender, EventArgs e)

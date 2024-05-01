@@ -1,4 +1,7 @@
-﻿using Guna.UI2.WinForms;
+﻿using FindJobApplication.Daos;
+using FindJobApplication.Entities;
+using FindJobApplication.Utils;
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,42 +16,45 @@ namespace FindJobApplication
 {
     public partial class UCMail : UserControl
     {
+        MailDao mailDao = new MailDao();
+
         public UCMail()
         {
             InitializeComponent();
-            this.Dock = DockStyle.Fill;
+            Dock = DockStyle.Fill;
         }
-
-        public TableLayoutPanel PnlListMail { get => pnlListMail; }
 
         private void UCMail_Load(object sender, EventArgs e)
         {
-            btnMailReceived_Click(sender, e);
+            btnMailReceived.PerformClick();
         }
         private void btnMailReceived_Click(object sender, EventArgs e)
         {
             lblFrom.Text = "From";
-            pnlListMail.Controls.Clear();
-            pnlListMail.SuspendLayout();
-            for (int i = 0; i< 20; i++)
-            {
-                UCMailRow row = new UCMailRow();
-                row.LblID.Text = (i+1).ToString();
-                pnlListMail.Controls.Add(row);
-            }
-            pnlListMail.ResumeLayout();
+            var mails = mailDao.FindAllReceivedEmailOfAnUser(Session.account.Id);
+            AddEmailRow(mails, false);
         }
 
         private void btnMailSent_Click(object sender, EventArgs e)
         {
             lblFrom.Text = "To";
+            var mails = mailDao.FindAllSentEmailOfAnUser(Session.account.Id);
+            AddEmailRow(mails, true);
+        }
+
+        private void AddEmailRow(ICollection<Mail> mails, bool isSentRender)
+        {
             pnlListMail.Controls.Clear();
-            for (int i = 0; i < 20; i++)
+            pnlListMail.RowCount = 0;
+            pnlListMail.SuspendLayout();
+            for (int i = 0; i < mails.Count; i++)
             {
-                UCMailRow row = new UCMailRow();
-                row.LblID.Text = (i+1).ToString();
+                pnlListMail.RowCount += 1;
+                UCMailRow row = new UCMailRow(i + 1, mails.ElementAt(i), isSentRender);
                 pnlListMail.Controls.Add(row);
             }
+            pnlListMail.RowCount += 1;
+            pnlListMail.ResumeLayout();
         }
 
         private void btnComposeEmail_Click(object sender, EventArgs e)
