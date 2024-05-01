@@ -1,4 +1,6 @@
-﻿using Guna.UI.WinForms;
+﻿using FindJobApplication.Daos;
+using FindJobApplication.Entities;
+using Guna.UI.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,61 +15,52 @@ namespace FindJobApplication
 {
     public partial class UCMyJob : UserControl
     {
+        UserProfileDao userProfileDao = new UserProfileDao();
+        UserProfile userProfile = null;
         public UCMyJob()
         {
             InitializeComponent();
+            Dock = DockStyle.Fill;
+        }
+
+        public UCMyJob(int userId) : this()
+        {
+            userProfile = userProfileDao.FindUserProfileByAccountId(userId);
         }
 
         private void btnListJobSave_Click(object sender, EventArgs e)
         {
-            btnListJobSave.FillColor = Color.FromArgb(255, 75, 43);
-            btnListJobSave.ForeColor = Color.White;
-            btnListJobSave.HoverState.FillColor = Color.FromArgb(255, 75, 43);
-            btnListJobApply.FillColor = Color.White;
-            btnListJobApply.ForeColor = Color.FromArgb(255, 75, 43);
-            btnListJobApply.HoverState.FillColor = Color.WhiteSmoke;
-            pnlListJobSave.BringToFront();
-            pnlListJobSave.Controls.Clear();
+            icoStatusHeader.Visible = false;
+            lblStatusHeader.Visible = false;
 
-            List<UCJob> list = new List<UCJob>();
-            for (int i = 0; i < 10; i++)
+            var savedJobs = userProfile.JobPosts.ToList();
+            pnlMain.Controls.Clear();
+            pnlMain.RowCount = 0;
+            for (int i = 0; i < savedJobs.Count; ++i)
             {
-                UCJob jobControl = new UCJob();
-                jobControl.LLblNameJob.Text = "Job" + i.ToString();
-                jobControl.BtnSave.Checked = true;
-                list.Add(jobControl);
-                pnlListJobSave.Controls.Add(list[i]);
+                pnlMain.Controls.Add(new UCJobApply(i+1, savedJobs[i]));
             }
+            pnlMain.RowCount += 1;
         }
         private void btnListJobApply_Click(object sender, EventArgs e)
         {
-            btnListJobApply.FillColor = Color.FromArgb(255, 75, 43);
-            btnListJobApply.ForeColor = Color.White;
-            btnListJobApply.HoverState.FillColor = Color.FromArgb(255, 75, 43);
+            icoStatusHeader.Visible = true;
+            lblStatusHeader.Visible = true;
+            lblTimeHeader.Text = "Applied at";
 
-            btnListJobSave.FillColor = Color.White;
-            btnListJobSave.ForeColor = Color.FromArgb(255, 75, 43);
-            btnListJobSave.HoverState.FillColor = Color.WhiteSmoke;
-            pnlListJobSave.SendToBack();
-            pnlListJobApply.Controls.Clear();
-            pnlListJobSave.Controls.Clear();
-
-            List<UCJobApply> list = new List<UCJobApply>();
-            for (int i = 0; i < 10; i++)
+            var appliedJobs = userProfile.UserApplyJobs.ToList();
+            pnlMain.Controls.Clear();
+            pnlMain.RowCount = 0;
+            for (int i = 0; i < appliedJobs.Count; ++i)
             {
-                UCJobApply uCJobApply = new UCJobApply();
-                uCJobApply.LblId.Text = i.ToString();
-                uCJobApply.LlblNameJob.Text = "Job" + i.ToString();
-                uCJobApply.LlblNameCompany.Text = "Comapy" + i.ToString();
-                uCJobApply.LblStatus.Text = "Denied";
-                uCJobApply.LblDayApply.Text = DateTime.Now.ToString();
-                list.Add(uCJobApply);
-                pnlListJobApply.Controls.Add(list[i]);
+                pnlMain.RowCount += 1;
+                pnlMain.Controls.Add(new UCJobApply(i + 1, appliedJobs[i], appliedJobs[i].JobPost));
             }
-        }
+            pnlMain.RowCount += 1;
+                }
         private void UCMyJob_Load(object sender, EventArgs e)
         {
-            btnListJobSave_Click(sender, e);
+            btnListJobSave.PerformClick();
         }
     }
 }

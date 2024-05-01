@@ -22,7 +22,7 @@ namespace FindJobApplication
         public FHome()
         {
             InitializeComponent();
-            ucUserSubMenu.FillToMainPanelClicked += ucPanelMain.UC_RequiredAddControl;
+            ucUserSubMenu.FillToMainPanelClicked += UCPanelMain.UC_RequiredAddControl;
         }
 
         private void btnHome_Click(object sender, EventArgs e)

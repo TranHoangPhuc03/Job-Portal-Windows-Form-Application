@@ -50,9 +50,12 @@
             this.llblNameCompany.TabIndex = 18;
             this.llblNameCompany.TabStop = true;
             this.llblNameCompany.Text = "Company";
+            this.llblNameCompany.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblNameCompany_LinkClicked);
             // 
             // lblStatus
             // 
+            this.lblStatus.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblStatus.AutoSize = true;
             this.lblStatus.BackColor = System.Drawing.Color.White;
             this.lblStatus.Font = new System.Drawing.Font("Inter", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -65,9 +68,12 @@
             this.lblStatus.TabIndex = 16;
             this.lblStatus.Text = "Status";
             this.lblStatus.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblStatus.Visible = false;
             // 
             // lblDayApply
             // 
+            this.lblDayApply.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDayApply.AutoSize = true;
             this.lblDayApply.BackColor = System.Drawing.Color.White;
             this.lblDayApply.Font = new System.Drawing.Font("Inter", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -94,9 +100,12 @@
             this.llblNameJob.TabIndex = 17;
             this.llblNameJob.TabStop = true;
             this.llblNameJob.Text = "Name";
+            this.llblNameJob.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblNameJob_LinkClicked);
             // 
             // guna2CustomGradientPanel2
             // 
+            this.guna2CustomGradientPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2CustomGradientPanel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2CustomGradientPanel2.BorderRadius = 10;
             this.guna2CustomGradientPanel2.Controls.Add(this.lblStatus);

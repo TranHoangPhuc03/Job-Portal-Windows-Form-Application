@@ -353,7 +353,7 @@
             this.btnSave.PressedState.ImageSize = new System.Drawing.Size(50, 50);
             this.btnSave.Size = new System.Drawing.Size(86, 56);
             this.btnSave.TabIndex = 43;
-            this.btnSave.CheckedChanged += new System.EventHandler(this.btnSave_CheckedChanged);
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnApply
             // 

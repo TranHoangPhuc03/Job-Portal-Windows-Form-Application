@@ -16,7 +16,7 @@ namespace FindJobApplication
     
     public partial class UCUserSubMenuRight : UserControl
     {
-        public event FillToMainPanelHandler FillToMainPanelClicked;
+        public event FillToMainPanelHandler FillToMainPanelClicked = UCPanelMain.UC_RequiredAddControl;
         public UCUserSubMenuRight()
         {
             InitializeComponent();
@@ -34,34 +34,22 @@ namespace FindJobApplication
 
         private void btnMyJob_Click(object sender, EventArgs e)
         {
-            UCMyJob uCMyJob = new UCMyJob();
-            UCMain.Instance.PnlMid.Controls.Clear();
-            UCMain.Instance.PnlMid.Controls.Add(uCMyJob);
-           // UCMain.Instance.updateStatus(btnMyJob);
+            FillToMainPanelClicked?.Invoke(this, new UCMyJob(Session.account.Id));
         }
 
         private void btnSetting_Click(object sender, EventArgs e)
         {
-            UCSetting uCSetting = new UCSetting();
-            UCMain.Instance.PnlMid.Controls.Clear();
-            UCMain.Instance.PnlMid.Controls.Add(uCSetting);
-           // UCMain.Instance.updateStatus(btnSetting);
+            FillToMainPanelClicked?.Invoke(this, new UCSetting());
         }
 
         private void btnFavouriteCompany_Click(object sender, EventArgs e)
         {
-            UCUserListCompanyFollowing uCUserListCompanyFollowing = new UCUserListCompanyFollowing();
-            UCMain.Instance.PnlMid.Controls.Clear();
-            UCMain.Instance.PnlMid.Controls.Add(uCUserListCompanyFollowing);
-           // UCMain.Instance.updateStatus(btnFavouriteCompany);
+            FillToMainPanelClicked?.Invoke(this, new UCUserListCompanyFollowing());
         }
 
         private void btnSocialPost_Click(object sender, EventArgs e)
         {
-            UCSocialHistory uCSocialHistory = new UCSocialHistory();
-            UCMain.Instance.PnlMid.Controls.Clear();
-            UCMain.Instance.PnlMid.Controls.Add(uCSocialHistory);
-           // UCMain.Instance.updateStatus(btnSocialPost);
+            FillToMainPanelClicked?.Invoke(this, new UCSocialHistory());
         }
     }
 

@@ -68,13 +68,15 @@ namespace FindJobApplication.Daos
             return db.SaveChanges();
         }
 
-        public ICollection<JobPost> FindTopMostFollowedJob(int top)
+        public ICollection<JobPost> FindTopMostJobApplied(int top)
         {
-            var results = from q in db.JobPosts
-                          orderby q.UserProfiles.Count descending
-                          select q;
-
-            return results.Take(top).ToList();
+            var results = db.UserApplyJobs
+                    .GroupBy(row => row.JobPostId)
+                    .OrderByDescending(gp => gp.Count())
+                    .Take(top)
+                    .Select(gp => gp.FirstOrDefault().JobPost)
+                    .ToList();
+            return results;
         }
     }
 }

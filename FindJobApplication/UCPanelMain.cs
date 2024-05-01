@@ -12,26 +12,23 @@ namespace FindJobApplication
 {
     public partial class UCPanelMain : UserControl
     {
+        private static UCPanelMain _instace = null;
         public UCPanelMain()
         {
             InitializeComponent();
+            _instace = this;
         }
 
-        public void UC_RequiredAddControl(object sender, UserControl uc)
+        public static void UC_RequiredAddControl(object sender, UserControl uc)
         {
-            AddControl(uc);
+            if (_instace != null)
+            {
+                _instace.AddControl(uc);
+            }
         }
 
         public void AddControl(UserControl uc)
         {
-            var fillToMainPanelEvent = uc.GetType().GetEvent("FillToMainPanelClicked");
-
-            if (fillToMainPanelEvent != null)
-            {
-                var eventHandler = new FillToMainPanelHandler(UC_RequiredAddControl);
-                fillToMainPanelEvent.AddEventHandler(uc, eventHandler);
-            }
-
             pnlMain.Controls.Add(uc);
             uc.BringToFront();
         }
