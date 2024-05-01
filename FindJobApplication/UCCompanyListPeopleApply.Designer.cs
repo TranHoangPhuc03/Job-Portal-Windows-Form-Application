@@ -39,12 +39,14 @@
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlListPeopleAplly = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.pnlMain = new System.Windows.Forms.TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.guna2CustomGradientPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            this.pnlListPeopleAplly.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnBack
@@ -62,19 +64,24 @@
             // 
             // guna2CustomGradientPanel1
             // 
+            this.guna2CustomGradientPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2CustomGradientPanel1.BorderRadius = 10;
             this.guna2CustomGradientPanel1.Controls.Add(this.guna2CustomGradientPanel2);
             this.guna2CustomGradientPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(247)))));
             this.guna2CustomGradientPanel1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(247)))));
             this.guna2CustomGradientPanel1.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(247)))));
             this.guna2CustomGradientPanel1.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(247)))));
-            this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(17, 67);
+            this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(0, 67);
+            this.guna2CustomGradientPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
-            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(1150, 80);
+            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(1184, 80);
             this.guna2CustomGradientPanel1.TabIndex = 47;
             // 
             // guna2CustomGradientPanel2
             // 
+            this.guna2CustomGradientPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2CustomGradientPanel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2CustomGradientPanel2.BorderRadius = 10;
             this.guna2CustomGradientPanel2.Controls.Add(this.label5);
@@ -87,7 +94,7 @@
             this.guna2CustomGradientPanel2.CustomBorderThickness = new System.Windows.Forms.Padding(10);
             this.guna2CustomGradientPanel2.Location = new System.Drawing.Point(5, 15);
             this.guna2CustomGradientPanel2.Name = "guna2CustomGradientPanel2";
-            this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(1140, 50);
+            this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(1175, 50);
             this.guna2CustomGradientPanel2.TabIndex = 0;
             // 
             // label5
@@ -165,15 +172,34 @@
             // 
             // pnlListPeopleAplly
             // 
+            this.pnlListPeopleAplly.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlListPeopleAplly.AutoScroll = true;
             this.pnlListPeopleAplly.BorderRadius = 10;
+            this.pnlListPeopleAplly.Controls.Add(this.pnlMain);
             this.pnlListPeopleAplly.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(247)))));
             this.pnlListPeopleAplly.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(247)))));
             this.pnlListPeopleAplly.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(247)))));
             this.pnlListPeopleAplly.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(247)))));
-            this.pnlListPeopleAplly.Location = new System.Drawing.Point(17, 159);
+            this.pnlListPeopleAplly.Location = new System.Drawing.Point(0, 159);
+            this.pnlListPeopleAplly.Margin = new System.Windows.Forms.Padding(0);
             this.pnlListPeopleAplly.Name = "pnlListPeopleAplly";
-            this.pnlListPeopleAplly.Size = new System.Drawing.Size(1150, 767);
+            this.pnlListPeopleAplly.Size = new System.Drawing.Size(1184, 767);
             this.pnlListPeopleAplly.TabIndex = 48;
+            // 
+            // pnlMain
+            // 
+            this.pnlMain.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlMain.ColumnCount = 1;
+            this.pnlMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.pnlMain.Location = new System.Drawing.Point(0, 0);
+            this.pnlMain.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlMain.Name = "pnlMain";
+            this.pnlMain.RowCount = 1;
+            this.pnlMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.pnlMain.Size = new System.Drawing.Size(1184, 767);
+            this.pnlMain.TabIndex = 0;
             // 
             // UCCompanyListPeopleApply
             // 
@@ -185,7 +211,7 @@
             this.Controls.Add(this.btnBack);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UCCompanyListPeopleApply";
-            this.Size = new System.Drawing.Size(1184, 936);
+            this.Size = new System.Drawing.Size(1184, 935);
             this.Load += new System.EventHandler(this.UCCompanyListPeopleApply_Load);
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).EndInit();
             this.guna2CustomGradientPanel1.ResumeLayout(false);
@@ -194,6 +220,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            this.pnlListPeopleAplly.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -210,5 +237,6 @@
         private System.Windows.Forms.Label label5;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox4;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel pnlListPeopleAplly;
+        private System.Windows.Forms.TableLayoutPanel pnlMain;
     }
 }

@@ -184,7 +184,7 @@ CREATE TABLE SocialPost(
 	Title TEXT NOT NULL,
 	Contents TEXT,
 	PostDate DATE NOT NULL,
-	AccountID INT,
+	AccountID INT NOT NULL,
 
 	FOREIGN KEY (AccountID) REFERENCES Account(Id)
 );

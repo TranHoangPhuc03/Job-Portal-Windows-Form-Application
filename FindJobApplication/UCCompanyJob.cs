@@ -16,10 +16,11 @@ namespace FindJobApplication
 {
     public partial class UCCompanyJob : UserControl
     {
+        public event FillToMainPanelHandler FillToMainPanelClicked = UCPanelMain.UC_RequiredAddControl;
         public UCCompanyJob()
         {
             InitializeComponent();
-            this.Dock = DockStyle.Fill;
+            Dock = DockStyle.Fill;
         }
 
         public UCCompanyJob(JobPost jobPost, int id, int nApplicants) : this()
@@ -30,20 +31,13 @@ namespace FindJobApplication
             lblExpirationDate.Text = jobPost.ExpireDate.ToString("dd-MM-yyyy");
             lblSalary.Text = jobPost.Salary.ToString();
             lblCountApplied.Text = nApplicants.ToString();
-            this.Tag = jobPost.Id;
+            Tag = jobPost.Id;
         }
-        public Label LblID { get => lblId; set => lblId = value; }
-        public Label LblNameJob { get => lblNameJob; set => lblNameJob = value; }
-        public Label LblPostDate { get => lblPostDate; set => lblPostDate = value; }
-        public Label LblExpirationDate { get => lblExpirationDate; set => lblExpirationDate = value; }
-        public Label LblSalary { get => lblSalary; set => lblSalary = value; }
-        public GunaLinkLabel LblCountApplied { get => lblCountApplied; set => lblCountApplied = value; }
+
         private void lblCountApplied_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             UCCompanyListPeopleApply uCCompanyListPeopleApply = new UCCompanyListPeopleApply((int)this.Tag);
-            UCMain.Instance.PnlMid.Controls.Add(uCCompanyListPeopleApply);
-            uCCompanyListPeopleApply.Location = new Point(UCMain.Instance.PnlMid.Width / 2 - uCCompanyListPeopleApply.Width / 2, 0);
-            uCCompanyListPeopleApply.BringToFront();
+            FillToMainPanelClicked?.Invoke(this, uCCompanyListPeopleApply);
         }
 
         private void pbEdit_Click(object sender, EventArgs e)

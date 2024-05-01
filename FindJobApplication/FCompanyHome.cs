@@ -28,7 +28,7 @@ namespace FindJobApplication
             Session.account = null;
 
             FLogin fLogin = new FLogin();
-            Form thisForm = (Form)this.TopLevelControl;
+            Form thisForm = (Form)TopLevelControl;
             thisForm.Hide();
             fLogin.ShowDialog();
             thisForm.Close();
@@ -52,29 +52,18 @@ namespace FindJobApplication
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            UCCompanyHome uCCompanyHome = new UCCompanyHome();
-            pnlMain.Controls.Add(uCCompanyHome);
+            ucPanelMain.AddControl(new UCCompanyHome());
         }
 
         private void btnSocial_Click(object sender, EventArgs e)
         {
-            UCSocial uCSocial = new UCSocial();
-            this.pnlMain.Controls.Clear();
-            this.pnlMain.Controls.Add(uCSocial);
+            ucPanelMain.AddControl(new UCSocial());
         }
 
         private void btnMail_Click(object sender, EventArgs e)
         {
-            UCMail uCMail = new UCMail();
-            this.pnlMain.Controls.Clear();
-            this.pnlMain.Controls.Add(uCMail);
-        }
+            ucPanelMain.AddControl(new UCMail());
 
-        private void pnlMain_ControlAdded(object sender, ControlEventArgs e)
-        {
-            var currentPanel = sender as System.Windows.Forms.Panel;
-            int lastIndex = currentPanel.Controls.Count - 1;
-            currentPanel.Controls[lastIndex].BringToFront();
         }
     }
 }

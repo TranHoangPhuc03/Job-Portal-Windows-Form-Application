@@ -40,6 +40,8 @@
             // 
             // pbSeeDetail
             // 
+            this.pbSeeDetail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pbSeeDetail.BackColor = System.Drawing.Color.White;
             this.pbSeeDetail.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbSeeDetail.Image = global::FindJobApplication.Properties.Resources.eyeDetail;
@@ -54,6 +56,8 @@
             // 
             // guna2CustomGradientPanel2
             // 
+            this.guna2CustomGradientPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2CustomGradientPanel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2CustomGradientPanel2.BorderRadius = 10;
             this.guna2CustomGradientPanel2.Controls.Add(this.pbSeeDetail);
@@ -69,6 +73,8 @@
             // 
             // lblStatus
             // 
+            this.lblStatus.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblStatus.AutoSize = true;
             this.lblStatus.Font = new System.Drawing.Font("Inter", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.lblStatus.Location = new System.Drawing.Point(745, 13);
@@ -79,6 +85,8 @@
             // 
             // lblDayApply
             // 
+            this.lblDayApply.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDayApply.AutoSize = true;
             this.lblDayApply.BackColor = System.Drawing.Color.Transparent;
             this.lblDayApply.Font = new System.Drawing.Font("Inter", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));

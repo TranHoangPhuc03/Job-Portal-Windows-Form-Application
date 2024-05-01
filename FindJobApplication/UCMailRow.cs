@@ -1,4 +1,5 @@
-﻿using Guna.UI.WinForms;
+﻿using FindJobApplication.Entities;
+using Guna.UI.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,22 +16,30 @@ namespace FindJobApplication
 
     public partial class UCMailRow : UserControl
     {
-        public event SeeDetailClickedEventHandler SeeDetailClicked;
+        public event FillToMainPanelHandler FillToMainPanelClicked = UCPanelMain.UC_RequiredAddControl;
 
         public UCMailRow()
         {
             InitializeComponent();
-            this.Dock = DockStyle.Fill;
+            Dock = DockStyle.Fill;
         }
-        public Label LblID { get => lblID; set => lblID = value; }
-        public Label LblFrom { get => lblFrom; set => lblFrom = value; }
-        public Label LblTitle { get => lblTitle; set => lblTitle = value; }
-        public Label LblTime { get => lblTime; set => lblTime = value; }
+
+        public UCMailRow(int rowId) : this()
+        {
+            lblID.Text = rowId.ToString();
+        }
+
+        public UCMailRow(int rowId, Mail mail, bool isSentRender) : this(rowId)
+        {
+            Tag = mail;
+            lblFrom.Text = isSentRender ? mail.Account1.Name : mail.Account.Name;
+            lblTitle.Text = mail.Title;
+            lblTime.Text = mail.SendDate.ToString("dd-MM-yyyy");
+        }
 
         private void pbSeeDetail_Click(object sender, EventArgs e)
         {
-            UCMailDetail uCmailDetail = new UCMailDetail();
-            SeeDetailClicked?.Invoke(this, EventArgs.Empty, uCmailDetail);
+            FillToMainPanelClicked?.Invoke(this, new UCMailDetail(Tag as Mail));
         }
     }
 }

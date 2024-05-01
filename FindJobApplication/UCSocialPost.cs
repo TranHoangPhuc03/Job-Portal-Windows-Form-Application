@@ -1,5 +1,6 @@
 ﻿using FindJobApplication.Daos;
 using FindJobApplication.Entities;
+using FindJobApplication.Utils;
 using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
@@ -15,29 +16,29 @@ namespace FindJobApplication
 {
     public partial class UCSocialPost : UserControl
     {
+        AccountDao accountDao = new AccountDao();
+
         public UCSocialPost()
         {
             InitializeComponent();
+            Dock = DockStyle.Fill;
         }
 
-        public UCSocialPost(object socialPost) : this()
+        public UCSocialPost(SocialPost socialPost) : this()
         {
-            //UserProfileDao userProfileDao = new UserProfileDao();
-            //this.LlblName.Text = userProfileDao.FindUserProfileByAccountId(socialPost.AccountId).Name;
-            //this.lblDatePost.Text = socialPost.PostDate.ToString("dd-MM-yyyy");
-            //this.lblTitle.Text = socialPost.Title;
-            //this.rtxtDescription.Text = socialPost.Contents;
-            //foreach(Skill skill in socialPost.Skills)
-            //{
-            //    UCSkillTag uCUserProfileSkill = new UCSkillTag(skill);
-            //    this.pnlSkill.Controls.Add(uCUserProfileSkill);
-            //}
+            Account account = accountDao.FindAccountById(socialPost.AccountID);
+            llblName.Text = account.Name;
+            pbAvatar.Image = ImageUtils.FromBytesToImage(account.Avatar);
+            lblDatePost.Text = socialPost.PostDate.ToString("dd-MM-yyyy");
+            lblTitle.Text = socialPost.Title;
+            rtxtDescription.Text = socialPost.Contents;
+            foreach (Skill skill in socialPost.Skills)
+            {
+                UCSkillTag uCUserProfileSkill = new UCSkillTag(skill);
+                this.pnlSkill.Controls.Add(uCUserProfileSkill);
+            }
+            Tag = socialPost.Id;
         }
-
-        public Guna2Button BtnSendMail { get => btnSendMail; set => btnSendMail = value; }
-
-        public FlowLayoutPanel PnlSkill { get => pnlSkill; set => pnlSkill = value; }
-        public RichTextBox RtxtDescription { get => rtxtDescription; set => rtxtDescription = value; }
 
         public LinkLabel LlblName { get => llblName; }
         private void llblName_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

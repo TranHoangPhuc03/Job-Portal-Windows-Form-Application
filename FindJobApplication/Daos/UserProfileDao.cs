@@ -34,6 +34,15 @@ namespace FindJobApplication.Daos
             return result;
         }
 
+        public ICollection<Account> FindAllCompanyFollowingByUser(int userId)
+        {
+            var results = db.Accounts
+                    .Where(row => row.Id == userId)
+                    .SelectMany(row => row.Account1)
+                    .ToList();
+            return results;
+        }
+
         public int SaveUserEducation(UserEducation userEducation)
         {
             db.UserEducations.Add(userEducation);

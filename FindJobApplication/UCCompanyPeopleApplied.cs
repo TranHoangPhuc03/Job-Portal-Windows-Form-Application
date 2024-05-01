@@ -1,4 +1,5 @@
-﻿using Guna.UI.WinForms;
+﻿using FindJobApplication.Entities;
+using Guna.UI.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,21 +14,30 @@ namespace FindJobApplication
 {
     public partial class UCCompanyPeopleApplied : UserControl
     {
+        public event FillToMainPanelHandler FillToMainPanelClicked = UCPanelMain.UC_RequiredAddControl;
         public UCCompanyPeopleApplied()
         {
             InitializeComponent();
+            Dock = DockStyle.Fill;
         }
-        public Label LblId { get => lblId; set => lblId = value; }
-        public Label LblNamePeople { get => lblNamePeople; set => lblNamePeople = value; }
-        public Label LblDayApply { get => lblDayApply; set => lblDayApply = value; }
 
-        public Label LblStatus { get => lblStatus; set => lblStatus = value; }
+        public UCCompanyPeopleApplied(int rowId) : this()
+        {
+            lblId.Text = rowId.ToString();
+        }
+
+        public UCCompanyPeopleApplied(int rowId, UserApplyJob user) : this(rowId)
+        {
+            lblNamePeople.Text = user.UserProfile.Account.Name;
+            lblDayApply.Text = user.AppliedAt.ToString("dd-MM-yyy");
+            lblStatus.Text = user.Status;
+            pbSeeDetail.Tag = user;
+        }
 
         private void pbSeeDetail_Click(object sender, EventArgs e)
         {
-            UCCompanySeeProfilePeople uCCompanySeeProfilePeople = new UCCompanySeeProfilePeople((Dictionary<string, int>)this.Tag);
-            UCMain.Instance.PnlMid.Controls.Add(uCCompanySeeProfilePeople);
-            uCCompanySeeProfilePeople.BringToFront();
+            UCCompanySeeProfilePeople uCCompanySeeProfilePeople = new UCCompanySeeProfilePeople(pbSeeDetail.Tag as UserApplyJob);
+            FillToMainPanelClicked?.Invoke(this, uCCompanySeeProfilePeople);
         }
     }
 }

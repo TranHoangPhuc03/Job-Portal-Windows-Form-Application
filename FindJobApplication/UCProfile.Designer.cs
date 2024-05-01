@@ -40,7 +40,6 @@
             this.btnInbox = new Guna.UI2.WinForms.Guna2Button();
             this.btnFollow = new Guna.UI2.WinForms.Guna2Button();
             this.pbProfileAvatar = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.btnBack = new Guna.UI2.WinForms.Guna2PictureBox();
             this.pbProfileEdit = new System.Windows.Forms.PictureBox();
             this.lblProfileLink = new Guna.UI.WinForms.GunaLabel();
             this.lblProfileGender = new Guna.UI.WinForms.GunaLabel();
@@ -51,6 +50,7 @@
             this.lblProfileEmail = new Guna.UI.WinForms.GunaLabel();
             this.lblProfileTitle = new Guna.UI.WinForms.GunaLabel();
             this.lblProfileName = new Guna.UI.WinForms.GunaLabel();
+            this.btnBack = new Guna.UI2.WinForms.Guna2PictureBox();
             this.pnlIntroduction = new Guna.UI.WinForms.GunaElipsePanel();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.guna2Separator5 = new Guna.UI2.WinForms.Guna2Separator();
@@ -94,9 +94,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbProfileAvatar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbProfileEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbProfileGender)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
             this.pnlIntroduction.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbIntroduction)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbIntroductionEdit)).BeginInit();
@@ -305,18 +305,6 @@
             this.pbProfileAvatar.TabIndex = 47;
             this.pbProfileAvatar.TabStop = false;
             // 
-            // btnBack
-            // 
-            this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBack.Image = global::FindJobApplication.Properties.Resources.BackIcon;
-            this.btnBack.ImageRotate = 0F;
-            this.btnBack.Location = new System.Drawing.Point(0, 0);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(79, 49);
-            this.btnBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnBack.TabIndex = 46;
-            this.btnBack.TabStop = false;
-            // 
             // pbProfileEdit
             // 
             this.pbProfileEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -447,6 +435,18 @@
             this.lblProfileName.TabIndex = 1;
             this.lblProfileName.Text = "Your name";
             // 
+            // btnBack
+            // 
+            this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBack.Image = global::FindJobApplication.Properties.Resources.BackIcon;
+            this.btnBack.ImageRotate = 0F;
+            this.btnBack.Location = new System.Drawing.Point(0, 0);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(79, 49);
+            this.btnBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnBack.TabIndex = 46;
+            this.btnBack.TabStop = false;
+            // 
             // pnlIntroduction
             // 
             this.pnlIntroduction.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -491,8 +491,6 @@
             // 
             // rtxtAboutMe
             // 
-            this.rtxtAboutMe.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.rtxtAboutMe.BackColor = System.Drawing.Color.White;
             this.rtxtAboutMe.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.rtxtAboutMe.Font = new System.Drawing.Font("Inter", 18F);
@@ -598,8 +596,6 @@
             // 
             // pnlEducationDetail
             // 
-            this.pnlEducationDetail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlEducationDetail.AutoScroll = true;
             this.pnlEducationDetail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlEducationDetail.Location = new System.Drawing.Point(44, 139);
@@ -701,6 +697,8 @@
             // 
             // pbWorkExperience
             // 
+            this.pbWorkExperience.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pbWorkExperience.Image = global::FindJobApplication.Properties.Resources.briefcase1;
             this.pbWorkExperience.Location = new System.Drawing.Point(1044, 113);
             this.pbWorkExperience.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
@@ -780,8 +778,6 @@
             // 
             // pnlSkillDetail
             // 
-            this.pnlSkillDetail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlSkillDetail.AutoScroll = true;
             this.pnlSkillDetail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlSkillDetail.Location = new System.Drawing.Point(44, 127);
@@ -873,8 +869,6 @@
             // 
             // pnlProjectDetail
             // 
-            this.pnlProjectDetail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlProjectDetail.AutoScroll = true;
             this.pnlProjectDetail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlProjectDetail.Location = new System.Drawing.Point(44, 137);
@@ -956,9 +950,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbProfileAvatar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnBack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbProfileEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbProfileGender)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBack)).EndInit();
             this.pnlIntroduction.ResumeLayout(false);
             this.pnlIntroduction.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbIntroduction)).EndInit();

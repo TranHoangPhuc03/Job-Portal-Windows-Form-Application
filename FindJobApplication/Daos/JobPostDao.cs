@@ -47,13 +47,13 @@ namespace FindJobApplication.Daos
             var jobPost = db.JobPosts.Find(jobPostId);
             return jobPost.UserApplyJobs.Count;
         }
-        public Dictionary<string, int> CountEachAppliedStatus(int jobPostId)
+        public ICollection<UserApplyJob> FindAllUserIdAppliedForOneJob(int jobPostId)
         {
-            return null;
-        }
-        public List<int> FindAllUserIdAppliedForOneJob(int jobPostId)
-        {
-            return null;
+            var results = db.UserApplyJobs
+                    .Where(row => row.JobPostId == jobPostId)
+                    .OrderByDescending(row => row.AppliedAt)
+                    .ToList();
+            return results;
         }
         public int DeleteJobPostById(int jobPostId)
         {

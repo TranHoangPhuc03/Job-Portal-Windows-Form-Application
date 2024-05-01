@@ -19,21 +19,21 @@ namespace FindJobApplication
         public UCSocialHistoryRow()
         {
             InitializeComponent();
-            this.Dock = DockStyle.Fill;
+            Dock = DockStyle.Fill;
         }
 
-        public UCSocialHistoryRow(int cnt, object socialPost) : this()
+        public UCSocialHistoryRow(int rowId) : this()
         {
-            //this.LblID.Text = cnt.ToString();
-            //this.lblTitle.Text = socialPost.Title;
-            //this.lblDatePost.Text = socialPost.PostDate.ToString("dd-MM-yyyy");
-            //this.Tag = socialPost.Id;
+            lblID.Text = rowId.ToString();
         }
-        public Label LblID { get => lblID; set => lblID = value; }
-        public Label LblTitle { get => lblTitle; set => lblTitle = value; }
-        public Label LblDatePots { get => lblDatePost; set => lblDatePost = value; }
 
-
+        public UCSocialHistoryRow(int rowId, SocialPost socialPost) : this(rowId)
+        {
+            lblTitle.Text = socialPost.Title;
+            lblDatePost.Text = socialPost.PostDate.ToString("dd-MM-yyyy");
+            Tag = socialPost.Id;
+        }
+        
         private void pbEdit_Click(object sender, EventArgs e)
         {
             FPostSocial fPostSocial = new FPostSocial();
@@ -41,18 +41,18 @@ namespace FindJobApplication
             fPostSocial.Show();
         }
 
-        private void pBDelete_Click(object sender, EventArgs e)
+        private void pbDelete_Click(object sender, EventArgs e)
         {
-            //SocialPostDao socialPostDao = new SocialPostDao();
-            //int result = socialPostDao.DeleteSocialPostById(Convert.ToInt32(this.Tag));
-            //if (result > 0)
-            //{
-            //    MessageDialog.Show(this.ParentForm, "Delete success");
-            //}
-            //else
-            //{
-            //    MessageDialog.Show(this.ParentForm, "Delete failed");
-            //}
+            SocialPostDao socialPostDao = new SocialPostDao();
+            int result = socialPostDao.DeleteSocialPostById((int)Tag);
+            if (result > 0)
+            {
+                MessageDialog.Show(this.ParentForm, "Delete success");
+            }
+            else
+            {
+                MessageDialog.Show(this.ParentForm, "Delete failed");
+            }
         }
     }
 }

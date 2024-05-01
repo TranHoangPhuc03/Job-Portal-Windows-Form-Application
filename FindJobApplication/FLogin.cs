@@ -37,7 +37,7 @@ namespace FindJobApplication
             AccountDao accountDao = new AccountDao();
             Account account = accountDao.FindAccountByEmail(email);
 
-            if (account is null)
+            if (account is null || account.Password != password)
             {
                 MessageDialog.Show(this, "Your email or password is incorrect", "Login failed", MessageDialogStyle.Default);
             }

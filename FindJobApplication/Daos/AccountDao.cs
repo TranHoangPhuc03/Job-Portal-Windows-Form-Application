@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,7 +24,10 @@ namespace FindJobApplication.Daos
 
             return result.FirstOrDefault();
         }
-
+        public Account FindAccountById(int id)
+        {
+            return db.Accounts.Find(id);
+        }
         public int SaveNewAccount(string email, string name, string password, string role)
         {
             Account account = new Account
@@ -35,6 +39,13 @@ namespace FindJobApplication.Daos
             };
 
             db.Accounts.Add(account);
+            return db.SaveChanges();
+        }
+
+        public int UpdateAccountPassword(Account account)
+        {
+            var currentAccount = db.Accounts.Find(account.Id);
+            currentAccount.Password = account.Password;
             return db.SaveChanges();
         }
     }

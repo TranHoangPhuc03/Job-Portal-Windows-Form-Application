@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FindJobApplication.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,17 @@ namespace FindJobApplication
         public UCMailDetail()
         {
             InitializeComponent();
+            Dock = DockStyle.Fill;
+        }
+
+        public UCMailDetail(Mail mail) : this()
+        {
+            Tag = mail;
+            lblFrom.Text = mail.Account.Name;
+            lblTo.Text= mail.Account1.Name;
+            lblTitle.Text = mail.Title;
+            rtxtLetter.Text = mail.Contents;
+
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -23,11 +35,11 @@ namespace FindJobApplication
             if (parentControl != null)
             {
                 parentControl.Controls.Remove(this);
-                this.Dispose();
+                Dispose();
             }
         }
 
-        private void btnFeedBack_Click(object sender, EventArgs e)
+        private void btnResponse_Click(object sender, EventArgs e)
         {
             FSendMail fSendMail = new FSendMail();
             fSendMail.Show();

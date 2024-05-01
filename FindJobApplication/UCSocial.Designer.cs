@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.txtUpSocial = new Guna.UI2.WinForms.Guna2TextBox();
-            this.pnlSocial = new System.Windows.Forms.FlowLayoutPanel();
             this.pBAvatar = new System.Windows.Forms.PictureBox();
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.pnlSocial = new System.Windows.Forms.TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.pBAvatar)).BeginInit();
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -63,17 +63,6 @@
             this.txtUpSocial.TabIndex = 0;
             this.txtUpSocial.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtUpSocial_MouseClick);
             // 
-            // pnlSocial
-            // 
-            this.pnlSocial.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlSocial.AutoScroll = true;
-            this.pnlSocial.Location = new System.Drawing.Point(3, 98);
-            this.pnlSocial.Margin = new System.Windows.Forms.Padding(2);
-            this.pnlSocial.Name = "pnlSocial";
-            this.pnlSocial.Size = new System.Drawing.Size(1174, 813);
-            this.pnlSocial.TabIndex = 2;
-            // 
             // pBAvatar
             // 
             this.pBAvatar.Image = global::FindJobApplication.Properties.Resources.man;
@@ -98,16 +87,32 @@
             this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(1174, 80);
             this.guna2CustomGradientPanel1.TabIndex = 3;
             // 
+            // pnlSocial
+            // 
+            this.pnlSocial.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlSocial.AutoScroll = true;
+            this.pnlSocial.BackColor = System.Drawing.Color.White;
+            this.pnlSocial.ColumnCount = 1;
+            this.pnlSocial.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.pnlSocial.Location = new System.Drawing.Point(0, 92);
+            this.pnlSocial.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlSocial.Name = "pnlSocial";
+            this.pnlSocial.RowCount = 1;
+            this.pnlSocial.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.pnlSocial.Size = new System.Drawing.Size(1184, 843);
+            this.pnlSocial.TabIndex = 4;
+            // 
             // UCSocial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.guna2CustomGradientPanel1);
             this.Controls.Add(this.pnlSocial);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Controls.Add(this.guna2CustomGradientPanel1);
+            this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "UCSocial";
-            this.Size = new System.Drawing.Size(1184, 936);
+            this.Size = new System.Drawing.Size(1184, 935);
             this.Load += new System.EventHandler(this.UCSocial_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pBAvatar)).EndInit();
             this.guna2CustomGradientPanel1.ResumeLayout(false);
@@ -119,7 +124,7 @@
 
         private Guna.UI2.WinForms.Guna2TextBox txtUpSocial;
         private System.Windows.Forms.PictureBox pBAvatar;
-        private System.Windows.Forms.FlowLayoutPanel pnlSocial;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;
+        private System.Windows.Forms.TableLayoutPanel pnlSocial;
     }
 }

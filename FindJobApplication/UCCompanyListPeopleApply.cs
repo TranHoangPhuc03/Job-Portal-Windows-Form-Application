@@ -14,16 +14,15 @@ namespace FindJobApplication
 {
     public partial class UCCompanyListPeopleApply : UserControl
     {
+        JobPostDao jobPostDao = new JobPostDao();
         public UCCompanyListPeopleApply()
         {
             InitializeComponent();
-            pnlListPeopleAplly.AutoScroll = true;
+            Dock = DockStyle.Fill;
         }
-        public UCCompanyListPeopleApply(int jobPostId)
+        public UCCompanyListPeopleApply(int jobPostId) : this()
         {
-            InitializeComponent();
-            pnlListPeopleAplly.AutoScroll = true;
-            this.Tag = jobPostId;
+            Tag = jobPostId;
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -32,21 +31,22 @@ namespace FindJobApplication
             if (parentControl != null)
             {
                 parentControl.Controls.Remove(this);
-                this.Dispose();
-            }
-        }
-        private void loadListPeople<T> (List<T> dataControlList)
-        {
-            pnlListPeopleAplly.Controls.Clear();
-            foreach (Object obj in dataControlList)
-            {
-                this.pnlListPeopleAplly.Controls.Add((Control)obj);
+                Dispose();
             }
         }
 
         private void UCCompanyListPeopleApply_Load(object sender, EventArgs e)
         {
-            
+            var appliedUsers = jobPostDao.FindAllUserIdAppliedForOneJob((int)Tag);
+            pnlMain.Controls.Clear();
+            pnlMain.RowCount = 0;
+            pnlMain.SuspendLayout();
+            for (int i = 0; i < appliedUsers.Count; i++)
+            {
+                pnlMain.Controls.Add(new UCCompanyPeopleApplied(i+1, appliedUsers.ElementAt(i)));
+            }
+            pnlMain.RowCount += 1;
+            pnlMain.ResumeLayout();
         }
     }
 }
