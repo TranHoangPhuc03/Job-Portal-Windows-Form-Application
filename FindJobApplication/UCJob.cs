@@ -81,6 +81,7 @@ namespace FindJobApplication
         {
             UCCompanyProfile uCCompanyProfile = new UCCompanyProfile((int)lblNameCompany.Tag);
             FillToMainPanelClicked?.Invoke(sender, uCCompanyProfile);
+            uCCompanyProfile.hideAllButton();
         }
         public string standardizeNames(string name)
         {

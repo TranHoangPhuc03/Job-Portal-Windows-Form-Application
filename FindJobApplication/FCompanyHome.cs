@@ -65,5 +65,10 @@ namespace FindJobApplication
             ucPanelMain.AddControl(new UCMail());
 
         }
+
+        private void btnSchedule_Click(object sender, EventArgs e)
+        {
+            ucPanelMain.AddControl(new UCSchedule());
+        }
     }
 }

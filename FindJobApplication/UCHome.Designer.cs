@@ -59,14 +59,14 @@ namespace FindJobApplication
             "1 - 2 year experience",
             "2 - 3 year experience",
             "> 3 year experience"});
-            this.cbExperience.Location = new System.Drawing.Point(520, 6);
-            this.cbExperience.Margin = new System.Windows.Forms.Padding(27, 0, 27, 0);
-            this.cbExperience.MaximumSize = new System.Drawing.Size(230, 0);
+            this.cbExperience.Location = new System.Drawing.Point(396, 21);
+            this.cbExperience.Margin = new System.Windows.Forms.Padding(40, 0, 40, 0);
+            this.cbExperience.MaximumSize = new System.Drawing.Size(343, 0);
             this.cbExperience.Name = "cbExperience";
             this.cbExperience.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
             this.cbExperience.OnHoverItemForeColor = System.Drawing.Color.White;
             this.cbExperience.Radius = 4;
-            this.cbExperience.Size = new System.Drawing.Size(230, 44);
+            this.cbExperience.Size = new System.Drawing.Size(343, 44);
             this.cbExperience.StartIndex = 0;
             this.cbExperience.TabIndex = 2;
             // 
@@ -88,14 +88,14 @@ namespace FindJobApplication
             this.cbLocation.Items.AddRange(new object[] {
             "All  location",
             "Ho Chi Minh City"});
-            this.cbLocation.Location = new System.Drawing.Point(804, 6);
-            this.cbLocation.Margin = new System.Windows.Forms.Padding(27, 0, 27, 0);
-            this.cbLocation.MaximumSize = new System.Drawing.Size(250, 0);
+            this.cbLocation.Location = new System.Drawing.Point(819, 21);
+            this.cbLocation.Margin = new System.Windows.Forms.Padding(40, 0, 40, 0);
+            this.cbLocation.MaximumSize = new System.Drawing.Size(373, 0);
             this.cbLocation.Name = "cbLocation";
             this.cbLocation.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
             this.cbLocation.OnHoverItemForeColor = System.Drawing.Color.White;
             this.cbLocation.Radius = 4;
-            this.cbLocation.Size = new System.Drawing.Size(186, 44);
+            this.cbLocation.Size = new System.Drawing.Size(277, 44);
             this.cbLocation.StartIndex = 0;
             this.cbLocation.TabIndex = 1;
             // 
@@ -115,14 +115,14 @@ namespace FindJobApplication
             this.txtSearch.ForeColor = System.Drawing.Color.Black;
             this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSearch.IconLeft = global::FindJobApplication.Properties.Resources.find;
-            this.txtSearch.Location = new System.Drawing.Point(0, 6);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(0, 0, 27, 0);
-            this.txtSearch.MinimumSize = new System.Drawing.Size(0, 44);
+            this.txtSearch.Location = new System.Drawing.Point(0, 9);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(0, 0, 40, 0);
+            this.txtSearch.MinimumSize = new System.Drawing.Size(0, 68);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PasswordChar = '\0';
             this.txtSearch.PlaceholderText = "Search (Ex: Java, C#, Backend, ...)";
             this.txtSearch.SelectedText = "";
-            this.txtSearch.Size = new System.Drawing.Size(466, 44);
+            this.txtSearch.Size = new System.Drawing.Size(316, 68);
             this.txtSearch.TabIndex = 42;
             // 
             // pnlListJob
@@ -130,10 +130,11 @@ namespace FindJobApplication
             this.pnlListJob.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlListJob.AutoScroll = true;
-            this.pnlListJob.Location = new System.Drawing.Point(20, 119);
+            this.pnlListJob.BackColor = System.Drawing.Color.White;
+            this.pnlListJob.Location = new System.Drawing.Point(30, 183);
             this.pnlListJob.Margin = new System.Windows.Forms.Padding(0);
             this.pnlListJob.Name = "pnlListJob";
-            this.pnlListJob.Size = new System.Drawing.Size(1144, 816);
+            this.pnlListJob.Size = new System.Drawing.Size(1326, 1255);
             this.pnlListJob.TabIndex = 44;
             // 
             // btnSearch
@@ -153,12 +154,13 @@ namespace FindJobApplication
             this.btnSearch.HoverState.ForeColor = System.Drawing.Color.White;
             this.btnSearch.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnSearch.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnSearch.Location = new System.Drawing.Point(1044, 6);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(27, 0, 0, 0);
+            this.btnSearch.Location = new System.Drawing.Point(1176, 9);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(40, 0, 0, 0);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(100, 44);
+            this.btnSearch.Size = new System.Drawing.Size(150, 68);
             this.btnSearch.TabIndex = 43;
             this.btnSearch.Text = "Search";
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -173,29 +175,28 @@ namespace FindJobApplication
             this.tableLayoutPanel1.Controls.Add(this.btnSearch, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.cbExperience, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.cbLocation, 2, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(20, 44);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(30, 68);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1144, 56);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1326, 86);
             this.tableLayoutPanel1.TabIndex = 45;
             // 
             // UCHome
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.pnlListJob);
             this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "UCHome";
-            this.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.Size = new System.Drawing.Size(1184, 935);
+            this.Padding = new System.Windows.Forms.Padding(30, 0, 30, 0);
+            this.Size = new System.Drawing.Size(1386, 1438);
             this.Load += new System.EventHandler(this.UCHome_Load);
-            this.ParentChanged += new System.EventHandler(this.UCHome_ParentChanged);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 

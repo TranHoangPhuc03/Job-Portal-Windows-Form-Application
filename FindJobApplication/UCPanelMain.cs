@@ -16,6 +16,7 @@ namespace FindJobApplication
         public UCPanelMain()
         {
             InitializeComponent();
+            Dock = DockStyle.Fill;
             _instace = this;
         }
 

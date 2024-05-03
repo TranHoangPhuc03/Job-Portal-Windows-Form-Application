@@ -84,6 +84,7 @@
   <ItemGroup>
     <Compile Include="Daos\AccountDao.cs" />
     <Compile Include="Daos\CompanyProfileDao.cs" />
+    <Compile Include="Daos\JobApplyDao.cs" />
     <Compile Include="Daos\JobPostDao.cs" />
     <Compile Include="Daos\LocationDao.cs" />
     <Compile Include="Daos\MailDao.cs" />
@@ -193,6 +194,12 @@
     <Compile Include="FCompanySeeCV.Designer.cs">
       <DependentUpon>FCompanySeeCV.cs</DependentUpon>
     </Compile>
+    <Compile Include="FScheduleInvitePeople.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FScheduleInvitePeople.Designer.cs">
+      <DependentUpon>FScheduleInvitePeople.cs</DependentUpon>
+    </Compile>
     <Compile Include="FSignUpCompany.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -265,16 +272,64 @@
     <Compile Include="FUserSubmitCV.Designer.cs">
       <DependentUpon>FUserSubmitCV.cs</DependentUpon>
     </Compile>
+    <Compile Include="FScheduleAddNewEvent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FScheduleAddNewEvent.Designer.cs">
+      <DependentUpon>FScheduleAddNewEvent.cs</DependentUpon>
+    </Compile>
     <Compile Include="SkillDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SkillDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UCScheduleEventPeopleWaitInvite.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCScheduleEventPeopleWaitInvite.Designer.cs">
+      <DependentUpon>UCScheduleEventPeopleWaitInvite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCScheduleDay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCScheduleDay.Designer.cs">
+      <DependentUpon>UCScheduleDay.cs</DependentUpon>
     </Compile>
     <Compile Include="UCPanelMain.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UCPanelMain.Designer.cs">
       <DependentUpon>UCPanelMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCSchedule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCSchedule.Designer.cs">
+      <DependentUpon>UCSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCScheduleEvent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCScheduleEvent.Designer.cs">
+      <DependentUpon>UCScheduleEvent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCScheduleEventDetail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCScheduleEventDetail.Designer.cs">
+      <DependentUpon>UCScheduleEventDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCScheduleEventDetailRow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCScheduleEventDetailRow.Designer.cs">
+      <DependentUpon>UCScheduleEventDetailRow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCScheduleEventRows.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCScheduleEventRows.Designer.cs">
+      <DependentUpon>UCScheduleEventRows.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils\AccountRole.cs" />
     <Compile Include="Utils\ImageUtils.cs" />
@@ -523,6 +578,9 @@
     <EmbeddedResource Include="FCompanySeeCV.resx">
       <DependentUpon>FCompanySeeCV.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FScheduleInvitePeople.resx">
+      <DependentUpon>FScheduleInvitePeople.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FSignUpCompany.resx">
       <DependentUpon>FSignUpCompany.cs</DependentUpon>
     </EmbeddedResource>
@@ -567,6 +625,12 @@
     <EmbeddedResource Include="FSendMail.resx">
       <DependentUpon>FSendMail.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FScheduleAddNewEvent.resx">
+      <DependentUpon>FScheduleAddNewEvent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCScheduleEventPeopleWaitInvite.resx">
+      <DependentUpon>UCScheduleEventPeopleWaitInvite.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UCCompany.resx">
       <DependentUpon>UCCompany.cs</DependentUpon>
     </EmbeddedResource>
@@ -600,6 +664,9 @@
     <EmbeddedResource Include="UCCompanySubMenuRight.resx">
       <DependentUpon>UCCompanySubMenuRight.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UCScheduleDay.resx">
+      <DependentUpon>UCScheduleDay.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UCHome.resx">
       <DependentUpon>UCHome.cs</DependentUpon>
     </EmbeddedResource>
@@ -632,6 +699,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UCProfile.resx">
       <DependentUpon>UCProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCSchedule.resx">
+      <DependentUpon>UCSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCScheduleEvent.resx">
+      <DependentUpon>UCScheduleEvent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCScheduleEventDetail.resx">
+      <DependentUpon>UCScheduleEventDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCScheduleEventDetailRow.resx">
+      <DependentUpon>UCScheduleEventDetailRow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCScheduleEventRows.resx">
+      <DependentUpon>UCScheduleEventRows.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCSetting.resx">
       <DependentUpon>UCSetting.cs</DependentUpon>

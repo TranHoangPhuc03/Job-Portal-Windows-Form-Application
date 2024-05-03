@@ -83,11 +83,6 @@ namespace FindJobApplication
             fillJobPostToPanel(jobPostDao.FindAllJobPost());
         }
 
-        private void UCHome_ParentChanged(object sender, EventArgs e)
-        {
-            parentContainer = Parent.Parent as UCPanelMain;
-        }
-
         private void FillToParentPanel(object sender, UserControl uc)
         {
             parentContainer.AddControl(uc);
