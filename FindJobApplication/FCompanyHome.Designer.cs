@@ -40,20 +40,21 @@
             this.pnlTools = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.lblUsername = new System.Windows.Forms.Label();
-            this.pbUserImage = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.ucCompanySubMenuRight = new FindJobApplication.UCCompanySubMenuRight();
             this.ucPanelMain = new FindJobApplication.UCPanelMain();
+            this.btnSchedule = new Guna.UI2.WinForms.Guna2Button();
+            this.pbUserImage = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.tableLayoutPanel3.SuspendLayout();
             this.pnlLogout.SuspendLayout();
             this.pnlNavbar.SuspendLayout();
             this.tpnlNavBtn.SuspendLayout();
             this.pnlTools.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbUserImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
-            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel3
@@ -135,6 +136,7 @@
             this.tpnlNavBtn.AutoSize = true;
             this.tpnlNavBtn.ColumnCount = 1;
             this.tpnlNavBtn.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tpnlNavBtn.Controls.Add(this.btnSchedule, 0, 6);
             this.tpnlNavBtn.Controls.Add(this.btnSocial, 0, 2);
             this.tpnlNavBtn.Controls.Add(this.btnHome, 0, 0);
             this.tpnlNavBtn.Controls.Add(this.btnMail, 0, 4);
@@ -306,38 +308,6 @@
             this.lblUsername.Text = "David Ngo";
             this.lblUsername.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // pbUserImage
-            // 
-            this.pbUserImage.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbUserImage.Image = ((System.Drawing.Image)(resources.GetObject("pbUserImage.Image")));
-            this.pbUserImage.ImageRotate = 0F;
-            this.pbUserImage.Location = new System.Drawing.Point(190, 0);
-            this.pbUserImage.Margin = new System.Windows.Forms.Padding(0);
-            this.pbUserImage.Name = "pbUserImage";
-            this.pbUserImage.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.pbUserImage.Size = new System.Drawing.Size(60, 60);
-            this.pbUserImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbUserImage.TabIndex = 1;
-            this.pbUserImage.TabStop = false;
-            this.pbUserImage.Click += new System.EventHandler(this.pbUserImage_Click);
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.BackColor = System.Drawing.Color.White;
-            this.guna2PictureBox1.Image = global::FindJobApplication.Properties.Resources.Meta_Logo;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.ShadowDecoration.BorderRadius = 0;
-            this.guna2PictureBox1.ShadowDecoration.Depth = 40;
-            this.guna2PictureBox1.ShadowDecoration.Enabled = true;
-            this.guna2PictureBox1.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, 0, 0, 50);
-            this.guna2PictureBox1.Size = new System.Drawing.Size(248, 80);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox1.TabIndex = 0;
-            this.guna2PictureBox1.TabStop = false;
-            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.AutoSize = true;
@@ -375,6 +345,73 @@
             this.ucPanelMain.Size = new System.Drawing.Size(1192, 944);
             this.ucPanelMain.TabIndex = 43;
             // 
+            // btnSchedule
+            // 
+            this.btnSchedule.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSchedule.BorderRadius = 12;
+            this.btnSchedule.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnSchedule.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
+            this.btnSchedule.CheckedState.ForeColor = System.Drawing.Color.White;
+            this.btnSchedule.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSchedule.CustomImages.CheckedImage = global::FindJobApplication.Properties.Resources.emailWhite;
+            this.btnSchedule.CustomImages.HoveredImage = global::FindJobApplication.Properties.Resources.emailWhite;
+            this.btnSchedule.CustomImages.Image = global::FindJobApplication.Properties.Resources.emailicon;
+            this.btnSchedule.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnSchedule.CustomImages.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnSchedule.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSchedule.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSchedule.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSchedule.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSchedule.FillColor = System.Drawing.Color.White;
+            this.btnSchedule.Font = new System.Drawing.Font("Inter", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.btnSchedule.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(33)))), ((int)(((byte)(56)))));
+            this.btnSchedule.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
+            this.btnSchedule.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnSchedule.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnSchedule.Location = new System.Drawing.Point(0, 243);
+            this.btnSchedule.Margin = new System.Windows.Forms.Padding(0);
+            this.btnSchedule.Name = "btnSchedule";
+            this.btnSchedule.Size = new System.Drawing.Size(208, 65);
+            this.btnSchedule.TabIndex = 3;
+            this.btnSchedule.Text = "Schedule";
+            this.btnSchedule.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnSchedule.TextOffset = new System.Drawing.Point(50, 0);
+            this.btnSchedule.Click += new System.EventHandler(this.btnSchedule_Click);
+            // 
+            // pbUserImage
+            // 
+            this.pbUserImage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbUserImage.Image = ((System.Drawing.Image)(resources.GetObject("pbUserImage.Image")));
+            this.pbUserImage.ImageRotate = 0F;
+            this.pbUserImage.Location = new System.Drawing.Point(190, 0);
+            this.pbUserImage.Margin = new System.Windows.Forms.Padding(0);
+            this.pbUserImage.Name = "pbUserImage";
+            this.pbUserImage.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.pbUserImage.Size = new System.Drawing.Size(60, 60);
+            this.pbUserImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbUserImage.TabIndex = 1;
+            this.pbUserImage.TabStop = false;
+            this.pbUserImage.Click += new System.EventHandler(this.pbUserImage_Click);
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.BackColor = System.Drawing.Color.White;
+            this.guna2PictureBox1.Image = global::FindJobApplication.Properties.Resources.Meta_Logo;
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(0);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.ShadowDecoration.BorderRadius = 0;
+            this.guna2PictureBox1.ShadowDecoration.Depth = 40;
+            this.guna2PictureBox1.ShadowDecoration.Enabled = true;
+            this.guna2PictureBox1.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, 0, 0, 50);
+            this.guna2PictureBox1.Size = new System.Drawing.Size(248, 80);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox1.TabIndex = 0;
+            this.guna2PictureBox1.TabStop = false;
+            // 
             // FCompanyHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -402,9 +439,9 @@
             this.pnlTools.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbUserImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
-            this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -427,5 +464,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private UCCompanySubMenuRight ucCompanySubMenuRight;
         private UCPanelMain ucPanelMain;
+        private Guna.UI2.WinForms.Guna2Button btnSchedule;
     }
 }

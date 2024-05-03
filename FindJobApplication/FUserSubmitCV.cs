@@ -22,28 +22,24 @@ namespace FindJobApplication
             InitializeComponent();
             this.lblNameJob.Text = jobPost.Title;
             this.jobId = jobPost.Id;
+            jobId = jobPost.Id;
         }
 
         private void btnSendCv_Click(object sender, EventArgs e)
         {
-            //JobApplyDao jobApplyDao = new JobApplyDao();
-            //string coverLetter = this.rtxtCoverLeter.Text;
-            //string status = "PENDING";
-            //DateTime appliedAt = DateTime.Now;
-            //if (this.rbtnNewCv.Checked)
-            //{
-            //    //Get cv file path
-            //}
-            //int res = jobApplyDao.SaveUserApplyJob(appliedAt, Session.account.Id, this.jobId, status, coverLetter);
-            //if (res > 0)
-            //{
-            //    MessageDialog.Show(this, "You applied succesfully", "Success", MessageDialogButtons.OK, MessageDialogStyle.Light);
-            //    this.Close();
-            //}
-            //else
-            //{
-            //    MessageDialog.Show(this, "You applied unsuccessfully", "Error", MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Light);
-            //}
+            JobApplyDao jobapplydao = new JobApplyDao();
+            string coverletter = this.rtxtCoverLeter.Text;
+            string status = "pending";
+            DateTime appliedat = DateTime.Now;
+            UserApplyJob userApplyJob = new UserApplyJob();
+            userApplyJob.AppliedAt = appliedat;
+            userApplyJob.Status = status;
+            userApplyJob.CoverLetter = coverletter;
+            userApplyJob.CvAttachment = " ";
+            userApplyJob.JobPostId = jobId;
+            userApplyJob.UserId = Session.account.Id;
+            jobapplydao.SaveUserApplyJob(userApplyJob);
+            this.Close();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
