@@ -24,10 +24,10 @@ namespace FindJobApplication.Daos
         {
             db = new QLXinViecDFContext();
         }
-        public void SaveUserApplyJob(UserApplyJob userApplyJob)
+        public int SaveUserApplyJob(UserApplyJob userApplyJob)
         {
             db.UserApplyJobs.Add(userApplyJob);
-            db.SaveChanges();
+            return db.SaveChanges();
         }
 
         public int UpdateUserApplyStatus(ICollection<UserApplyJob> userApplyJobs, StatusName status)
