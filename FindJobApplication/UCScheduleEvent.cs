@@ -37,6 +37,7 @@ namespace FindJobApplication
 
         private void UCScheduleEvent_Load(object sender, EventArgs e)
         {
+            pnlListEvent.Controls.Clear();
             var results = Session.account.CompanyProfile.InterviewEvents
                         .Where(row => row.From.Date == currentDate.Date)
                         .ToList();
@@ -52,8 +53,9 @@ namespace FindJobApplication
 
         private void btnAddEvent_Click(object sender, EventArgs e)
         {
-            FScheduleAddNewEvent fScheduleAddNewEvent = new FScheduleAddNewEvent(Session.account.Id);
-            fScheduleAddNewEvent.Show();
+            FScheduleAddNewEvent fScheduleAddNewEvent = new FScheduleAddNewEvent(Session.account.Id, currentDate);
+            fScheduleAddNewEvent.ShowDialog();
+            UCScheduleEvent_Load(sender, e);
         }
     }
 }

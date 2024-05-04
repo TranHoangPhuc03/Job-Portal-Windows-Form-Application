@@ -35,9 +35,7 @@
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.txtNameEvent = new Guna.UI2.WinForms.Guna2TextBox();
             this.cbbFromTime = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.cbbFromAMPM = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cbbToTime = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.cbbToAMPM = new Guna.UI2.WinForms.Guna2ComboBox();
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel4 = new Guna.UI.WinForms.GunaLabel();
@@ -49,8 +47,7 @@
             // 
             this.gunaLabel1.AutoSize = true;
             this.gunaLabel1.Font = new System.Drawing.Font("Inter", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.gunaLabel1.Location = new System.Drawing.Point(9, 32);
-            this.gunaLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.gunaLabel1.Location = new System.Drawing.Point(14, 49);
             this.gunaLabel1.Name = "gunaLabel1";
             this.gunaLabel1.Size = new System.Drawing.Size(92, 34);
             this.gunaLabel1.TabIndex = 64;
@@ -58,10 +55,10 @@
             // 
             // guna2Separator2
             // 
-            this.guna2Separator2.Location = new System.Drawing.Point(9, 88);
-            this.guna2Separator2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.guna2Separator2.Location = new System.Drawing.Point(14, 135);
+            this.guna2Separator2.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.guna2Separator2.Name = "guna2Separator2";
-            this.guna2Separator2.Size = new System.Drawing.Size(659, 8);
+            this.guna2Separator2.Size = new System.Drawing.Size(988, 12);
             this.guna2Separator2.TabIndex = 63;
             // 
             // btnCancel
@@ -75,10 +72,10 @@
             this.btnCancel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(247)))));
             this.btnCancel.Font = new System.Drawing.Font("Inter", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.Black;
-            this.btnCancel.Location = new System.Drawing.Point(377, 518);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnCancel.Location = new System.Drawing.Point(566, 797);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(124, 45);
+            this.btnCancel.Size = new System.Drawing.Size(186, 69);
             this.btnCancel.TabIndex = 62;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -95,19 +92,20 @@
             this.btnSave.Font = new System.Drawing.Font("Inter", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.HoverState.FillColor = System.Drawing.Color.Chocolate;
-            this.btnSave.Location = new System.Drawing.Point(524, 518);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnSave.Location = new System.Drawing.Point(786, 797);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(126, 45);
+            this.btnSave.Size = new System.Drawing.Size(189, 69);
             this.btnSave.TabIndex = 61;
             this.btnSave.Text = "Save";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // guna2Separator1
             // 
-            this.guna2Separator1.Location = new System.Drawing.Point(9, 481);
-            this.guna2Separator1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.guna2Separator1.Location = new System.Drawing.Point(14, 740);
+            this.guna2Separator1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.guna2Separator1.Name = "guna2Separator1";
-            this.guna2Separator1.Size = new System.Drawing.Size(659, 8);
+            this.guna2Separator1.Size = new System.Drawing.Size(988, 12);
             this.guna2Separator1.TabIndex = 60;
             // 
             // txtNameEvent
@@ -122,13 +120,13 @@
             this.txtNameEvent.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtNameEvent.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.txtNameEvent.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNameEvent.Location = new System.Drawing.Point(30, 289);
-            this.txtNameEvent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNameEvent.Location = new System.Drawing.Point(45, 445);
+            this.txtNameEvent.Margin = new System.Windows.Forms.Padding(6);
             this.txtNameEvent.Name = "txtNameEvent";
             this.txtNameEvent.PasswordChar = '\0';
             this.txtNameEvent.PlaceholderText = "Name of Event";
             this.txtNameEvent.SelectedText = "";
-            this.txtNameEvent.Size = new System.Drawing.Size(626, 45);
+            this.txtNameEvent.Size = new System.Drawing.Size(939, 69);
             this.txtNameEvent.TabIndex = 65;
             // 
             // cbbFromTime
@@ -143,54 +141,22 @@
             this.cbbFromTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbbFromTime.ItemHeight = 30;
             this.cbbFromTime.Items.AddRange(new object[] {
-            "1:00",
-            "1:30",
-            "2:00",
-            "2:30",
-            "3:00",
-            "3:30",
-            "4:00",
-            "4:30",
-            "5:00",
-            "5:30",
-            "6:00",
-            "6:30",
-            "7:00",
-            "7:30",
-            "8:00",
-            "8:30",
-            "9:00",
-            "9:30",
+            "07:00",
+            "08:00",
+            "09:00",
             "10:00",
-            "10:30",
             "11:00",
-            "11:30"});
-            this.cbbFromTime.Location = new System.Drawing.Point(30, 414);
-            this.cbbFromTime.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            "12:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"});
+            this.cbbFromTime.Location = new System.Drawing.Point(45, 637);
             this.cbbFromTime.MaxDropDownItems = 3;
             this.cbbFromTime.Name = "cbbFromTime";
-            this.cbbFromTime.Size = new System.Drawing.Size(95, 36);
+            this.cbbFromTime.Size = new System.Drawing.Size(218, 36);
             this.cbbFromTime.TabIndex = 66;
-            // 
-            // cbbFromAMPM
-            // 
-            this.cbbFromAMPM.BackColor = System.Drawing.Color.Transparent;
-            this.cbbFromAMPM.BorderRadius = 6;
-            this.cbbFromAMPM.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbbFromAMPM.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbFromAMPM.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbbFromAMPM.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbbFromAMPM.Font = new System.Drawing.Font("Inter", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.cbbFromAMPM.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cbbFromAMPM.ItemHeight = 30;
-            this.cbbFromAMPM.Items.AddRange(new object[] {
-            "AM",
-            "PM"});
-            this.cbbFromAMPM.Location = new System.Drawing.Point(152, 414);
-            this.cbbFromAMPM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.cbbFromAMPM.Name = "cbbFromAMPM";
-            this.cbbFromAMPM.Size = new System.Drawing.Size(95, 36);
-            this.cbbFromAMPM.TabIndex = 67;
             // 
             // cbbToTime
             // 
@@ -204,61 +170,28 @@
             this.cbbToTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbbToTime.ItemHeight = 30;
             this.cbbToTime.Items.AddRange(new object[] {
-            "1:00",
-            "1:30",
-            "2:00",
-            "2:30",
-            "3:00",
-            "3:30",
-            "4:00",
-            "4:30",
-            "5:00",
-            "5:30",
-            "6:00",
-            "6:30",
-            "7:00",
-            "7:30",
-            "8:00",
-            "8:30",
-            "9:00",
-            "9:30",
+            "07:00",
+            "08:00",
+            "09:00",
             "10:00",
-            "10:30",
             "11:00",
-            "11:30"});
-            this.cbbToTime.Location = new System.Drawing.Point(439, 414);
-            this.cbbToTime.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            "12:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"});
+            this.cbbToTime.Location = new System.Drawing.Point(658, 637);
             this.cbbToTime.MaxDropDownItems = 3;
             this.cbbToTime.Name = "cbbToTime";
-            this.cbbToTime.Size = new System.Drawing.Size(95, 36);
+            this.cbbToTime.Size = new System.Drawing.Size(218, 36);
             this.cbbToTime.TabIndex = 68;
-            // 
-            // cbbToAMPM
-            // 
-            this.cbbToAMPM.BackColor = System.Drawing.Color.Transparent;
-            this.cbbToAMPM.BorderRadius = 6;
-            this.cbbToAMPM.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbbToAMPM.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbToAMPM.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbbToAMPM.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbbToAMPM.Font = new System.Drawing.Font("Inter", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.cbbToAMPM.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cbbToAMPM.ItemHeight = 30;
-            this.cbbToAMPM.Items.AddRange(new object[] {
-            "AM",
-            "PM"});
-            this.cbbToAMPM.Location = new System.Drawing.Point(561, 414);
-            this.cbbToAMPM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.cbbToAMPM.Name = "cbbToAMPM";
-            this.cbbToAMPM.Size = new System.Drawing.Size(95, 36);
-            this.cbbToAMPM.TabIndex = 69;
             // 
             // gunaLabel2
             // 
             this.gunaLabel2.AutoSize = true;
             this.gunaLabel2.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.gunaLabel2.Location = new System.Drawing.Point(26, 381);
-            this.gunaLabel2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.gunaLabel2.Location = new System.Drawing.Point(39, 586);
             this.gunaLabel2.Name = "gunaLabel2";
             this.gunaLabel2.Size = new System.Drawing.Size(55, 21);
             this.gunaLabel2.TabIndex = 70;
@@ -268,8 +201,7 @@
             // 
             this.gunaLabel3.AutoSize = true;
             this.gunaLabel3.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.gunaLabel3.Location = new System.Drawing.Point(435, 381);
-            this.gunaLabel3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.gunaLabel3.Location = new System.Drawing.Point(652, 586);
             this.gunaLabel3.Name = "gunaLabel3";
             this.gunaLabel3.Size = new System.Drawing.Size(32, 21);
             this.gunaLabel3.TabIndex = 71;
@@ -279,8 +211,7 @@
             // 
             this.gunaLabel4.AutoSize = true;
             this.gunaLabel4.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.gunaLabel4.Location = new System.Drawing.Point(26, 251);
-            this.gunaLabel4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.gunaLabel4.Location = new System.Drawing.Point(39, 386);
             this.gunaLabel4.Name = "gunaLabel4";
             this.gunaLabel4.Size = new System.Drawing.Size(137, 21);
             this.gunaLabel4.TabIndex = 72;
@@ -297,18 +228,16 @@
             this.ccbNameJob.Font = new System.Drawing.Font("Inter", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.ccbNameJob.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.ccbNameJob.ItemHeight = 30;
-            this.ccbNameJob.Location = new System.Drawing.Point(30, 170);
-            this.ccbNameJob.Margin = new System.Windows.Forms.Padding(2);
+            this.ccbNameJob.Location = new System.Drawing.Point(45, 262);
             this.ccbNameJob.Name = "ccbNameJob";
-            this.ccbNameJob.Size = new System.Drawing.Size(626, 36);
+            this.ccbNameJob.Size = new System.Drawing.Size(937, 36);
             this.ccbNameJob.TabIndex = 73;
             // 
             // gunaLabel5
             // 
             this.gunaLabel5.AutoSize = true;
             this.gunaLabel5.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.gunaLabel5.Location = new System.Drawing.Point(26, 130);
-            this.gunaLabel5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.gunaLabel5.Location = new System.Drawing.Point(39, 200);
             this.gunaLabel5.Name = "gunaLabel5";
             this.gunaLabel5.Size = new System.Drawing.Size(42, 21);
             this.gunaLabel5.TabIndex = 74;
@@ -316,18 +245,16 @@
             // 
             // FScheduleAddNewEvent
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(681, 585);
+            this.ClientSize = new System.Drawing.Size(1022, 900);
             this.Controls.Add(this.gunaLabel5);
             this.Controls.Add(this.ccbNameJob);
             this.Controls.Add(this.gunaLabel4);
             this.Controls.Add(this.gunaLabel3);
             this.Controls.Add(this.gunaLabel2);
-            this.Controls.Add(this.cbbToAMPM);
             this.Controls.Add(this.cbbToTime);
-            this.Controls.Add(this.cbbFromAMPM);
             this.Controls.Add(this.cbbFromTime);
             this.Controls.Add(this.txtNameEvent);
             this.Controls.Add(this.gunaLabel1);
@@ -335,7 +262,6 @@
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.guna2Separator1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FScheduleAddNewEvent";
@@ -356,9 +282,7 @@
         private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
         private Guna.UI2.WinForms.Guna2TextBox txtNameEvent;
         private Guna.UI2.WinForms.Guna2ComboBox cbbFromTime;
-        private Guna.UI2.WinForms.Guna2ComboBox cbbFromAMPM;
         private Guna.UI2.WinForms.Guna2ComboBox cbbToTime;
-        private Guna.UI2.WinForms.Guna2ComboBox cbbToAMPM;
         private Guna.UI.WinForms.GunaLabel gunaLabel2;
         private Guna.UI.WinForms.GunaLabel gunaLabel3;
         private Guna.UI.WinForms.GunaLabel gunaLabel4;

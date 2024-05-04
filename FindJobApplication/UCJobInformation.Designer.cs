@@ -105,9 +105,9 @@
             this.lblTimePost.Controls.Add(this.lblNameJob);
             this.lblTimePost.Controls.Add(this.tableLayoutPanel3);
             this.lblTimePost.Location = new System.Drawing.Point(0, 0);
-            this.lblTimePost.Margin = new System.Windows.Forms.Padding(0, 0, 20, 0);
+            this.lblTimePost.Margin = new System.Windows.Forms.Padding(0, 0, 30, 0);
             this.lblTimePost.Name = "lblTimePost";
-            this.lblTimePost.Size = new System.Drawing.Size(1164, 783);
+            this.lblTimePost.Size = new System.Drawing.Size(1746, 1205);
             this.lblTimePost.TabIndex = 0;
             // 
             // tableLayoutPanel2
@@ -122,12 +122,12 @@
             this.tableLayoutPanel2.Controls.Add(this.pbCompany3, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.pbCompany2, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.pbCompany1, 0, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(52, 314);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(78, 483);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1075, 244);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1612, 375);
             this.tableLayoutPanel2.TabIndex = 44;
             // 
             // pbCompany3
@@ -138,9 +138,10 @@
             this.pbCompany3.BorderRadius = 4;
             this.pbCompany3.Image = global::FindJobApplication.Properties.Resources.vanphong2;
             this.pbCompany3.ImageRotate = 0F;
-            this.pbCompany3.Location = new System.Drawing.Point(720, 4);
+            this.pbCompany3.Location = new System.Drawing.Point(1079, 6);
+            this.pbCompany3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pbCompany3.Name = "pbCompany3";
-            this.pbCompany3.Size = new System.Drawing.Size(351, 236);
+            this.pbCompany3.Size = new System.Drawing.Size(528, 363);
             this.pbCompany3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbCompany3.TabIndex = 34;
             this.pbCompany3.TabStop = false;
@@ -153,10 +154,10 @@
             this.pbCompany2.BorderRadius = 4;
             this.pbCompany2.Image = global::FindJobApplication.Properties.Resources.vanphong2;
             this.pbCompany2.ImageRotate = 0F;
-            this.pbCompany2.Location = new System.Drawing.Point(359, 1);
+            this.pbCompany2.Location = new System.Drawing.Point(538, 1);
             this.pbCompany2.Margin = new System.Windows.Forms.Padding(0);
             this.pbCompany2.Name = "pbCompany2";
-            this.pbCompany2.Size = new System.Drawing.Size(357, 242);
+            this.pbCompany2.Size = new System.Drawing.Size(536, 373);
             this.pbCompany2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbCompany2.TabIndex = 33;
             this.pbCompany2.TabStop = false;
@@ -172,7 +173,7 @@
             this.pbCompany1.Location = new System.Drawing.Point(1, 1);
             this.pbCompany1.Margin = new System.Windows.Forms.Padding(0);
             this.pbCompany1.Name = "pbCompany1";
-            this.pbCompany1.Size = new System.Drawing.Size(357, 242);
+            this.pbCompany1.Size = new System.Drawing.Size(536, 373);
             this.pbCompany1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbCompany1.TabIndex = 32;
             this.pbCompany1.TabStop = false;
@@ -180,10 +181,10 @@
             // pnlSkill
             // 
             this.pnlSkill.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlSkill.Location = new System.Drawing.Point(108, 711);
+            this.pnlSkill.Location = new System.Drawing.Point(162, 1094);
             this.pnlSkill.Margin = new System.Windows.Forms.Padding(0);
             this.pnlSkill.Name = "pnlSkill";
-            this.pnlSkill.Size = new System.Drawing.Size(1015, 36);
+            this.pnlSkill.Size = new System.Drawing.Size(1522, 55);
             this.pnlSkill.TabIndex = 42;
             this.pnlSkill.WrapContents = false;
             // 
@@ -191,10 +192,9 @@
             // 
             this.pictureBox4.Image = global::FindJobApplication.Properties.Resources.timePost;
             this.pictureBox4.InitialImage = global::FindJobApplication.Properties.Resources.building;
-            this.pictureBox4.Location = new System.Drawing.Point(56, 665);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox4.Location = new System.Drawing.Point(84, 1023);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(45, 25);
+            this.pictureBox4.Size = new System.Drawing.Size(68, 38);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 39;
             this.pictureBox4.TabStop = false;
@@ -203,10 +203,9 @@
             // 
             this.pictureBox2.Image = global::FindJobApplication.Properties.Resources.typeWork;
             this.pictureBox2.InitialImage = global::FindJobApplication.Properties.Resources.building;
-            this.pictureBox2.Location = new System.Drawing.Point(56, 621);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox2.Location = new System.Drawing.Point(84, 955);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(45, 25);
+            this.pictureBox2.Size = new System.Drawing.Size(68, 38);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 38;
             this.pictureBox2.TabStop = false;
@@ -215,10 +214,9 @@
             // 
             this.pictureBox1.Image = global::FindJobApplication.Properties.Resources.address;
             this.pictureBox1.InitialImage = global::FindJobApplication.Properties.Resources.building;
-            this.pictureBox1.Location = new System.Drawing.Point(56, 579);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Location = new System.Drawing.Point(84, 891);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(45, 25);
+            this.pictureBox1.Size = new System.Drawing.Size(68, 38);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 37;
             this.pictureBox1.TabStop = false;
@@ -228,16 +226,18 @@
             this.guna2Separator4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Separator4.FillColor = System.Drawing.Color.Black;
-            this.guna2Separator4.Location = new System.Drawing.Point(47, 770);
+            this.guna2Separator4.Location = new System.Drawing.Point(70, 1185);
+            this.guna2Separator4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.guna2Separator4.Name = "guna2Separator4";
-            this.guna2Separator4.Size = new System.Drawing.Size(1049, 10);
+            this.guna2Separator4.Size = new System.Drawing.Size(1574, 15);
             this.guna2Separator4.TabIndex = 36;
             // 
             // lblSkill
             // 
             this.lblSkill.AutoSize = true;
             this.lblSkill.Font = new System.Drawing.Font("Inter", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSkill.Location = new System.Drawing.Point(44, 717);
+            this.lblSkill.Location = new System.Drawing.Point(66, 1103);
+            this.lblSkill.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSkill.Name = "lblSkill";
             this.lblSkill.Size = new System.Drawing.Size(74, 25);
             this.lblSkill.TabIndex = 35;
@@ -247,7 +247,8 @@
             // 
             this.lblPostDate.AutoSize = true;
             this.lblPostDate.Font = new System.Drawing.Font("Inter", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPostDate.Location = new System.Drawing.Point(106, 665);
+            this.lblPostDate.Location = new System.Drawing.Point(159, 1023);
+            this.lblPostDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPostDate.Name = "lblPostDate";
             this.lblPostDate.Size = new System.Drawing.Size(196, 25);
             this.lblPostDate.TabIndex = 34;
@@ -257,7 +258,8 @@
             // 
             this.lblTypeWork.AutoSize = true;
             this.lblTypeWork.Font = new System.Drawing.Font("Inter", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTypeWork.Location = new System.Drawing.Point(106, 621);
+            this.lblTypeWork.Location = new System.Drawing.Point(159, 955);
+            this.lblTypeWork.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTypeWork.Name = "lblTypeWork";
             this.lblTypeWork.Size = new System.Drawing.Size(97, 25);
             this.lblTypeWork.TabIndex = 33;
@@ -267,7 +269,8 @@
             // 
             this.lblWorkAddress.AutoSize = true;
             this.lblWorkAddress.Font = new System.Drawing.Font("Inter", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWorkAddress.Location = new System.Drawing.Point(106, 579);
+            this.lblWorkAddress.Location = new System.Drawing.Point(159, 891);
+            this.lblWorkAddress.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblWorkAddress.Name = "lblWorkAddress";
             this.lblWorkAddress.Size = new System.Drawing.Size(479, 25);
             this.lblWorkAddress.TabIndex = 32;
@@ -277,10 +280,9 @@
             // 
             this.pictureBox3.Image = global::FindJobApplication.Properties.Resources.dollar_symbol;
             this.pictureBox3.InitialImage = global::FindJobApplication.Properties.Resources.building;
-            this.pictureBox3.Location = new System.Drawing.Point(66, 156);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox3.Location = new System.Drawing.Point(99, 240);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(56, 29);
+            this.pictureBox3.Size = new System.Drawing.Size(84, 45);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 31;
             this.pictureBox3.TabStop = false;
@@ -290,7 +292,8 @@
             this.lblSalary.AutoSize = true;
             this.lblSalary.Font = new System.Drawing.Font("Inter", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.lblSalary.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(190)))), ((int)(((byte)(61)))));
-            this.lblSalary.Location = new System.Drawing.Point(127, 156);
+            this.lblSalary.Location = new System.Drawing.Point(190, 240);
+            this.lblSalary.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSalary.Name = "lblSalary";
             this.lblSalary.Size = new System.Drawing.Size(166, 29);
             this.lblSalary.TabIndex = 2;
@@ -302,7 +305,8 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblNameCompany.AutoSize = true;
             this.lblNameCompany.Font = new System.Drawing.Font("Inter", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNameCompany.Location = new System.Drawing.Point(58, 106);
+            this.lblNameCompany.Location = new System.Drawing.Point(87, 163);
+            this.lblNameCompany.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNameCompany.Name = "lblNameCompany";
             this.lblNameCompany.Size = new System.Drawing.Size(147, 25);
             this.lblNameCompany.TabIndex = 1;
@@ -314,7 +318,8 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblNameJob.AutoSize = true;
             this.lblNameJob.Font = new System.Drawing.Font("Inter", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.lblNameJob.Location = new System.Drawing.Point(53, 27);
+            this.lblNameJob.Location = new System.Drawing.Point(80, 42);
+            this.lblNameJob.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNameJob.Name = "lblNameJob";
             this.lblNameJob.Size = new System.Drawing.Size(789, 58);
             this.lblNameJob.TabIndex = 0;
@@ -329,12 +334,12 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel3.Controls.Add(this.btnSave, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.btnApply, 0, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(52, 233);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(78, 358);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1075, 62);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1612, 95);
             this.tableLayoutPanel3.TabIndex = 45;
             // 
             // btnSave
@@ -348,10 +353,11 @@
             this.btnSave.ImageOffset = new System.Drawing.Point(0, 0);
             this.btnSave.ImageRotate = 0F;
             this.btnSave.ImageSize = new System.Drawing.Size(50, 50);
-            this.btnSave.Location = new System.Drawing.Point(986, 3);
+            this.btnSave.Location = new System.Drawing.Point(1479, 5);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSave.Name = "btnSave";
             this.btnSave.PressedState.ImageSize = new System.Drawing.Size(50, 50);
-            this.btnSave.Size = new System.Drawing.Size(86, 56);
+            this.btnSave.Size = new System.Drawing.Size(129, 85);
             this.btnSave.TabIndex = 43;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -367,9 +373,10 @@
             this.btnApply.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(75)))), ((int)(((byte)(43)))));
             this.btnApply.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.btnApply.ForeColor = System.Drawing.Color.White;
-            this.btnApply.Location = new System.Drawing.Point(3, 3);
+            this.btnApply.Location = new System.Drawing.Point(4, 5);
+            this.btnApply.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnApply.Name = "btnApply";
-            this.btnApply.Size = new System.Drawing.Size(977, 56);
+            this.btnApply.Size = new System.Drawing.Size(1467, 85);
             this.btnApply.TabIndex = 3;
             this.btnApply.Text = "Apply now";
             this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
@@ -395,10 +402,10 @@
             this.guna2Panel2.Controls.Add(this.rtxtTop3Reason);
             this.guna2Panel2.Controls.Add(this.lblRequired);
             this.guna2Panel2.Controls.Add(this.guna2Separator1);
-            this.guna2Panel2.Location = new System.Drawing.Point(0, 783);
-            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(0, 0, 20, 0);
+            this.guna2Panel2.Location = new System.Drawing.Point(0, 1205);
+            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(0, 0, 30, 0);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(1164, 2099);
+            this.guna2Panel2.Size = new System.Drawing.Size(1746, 3229);
             this.guna2Panel2.TabIndex = 7;
             // 
             // lblBenefit
@@ -407,7 +414,8 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblBenefit.AutoSize = true;
             this.lblBenefit.Font = new System.Drawing.Font("Inter", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.lblBenefit.Location = new System.Drawing.Point(59, 1623);
+            this.lblBenefit.Location = new System.Drawing.Point(88, 2497);
+            this.lblBenefit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBenefit.Name = "lblBenefit";
             this.lblBenefit.Size = new System.Drawing.Size(66, 19);
             this.lblBenefit.TabIndex = 49;
@@ -419,7 +427,8 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Inter", 32.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(45, 1539);
+            this.label4.Location = new System.Drawing.Point(68, 2368);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(622, 52);
             this.label4.TabIndex = 48;
@@ -430,9 +439,10 @@
             this.guna2Separator3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Separator3.FillStyle = System.Drawing.Drawing2D.DashStyle.Dot;
-            this.guna2Separator3.Location = new System.Drawing.Point(43, 1515);
+            this.guna2Separator3.Location = new System.Drawing.Point(64, 2331);
+            this.guna2Separator3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.guna2Separator3.Name = "guna2Separator3";
-            this.guna2Separator3.Size = new System.Drawing.Size(1052, 10);
+            this.guna2Separator3.Size = new System.Drawing.Size(1578, 15);
             this.guna2Separator3.TabIndex = 47;
             // 
             // lblPrioritize
@@ -441,7 +451,8 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPrioritize.AutoSize = true;
             this.lblPrioritize.Font = new System.Drawing.Font("Inter", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.lblPrioritize.Location = new System.Drawing.Point(63, 1094);
+            this.lblPrioritize.Location = new System.Drawing.Point(94, 1683);
+            this.lblPrioritize.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPrioritize.Name = "lblPrioritize";
             this.lblPrioritize.Size = new System.Drawing.Size(80, 19);
             this.lblPrioritize.TabIndex = 46;
@@ -453,7 +464,8 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Inter", 32.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(45, 687);
+            this.label3.Location = new System.Drawing.Point(68, 1057);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(574, 52);
             this.label3.TabIndex = 45;
@@ -464,9 +476,10 @@
             this.guna2Separator2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Separator2.FillStyle = System.Drawing.Drawing2D.DashStyle.Dot;
-            this.guna2Separator2.Location = new System.Drawing.Point(43, 643);
+            this.guna2Separator2.Location = new System.Drawing.Point(64, 989);
+            this.guna2Separator2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.guna2Separator2.Name = "guna2Separator2";
-            this.guna2Separator2.Size = new System.Drawing.Size(1052, 10);
+            this.guna2Separator2.Size = new System.Drawing.Size(1578, 15);
             this.guna2Separator2.TabIndex = 44;
             // 
             // label2
@@ -475,7 +488,8 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Inter", 32.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(40, 257);
+            this.label2.Location = new System.Drawing.Point(60, 395);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(345, 52);
             this.label2.TabIndex = 43;
@@ -487,7 +501,8 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Inter", 32.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(39, 14);
+            this.label1.Location = new System.Drawing.Point(58, 22);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(519, 52);
             this.label1.TabIndex = 42;
@@ -500,11 +515,10 @@
             this.rtxtBenefit.BackColor = System.Drawing.Color.White;
             this.rtxtBenefit.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtxtBenefit.Font = new System.Drawing.Font("Inter", 16.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtxtBenefit.Location = new System.Drawing.Point(63, 1666);
-            this.rtxtBenefit.Margin = new System.Windows.Forms.Padding(2);
+            this.rtxtBenefit.Location = new System.Drawing.Point(94, 2563);
             this.rtxtBenefit.Name = "rtxtBenefit";
             this.rtxtBenefit.ReadOnly = true;
-            this.rtxtBenefit.Size = new System.Drawing.Size(938, 342);
+            this.rtxtBenefit.Size = new System.Drawing.Size(1407, 526);
             this.rtxtBenefit.TabIndex = 40;
             this.rtxtBenefit.Text = resources.GetString("rtxtBenefit.Text");
             // 
@@ -515,11 +529,10 @@
             this.rtxtPrioritize.BackColor = System.Drawing.Color.White;
             this.rtxtPrioritize.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtxtPrioritize.Font = new System.Drawing.Font("Inter", 16.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtxtPrioritize.Location = new System.Drawing.Point(63, 1131);
-            this.rtxtPrioritize.Margin = new System.Windows.Forms.Padding(2);
+            this.rtxtPrioritize.Location = new System.Drawing.Point(94, 1740);
             this.rtxtPrioritize.Name = "rtxtPrioritize";
             this.rtxtPrioritize.ReadOnly = true;
-            this.rtxtPrioritize.Size = new System.Drawing.Size(938, 352);
+            this.rtxtPrioritize.Size = new System.Drawing.Size(1407, 542);
             this.rtxtPrioritize.TabIndex = 39;
             this.rtxtPrioritize.Text = resources.GetString("rtxtPrioritize.Text");
             // 
@@ -530,11 +543,10 @@
             this.rtxtRequired.BackColor = System.Drawing.Color.White;
             this.rtxtRequired.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtxtRequired.Font = new System.Drawing.Font("Inter", 16.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtxtRequired.Location = new System.Drawing.Point(63, 810);
-            this.rtxtRequired.Margin = new System.Windows.Forms.Padding(2);
+            this.rtxtRequired.Location = new System.Drawing.Point(94, 1246);
             this.rtxtRequired.Name = "rtxtRequired";
             this.rtxtRequired.ReadOnly = true;
-            this.rtxtRequired.Size = new System.Drawing.Size(938, 261);
+            this.rtxtRequired.Size = new System.Drawing.Size(1407, 402);
             this.rtxtRequired.TabIndex = 37;
             this.rtxtRequired.Text = resources.GetString("rtxtRequired.Text");
             // 
@@ -545,11 +557,10 @@
             this.rtxtJobDescription.BackColor = System.Drawing.Color.White;
             this.rtxtJobDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtxtJobDescription.Font = new System.Drawing.Font("Inter", 16.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtxtJobDescription.Location = new System.Drawing.Point(63, 327);
-            this.rtxtJobDescription.Margin = new System.Windows.Forms.Padding(2);
+            this.rtxtJobDescription.Location = new System.Drawing.Point(94, 503);
             this.rtxtJobDescription.Name = "rtxtJobDescription";
             this.rtxtJobDescription.ReadOnly = true;
-            this.rtxtJobDescription.Size = new System.Drawing.Size(944, 297);
+            this.rtxtJobDescription.Size = new System.Drawing.Size(1416, 457);
             this.rtxtJobDescription.TabIndex = 36;
             this.rtxtJobDescription.Text = resources.GetString("rtxtJobDescription.Text");
             // 
@@ -560,11 +571,10 @@
             this.rtxtTop3Reason.BackColor = System.Drawing.Color.White;
             this.rtxtTop3Reason.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtxtTop3Reason.Font = new System.Drawing.Font("Inter", 16.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtxtTop3Reason.Location = new System.Drawing.Point(63, 82);
-            this.rtxtTop3Reason.Margin = new System.Windows.Forms.Padding(2);
+            this.rtxtTop3Reason.Location = new System.Drawing.Point(94, 126);
             this.rtxtTop3Reason.Name = "rtxtTop3Reason";
             this.rtxtTop3Reason.ReadOnly = true;
-            this.rtxtTop3Reason.Size = new System.Drawing.Size(944, 125);
+            this.rtxtTop3Reason.Size = new System.Drawing.Size(1416, 192);
             this.rtxtTop3Reason.TabIndex = 35;
             this.rtxtTop3Reason.Text = "We build a professional & fun working environment.\nWe focus on your growth, yes t" +
     "he long-term growth.\nWe develop the future-ready digital bank platform.";
@@ -575,7 +585,8 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblRequired.AutoSize = true;
             this.lblRequired.Font = new System.Drawing.Font("Inter", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.lblRequired.Location = new System.Drawing.Point(63, 762);
+            this.lblRequired.Location = new System.Drawing.Point(94, 1172);
+            this.lblRequired.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRequired.Name = "lblRequired";
             this.lblRequired.Size = new System.Drawing.Size(125, 19);
             this.lblRequired.TabIndex = 24;
@@ -586,9 +597,10 @@
             this.guna2Separator1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Separator1.FillStyle = System.Drawing.Drawing2D.DashStyle.Dot;
-            this.guna2Separator1.Location = new System.Drawing.Point(44, 223);
+            this.guna2Separator1.Location = new System.Drawing.Point(66, 343);
+            this.guna2Separator1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.guna2Separator1.Name = "guna2Separator1";
-            this.guna2Separator1.Size = new System.Drawing.Size(1052, 10);
+            this.guna2Separator1.Size = new System.Drawing.Size(1578, 15);
             this.guna2Separator1.TabIndex = 11;
             // 
             // btnBack
@@ -596,9 +608,10 @@
             this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBack.Image = global::FindJobApplication.Properties.Resources.BackIcon;
             this.btnBack.ImageRotate = 0F;
-            this.btnBack.Location = new System.Drawing.Point(14, 12);
+            this.btnBack.Location = new System.Drawing.Point(21, 18);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(79, 49);
+            this.btnBack.Size = new System.Drawing.Size(118, 75);
             this.btnBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnBack.TabIndex = 46;
             this.btnBack.TabStop = false;
@@ -613,25 +626,25 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.lblTimePost, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.guna2Panel2, 0, 1);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 67);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 103);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1184, 866);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1776, 1332);
             this.tableLayoutPanel1.TabIndex = 47;
             // 
             // UCJobInformation
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.btnBack);
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "UCJobInformation";
-            this.Size = new System.Drawing.Size(1184, 935);
+            this.Size = new System.Drawing.Size(1776, 1438);
             this.Load += new System.EventHandler(this.UCJobInformation_Load);
             this.lblTimePost.ResumeLayout(false);
             this.lblTimePost.PerformLayout();

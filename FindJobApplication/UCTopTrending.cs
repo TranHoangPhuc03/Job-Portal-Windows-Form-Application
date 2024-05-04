@@ -161,7 +161,7 @@ namespace FindJobApplication
                 var companyProfile = companyProfileDao.FindTopFollowedCompany(numberOfItemsToShow).ElementAt(index);
                 UCCompanyProfile uCCompanyProfile = new UCCompanyProfile(companyProfile.Id);
                 FillToMainPanelClicked?.Invoke(this, uCCompanyProfile);
-
+                uCCompanyProfile.hideAllButton();
             }
         }
 

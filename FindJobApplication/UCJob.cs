@@ -85,13 +85,13 @@ namespace FindJobApplication
         }
         public string standardizeNames(string name)
         {
-            if (name.Length <= 16)
+            if (name.Length <= 28)
             {
                 return name;
             }
             else
             {
-                return name.Substring(0, 14) + "...";
+                return name.Substring(0, 26) + "...";
             }
         }
 

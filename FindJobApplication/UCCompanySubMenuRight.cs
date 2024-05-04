@@ -14,6 +14,8 @@ namespace FindJobApplication
 {
     public partial class UCCompanySubMenuRight : UserControl
     {
+        public event FillToMainPanelHandler FillToMainPanelClicked = UCPanelMain.UC_RequiredAddControl;
+
         public UCCompanySubMenuRight()
         {
             InitializeComponent();
@@ -29,47 +31,26 @@ namespace FindJobApplication
 
         private void btnProfile_Click(object sender, EventArgs e)
         {
-            UCCompanyProfile uCCompanyProfile = new UCCompanyProfile(Session.account.Id);
-            UCMain.Instance.PnlMid.Controls.Clear();
-            UCMain.Instance.PnlMid.Controls.Add(uCCompanyProfile);
+            FillToMainPanelClicked?.Invoke(this, new UCCompanyProfile(Session.account.Id));
             hideMenu();
-           // UCMain.Instance.updateStatus(btnProfile);
         }
 
         private void btnSetting_Click(object sender, EventArgs e)
         {
-            UCSetting uCSetting = new UCSetting();
-            UCMain.Instance.PnlMid.Controls.Clear();
-            UCMain.Instance.PnlMid.Controls.Add(uCSetting);
+            FillToMainPanelClicked?.Invoke(this, new UCSetting());
             hideMenu();
-           // UCMain.Instance.updateStatus(btnSetting);
         }
 
         private void btnFollowCV_Click(object sender, EventArgs e)
         {
-            UCCompanyListCVFollowing uCCompanyListCVFollowing = new UCCompanyListCVFollowing();
-            UCMain.Instance.PnlMid.Controls.Clear();
-            UCMain.Instance.PnlMid.Controls.Add(uCCompanyListCVFollowing);
+            FillToMainPanelClicked?.Invoke(this, new UCCompanyListCVFollowing());
             hideMenu();
-           // UCMain.Instance.updateStatus(btnFollowCV);
         }
 
         private void btnSocialPost_Click(object sender, EventArgs e)
         {
-            UCSocialHistory uCSocialHistory = new UCSocialHistory();
-            UCMain.Instance.PnlMid.Controls.Clear();
-            UCMain.Instance.PnlMid.Controls.Add(uCSocialHistory);
+            FillToMainPanelClicked?.Invoke(this, new UCSocialHistory());
             hideMenu();
-          //  UCMain.Instance.updateStatus(btnSocialPost);
-        }
-
-        private void btnSetting_Click_1(object sender, EventArgs e)
-        {
-            UCSetting uCSetting = new UCSetting();
-            UCMain.Instance.PnlMid.Controls.Clear();
-            UCMain.Instance.PnlMid.Controls.Add(uCSetting);
-            hideMenu();
-           // UCMain.Instance.updateStatus(btnSetting);
         }
     }
 }

@@ -55,9 +55,9 @@ namespace FindJobApplication
 
         private void llblNameCompany_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            FillToMainPanelClicked?.Invoke(sender, new UCCompanyProfile(
-                (int)llblNameCompany.Tag
-            ));
+            UCCompanyProfile uCCompanyProfile = new UCCompanyProfile((int)llblNameCompany.Tag);
+            FillToMainPanelClicked?.Invoke(sender, uCCompanyProfile);
+            uCCompanyProfile.hideAllButton();
         }
     }
 }
