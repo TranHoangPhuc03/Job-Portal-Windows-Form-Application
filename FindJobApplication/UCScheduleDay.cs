@@ -27,7 +27,7 @@ namespace FindJobApplication
 
         private void pnlDay_Click(object sender, EventArgs e)
         {
-            FillToMainPanelClicked?.Invoke(this, new UCScheduleEvent());
+            FillToMainPanelClicked?.Invoke(this, new UCScheduleEvent(Convert.ToDateTime(Tag)));
         }
     }
 }

@@ -30,7 +30,7 @@ namespace FindJobApplication
         {
             lblNamePeople.Text = user.UserProfile.Account.Name;
             lblDayApply.Text = user.AppliedAt.ToString("dd-MM-yyy");
-            lblStatus.Text = user.Status;
+            lblStatus.Text = user.ApplyStatu.Status;
             pbSeeDetail.Tag = user;
         }
 

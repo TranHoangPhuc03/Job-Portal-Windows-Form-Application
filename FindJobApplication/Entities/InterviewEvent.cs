@@ -12,17 +12,16 @@ namespace FindJobApplication.Entities
     using System;
     using System.Collections.Generic;
     
-    public partial class UserApplyJob
+    public partial class InterviewEvent
     {
-        public int UserId { get; set; }
+        public int Id { get; set; }
+        public int CompanyId { get; set; }
         public int JobPostId { get; set; }
-        public string CoverLetter { get; set; }
-        public System.DateTime AppliedAt { get; set; }
-        public int StatusId { get; set; }
-        public string CvAttachment { get; set; }
+        public string Title { get; set; }
+        public System.DateTime From { get; set; }
+        public System.DateTime To { get; set; }
     
-        public virtual ApplyStatu ApplyStatu { get; set; }
+        public virtual CompanyProfile CompanyProfile { get; set; }
         public virtual JobPost JobPost { get; set; }
-        public virtual UserProfile UserProfile { get; set; }
     }
 }

@@ -26,7 +26,6 @@ namespace FindJobApplication
         {
             string monthName = DateTimeFormatInfo.CurrentInfo.GetMonthName(month);
             lblMonthYear.Text = monthName + " " + year;
-            int cnt = 1;
             for (int col = 0; col < dayOfWeek; col++)
             {
                 UCScheduleDay uCScheduleDay = new UCScheduleDay();
@@ -34,6 +33,8 @@ namespace FindJobApplication
                 uCScheduleDay.Hide();
 
             }
+
+            int cnt = 1;
             for (int row = 0; row < tlpCalendar.RowCount; row++)
             {
                 for (int col = 0; col < tlpCalendar.ColumnCount; col++)
@@ -42,6 +43,7 @@ namespace FindJobApplication
                     {
                         
                         UCScheduleDay uCScheduleDay = new UCScheduleDay();
+                        uCScheduleDay.Tag = new DateTime(year, month, cnt);
                         tlpCalendar.Controls.Add(uCScheduleDay, col, row);
                         uCScheduleDay.LblDay.Text = cnt.ToString();
                         if (cnt == DateTime.Now.Day && month == DateTime.Now.Month && year == DateTime.Now.Year)
@@ -66,11 +68,8 @@ namespace FindJobApplication
             month = now.Month;
             year = now.Year;
             
-            // get the first of the month
             DateTime dayStartOfMonth = new DateTime(year, month, 1);
-            // get the count of days of month
             int days = DateTime.DaysInMonth(year, month);
-            // tính số ngày còn sót lại của tháng trc
             int dayOfWeek = Convert.ToInt32(dayStartOfMonth.DayOfWeek.ToString("d"));
             displayDay(days, dayOfWeek);
         }

@@ -17,7 +17,6 @@ namespace FindJobApplication
 {
     public partial class UCHome : UserControl
     {
-        UCPanelMain parentContainer = null;
         public UCHome()
         {
             InitializeComponent();
@@ -60,8 +59,6 @@ namespace FindJobApplication
             {
                 bool isFavourite = favourites.Contains(jobPost.Id);
                 UCJob uCJob = new UCJob(jobPost, isFavourite);
-                uCJob.FillToMainPanelClicked += FillToParentPanel;
-                uCJob.FillToMainPanelClicked += FillToParentPanel;
                 pnlListJob.Controls.Add(uCJob);
             }
         }
@@ -81,11 +78,6 @@ namespace FindJobApplication
             CbExperince.DataSource = yearExperienceDao.FindAllExperience();
 
             fillJobPostToPanel(jobPostDao.FindAllJobPost());
-        }
-
-        private void FillToParentPanel(object sender, UserControl uc)
-        {
-            parentContainer.AddControl(uc);
         }
     }
 }

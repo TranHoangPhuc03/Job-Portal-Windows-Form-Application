@@ -26,8 +26,10 @@ namespace FindJobApplication.Entities
         }
     
         public virtual DbSet<Account> Accounts { get; set; }
+        public virtual DbSet<ApplyStatu> ApplyStatus { get; set; }
         public virtual DbSet<CompanyImage> CompanyImages { get; set; }
         public virtual DbSet<CompanyProfile> CompanyProfiles { get; set; }
+        public virtual DbSet<InterviewEvent> InterviewEvents { get; set; }
         public virtual DbSet<JobPost> JobPosts { get; set; }
         public virtual DbSet<Location> Locations { get; set; }
         public virtual DbSet<Mail> Mails { get; set; }

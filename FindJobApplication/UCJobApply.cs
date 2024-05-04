@@ -41,7 +41,7 @@ namespace FindJobApplication
         {
             lblDayApply.Text = userApplyJob.AppliedAt.ToString("dd-MM-yyyy");
             lblStatus.Visible = true;
-            lblStatus.Text = userApplyJob.Status;
+            lblStatus.Text = userApplyJob.ApplyStatu.Status;
         }
 
         private void llblNameJob_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

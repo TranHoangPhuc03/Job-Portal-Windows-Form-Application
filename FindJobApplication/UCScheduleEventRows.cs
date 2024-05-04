@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FindJobApplication.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,12 +22,20 @@ namespace FindJobApplication
             InitializeComponent();
             Dock = DockStyle.Fill;
         }
-        public Label LblTitle { get => lblTitle; set => lblTitle = value; }
-        public Label LblNameJob { get => lblNameJob; set => lblNameJob = value; }
 
-        public Label LblDate { get => lblDate; set => lblDate = value; }
-        public Label LblFrom { get => lblFrom; set => lblFrom = value; }
-        public Label LblTo { get => lblTo; set => lblTo = value; }
+        public UCScheduleEventRows(int rowId) : this()
+        {
+            lblID.Text = rowId.ToString();
+        }
+
+        public UCScheduleEventRows(int rowId, InterviewEvent interviewEvent) : this(rowId)
+        {
+            lblNameJob.Text = interviewEvent.JobPost.Title;
+            lblDate.Text = interviewEvent.From.ToString("dd-MM-yyyy");
+            lblFrom.Text = interviewEvent.From.ToString("HH:mm");
+            lblTo.Text = interviewEvent.To.ToString("HH:mm");
+            Tag = interviewEvent.JobPostId;
+        }
 
         private void pbEdit_Click(object sender, EventArgs e)
         {
@@ -36,7 +45,7 @@ namespace FindJobApplication
 
         private void pbSeePeopleInterview_Click(object sender, EventArgs e)
         {
-            FillToMainPanelClicked?.Invoke(this, new UCScheduleEventDetail());
+            FillToMainPanelClicked?.Invoke(this, new UCScheduleEventDetail((int)Tag));
         }
     }
 }

@@ -13,10 +13,16 @@ namespace FindJobApplication
 {
     public partial class UCScheduleEvent : UserControl
     {
+        private DateTime currentDate;
         public UCScheduleEvent()
         {
             InitializeComponent();
             Dock = DockStyle.Fill;
+        }
+
+        public UCScheduleEvent(DateTime date) : this()
+        {
+            currentDate = date;
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -31,11 +37,17 @@ namespace FindJobApplication
 
         private void UCScheduleEvent_Load(object sender, EventArgs e)
         {
-            for (int i = 0; i < 10; i++)
+            var results = Session.account.CompanyProfile.InterviewEvents
+                        .Where(row => row.From.Date == currentDate.Date)
+                        .ToList();
+
+            pnlListEvent.SuspendLayout();
+            for (int i = 0; i < results.Count; i++)
             {
-                UCScheduleEventRows uCScheduleEventRows = new UCScheduleEventRows();
+                UCScheduleEventRows uCScheduleEventRows = new UCScheduleEventRows(i+1, results.ElementAt(i));
                 pnlListEvent.Controls.Add(uCScheduleEventRows);
             }
+            pnlListEvent.ResumeLayout();
         }
 
         private void btnAddEvent_Click(object sender, EventArgs e)

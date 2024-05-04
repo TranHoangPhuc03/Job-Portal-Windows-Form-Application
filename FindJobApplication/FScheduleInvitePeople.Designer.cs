@@ -38,8 +38,8 @@
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.guna2CustomGradientPanel2 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.lblFrom = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.guna2CustomGradientPanel3.SuspendLayout();
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.guna2CustomGradientPanel2.SuspendLayout();
@@ -82,6 +82,7 @@
             this.btnCancel.Size = new System.Drawing.Size(124, 45);
             this.btnCancel.TabIndex = 66;
             this.btnCancel.Text = "Cancel";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnInvite
             // 
@@ -101,6 +102,7 @@
             this.btnInvite.Size = new System.Drawing.Size(126, 45);
             this.btnInvite.TabIndex = 65;
             this.btnInvite.Text = "Invite";
+            this.btnInvite.Click += new System.EventHandler(this.btnInvite_Click);
             // 
             // guna2Separator1
             // 
@@ -181,16 +183,6 @@
             this.lblFrom.TabIndex = 2;
             this.lblFrom.Text = "Name";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Inter", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(46, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(33, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "ID";
-            // 
             // guna2PictureBox1
             // 
             this.guna2PictureBox1.Image = global::FindJobApplication.Properties.Resources.Mail_FromTo;
@@ -201,6 +193,16 @@
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox1.TabIndex = 1;
             this.guna2PictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Inter", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(46, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(33, 25);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "ID";
             // 
             // FScheduleInvitePeople
             // 

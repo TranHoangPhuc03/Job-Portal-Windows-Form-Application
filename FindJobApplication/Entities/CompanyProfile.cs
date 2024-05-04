@@ -18,6 +18,7 @@ namespace FindJobApplication.Entities
         public CompanyProfile()
         {
             this.CompanyImages = new HashSet<CompanyImage>();
+            this.InterviewEvents = new HashSet<InterviewEvent>();
             this.JobPosts = new HashSet<JobPost>();
         }
     
@@ -35,6 +36,8 @@ namespace FindJobApplication.Entities
         public virtual Account Account { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CompanyImage> CompanyImages { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<InterviewEvent> InterviewEvents { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<JobPost> JobPosts { get; set; }
     }

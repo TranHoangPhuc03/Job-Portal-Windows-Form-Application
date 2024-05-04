@@ -266,99 +266,110 @@ VALUES
 (10, 4);
 GO
 
---Insert statements into user_apply_job
-INSERT INTO UserApplyJob (UserId, JobPostId, [Status], AppliedAt)
+--Insert job apply
+INSERT INTO ApplyStatus([Status])
 VALUES
-(6, 1, 'Rejected', DATEADD(day, -1 * ABS(CHECKSUM(NEWID())) % 20, '2024-04-22')),
-(7, 1, 'Pending', DATEADD(day, -1 * ABS(CHECKSUM(NEWID())) % 20, '2024-04-22')),
-(8, 1, 'Interview', DATEADD(day, -1 * ABS(CHECKSUM(NEWID())) % 20, '2024-04-22')),
-(9, 1, 'Approved', DATEADD(day, -1 * ABS(CHECKSUM(NEWID())) % 20, '2024-04-22')),
-(10, 1, 'Rejected', DATEADD(day, -1 * ABS(CHECKSUM(NEWID())) % 20, '2024-04-22')),
-(6, 2, 'Pending', DATEADD(day, -1 * ABS(CHECKSUM(NEWID())) % 20, '2024-04-22')),
-(7, 2, 'Interview', DATEADD(day, -1 * ABS(CHECKSUM(NEWID())) % 20, '2024-04-22')),
-(8, 2, 'Approved', DATEADD(day, -1 * ABS(CHECKSUM(NEWID())) % 20, '2024-04-22')),
-(9, 2, 'Rejected', DATEADD(day, -1 * ABS(CHECKSUM(NEWID())) % 20, '2024-04-22')),
-(10, 2, 'Pending', DATEADD(day, -1 * ABS(CHECKSUM(NEWID())) % 20, '2024-04-22')),
-(6, 3, 'Interview', DATEADD(day, -1 * ABS(CHECKSUM(NEWID())) % 20, '2024-04-22')),
-(7, 3, 'Approved', DATEADD(day, -1 * ABS(CHECKSUM(NEWID())) % 20, '2024-04-22')),
-(8, 3, 'Rejected', DATEADD(day, -1 * ABS(CHECKSUM(NEWID())) % 20, '2024-04-22')),
-(9, 3, 'Pending', DATEADD(day, -1 * ABS(CHECKSUM(NEWID())) % 20, '2024-04-22')),
-(10, 3, 'Interview', DATEADD(day, -1 * ABS(CHECKSUM(NEWID())) % 20, '2024-04-22')),
-(6, 4, 'Approved', DATEADD(day, -1 * ABS(CHECKSUM(NEWID())) % 20, '2024-04-22')),
-(7, 4, 'Rejected', DATEADD(day, -1 * ABS(CHECKSUM(NEWID())) % 20, '2024-04-22')),
-(8, 4, 'Pending', DATEADD(day, -1 * ABS(CHECKSUM(NEWID())) % 20, '2024-04-22')),
-(9, 4, 'Interview', DATEADD(day, -1 * ABS(CHECKSUM(NEWID())) % 20, '2024-04-22')),
-(10, 4, 'Approved', DATEADD(day, -1 * ABS(CHECKSUM(NEWID())) % 20, '2024-04-22'));
+('Appropriate'),
+('Pending'),
+('Interview invited'),
+('Interviewing'),
+('Declined'),
+('Approved');
+GO
+
+--Insert statements into user_apply_job
+INSERT INTO UserApplyJob (UserId, JobPostId, StatusId, AppliedAt)
+VALUES
+(6, 1, 1, DATEADD(day, -1 * ABS(CHECKSUM(NEWID())) % 20, '2024-04-22')),
+(7, 1, 2, DATEADD(day, -1 * ABS(CHECKSUM(NEWID())) % 20, '2024-04-22')),
+(8, 1, 3, DATEADD(day, -1 * ABS(CHECKSUM(NEWID())) % 20, '2024-04-22')),
+(9, 1, 4, DATEADD(day, -1 * ABS(CHECKSUM(NEWID())) % 20, '2024-04-22')),
+(10, 1, 5, DATEADD(day, -1 * ABS(CHECKSUM(NEWID())) % 20, '2024-04-22')),
+(6, 2, 6, DATEADD(day, -1 * ABS(CHECKSUM(NEWID())) % 20, '2024-04-22')),
+(7, 2, 3, DATEADD(day, -1 * ABS(CHECKSUM(NEWID())) % 20, '2024-04-22')),
+(8, 2, 3, DATEADD(day, -1 * ABS(CHECKSUM(NEWID())) % 20, '2024-04-22')),
+(9, 2, 3, DATEADD(day, -1 * ABS(CHECKSUM(NEWID())) % 20, '2024-04-22')),
+(10, 2, 3, DATEADD(day, -1 * ABS(CHECKSUM(NEWID())) % 20, '2024-04-22')),
+(6, 3, 2, DATEADD(day, -1 * ABS(CHECKSUM(NEWID())) % 20, '2024-04-22')),
+(7, 3, 2, DATEADD(day, -1 * ABS(CHECKSUM(NEWID())) % 20, '2024-04-22')),
+(8, 3, 2, DATEADD(day, -1 * ABS(CHECKSUM(NEWID())) % 20, '2024-04-22')),
+(9, 3, 2, DATEADD(day, -1 * ABS(CHECKSUM(NEWID())) % 20, '2024-04-22')),
+(10, 3, 2, DATEADD(day, -1 * ABS(CHECKSUM(NEWID())) % 20, '2024-04-22')),
+(6, 4, 2, DATEADD(day, -1 * ABS(CHECKSUM(NEWID())) % 20, '2024-04-22')),
+(7, 4, 2, DATEADD(day, -1 * ABS(CHECKSUM(NEWID())) % 20, '2024-04-22')),
+(8, 4, 2, DATEADD(day, -1 * ABS(CHECKSUM(NEWID())) % 20, '2024-04-22')),
+(9, 4, 2, DATEADD(day, -1 * ABS(CHECKSUM(NEWID())) % 20, '2024-04-22')),
+(10, 4, 2, DATEADD(day, -1 * ABS(CHECKSUM(NEWID())) % 20, '2024-04-22'));
 GO
 
 --Insert account avatar
 UPDATE account 
 SET avatar = (
         SELECT BulkColumn 
-        FROM Openrowset( Bulk 'E:\SPKT\LapTrinhWindows\FindJobApplication\avatars\account_1.png', Single_Blob) AS img
+        FROM Openrowset( Bulk 'E:\SPKT\LapTrinhWindows\FindJobApplication\image\image_LogoCompany\Asus.jpg', Single_Blob) AS img
 )
 WHERE id = 1;
 GO
 UPDATE account 
 SET avatar = (
         SELECT BulkColumn 
-        FROM Openrowset( Bulk 'E:\SPKT\LapTrinhWindows\FindJobApplication\avatars\account_2.png', Single_Blob) AS img
+        FROM Openrowset( Bulk 'E:\SPKT\LapTrinhWindows\FindJobApplication\image\image_LogoCompany\Google.jpg', Single_Blob) AS img
 )
 WHERE id = 2;
 GO
 UPDATE account 
 SET avatar = (
         SELECT BulkColumn 
-        FROM Openrowset( Bulk 'E:\SPKT\LapTrinhWindows\FindJobApplication\avatars\account_3.png', Single_Blob) AS img
+        FROM Openrowset( Bulk 'E:\SPKT\LapTrinhWindows\FindJobApplication\image\image_LogoCompany\HP.jpg', Single_Blob) AS img
 )
 WHERE id = 3;
 GO
 UPDATE account 
 SET avatar = (
         SELECT BulkColumn 
-        FROM Openrowset( Bulk 'E:\SPKT\LapTrinhWindows\FindJobApplication\avatars\account_4.png', Single_Blob) AS img
+        FROM Openrowset( Bulk 'E:\SPKT\LapTrinhWindows\FindJobApplication\image\image_LogoCompany\Lenovo.jpg', Single_Blob) AS img
 )
 WHERE id = 4;
 GO
 UPDATE account 
 SET avatar = (
         SELECT BulkColumn 
-        FROM Openrowset( Bulk 'E:\SPKT\LapTrinhWindows\FindJobApplication\avatars\account_5.png', Single_Blob) AS img
+        FROM Openrowset( Bulk 'E:\SPKT\LapTrinhWindows\FindJobApplication\image\image_LogoCompany\MSI.jpg', Single_Blob) AS img
 )
 WHERE id = 5;
 GO
 UPDATE account 
 SET avatar = (
         SELECT BulkColumn 
-        FROM Openrowset( Bulk 'E:\SPKT\LapTrinhWindows\FindJobApplication\avatars\account_6.jpg', Single_Blob) AS img
+        FROM Openrowset( Bulk 'E:\SPKT\LapTrinhWindows\FindJobApplication\image\image_People\Male_1.jpg', Single_Blob) AS img
 )
 WHERE id = 6;
 GO
 UPDATE account 
 SET avatar = (
         SELECT BulkColumn 
-        FROM Openrowset( Bulk 'E:\SPKT\LapTrinhWindows\FindJobApplication\avatars\account_7.jpg', Single_Blob) AS img
+        FROM Openrowset( Bulk 'E:\SPKT\LapTrinhWindows\FindJobApplication\image\image_People\Male_2.jpg', Single_Blob) AS img
 )
 WHERE id = 7;
 GO
 UPDATE account 
 SET avatar = (
         SELECT BulkColumn 
-        FROM Openrowset( Bulk 'E:\SPKT\LapTrinhWindows\FindJobApplication\avatars\account_8.jpg', Single_Blob) AS img
+        FROM Openrowset( Bulk 'E:\SPKT\LapTrinhWindows\FindJobApplication\image\image_People\Male_3.jpg', Single_Blob) AS img
 )
 WHERE id = 8;
 GO
 UPDATE account 
 SET avatar = (
         SELECT BulkColumn 
-        FROM Openrowset( Bulk 'E:\SPKT\LapTrinhWindows\FindJobApplication\avatars\account_9.jpg', Single_Blob) AS img
+        FROM Openrowset( Bulk 'E:\SPKT\LapTrinhWindows\FindJobApplication\image\image_People\Male_4.jpg', Single_Blob) AS img
 )
 WHERE id = 9;
 GO
 UPDATE account 
 SET avatar = (
         SELECT BulkColumn 
-        FROM Openrowset( Bulk 'E:\SPKT\LapTrinhWindows\FindJobApplication\avatars\account_10.jpg', Single_Blob) AS img
+        FROM Openrowset( Bulk 'E:\SPKT\LapTrinhWindows\FindJobApplication\image\image_People\Male_5.jpg', Single_Blob) AS img
 )
 WHERE id = 10;
 GO
@@ -414,4 +425,10 @@ GO
 UPDATE Account
 SET [Name] = 'KMS Technology'
 WHERE Id = 5;
+GO
+
+INSERT INTO InterviewEvent(CompanyId, JobPostId, [From], [To])
+VALUES
+(1, 1, '2024-04-20 07:00:00 AM', '2024-04-20 11:00:00 AM'),
+(1, 6, '2024-05-10 01:00:00 PM', '2024-05-10 05:00:00 PM');
 GO

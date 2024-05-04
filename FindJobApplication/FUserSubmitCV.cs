@@ -33,7 +33,7 @@ namespace FindJobApplication
             DateTime appliedat = DateTime.Now;
             UserApplyJob userApplyJob = new UserApplyJob();
             userApplyJob.AppliedAt = appliedat;
-            userApplyJob.Status = status;
+            userApplyJob.ApplyStatu.Status = status;
             userApplyJob.CoverLetter = coverletter;
             userApplyJob.CvAttachment = " ";
             userApplyJob.JobPostId = jobId;

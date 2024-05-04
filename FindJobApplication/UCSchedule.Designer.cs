@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCSchedule));
             this.label = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -146,7 +145,7 @@
             this.guna2CustomGradientPanel1.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(247)))));
             this.guna2CustomGradientPanel1.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(247)))));
             this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(34, 68);
-            this.guna2CustomGradientPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2CustomGradientPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
             this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(859, 796);
             this.guna2CustomGradientPanel1.TabIndex = 7;
@@ -171,7 +170,7 @@
             this.tableLayoutPanel2.Controls.Add(this.label2, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.label5, 4, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(9, 8);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -192,7 +191,7 @@
             this.tlpCalendar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
             this.tlpCalendar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
             this.tlpCalendar.Location = new System.Drawing.Point(9, 62);
-            this.tlpCalendar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpCalendar.Margin = new System.Windows.Forms.Padding(2);
             this.tlpCalendar.Name = "tlpCalendar";
             this.tlpCalendar.RowCount = 6;
             this.tlpCalendar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
@@ -214,7 +213,7 @@
             this.tableLayoutPanel1.Controls.Add(this.btnNext, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnPrevious, 0, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(43, 869);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -226,9 +225,10 @@
             this.btnNext.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnNext.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
             this.btnNext.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.btnNext.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.Image")));
+            this.btnNext.Image = global::FindJobApplication.Properties.Resources.angle_right_solid;
             this.btnNext.ImageOffset = new System.Drawing.Point(0, 0);
             this.btnNext.ImageRotate = 0F;
+            this.btnNext.ImageSize = new System.Drawing.Size(32, 32);
             this.btnNext.Location = new System.Drawing.Point(449, 2);
             this.btnNext.Margin = new System.Windows.Forms.Padding(30, 2, 2, 2);
             this.btnNext.Name = "btnNext";
@@ -242,9 +242,10 @@
             this.btnPrevious.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnPrevious.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
             this.btnPrevious.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.btnPrevious.Image = ((System.Drawing.Image)(resources.GetObject("btnPrevious.Image")));
+            this.btnPrevious.Image = global::FindJobApplication.Properties.Resources.angle_left_solid;
             this.btnPrevious.ImageOffset = new System.Drawing.Point(0, 0);
             this.btnPrevious.ImageRotate = 0F;
+            this.btnPrevious.ImageSize = new System.Drawing.Size(32, 32);
             this.btnPrevious.Location = new System.Drawing.Point(346, 2);
             this.btnPrevious.Margin = new System.Windows.Forms.Padding(2, 2, 30, 2);
             this.btnPrevious.Name = "btnPrevious";
@@ -261,7 +262,7 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Controls.Add(this.lblMonthYear, 0, 0);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(43, 20);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));

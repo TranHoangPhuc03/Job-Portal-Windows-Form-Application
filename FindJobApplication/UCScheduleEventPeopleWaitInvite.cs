@@ -1,4 +1,7 @@
-﻿using System;
+﻿using FindJobApplication.Entities;
+using Guna.UI.WinForms;
+using Guna.UI2.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +18,19 @@ namespace FindJobApplication
         public UCScheduleEventPeopleWaitInvite()
         {
             InitializeComponent();
+        }
+
+        public Guna2CheckBox CbPeople { get => cbPeople; } 
+
+        public UCScheduleEventPeopleWaitInvite(int rowId) : this()
+        {
+            lblID.Text = rowId.ToString();
+        }
+
+        public UCScheduleEventPeopleWaitInvite(int rowId, UserApplyJob userApplyJob) : this(rowId)
+        {
+            lblName.Text = userApplyJob.UserProfile.Account.Name;
+            Tag = userApplyJob;
         }
     }
 }

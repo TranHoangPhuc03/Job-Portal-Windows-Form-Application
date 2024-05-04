@@ -17,7 +17,7 @@ namespace FindJobApplication
 {
     public partial class UCJob : UserControl
     {
-        public event FillToMainPanelHandler FillToMainPanelClicked;
+        public event FillToMainPanelHandler FillToMainPanelClicked = UCPanelMain.UC_RequiredAddControl;
 
         UserProfileDao userProfileDao = new UserProfileDao();
 

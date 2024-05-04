@@ -95,10 +95,16 @@
     <Compile Include="Entities\Account.cs">
       <DependentUpon>QLXinViec.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entities\ApplyStatu.cs">
+      <DependentUpon>QLXinViec.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entities\CompanyImage.cs">
       <DependentUpon>QLXinViec.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\CompanyProfile.cs">
+      <DependentUpon>QLXinViec.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\InterviewEvent.cs">
       <DependentUpon>QLXinViec.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\JobPost.cs">
@@ -1110,6 +1116,10 @@
     <Content Include="Resources\alert-error.512x512.png" />
     <Content Include="Resources\alert-success.512x512.png" />
     <Content Include="Resources\alert-warning.512x480.png" />
+    <None Include="Resources\calendar.png" />
+    <None Include="Resources\calendar-white.png" />
+    <None Include="Resources\angle-right-solid.png" />
+    <None Include="Resources\angle-left-solid.png" />
     <Content Include="Resources\default-avatar.png" />
     <None Include="Resources\social1.png" />
     <None Include="Resources\heart-regular1.png" />

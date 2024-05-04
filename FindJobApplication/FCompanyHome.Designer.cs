@@ -34,6 +34,7 @@
             this.btnLogout = new Guna.UI2.WinForms.Guna2Button();
             this.pnlNavbar = new Guna.UI2.WinForms.Guna2Panel();
             this.tpnlNavBtn = new System.Windows.Forms.TableLayoutPanel();
+            this.btnSchedule = new Guna.UI2.WinForms.Guna2Button();
             this.btnSocial = new Guna.UI2.WinForms.Guna2Button();
             this.btnHome = new Guna.UI2.WinForms.Guna2Button();
             this.btnMail = new Guna.UI2.WinForms.Guna2Button();
@@ -43,7 +44,6 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.ucCompanySubMenuRight = new FindJobApplication.UCCompanySubMenuRight();
             this.ucPanelMain = new FindJobApplication.UCPanelMain();
-            this.btnSchedule = new Guna.UI2.WinForms.Guna2Button();
             this.pbUserImage = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.tableLayoutPanel3.SuspendLayout();
@@ -153,6 +153,41 @@
             this.tpnlNavBtn.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 65F));
             this.tpnlNavBtn.Size = new System.Drawing.Size(208, 308);
             this.tpnlNavBtn.TabIndex = 0;
+            // 
+            // btnSchedule
+            // 
+            this.btnSchedule.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSchedule.BorderRadius = 12;
+            this.btnSchedule.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnSchedule.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
+            this.btnSchedule.CheckedState.ForeColor = System.Drawing.Color.White;
+            this.btnSchedule.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSchedule.CustomImages.CheckedImage = global::FindJobApplication.Properties.Resources.calendar_white;
+            this.btnSchedule.CustomImages.HoveredImage = global::FindJobApplication.Properties.Resources.calendar_white;
+            this.btnSchedule.CustomImages.Image = global::FindJobApplication.Properties.Resources.calendar;
+            this.btnSchedule.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnSchedule.CustomImages.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnSchedule.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSchedule.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSchedule.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSchedule.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSchedule.FillColor = System.Drawing.Color.White;
+            this.btnSchedule.Font = new System.Drawing.Font("Inter", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.btnSchedule.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(33)))), ((int)(((byte)(56)))));
+            this.btnSchedule.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
+            this.btnSchedule.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnSchedule.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnSchedule.Location = new System.Drawing.Point(0, 243);
+            this.btnSchedule.Margin = new System.Windows.Forms.Padding(0);
+            this.btnSchedule.Name = "btnSchedule";
+            this.btnSchedule.Size = new System.Drawing.Size(208, 65);
+            this.btnSchedule.TabIndex = 3;
+            this.btnSchedule.Text = "Schedule";
+            this.btnSchedule.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnSchedule.TextOffset = new System.Drawing.Point(50, 0);
+            this.btnSchedule.Click += new System.EventHandler(this.btnSchedule_Click);
             // 
             // btnSocial
             // 
@@ -328,7 +363,7 @@
             // ucCompanySubMenuRight
             // 
             this.ucCompanySubMenuRight.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ucCompanySubMenuRight.Location = new System.Drawing.Point(1170, 71);
+            this.ucCompanySubMenuRight.Location = new System.Drawing.Point(1170, 72);
             this.ucCompanySubMenuRight.Margin = new System.Windows.Forms.Padding(0);
             this.ucCompanySubMenuRight.Name = "ucCompanySubMenuRight";
             this.ucCompanySubMenuRight.Size = new System.Drawing.Size(250, 0);
@@ -344,41 +379,6 @@
             this.ucPanelMain.Padding = new System.Windows.Forms.Padding(8, 8, 0, 0);
             this.ucPanelMain.Size = new System.Drawing.Size(1192, 944);
             this.ucPanelMain.TabIndex = 43;
-            // 
-            // btnSchedule
-            // 
-            this.btnSchedule.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSchedule.BorderRadius = 12;
-            this.btnSchedule.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.btnSchedule.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
-            this.btnSchedule.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.btnSchedule.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSchedule.CustomImages.CheckedImage = global::FindJobApplication.Properties.Resources.emailWhite;
-            this.btnSchedule.CustomImages.HoveredImage = global::FindJobApplication.Properties.Resources.emailWhite;
-            this.btnSchedule.CustomImages.Image = global::FindJobApplication.Properties.Resources.emailicon;
-            this.btnSchedule.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnSchedule.CustomImages.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnSchedule.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnSchedule.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnSchedule.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnSchedule.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSchedule.FillColor = System.Drawing.Color.White;
-            this.btnSchedule.Font = new System.Drawing.Font("Inter", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.btnSchedule.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(33)))), ((int)(((byte)(56)))));
-            this.btnSchedule.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
-            this.btnSchedule.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnSchedule.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnSchedule.Location = new System.Drawing.Point(0, 243);
-            this.btnSchedule.Margin = new System.Windows.Forms.Padding(0);
-            this.btnSchedule.Name = "btnSchedule";
-            this.btnSchedule.Size = new System.Drawing.Size(208, 65);
-            this.btnSchedule.TabIndex = 3;
-            this.btnSchedule.Text = "Schedule";
-            this.btnSchedule.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnSchedule.TextOffset = new System.Drawing.Point(50, 0);
-            this.btnSchedule.Click += new System.EventHandler(this.btnSchedule_Click);
             // 
             // pbUserImage
             // 
@@ -418,8 +418,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(247)))));
             this.ClientSize = new System.Drawing.Size(1440, 1024);
-            this.Controls.Add(this.ucPanelMain);
             this.Controls.Add(this.ucCompanySubMenuRight);
+            this.Controls.Add(this.ucPanelMain);
             this.Controls.Add(this.tableLayoutPanel3);
             this.Controls.Add(this.pnlTools);
             this.Controls.Add(this.tableLayoutPanel2);

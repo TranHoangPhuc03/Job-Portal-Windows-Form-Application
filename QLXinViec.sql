@@ -134,17 +134,24 @@ CREATE TABLE JobSkill (
 );
 GO
 
+CREATE TABLE ApplyStatus(
+	Id INT PRIMARY KEY IDENTITY(1, 1),
+	[Status] VARCHAR(255)
+)
+GO
+
 CREATE TABLE UserApplyJob (
 	UserId INT NOT NULL,
 	JobPostId INT NOT NULL,
-	[Status] VARCHAR(50) NOT NULL,
+	StatusId INT NOT NULL,
 	CoverLetter TEXT,
 	AppliedAt DATE NOT NULL,
 	CvAttachment TEXT,
 
 	FOREIGN KEY (UserId) REFERENCES UserProfile(Id),
 	FOREIGN KEY (JobPostId) REFERENCES JobPost(Id),
-	PRIMARY KEY (UserId, JobPostId)
+	PRIMARY KEY (UserId, JobPostId),
+	FOREIGN KEY (StatusId) REFERENCES ApplyStatus(Id)
 );
 GO
 
@@ -220,5 +227,18 @@ CREATE TABLE CompanyImage(
 	[ImageContent] IMAGE,
 
 	FOREIGN KEY (CompanyId) REFERENCES CompanyProfile(Id)
+);
+GO
+
+CREATE TABLE InterviewEvent(
+	Id INT PRIMARY KEY IDENTITY(1, 1),
+	CompanyId INT NOT NULL,
+	JobPostId INT NOT NULL,
+	Title VARCHAR(255) DEFAULT 'No title',
+	[From] DATETIME NOT NULL,
+	[To] DATETIME NOT NULL,
+
+	FOREIGN KEY (CompanyId) REFERENCES CompanyProfile(Id),
+	FOREIGN KEY (JobPostId) REFERENCES JobPost(Id),
 );
 GO

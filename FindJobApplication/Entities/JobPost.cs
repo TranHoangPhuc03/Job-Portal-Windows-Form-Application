@@ -17,6 +17,7 @@ namespace FindJobApplication.Entities
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public JobPost()
         {
+            this.InterviewEvents = new HashSet<InterviewEvent>();
             this.UserApplyJobs = new HashSet<UserApplyJob>();
             this.Skills = new HashSet<Skill>();
             this.UserProfiles = new HashSet<UserProfile>();
@@ -38,6 +39,8 @@ namespace FindJobApplication.Entities
         public int CompanyId { get; set; }
     
         public virtual CompanyProfile CompanyProfile { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<InterviewEvent> InterviewEvents { get; set; }
         public virtual Location Location { get; set; }
         public virtual YearExperience YearExperience { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
