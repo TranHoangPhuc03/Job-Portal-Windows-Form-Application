@@ -78,7 +78,7 @@
             this.btnSetting.TabIndex = 34;
             this.btnSetting.Text = "Setting";
             this.btnSetting.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click_1);
+            this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);
             // 
             // btnSocialPost
             // 

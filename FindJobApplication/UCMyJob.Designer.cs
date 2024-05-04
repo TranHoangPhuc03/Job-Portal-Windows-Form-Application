@@ -73,10 +73,9 @@
             this.btnListJobSave.HoverState.FillColor = System.Drawing.Color.Silver;
             this.btnListJobSave.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnListJobSave.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnListJobSave.Location = new System.Drawing.Point(77, 13);
-            this.btnListJobSave.Margin = new System.Windows.Forms.Padding(2);
+            this.btnListJobSave.Location = new System.Drawing.Point(116, 20);
             this.btnListJobSave.Name = "btnListJobSave";
-            this.btnListJobSave.Size = new System.Drawing.Size(179, 68);
+            this.btnListJobSave.Size = new System.Drawing.Size(268, 105);
             this.btnListJobSave.TabIndex = 43;
             this.btnListJobSave.Text = "Saved Jobs";
             this.btnListJobSave.TextOffset = new System.Drawing.Point(0, -15);
@@ -102,10 +101,9 @@
             this.btnListJobApply.HoverState.FillColor = System.Drawing.Color.Silver;
             this.btnListJobApply.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnListJobApply.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnListJobApply.Location = new System.Drawing.Point(331, 13);
-            this.btnListJobApply.Margin = new System.Windows.Forms.Padding(2);
+            this.btnListJobApply.Location = new System.Drawing.Point(496, 20);
             this.btnListJobApply.Name = "btnListJobApply";
-            this.btnListJobApply.Size = new System.Drawing.Size(190, 68);
+            this.btnListJobApply.Size = new System.Drawing.Size(285, 105);
             this.btnListJobApply.TabIndex = 44;
             this.btnListJobApply.Text = "Applied Jobs";
             this.btnListJobApply.TextOffset = new System.Drawing.Point(0, -15);
@@ -122,10 +120,10 @@
             this.customeGradientPanel1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(247)))));
             this.customeGradientPanel1.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(247)))));
             this.customeGradientPanel1.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(247)))));
-            this.customeGradientPanel1.Location = new System.Drawing.Point(0, 137);
+            this.customeGradientPanel1.Location = new System.Drawing.Point(11, 211);
             this.customeGradientPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.customeGradientPanel1.Name = "customeGradientPanel1";
-            this.customeGradientPanel1.Size = new System.Drawing.Size(1184, 777);
+            this.customeGradientPanel1.Size = new System.Drawing.Size(1754, 1195);
             this.customeGradientPanel1.TabIndex = 46;
             // 
             // guna2CustomGradientPanel1
@@ -138,10 +136,10 @@
             this.guna2CustomGradientPanel1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(247)))));
             this.guna2CustomGradientPanel1.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(247)))));
             this.guna2CustomGradientPanel1.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(247)))));
-            this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(0, 48);
+            this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(11, 74);
             this.guna2CustomGradientPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
-            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(1184, 78);
+            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(1754, 120);
             this.guna2CustomGradientPanel1.TabIndex = 45;
             // 
             // guna2CustomGradientPanel2
@@ -160,9 +158,10 @@
             this.guna2CustomGradientPanel2.Controls.Add(this.guna2PictureBox1);
             this.guna2CustomGradientPanel2.Controls.Add(this.label1);
             this.guna2CustomGradientPanel2.CustomBorderThickness = new System.Windows.Forms.Padding(10);
-            this.guna2CustomGradientPanel2.Location = new System.Drawing.Point(5, 15);
+            this.guna2CustomGradientPanel2.Location = new System.Drawing.Point(8, 23);
+            this.guna2CustomGradientPanel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.guna2CustomGradientPanel2.Name = "guna2CustomGradientPanel2";
-            this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(1175, 50);
+            this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(1733, 77);
             this.guna2CustomGradientPanel2.TabIndex = 0;
             // 
             // lblStatusHeader
@@ -171,7 +170,8 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblStatusHeader.AutoSize = true;
             this.lblStatusHeader.Font = new System.Drawing.Font("Inter", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.lblStatusHeader.Location = new System.Drawing.Point(984, 13);
+            this.lblStatusHeader.Location = new System.Drawing.Point(1476, 20);
+            this.lblStatusHeader.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblStatusHeader.Name = "lblStatusHeader";
             this.lblStatusHeader.Size = new System.Drawing.Size(76, 25);
             this.lblStatusHeader.TabIndex = 8;
@@ -183,9 +183,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.icoStatusHeader.Image = global::FindJobApplication.Properties.Resources.status;
             this.icoStatusHeader.ImageRotate = 0F;
-            this.icoStatusHeader.Location = new System.Drawing.Point(948, 8);
+            this.icoStatusHeader.Location = new System.Drawing.Point(1422, 12);
+            this.icoStatusHeader.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.icoStatusHeader.Name = "icoStatusHeader";
-            this.icoStatusHeader.Size = new System.Drawing.Size(30, 30);
+            this.icoStatusHeader.Size = new System.Drawing.Size(16, 46);
             this.icoStatusHeader.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.icoStatusHeader.TabIndex = 7;
             this.icoStatusHeader.TabStop = false;
@@ -196,7 +197,8 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTimeHeader.AutoSize = true;
             this.lblTimeHeader.Font = new System.Drawing.Font("Inter", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.lblTimeHeader.Location = new System.Drawing.Point(670, 13);
+            this.lblTimeHeader.Location = new System.Drawing.Point(1005, 20);
+            this.lblTimeHeader.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTimeHeader.Name = "lblTimeHeader";
             this.lblTimeHeader.Size = new System.Drawing.Size(140, 25);
             this.lblTimeHeader.TabIndex = 6;
@@ -208,9 +210,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2PictureBox3.Image = global::FindJobApplication.Properties.Resources.Mail_Calender;
             this.guna2PictureBox3.ImageRotate = 0F;
-            this.guna2PictureBox3.Location = new System.Drawing.Point(630, 10);
+            this.guna2PictureBox3.Location = new System.Drawing.Point(945, 15);
+            this.guna2PictureBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.guna2PictureBox3.Name = "guna2PictureBox3";
-            this.guna2PictureBox3.Size = new System.Drawing.Size(30, 30);
+            this.guna2PictureBox3.Size = new System.Drawing.Size(16, 46);
             this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox3.TabIndex = 5;
             this.guna2PictureBox3.TabStop = false;
@@ -221,7 +224,8 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Inter", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(425, 13);
+            this.label3.Location = new System.Drawing.Point(638, 20);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(107, 25);
             this.label3.TabIndex = 4;
@@ -233,9 +237,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2PictureBox2.Image = global::FindJobApplication.Properties.Resources.Company;
             this.guna2PictureBox2.ImageRotate = 0F;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(385, 10);
+            this.guna2PictureBox2.Location = new System.Drawing.Point(578, 15);
+            this.guna2PictureBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.guna2PictureBox2.Name = "guna2PictureBox2";
-            this.guna2PictureBox2.Size = new System.Drawing.Size(30, 30);
+            this.guna2PictureBox2.Size = new System.Drawing.Size(16, 46);
             this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox2.TabIndex = 3;
             this.guna2PictureBox2.TabStop = false;
@@ -244,7 +249,8 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Inter", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(105, 13);
+            this.label2.Location = new System.Drawing.Point(158, 20);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 25);
             this.label2.TabIndex = 2;
@@ -254,9 +260,10 @@
             // 
             this.guna2PictureBox1.Image = global::FindJobApplication.Properties.Resources.Mail_title;
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(65, 10);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(98, 15);
+            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(30, 30);
+            this.guna2PictureBox1.Size = new System.Drawing.Size(45, 46);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox1.TabIndex = 1;
             this.guna2PictureBox1.TabStop = false;
@@ -265,7 +272,8 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Inter", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(21, 13);
+            this.label1.Location = new System.Drawing.Point(32, 20);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(33, 25);
             this.label1.TabIndex = 0;
@@ -273,20 +281,24 @@
             // 
             // pnlMain
             // 
+            this.pnlMain.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(247)))));
             this.pnlMain.ColumnCount = 1;
             this.pnlMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMain.Location = new System.Drawing.Point(0, 0);
+            this.pnlMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.pnlMain.Location = new System.Drawing.Point(8, 10);
             this.pnlMain.Margin = new System.Windows.Forms.Padding(0);
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.RowCount = 1;
             this.pnlMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.pnlMain.Size = new System.Drawing.Size(1184, 777);
-            this.pnlMain.TabIndex = 0;
+            this.pnlMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 1245F));
+            this.pnlMain.Size = new System.Drawing.Size(1733, 1172);
+            this.pnlMain.TabIndex = 1;
             // 
             // UCMyJob
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.guna2CustomGradientPanel1);
@@ -295,7 +307,7 @@
             this.Controls.Add(this.customeGradientPanel1);
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "UCMyJob";
-            this.Size = new System.Drawing.Size(1184, 935);
+            this.Size = new System.Drawing.Size(1776, 1438);
             this.Load += new System.EventHandler(this.UCMyJob_Load);
             this.customeGradientPanel1.ResumeLayout(false);
             this.guna2CustomGradientPanel1.ResumeLayout(false);

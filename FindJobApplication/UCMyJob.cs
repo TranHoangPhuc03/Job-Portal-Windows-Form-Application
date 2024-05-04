@@ -36,7 +36,7 @@ namespace FindJobApplication
             var savedJobs = userProfile.JobPosts.ToList();
             pnlMain.Controls.Clear();
             pnlMain.RowCount = 0;
-            for (int i = 0; i < savedJobs.Count; ++i)
+            for (int i = 0; i < savedJobs.Count; i++)
             {
                 pnlMain.Controls.Add(new UCJobApply(i+1, savedJobs[i]));
             }

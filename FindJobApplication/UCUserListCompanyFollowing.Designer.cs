@@ -51,10 +51,10 @@
             this.guna2CustomGradientPanel1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(247)))));
             this.guna2CustomGradientPanel1.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(247)))));
             this.guna2CustomGradientPanel1.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(247)))));
-            this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(0, 10);
+            this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(11, 15);
             this.guna2CustomGradientPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
-            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(1184, 78);
+            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(1754, 120);
             this.guna2CustomGradientPanel1.TabIndex = 50;
             // 
             // guna2CustomGradientPanel2
@@ -67,17 +67,17 @@
             this.guna2CustomGradientPanel2.Controls.Add(this.guna2PictureBox1);
             this.guna2CustomGradientPanel2.Controls.Add(this.label1);
             this.guna2CustomGradientPanel2.CustomBorderThickness = new System.Windows.Forms.Padding(10);
-            this.guna2CustomGradientPanel2.Location = new System.Drawing.Point(5, 15);
+            this.guna2CustomGradientPanel2.Location = new System.Drawing.Point(8, 23);
             this.guna2CustomGradientPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.guna2CustomGradientPanel2.Name = "guna2CustomGradientPanel2";
-            this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(1174, 50);
+            this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(1739, 77);
             this.guna2CustomGradientPanel2.TabIndex = 0;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Inter", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(105, 13);
+            this.label2.Location = new System.Drawing.Point(158, 20);
             this.label2.Margin = new System.Windows.Forms.Padding(0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(107, 25);
@@ -88,10 +88,10 @@
             // 
             this.guna2PictureBox1.Image = global::FindJobApplication.Properties.Resources.Company;
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(65, 10);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(98, 15);
             this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(30, 30);
+            this.guna2PictureBox1.Size = new System.Drawing.Size(45, 46);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox1.TabIndex = 1;
             this.guna2PictureBox1.TabStop = false;
@@ -100,7 +100,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Inter", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(21, 13);
+            this.label1.Location = new System.Drawing.Point(32, 20);
             this.label1.Margin = new System.Windows.Forms.Padding(0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(33, 25);
@@ -117,36 +117,36 @@
             this.pnlListCompanyFollowing.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(247)))));
             this.pnlListCompanyFollowing.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(247)))));
             this.pnlListCompanyFollowing.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(247)))));
-            this.pnlListCompanyFollowing.Location = new System.Drawing.Point(0, 103);
+            this.pnlListCompanyFollowing.Location = new System.Drawing.Point(11, 153);
             this.pnlListCompanyFollowing.Margin = new System.Windows.Forms.Padding(0);
             this.pnlListCompanyFollowing.Name = "pnlListCompanyFollowing";
-            this.pnlListCompanyFollowing.Size = new System.Drawing.Size(1184, 844);
+            this.pnlListCompanyFollowing.Size = new System.Drawing.Size(1754, 1298);
             this.pnlListCompanyFollowing.TabIndex = 51;
             // 
             // pnlMain
             // 
             this.pnlMain.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(247)))));
             this.pnlMain.ColumnCount = 1;
             this.pnlMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.pnlMain.Location = new System.Drawing.Point(0, 0);
+            this.pnlMain.Location = new System.Drawing.Point(8, 10);
             this.pnlMain.Margin = new System.Windows.Forms.Padding(0);
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.RowCount = 1;
             this.pnlMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.pnlMain.Size = new System.Drawing.Size(1184, 844);
+            this.pnlMain.Size = new System.Drawing.Size(1739, 1259);
             this.pnlMain.TabIndex = 0;
             // 
             // UCUserListCompanyFollowing
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.pnlListCompanyFollowing);
             this.Controls.Add(this.guna2CustomGradientPanel1);
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UCUserListCompanyFollowing";
-            this.Size = new System.Drawing.Size(1184, 935);
+            this.Size = new System.Drawing.Size(1776, 1438);
             this.Load += new System.EventHandler(this.UCUserListCompanyFollowing_Load);
             this.guna2CustomGradientPanel1.ResumeLayout(false);
             this.guna2CustomGradientPanel2.ResumeLayout(false);

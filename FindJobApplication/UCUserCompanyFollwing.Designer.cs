@@ -40,8 +40,7 @@
             this.llblNameCompany.Cursor = System.Windows.Forms.Cursors.Hand;
             this.llblNameCompany.Font = new System.Drawing.Font("Inter", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.llblNameCompany.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.llblNameCompany.Location = new System.Drawing.Point(65, 13);
-            this.llblNameCompany.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.llblNameCompany.Location = new System.Drawing.Point(98, 20);
             this.llblNameCompany.Name = "llblNameCompany";
             this.llblNameCompany.Size = new System.Drawing.Size(107, 25);
             this.llblNameCompany.TabIndex = 18;
@@ -58,16 +57,18 @@
             this.guna2CustomGradientPanel2.Controls.Add(this.llblNameCompany);
             this.guna2CustomGradientPanel2.Controls.Add(this.lblID);
             this.guna2CustomGradientPanel2.CustomBorderThickness = new System.Windows.Forms.Padding(10);
-            this.guna2CustomGradientPanel2.Location = new System.Drawing.Point(3, 6);
+            this.guna2CustomGradientPanel2.Location = new System.Drawing.Point(4, 9);
+            this.guna2CustomGradientPanel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.guna2CustomGradientPanel2.Name = "guna2CustomGradientPanel2";
-            this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(1140, 50);
+            this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(1710, 77);
             this.guna2CustomGradientPanel2.TabIndex = 47;
             // 
             // lblID
             // 
             this.lblID.AutoSize = true;
             this.lblID.Font = new System.Drawing.Font("Inter", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.lblID.Location = new System.Drawing.Point(21, 13);
+            this.lblID.Location = new System.Drawing.Point(32, 20);
+            this.lblID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(33, 25);
             this.lblID.TabIndex = 0;
@@ -75,13 +76,12 @@
             // 
             // UCUserCompanyFollwing
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.guna2CustomGradientPanel2);
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UCUserCompanyFollwing";
-            this.Size = new System.Drawing.Size(1147, 64);
+            this.Size = new System.Drawing.Size(1720, 98);
             this.guna2CustomGradientPanel2.ResumeLayout(false);
             this.guna2CustomGradientPanel2.PerformLayout();
             this.ResumeLayout(false);

@@ -1,4 +1,7 @@
-﻿using FindJobApplication.Entities;
+﻿using FindJobApplication.Daos;
+using FindJobApplication.Entities;
+using FindJobApplication.Utils;
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +18,8 @@ namespace FindJobApplication
 
     public partial class UCScheduleEventRows : UserControl
     {
+        int idEvent;
+        DateTime currentDate;
         public event FillToMainPanelHandler FillToMainPanelClicked = UCPanelMain.UC_RequiredAddControl;
 
         public UCScheduleEventRows()
@@ -35,17 +40,27 @@ namespace FindJobApplication
             lblFrom.Text = interviewEvent.From.ToString("HH:mm");
             lblTo.Text = interviewEvent.To.ToString("HH:mm");
             Tag = interviewEvent.JobPostId;
-        }
-
-        private void pbEdit_Click(object sender, EventArgs e)
-        {
-            FScheduleAddNewEvent fScheduleAddNewEvent = new FScheduleAddNewEvent();
-            fScheduleAddNewEvent.Show();
+            idEvent = interviewEvent.Id;
+            currentDate = Convert.ToDateTime(lblFrom.Text);
         }
 
         private void pbSeePeopleInterview_Click(object sender, EventArgs e)
         {
             FillToMainPanelClicked?.Invoke(this, new UCScheduleEventDetail((int)Tag));
+        }
+
+        private void pBDelete_Click(object sender, EventArgs e)
+        {
+           EventDao eventDao = new EventDao();
+           int results = eventDao.DeleteEventById(idEvent);
+            if (results == 0)
+            {
+                MessageDialog.Show("Failed to Delete the job post", "Error", MessageDialogStyle.Light);
+            }
+            else
+            {
+                MessageDialog.Show( "Job post Delete successfully", MessageDialogStyle.Light);
+            }
         }
     }
 }
