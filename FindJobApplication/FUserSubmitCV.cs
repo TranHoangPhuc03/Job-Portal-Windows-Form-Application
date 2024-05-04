@@ -17,34 +17,37 @@ namespace FindJobApplication
     public partial class FUserSubmitCV : Form
     {
         private int jobId;
-        public FUserSubmitCV(JobPost jobPost)
+        public FUserSubmitCV()
         {
             InitializeComponent();
-            this.lblNameJob.Text = jobPost.Title;
-            this.jobId = jobPost.Id;
+        }
+
+        public FUserSubmitCV(JobPost jobPost) : this()
+        {
+            lblNameJob.Text = jobPost.Title;
             jobId = jobPost.Id;
         }
 
         private void btnSendCv_Click(object sender, EventArgs e)
         {
-            JobApplyDao jobapplydao = new JobApplyDao();
-            string coverletter = this.rtxtCoverLeter.Text;
-            string status = "pending";
-            DateTime appliedat = DateTime.Now;
-            UserApplyJob userApplyJob = new UserApplyJob();
-            userApplyJob.AppliedAt = appliedat;
-            userApplyJob.ApplyStatu.Status = status;
-            userApplyJob.CoverLetter = coverletter;
-            userApplyJob.CvAttachment = " ";
-            userApplyJob.JobPostId = jobId;
-            userApplyJob.UserId = Session.account.Id;
-            jobapplydao.SaveUserApplyJob(userApplyJob);
-            this.Close();
+            JobApplyDao jobApplyDao = new JobApplyDao();
+            string coverLetter = rtxtCoverLeter.Text;
+            DateTime appliedAt = DateTime.Now;
+            UserApplyJob userApplyJob = new UserApplyJob()
+            {
+                UserId = Session.account.Id,
+                JobPostId = jobId,
+                CoverLetter = coverLetter,
+                AppliedAt = appliedAt,
+                StatusId = (int)StatusName.Pending+1
+            };
+            int result = jobApplyDao.SaveUserApplyJob(userApplyJob);
+            Close();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
     }
 }
