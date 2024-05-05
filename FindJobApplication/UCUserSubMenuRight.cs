@@ -20,6 +20,14 @@ namespace FindJobApplication
         public UCUserSubMenuRight()
         {
             InitializeComponent();
+            InitHandleClickAllSubMenu();
+        }
+        private void InitHandleClickAllSubMenu()
+        {
+            foreach (Control c in pnlMenu.Controls)
+            {
+                c.Click += (sender, e) => HideAndShowSubMenu(this);
+            }
         }
 
         public void HideAndShowSubMenu(object sender)

@@ -19,12 +19,18 @@ namespace FindJobApplication
         public UCCompanySubMenuRight()
         {
             InitializeComponent();
+            InitHandleClickAllSubMenu();
         }
-        public void hideMenu()
+
+        private void InitHandleClickAllSubMenu()
         {
-            this.Visible = false;
+            foreach (Control c in pnlMenu.Controls)
+            {
+                c.Click += (sender, e) => HideAndShowSubMenu(this);
+            }
         }
-        public void hideAndShowSubMenu(object sender)
+
+        public void HideAndShowSubMenu(object sender)
         {
             (sender as UserControl).AutoSize ^= true;
         }
@@ -32,25 +38,21 @@ namespace FindJobApplication
         private void btnProfile_Click(object sender, EventArgs e)
         {
             FillToMainPanelClicked?.Invoke(this, new UCCompanyProfile(Session.account.Id));
-            hideMenu();
         }
 
         private void btnSetting_Click(object sender, EventArgs e)
         {
             FillToMainPanelClicked?.Invoke(this, new UCSetting());
-            hideMenu();
         }
 
         private void btnFollowCV_Click(object sender, EventArgs e)
         {
             FillToMainPanelClicked?.Invoke(this, new UCCompanyListCVFollowing());
-            hideMenu();
         }
 
         private void btnSocialPost_Click(object sender, EventArgs e)
         {
             FillToMainPanelClicked?.Invoke(this, new UCSocialHistory());
-            hideMenu();
         }
     }
 }

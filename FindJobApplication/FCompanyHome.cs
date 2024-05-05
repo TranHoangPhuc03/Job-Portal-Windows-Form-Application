@@ -42,12 +42,12 @@ namespace FindJobApplication
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         private void pbUserImage_Click(object sender, EventArgs e)
         {
-            this.ucCompanySubMenuRight.hideAndShowSubMenu(this.ucCompanySubMenuRight);
+            ucCompanySubMenuRight.HideAndShowSubMenu(ucCompanySubMenuRight);
         }
 
         private void btnHome_Click(object sender, EventArgs e)
