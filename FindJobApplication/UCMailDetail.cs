@@ -8,11 +8,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.IO;
+using FindJobApplication.Utils;
 namespace FindJobApplication
 {
     public partial class UCMailDetail : UserControl
     {
+        string filePath;
+        string mailRecive;
         public UCMailDetail()
         {
             InitializeComponent();
@@ -26,7 +29,21 @@ namespace FindJobApplication
             lblTo.Text= mail.Account1.Name;
             lblTitle.Text = mail.Title;
             rtxtLetter.Text = mail.Contents;
-
+            if (mail.AttachFile != null)
+            {
+                this.filePath = mail.AttachFile;
+                string fileName = Path.GetFileName(mail.AttachFile);
+                txtNameFile.Text = fileName;
+                txtNameFile.Visible = true;
+            }
+            if (mail.Account1.Name == Session.account.Name)
+            {
+                mailRecive = mail.Account.Email;
+            }
+            else
+            {
+                mailRecive = mail.Account1.Email;
+            }
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -41,8 +58,21 @@ namespace FindJobApplication
 
         private void btnResponse_Click(object sender, EventArgs e)
         {
-            FSendMail fSendMail = new FSendMail();
+            FSendMail fSendMail = new FSendMail(mailRecive);
             fSendMail.Show();
+        }
+
+        private void btnSeeCV_Click(object sender, EventArgs e)
+        {
+            if (txtNameFile.Text != "none")
+            {
+                FCompanySeeCV fCompanySeeCV = new FCompanySeeCV(filePath);
+                fCompanySeeCV.Show();
+            }
+            else
+            {
+                MessageBox.Show("No file here!");
+            }
         }
     }
 }

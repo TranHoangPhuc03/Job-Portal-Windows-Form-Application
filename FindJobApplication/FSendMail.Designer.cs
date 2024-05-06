@@ -41,10 +41,9 @@
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel4 = new Guna.UI.WinForms.GunaLabel();
-            this.gunaLabel5 = new Guna.UI.WinForms.GunaLabel();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.btnCancel = new Guna.UI2.WinForms.Guna2Button();
             this.btnSendMail = new Guna.UI2.WinForms.Guna2Button();
+            this.txtNameFile = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnChooseFile
@@ -64,6 +63,7 @@
             this.btnChooseFile.Size = new System.Drawing.Size(123, 26);
             this.btnChooseFile.TabIndex = 2;
             this.btnChooseFile.Text = "Choose file";
+            this.btnChooseFile.Click += new System.EventHandler(this.btnChooseFile_Click);
             // 
             // guna2Separator2
             // 
@@ -112,6 +112,7 @@
             this.txtEmailFrom.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtEmailFrom.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtEmailFrom.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtEmailFrom.Enabled = false;
             this.txtEmailFrom.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtEmailFrom.Font = new System.Drawing.Font("Inter", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtEmailFrom.ForeColor = System.Drawing.Color.Black;
@@ -224,35 +225,6 @@
             this.gunaLabel4.TabIndex = 43;
             this.gunaLabel4.Text = "To: ";
             // 
-            // gunaLabel5
-            // 
-            this.gunaLabel5.AutoSize = true;
-            this.gunaLabel5.Font = new System.Drawing.Font("Inter", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.gunaLabel5.Location = new System.Drawing.Point(23, 570);
-            this.gunaLabel5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.gunaLabel5.Name = "gunaLabel5";
-            this.gunaLabel5.Size = new System.Drawing.Size(81, 19);
-            this.gunaLabel5.TabIndex = 45;
-            this.gunaLabel5.Text = "Up Photo";
-            // 
-            // guna2Button1
-            // 
-            this.guna2Button1.BorderRadius = 6;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.LightGray;
-            this.guna2Button1.Font = new System.Drawing.Font("Inter", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.guna2Button1.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button1.HoverState.FillColor = System.Drawing.Color.Silver;
-            this.guna2Button1.Location = new System.Drawing.Point(112, 563);
-            this.guna2Button1.Margin = new System.Windows.Forms.Padding(2);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(123, 26);
-            this.guna2Button1.TabIndex = 44;
-            this.guna2Button1.Text = "Choose file";
-            // 
             // btnCancel
             // 
             this.btnCancel.BorderRadius = 10;
@@ -292,16 +264,26 @@
             this.btnSendMail.Text = "Send";
             this.btnSendMail.Click += new System.EventHandler(this.btnSendMail_Click);
             // 
+            // txtNameFile
+            // 
+            this.txtNameFile.AutoSize = true;
+            this.txtNameFile.Font = new System.Drawing.Font("Inter Italic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.txtNameFile.Location = new System.Drawing.Point(261, 533);
+            this.txtNameFile.Name = "txtNameFile";
+            this.txtNameFile.Size = new System.Drawing.Size(38, 15);
+            this.txtNameFile.TabIndex = 50;
+            this.txtNameFile.Text = "name";
+            this.txtNameFile.Visible = false;
+            // 
             // FSendMail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(681, 717);
+            this.Controls.Add(this.txtNameFile);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSendMail);
-            this.Controls.Add(this.gunaLabel5);
-            this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.gunaLabel4);
             this.Controls.Add(this.gunaLabel3);
             this.Controls.Add(this.gunaLabel2);
@@ -340,9 +322,8 @@
         private Guna.UI.WinForms.GunaLabel gunaLabel2;
         private Guna.UI.WinForms.GunaLabel gunaLabel3;
         private Guna.UI.WinForms.GunaLabel gunaLabel4;
-        private Guna.UI.WinForms.GunaLabel gunaLabel5;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2Button btnCancel;
         private Guna.UI2.WinForms.Guna2Button btnSendMail;
+        private System.Windows.Forms.Label txtNameFile;
     }
 }

@@ -28,24 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pnlListJob = new System.Windows.Forms.FlowLayoutPanel();
             this.lblRecruitment = new Guna.UI.WinForms.GunaLabel();
             this.lblCountJob = new Guna.UI.WinForms.GunaLabel();
             this.btnBack = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.pnlListJob = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pnlListJob
-            // 
-            this.pnlListJob.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlListJob.AutoScroll = true;
-            this.pnlListJob.Location = new System.Drawing.Point(19, 123);
-            this.pnlListJob.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.pnlListJob.Name = "pnlListJob";
-            this.pnlListJob.Size = new System.Drawing.Size(1144, 795);
-            this.pnlListJob.TabIndex = 42;
             // 
             // lblRecruitment
             // 
@@ -69,9 +57,9 @@
             this.lblCountJob.Location = new System.Drawing.Point(487, 69);
             this.lblCountJob.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCountJob.Name = "lblCountJob";
-            this.lblCountJob.Size = new System.Drawing.Size(37, 40);
+            this.lblCountJob.Size = new System.Drawing.Size(38, 40);
             this.lblCountJob.TabIndex = 45;
-            this.lblCountJob.Text = "2";
+            this.lblCountJob.Text = "0";
             // 
             // btnBack
             // 
@@ -86,15 +74,27 @@
             this.btnBack.TabStop = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // pnlListJob
+            // 
+            this.pnlListJob.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlListJob.AutoScroll = true;
+            this.pnlListJob.BackColor = System.Drawing.Color.White;
+            this.pnlListJob.Location = new System.Drawing.Point(14, 134);
+            this.pnlListJob.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlListJob.Name = "pnlListJob";
+            this.pnlListJob.Size = new System.Drawing.Size(1151, 816);
+            this.pnlListJob.TabIndex = 47;
+            // 
             // UCCompanyJobRecruitment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
+            this.Controls.Add(this.pnlListJob);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.lblCountJob);
             this.Controls.Add(this.lblRecruitment);
-            this.Controls.Add(this.pnlListJob);
             this.Name = "UCCompanyJobRecruitment";
             this.Size = new System.Drawing.Size(1184, 936);
             this.Load += new System.EventHandler(this.UCCompanyJobRecruitment_Load);
@@ -105,10 +105,9 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.FlowLayoutPanel pnlListJob;
         private Guna.UI.WinForms.GunaLabel lblRecruitment;
         private Guna.UI.WinForms.GunaLabel lblCountJob;
         private Guna.UI2.WinForms.Guna2PictureBox btnBack;
+        private System.Windows.Forms.FlowLayoutPanel pnlListJob;
     }
 }

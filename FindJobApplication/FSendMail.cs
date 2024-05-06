@@ -1,5 +1,6 @@
 ﻿using FindJobApplication.Daos;
 using FindJobApplication.Entities;
+using FindJobApplication.Utils;
 using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
@@ -10,21 +11,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.IO;
 namespace FindJobApplication
 {
     public partial class FSendMail : Form
     {
         MailDao mailDao = new MailDao();
         AccountDao accountDao = new AccountDao();
-
+        string emailSend = Session.account.Email;
+        string emailRecive;
+        string filePath;
         public FSendMail()
         {
             InitializeComponent();
+            txtEmailFrom.Text = emailSend;
         }
-
+        public FSendMail(string emailRecive) : this()
+        {
+            this.emailRecive = emailRecive;
+            txtEmailFrom.Text = emailSend;
+            txtEmailTo.Text = emailRecive;
+            txtEmailTo.Enabled = false;
+        }
         private void btnSendMail_Click(object sender, EventArgs e)
         {
+
             string emailFrom = txtEmailFrom.Text;
             string emailTo = txtEmailTo.Text;
 
@@ -55,7 +66,9 @@ namespace FindJobApplication
                 ToId = accountDao.FindAccountByEmail(emailTo).Id,
                 Title = title,
                 Contents = contents,
-                SendDate = DateTime.Now
+                SendDate = DateTime.Now,
+                AttachFile =  this.filePath
+
             };
 
             int result = mailDao.SaveNewMail(mail);
@@ -74,5 +87,25 @@ namespace FindJobApplication
         {
             Close();
         }
+
+        private void btnChooseFile_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+
+            openFileDialog1.InitialDirectory = "c:\\"; 
+            openFileDialog1.Filter = "Image files (*.jpg, *.jpeg, *.png, *.gif) | *.jpg; *.jpeg; *.png; *.gif";
+            openFileDialog1.FilterIndex = 1; 
+            openFileDialog1.RestoreDirectory = true; 
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                this.filePath = openFileDialog1.FileName;
+                string fileName = Path.GetFileName(filePath);
+
+                txtNameFile.Text = fileName;
+                txtNameFile.Visible = true;
+            }
+        }
+
     }
 }

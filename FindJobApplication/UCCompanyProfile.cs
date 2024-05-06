@@ -16,6 +16,8 @@ namespace FindJobApplication
     public partial class UCCompanyProfile : UserControl
     {
         private int companyId;
+        public event FillToMainPanelHandler FillToMainPanelClicked = UCPanelMain.UC_RequiredAddControl;
+
         public UCCompanyProfile()
         {
             InitializeComponent();
@@ -94,15 +96,16 @@ namespace FindJobApplication
 
         private void btnInbox_Click(object sender, EventArgs e)
         {
-            FSendMail fSendMail = new FSendMail();
+            CompanyProfileDao companyProfileDao = new CompanyProfileDao();
+            CompanyProfile companyProfile = companyProfileDao.FindCompanyProfileByAccountId(this.companyId);
+            FSendMail fSendMail = new FSendMail(companyProfile.Account.Email);
             fSendMail.Show();
         }
 
         private void btnSeeJob_Click(object sender, EventArgs e)
         {
             UCCompanyJobRecruitment uCCompanyJobRecruitment = new UCCompanyJobRecruitment(companyId);
-            UCMain.Instance.PnlMid.Controls.Add(uCCompanyJobRecruitment);
-            uCCompanyJobRecruitment.BringToFront();
+            FillToMainPanelClicked?.Invoke(this, uCCompanyJobRecruitment);
         }
 
         private void btnBack_Click(object sender, EventArgs e)

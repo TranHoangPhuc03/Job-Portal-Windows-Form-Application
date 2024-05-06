@@ -15,6 +15,7 @@ namespace FindJobApplication
     public partial class UCCompanyPeopleApplied : UserControl
     {
         public event FillToMainPanelHandler FillToMainPanelClicked = UCPanelMain.UC_RequiredAddControl;
+        UserApplyJob userApplyJob = new UserApplyJob();
         public UCCompanyPeopleApplied()
         {
             InitializeComponent();
@@ -28,6 +29,8 @@ namespace FindJobApplication
 
         public UCCompanyPeopleApplied(int rowId, UserApplyJob user) : this(rowId)
         {
+            this.userApplyJob.UserId = user.UserId;
+            this.userApplyJob.CvAttachment = user.CvAttachment;
             lblNamePeople.Text = user.UserProfile.Account.Name;
             lblDayApply.Text = user.AppliedAt.ToString("dd-MM-yyy");
             lblStatus.Text = user.ApplyStatu.Status;
@@ -36,8 +39,17 @@ namespace FindJobApplication
 
         private void pbSeeDetail_Click(object sender, EventArgs e)
         {
-            UCCompanySeeProfilePeople uCCompanySeeProfilePeople = new UCCompanySeeProfilePeople(pbSeeDetail.Tag as UserApplyJob);
-            FillToMainPanelClicked?.Invoke(this, uCCompanySeeProfilePeople);
+            if (this.userApplyJob.CvAttachment == null || this.userApplyJob.CvAttachment == "") 
+            {
+                UCCompanySeeProfilePeople uCCompanySeeProfilePeople = new UCCompanySeeProfilePeople(pbSeeDetail.Tag as UserApplyJob);
+                FillToMainPanelClicked?.Invoke(this, uCCompanySeeProfilePeople);
+            }
+            else
+            {
+                FCompanySeeCV fCompanySeeCV = new FCompanySeeCV(this.userApplyJob.CvAttachment);
+                fCompanySeeCV.Show();
+            }
+
         }
     }
 }

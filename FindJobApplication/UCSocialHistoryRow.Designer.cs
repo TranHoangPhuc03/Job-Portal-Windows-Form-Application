@@ -61,8 +61,7 @@
             // 
             // pbEdit
             // 
-            this.pbEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pbEdit.BackColor = System.Drawing.Color.White;
             this.pbEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbEdit.Image = global::FindJobApplication.Properties.Resources.edit1;
@@ -77,6 +76,7 @@
             // 
             // pbDelete
             // 
+            this.pbDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pbDelete.BackColor = System.Drawing.Color.White;
             this.pbDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbDelete.Image = global::FindJobApplication.Properties.Resources.delete;

@@ -34,8 +34,8 @@
             this.rtxtDescription = new System.Windows.Forms.RichTextBox();
             this.lblDatePost = new Guna.UI.WinForms.GunaLabel();
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.btnSendMail = new Guna.UI2.WinForms.Guna2Button();
             this.pbAvatar = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.btnSendMail = new Guna.UI2.WinForms.Guna2Button();
             this.guna2CustomGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbAvatar)).BeginInit();
             this.SuspendLayout();
@@ -44,7 +44,8 @@
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Inter SemiBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(30, 122);
+            this.lblTitle.Location = new System.Drawing.Point(20, 79);
+            this.lblTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(137, 25);
             this.lblTitle.TabIndex = 39;
@@ -56,20 +57,23 @@
             this.llblName.Font = new System.Drawing.Font("Inter", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.llblName.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.llblName.LinkColor = System.Drawing.Color.Black;
-            this.llblName.Location = new System.Drawing.Point(144, 29);
+            this.llblName.Location = new System.Drawing.Point(96, 19);
+            this.llblName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.llblName.Name = "llblName";
             this.llblName.Size = new System.Drawing.Size(111, 25);
             this.llblName.TabIndex = 6;
             this.llblName.TabStop = true;
             this.llblName.Text = "David Lee";
+            this.llblName.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblName_LinkClicked);
             // 
             // pnlSkill
             // 
             this.pnlSkill.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlSkill.Location = new System.Drawing.Point(38, 291);
+            this.pnlSkill.Location = new System.Drawing.Point(25, 189);
+            this.pnlSkill.Margin = new System.Windows.Forms.Padding(2);
             this.pnlSkill.Name = "pnlSkill";
-            this.pnlSkill.Size = new System.Drawing.Size(1152, 54);
+            this.pnlSkill.Size = new System.Drawing.Size(757, 35);
             this.pnlSkill.TabIndex = 5;
             // 
             // rtxtDescription
@@ -77,10 +81,11 @@
             this.rtxtDescription.BackColor = System.Drawing.Color.White;
             this.rtxtDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtxtDescription.Font = new System.Drawing.Font("Inter", 15.15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtxtDescription.Location = new System.Drawing.Point(36, 165);
+            this.rtxtDescription.Location = new System.Drawing.Point(24, 107);
+            this.rtxtDescription.Margin = new System.Windows.Forms.Padding(2);
             this.rtxtDescription.Name = "rtxtDescription";
             this.rtxtDescription.ReadOnly = true;
-            this.rtxtDescription.Size = new System.Drawing.Size(1558, 102);
+            this.rtxtDescription.Size = new System.Drawing.Size(1039, 66);
             this.rtxtDescription.TabIndex = 4;
             this.rtxtDescription.Text = "Hello HR. I am looking for a job at Java backend positions. Below is my CV.";
             // 
@@ -88,7 +93,8 @@
             // 
             this.lblDatePost.AutoSize = true;
             this.lblDatePost.Font = new System.Drawing.Font("Inter Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.lblDatePost.Location = new System.Drawing.Point(146, 77);
+            this.lblDatePost.Location = new System.Drawing.Point(97, 50);
+            this.lblDatePost.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDatePost.Name = "lblDatePost";
             this.lblDatePost.Size = new System.Drawing.Size(103, 19);
             this.lblDatePost.TabIndex = 3;
@@ -111,8 +117,20 @@
             this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(0, 0);
             this.guna2CustomGradientPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
-            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(1776, 366);
+            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(1173, 238);
             this.guna2CustomGradientPanel1.TabIndex = 4;
+            // 
+            // pbAvatar
+            // 
+            this.pbAvatar.ImageRotate = 0F;
+            this.pbAvatar.Location = new System.Drawing.Point(23, 14);
+            this.pbAvatar.Margin = new System.Windows.Forms.Padding(2);
+            this.pbAvatar.Name = "pbAvatar";
+            this.pbAvatar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.pbAvatar.Size = new System.Drawing.Size(50, 49);
+            this.pbAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbAvatar.TabIndex = 40;
+            this.pbAvatar.TabStop = false;
             // 
             // btnSendMail
             // 
@@ -130,32 +148,23 @@
             this.btnSendMail.HoverState.FillColor = System.Drawing.Color.Chocolate;
             this.btnSendMail.Image = global::FindJobApplication.Properties.Resources.Social_Mail;
             this.btnSendMail.ImageSize = new System.Drawing.Size(36, 41);
-            this.btnSendMail.Location = new System.Drawing.Point(1442, 252);
+            this.btnSendMail.Location = new System.Drawing.Point(950, 164);
+            this.btnSendMail.Margin = new System.Windows.Forms.Padding(2);
             this.btnSendMail.Name = "btnSendMail";
-            this.btnSendMail.Size = new System.Drawing.Size(300, 92);
+            this.btnSendMail.Size = new System.Drawing.Size(200, 60);
             this.btnSendMail.TabIndex = 38;
             this.btnSendMail.Text = "Mail";
             this.btnSendMail.Click += new System.EventHandler(this.btnSendMail_Click);
             // 
-            // pbAvatar
-            // 
-            this.pbAvatar.ImageRotate = 0F;
-            this.pbAvatar.Location = new System.Drawing.Point(35, 21);
-            this.pbAvatar.Name = "pbAvatar";
-            this.pbAvatar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.pbAvatar.Size = new System.Drawing.Size(75, 75);
-            this.pbAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbAvatar.TabIndex = 40;
-            this.pbAvatar.TabStop = false;
-            // 
             // UCSocialPost
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(247)))));
             this.Controls.Add(this.guna2CustomGradientPanel1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UCSocialPost";
-            this.Size = new System.Drawing.Size(1776, 366);
+            this.Size = new System.Drawing.Size(1184, 238);
             this.guna2CustomGradientPanel1.ResumeLayout(false);
             this.guna2CustomGradientPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbAvatar)).EndInit();
