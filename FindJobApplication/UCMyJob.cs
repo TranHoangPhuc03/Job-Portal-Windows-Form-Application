@@ -49,15 +49,16 @@ namespace FindJobApplication
             lblTimeHeader.Text = "Applied at";
 
             var appliedJobs = userProfile.UserApplyJobs.ToList();
+            int oo = appliedJobs.Count;
             pnlMain.Controls.Clear();
             pnlMain.RowCount = 0;
             for (int i = 0; i < appliedJobs.Count; ++i)
             {
                 pnlMain.RowCount += 1;
-                pnlMain.Controls.Add(new UCJobApply(i + 1, appliedJobs[i], appliedJobs[i].JobPost));
+                pnlMain.Controls.Add(new UCJobApply(i+1, appliedJobs[i], appliedJobs[i].JobPost));
             }
             pnlMain.RowCount += 1;
-                }
+        }
         private void UCMyJob_Load(object sender, EventArgs e)
         {
             btnListJobSave.PerformClick();

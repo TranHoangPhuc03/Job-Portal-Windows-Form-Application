@@ -54,6 +54,10 @@ namespace FindJobApplication
             }
 
             btnSave.Checked = isFavourite;
+            if (Session.account.Role == "company")
+            {
+                btnSave.Visible = false;
+            }
         }
 
         public new GunaLinkLabel LLblNameJob { get => lLblNameJob; set { lLblNameJob = value; } }
