@@ -52,39 +52,24 @@
             this.lblProfileName = new Guna.UI.WinForms.GunaLabel();
             this.btnBack = new Guna.UI2.WinForms.Guna2PictureBox();
             this.pnlIntroduction = new Guna.UI.WinForms.GunaElipsePanel();
-            this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
-            this.guna2Separator5 = new Guna.UI2.WinForms.Guna2Separator();
             this.rtxtAboutMe = new System.Windows.Forms.RichTextBox();
-            this.pbIntroduction = new System.Windows.Forms.PictureBox();
             this.pbIntroductionEdit = new System.Windows.Forms.PictureBox();
             this.lblIntroduction = new Guna.UI.WinForms.GunaLabel();
             this.pnlEducation = new Guna.UI.WinForms.GunaElipsePanel();
-            this.guna2Separator6 = new Guna.UI2.WinForms.Guna2Separator();
-            this.guna2Separator7 = new Guna.UI2.WinForms.Guna2Separator();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.pnlEducationDetail = new System.Windows.Forms.FlowLayoutPanel();
-            this.pbEducation = new System.Windows.Forms.PictureBox();
             this.pbEducationEdit = new System.Windows.Forms.PictureBox();
             this.pnlWorkExperience = new Guna.UI.WinForms.GunaElipsePanel();
-            this.guna2Separator2 = new Guna.UI2.WinForms.Guna2Separator();
-            this.guna2Separator8 = new Guna.UI2.WinForms.Guna2Separator();
             this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
             this.pnlWorkExperienceDetail = new System.Windows.Forms.FlowLayoutPanel();
-            this.pbWorkExperience = new System.Windows.Forms.PictureBox();
             this.pbWorkExperienceEdit = new System.Windows.Forms.PictureBox();
             this.pnlSkills = new Guna.UI.WinForms.GunaElipsePanel();
-            this.guna2Separator9 = new Guna.UI2.WinForms.Guna2Separator();
-            this.guna2Separator10 = new Guna.UI2.WinForms.Guna2Separator();
             this.gunaLabel4 = new Guna.UI.WinForms.GunaLabel();
             this.pnlSkillDetail = new System.Windows.Forms.FlowLayoutPanel();
-            this.pbSkills = new System.Windows.Forms.PictureBox();
             this.pbSkillsEdit = new System.Windows.Forms.PictureBox();
             this.pnlPersonalProject = new Guna.UI.WinForms.GunaElipsePanel();
-            this.guna2Separator11 = new Guna.UI2.WinForms.Guna2Separator();
-            this.guna2Separator12 = new Guna.UI2.WinForms.Guna2Separator();
             this.gunaLabel5 = new Guna.UI.WinForms.GunaLabel();
             this.pnlProjectDetail = new System.Windows.Forms.FlowLayoutPanel();
-            this.pbPersonalProject = new System.Windows.Forms.PictureBox();
             this.pbPersonalProjectEdit = new System.Windows.Forms.PictureBox();
             this.pnlProfile = new System.Windows.Forms.TableLayoutPanel();
             this.pnlProfileInformation.SuspendLayout();
@@ -98,27 +83,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbProfileGender)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
             this.pnlIntroduction.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbIntroduction)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbIntroductionEdit)).BeginInit();
             this.pnlEducation.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbEducation)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEducationEdit)).BeginInit();
             this.pnlWorkExperience.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbWorkExperience)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbWorkExperienceEdit)).BeginInit();
             this.pnlSkills.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSkills)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSkillsEdit)).BeginInit();
             this.pnlPersonalProject.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPersonalProject)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPersonalProjectEdit)).BeginInit();
             this.pnlProfile.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlProfileInformation
             // 
-            this.pnlProfileInformation.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.pnlProfileInformation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlProfileInformation.AutoSize = true;
             this.pnlProfileInformation.BackColor = System.Drawing.Color.Transparent;
@@ -148,15 +127,15 @@
             this.pnlProfileInformation.Margin = new System.Windows.Forms.Padding(0);
             this.pnlProfileInformation.Name = "pnlProfileInformation";
             this.pnlProfileInformation.Radius = 10;
-            this.pnlProfileInformation.Size = new System.Drawing.Size(1184, 619);
+            this.pnlProfileInformation.Size = new System.Drawing.Size(1167, 619);
             this.pnlProfileInformation.TabIndex = 0;
             // 
             // pbProfileAddress
             // 
-            this.pbProfileAddress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbProfileAddress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbProfileAddress.BackColor = System.Drawing.Color.White;
             this.pbProfileAddress.Image = global::FindJobApplication.Properties.Resources.location1;
-            this.pbProfileAddress.Location = new System.Drawing.Point(618, 482);
+            this.pbProfileAddress.Location = new System.Drawing.Point(601, 482);
             this.pbProfileAddress.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.pbProfileAddress.Name = "pbProfileAddress";
             this.pbProfileAddress.Size = new System.Drawing.Size(30, 30);
@@ -166,10 +145,10 @@
             // 
             // pbProfileDateOfBirth
             // 
-            this.pbProfileDateOfBirth.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbProfileDateOfBirth.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbProfileDateOfBirth.BackColor = System.Drawing.Color.White;
             this.pbProfileDateOfBirth.Image = global::FindJobApplication.Properties.Resources.Company_birthday_cake;
-            this.pbProfileDateOfBirth.Location = new System.Drawing.Point(618, 533);
+            this.pbProfileDateOfBirth.Location = new System.Drawing.Point(601, 533);
             this.pbProfileDateOfBirth.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.pbProfileDateOfBirth.Name = "pbProfileDateOfBirth";
             this.pbProfileDateOfBirth.Size = new System.Drawing.Size(30, 30);
@@ -179,6 +158,7 @@
             // 
             // pictureBox2
             // 
+            this.pictureBox2.BackColor = System.Drawing.Color.White;
             this.pictureBox2.Image = global::FindJobApplication.Properties.Resources.Company_web;
             this.pictureBox2.Location = new System.Drawing.Point(53, 586);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
@@ -190,6 +170,7 @@
             // 
             // pictureBox3
             // 
+            this.pictureBox3.BackColor = System.Drawing.Color.White;
             this.pictureBox3.Image = global::FindJobApplication.Properties.Resources.Company_phone_call;
             this.pictureBox3.Location = new System.Drawing.Point(53, 534);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
@@ -201,6 +182,7 @@
             // 
             // pictureBox4
             // 
+            this.pictureBox4.BackColor = System.Drawing.Color.White;
             this.pictureBox4.Image = global::FindJobApplication.Properties.Resources.Company_mail;
             this.pictureBox4.Location = new System.Drawing.Point(53, 482);
             this.pictureBox4.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
@@ -218,12 +200,13 @@
             this.guna2Separator4.FillStyle = System.Drawing.Drawing2D.DashStyle.Dash;
             this.guna2Separator4.Location = new System.Drawing.Point(44, 441);
             this.guna2Separator4.Name = "guna2Separator4";
-            this.guna2Separator4.Size = new System.Drawing.Size(1072, 10);
+            this.guna2Separator4.Size = new System.Drawing.Size(1055, 10);
             this.guna2Separator4.TabIndex = 52;
             // 
             // gunaLabel2
             // 
             this.gunaLabel2.AutoSize = true;
+            this.gunaLabel2.BackColor = System.Drawing.Color.White;
             this.gunaLabel2.Font = new System.Drawing.Font("Inter", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.gunaLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(33)))), ((int)(((byte)(56)))));
             this.gunaLabel2.Location = new System.Drawing.Point(35, 378);
@@ -240,11 +223,13 @@
             this.guna2Separator3.FillColor = System.Drawing.Color.Black;
             this.guna2Separator3.Location = new System.Drawing.Point(44, 349);
             this.guna2Separator3.Name = "guna2Separator3";
-            this.guna2Separator3.Size = new System.Drawing.Size(1072, 10);
+            this.guna2Separator3.Size = new System.Drawing.Size(1055, 10);
             this.guna2Separator3.TabIndex = 50;
             // 
             // btnInbox
             // 
+            this.btnInbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnInbox.BackColor = System.Drawing.Color.White;
             this.btnInbox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
             this.btnInbox.BorderRadius = 6;
             this.btnInbox.BorderThickness = 1;
@@ -259,7 +244,7 @@
             this.btnInbox.HoverState.FillColor = System.Drawing.Color.Blue;
             this.btnInbox.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnInbox.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnInbox.Location = new System.Drawing.Point(646, 217);
+            this.btnInbox.Location = new System.Drawing.Point(651, 247);
             this.btnInbox.Margin = new System.Windows.Forms.Padding(2);
             this.btnInbox.Name = "btnInbox";
             this.btnInbox.Size = new System.Drawing.Size(260, 62);
@@ -270,6 +255,7 @@
             // 
             // btnFollow
             // 
+            this.btnFollow.BackColor = System.Drawing.Color.White;
             this.btnFollow.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(75)))), ((int)(((byte)(43)))));
             this.btnFollow.BorderRadius = 6;
             this.btnFollow.BorderThickness = 1;
@@ -284,7 +270,7 @@
             this.btnFollow.HoverState.FillColor = System.Drawing.Color.WhiteSmoke;
             this.btnFollow.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnFollow.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnFollow.Location = new System.Drawing.Point(315, 217);
+            this.btnFollow.Location = new System.Drawing.Point(320, 247);
             this.btnFollow.Margin = new System.Windows.Forms.Padding(2);
             this.btnFollow.Name = "btnFollow";
             this.btnFollow.Size = new System.Drawing.Size(260, 62);
@@ -295,6 +281,7 @@
             // 
             // pbProfileAvatar
             // 
+            this.pbProfileAvatar.BackColor = System.Drawing.Color.White;
             this.pbProfileAvatar.Image = global::FindJobApplication.Properties.Resources.Male_1;
             this.pbProfileAvatar.ImageRotate = 0F;
             this.pbProfileAvatar.Location = new System.Drawing.Point(48, 94);
@@ -307,14 +294,13 @@
             // 
             // pbProfileEdit
             // 
-            this.pbProfileEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbProfileEdit.BackColor = System.Drawing.Color.White;
             this.pbProfileEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbProfileEdit.Image = global::FindJobApplication.Properties.Resources.edit;
-            this.pbProfileEdit.Location = new System.Drawing.Point(1099, 365);
+            this.pbProfileEdit.Location = new System.Drawing.Point(445, 391);
             this.pbProfileEdit.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.pbProfileEdit.Name = "pbProfileEdit";
-            this.pbProfileEdit.Size = new System.Drawing.Size(54, 38);
+            this.pbProfileEdit.Size = new System.Drawing.Size(30, 30);
             this.pbProfileEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbProfileEdit.TabIndex = 15;
             this.pbProfileEdit.TabStop = false;
@@ -323,6 +309,7 @@
             // lblProfileLink
             // 
             this.lblProfileLink.AutoSize = true;
+            this.lblProfileLink.BackColor = System.Drawing.Color.White;
             this.lblProfileLink.Font = new System.Drawing.Font("Inter", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.lblProfileLink.ForeColor = System.Drawing.Color.Black;
             this.lblProfileLink.Location = new System.Drawing.Point(110, 586);
@@ -334,12 +321,12 @@
             // 
             // lblProfileGender
             // 
-            this.lblProfileGender.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblProfileGender.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblProfileGender.AutoSize = true;
+            this.lblProfileGender.BackColor = System.Drawing.Color.White;
             this.lblProfileGender.Font = new System.Drawing.Font("Inter", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.lblProfileGender.ForeColor = System.Drawing.Color.Black;
-            this.lblProfileGender.Location = new System.Drawing.Point(675, 584);
+            this.lblProfileGender.Location = new System.Drawing.Point(658, 584);
             this.lblProfileGender.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblProfileGender.Name = "lblProfileGender";
             this.lblProfileGender.Size = new System.Drawing.Size(152, 29);
@@ -349,6 +336,7 @@
             // lblProfilePhoneNumber
             // 
             this.lblProfilePhoneNumber.AutoSize = true;
+            this.lblProfilePhoneNumber.BackColor = System.Drawing.Color.White;
             this.lblProfilePhoneNumber.Font = new System.Drawing.Font("Inter", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.lblProfilePhoneNumber.ForeColor = System.Drawing.Color.Black;
             this.lblProfilePhoneNumber.Location = new System.Drawing.Point(110, 534);
@@ -360,10 +348,10 @@
             // 
             // pbProfileGender
             // 
-            this.pbProfileGender.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbProfileGender.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbProfileGender.BackColor = System.Drawing.Color.White;
             this.pbProfileGender.Image = global::FindJobApplication.Properties.Resources.gender;
-            this.pbProfileGender.Location = new System.Drawing.Point(618, 584);
+            this.pbProfileGender.Location = new System.Drawing.Point(601, 584);
             this.pbProfileGender.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.pbProfileGender.Name = "pbProfileGender";
             this.pbProfileGender.Size = new System.Drawing.Size(30, 30);
@@ -373,12 +361,12 @@
             // 
             // lblProfileAddress
             // 
-            this.lblProfileAddress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblProfileAddress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblProfileAddress.AutoSize = true;
+            this.lblProfileAddress.BackColor = System.Drawing.Color.White;
             this.lblProfileAddress.Font = new System.Drawing.Font("Inter", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.lblProfileAddress.ForeColor = System.Drawing.Color.Black;
-            this.lblProfileAddress.Location = new System.Drawing.Point(675, 482);
+            this.lblProfileAddress.Location = new System.Drawing.Point(658, 482);
             this.lblProfileAddress.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblProfileAddress.Name = "lblProfileAddress";
             this.lblProfileAddress.Size = new System.Drawing.Size(253, 29);
@@ -387,12 +375,12 @@
             // 
             // lblProfileDateOfBirth
             // 
-            this.lblProfileDateOfBirth.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblProfileDateOfBirth.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblProfileDateOfBirth.AutoSize = true;
+            this.lblProfileDateOfBirth.BackColor = System.Drawing.Color.White;
             this.lblProfileDateOfBirth.Font = new System.Drawing.Font("Inter", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.lblProfileDateOfBirth.ForeColor = System.Drawing.Color.Black;
-            this.lblProfileDateOfBirth.Location = new System.Drawing.Point(675, 533);
+            this.lblProfileDateOfBirth.Location = new System.Drawing.Point(658, 533);
             this.lblProfileDateOfBirth.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblProfileDateOfBirth.Name = "lblProfileDateOfBirth";
             this.lblProfileDateOfBirth.Size = new System.Drawing.Size(214, 29);
@@ -402,6 +390,7 @@
             // lblProfileEmail
             // 
             this.lblProfileEmail.AutoSize = true;
+            this.lblProfileEmail.BackColor = System.Drawing.Color.White;
             this.lblProfileEmail.Font = new System.Drawing.Font("Inter", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.lblProfileEmail.ForeColor = System.Drawing.Color.Black;
             this.lblProfileEmail.Location = new System.Drawing.Point(110, 482);
@@ -414,9 +403,10 @@
             // lblProfileTitle
             // 
             this.lblProfileTitle.AutoSize = true;
+            this.lblProfileTitle.BackColor = System.Drawing.Color.White;
             this.lblProfileTitle.Font = new System.Drawing.Font("Inter", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.lblProfileTitle.ForeColor = System.Drawing.Color.Black;
-            this.lblProfileTitle.Location = new System.Drawing.Point(330, 171);
+            this.lblProfileTitle.Location = new System.Drawing.Point(315, 317);
             this.lblProfileTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblProfileTitle.Name = "lblProfileTitle";
             this.lblProfileTitle.Size = new System.Drawing.Size(115, 29);
@@ -426,9 +416,10 @@
             // lblProfileName
             // 
             this.lblProfileName.AutoSize = true;
+            this.lblProfileName.BackColor = System.Drawing.Color.White;
             this.lblProfileName.Font = new System.Drawing.Font("Inter", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.lblProfileName.ForeColor = System.Drawing.Color.Black;
-            this.lblProfileName.Location = new System.Drawing.Point(316, 113);
+            this.lblProfileName.Location = new System.Drawing.Point(310, 171);
             this.lblProfileName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblProfileName.Name = "lblProfileName";
             this.lblProfileName.Size = new System.Drawing.Size(275, 58);
@@ -455,77 +446,39 @@
             this.pnlIntroduction.AutoSize = true;
             this.pnlIntroduction.BackColor = System.Drawing.Color.Transparent;
             this.pnlIntroduction.BaseColor = System.Drawing.Color.White;
-            this.pnlIntroduction.Controls.Add(this.guna2Separator1);
-            this.pnlIntroduction.Controls.Add(this.guna2Separator5);
             this.pnlIntroduction.Controls.Add(this.rtxtAboutMe);
-            this.pnlIntroduction.Controls.Add(this.pbIntroduction);
             this.pnlIntroduction.Controls.Add(this.pbIntroductionEdit);
             this.pnlIntroduction.Controls.Add(this.lblIntroduction);
             this.pnlIntroduction.Location = new System.Drawing.Point(0, 619);
             this.pnlIntroduction.Margin = new System.Windows.Forms.Padding(0);
             this.pnlIntroduction.Name = "pnlIntroduction";
             this.pnlIntroduction.Radius = 10;
-            this.pnlIntroduction.Size = new System.Drawing.Size(1184, 435);
+            this.pnlIntroduction.Size = new System.Drawing.Size(1167, 367);
             this.pnlIntroduction.TabIndex = 1;
-            // 
-            // guna2Separator1
-            // 
-            this.guna2Separator1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2Separator1.FillColor = System.Drawing.Color.Black;
-            this.guna2Separator1.FillStyle = System.Drawing.Drawing2D.DashStyle.Dash;
-            this.guna2Separator1.Location = new System.Drawing.Point(44, 99);
-            this.guna2Separator1.Name = "guna2Separator1";
-            this.guna2Separator1.Size = new System.Drawing.Size(1072, 10);
-            this.guna2Separator1.TabIndex = 43;
-            // 
-            // guna2Separator5
-            // 
-            this.guna2Separator5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2Separator5.FillColor = System.Drawing.Color.Black;
-            this.guna2Separator5.FillStyle = System.Drawing.Drawing2D.DashStyle.Dash;
-            this.guna2Separator5.Location = new System.Drawing.Point(44, 9);
-            this.guna2Separator5.Name = "guna2Separator5";
-            this.guna2Separator5.Size = new System.Drawing.Size(1072, 10);
-            this.guna2Separator5.TabIndex = 42;
             // 
             // rtxtAboutMe
             // 
+            this.rtxtAboutMe.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.rtxtAboutMe.BackColor = System.Drawing.Color.White;
             this.rtxtAboutMe.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.rtxtAboutMe.Font = new System.Drawing.Font("Inter", 18F);
-            this.rtxtAboutMe.Location = new System.Drawing.Point(44, 144);
+            this.rtxtAboutMe.Location = new System.Drawing.Point(44, 76);
             this.rtxtAboutMe.Margin = new System.Windows.Forms.Padding(2);
             this.rtxtAboutMe.Name = "rtxtAboutMe";
             this.rtxtAboutMe.ReadOnly = true;
-            this.rtxtAboutMe.Size = new System.Drawing.Size(976, 289);
+            this.rtxtAboutMe.Size = new System.Drawing.Size(959, 289);
             this.rtxtAboutMe.TabIndex = 24;
             this.rtxtAboutMe.Text = "Introduce your strengths and years of experience";
             // 
-            // pbIntroduction
-            // 
-            this.pbIntroduction.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbIntroduction.Image = global::FindJobApplication.Properties.Resources.personal_profile1;
-            this.pbIntroduction.Location = new System.Drawing.Point(1044, 115);
-            this.pbIntroduction.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.pbIntroduction.Name = "pbIntroduction";
-            this.pbIntroduction.Size = new System.Drawing.Size(83, 90);
-            this.pbIntroduction.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbIntroduction.TabIndex = 22;
-            this.pbIntroduction.TabStop = false;
-            // 
             // pbIntroductionEdit
             // 
-            this.pbIntroductionEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbIntroductionEdit.BackColor = System.Drawing.Color.White;
             this.pbIntroductionEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbIntroductionEdit.Image = global::FindJobApplication.Properties.Resources.edit;
-            this.pbIntroductionEdit.Location = new System.Drawing.Point(1099, 28);
+            this.pbIntroductionEdit.Location = new System.Drawing.Point(249, 41);
             this.pbIntroductionEdit.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.pbIntroductionEdit.Name = "pbIntroductionEdit";
-            this.pbIntroductionEdit.Size = new System.Drawing.Size(54, 38);
+            this.pbIntroductionEdit.Size = new System.Drawing.Size(30, 30);
             this.pbIntroductionEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbIntroductionEdit.TabIndex = 16;
             this.pbIntroductionEdit.TabStop = false;
@@ -549,40 +502,15 @@
             this.pnlEducation.AutoSize = true;
             this.pnlEducation.BackColor = System.Drawing.Color.Transparent;
             this.pnlEducation.BaseColor = System.Drawing.Color.White;
-            this.pnlEducation.Controls.Add(this.guna2Separator6);
-            this.pnlEducation.Controls.Add(this.guna2Separator7);
             this.pnlEducation.Controls.Add(this.gunaLabel1);
             this.pnlEducation.Controls.Add(this.pnlEducationDetail);
-            this.pnlEducation.Controls.Add(this.pbEducation);
             this.pnlEducation.Controls.Add(this.pbEducationEdit);
-            this.pnlEducation.Location = new System.Drawing.Point(0, 1054);
+            this.pnlEducation.Location = new System.Drawing.Point(0, 986);
             this.pnlEducation.Margin = new System.Windows.Forms.Padding(0);
             this.pnlEducation.Name = "pnlEducation";
             this.pnlEducation.Radius = 10;
-            this.pnlEducation.Size = new System.Drawing.Size(1184, 424);
+            this.pnlEducation.Size = new System.Drawing.Size(1167, 362);
             this.pnlEducation.TabIndex = 2;
-            // 
-            // guna2Separator6
-            // 
-            this.guna2Separator6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2Separator6.FillColor = System.Drawing.Color.Black;
-            this.guna2Separator6.FillStyle = System.Drawing.Drawing2D.DashStyle.Dash;
-            this.guna2Separator6.Location = new System.Drawing.Point(44, 97);
-            this.guna2Separator6.Name = "guna2Separator6";
-            this.guna2Separator6.Size = new System.Drawing.Size(1072, 10);
-            this.guna2Separator6.TabIndex = 46;
-            // 
-            // guna2Separator7
-            // 
-            this.guna2Separator7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2Separator7.FillColor = System.Drawing.Color.Black;
-            this.guna2Separator7.FillStyle = System.Drawing.Drawing2D.DashStyle.Dash;
-            this.guna2Separator7.Location = new System.Drawing.Point(44, 7);
-            this.guna2Separator7.Name = "guna2Separator7";
-            this.guna2Separator7.Size = new System.Drawing.Size(1072, 10);
-            this.guna2Separator7.TabIndex = 45;
             // 
             // gunaLabel1
             // 
@@ -597,37 +525,25 @@
             // 
             // pnlEducationDetail
             // 
+            this.pnlEducationDetail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlEducationDetail.AutoScroll = true;
+            this.pnlEducationDetail.BackColor = System.Drawing.Color.White;
             this.pnlEducationDetail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlEducationDetail.Location = new System.Drawing.Point(44, 139);
+            this.pnlEducationDetail.Location = new System.Drawing.Point(44, 77);
             this.pnlEducationDetail.Margin = new System.Windows.Forms.Padding(2);
             this.pnlEducationDetail.Name = "pnlEducationDetail";
-            this.pnlEducationDetail.Size = new System.Drawing.Size(976, 283);
+            this.pnlEducationDetail.Size = new System.Drawing.Size(959, 283);
             this.pnlEducationDetail.TabIndex = 27;
-            // 
-            // pbEducation
-            // 
-            this.pbEducation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbEducation.Image = global::FindJobApplication.Properties.Resources.scholarship;
-            this.pbEducation.Location = new System.Drawing.Point(1044, 113);
-            this.pbEducation.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.pbEducation.Name = "pbEducation";
-            this.pbEducation.Size = new System.Drawing.Size(83, 90);
-            this.pbEducation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbEducation.TabIndex = 17;
-            this.pbEducation.TabStop = false;
             // 
             // pbEducationEdit
             // 
-            this.pbEducationEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbEducationEdit.BackColor = System.Drawing.Color.White;
             this.pbEducationEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbEducationEdit.Image = global::FindJobApplication.Properties.Resources.add;
-            this.pbEducationEdit.Location = new System.Drawing.Point(1099, 26);
+            this.pbEducationEdit.Location = new System.Drawing.Point(264, 36);
             this.pbEducationEdit.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.pbEducationEdit.Name = "pbEducationEdit";
-            this.pbEducationEdit.Size = new System.Drawing.Size(54, 38);
+            this.pbEducationEdit.Size = new System.Drawing.Size(30, 30);
             this.pbEducationEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbEducationEdit.TabIndex = 17;
             this.pbEducationEdit.TabStop = false;
@@ -640,40 +556,15 @@
             this.pnlWorkExperience.AutoSize = true;
             this.pnlWorkExperience.BackColor = System.Drawing.Color.Transparent;
             this.pnlWorkExperience.BaseColor = System.Drawing.Color.White;
-            this.pnlWorkExperience.Controls.Add(this.guna2Separator2);
-            this.pnlWorkExperience.Controls.Add(this.guna2Separator8);
             this.pnlWorkExperience.Controls.Add(this.gunaLabel3);
             this.pnlWorkExperience.Controls.Add(this.pnlWorkExperienceDetail);
-            this.pnlWorkExperience.Controls.Add(this.pbWorkExperience);
             this.pnlWorkExperience.Controls.Add(this.pbWorkExperienceEdit);
-            this.pnlWorkExperience.Location = new System.Drawing.Point(0, 1478);
+            this.pnlWorkExperience.Location = new System.Drawing.Point(0, 1348);
             this.pnlWorkExperience.Margin = new System.Windows.Forms.Padding(0);
             this.pnlWorkExperience.Name = "pnlWorkExperience";
             this.pnlWorkExperience.Radius = 10;
-            this.pnlWorkExperience.Size = new System.Drawing.Size(1184, 440);
+            this.pnlWorkExperience.Size = new System.Drawing.Size(1167, 370);
             this.pnlWorkExperience.TabIndex = 3;
-            // 
-            // guna2Separator2
-            // 
-            this.guna2Separator2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2Separator2.FillColor = System.Drawing.Color.Black;
-            this.guna2Separator2.FillStyle = System.Drawing.Drawing2D.DashStyle.Dash;
-            this.guna2Separator2.Location = new System.Drawing.Point(36, 97);
-            this.guna2Separator2.Name = "guna2Separator2";
-            this.guna2Separator2.Size = new System.Drawing.Size(1127, 10);
-            this.guna2Separator2.TabIndex = 49;
-            // 
-            // guna2Separator8
-            // 
-            this.guna2Separator8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2Separator8.FillColor = System.Drawing.Color.Black;
-            this.guna2Separator8.FillStyle = System.Drawing.Drawing2D.DashStyle.Dash;
-            this.guna2Separator8.Location = new System.Drawing.Point(36, 7);
-            this.guna2Separator8.Name = "guna2Separator8";
-            this.guna2Separator8.Size = new System.Drawing.Size(1127, 10);
-            this.guna2Separator8.TabIndex = 48;
             // 
             // gunaLabel3
             // 
@@ -688,37 +579,25 @@
             // 
             // pnlWorkExperienceDetail
             // 
+            this.pnlWorkExperienceDetail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlWorkExperienceDetail.AutoScroll = true;
+            this.pnlWorkExperienceDetail.BackColor = System.Drawing.Color.White;
             this.pnlWorkExperienceDetail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlWorkExperienceDetail.Location = new System.Drawing.Point(44, 141);
+            this.pnlWorkExperienceDetail.Location = new System.Drawing.Point(44, 82);
             this.pnlWorkExperienceDetail.Margin = new System.Windows.Forms.Padding(2);
             this.pnlWorkExperienceDetail.Name = "pnlWorkExperienceDetail";
-            this.pnlWorkExperienceDetail.Size = new System.Drawing.Size(976, 297);
+            this.pnlWorkExperienceDetail.Size = new System.Drawing.Size(976, 286);
             this.pnlWorkExperienceDetail.TabIndex = 28;
-            // 
-            // pbWorkExperience
-            // 
-            this.pbWorkExperience.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbWorkExperience.Image = global::FindJobApplication.Properties.Resources.briefcase1;
-            this.pbWorkExperience.Location = new System.Drawing.Point(1044, 113);
-            this.pbWorkExperience.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.pbWorkExperience.Name = "pbWorkExperience";
-            this.pbWorkExperience.Size = new System.Drawing.Size(109, 90);
-            this.pbWorkExperience.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbWorkExperience.TabIndex = 18;
-            this.pbWorkExperience.TabStop = false;
             // 
             // pbWorkExperienceEdit
             // 
-            this.pbWorkExperienceEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbWorkExperienceEdit.BackColor = System.Drawing.Color.White;
             this.pbWorkExperienceEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbWorkExperienceEdit.Image = global::FindJobApplication.Properties.Resources.add;
-            this.pbWorkExperienceEdit.Location = new System.Drawing.Point(1044, 26);
+            this.pbWorkExperienceEdit.Location = new System.Drawing.Point(390, 36);
             this.pbWorkExperienceEdit.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.pbWorkExperienceEdit.Name = "pbWorkExperienceEdit";
-            this.pbWorkExperienceEdit.Size = new System.Drawing.Size(109, 38);
+            this.pbWorkExperienceEdit.Size = new System.Drawing.Size(30, 30);
             this.pbWorkExperienceEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbWorkExperienceEdit.TabIndex = 16;
             this.pbWorkExperienceEdit.TabStop = false;
@@ -731,40 +610,15 @@
             this.pnlSkills.AutoSize = true;
             this.pnlSkills.BackColor = System.Drawing.Color.Transparent;
             this.pnlSkills.BaseColor = System.Drawing.Color.White;
-            this.pnlSkills.Controls.Add(this.guna2Separator9);
-            this.pnlSkills.Controls.Add(this.guna2Separator10);
             this.pnlSkills.Controls.Add(this.gunaLabel4);
             this.pnlSkills.Controls.Add(this.pnlSkillDetail);
-            this.pnlSkills.Controls.Add(this.pbSkills);
             this.pnlSkills.Controls.Add(this.pbSkillsEdit);
-            this.pnlSkills.Location = new System.Drawing.Point(0, 1918);
+            this.pnlSkills.Location = new System.Drawing.Point(0, 1718);
             this.pnlSkills.Margin = new System.Windows.Forms.Padding(0);
             this.pnlSkills.Name = "pnlSkills";
             this.pnlSkills.Radius = 10;
-            this.pnlSkills.Size = new System.Drawing.Size(1184, 209);
+            this.pnlSkills.Size = new System.Drawing.Size(1167, 156);
             this.pnlSkills.TabIndex = 4;
-            // 
-            // guna2Separator9
-            // 
-            this.guna2Separator9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2Separator9.FillColor = System.Drawing.Color.Black;
-            this.guna2Separator9.FillStyle = System.Drawing.Drawing2D.DashStyle.Dash;
-            this.guna2Separator9.Location = new System.Drawing.Point(36, 100);
-            this.guna2Separator9.Name = "guna2Separator9";
-            this.guna2Separator9.Size = new System.Drawing.Size(1072, 10);
-            this.guna2Separator9.TabIndex = 52;
-            // 
-            // guna2Separator10
-            // 
-            this.guna2Separator10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2Separator10.FillColor = System.Drawing.Color.Black;
-            this.guna2Separator10.FillStyle = System.Drawing.Drawing2D.DashStyle.Dash;
-            this.guna2Separator10.Location = new System.Drawing.Point(36, 10);
-            this.guna2Separator10.Name = "guna2Separator10";
-            this.guna2Separator10.Size = new System.Drawing.Size(1072, 10);
-            this.guna2Separator10.TabIndex = 51;
             // 
             // gunaLabel4
             // 
@@ -779,37 +633,25 @@
             // 
             // pnlSkillDetail
             // 
+            this.pnlSkillDetail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlSkillDetail.AutoScroll = true;
+            this.pnlSkillDetail.BackColor = System.Drawing.Color.White;
             this.pnlSkillDetail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlSkillDetail.Location = new System.Drawing.Point(44, 127);
+            this.pnlSkillDetail.Location = new System.Drawing.Point(44, 85);
             this.pnlSkillDetail.Margin = new System.Windows.Forms.Padding(2);
             this.pnlSkillDetail.Name = "pnlSkillDetail";
             this.pnlSkillDetail.Size = new System.Drawing.Size(976, 69);
             this.pnlSkillDetail.TabIndex = 29;
             // 
-            // pbSkills
-            // 
-            this.pbSkills.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbSkills.Image = global::FindJobApplication.Properties.Resources.idea;
-            this.pbSkills.Location = new System.Drawing.Point(1044, 116);
-            this.pbSkills.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.pbSkills.Name = "pbSkills";
-            this.pbSkills.Size = new System.Drawing.Size(83, 90);
-            this.pbSkills.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbSkills.TabIndex = 19;
-            this.pbSkills.TabStop = false;
-            // 
             // pbSkillsEdit
             // 
-            this.pbSkillsEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbSkillsEdit.BackColor = System.Drawing.Color.White;
             this.pbSkillsEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbSkillsEdit.Image = global::FindJobApplication.Properties.Resources.edit;
-            this.pbSkillsEdit.Location = new System.Drawing.Point(1099, 29);
+            this.pbSkillsEdit.Location = new System.Drawing.Point(159, 42);
             this.pbSkillsEdit.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.pbSkillsEdit.Name = "pbSkillsEdit";
-            this.pbSkillsEdit.Size = new System.Drawing.Size(54, 38);
+            this.pbSkillsEdit.Size = new System.Drawing.Size(30, 30);
             this.pbSkillsEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbSkillsEdit.TabIndex = 17;
             this.pbSkillsEdit.TabStop = false;
@@ -822,40 +664,15 @@
             this.pnlPersonalProject.AutoSize = true;
             this.pnlPersonalProject.BackColor = System.Drawing.Color.Transparent;
             this.pnlPersonalProject.BaseColor = System.Drawing.Color.White;
-            this.pnlPersonalProject.Controls.Add(this.guna2Separator11);
-            this.pnlPersonalProject.Controls.Add(this.guna2Separator12);
             this.pnlPersonalProject.Controls.Add(this.gunaLabel5);
             this.pnlPersonalProject.Controls.Add(this.pnlProjectDetail);
-            this.pnlPersonalProject.Controls.Add(this.pbPersonalProject);
             this.pnlPersonalProject.Controls.Add(this.pbPersonalProjectEdit);
-            this.pnlPersonalProject.Location = new System.Drawing.Point(0, 2127);
+            this.pnlPersonalProject.Location = new System.Drawing.Point(0, 1874);
             this.pnlPersonalProject.Margin = new System.Windows.Forms.Padding(0);
             this.pnlPersonalProject.Name = "pnlPersonalProject";
             this.pnlPersonalProject.Radius = 10;
-            this.pnlPersonalProject.Size = new System.Drawing.Size(1184, 443);
+            this.pnlPersonalProject.Size = new System.Drawing.Size(1167, 394);
             this.pnlPersonalProject.TabIndex = 5;
-            // 
-            // guna2Separator11
-            // 
-            this.guna2Separator11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2Separator11.FillColor = System.Drawing.Color.Black;
-            this.guna2Separator11.FillStyle = System.Drawing.Drawing2D.DashStyle.Dash;
-            this.guna2Separator11.Location = new System.Drawing.Point(36, 101);
-            this.guna2Separator11.Name = "guna2Separator11";
-            this.guna2Separator11.Size = new System.Drawing.Size(1072, 10);
-            this.guna2Separator11.TabIndex = 55;
-            // 
-            // guna2Separator12
-            // 
-            this.guna2Separator12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2Separator12.FillColor = System.Drawing.Color.Black;
-            this.guna2Separator12.FillStyle = System.Drawing.Drawing2D.DashStyle.Dash;
-            this.guna2Separator12.Location = new System.Drawing.Point(36, 11);
-            this.guna2Separator12.Name = "guna2Separator12";
-            this.guna2Separator12.Size = new System.Drawing.Size(1072, 10);
-            this.guna2Separator12.TabIndex = 54;
             // 
             // gunaLabel5
             // 
@@ -870,37 +687,25 @@
             // 
             // pnlProjectDetail
             // 
+            this.pnlProjectDetail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlProjectDetail.AutoScroll = true;
+            this.pnlProjectDetail.BackColor = System.Drawing.Color.White;
             this.pnlProjectDetail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlProjectDetail.Location = new System.Drawing.Point(44, 137);
+            this.pnlProjectDetail.Location = new System.Drawing.Point(44, 88);
             this.pnlProjectDetail.Margin = new System.Windows.Forms.Padding(2);
             this.pnlProjectDetail.Name = "pnlProjectDetail";
             this.pnlProjectDetail.Size = new System.Drawing.Size(976, 304);
             this.pnlProjectDetail.TabIndex = 30;
             // 
-            // pbPersonalProject
-            // 
-            this.pbPersonalProject.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbPersonalProject.Image = global::FindJobApplication.Properties.Resources.project;
-            this.pbPersonalProject.Location = new System.Drawing.Point(1044, 117);
-            this.pbPersonalProject.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.pbPersonalProject.Name = "pbPersonalProject";
-            this.pbPersonalProject.Size = new System.Drawing.Size(83, 90);
-            this.pbPersonalProject.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbPersonalProject.TabIndex = 20;
-            this.pbPersonalProject.TabStop = false;
-            // 
             // pbPersonalProjectEdit
             // 
-            this.pbPersonalProjectEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbPersonalProjectEdit.BackColor = System.Drawing.Color.White;
             this.pbPersonalProjectEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbPersonalProjectEdit.Image = global::FindJobApplication.Properties.Resources.add;
-            this.pbPersonalProjectEdit.Location = new System.Drawing.Point(1099, 30);
+            this.pbPersonalProjectEdit.Location = new System.Drawing.Point(379, 39);
             this.pbPersonalProjectEdit.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.pbPersonalProjectEdit.Name = "pbPersonalProjectEdit";
-            this.pbPersonalProjectEdit.Size = new System.Drawing.Size(54, 38);
+            this.pbPersonalProjectEdit.Size = new System.Drawing.Size(30, 30);
             this.pbPersonalProjectEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbPersonalProjectEdit.TabIndex = 18;
             this.pbPersonalProjectEdit.TabStop = false;
@@ -956,23 +761,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).EndInit();
             this.pnlIntroduction.ResumeLayout(false);
             this.pnlIntroduction.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbIntroduction)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbIntroductionEdit)).EndInit();
             this.pnlEducation.ResumeLayout(false);
             this.pnlEducation.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbEducation)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEducationEdit)).EndInit();
             this.pnlWorkExperience.ResumeLayout(false);
             this.pnlWorkExperience.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbWorkExperience)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbWorkExperienceEdit)).EndInit();
             this.pnlSkills.ResumeLayout(false);
             this.pnlSkills.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSkills)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSkillsEdit)).EndInit();
             this.pnlPersonalProject.ResumeLayout(false);
             this.pnlPersonalProject.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPersonalProject)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPersonalProjectEdit)).EndInit();
             this.pnlProfile.ResumeLayout(false);
             this.pnlProfile.PerformLayout();
@@ -996,10 +796,6 @@
         private System.Windows.Forms.PictureBox pbProfileGender;
         private Guna.UI.WinForms.GunaLabel lblIntroduction;
         private Guna.UI.WinForms.GunaElipsePanel pnlPersonalProject;
-        private System.Windows.Forms.PictureBox pbEducation;
-        private System.Windows.Forms.PictureBox pbWorkExperience;
-        private System.Windows.Forms.PictureBox pbPersonalProject;
-        private System.Windows.Forms.PictureBox pbIntroduction;
         private System.Windows.Forms.RichTextBox rtxtAboutMe;
         private System.Windows.Forms.FlowLayoutPanel pnlEducationDetail;
         private System.Windows.Forms.FlowLayoutPanel pnlWorkExperienceDetail;
@@ -1021,23 +817,12 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pbProfileAddress;
         private System.Windows.Forms.PictureBox pbProfileDateOfBirth;
-        private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
-        private Guna.UI2.WinForms.Guna2Separator guna2Separator5;
-        private Guna.UI2.WinForms.Guna2Separator guna2Separator6;
-        private Guna.UI2.WinForms.Guna2Separator guna2Separator7;
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
-        private Guna.UI2.WinForms.Guna2Separator guna2Separator2;
-        private Guna.UI2.WinForms.Guna2Separator guna2Separator8;
         private Guna.UI.WinForms.GunaLabel gunaLabel3;
         private Guna.UI.WinForms.GunaElipsePanel pnlSkills;
-        private Guna.UI2.WinForms.Guna2Separator guna2Separator9;
-        private Guna.UI2.WinForms.Guna2Separator guna2Separator10;
         private Guna.UI.WinForms.GunaLabel gunaLabel4;
         private System.Windows.Forms.FlowLayoutPanel pnlSkillDetail;
-        private System.Windows.Forms.PictureBox pbSkills;
         public System.Windows.Forms.PictureBox pbSkillsEdit;
-        private Guna.UI2.WinForms.Guna2Separator guna2Separator11;
-        private Guna.UI2.WinForms.Guna2Separator guna2Separator12;
         private Guna.UI.WinForms.GunaLabel gunaLabel5;
         private System.Windows.Forms.TableLayoutPanel pnlProfile;
     }

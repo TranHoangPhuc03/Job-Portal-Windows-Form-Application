@@ -1,6 +1,7 @@
 ﻿using FindJobApplication.Daos;
 using FindJobApplication.Entities;
 using FindJobApplication.Utils;
+using Microsoft.VisualBasic.ApplicationServices;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,6 +19,7 @@ namespace FindJobApplication
     {
         private UserProfile userProfile;
         private UserProfileDao userProfileDao = new UserProfileDao();
+        int userId;
         UCUCUserProfileEducationAndWorkExperience uCEduaction = new UCUCUserProfileEducationAndWorkExperience();
         UCUCUserProfileEducationAndWorkExperience uCWorkExperience = new UCUCUserProfileEducationAndWorkExperience();
         UCSkillTag uCUserProfileSkill = new UCSkillTag();
@@ -37,32 +39,53 @@ namespace FindJobApplication
         public UCProfile(int userId) : this()
         {
             userProfile = userProfileDao.FindUserProfileByAccountId(userId);
+            this.userId = userId;
         }
 
-        public void hideAllBtn()
-        {
-            btnBack.Visible = true;
-            btnFollow.Visible = true;
-
-            pbEducationEdit.Visible = false;
-            pbIntroductionEdit.Visible = false;
-            pbPersonalProjectEdit.Visible = false;
-            pbProfileEdit.Visible = false;
-            pbSkillsEdit.Visible = false;
-            pbWorkExperienceEdit.Visible = false;
-
-            uCEduaction.pbDeleteEducationOrWork.Visible = false;
-            uCEduaction.pbEditEducationOrWork.Visible = false;
-
-            uCWorkExperience.pbDeleteEducationOrWork.Visible = false;
-            uCWorkExperience.pbEditEducationOrWork.Visible = false;
-
-            uCUserProfileProject.pbDeleteProject.Visible = false;
-            uCUserProfileProject.pbEditProject.Visible = false;
-
-        }
         public Panel panelProfile { get => pnlProfile; }
-
+        private void UCProfile_Load(object sender, EventArgs e)
+        {
+            pbProfileAvatar.Image = ImageUtils.FromBytesToImage(userProfile.Account.Avatar);
+            lblProfileName.Text = userProfile.Account.Name;
+            lblProfileTitle.Text = userProfile.Title;
+            lblProfileEmail.Text = userProfile.Account.Email;
+            lblProfileGender.Text = userProfile.Gender;
+            lblProfileDateOfBirth.Text = userProfile.DateOfBirth.ToString();
+            lblProfilePhoneNumber.Text = userProfile.PhoneNumber;
+            lblProfileAddress.Text = userProfile.Address;
+            lblProfileTitle.Text = userProfile.Title;
+            lblProfileLink.Text = userProfile.PersonalLink;
+            rtxtAboutMe.Text = userProfile.AboutMe;
+            pnlEducationDetail.Controls.Clear();
+            foreach (var item in userProfile.UserEducations)
+            {
+                UCUCUserProfileEducationAndWorkExperience uCUCUserProfileEducationAndWorkExperience = new UCUCUserProfileEducationAndWorkExperience(item);
+                pnlEducationDetail.Controls.Add(uCUCUserProfileEducationAndWorkExperience);
+            }
+            foreach (var item in userProfile.UserWorkExperiences)
+            {
+                UCUCUserProfileEducationAndWorkExperience uCUCUserProfileEducationAndWorkExperience = new UCUCUserProfileEducationAndWorkExperience(item);
+                pnlWorkExperienceDetail.Controls.Add(uCUCUserProfileEducationAndWorkExperience);
+            }
+            foreach (var item in userProfile.Skills)
+            {
+                UCSkillTag uCUserProfileSkill = new UCSkillTag(item);
+                pnlSkillDetail.Controls.Add(uCUserProfileSkill);
+            }
+            foreach (var item in userProfile.UserPersonalProjects)
+            {
+                UCUserProfileProject uCUserProfileProject = new UCUserProfileProject(item);
+                pnlProjectDetail.Controls.Add(uCUserProfileProject);
+            }
+            if (isFollowing(userProfile.Id))
+            {
+                btnFollow.Text = "Following";
+            }
+            if (Session.account.Role == "user")
+            {
+                btnFollow.Visible = false;
+            }
+        }
         private void pbProfileEdit_Click(object sender, EventArgs e)
         {
             FUserProfileInformationEdit fUserProfileInformationEdit = new FUserProfileInformationEdit();
@@ -124,54 +147,40 @@ namespace FindJobApplication
             //}
         }
 
-        private void UCProfile_Load(object sender, EventArgs e)
-        {
-            pbProfileAvatar.Image = ImageUtils.FromBytesToImage(userProfile.Account.Avatar);
-            lblProfileName.Text = Session.account.Name;
-            lblProfileTitle.Text = userProfile.Title;
-            lblProfileEmail.Text = Session.account.Email;
-            lblProfileGender.Text = userProfile.Gender;
-            lblProfileDateOfBirth.Text = userProfile.DateOfBirth.ToString();
-            lblProfilePhoneNumber.Text = userProfile.PhoneNumber;
-            lblProfileAddress.Text = userProfile.Address;
-            lblProfileTitle.Text = userProfile.Title;
-            lblProfileLink.Text = userProfile.PersonalLink;
-            rtxtAboutMe.Text = userProfile.AboutMe;
-            pnlEducationDetail.Controls.Clear();
-            foreach (var item in userProfile.UserEducations)
-            {
-                UCUCUserProfileEducationAndWorkExperience uCUCUserProfileEducationAndWorkExperience = new UCUCUserProfileEducationAndWorkExperience(item);
-                pnlEducationDetail.Controls.Add(uCUCUserProfileEducationAndWorkExperience);
-            }
-            foreach (var item in userProfile.UserWorkExperiences)
-            {
-                UCUCUserProfileEducationAndWorkExperience uCUCUserProfileEducationAndWorkExperience = new UCUCUserProfileEducationAndWorkExperience(item);
-                pnlWorkExperienceDetail.Controls.Add(uCUCUserProfileEducationAndWorkExperience);
-            }
-            foreach (var item in userProfile.Skills)
-            {
-                UCSkillTag uCUserProfileSkill = new UCSkillTag(item);
-                pnlSkillDetail.Controls.Add(uCUserProfileSkill);
-            }
-            foreach(var item in userProfile.UserPersonalProjects)
-            {
-                UCUserProfileProject uCUserProfileProject = new UCUserProfileProject(item);
-                pnlProjectDetail.Controls.Add(uCUserProfileProject);
-            }
-            if (isFollowing(userProfile.Id))
-            {
-                btnFollow.Text = "Following";
-            }
-        }
-
         private void btnInbox_Click(object sender, EventArgs e)
         {
-            FSendMail fSendMail = new FSendMail();
+            userProfile = userProfileDao.FindUserProfileByAccountId(userId);
+            FSendMail fSendMail = new FSendMail(userProfile.Account.Email);
             fSendMail.Show();
         }
         private bool isFollowing(int userId)
         {
             return Session.account.Accounts.Where(row => row.Id == userId).Any();
+        }
+        public void hideAllBtn()
+        {
+            btnBack.Visible = true;
+            btnFollow.Visible = true;
+            btnInbox.Visible = true;
+            pbEducationEdit.Visible = false;
+            pbIntroductionEdit.Visible = false;
+            pbPersonalProjectEdit.Visible = false;
+            pbProfileEdit.Visible = false;
+            pbSkillsEdit.Visible = false;
+            pbWorkExperienceEdit.Visible = false;
+
+            uCEduaction.pbDeleteEducationOrWork.Visible = false;
+            uCEduaction.pbEditEducationOrWork.Visible = false;
+
+            uCWorkExperience.pbDeleteEducationOrWork.Visible = false;
+            uCWorkExperience.pbEditEducationOrWork.Visible = false;
+
+            uCUserProfileProject.pbDeleteProject.Visible = false;
+            uCUserProfileProject.pbEditProject.Visible = false;
+            if (Session.account.Role == "user")
+            {
+                btnFollow.Visible = false;
+            }
         }
     }
 }

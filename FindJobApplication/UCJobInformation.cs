@@ -50,6 +50,11 @@ namespace FindJobApplication
             lblPostDate.Text = jobPost.PostDate.ToString("dd-MM-yyyy");
             lblWorkAddress.Text = jobPost.Address;
             btnSave.Checked = isFavourite;
+            if (Session.account.Role == "company")
+            {
+                btnApply.Visible = false;
+                btnSave.Visible = false;
+            }
         }
 
         private void btnApply_Click(object sender, EventArgs e)

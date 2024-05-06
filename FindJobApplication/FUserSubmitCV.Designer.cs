@@ -43,11 +43,13 @@
             this.btnCancel = new Guna.UI2.WinForms.Guna2Button();
             this.btnSubmit = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Separator3 = new Guna.UI2.WinForms.Guna2Separator();
+            this.txtNameFile = new System.Windows.Forms.Label();
             this.pnlLinkCv.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlLinkCv
             // 
+            this.pnlLinkCv.Controls.Add(this.txtNameFile);
             this.pnlLinkCv.Controls.Add(this.btnChooseFile);
             this.pnlLinkCv.Controls.Add(this.rbtnNewCv);
             this.pnlLinkCv.Controls.Add(this.rBtnCurrentCv);
@@ -64,6 +66,7 @@
             this.btnChooseFile.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnChooseFile.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnChooseFile.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnChooseFile.Enabled = false;
             this.btnChooseFile.FillColor = System.Drawing.Color.LightGray;
             this.btnChooseFile.Font = new System.Drawing.Font("Inter", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.btnChooseFile.ForeColor = System.Drawing.Color.Black;
@@ -74,6 +77,7 @@
             this.btnChooseFile.Size = new System.Drawing.Size(94, 24);
             this.btnChooseFile.TabIndex = 2;
             this.btnChooseFile.Text = "Choose file";
+            this.btnChooseFile.Click += new System.EventHandler(this.btnChooseFile_Click);
             // 
             // rbtnNewCv
             // 
@@ -88,6 +92,7 @@
             this.rbtnNewCv.Text = "Upload new CV";
             this.rbtnNewCv.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.rbtnNewCv.UseVisualStyleBackColor = true;
+            this.rbtnNewCv.CheckedChanged += new System.EventHandler(this.rbtnNewCv_CheckedChanged);
             // 
             // rBtnCurrentCv
             // 
@@ -102,6 +107,7 @@
             this.rBtnCurrentCv.Text = "Use your current CV";
             this.rBtnCurrentCv.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.rBtnCurrentCv.UseVisualStyleBackColor = true;
+            this.rBtnCurrentCv.CheckedChanged += new System.EventHandler(this.rBtnCurrentCv_CheckedChanged);
             // 
             // lblTip1
             // 
@@ -237,6 +243,17 @@
             this.guna2Separator3.Size = new System.Drawing.Size(665, 7);
             this.guna2Separator3.TabIndex = 62;
             // 
+            // txtNameFile
+            // 
+            this.txtNameFile.AutoSize = true;
+            this.txtNameFile.Font = new System.Drawing.Font("Inter Italic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.txtNameFile.Location = new System.Drawing.Point(290, 68);
+            this.txtNameFile.Name = "txtNameFile";
+            this.txtNameFile.Size = new System.Drawing.Size(38, 15);
+            this.txtNameFile.TabIndex = 51;
+            this.txtNameFile.Text = "name";
+            this.txtNameFile.Visible = false;
+            // 
             // FUserSubmitCV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -286,5 +303,6 @@
         private Guna.UI2.WinForms.Guna2Button btnCancel;
         private Guna.UI2.WinForms.Guna2Button btnSubmit;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator3;
+        private System.Windows.Forms.Label txtNameFile;
     }
 }
