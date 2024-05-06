@@ -29,65 +29,81 @@
         private void InitializeComponent()
         {
             this.pnlProfileInformation = new Guna.UI.WinForms.GunaElipsePanel();
-            this.pbProfileAddress = new System.Windows.Forms.PictureBox();
-            this.pbProfileDateOfBirth = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.guna2Separator4 = new Guna.UI2.WinForms.Guna2Separator();
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.guna2Separator3 = new Guna.UI2.WinForms.Guna2Separator();
             this.btnInbox = new Guna.UI2.WinForms.Guna2Button();
             this.btnFollow = new Guna.UI2.WinForms.Guna2Button();
-            this.pbProfileAvatar = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.pbProfileEdit = new System.Windows.Forms.PictureBox();
             this.lblProfileLink = new Guna.UI.WinForms.GunaLabel();
             this.lblProfileGender = new Guna.UI.WinForms.GunaLabel();
             this.lblProfilePhoneNumber = new Guna.UI.WinForms.GunaLabel();
-            this.pbProfileGender = new System.Windows.Forms.PictureBox();
             this.lblProfileAddress = new Guna.UI.WinForms.GunaLabel();
             this.lblProfileDateOfBirth = new Guna.UI.WinForms.GunaLabel();
             this.lblProfileEmail = new Guna.UI.WinForms.GunaLabel();
             this.lblProfileTitle = new Guna.UI.WinForms.GunaLabel();
             this.lblProfileName = new Guna.UI.WinForms.GunaLabel();
-            this.btnBack = new Guna.UI2.WinForms.Guna2PictureBox();
             this.pnlIntroduction = new Guna.UI.WinForms.GunaElipsePanel();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.guna2Separator5 = new Guna.UI2.WinForms.Guna2Separator();
             this.rtxtAboutMe = new System.Windows.Forms.RichTextBox();
-            this.pbIntroduction = new System.Windows.Forms.PictureBox();
-            this.pbIntroductionEdit = new System.Windows.Forms.PictureBox();
             this.lblIntroduction = new Guna.UI.WinForms.GunaLabel();
             this.pnlEducation = new Guna.UI.WinForms.GunaElipsePanel();
             this.guna2Separator6 = new Guna.UI2.WinForms.Guna2Separator();
             this.guna2Separator7 = new Guna.UI2.WinForms.Guna2Separator();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.pnlEducationDetail = new System.Windows.Forms.FlowLayoutPanel();
-            this.pbEducation = new System.Windows.Forms.PictureBox();
-            this.pbEducationEdit = new System.Windows.Forms.PictureBox();
             this.pnlWorkExperience = new Guna.UI.WinForms.GunaElipsePanel();
             this.guna2Separator2 = new Guna.UI2.WinForms.Guna2Separator();
             this.guna2Separator8 = new Guna.UI2.WinForms.Guna2Separator();
             this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
             this.pnlWorkExperienceDetail = new System.Windows.Forms.FlowLayoutPanel();
-            this.pbWorkExperience = new System.Windows.Forms.PictureBox();
-            this.pbWorkExperienceEdit = new System.Windows.Forms.PictureBox();
             this.pnlSkills = new Guna.UI.WinForms.GunaElipsePanel();
             this.guna2Separator9 = new Guna.UI2.WinForms.Guna2Separator();
             this.guna2Separator10 = new Guna.UI2.WinForms.Guna2Separator();
             this.gunaLabel4 = new Guna.UI.WinForms.GunaLabel();
             this.pnlSkillDetail = new System.Windows.Forms.FlowLayoutPanel();
-            this.pbSkills = new System.Windows.Forms.PictureBox();
-            this.pbSkillsEdit = new System.Windows.Forms.PictureBox();
             this.pnlPersonalProject = new Guna.UI.WinForms.GunaElipsePanel();
             this.guna2Separator11 = new Guna.UI2.WinForms.Guna2Separator();
             this.guna2Separator12 = new Guna.UI2.WinForms.Guna2Separator();
             this.gunaLabel5 = new Guna.UI.WinForms.GunaLabel();
             this.pnlProjectDetail = new System.Windows.Forms.FlowLayoutPanel();
+            this.pnlProfile = new System.Windows.Forms.TableLayoutPanel();
             this.pbPersonalProject = new System.Windows.Forms.PictureBox();
             this.pbPersonalProjectEdit = new System.Windows.Forms.PictureBox();
-            this.pnlProfile = new System.Windows.Forms.TableLayoutPanel();
+            this.pbSkills = new System.Windows.Forms.PictureBox();
+            this.pbSkillsEdit = new System.Windows.Forms.PictureBox();
+            this.pbWorkExperience = new System.Windows.Forms.PictureBox();
+            this.pbWorkExperienceEdit = new System.Windows.Forms.PictureBox();
+            this.pbEducation = new System.Windows.Forms.PictureBox();
+            this.pbEducationEdit = new System.Windows.Forms.PictureBox();
+            this.pbIntroduction = new System.Windows.Forms.PictureBox();
+            this.pbIntroductionEdit = new System.Windows.Forms.PictureBox();
+            this.pbProfileAddress = new System.Windows.Forms.PictureBox();
+            this.pbProfileDateOfBirth = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pbProfileAvatar = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.pbProfileEdit = new System.Windows.Forms.PictureBox();
+            this.pbProfileGender = new System.Windows.Forms.PictureBox();
+            this.btnBack = new Guna.UI2.WinForms.Guna2PictureBox();
             this.pnlProfileInformation.SuspendLayout();
+            this.pnlIntroduction.SuspendLayout();
+            this.pnlEducation.SuspendLayout();
+            this.pnlWorkExperience.SuspendLayout();
+            this.pnlSkills.SuspendLayout();
+            this.pnlPersonalProject.SuspendLayout();
+            this.pnlProfile.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPersonalProject)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPersonalProjectEdit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSkills)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSkillsEdit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbWorkExperience)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbWorkExperienceEdit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbEducation)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbEducationEdit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbIntroduction)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbIntroductionEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbProfileAddress)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbProfileDateOfBirth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -97,22 +113,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbProfileEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbProfileGender)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
-            this.pnlIntroduction.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbIntroduction)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbIntroductionEdit)).BeginInit();
-            this.pnlEducation.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbEducation)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbEducationEdit)).BeginInit();
-            this.pnlWorkExperience.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbWorkExperience)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbWorkExperienceEdit)).BeginInit();
-            this.pnlSkills.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSkills)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSkillsEdit)).BeginInit();
-            this.pnlPersonalProject.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPersonalProject)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPersonalProjectEdit)).BeginInit();
-            this.pnlProfile.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlProfileInformation
@@ -150,65 +150,6 @@
             this.pnlProfileInformation.Radius = 10;
             this.pnlProfileInformation.Size = new System.Drawing.Size(1184, 619);
             this.pnlProfileInformation.TabIndex = 0;
-            // 
-            // pbProfileAddress
-            // 
-            this.pbProfileAddress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbProfileAddress.Image = global::FindJobApplication.Properties.Resources.location1;
-            this.pbProfileAddress.Location = new System.Drawing.Point(618, 482);
-            this.pbProfileAddress.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.pbProfileAddress.Name = "pbProfileAddress";
-            this.pbProfileAddress.Size = new System.Drawing.Size(30, 30);
-            this.pbProfileAddress.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbProfileAddress.TabIndex = 57;
-            this.pbProfileAddress.TabStop = false;
-            // 
-            // pbProfileDateOfBirth
-            // 
-            this.pbProfileDateOfBirth.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbProfileDateOfBirth.Image = global::FindJobApplication.Properties.Resources.Company_birthday_cake;
-            this.pbProfileDateOfBirth.Location = new System.Drawing.Point(618, 533);
-            this.pbProfileDateOfBirth.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.pbProfileDateOfBirth.Name = "pbProfileDateOfBirth";
-            this.pbProfileDateOfBirth.Size = new System.Drawing.Size(30, 30);
-            this.pbProfileDateOfBirth.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbProfileDateOfBirth.TabIndex = 56;
-            this.pbProfileDateOfBirth.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::FindJobApplication.Properties.Resources.Company_web;
-            this.pictureBox2.Location = new System.Drawing.Point(53, 586);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 55;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::FindJobApplication.Properties.Resources.Company_phone_call;
-            this.pictureBox3.Location = new System.Drawing.Point(53, 534);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 54;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::FindJobApplication.Properties.Resources.Company_mail;
-            this.pictureBox4.Location = new System.Drawing.Point(53, 482);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 53;
-            this.pictureBox4.TabStop = false;
             // 
             // guna2Separator4
             // 
@@ -293,33 +234,6 @@
             this.btnFollow.Visible = false;
             this.btnFollow.Click += new System.EventHandler(this.btnFollow_Click);
             // 
-            // pbProfileAvatar
-            // 
-            this.pbProfileAvatar.Image = global::FindJobApplication.Properties.Resources.Male_1;
-            this.pbProfileAvatar.ImageRotate = 0F;
-            this.pbProfileAvatar.Location = new System.Drawing.Point(48, 94);
-            this.pbProfileAvatar.Name = "pbProfileAvatar";
-            this.pbProfileAvatar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.pbProfileAvatar.Size = new System.Drawing.Size(215, 215);
-            this.pbProfileAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbProfileAvatar.TabIndex = 47;
-            this.pbProfileAvatar.TabStop = false;
-            // 
-            // pbProfileEdit
-            // 
-            this.pbProfileEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbProfileEdit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbProfileEdit.Image = global::FindJobApplication.Properties.Resources.edit;
-            this.pbProfileEdit.Location = new System.Drawing.Point(1099, 365);
-            this.pbProfileEdit.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.pbProfileEdit.Name = "pbProfileEdit";
-            this.pbProfileEdit.Size = new System.Drawing.Size(54, 38);
-            this.pbProfileEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbProfileEdit.TabIndex = 15;
-            this.pbProfileEdit.TabStop = false;
-            this.pbProfileEdit.Click += new System.EventHandler(this.pbProfileEdit_Click);
-            // 
             // lblProfileLink
             // 
             this.lblProfileLink.AutoSize = true;
@@ -357,19 +271,6 @@
             this.lblProfilePhoneNumber.Size = new System.Drawing.Size(236, 29);
             this.lblProfilePhoneNumber.TabIndex = 12;
             this.lblProfilePhoneNumber.Text = "Your phone number";
-            // 
-            // pbProfileGender
-            // 
-            this.pbProfileGender.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbProfileGender.Image = global::FindJobApplication.Properties.Resources.gender;
-            this.pbProfileGender.Location = new System.Drawing.Point(618, 584);
-            this.pbProfileGender.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.pbProfileGender.Name = "pbProfileGender";
-            this.pbProfileGender.Size = new System.Drawing.Size(30, 30);
-            this.pbProfileGender.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbProfileGender.TabIndex = 10;
-            this.pbProfileGender.TabStop = false;
             // 
             // lblProfileAddress
             // 
@@ -435,19 +336,6 @@
             this.lblProfileName.TabIndex = 1;
             this.lblProfileName.Text = "Your name";
             // 
-            // btnBack
-            // 
-            this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBack.Image = global::FindJobApplication.Properties.Resources.BackIcon;
-            this.btnBack.ImageRotate = 0F;
-            this.btnBack.Location = new System.Drawing.Point(14, 12);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(79, 49);
-            this.btnBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnBack.TabIndex = 46;
-            this.btnBack.TabStop = false;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
             // pnlIntroduction
             // 
             this.pnlIntroduction.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -502,34 +390,6 @@
             this.rtxtAboutMe.Size = new System.Drawing.Size(976, 289);
             this.rtxtAboutMe.TabIndex = 24;
             this.rtxtAboutMe.Text = "Introduce your strengths and years of experience";
-            // 
-            // pbIntroduction
-            // 
-            this.pbIntroduction.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbIntroduction.Image = global::FindJobApplication.Properties.Resources.personal_profile1;
-            this.pbIntroduction.Location = new System.Drawing.Point(1044, 115);
-            this.pbIntroduction.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.pbIntroduction.Name = "pbIntroduction";
-            this.pbIntroduction.Size = new System.Drawing.Size(83, 90);
-            this.pbIntroduction.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbIntroduction.TabIndex = 22;
-            this.pbIntroduction.TabStop = false;
-            // 
-            // pbIntroductionEdit
-            // 
-            this.pbIntroductionEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbIntroductionEdit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbIntroductionEdit.Image = global::FindJobApplication.Properties.Resources.edit;
-            this.pbIntroductionEdit.Location = new System.Drawing.Point(1099, 28);
-            this.pbIntroductionEdit.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.pbIntroductionEdit.Name = "pbIntroductionEdit";
-            this.pbIntroductionEdit.Size = new System.Drawing.Size(54, 38);
-            this.pbIntroductionEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbIntroductionEdit.TabIndex = 16;
-            this.pbIntroductionEdit.TabStop = false;
-            this.pbIntroductionEdit.Click += new System.EventHandler(this.pbIntroductionEdit_Click);
             // 
             // lblIntroduction
             // 
@@ -605,34 +465,6 @@
             this.pnlEducationDetail.Size = new System.Drawing.Size(976, 283);
             this.pnlEducationDetail.TabIndex = 27;
             // 
-            // pbEducation
-            // 
-            this.pbEducation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbEducation.Image = global::FindJobApplication.Properties.Resources.scholarship;
-            this.pbEducation.Location = new System.Drawing.Point(1044, 113);
-            this.pbEducation.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.pbEducation.Name = "pbEducation";
-            this.pbEducation.Size = new System.Drawing.Size(83, 90);
-            this.pbEducation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbEducation.TabIndex = 17;
-            this.pbEducation.TabStop = false;
-            // 
-            // pbEducationEdit
-            // 
-            this.pbEducationEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbEducationEdit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbEducationEdit.Image = global::FindJobApplication.Properties.Resources.add;
-            this.pbEducationEdit.Location = new System.Drawing.Point(1099, 26);
-            this.pbEducationEdit.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.pbEducationEdit.Name = "pbEducationEdit";
-            this.pbEducationEdit.Size = new System.Drawing.Size(54, 38);
-            this.pbEducationEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbEducationEdit.TabIndex = 17;
-            this.pbEducationEdit.TabStop = false;
-            this.pbEducationEdit.Click += new System.EventHandler(this.pbEducationEdit_Click);
-            // 
             // pnlWorkExperience
             // 
             this.pnlWorkExperience.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -695,34 +527,6 @@
             this.pnlWorkExperienceDetail.Name = "pnlWorkExperienceDetail";
             this.pnlWorkExperienceDetail.Size = new System.Drawing.Size(976, 297);
             this.pnlWorkExperienceDetail.TabIndex = 28;
-            // 
-            // pbWorkExperience
-            // 
-            this.pbWorkExperience.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbWorkExperience.Image = global::FindJobApplication.Properties.Resources.briefcase1;
-            this.pbWorkExperience.Location = new System.Drawing.Point(1044, 113);
-            this.pbWorkExperience.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.pbWorkExperience.Name = "pbWorkExperience";
-            this.pbWorkExperience.Size = new System.Drawing.Size(109, 90);
-            this.pbWorkExperience.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbWorkExperience.TabIndex = 18;
-            this.pbWorkExperience.TabStop = false;
-            // 
-            // pbWorkExperienceEdit
-            // 
-            this.pbWorkExperienceEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbWorkExperienceEdit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbWorkExperienceEdit.Image = global::FindJobApplication.Properties.Resources.add;
-            this.pbWorkExperienceEdit.Location = new System.Drawing.Point(1044, 26);
-            this.pbWorkExperienceEdit.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.pbWorkExperienceEdit.Name = "pbWorkExperienceEdit";
-            this.pbWorkExperienceEdit.Size = new System.Drawing.Size(109, 38);
-            this.pbWorkExperienceEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbWorkExperienceEdit.TabIndex = 16;
-            this.pbWorkExperienceEdit.TabStop = false;
-            this.pbWorkExperienceEdit.Click += new System.EventHandler(this.pbWorkExperienceEdit_Click);
             // 
             // pnlSkills
             // 
@@ -787,34 +591,6 @@
             this.pnlSkillDetail.Size = new System.Drawing.Size(976, 69);
             this.pnlSkillDetail.TabIndex = 29;
             // 
-            // pbSkills
-            // 
-            this.pbSkills.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbSkills.Image = global::FindJobApplication.Properties.Resources.idea;
-            this.pbSkills.Location = new System.Drawing.Point(1044, 116);
-            this.pbSkills.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.pbSkills.Name = "pbSkills";
-            this.pbSkills.Size = new System.Drawing.Size(83, 90);
-            this.pbSkills.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbSkills.TabIndex = 19;
-            this.pbSkills.TabStop = false;
-            // 
-            // pbSkillsEdit
-            // 
-            this.pbSkillsEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbSkillsEdit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbSkillsEdit.Image = global::FindJobApplication.Properties.Resources.edit;
-            this.pbSkillsEdit.Location = new System.Drawing.Point(1099, 29);
-            this.pbSkillsEdit.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.pbSkillsEdit.Name = "pbSkillsEdit";
-            this.pbSkillsEdit.Size = new System.Drawing.Size(54, 38);
-            this.pbSkillsEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbSkillsEdit.TabIndex = 17;
-            this.pbSkillsEdit.TabStop = false;
-            this.pbSkillsEdit.Click += new System.EventHandler(this.pbSkillsEdit_Click);
-            // 
             // pnlPersonalProject
             // 
             this.pnlPersonalProject.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -878,6 +654,32 @@
             this.pnlProjectDetail.Size = new System.Drawing.Size(976, 304);
             this.pnlProjectDetail.TabIndex = 30;
             // 
+            // pnlProfile
+            // 
+            this.pnlProfile.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlProfile.AutoScroll = true;
+            this.pnlProfile.ColumnCount = 1;
+            this.pnlProfile.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.pnlProfile.Controls.Add(this.pnlPersonalProject, 0, 5);
+            this.pnlProfile.Controls.Add(this.pnlSkills, 0, 4);
+            this.pnlProfile.Controls.Add(this.pnlWorkExperience, 0, 3);
+            this.pnlProfile.Controls.Add(this.pnlEducation, 0, 2);
+            this.pnlProfile.Controls.Add(this.pnlIntroduction, 0, 1);
+            this.pnlProfile.Controls.Add(this.pnlProfileInformation, 0, 0);
+            this.pnlProfile.Location = new System.Drawing.Point(0, 67);
+            this.pnlProfile.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlProfile.Name = "pnlProfile";
+            this.pnlProfile.RowCount = 6;
+            this.pnlProfile.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.pnlProfile.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.pnlProfile.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.pnlProfile.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.pnlProfile.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.pnlProfile.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.pnlProfile.Size = new System.Drawing.Size(1184, 866);
+            this.pnlProfile.TabIndex = 1;
+            // 
             // pbPersonalProject
             // 
             this.pbPersonalProject.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -906,31 +708,229 @@
             this.pbPersonalProjectEdit.TabStop = false;
             this.pbPersonalProjectEdit.Click += new System.EventHandler(this.pbPersonalProjectEdit_Click);
             // 
-            // pnlProfile
+            // pbSkills
             // 
-            this.pnlProfile.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.pbSkills.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlProfile.AutoScroll = true;
-            this.pnlProfile.ColumnCount = 1;
-            this.pnlProfile.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.pnlProfile.Controls.Add(this.pnlPersonalProject, 0, 5);
-            this.pnlProfile.Controls.Add(this.pnlSkills, 0, 4);
-            this.pnlProfile.Controls.Add(this.pnlWorkExperience, 0, 3);
-            this.pnlProfile.Controls.Add(this.pnlEducation, 0, 2);
-            this.pnlProfile.Controls.Add(this.pnlIntroduction, 0, 1);
-            this.pnlProfile.Controls.Add(this.pnlProfileInformation, 0, 0);
-            this.pnlProfile.Location = new System.Drawing.Point(0, 67);
-            this.pnlProfile.Margin = new System.Windows.Forms.Padding(0);
-            this.pnlProfile.Name = "pnlProfile";
-            this.pnlProfile.RowCount = 6;
-            this.pnlProfile.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.pnlProfile.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.pnlProfile.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.pnlProfile.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.pnlProfile.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.pnlProfile.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.pnlProfile.Size = new System.Drawing.Size(1184, 866);
-            this.pnlProfile.TabIndex = 1;
+            this.pbSkills.Image = global::FindJobApplication.Properties.Resources.idea;
+            this.pbSkills.Location = new System.Drawing.Point(1044, 116);
+            this.pbSkills.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.pbSkills.Name = "pbSkills";
+            this.pbSkills.Size = new System.Drawing.Size(83, 90);
+            this.pbSkills.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbSkills.TabIndex = 19;
+            this.pbSkills.TabStop = false;
+            // 
+            // pbSkillsEdit
+            // 
+            this.pbSkillsEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbSkillsEdit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbSkillsEdit.Image = global::FindJobApplication.Properties.Resources.edit;
+            this.pbSkillsEdit.Location = new System.Drawing.Point(1099, 29);
+            this.pbSkillsEdit.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.pbSkillsEdit.Name = "pbSkillsEdit";
+            this.pbSkillsEdit.Size = new System.Drawing.Size(54, 38);
+            this.pbSkillsEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbSkillsEdit.TabIndex = 17;
+            this.pbSkillsEdit.TabStop = false;
+            this.pbSkillsEdit.Click += new System.EventHandler(this.pbSkillsEdit_Click);
+            // 
+            // pbWorkExperience
+            // 
+            this.pbWorkExperience.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbWorkExperience.Image = global::FindJobApplication.Properties.Resources.briefcase1;
+            this.pbWorkExperience.Location = new System.Drawing.Point(1044, 113);
+            this.pbWorkExperience.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.pbWorkExperience.Name = "pbWorkExperience";
+            this.pbWorkExperience.Size = new System.Drawing.Size(109, 90);
+            this.pbWorkExperience.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbWorkExperience.TabIndex = 18;
+            this.pbWorkExperience.TabStop = false;
+            // 
+            // pbWorkExperienceEdit
+            // 
+            this.pbWorkExperienceEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbWorkExperienceEdit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbWorkExperienceEdit.Image = global::FindJobApplication.Properties.Resources.add;
+            this.pbWorkExperienceEdit.Location = new System.Drawing.Point(1044, 26);
+            this.pbWorkExperienceEdit.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.pbWorkExperienceEdit.Name = "pbWorkExperienceEdit";
+            this.pbWorkExperienceEdit.Size = new System.Drawing.Size(109, 38);
+            this.pbWorkExperienceEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbWorkExperienceEdit.TabIndex = 16;
+            this.pbWorkExperienceEdit.TabStop = false;
+            this.pbWorkExperienceEdit.Click += new System.EventHandler(this.pbWorkExperienceEdit_Click);
+            // 
+            // pbEducation
+            // 
+            this.pbEducation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbEducation.Image = global::FindJobApplication.Properties.Resources.scholarship;
+            this.pbEducation.Location = new System.Drawing.Point(1044, 113);
+            this.pbEducation.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.pbEducation.Name = "pbEducation";
+            this.pbEducation.Size = new System.Drawing.Size(83, 90);
+            this.pbEducation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbEducation.TabIndex = 17;
+            this.pbEducation.TabStop = false;
+            // 
+            // pbEducationEdit
+            // 
+            this.pbEducationEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbEducationEdit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbEducationEdit.Image = global::FindJobApplication.Properties.Resources.add;
+            this.pbEducationEdit.Location = new System.Drawing.Point(1099, 26);
+            this.pbEducationEdit.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.pbEducationEdit.Name = "pbEducationEdit";
+            this.pbEducationEdit.Size = new System.Drawing.Size(54, 38);
+            this.pbEducationEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbEducationEdit.TabIndex = 17;
+            this.pbEducationEdit.TabStop = false;
+            this.pbEducationEdit.Click += new System.EventHandler(this.pbEducationEdit_Click);
+            // 
+            // pbIntroduction
+            // 
+            this.pbIntroduction.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbIntroduction.Image = global::FindJobApplication.Properties.Resources.personal_profile1;
+            this.pbIntroduction.Location = new System.Drawing.Point(1044, 115);
+            this.pbIntroduction.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.pbIntroduction.Name = "pbIntroduction";
+            this.pbIntroduction.Size = new System.Drawing.Size(83, 90);
+            this.pbIntroduction.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbIntroduction.TabIndex = 22;
+            this.pbIntroduction.TabStop = false;
+            // 
+            // pbIntroductionEdit
+            // 
+            this.pbIntroductionEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbIntroductionEdit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbIntroductionEdit.Image = global::FindJobApplication.Properties.Resources.edit;
+            this.pbIntroductionEdit.Location = new System.Drawing.Point(1099, 28);
+            this.pbIntroductionEdit.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.pbIntroductionEdit.Name = "pbIntroductionEdit";
+            this.pbIntroductionEdit.Size = new System.Drawing.Size(54, 38);
+            this.pbIntroductionEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbIntroductionEdit.TabIndex = 16;
+            this.pbIntroductionEdit.TabStop = false;
+            this.pbIntroductionEdit.Click += new System.EventHandler(this.pbIntroductionEdit_Click);
+            // 
+            // pbProfileAddress
+            // 
+            this.pbProfileAddress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbProfileAddress.Image = global::FindJobApplication.Properties.Resources.location1;
+            this.pbProfileAddress.Location = new System.Drawing.Point(618, 482);
+            this.pbProfileAddress.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.pbProfileAddress.Name = "pbProfileAddress";
+            this.pbProfileAddress.Size = new System.Drawing.Size(30, 30);
+            this.pbProfileAddress.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbProfileAddress.TabIndex = 57;
+            this.pbProfileAddress.TabStop = false;
+            // 
+            // pbProfileDateOfBirth
+            // 
+            this.pbProfileDateOfBirth.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbProfileDateOfBirth.Image = global::FindJobApplication.Properties.Resources.Company_birthday_cake;
+            this.pbProfileDateOfBirth.Location = new System.Drawing.Point(618, 533);
+            this.pbProfileDateOfBirth.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.pbProfileDateOfBirth.Name = "pbProfileDateOfBirth";
+            this.pbProfileDateOfBirth.Size = new System.Drawing.Size(30, 30);
+            this.pbProfileDateOfBirth.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbProfileDateOfBirth.TabIndex = 56;
+            this.pbProfileDateOfBirth.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::FindJobApplication.Properties.Resources.Company_web;
+            this.pictureBox2.Location = new System.Drawing.Point(53, 586);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 55;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::FindJobApplication.Properties.Resources.Company_phone_call;
+            this.pictureBox3.Location = new System.Drawing.Point(53, 534);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 54;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::FindJobApplication.Properties.Resources.Company_mail;
+            this.pictureBox4.Location = new System.Drawing.Point(53, 482);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 53;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pbProfileAvatar
+            // 
+            this.pbProfileAvatar.Image = global::FindJobApplication.Properties.Resources.Male_1;
+            this.pbProfileAvatar.ImageRotate = 0F;
+            this.pbProfileAvatar.Location = new System.Drawing.Point(48, 94);
+            this.pbProfileAvatar.Name = "pbProfileAvatar";
+            this.pbProfileAvatar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.pbProfileAvatar.Size = new System.Drawing.Size(215, 215);
+            this.pbProfileAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbProfileAvatar.TabIndex = 47;
+            this.pbProfileAvatar.TabStop = false;
+            // 
+            // pbProfileEdit
+            // 
+            this.pbProfileEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbProfileEdit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbProfileEdit.Image = global::FindJobApplication.Properties.Resources.edit;
+            this.pbProfileEdit.Location = new System.Drawing.Point(1099, 365);
+            this.pbProfileEdit.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.pbProfileEdit.Name = "pbProfileEdit";
+            this.pbProfileEdit.Size = new System.Drawing.Size(54, 38);
+            this.pbProfileEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbProfileEdit.TabIndex = 15;
+            this.pbProfileEdit.TabStop = false;
+            this.pbProfileEdit.Click += new System.EventHandler(this.pbProfileEdit_Click);
+            // 
+            // pbProfileGender
+            // 
+            this.pbProfileGender.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbProfileGender.Image = global::FindJobApplication.Properties.Resources.gender;
+            this.pbProfileGender.Location = new System.Drawing.Point(618, 584);
+            this.pbProfileGender.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.pbProfileGender.Name = "pbProfileGender";
+            this.pbProfileGender.Size = new System.Drawing.Size(30, 30);
+            this.pbProfileGender.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbProfileGender.TabIndex = 10;
+            this.pbProfileGender.TabStop = false;
+            // 
+            // btnBack
+            // 
+            this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBack.Image = global::FindJobApplication.Properties.Resources.BackIcon;
+            this.btnBack.ImageRotate = 0F;
+            this.btnBack.Location = new System.Drawing.Point(14, 12);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(79, 49);
+            this.btnBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnBack.TabIndex = 46;
+            this.btnBack.TabStop = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // UCProfile
             // 
@@ -945,6 +945,28 @@
             this.Load += new System.EventHandler(this.UCProfile_Load);
             this.pnlProfileInformation.ResumeLayout(false);
             this.pnlProfileInformation.PerformLayout();
+            this.pnlIntroduction.ResumeLayout(false);
+            this.pnlIntroduction.PerformLayout();
+            this.pnlEducation.ResumeLayout(false);
+            this.pnlEducation.PerformLayout();
+            this.pnlWorkExperience.ResumeLayout(false);
+            this.pnlWorkExperience.PerformLayout();
+            this.pnlSkills.ResumeLayout(false);
+            this.pnlSkills.PerformLayout();
+            this.pnlPersonalProject.ResumeLayout(false);
+            this.pnlPersonalProject.PerformLayout();
+            this.pnlProfile.ResumeLayout(false);
+            this.pnlProfile.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPersonalProject)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPersonalProjectEdit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSkills)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSkillsEdit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbWorkExperience)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbWorkExperienceEdit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbEducation)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbEducationEdit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbIntroduction)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbIntroductionEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbProfileAddress)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbProfileDateOfBirth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -954,28 +976,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbProfileEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbProfileGender)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).EndInit();
-            this.pnlIntroduction.ResumeLayout(false);
-            this.pnlIntroduction.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbIntroduction)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbIntroductionEdit)).EndInit();
-            this.pnlEducation.ResumeLayout(false);
-            this.pnlEducation.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbEducation)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbEducationEdit)).EndInit();
-            this.pnlWorkExperience.ResumeLayout(false);
-            this.pnlWorkExperience.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbWorkExperience)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbWorkExperienceEdit)).EndInit();
-            this.pnlSkills.ResumeLayout(false);
-            this.pnlSkills.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSkills)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSkillsEdit)).EndInit();
-            this.pnlPersonalProject.ResumeLayout(false);
-            this.pnlPersonalProject.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPersonalProject)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPersonalProjectEdit)).EndInit();
-            this.pnlProfile.ResumeLayout(false);
-            this.pnlProfile.PerformLayout();
             this.ResumeLayout(false);
 
         }

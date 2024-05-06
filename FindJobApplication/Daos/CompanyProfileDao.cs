@@ -37,19 +37,14 @@ namespace FindJobApplication.Daos
             return 0;
         }
 
-        public List<int> FindAllUserIdFollowing(int companyAccountId)
+        public ICollection<UserProfile> FindAllUserIdFollowing(int companyAccountId)
         {
-            return null;
-        }
-
-        public int SaveUserIdFollowing(int companyAccountId, int userAccountId)
-        {
-            return 0;
-        }
-
-        public int DeleteUserIdFollowing(int companyAccountId, int userAccountId)
-        {
-            return 0;
+            var results = db.Accounts
+                    .Find(companyAccountId)
+                    .Account1
+                    .Select(row => row.UserProfile)
+                    .ToList();
+            return results;
         }
 
         public int UpdateCompanyReason(int companyId, string reason)

@@ -43,8 +43,6 @@ namespace FindJobApplication
             UCProfile uCProfile = new UCProfile(user.UserId);
             FillToMainPanelClicked?.Invoke(this, uCProfile);
             uCProfile.hideAllBtn();
-            //FCompanySeeCV fCompanySeeCV = new FCompanySeeCV(this.userId);
-            //fCompanySeeCV.Show();
         }
 
         private void UCCompanySeeProfilePeople_Load(object sender, EventArgs e)

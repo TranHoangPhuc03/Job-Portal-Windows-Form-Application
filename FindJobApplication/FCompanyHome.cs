@@ -40,33 +40,28 @@ namespace FindJobApplication
             btnHome.PerformClick();
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
         private void pbUserImage_Click(object sender, EventArgs e)
         {
             ucCompanySubMenuRight.HideAndShowSubMenu(ucCompanySubMenuRight);
         }
 
-        private void btnHome_Click(object sender, EventArgs e)
+        public void btnHome_Click(object sender, EventArgs e)
         {
             ucPanelMain.AddControl(new UCCompanyHome());
         }
 
-        private void btnSocial_Click(object sender, EventArgs e)
+        public void btnSocial_Click(object sender, EventArgs e)
         {
             ucPanelMain.AddControl(new UCSocial());
         }
 
-        private void btnMail_Click(object sender, EventArgs e)
+        public void btnMail_Click(object sender, EventArgs e)
         {
             ucPanelMain.AddControl(new UCMail());
 
         }
 
-        private void btnSchedule_Click(object sender, EventArgs e)
+        public void btnSchedule_Click(object sender, EventArgs e)
         {
             ucPanelMain.AddControl(new UCSchedule());
         }

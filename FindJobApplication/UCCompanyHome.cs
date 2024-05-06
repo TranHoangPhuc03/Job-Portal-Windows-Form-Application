@@ -42,8 +42,13 @@ namespace FindJobApplication
         }
         private void btnRecruitment_Click(object sender, EventArgs e)
         {
-            FCompanyJobEdit fCompanyJobEdit = new FCompanyJobEdit();
-            fCompanyJobEdit.Show();
+            using (FCompanyJobEdit fCompanyJobEdit = new FCompanyJobEdit())
+            {
+                if (fCompanyJobEdit.ShowDialog() == DialogResult.OK)
+                {
+                    (ParentForm as FCompanyHome).btnHome_Click(this, new EventArgs());
+                }
+            }
         }
 
         private void btnStillRecruitment_Click(object sender, EventArgs e)  

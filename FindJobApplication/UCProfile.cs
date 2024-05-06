@@ -16,6 +16,7 @@ namespace FindJobApplication
 {
     public partial class UCProfile : UserControl
     {
+        int userId = 0;
         private UserProfile userProfile;
         private UserProfileDao userProfileDao = new UserProfileDao();
         UCUCUserProfileEducationAndWorkExperience uCEduaction = new UCUCUserProfileEducationAndWorkExperience();
@@ -26,7 +27,6 @@ namespace FindJobApplication
         public UCProfile()
         {
             InitializeComponent();
-            panelProfile.AutoScroll = true;
             btnBack.Visible = false;
             Dock = DockStyle.Fill;
             pnlProfile.HorizontalScroll.Maximum = 0;
@@ -36,6 +36,7 @@ namespace FindJobApplication
         }
         public UCProfile(int userId) : this()
         {
+            this.userId = userId;
             userProfile = userProfileDao.FindUserProfileByAccountId(userId);
         }
 
@@ -105,31 +106,36 @@ namespace FindJobApplication
             if (parentControl != null)
             {
                 parentControl.Controls.Remove(this);
-                this.Dispose();
+                Dispose();
             }
         }
 
         private void btnFollow_Click(object sender, EventArgs e)
         {
-            //CompanyProfileDao companyProfileDao = new CompanyProfileDao();
-            //if (btnFollow.Text == "Following")
-            //{
-            //    btnFollow.Text = "Follow";
-            //    companyProfileDao.DeleteUserIdFollowing(Session.account.Id, userId);
-            //}
-            //else
-            //{
-            //    btnFollow.Text = "Following";
-            //    companyProfileDao.SaveUserIdFollowing(Session.account.Id, userId);
-            //}
+            AccountDao accountDao = new AccountDao();
+            if (Session.account.Id != userId)
+            {
+                btnFollow.Visible = true;
+                btnInbox.Visible = true;
+            }
+            if (btnFollow.Text == "Unfollow")
+            {
+                btnFollow.Text = "Follow";
+                accountDao.DeleteAccountFollowing(Session.account.Id, userId);
+            }
+            else
+            {
+                btnFollow.Text = "Unfollow";
+                accountDao.SaveNewAccountFollowed(Session.account.Id, userId);
+            }
         }
 
         private void UCProfile_Load(object sender, EventArgs e)
         {
             pbProfileAvatar.Image = ImageUtils.FromBytesToImage(userProfile.Account.Avatar);
-            lblProfileName.Text = Session.account.Name;
+            lblProfileName.Text = userProfile.Account.Name;
             lblProfileTitle.Text = userProfile.Title;
-            lblProfileEmail.Text = Session.account.Email;
+            lblProfileEmail.Text = userProfile.Account.Email;
             lblProfileGender.Text = userProfile.Gender;
             lblProfileDateOfBirth.Text = userProfile.DateOfBirth.ToString();
             lblProfilePhoneNumber.Text = userProfile.PhoneNumber;
@@ -158,10 +164,7 @@ namespace FindJobApplication
                 UCUserProfileProject uCUserProfileProject = new UCUserProfileProject(item);
                 pnlProjectDetail.Controls.Add(uCUserProfileProject);
             }
-            if (isFollowing(userProfile.Id))
-            {
-                btnFollow.Text = "Following";
-            }
+            ChangeButtonFollowState();
         }
 
         private void btnInbox_Click(object sender, EventArgs e)
@@ -169,9 +172,16 @@ namespace FindJobApplication
             FSendMail fSendMail = new FSendMail();
             fSendMail.Show();
         }
-        private bool isFollowing(int userId)
+
+        public void ChangeButtonFollowState()
         {
-            return Session.account.Accounts.Where(row => row.Id == userId).Any();
+            if (Session.account.Account1.Any(row => row.Id == this.userId)) {
+                btnFollow.Text = "Unfollow";
+            }
+            else
+            {
+                btnFollow.Text = "Follow";
+            }
         }
     }
 }

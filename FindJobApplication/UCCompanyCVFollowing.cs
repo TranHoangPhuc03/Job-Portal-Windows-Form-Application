@@ -1,4 +1,5 @@
-﻿using Guna.UI.WinForms;
+﻿using FindJobApplication.Entities;
+using Guna.UI.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,19 +14,28 @@ namespace FindJobApplication
 {
     public partial class UCCompanyCVFollowing : UserControl
     {
+        public FillToMainPanelHandler FillToPanelMainClicked = UCPanelMain.UC_RequiredAddControl;
         public UCCompanyCVFollowing()
         {
             InitializeComponent();
+            Dock = DockStyle.Fill;
         }
-        public Label LblId { get => lblID; set => lblID = value; }
-        public GunaLinkLabel LlblName { get => llblName; set => llblName = value; }
+
+        public UCCompanyCVFollowing(int rowId) : this()
+        {
+            lblID.Text = rowId.ToString();
+        }
+
+        public UCCompanyCVFollowing(int rowId, UserProfile user) : this(rowId)
+        {
+            llblName.Text = user.Account.Name;
+            Tag = user.Id;
+        }
 
         private void llblName_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            UCProfile uCProfile = new UCProfile((int)this.Tag);
-            UCMain.Instance.PnlMid.Controls.Add(uCProfile);
-            uCProfile.hideAllBtn();
-            uCProfile.BringToFront();
+            UCProfile uCProfile = new UCProfile((int)Tag);
+            FillToPanelMainClicked?.Invoke(this, uCProfile);
         }
     }
 }

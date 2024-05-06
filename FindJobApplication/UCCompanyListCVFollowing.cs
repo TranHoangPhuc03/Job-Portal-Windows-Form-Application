@@ -18,25 +18,24 @@ namespace FindJobApplication
         public UCCompanyListCVFollowing()
         {
             InitializeComponent();
+            Dock = DockStyle.Fill;
         }
 
         private void UCCompanyListCVFollowing_Load(object sender, EventArgs e)
         {
-            pnlListCVFollowing.Controls.Clear();
             CompanyProfileDao companyProfileDao = new CompanyProfileDao();
-            List<int> userFollowingIds = companyProfileDao.FindAllUserIdFollowing(Session.account.Id);
-            int cnt = 1;
-            foreach (int userId in userFollowingIds)
+            var userProfileFollowing = companyProfileDao.FindAllUserIdFollowing(Session.account.Id);
+            pnlListCVFollowing.SuspendLayout();
+            pnlListCVFollowing.Controls.Clear();
+            pnlListCVFollowing.RowCount = 0;
+            for (int i = 0; i < userProfileFollowing.Count; ++i)
             {
-                UserProfileDao userProfileDao = new UserProfileDao();
-                UserProfile userProfile = null;
-                //UserProfile userProfile = userProfileDao.FindUserProfileByAccountId(userId);
-                UCCompanyCVFollowing uCCompanyCVFollowing = new UCCompanyCVFollowing();
-                uCCompanyCVFollowing.LblId.Text = (cnt++).ToString();
-                //uCCompanyCVFollowing.LlblName.Text = userProfile.Name;
-                //uCCompanyCVFollowing.Tag = userProfile.ID;
-                this.pnlListCVFollowing.Controls.Add(uCCompanyCVFollowing);
+                UCCompanyCVFollowing uCCompanyCVFollowing = new UCCompanyCVFollowing(i+1, userProfileFollowing.ElementAt(i));
+                pnlListCVFollowing.Controls.Add(uCCompanyCVFollowing);
+                pnlListCVFollowing.RowCount += 1;
             }
+            pnlListCVFollowing.RowCount += 1;
+            pnlListCVFollowing.ResumeLayout();
         }
     }
 }

@@ -42,8 +42,13 @@ namespace FindJobApplication
 
         private void pbEdit_Click(object sender, EventArgs e)
         {
-            FCompanyJobEdit fCompanyJobEdit = new FCompanyJobEdit((int)this.Tag);
-            fCompanyJobEdit.ShowDialog();
+            using (FCompanyJobEdit fCompanyJobEdit = new FCompanyJobEdit((int)Tag))
+            {
+                if (fCompanyJobEdit.ShowDialog() == DialogResult.OK)
+                {
+                    (ParentForm as FCompanyHome).btnHome_Click(this, new EventArgs());
+                }
+            }
         }
 
         private void pBDelete_Click(object sender, EventArgs e)
@@ -54,6 +59,7 @@ namespace FindJobApplication
             if (result  > 0)
             {
                 MessageDialog.Show(this.ParentForm, "Delete recruitment post successfull", "Succes", MessageDialogButtons.OK, MessageDialogIcon.Information, MessageDialogStyle.Default);
+                (ParentForm as FCompanyHome).btnHome_Click(this, new EventArgs());
             }
             else
             {

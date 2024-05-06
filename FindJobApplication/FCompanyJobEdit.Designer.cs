@@ -28,11 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.guna2Separator3 = new Guna.UI2.WinForms.Guna2Separator();
             this.lblRecruitmentDetails = new Guna.UI.WinForms.GunaLabel();
             this.cbExperience = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.yearExperienceBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.yearExperienceDataSet = new FindJobApplication.YearExperienceDataSet();
             this.cbLocation = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.locationBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.locationcDataSet = new FindJobApplication.LocationcDataSet();
             this.lblJobDescription = new Guna.UI.WinForms.GunaLabel();
             this.rTxtJobDescription = new System.Windows.Forms.RichTextBox();
             this.lblRequirements = new Guna.UI.WinForms.GunaLabel();
@@ -49,6 +54,8 @@
             this.pnlSkill = new System.Windows.Forms.FlowLayoutPanel();
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
             this.cbSkill = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.skillBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.skillDataSet = new FindJobApplication.SkillDataSet();
             this.lblBenefits = new Guna.UI.WinForms.GunaLabel();
             this.txtWorkAddress = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtNumberOfRecruitment = new Guna.UI2.WinForms.Guna2TextBox();
@@ -57,14 +64,23 @@
             this.txtSalary = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnPostJob = new Guna.UI2.WinForms.Guna2Button();
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
+            this.skillTableAdapter = new FindJobApplication.SkillDataSetTableAdapters.SkillTableAdapter();
+            this.locationTableAdapter = new FindJobApplication.LocationcDataSetTableAdapters.LocationTableAdapter();
+            this.yearExperienceTableAdapter = new FindJobApplication.YearExperienceDataSetTableAdapters.YearExperienceTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.yearExperienceBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.yearExperienceDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.locationBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.locationcDataSet)).BeginInit();
             this.guna2Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.skillBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skillDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Separator1
             // 
             this.guna2Separator1.Location = new System.Drawing.Point(18, 78);
-            this.guna2Separator1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2Separator1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Separator1.Name = "guna2Separator1";
             this.guna2Separator1.Size = new System.Drawing.Size(635, 6);
             this.guna2Separator1.TabIndex = 1;
@@ -72,7 +88,7 @@
             // guna2Separator3
             // 
             this.guna2Separator3.Location = new System.Drawing.Point(11, 604);
-            this.guna2Separator3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2Separator3.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Separator3.Name = "guna2Separator3";
             this.guna2Separator3.Size = new System.Drawing.Size(659, 10);
             this.guna2Separator3.TabIndex = 3;
@@ -92,36 +108,63 @@
             // 
             this.cbExperience.BackColor = System.Drawing.Color.Transparent;
             this.cbExperience.BorderRadius = 10;
+            this.cbExperience.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.yearExperienceBindingSource, "Id", true));
+            this.cbExperience.DataSource = this.yearExperienceBindingSource;
+            this.cbExperience.DisplayMember = "Name";
             this.cbExperience.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbExperience.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbExperience.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbExperience.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbExperience.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbExperience.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.cbExperience.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbExperience.ItemHeight = 39;
             this.cbExperience.Location = new System.Drawing.Point(433, 57);
-            this.cbExperience.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbExperience.Margin = new System.Windows.Forms.Padding(2);
             this.cbExperience.Name = "cbExperience";
             this.cbExperience.Size = new System.Drawing.Size(208, 45);
             this.cbExperience.TabIndex = 15;
+            this.cbExperience.ValueMember = "Id";
+            // 
+            // yearExperienceBindingSource
+            // 
+            this.yearExperienceBindingSource.DataMember = "YearExperience";
+            this.yearExperienceBindingSource.DataSource = this.yearExperienceDataSet;
+            // 
+            // yearExperienceDataSet
+            // 
+            this.yearExperienceDataSet.DataSetName = "YearExperienceDataSet";
+            this.yearExperienceDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // cbLocation
             // 
             this.cbLocation.BackColor = System.Drawing.Color.Transparent;
             this.cbLocation.BorderRadius = 10;
+            this.cbLocation.DataSource = this.locationBindingSource;
+            this.cbLocation.DisplayMember = "Name";
             this.cbLocation.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbLocation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLocation.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbLocation.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbLocation.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbLocation.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.cbLocation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbLocation.IntegralHeight = false;
             this.cbLocation.ItemHeight = 39;
             this.cbLocation.Location = new System.Drawing.Point(220, 57);
-            this.cbLocation.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbLocation.Margin = new System.Windows.Forms.Padding(2);
             this.cbLocation.Name = "cbLocation";
             this.cbLocation.Size = new System.Drawing.Size(208, 45);
             this.cbLocation.TabIndex = 14;
+            this.cbLocation.ValueMember = "Id";
+            // 
+            // locationBindingSource
+            // 
+            this.locationBindingSource.DataMember = "Location";
+            this.locationBindingSource.DataSource = this.locationcDataSet;
+            // 
+            // locationcDataSet
+            // 
+            this.locationcDataSet.DataSetName = "LocationcDataSet";
+            this.locationcDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // lblJobDescription
             // 
@@ -139,7 +182,7 @@
             this.rTxtJobDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.rTxtJobDescription.Font = new System.Drawing.Font("Inter", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.rTxtJobDescription.Location = new System.Drawing.Point(4, 289);
-            this.rTxtJobDescription.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rTxtJobDescription.Margin = new System.Windows.Forms.Padding(2);
             this.rTxtJobDescription.Name = "rTxtJobDescription";
             this.rTxtJobDescription.Size = new System.Drawing.Size(635, 102);
             this.rTxtJobDescription.TabIndex = 18;
@@ -161,7 +204,7 @@
             this.rTxtCandidateRequirements.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.rTxtCandidateRequirements.Font = new System.Drawing.Font("Inter", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.rTxtCandidateRequirements.Location = new System.Drawing.Point(4, 429);
-            this.rTxtCandidateRequirements.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rTxtCandidateRequirements.Margin = new System.Windows.Forms.Padding(2);
             this.rTxtCandidateRequirements.Name = "rTxtCandidateRequirements";
             this.rTxtCandidateRequirements.Size = new System.Drawing.Size(635, 102);
             this.rTxtCandidateRequirements.TabIndex = 20;
@@ -183,7 +226,7 @@
             this.rTxtPrioritize.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.rTxtPrioritize.Font = new System.Drawing.Font("Inter", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.rTxtPrioritize.Location = new System.Drawing.Point(3, 564);
-            this.rTxtPrioritize.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rTxtPrioritize.Margin = new System.Windows.Forms.Padding(2);
             this.rTxtPrioritize.Name = "rTxtPrioritize";
             this.rTxtPrioritize.Size = new System.Drawing.Size(635, 102);
             this.rTxtPrioritize.TabIndex = 22;
@@ -194,7 +237,7 @@
             this.rTxtBenefits.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.rTxtBenefits.Font = new System.Drawing.Font("Inter", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.rTxtBenefits.Location = new System.Drawing.Point(3, 703);
-            this.rTxtBenefits.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rTxtBenefits.Margin = new System.Windows.Forms.Padding(2);
             this.rTxtBenefits.Name = "rTxtBenefits";
             this.rTxtBenefits.Size = new System.Drawing.Size(635, 102);
             this.rTxtBenefits.TabIndex = 24;
@@ -230,7 +273,7 @@
             this.dtpExpireDate.Font = new System.Drawing.Font("Inter", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.dtpExpireDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpExpireDate.Location = new System.Drawing.Point(327, 837);
-            this.dtpExpireDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpExpireDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtpExpireDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpExpireDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpExpireDate.Name = "dtpExpireDate";
@@ -277,7 +320,7 @@
             this.guna2Panel1.Controls.Add(this.cbExperience);
             this.guna2Panel1.Controls.Add(this.lblRecruitmentDetails);
             this.guna2Panel1.Location = new System.Drawing.Point(12, 105);
-            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(661, 469);
             this.guna2Panel1.TabIndex = 2;
@@ -296,7 +339,7 @@
             // pnlSkill
             // 
             this.pnlSkill.Location = new System.Drawing.Point(5, 189);
-            this.pnlSkill.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlSkill.Margin = new System.Windows.Forms.Padding(2);
             this.pnlSkill.Name = "pnlSkill";
             this.pnlSkill.Size = new System.Drawing.Size(631, 33);
             this.pnlSkill.TabIndex = 45;
@@ -315,29 +358,45 @@
             this.btnAdd.ForeColor = System.Drawing.Color.OrangeRed;
             this.btnAdd.HoverState.FillColor = System.Drawing.Color.MistyRose;
             this.btnAdd.Location = new System.Drawing.Point(160, 140);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.PressedColor = System.Drawing.Color.LightCoral;
             this.btnAdd.Size = new System.Drawing.Size(120, 45);
             this.btnAdd.TabIndex = 44;
             this.btnAdd.Text = "Add";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // cbSkill
             // 
             this.cbSkill.BackColor = System.Drawing.Color.Transparent;
             this.cbSkill.BorderRadius = 10;
+            this.cbSkill.DataSource = this.skillBindingSource;
+            this.cbSkill.DisplayMember = "Name";
             this.cbSkill.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbSkill.DropDownHeight = 312;
             this.cbSkill.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSkill.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbSkill.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbSkill.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbSkill.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbSkill.IntegralHeight = false;
             this.cbSkill.ItemHeight = 39;
             this.cbSkill.Location = new System.Drawing.Point(5, 140);
-            this.cbSkill.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbSkill.Margin = new System.Windows.Forms.Padding(2);
             this.cbSkill.Name = "cbSkill";
             this.cbSkill.Size = new System.Drawing.Size(125, 45);
             this.cbSkill.TabIndex = 43;
+            this.cbSkill.ValueMember = "Id";
+            // 
+            // skillBindingSource
+            // 
+            this.skillBindingSource.DataMember = "Skill";
+            this.skillBindingSource.DataSource = this.skillDataSet;
+            // 
+            // skillDataSet
+            // 
+            this.skillDataSet.DataSetName = "SkillDataSet";
+            this.skillDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // lblBenefits
             // 
@@ -389,7 +448,7 @@
             this.txtNumberOfRecruitment.IconLeft = global::FindJobApplication.Properties.Resources.people;
             this.txtNumberOfRecruitment.IconLeftSize = new System.Drawing.Size(30, 30);
             this.txtNumberOfRecruitment.Location = new System.Drawing.Point(5, 837);
-            this.txtNumberOfRecruitment.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtNumberOfRecruitment.Margin = new System.Windows.Forms.Padding(5);
             this.txtNumberOfRecruitment.Name = "txtNumberOfRecruitment";
             this.txtNumberOfRecruitment.PasswordChar = '\0';
             this.txtNumberOfRecruitment.PlaceholderText = "Number (Ex: 10 or 20)";
@@ -402,7 +461,7 @@
             // 
             this.pictureBox1.Image = global::FindJobApplication.Properties.Resources.suitcase;
             this.pictureBox1.Location = new System.Drawing.Point(5, 230);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(26, 24);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -476,7 +535,7 @@
             this.btnPostJob.Image = global::FindJobApplication.Properties.Resources.paper_plane;
             this.btnPostJob.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnPostJob.Location = new System.Drawing.Point(533, 654);
-            this.btnPostJob.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPostJob.Margin = new System.Windows.Forms.Padding(2);
             this.btnPostJob.Name = "btnPostJob";
             this.btnPostJob.Size = new System.Drawing.Size(120, 31);
             this.btnPostJob.TabIndex = 4;
@@ -494,6 +553,18 @@
             this.gunaLabel2.TabIndex = 37;
             this.gunaLabel2.Text = "Job Edit";
             // 
+            // skillTableAdapter
+            // 
+            this.skillTableAdapter.ClearBeforeFill = true;
+            // 
+            // locationTableAdapter
+            // 
+            this.locationTableAdapter.ClearBeforeFill = true;
+            // 
+            // yearExperienceTableAdapter
+            // 
+            this.yearExperienceTableAdapter.ClearBeforeFill = true;
+            // 
             // FCompanyJobEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -506,16 +577,21 @@
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.guna2Separator1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FCompanyJobEdit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Job Edit";
             this.Load += new System.EventHandler(this.FCompanyJobEdit_Load);
-            this.Shown += new System.EventHandler(this.FCompanyJobEdit_Shown);
+            ((System.ComponentModel.ISupportInitialize)(this.yearExperienceBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.yearExperienceDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.locationBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.locationcDataSet)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.skillBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skillDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -552,5 +628,14 @@
         private Guna.UI2.WinForms.Guna2Button btnAdd;
         private Guna.UI2.WinForms.Guna2ComboBox cbSkill;
         private Guna.UI.WinForms.GunaLabel gunaLabel2;
+        private SkillDataSet skillDataSet;
+        private System.Windows.Forms.BindingSource skillBindingSource;
+        private SkillDataSetTableAdapters.SkillTableAdapter skillTableAdapter;
+        private LocationcDataSet locationcDataSet;
+        private System.Windows.Forms.BindingSource locationBindingSource;
+        private LocationcDataSetTableAdapters.LocationTableAdapter locationTableAdapter;
+        private YearExperienceDataSet yearExperienceDataSet;
+        private System.Windows.Forms.BindingSource yearExperienceBindingSource;
+        private YearExperienceDataSetTableAdapters.YearExperienceTableAdapter yearExperienceTableAdapter;
     }
 }
