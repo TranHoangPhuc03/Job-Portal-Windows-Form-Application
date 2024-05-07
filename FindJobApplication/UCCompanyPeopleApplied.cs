@@ -39,17 +39,8 @@ namespace FindJobApplication
 
         private void pbSeeDetail_Click(object sender, EventArgs e)
         {
-            if (this.userApplyJob.CvAttachment == null || this.userApplyJob.CvAttachment == "") 
-            {
-                UCCompanySeeProfilePeople uCCompanySeeProfilePeople = new UCCompanySeeProfilePeople(pbSeeDetail.Tag as UserApplyJob);
-                FillToMainPanelClicked?.Invoke(this, uCCompanySeeProfilePeople);
-            }
-            else
-            {
-                FCompanySeeCV fCompanySeeCV = new FCompanySeeCV(this.userApplyJob.CvAttachment);
-                fCompanySeeCV.Show();
-            }
-
+            UCCompanySeeProfilePeople uCCompanySeeProfilePeople = new UCCompanySeeProfilePeople(pbSeeDetail.Tag as UserApplyJob);
+            FillToMainPanelClicked?.Invoke(this, uCCompanySeeProfilePeople);
         }
     }
 }

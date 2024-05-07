@@ -1,4 +1,7 @@
-﻿using System;
+﻿using FindJobApplication.Daos;
+using FindJobApplication.Entities;
+using FindJobApplication.Utils;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +19,7 @@ namespace FindJobApplication
     {
         int month;
         int year;
+        EventDao eventDao = new EventDao();
 
         public UCSchedule()
         {
@@ -41,7 +45,7 @@ namespace FindJobApplication
                 {
                     if (tlpCalendar.GetControlFromPosition(col, row) == null)
                     {
-                        
+                        DateTime date = new DateTime(year, month, cnt);
                         UCScheduleDay uCScheduleDay = new UCScheduleDay();
                         uCScheduleDay.Tag = new DateTime(year, month, cnt);
                         tlpCalendar.Controls.Add(uCScheduleDay, col, row);
@@ -53,7 +57,15 @@ namespace FindJobApplication
                             uCScheduleDay.PnlDay.FillColor3 = Color.FromArgb(51, 102, 255);
                             uCScheduleDay.PnlDay.FillColor4 = Color.FromArgb(51, 102, 255);
                             uCScheduleDay.LblDay.ForeColor = Color.White;
+                            uCScheduleDay.LblCountEvent.ForeColor = Color.White;
                         }
+                        ICollection<InterviewEvent> interviewEvents = eventDao.FindEventInDateById(Session.account.Id, date);
+                        uCScheduleDay.LblCountEvent.Text = interviewEvents.Count.ToString() + " Event!!!";
+                        if (interviewEvents.Count > 0)
+                        {
+                            uCScheduleDay.LblCountEvent.Visible = true;
+                        }
+
                         cnt++;
                         if (cnt > days) break;
                     }
