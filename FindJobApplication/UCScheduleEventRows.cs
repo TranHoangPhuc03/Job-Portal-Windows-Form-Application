@@ -59,7 +59,8 @@ namespace FindJobApplication
             }
             else
             {
-                MessageDialog.Show( "Job post Delete successfully", MessageDialogStyle.Light);
+               // MessageDialog.Show( "Job post Delete successfully", MessageDialogStyle.Light);
+                MessageBox.Show("Job post Delete successfully");
             }
         }
     }

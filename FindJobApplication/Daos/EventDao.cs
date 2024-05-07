@@ -26,5 +26,17 @@ namespace FindJobApplication.Daos
             db.InterviewEvents.Remove(interviewEvent);
             return db.SaveChanges();
         }
+        public ICollection<InterviewEvent> FindEventInDateById(int idCompany, DateTime dateTime)
+        {
+            var events = db.InterviewEvents
+                           .Where(e => e.CompanyId == idCompany &&
+                                       e.From.Year == dateTime.Year &&
+                                       e.From.Month == dateTime.Month &&
+                                       e.From.Day == dateTime.Day)
+                           .ToList();
+
+            return events;
+        }
+
     }
 }
