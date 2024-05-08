@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.pnlLinkCv = new Guna.UI2.WinForms.Guna2Panel();
+            this.txtNameFile = new System.Windows.Forms.Label();
             this.btnChooseFile = new Guna.UI2.WinForms.Guna2Button();
             this.rbtnNewCv = new System.Windows.Forms.RadioButton();
             this.rBtnCurrentCv = new System.Windows.Forms.RadioButton();
@@ -43,7 +44,6 @@
             this.btnCancel = new Guna.UI2.WinForms.Guna2Button();
             this.btnSubmit = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Separator3 = new Guna.UI2.WinForms.Guna2Separator();
-            this.txtNameFile = new System.Windows.Forms.Label();
             this.pnlLinkCv.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,6 +58,17 @@
             this.pnlLinkCv.Name = "pnlLinkCv";
             this.pnlLinkCv.Size = new System.Drawing.Size(618, 104);
             this.pnlLinkCv.TabIndex = 61;
+            // 
+            // txtNameFile
+            // 
+            this.txtNameFile.AutoSize = true;
+            this.txtNameFile.Font = new System.Drawing.Font("Inter Italic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.txtNameFile.Location = new System.Drawing.Point(290, 68);
+            this.txtNameFile.Name = "txtNameFile";
+            this.txtNameFile.Size = new System.Drawing.Size(38, 15);
+            this.txtNameFile.TabIndex = 51;
+            this.txtNameFile.Text = "name";
+            this.txtNameFile.Visible = false;
             // 
             // btnChooseFile
             // 
@@ -242,17 +253,6 @@
             this.guna2Separator3.Name = "guna2Separator3";
             this.guna2Separator3.Size = new System.Drawing.Size(665, 7);
             this.guna2Separator3.TabIndex = 62;
-            // 
-            // txtNameFile
-            // 
-            this.txtNameFile.AutoSize = true;
-            this.txtNameFile.Font = new System.Drawing.Font("Inter Italic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.txtNameFile.Location = new System.Drawing.Point(290, 68);
-            this.txtNameFile.Name = "txtNameFile";
-            this.txtNameFile.Size = new System.Drawing.Size(38, 15);
-            this.txtNameFile.TabIndex = 51;
-            this.txtNameFile.Text = "name";
-            this.txtNameFile.Visible = false;
             // 
             // FUserSubmitCV
             // 

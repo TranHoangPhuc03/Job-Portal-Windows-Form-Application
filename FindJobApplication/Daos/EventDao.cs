@@ -22,11 +22,15 @@ namespace FindJobApplication.Daos
         }
         public int DeleteEventById(int idEvent)
         {
-            InterviewEvent interviewEvent = new InterviewEvent() { Id = idEvent };
-            db.InterviewEvents.Attach(interviewEvent);
-            db.InterviewEvents.Remove(interviewEvent);
-            return db.SaveChanges();
+            InterviewEvent interviewEvent = db.InterviewEvents.Find(idEvent);
+            if (interviewEvent != null)
+            {
+                db.InterviewEvents.Remove(interviewEvent);
+                return db.SaveChanges();
+            }
+            return 0;
         }
+
         public ICollection<InterviewEvent> FindEventInDateById(int idCompany, DateTime dateTime)
         {
             var events = db.InterviewEvents

@@ -18,6 +18,7 @@ namespace FindJobApplication
 
     public partial class UCScheduleEventRows : UserControl
     {
+
         int idEvent;
         DateTime currentDate;
         public event FillToMainPanelHandler FillToMainPanelClicked = UCPanelMain.UC_RequiredAddControl;
@@ -41,7 +42,7 @@ namespace FindJobApplication
             lblTo.Text = interviewEvent.To.ToString("HH:mm");
             Tag = interviewEvent.JobPostId;
             idEvent = interviewEvent.Id;
-            currentDate = Convert.ToDateTime(lblFrom.Text);
+            currentDate = interviewEvent.From;
         }
 
         private void pbSeePeopleInterview_Click(object sender, EventArgs e)
@@ -61,6 +62,7 @@ namespace FindJobApplication
             {
                // MessageDialog.Show( "Job post Delete successfully", MessageDialogStyle.Light);
                 MessageBox.Show("Job post Delete successfully");
+                FillToMainPanelClicked?.Invoke(this, new UCScheduleEvent(currentDate));
             }
         }
     }

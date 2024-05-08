@@ -26,6 +26,7 @@ namespace FindJobApplication
         public UCScheduleEventDetail(int jobPostId) : this()
         {
             this.jobPostId = jobPostId;
+            
         }
         private void btnBack_Click(object sender, EventArgs e)
         {

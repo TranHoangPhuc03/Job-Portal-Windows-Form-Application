@@ -97,6 +97,8 @@
             this.btnDeny.Size = new System.Drawing.Size(150, 60);
             this.btnDeny.TabIndex = 39;
             this.btnDeny.Text = "Deny";
+            this.btnDeny.Visible = false;
+            this.btnDeny.Click += new System.EventHandler(this.btnDeny_Click);
             // 
             // btnAccept
             // 
@@ -117,6 +119,7 @@
             this.btnAccept.Size = new System.Drawing.Size(150, 60);
             this.btnAccept.TabIndex = 40;
             this.btnAccept.Text = "Accept";
+            this.btnAccept.Visible = false;
             this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
             // 
             // btnSeeCV

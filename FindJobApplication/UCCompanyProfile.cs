@@ -2,6 +2,7 @@
 using FindJobApplication.Entities;
 using FindJobApplication.Utils;
 using Guna.UI2.WinForms;
+using Microsoft.VisualBasic.ApplicationServices;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -55,7 +56,22 @@ namespace FindJobApplication
 
         private void btnFollow_Click(object sender, EventArgs e)
         {
-
+            AccountDao accountDao = new AccountDao();
+            if (Session.account.Id != companyId)
+            {
+                btnFollow.Visible = true;
+                btnInbox.Visible = true;
+            }
+            if (btnFollow.Text == "Unfollow")
+            {
+                btnFollow.Text = "Follow";
+                accountDao.DeleteAccountFollowing(Session.account.Id, companyId);
+            }
+            else
+            {
+                btnFollow.Text = "Unfollow";
+                accountDao.SaveNewAccountFollowed(Session.account.Id, companyId);
+            }
         }
 
         private void UCCompanyProfile_Load(object sender, EventArgs e)
@@ -75,10 +91,7 @@ namespace FindJobApplication
             lblProfileLink.Text = companyProfile.CompanyLink;
             rtxtTop3Reason.Text = companyProfile.Reason;
             rTxtOverview.Text = companyProfile.Overview;
-            if (isFollowing(companyId))
-            {
-                btnFollow.Text = "Following";
-            }
+            ChangeButtonFollowState();
         }
 
         private void pbTop3Edit_Click(object sender, EventArgs e)
@@ -116,9 +129,17 @@ namespace FindJobApplication
                 this.Dispose();
             }
         }
-        private bool isFollowing(int id)
+        public void ChangeButtonFollowState()
         {
-            return false;
+            AccountDao accountDao = new AccountDao();
+            if (accountDao.FindAccountById(Session.account.Id).Account1.Any(row => row.Id == companyId))
+            {
+                btnFollow.Text = "Unfollow";
+            }
+            else
+            {
+                btnFollow.Text = "Follow";
+            }
         }
     }
 }
