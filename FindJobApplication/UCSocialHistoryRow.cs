@@ -1,5 +1,6 @@
 ﻿using FindJobApplication.Daos;
 using FindJobApplication.Entities;
+using FindJobApplication.Utils;
 using Guna.UI.WinForms;
 using Guna.UI2.WinForms;
 using System;
@@ -48,6 +49,16 @@ namespace FindJobApplication
             if (result > 0)
             {
                 MessageDialog.Show(this.ParentForm, "Delete success");
+                if (Session.account.Role == "user")
+                {
+                    UCUserSubMenuRight uCUserSubMenuRight = new UCUserSubMenuRight();
+                    uCUserSubMenuRight.btnSocialPost_Click(sender, e);
+                }
+                else
+                {
+                    UCCompanySubMenuRight uCCompanySubMenuRight = new UCCompanySubMenuRight();
+                    uCCompanySubMenuRight.btnSocialPost_Click(sender, e);
+                }
             }
             else
             {

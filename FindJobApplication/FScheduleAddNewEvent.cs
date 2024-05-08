@@ -23,7 +23,7 @@ namespace FindJobApplication
         JobPostDao jobPostDao = new JobPostDao();
         EventDao eventDao = new EventDao();
         DateTime currentDate;
-
+        public event FillToMainPanelHandler FillToMainPanelClicked = UCPanelMain.UC_RequiredAddControl;
         public FScheduleAddNewEvent()
         {
             InitializeComponent();
@@ -109,6 +109,8 @@ namespace FindJobApplication
                     else
                     {
                         MessageDialog.Show(this, "Event saved successfully", MessageDialogStyle.Light);
+                        FillToMainPanelClicked?.Invoke(this, new UCScheduleEvent(currentDate));
+
                         this.Close();
                     }
                 }

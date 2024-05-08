@@ -55,6 +55,10 @@ namespace FindJobApplication
             else
             {
                 MessageDialog.Show(this, "Update information successfully.");
+                UCUserSubMenuRight uCUserSubMenuRight = new UCUserSubMenuRight();
+                uCUserSubMenuRight.btnProfile_Click(sender, e);
+                FHome.Instance.LblUserName.Text = txtFullName.Text;
+                FHome.Instance.PbUserImage.Image = ImageUtils.FromBytesToImage(userProfile.Account.Avatar);
                 Close();
             }
         }
@@ -68,7 +72,7 @@ namespace FindJobApplication
             txtPhoneNumber.Text = userProfile.PhoneNumber;
             txtAddress.Text = userProfile.Address;
             txtLink.Text = userProfile.PersonalLink;
-            dtpDateOfBirth.Text = (userProfile.DateOfBirth ?? DateTime.Now).ToString("dd-MM-yyyy");
+            dtpDateOfBirth.Text = (DateTime.Now).ToString("dd-MM-yyyy");
         }
 
         private void pbUser_Click(object sender, EventArgs e)
@@ -95,5 +99,6 @@ namespace FindJobApplication
         {
             pbUser.Image = pbUser.InitialImage;
         }
+
     }
 }

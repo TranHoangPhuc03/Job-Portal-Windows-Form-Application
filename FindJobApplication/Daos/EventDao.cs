@@ -17,6 +17,7 @@ namespace FindJobApplication.Daos
         public int SaveNewEvent(InterviewEvent interviewEvent)
         {
             db.InterviewEvents.Add(interviewEvent);
+            int c = db.InterviewEvents.Count();
             return db.SaveChanges();
         }
         public int DeleteEventById(int idEvent)

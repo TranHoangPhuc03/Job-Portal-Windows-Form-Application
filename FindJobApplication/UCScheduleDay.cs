@@ -27,7 +27,7 @@ namespace FindJobApplication
 
         public Guna2CustomGradientPanel PnlDay { get => pnlDay; set => pnlDay = value; }
 
-        private void pnlDay_Click(object sender, EventArgs e)
+        public void pnlDay_Click(object sender, EventArgs e)
         {
             FillToMainPanelClicked?.Invoke(this, new UCScheduleEvent(Convert.ToDateTime(Tag)));
         }

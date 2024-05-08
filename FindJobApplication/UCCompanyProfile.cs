@@ -1,6 +1,7 @@
 ﻿using FindJobApplication.Daos;
 using FindJobApplication.Entities;
 using FindJobApplication.Utils;
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,7 +29,7 @@ namespace FindJobApplication
             tableLayoutPanel1.VerticalScroll.Visible = false;
             tableLayoutPanel1.AutoScroll = true;
         }
-
+        public Guna2Button BtnFollow { get => btnFollow; set => btnFollow = value; }
         public UCCompanyProfile(int companyId) : this()
         {
             this.companyId = companyId;

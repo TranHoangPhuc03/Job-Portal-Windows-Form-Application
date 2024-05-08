@@ -62,8 +62,6 @@ namespace FindJobApplication
 
         private void btnAccept_Click(object sender, EventArgs e)
         {
-            FCompanyScheduleAnInterview fCompanyScheduleAnInterview = new FCompanyScheduleAnInterview();    
-            fCompanyScheduleAnInterview.Show();
         }
     }
 }

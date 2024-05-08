@@ -58,12 +58,20 @@ namespace FindJobApplication
                     UCProfile uCProfile = new UCProfile(accountId);
                     FillToMainPanelClicked?.Invoke(this, uCProfile);
                     uCProfile.hideAllBtn();
+                    if (Session.account.Role == "user")
+                    {
+                        uCProfile.BtnFollow.Visible = false;
+                    }
                 }
                 else
                 {
                     UCCompanyProfile uCCompanyProfile = new UCCompanyProfile(accountId);
                     FillToMainPanelClicked?.Invoke(this, uCCompanyProfile);
                     uCCompanyProfile.hideAllButton();
+                    if (Session.account.Role == "company")
+                    {
+                        uCCompanyProfile.BtnFollow.Visible = false;
+                    }
                 }
 
             }

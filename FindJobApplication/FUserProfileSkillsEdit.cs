@@ -58,6 +58,8 @@ namespace FindJobApplication
             else
             {
                 MessageDialog.Show(this, "Update successfully");
+                UCUserSubMenuRight uCUserSubMenuRight = new UCUserSubMenuRight();
+                uCUserSubMenuRight.btnProfile_Click(sender, e);
                 Close();
             }
         }

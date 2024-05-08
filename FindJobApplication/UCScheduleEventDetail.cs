@@ -15,6 +15,8 @@ namespace FindJobApplication
     {
         int jobPostId;
         JobApplyDao jobApplyDao = new JobApplyDao();
+        public event FillToMainPanelHandler FillToMainPanelClicked = UCPanelMain.UC_RequiredAddControl;
+
         public UCScheduleEventDetail()
         {
             InitializeComponent();
@@ -33,6 +35,7 @@ namespace FindJobApplication
                 parentControl.Controls.Remove(this);
                 Dispose();
             }
+
         }
 
         private void UCScheduleEventDetail_Load(object sender, EventArgs e)
