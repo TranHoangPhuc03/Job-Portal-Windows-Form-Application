@@ -15,16 +15,16 @@ namespace FindJobApplication
 {
     public partial class UCCompanyJobRecruitment : UserControl
     {
-        int companyId;
         int cnt = 0;
+        CompanyProfile companyProfile = null;
         public UCCompanyJobRecruitment()
         {
             InitializeComponent();
             Dock = DockStyle.Fill;
         }
-        public UCCompanyJobRecruitment(int companyId) :  this() 
+        public UCCompanyJobRecruitment(CompanyProfile companyProfile) :  this() 
         {
-            this.companyId = companyId;
+            this.companyProfile = companyProfile;
         }
         private void btnBack_Click(object sender, EventArgs e)
         {
@@ -32,7 +32,7 @@ namespace FindJobApplication
             if (parentControl != null)
             {
                 parentControl.Controls.Remove(this);
-                this.Dispose();
+                Dispose();
             }
         }
 
@@ -59,14 +59,13 @@ namespace FindJobApplication
                 pnlListJob.Controls.Add(uCJob);
                 cnt++;
             }
-            lblCountJob.Text = cnt.ToString();
         }
 
 
         private void UCCompanyJobRecruitment_Load(object sender, EventArgs e)
         {
-            JobPostDao jobPostDao = new JobPostDao();
-            fillDataToPanel(jobPostDao.FindAllJobPostByCompanyId(companyId));
+            lblCountJob.Text = companyProfile.JobPosts.Count.ToString();
+            fillDataToPanel(companyProfile.JobPosts);
         }
     }
 }

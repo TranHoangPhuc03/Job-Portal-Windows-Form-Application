@@ -154,7 +154,7 @@
             this.btnSeeJob.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnSeeJob.ImageSize = new System.Drawing.Size(32, 32);
             this.btnSeeJob.Location = new System.Drawing.Point(326, 646);
-            this.btnSeeJob.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSeeJob.Margin = new System.Windows.Forms.Padding(2);
             this.btnSeeJob.Name = "btnSeeJob";
             this.btnSeeJob.Size = new System.Drawing.Size(139, 30);
             this.btnSeeJob.TabIndex = 44;
@@ -213,7 +213,7 @@
             this.btnInbox.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnInbox.ImageSize = new System.Drawing.Size(32, 32);
             this.btnInbox.Location = new System.Drawing.Point(646, 217);
-            this.btnInbox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnInbox.Margin = new System.Windows.Forms.Padding(2);
             this.btnInbox.Name = "btnInbox";
             this.btnInbox.Size = new System.Drawing.Size(260, 62);
             this.btnInbox.TabIndex = 40;
@@ -229,7 +229,7 @@
             this.pnlListPicture.Controls.Add(this.pbCompany2);
             this.pnlListPicture.Controls.Add(this.pbCompany3);
             this.pnlListPicture.Location = new System.Drawing.Point(30, 708);
-            this.pnlListPicture.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlListPicture.Margin = new System.Windows.Forms.Padding(2);
             this.pnlListPicture.Name = "pnlListPicture";
             this.pnlListPicture.Size = new System.Drawing.Size(1103, 244);
             this.pnlListPicture.TabIndex = 39;
@@ -346,7 +346,7 @@
             this.btnFollow.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnFollow.ImageSize = new System.Drawing.Size(32, 32);
             this.btnFollow.Location = new System.Drawing.Point(315, 217);
-            this.btnFollow.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnFollow.Margin = new System.Windows.Forms.Padding(2);
             this.btnFollow.Name = "btnFollow";
             this.btnFollow.Size = new System.Drawing.Size(260, 62);
             this.btnFollow.TabIndex = 34;
@@ -358,11 +358,11 @@
             // 
             this.pbProfileEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pbProfileEdit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbProfileEdit.Image = global::FindJobApplication.Properties.Resources.edit;
-            this.pbProfileEdit.Location = new System.Drawing.Point(1088, 365);
-            this.pbProfileEdit.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.pbProfileEdit.Image = global::FindJobApplication.Properties.Resources.add;
+            this.pbProfileEdit.Location = new System.Drawing.Point(447, 384);
+            this.pbProfileEdit.Margin = new System.Windows.Forms.Padding(0);
             this.pbProfileEdit.Name = "pbProfileEdit";
-            this.pbProfileEdit.Size = new System.Drawing.Size(54, 38);
+            this.pbProfileEdit.Size = new System.Drawing.Size(30, 30);
             this.pbProfileEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbProfileEdit.TabIndex = 15;
             this.pbProfileEdit.TabStop = false;
@@ -586,7 +586,7 @@
             this.rTxtOverview.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rTxtOverview.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rTxtOverview.Location = new System.Drawing.Point(53, 130);
-            this.rTxtOverview.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rTxtOverview.Margin = new System.Windows.Forms.Padding(2);
             this.rTxtOverview.Name = "rTxtOverview";
             this.rTxtOverview.ReadOnly = true;
             this.rTxtOverview.Size = new System.Drawing.Size(1007, 380);
@@ -597,11 +597,11 @@
             // 
             this.pBCompanyOverviewEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pBCompanyOverviewEdit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pBCompanyOverviewEdit.Image = global::FindJobApplication.Properties.Resources.edit;
-            this.pBCompanyOverviewEdit.Location = new System.Drawing.Point(1088, 19);
+            this.pBCompanyOverviewEdit.Image = global::FindJobApplication.Properties.Resources.add;
+            this.pBCompanyOverviewEdit.Location = new System.Drawing.Point(435, 40);
             this.pBCompanyOverviewEdit.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.pBCompanyOverviewEdit.Name = "pBCompanyOverviewEdit";
-            this.pBCompanyOverviewEdit.Size = new System.Drawing.Size(54, 38);
+            this.pBCompanyOverviewEdit.Size = new System.Drawing.Size(30, 30);
             this.pBCompanyOverviewEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pBCompanyOverviewEdit.TabIndex = 16;
             this.pBCompanyOverviewEdit.TabStop = false;
@@ -661,7 +661,7 @@
             this.rtxtTop3Reason.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtxtTop3Reason.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtxtTop3Reason.Location = new System.Drawing.Point(55, 136);
-            this.rtxtTop3Reason.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rtxtTop3Reason.Margin = new System.Windows.Forms.Padding(2);
             this.rtxtTop3Reason.Name = "rtxtTop3Reason";
             this.rtxtTop3Reason.ReadOnly = true;
             this.rtxtTop3Reason.Size = new System.Drawing.Size(851, 104);
@@ -673,11 +673,11 @@
             // 
             this.pbTop3Edit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pbTop3Edit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbTop3Edit.Image = global::FindJobApplication.Properties.Resources.edit;
-            this.pbTop3Edit.Location = new System.Drawing.Point(1088, 35);
+            this.pbTop3Edit.Image = global::FindJobApplication.Properties.Resources.add;
+            this.pbTop3Edit.Location = new System.Drawing.Point(522, 44);
             this.pbTop3Edit.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.pbTop3Edit.Name = "pbTop3Edit";
-            this.pbTop3Edit.Size = new System.Drawing.Size(54, 38);
+            this.pbTop3Edit.Size = new System.Drawing.Size(30, 30);
             this.pbTop3Edit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbTop3Edit.TabIndex = 16;
             this.pbTop3Edit.TabStop = false;

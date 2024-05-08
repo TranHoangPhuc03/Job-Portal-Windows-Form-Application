@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Drawing;
 using FindJobApplication.Entities;
 using System.CodeDom.Compiler;
+using System.Data.Entity;
 
 namespace FindJobApplication.Daos
 {
@@ -37,38 +38,20 @@ namespace FindJobApplication.Daos
             return 0;
         }
 
-        public List<int> FindAllUserIdFollowing(int companyAccountId)
+        public ICollection<UserProfile> FindAllUserIdFollowing(int companyAccountId)
         {
-            return null;
-        }
-
-        public int SaveUserIdFollowing(int companyAccountId, int userAccountId)
-        {
-            return 0;
-        }
-
-        public int DeleteUserIdFollowing(int companyAccountId, int userAccountId)
-        {
-            return 0;
-        }
-
-        public int UpdateCompanyReason(int companyId, string reason)
-        {
-            var companyProfile = FindCompanyProfileByAccountId(companyId);
-            companyProfile.Reason = reason;
-            return db.SaveChanges();
-        }
-
-        public int UpdateCompanyOverview(int companyId, string overview)
-        {
-            var companyProfile = FindCompanyProfileByAccountId(companyId);
-            companyProfile.Overview = overview;
-            return db.SaveChanges();
+            var results = db.Accounts
+                    .Find(companyAccountId)
+                    .Account1
+                    .Select(row => row.UserProfile)
+                    .ToList();
+            return results;
         }
 
         public int UpdateCompanyProfile(CompanyProfile companyProfile)
         {
-            return 0;
+            db.Entry(companyProfile).State = EntityState.Modified;
+            return db.SaveChanges();
         }
         public int UpdateUserApplyStatus(int userId, int jobPostId, string status)
         {
@@ -86,6 +69,12 @@ namespace FindJobApplication.Daos
                 .ToList();
 
             return results;
+        }
+        public void DeleteAllCompanyImages(CompanyProfile companyProfile)
+        {
+            db.CompanyProfiles.Attach(companyProfile);
+            companyProfile.CompanyImages.Clear();
+            db.SaveChanges();
         }
     }
 }

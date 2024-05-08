@@ -30,8 +30,8 @@
         {
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
-            this.guna2DateTimePicker2 = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.dtpTo = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.dtpFrom = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.txtCompany = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtJobTitle = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnCancel = new Guna.UI2.WinForms.Guna2Button();
@@ -63,41 +63,43 @@
             this.gunaLabel1.TabIndex = 39;
             this.gunaLabel1.Text = "From";
             // 
-            // guna2DateTimePicker2
+            // dtpTo
             // 
-            this.guna2DateTimePicker2.BackColor = System.Drawing.Color.White;
-            this.guna2DateTimePicker2.BorderRadius = 10;
-            this.guna2DateTimePicker2.Checked = true;
-            this.guna2DateTimePicker2.FillColor = System.Drawing.Color.White;
-            this.guna2DateTimePicker2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.guna2DateTimePicker2.Location = new System.Drawing.Point(332, 324);
-            this.guna2DateTimePicker2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.guna2DateTimePicker2.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.guna2DateTimePicker2.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.guna2DateTimePicker2.Name = "guna2DateTimePicker2";
-            this.guna2DateTimePicker2.Size = new System.Drawing.Size(300, 41);
-            this.guna2DateTimePicker2.TabIndex = 38;
-            this.guna2DateTimePicker2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.guna2DateTimePicker2.Value = new System.DateTime(2024, 3, 7, 10, 12, 27, 872);
+            this.dtpTo.BackColor = System.Drawing.Color.White;
+            this.dtpTo.BorderRadius = 10;
+            this.dtpTo.Checked = true;
+            this.dtpTo.CustomFormat = "dd-MM-yyyy";
+            this.dtpTo.FillColor = System.Drawing.Color.White;
+            this.dtpTo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpTo.Location = new System.Drawing.Point(332, 324);
+            this.dtpTo.Margin = new System.Windows.Forms.Padding(2);
+            this.dtpTo.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpTo.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpTo.Name = "dtpTo";
+            this.dtpTo.Size = new System.Drawing.Size(300, 41);
+            this.dtpTo.TabIndex = 38;
+            this.dtpTo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.dtpTo.Value = new System.DateTime(2024, 3, 7, 10, 12, 27, 872);
             // 
-            // guna2DateTimePicker1
+            // dtpFrom
             // 
-            this.guna2DateTimePicker1.BackColor = System.Drawing.Color.White;
-            this.guna2DateTimePicker1.BorderRadius = 10;
-            this.guna2DateTimePicker1.Checked = true;
-            this.guna2DateTimePicker1.FillColor = System.Drawing.Color.White;
-            this.guna2DateTimePicker1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.guna2DateTimePicker1.Location = new System.Drawing.Point(17, 324);
-            this.guna2DateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.guna2DateTimePicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.guna2DateTimePicker1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.guna2DateTimePicker1.Name = "guna2DateTimePicker1";
-            this.guna2DateTimePicker1.Size = new System.Drawing.Size(300, 41);
-            this.guna2DateTimePicker1.TabIndex = 37;
-            this.guna2DateTimePicker1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.guna2DateTimePicker1.Value = new System.DateTime(2024, 3, 7, 10, 12, 27, 872);
+            this.dtpFrom.BackColor = System.Drawing.Color.White;
+            this.dtpFrom.BorderRadius = 10;
+            this.dtpFrom.Checked = true;
+            this.dtpFrom.CustomFormat = "dd-MM-yyyy";
+            this.dtpFrom.FillColor = System.Drawing.Color.White;
+            this.dtpFrom.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpFrom.Location = new System.Drawing.Point(17, 324);
+            this.dtpFrom.Margin = new System.Windows.Forms.Padding(2);
+            this.dtpFrom.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpFrom.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpFrom.Name = "dtpFrom";
+            this.dtpFrom.Size = new System.Drawing.Size(300, 41);
+            this.dtpFrom.TabIndex = 37;
+            this.dtpFrom.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.dtpFrom.Value = new System.DateTime(2024, 3, 7, 10, 12, 27, 872);
             // 
             // txtCompany
             // 
@@ -180,6 +182,7 @@
             this.btnSave.Size = new System.Drawing.Size(126, 45);
             this.btnSave.TabIndex = 53;
             this.btnSave.Text = "Save";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // guna2Separator1
             // 
@@ -221,15 +224,16 @@
             this.Controls.Add(this.guna2Separator1);
             this.Controls.Add(this.gunaLabel2);
             this.Controls.Add(this.gunaLabel1);
-            this.Controls.Add(this.guna2DateTimePicker2);
-            this.Controls.Add(this.guna2DateTimePicker1);
+            this.Controls.Add(this.dtpTo);
+            this.Controls.Add(this.dtpFrom);
             this.Controls.Add(this.txtCompany);
             this.Controls.Add(this.txtJobTitle);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FUserProfileWorkExperienceEdit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Work Experience Edit";
+            this.Load += new System.EventHandler(this.FUserProfileWorkExperienceEdit_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -238,8 +242,8 @@
         #endregion
         private Guna.UI.WinForms.GunaLabel gunaLabel2;
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
-        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker2;
-        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpTo;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpFrom;
         private Guna.UI2.WinForms.Guna2TextBox txtCompany;
         private Guna.UI2.WinForms.Guna2TextBox txtJobTitle;
         private Guna.UI2.WinForms.Guna2Button btnCancel;

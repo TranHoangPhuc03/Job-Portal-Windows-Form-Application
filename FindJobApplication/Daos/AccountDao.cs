@@ -48,5 +48,22 @@ namespace FindJobApplication.Daos
             currentAccount.Password = account.Password;
             return db.SaveChanges();
         }
+
+        public int SaveNewAccountFollowed(int followingId, int followedId)
+        {
+            var followingAccount = db.Accounts.Find(followingId);
+            var followedAccount = db.Accounts.Find(followedId);
+            followingAccount.Account1.Add(followedAccount);
+            return db.SaveChanges();
+        }
+
+        public int DeleteAccountFollowing(int followingId, int followedId)
+        {
+            var followingAccount = db.Accounts.Find(followingId);
+            var followedAccount = db.Accounts.Find(followedId);
+            db.Accounts.Attach(followingAccount);
+            followingAccount.Account1.Remove(followedAccount);
+            return db.SaveChanges();
+        }
     }
 }

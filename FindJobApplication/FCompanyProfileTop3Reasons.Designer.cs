@@ -73,6 +73,7 @@
             this.btnSave.Size = new System.Drawing.Size(126, 45);
             this.btnSave.TabIndex = 59;
             this.btnSave.Text = "Save";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // guna2Separator2
             // 
@@ -130,6 +131,7 @@
             this.MinimizeBox = false;
             this.Name = "FCompanyProfileTop3Reasons";
             this.Text = " ";
+            this.Load += new System.EventHandler(this.FCompanyProfileTop3Reasons_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

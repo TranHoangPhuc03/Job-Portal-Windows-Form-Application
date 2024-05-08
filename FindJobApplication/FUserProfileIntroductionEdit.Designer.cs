@@ -132,6 +132,7 @@
             this.btnSave.Size = new System.Drawing.Size(126, 45);
             this.btnSave.TabIndex = 53;
             this.btnSave.Text = "Save";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // guna2Separator3
             // 
@@ -183,6 +184,7 @@
             this.Name = "FUserProfileIntroductionEdit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "About Me Edit";
+            this.Load += new System.EventHandler(this.FUserProfileIntroductionEdit_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

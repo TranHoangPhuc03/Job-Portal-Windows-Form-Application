@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
             this.pnlSkill = new System.Windows.Forms.FlowLayoutPanel();
             this.cbSkill = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -36,6 +37,11 @@
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.guna2Separator2 = new Guna.UI2.WinForms.Guna2Separator();
+            this.skillDataSet = new FindJobApplication.SkillDataSet();
+            this.skillBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.skillTableAdapter = new FindJobApplication.SkillDataSetTableAdapters.SkillTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.skillDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skillBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAdd
@@ -58,6 +64,7 @@
             this.btnAdd.Size = new System.Drawing.Size(126, 45);
             this.btnAdd.TabIndex = 2;
             this.btnAdd.Text = "Add";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // pnlSkill
             // 
@@ -71,18 +78,24 @@
             // 
             this.cbSkill.BackColor = System.Drawing.Color.Transparent;
             this.cbSkill.BorderRadius = 10;
+            this.cbSkill.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.skillBindingSource, "Id", true));
+            this.cbSkill.DataSource = this.skillBindingSource;
+            this.cbSkill.DisplayMember = "Name";
             this.cbSkill.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbSkill.DropDownHeight = 312;
             this.cbSkill.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSkill.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbSkill.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbSkill.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbSkill.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbSkill.IntegralHeight = false;
             this.cbSkill.ItemHeight = 39;
             this.cbSkill.Location = new System.Drawing.Point(19, 132);
             this.cbSkill.Margin = new System.Windows.Forms.Padding(2);
             this.cbSkill.Name = "cbSkill";
             this.cbSkill.Size = new System.Drawing.Size(125, 45);
             this.cbSkill.TabIndex = 1;
+            this.cbSkill.ValueMember = "Id";
             // 
             // btnCancel
             // 
@@ -121,6 +134,7 @@
             this.btnSave.Size = new System.Drawing.Size(126, 45);
             this.btnSave.TabIndex = 53;
             this.btnSave.Text = "Save";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // guna2Separator1
             // 
@@ -149,6 +163,20 @@
             this.guna2Separator2.Size = new System.Drawing.Size(659, 8);
             this.guna2Separator2.TabIndex = 55;
             // 
+            // skillDataSet
+            // 
+            this.skillDataSet.DataSetName = "SkillDataSet";
+            this.skillDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // skillBindingSource
+            // 
+            this.skillBindingSource.DataMember = "Skill";
+            this.skillBindingSource.DataSource = this.skillDataSet;
+            // 
+            // skillTableAdapter
+            // 
+            this.skillTableAdapter.ClearBeforeFill = true;
+            // 
             // FUserProfileSkillsEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -169,6 +197,9 @@
             this.Name = "FUserProfileSkillsEdit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Skills Edit";
+            this.Load += new System.EventHandler(this.FUserProfileSkillsEdit_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.skillDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skillBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -183,5 +214,8 @@
         private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator2;
+        private SkillDataSet skillDataSet;
+        private System.Windows.Forms.BindingSource skillBindingSource;
+        private SkillDataSetTableAdapters.SkillTableAdapter skillTableAdapter;
     }
 }

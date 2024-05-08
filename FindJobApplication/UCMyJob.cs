@@ -38,8 +38,8 @@ namespace FindJobApplication
             pnlMain.RowCount = 0;
             for (int i = 0; i < savedJobs.Count; i++)
             {
-                UCJobApply uCJobApply = new UCJobApply(i + 1, savedJobs[i]);
-                pnlMain.Controls.Add(uCJobApply);
+                pnlMain.RowCount += 1;
+                pnlMain.Controls.Add(new UCJobApply(i+1, savedJobs[i]));
             }
             pnlMain.RowCount += 1;
         }

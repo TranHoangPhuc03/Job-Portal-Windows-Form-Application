@@ -76,24 +76,26 @@
             this.pbDeleteProject.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbDeleteProject.Image = global::FindJobApplication.Properties.Resources.delete;
             this.pbDeleteProject.Location = new System.Drawing.Point(519, 9);
-            this.pbDeleteProject.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbDeleteProject.Margin = new System.Windows.Forms.Padding(2);
             this.pbDeleteProject.Name = "pbDeleteProject";
             this.pbDeleteProject.Size = new System.Drawing.Size(36, 23);
             this.pbDeleteProject.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbDeleteProject.TabIndex = 11;
             this.pbDeleteProject.TabStop = false;
+            this.pbDeleteProject.Click += new System.EventHandler(this.pbDeleteProject_Click);
             // 
             // pbEditProject
             // 
             this.pbEditProject.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbEditProject.Image = global::FindJobApplication.Properties.Resources.edit1;
             this.pbEditProject.Location = new System.Drawing.Point(479, 9);
-            this.pbEditProject.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbEditProject.Margin = new System.Windows.Forms.Padding(2);
             this.pbEditProject.Name = "pbEditProject";
             this.pbEditProject.Size = new System.Drawing.Size(36, 23);
             this.pbEditProject.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbEditProject.TabIndex = 10;
             this.pbEditProject.TabStop = false;
+            this.pbEditProject.Click += new System.EventHandler(this.pbEditProject_Click);
             // 
             // lblSeeProject
             // 
@@ -120,7 +122,7 @@
             this.Controls.Add(this.lblEndDay);
             this.Controls.Add(this.lblStartDay);
             this.Controls.Add(this.lblNameProject);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UCUserProfileProject";
             this.Size = new System.Drawing.Size(557, 75);
             ((System.ComponentModel.ISupportInitialize)(this.pbDeleteProject)).EndInit();

@@ -60,10 +60,9 @@
             // 
             // pBDelete
             // 
-            this.pBDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.pBDelete.Enabled = false;
             this.pBDelete.Image = global::FindJobApplication.Properties.Resources.Xoa;
-            this.pBDelete.Location = new System.Drawing.Point(102, 0);
+            this.pBDelete.Location = new System.Drawing.Point(100, 1);
             this.pBDelete.Margin = new System.Windows.Forms.Padding(0);
             this.pBDelete.Name = "pBDelete";
             this.pBDelete.Size = new System.Drawing.Size(23, 28);
@@ -78,12 +77,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.Controls.Add(this.pBDelete);
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Controls.Add(this.btnSkill);
+            this.Controls.Add(this.pBDelete);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(33)))), ((int)(((byte)(56)))));
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "UCSkillTag";
-            this.Size = new System.Drawing.Size(125, 28);
+            this.Size = new System.Drawing.Size(123, 29);
             ((System.ComponentModel.ISupportInitialize)(this.pBDelete)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

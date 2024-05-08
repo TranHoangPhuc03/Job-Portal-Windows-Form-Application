@@ -9,18 +9,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media.Imaging;
 using FindJobApplication.Entities;
+using System.Data.Entity;
 
 namespace FindJobApplication.Daos
 {
     public class JobPostDao
     {
-        private QLXinViecDFContext db = null;
-
-        public JobPostDao()
-        {
-            db = new QLXinViecDFContext();
-        }
-
+        private QLXinViecDFContext db = new QLXinViecDFContext();
         public int SaveNewJobPost(JobPost jobpost)
         {
             db.JobPosts.Add(jobpost);
@@ -57,14 +52,15 @@ namespace FindJobApplication.Daos
         }
         public int DeleteJobPostById(int jobPostId)
         {
-            JobPost jobPost = new JobPost() { Id = jobPostId };
+            JobPost jobPost = db.JobPosts.Find(jobPostId);
             db.JobPosts.Attach(jobPost);
+            jobPost.Skills.Clear();
             db.JobPosts.Remove(jobPost);
             return db.SaveChanges();
         }
         public int UpdateJobPostById(JobPost jobPost)
         {
-            db.JobPosts.Attach(jobPost);
+            db.Entry(jobPost).State = EntityState.Modified;
             return db.SaveChanges();
         }
 

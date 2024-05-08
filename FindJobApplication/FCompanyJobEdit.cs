@@ -19,100 +19,90 @@ namespace FindJobApplication
     public partial class FCompanyJobEdit : Form
     {
         private string formAction;
-        private Dictionary<string, string> controlToField = new Dictionary<string, string>()
-        {
-            { "txtNameJob", "Title" },
-            { "cbExperience", "YearExperienceId" },
-            { "cbLocation", "LocationId" },
-            { "txtSalary", "Salary" },
-            { "rTxtJobDescription", "Description" },
-            { "rTxtCandidateRequirements", "Requirement" },
-            { "rTxtPrioritize", "Prioritize" },
-            { "rTxtBenefits", "Benefit" },
-            { "txtNumberOfRecruitment", "RecruitmentNumber" },
-            { "txtWorkAddress", "Address" },
-            { "dtpExpireDate", "ExpireDate" }
-        };
+        JobPostDao jobPostDao = new JobPostDao();
+        JobPost jobPost = null;
 
         public FCompanyJobEdit()
         {
             InitializeComponent();
-            this.formAction = "Create";
+            formAction = "Create";
         }
 
         public FCompanyJobEdit(int jobPostId) : this()
         {
-            this.Tag = jobPostId;
-            this.formAction = "Update";
+            jobPost = jobPostDao.FindJobPostById(jobPostId);
+            Tag = jobPost;
+            formAction = "Update";
         }
 
         private void FCompanyJobEdit_Load(object sender, EventArgs e)
         {
-            LocationDao locationDao = new LocationDao();
-            YearExperienceDao yearExperienceDao = new YearExperienceDao();
+            SuspendLayout();
+            yearExperienceTableAdapter.Fill(yearExperienceDataSet.YearExperience);
+            locationTableAdapter.Fill(locationcDataSet.Location);
+            skillTableAdapter.Fill(skillDataSet.Skill);
 
-            this.cbLocation.ValueMember = "id";
-            this.cbLocation.DisplayMember = "name";
-            this.cbLocation.DataSource = locationDao.FindAllLocationList();
-
-            this.cbExperience.ValueMember = "id";
-            this.cbExperience.DisplayMember = "name";
-            this.cbExperience.DataSource = yearExperienceDao.FindAllExperience();
-
-            if (this.Tag != null)
+            if (jobPost != null)
             {
-                int jobPostId = (int)this.Tag;
-                JobPostDao jobPostDao = new JobPostDao();
-                JobPost jobPost = jobPostDao.FindJobPostById(jobPostId);
 
-                this.txtNameJob.Text = jobPost.Title;
-                this.txtSalary.Text = jobPost.Salary.ToString();
-                this.rTxtBenefits.Text = jobPost.Benefit;
-                this.rTxtCandidateRequirements.Text = jobPost.Requirement;
-                this.rTxtJobDescription.Text = jobPost.Description;
-                this.rTxtPrioritize.Text = jobPost.Prioritize;
-                this.txtNumberOfRecruitment.Text = jobPost.RecruitmentNumber.ToString();
-                this.txtWorkAddress.Text = jobPost.Address;
-                this.cbExperience.SelectedIndex = jobPost.YearExperienceId;
-                this.cbLocation.SelectedIndex = jobPost.LocationId;
-                this.dtpExpireDate.Text = jobPost.ExpireDate.ToString();
-
-                if (this.formAction == "Update")
+                txtNameJob.Text = jobPost.Title;
+                txtSalary.Text = jobPost.Salary.ToString();
+                rTxtBenefits.Text = jobPost.Benefit;
+                rTxtCandidateRequirements.Text = jobPost.Requirement;
+                rTxtJobDescription.Text = jobPost.Description;
+                rTxtPrioritize.Text = jobPost.Prioritize;
+                txtNumberOfRecruitment.Text = jobPost.RecruitmentNumber.ToString();
+                txtWorkAddress.Text = jobPost.Address;
+                cbExperience.SelectedValue = jobPost.YearExperienceId;
+                cbLocation.SelectedValue = jobPost.LocationId;
+                dtpExpireDate.Text = jobPost.ExpireDate.ToString();
+                pnlSkill.SuspendLayout();
+                foreach (var skill in jobPost.Skills)
                 {
-                    this.btnPostJob.Text = "Update";
+                    pnlSkill.Controls.Add(new UCSkillTag(skill));
                 }
+                pnlSkill.ResumeLayout();
+
+                btnPostJob.Text = "Update";
             }
+            ResumeLayout();
         }
 
-        private JobPost getJobPostInfo()
+        private void GetJobPostInfo()
         {
-            JobPost jobPost = new JobPost();
-            foreach (Control control in this.guna2Panel1.Controls) {
-                string propertyName = "";
-                if(controlToField.TryGetValue(control.Name, out propertyName))
-                {
-                    object value = null;
-                    if (control is ListControl listControl)
-                    {
-                        value = listControl.SelectedValue;
-                    }
-                    else
-                    {
-                        value = control.Text;
-                    }
-                    typeof(JobPost).GetProperty(propertyName)?.SetValue(jobPost, Convert.ChangeType(value, typeof(JobPost).GetProperty(propertyName).PropertyType));
-                }
-
+            if (jobPost is null)
+            {
+                jobPost = new JobPost();
             }
-            return jobPost;
+            jobPost.Title = txtNameJob.Text;
+            jobPost.Salary = Convert.ToInt32(txtSalary.Text);
+            jobPost.LocationId = Convert.ToInt32(cbLocation.SelectedValue);
+            jobPost.YearExperienceId = Convert.ToInt32(cbExperience.SelectedValue);
+            jobPost.Skills = GetSkillsInPanel();
+            jobPost.Description = rTxtJobDescription.Text;
+            jobPost.Requirement = rTxtCandidateRequirements.Text;
+            jobPost.Prioritize = rTxtPrioritize.Text;
+            jobPost.Benefit = rTxtBenefits.Text;
+            jobPost.RecruitmentNumber = Convert.ToInt32(txtNumberOfRecruitment.Text);
+            jobPost.ExpireDate = dtpExpireDate.Value;
+            jobPost.Address = txtWorkAddress.Text;
+        }
+
+        public ICollection<Skill> GetSkillsInPanel()
+        {
+            var skills = new List<Skill>();
+            foreach (Control c in pnlSkill.Controls)
+            {
+                skills.Add(c.Tag as Skill);
+            }
+            return skills;
         }
 
         private void btnPostJob_Click(object sender, EventArgs e)
         {
-            JobPost jobPost = getJobPostInfo();
+            GetJobPostInfo();
             jobPost.CompanyId = Session.account.Id;
-            JobPostDao jobPostDao = new JobPostDao();
-            if (this.formAction == "Create")
+            if (formAction == "Create")
             {
                 jobPost.PostDate = DateTime.Now;
                 int results = jobPostDao.SaveNewJobPost(jobPost);
@@ -123,10 +113,11 @@ namespace FindJobApplication
                 else
                 {
                     MessageDialog.Show(this, "Job post saved successfully", MessageDialogStyle.Light);
-                    this.Close();
+                    DialogResult = DialogResult.OK;
+                    Dispose();
                 }
             }
-            else if (this.formAction == "Update")
+            else
             {
                 int results = jobPostDao.UpdateJobPostById(jobPost);
                 if (results == 0)
@@ -136,14 +127,17 @@ namespace FindJobApplication
                 else
                 {
                     MessageDialog.Show(this, "Job post updated successfully", MessageDialogStyle.Light);
-                    this.Close();
+                    DialogResult = DialogResult.OK;
+                    Dispose();
                 }
             }
         }
 
-        private void FCompanyJobEdit_Shown(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
-
+            pnlSkill.Controls.Add(
+                new UCSkillTag(new Skill() { Id = (int)cbSkill.SelectedValue, Name = cbSkill.Text})
+            );
         }
     }
 }

@@ -74,7 +74,7 @@
             this.btnListJobSave.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnListJobSave.ImageSize = new System.Drawing.Size(32, 32);
             this.btnListJobSave.Location = new System.Drawing.Point(77, 13);
-            this.btnListJobSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnListJobSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnListJobSave.Name = "btnListJobSave";
             this.btnListJobSave.Size = new System.Drawing.Size(179, 68);
             this.btnListJobSave.TabIndex = 43;
@@ -103,7 +103,7 @@
             this.btnListJobApply.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnListJobApply.ImageSize = new System.Drawing.Size(32, 32);
             this.btnListJobApply.Location = new System.Drawing.Point(331, 13);
-            this.btnListJobApply.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnListJobApply.Margin = new System.Windows.Forms.Padding(2);
             this.btnListJobApply.Name = "btnListJobApply";
             this.btnListJobApply.Size = new System.Drawing.Size(190, 68);
             this.btnListJobApply.TabIndex = 44;
@@ -132,16 +132,15 @@
             // 
             this.pnlMain.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlMain.AutoScroll = true;
             this.pnlMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(247)))));
             this.pnlMain.ColumnCount = 1;
             this.pnlMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.pnlMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.pnlMain.Location = new System.Drawing.Point(5, 6);
             this.pnlMain.Margin = new System.Windows.Forms.Padding(0);
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.RowCount = 1;
             this.pnlMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.pnlMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 762F));
             this.pnlMain.Size = new System.Drawing.Size(1155, 762);
             this.pnlMain.TabIndex = 1;
             // 

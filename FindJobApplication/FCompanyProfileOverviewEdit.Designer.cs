@@ -105,6 +105,7 @@
             this.btnSave.Size = new System.Drawing.Size(126, 45);
             this.btnSave.TabIndex = 53;
             this.btnSave.Text = "Save";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // guna2Separator2
             // 
@@ -131,6 +132,7 @@
             this.Name = "FCompanyProfileOverviewEdit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Company Edit Overview";
+            this.Load += new System.EventHandler(this.FCompanyProfileOverviewEdit_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
