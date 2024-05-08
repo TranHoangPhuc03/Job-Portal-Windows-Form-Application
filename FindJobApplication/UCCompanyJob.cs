@@ -17,6 +17,7 @@ namespace FindJobApplication
     public partial class UCCompanyJob : UserControl
     {
         public event FillToMainPanelHandler FillToMainPanelClicked = UCPanelMain.UC_RequiredAddControl;
+        int idJob;
         public UCCompanyJob()
         {
             InitializeComponent();
@@ -33,8 +34,11 @@ namespace FindJobApplication
             lblCountApplied.Text = nApplicants.ToString();
             Tag = jobPost.Id;
         }
-
-        private void lblCountApplied_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        public UCCompanyJob(int idJob) : this()
+        {
+            this.idJob = idJob;
+        }
+        public void lblCountApplied_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             UCCompanyListPeopleApply uCCompanyListPeopleApply = new UCCompanyListPeopleApply((int)this.Tag);
             FillToMainPanelClicked?.Invoke(this, uCCompanyListPeopleApply);

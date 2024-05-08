@@ -29,7 +29,7 @@ namespace FindJobApplication
             lblTo.Text= mail.Account1.Name;
             lblTitle.Text = mail.Title;
             rtxtLetter.Text = mail.Contents;
-            if (mail.AttachFile != null)
+            if (mail.AttachFile != null && mail.AttachFile != "")
             {
                 this.filePath = mail.AttachFile;
                 string fileName = Path.GetFileName(mail.AttachFile);

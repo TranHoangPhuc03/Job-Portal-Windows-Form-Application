@@ -139,5 +139,10 @@ namespace FindJobApplication
                 new UCSkillTag(new Skill() { Id = (int)cbSkill.SelectedValue, Name = cbSkill.Text})
             );
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

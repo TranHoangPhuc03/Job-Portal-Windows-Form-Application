@@ -35,7 +35,7 @@ namespace FindJobApplication
             }
         }
 
-        private void UCCompanyListPeopleApply_Load(object sender, EventArgs e)
+        public void UCCompanyListPeopleApply_Load(object sender, EventArgs e)
         {
             var appliedUsers = jobPostDao.FindAllUserIdAppliedForOneJob((int)Tag);
             pnlMain.Controls.Clear();

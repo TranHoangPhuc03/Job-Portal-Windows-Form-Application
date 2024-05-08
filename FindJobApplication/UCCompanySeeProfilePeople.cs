@@ -15,7 +15,8 @@ namespace FindJobApplication
     public partial class UCCompanySeeProfilePeople : UserControl
     {
         public FillToMainPanelHandler FillToMainPanelClicked = UCPanelMain.UC_RequiredAddControl;
-        private UserApplyJob user = null;
+        private UserApplyJob user = new UserApplyJob();
+        UserApplyJob userApplyJob = new UserApplyJob();
 
         public UCCompanySeeProfilePeople()
         {
@@ -27,17 +28,6 @@ namespace FindJobApplication
         {
             this.user = user;
         }
-
-        private void btnBack_Click(object sender, EventArgs e)
-        {
-            Control parentControl = Parent;
-            if (parentControl != null)
-            {
-                parentControl.Controls.Remove(this);
-                Dispose();
-            }
-        }
-
         private void btnSeeCV_Click(object sender, EventArgs e)
         {
             if (this.user.CvAttachment == null || this.user.CvAttachment == "")
@@ -58,10 +48,44 @@ namespace FindJobApplication
             lblNamePeople.Text = user.UserProfile.Account.Name;
             lblNameJob.Text = user.JobPost.Title;
             rtxtCoverLetter.Text = user.CoverLetter;
+            if (user.StatusId == 2)
+            {
+                btnAccept.Visible = true;
+                btnDeny.Visible = true;
+            }
         }
 
         private void btnAccept_Click(object sender, EventArgs e)
         {
+            JobApplyDao jobApplyDao = new JobApplyDao();
+            ICollection<UserApplyJob> userPending = new List<UserApplyJob>();
+            userApplyJob = jobApplyDao.FindUserApplyById(user.JobPostId, user.UserId);
+            userPending.Add(userApplyJob);
+            int results = jobApplyDao.UpdateUserApplyStatus(userPending, StatusName.InterviewInvited);
+            if (results == 1) 
+            {
+                MessageBox.Show("Accept success");
+            }
+        }
+
+        private void btnDeny_Click(object sender, EventArgs e)
+        {
+            JobApplyDao jobApplyDao = new JobApplyDao();
+            ICollection<UserApplyJob> userPending = new List<UserApplyJob>();
+            UserApplyJob userApplyJob = new UserApplyJob();
+            userApplyJob = jobApplyDao.FindUserApplyById(user.JobPostId, user.UserId);
+            userPending.Add(userApplyJob);
+            int results = jobApplyDao.UpdateUserApplyStatus(userPending, StatusName.Appropriate);
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            Control parentControl = Parent;
+            if (parentControl != null)
+            {
+                parentControl.Controls.Remove(this);
+                Dispose();
+            }
         }
     }
 }

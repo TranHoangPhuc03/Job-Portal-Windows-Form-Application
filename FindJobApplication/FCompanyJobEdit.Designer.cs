@@ -62,11 +62,12 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtNameJob = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtSalary = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btnPostJob = new Guna.UI2.WinForms.Guna2Button();
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.skillTableAdapter = new FindJobApplication.SkillDataSetTableAdapters.SkillTableAdapter();
             this.locationTableAdapter = new FindJobApplication.LocationcDataSetTableAdapters.LocationTableAdapter();
             this.yearExperienceTableAdapter = new FindJobApplication.YearExperienceDataSetTableAdapters.YearExperienceTableAdapter();
+            this.btnCancel = new Guna.UI2.WinForms.Guna2Button();
+            this.btnPostJob = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.yearExperienceBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.yearExperienceDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.locationBindingSource)).BeginInit();
@@ -518,30 +519,6 @@
             this.txtSalary.TabIndex = 13;
             this.txtSalary.TextOffset = new System.Drawing.Point(15, 0);
             // 
-            // btnPostJob
-            // 
-            this.btnPostJob.BorderColor = System.Drawing.Color.Silver;
-            this.btnPostJob.BorderRadius = 10;
-            this.btnPostJob.BorderThickness = 1;
-            this.btnPostJob.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPostJob.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnPostJob.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnPostJob.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnPostJob.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnPostJob.FillColor = System.Drawing.Color.SeaShell;
-            this.btnPostJob.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPostJob.ForeColor = System.Drawing.Color.Black;
-            this.btnPostJob.HoverState.FillColor = System.Drawing.Color.LightGray;
-            this.btnPostJob.Image = global::FindJobApplication.Properties.Resources.paper_plane;
-            this.btnPostJob.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnPostJob.Location = new System.Drawing.Point(533, 654);
-            this.btnPostJob.Margin = new System.Windows.Forms.Padding(2);
-            this.btnPostJob.Name = "btnPostJob";
-            this.btnPostJob.Size = new System.Drawing.Size(120, 31);
-            this.btnPostJob.TabIndex = 4;
-            this.btnPostJob.Text = "Post Job";
-            this.btnPostJob.Click += new System.EventHandler(this.btnPostJob_Click);
-            // 
             // gunaLabel2
             // 
             this.gunaLabel2.AutoSize = true;
@@ -565,14 +542,54 @@
             // 
             this.yearExperienceTableAdapter.ClearBeforeFill = true;
             // 
+            // btnCancel
+            // 
+            this.btnCancel.BorderRadius = 10;
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnCancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnCancel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(247)))));
+            this.btnCancel.Font = new System.Drawing.Font("Inter", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.Black;
+            this.btnCancel.Location = new System.Drawing.Point(379, 646);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(124, 45);
+            this.btnCancel.TabIndex = 66;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnPostJob
+            // 
+            this.btnPostJob.BorderRadius = 6;
+            this.btnPostJob.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPostJob.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnPostJob.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnPostJob.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnPostJob.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnPostJob.FillColor = System.Drawing.Color.OrangeRed;
+            this.btnPostJob.Font = new System.Drawing.Font("Inter", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.btnPostJob.ForeColor = System.Drawing.Color.White;
+            this.btnPostJob.HoverState.FillColor = System.Drawing.Color.Chocolate;
+            this.btnPostJob.Location = new System.Drawing.Point(527, 646);
+            this.btnPostJob.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnPostJob.Name = "btnPostJob";
+            this.btnPostJob.Size = new System.Drawing.Size(126, 45);
+            this.btnPostJob.TabIndex = 65;
+            this.btnPostJob.Text = "Post";
+            this.btnPostJob.Click += new System.EventHandler(this.btnPostJob_Click);
+            // 
             // FCompanyJobEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(681, 717);
-            this.Controls.Add(this.gunaLabel2);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnPostJob);
+            this.Controls.Add(this.gunaLabel2);
             this.Controls.Add(this.guna2Separator3);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.guna2Separator1);
@@ -601,7 +618,6 @@
         #endregion
         private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator3;
-        private Guna.UI2.WinForms.Guna2Button btnPostJob;
         private Guna.UI.WinForms.GunaLabel lblRecruitmentDetails;
         private Guna.UI2.WinForms.Guna2ComboBox cbExperience;
         private Guna.UI2.WinForms.Guna2ComboBox cbLocation;
@@ -637,5 +653,7 @@
         private YearExperienceDataSet yearExperienceDataSet;
         private System.Windows.Forms.BindingSource yearExperienceBindingSource;
         private YearExperienceDataSetTableAdapters.YearExperienceTableAdapter yearExperienceTableAdapter;
+        private Guna.UI2.WinForms.Guna2Button btnCancel;
+        private Guna.UI2.WinForms.Guna2Button btnPostJob;
     }
 }

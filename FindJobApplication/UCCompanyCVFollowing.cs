@@ -36,6 +36,7 @@ namespace FindJobApplication
         {
             UCProfile uCProfile = new UCProfile((int)Tag);
             FillToPanelMainClicked?.Invoke(this, uCProfile);
+            uCProfile.hideAllBtn();
         }
     }
 }

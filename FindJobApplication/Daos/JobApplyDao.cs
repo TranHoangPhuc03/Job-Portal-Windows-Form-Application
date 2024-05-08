@@ -1,6 +1,7 @@
 ﻿using FindJobApplication.Entities;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,7 +42,6 @@ namespace FindJobApplication.Daos
             {
                 user.StatusId = (int)status + 1;
             }
-
             return db.SaveChanges();
         }
 
@@ -52,7 +52,12 @@ namespace FindJobApplication.Daos
                         .ToList();
             return results;
         }
-
+        public UserApplyJob FindUserApplyById(int jobPostId, int idUser)
+        {
+            var results = db.UserApplyJobs.
+                        Where(row => row.JobPostId == jobPostId && row.UserId == idUser).First();
+            return results;
+        }
         public ICollection<UserApplyJob> FilterUserApplyJobByStatus(int jobPostId, StatusName status)
         {
             var results = db.UserApplyJobs
