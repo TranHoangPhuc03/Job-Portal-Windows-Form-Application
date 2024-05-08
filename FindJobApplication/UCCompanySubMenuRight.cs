@@ -50,7 +50,7 @@ namespace FindJobApplication
             FillToMainPanelClicked?.Invoke(this, new UCCompanyListCVFollowing());
         }
 
-        private void btnSocialPost_Click(object sender, EventArgs e)
+        public void btnSocialPost_Click(object sender, EventArgs e)
         {
             FillToMainPanelClicked?.Invoke(this, new UCSocialHistory());
         }

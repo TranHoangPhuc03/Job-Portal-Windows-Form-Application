@@ -1,6 +1,7 @@
 ﻿using FindJobApplication.Daos;
 using FindJobApplication.Entities;
 using FindJobApplication.Utils;
+using Guna.UI2.WinForms;
 using Microsoft.VisualBasic.ApplicationServices;
 using System;
 using System.Collections.Generic;
@@ -15,8 +16,10 @@ using System.Windows.Forms;
 
 namespace FindJobApplication
 {
+
     public partial class UCProfile : UserControl
     {
+
         int userId = 0;
         private UserProfile userProfile;
         private UserProfileDao userProfileDao = new UserProfileDao();
@@ -35,6 +38,7 @@ namespace FindJobApplication
             pnlProfile.VerticalScroll.Visible = true;
             pnlProfile.AutoScroll = true;
         }
+        public Guna2Button BtnFollow { get => btnFollow; set => btnFollow = value; }
         public UCProfile(int userId) : this()
         {
             this.userId = userId;
@@ -107,7 +111,7 @@ namespace FindJobApplication
             }
         }
 
-        private void UCProfile_Load(object sender, EventArgs e)
+        public void UCProfile_Load(object sender, EventArgs e)
         {
             pbProfileAvatar.Image = ImageUtils.FromBytesToImage(userProfile.Account.Avatar);
             lblProfileName.Text = userProfile.Account.Name;

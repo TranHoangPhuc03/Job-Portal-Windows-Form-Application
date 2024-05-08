@@ -16,6 +16,8 @@ namespace FindJobApplication
     {
         int jobPostId;
         JobApplyDao jobApplyDao = new JobApplyDao();
+        public event FillToMainPanelHandler FillToMainPanelClicked = UCPanelMain.UC_RequiredAddControl;
+
         public FScheduleInvitePeople()
         {
             InitializeComponent();

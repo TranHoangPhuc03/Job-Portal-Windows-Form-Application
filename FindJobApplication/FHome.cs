@@ -17,20 +17,34 @@ namespace FindJobApplication
 {
     public partial class FHome : Form
     {
+        static FHome _obj;
+        public static FHome Instance
+        {
+            get
+            {
+                if (_obj == null)
+                {
+                    _obj = new FHome();
+                }
+                return _obj;
+            }
+        }
         UCUserSubMenuRight uCUserSubMenuRight = new UCUserSubMenuRight();
-
+        
         public FHome()
         {
             InitializeComponent();
         }
-
+        public Label LblUserName { get => lblUsername; set => lblUsername = value; }
+        public Guna2CirclePictureBox PbUserImage { get => pbUserImage; set => pbUserImage = value; }
         private void btnHome_Click(object sender, EventArgs e)
         {
             ucPanelMain.AddControl(new UCHome());
         }
 
-        private void FHome_Load(object sender, EventArgs e)
+        public void FHome_Load(object sender, EventArgs e)
         {
+            _obj = this;
             lblUsername.Text = Session.account.Name;
             pbUserImage.Image = ImageUtils.FromBytesToImage(Session.account.Avatar);
             btnHome.PerformClick();

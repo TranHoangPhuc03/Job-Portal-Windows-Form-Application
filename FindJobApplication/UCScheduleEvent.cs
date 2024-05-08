@@ -1,4 +1,6 @@
-﻿using FindJobApplication.Utils;
+﻿using FindJobApplication.Daos;
+using FindJobApplication.Entities;
+using FindJobApplication.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +16,8 @@ namespace FindJobApplication
     public partial class UCScheduleEvent : UserControl
     {
         private DateTime currentDate;
+        public event FillToMainPanelHandler FillToMainPanelClicked = UCPanelMain.UC_RequiredAddControl;
+
         public UCScheduleEvent()
         {
             InitializeComponent();
@@ -33,23 +37,23 @@ namespace FindJobApplication
                 parentControl.Controls.Remove(this);
                 Dispose();
             }
+            FillToMainPanelClicked?.Invoke(this, new UCSchedule());
+
         }
 
         private void UCScheduleEvent_Load(object sender, EventArgs e)
         {
+            EventDao eventDao = new EventDao();
+            ICollection<InterviewEvent> interviewEvents = eventDao.FindEventInDateById(Session.account.Id, currentDate);
             pnlListEvent.Controls.Clear();
-            var results = Session.account.CompanyProfile.InterviewEvents
-                        .Where(row => row.From.Date == currentDate.Date)
-                        .ToList();
-
-            pnlListEvent.SuspendLayout();
-            for (int i = 0; i < results.Count; i++)
+            int index = 1;
+            foreach (var interviewEvent in interviewEvents)
             {
-                UCScheduleEventRows uCScheduleEventRows = new UCScheduleEventRows(i+1, results.ElementAt(i));
+                UCScheduleEventRows uCScheduleEventRows = new UCScheduleEventRows(index++, interviewEvent);
                 pnlListEvent.Controls.Add(uCScheduleEventRows);
             }
-            pnlListEvent.ResumeLayout();
         }
+
 
         private void btnAddEvent_Click(object sender, EventArgs e)
         {

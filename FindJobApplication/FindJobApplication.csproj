@@ -290,12 +290,6 @@
     <Compile Include="FCompanyProfileTop3Reasons.Designer.cs">
       <DependentUpon>FCompanyProfileTop3Reasons.cs</DependentUpon>
     </Compile>
-    <Compile Include="FCompanyScheduleAnInterview.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FCompanyScheduleAnInterview.Designer.cs">
-      <DependentUpon>FCompanyScheduleAnInterview.cs</DependentUpon>
-    </Compile>
     <Compile Include="FCompanySeeCV.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -689,9 +683,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FCompanyProfileTop3Reasons.resx">
       <DependentUpon>FCompanyProfileTop3Reasons.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FCompanyScheduleAnInterview.resx">
-      <DependentUpon>FCompanyScheduleAnInterview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FCompanySeeCV.resx">
       <DependentUpon>FCompanySeeCV.cs</DependentUpon>

@@ -198,6 +198,7 @@
             // 
             // btnInbox
             // 
+            this.btnInbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnInbox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
             this.btnInbox.BorderRadius = 6;
             this.btnInbox.BorderThickness = 1;

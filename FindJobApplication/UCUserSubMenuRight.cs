@@ -1,4 +1,5 @@
 ﻿using FindJobApplication.Utils;
+using Guna.UI.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -55,7 +56,7 @@ namespace FindJobApplication
             FillToMainPanelClicked?.Invoke(this, new UCUserListCompanyFollowing());
         }
 
-        private void btnSocialPost_Click(object sender, EventArgs e)
+        public void btnSocialPost_Click(object sender, EventArgs e)
         {
             FillToMainPanelClicked?.Invoke(this, new UCSocialHistory());
         }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.pbUser = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.txtLink = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtAddress = new Guna.UI2.WinForms.Guna2TextBox();
             this.cbGender = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -42,7 +43,6 @@
             this.guna2Separator2 = new Guna.UI2.WinForms.Guna2Separator();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
-            this.pbUser = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbUser)).BeginInit();
             this.SuspendLayout();
@@ -64,6 +64,23 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(643, 457);
             this.guna2Panel1.TabIndex = 0;
+            // 
+            // pbUser
+            // 
+            this.pbUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbUser.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbUser.Image = global::FindJobApplication.Properties.Resources.Male_1;
+            this.pbUser.ImageRotate = 0F;
+            this.pbUser.Location = new System.Drawing.Point(219, 14);
+            this.pbUser.Name = "pbUser";
+            this.pbUser.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.pbUser.Size = new System.Drawing.Size(215, 215);
+            this.pbUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbUser.TabIndex = 48;
+            this.pbUser.TabStop = false;
+            this.pbUser.Click += new System.EventHandler(this.pbUser_Click);
+            this.pbUser.MouseEnter += new System.EventHandler(this.pbUser_MouseEnter);
+            this.pbUser.MouseLeave += new System.EventHandler(this.pbUser_MouseLeave);
             // 
             // txtLink
             // 
@@ -180,6 +197,7 @@
             this.txtEmail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtEmail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtEmail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtEmail.Enabled = false;
             this.txtEmail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtEmail.Font = new System.Drawing.Font("Inter", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtEmail.ForeColor = System.Drawing.SystemColors.ControlDark;
@@ -302,23 +320,6 @@
             this.guna2Separator1.Name = "guna2Separator1";
             this.guna2Separator1.Size = new System.Drawing.Size(659, 8);
             this.guna2Separator1.TabIndex = 55;
-            // 
-            // pbUser
-            // 
-            this.pbUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pbUser.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbUser.Image = global::FindJobApplication.Properties.Resources.Male_1;
-            this.pbUser.ImageRotate = 0F;
-            this.pbUser.Location = new System.Drawing.Point(219, 14);
-            this.pbUser.Name = "pbUser";
-            this.pbUser.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.pbUser.Size = new System.Drawing.Size(215, 215);
-            this.pbUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbUser.TabIndex = 48;
-            this.pbUser.TabStop = false;
-            this.pbUser.Click += new System.EventHandler(this.pbUser_Click);
-            this.pbUser.MouseEnter += new System.EventHandler(this.pbUser_MouseEnter);
-            this.pbUser.MouseLeave += new System.EventHandler(this.pbUser_MouseLeave);
             // 
             // FUserProfileInformationEdit
             // 
