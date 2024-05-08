@@ -70,24 +70,59 @@ namespace FindJobApplication
             interviewEvent.Title = txtNameEvent.Text;
 
             DateTime selectedDateTimeFrom = DateTime.ParseExact(selectedTimeFrom, "HH:mm", CultureInfo.InvariantCulture);
-            interviewEvent.From = currentDate.Date + selectedDateTimeFrom.TimeOfDay;
-
             DateTime selectedDateTimeTo = DateTime.ParseExact(selectedTimeTo, "HH:mm", CultureInfo.InvariantCulture);
+
+            // Set the time portion of interviewEvent.From and interviewEvent.To
+            interviewEvent.From = currentDate.Date + selectedDateTimeFrom.TimeOfDay;
             interviewEvent.To = currentDate.Date + selectedDateTimeTo.TimeOfDay;
 
+            // Clear the minutes and seconds to ensure accurate comparison
             interviewEvent.From = interviewEvent.From.AddMinutes(-interviewEvent.From.Minute).AddSeconds(-interviewEvent.From.Second);
             interviewEvent.To = interviewEvent.To.AddMinutes(-interviewEvent.To.Minute).AddSeconds(-interviewEvent.To.Second);
 
-            int results = eventDao.SaveNewEvent(interviewEvent);
-            if (results == 0)
+            if (selectedDateTimeFrom <= selectedDateTimeTo)
             {
-                MessageDialog.Show(this, "Failed to save the event", "Failed", MessageDialogStyle.Light);
+                EventDao eventDao = new EventDao();
+                DateTime date = new DateTime(interviewEvent.From.Year, interviewEvent.From.Month, interviewEvent.From.Day);
+                ICollection<InterviewEvent> events = eventDao.FindEventInDateById(Session.account.Id, date);
+                bool isTimeSlotAvailable = true;
+                foreach (var ev in events)
+                {
+                    if (selectedDateTimeTo.TimeOfDay <= ev.From.TimeOfDay || selectedDateTimeFrom.TimeOfDay >= ev.To.TimeOfDay)
+                    {
+                        continue; // No overlap, check next event
+                    }
+                    else
+                    {
+                        isTimeSlotAvailable = false;
+                        break; // Exit loop as soon as overlap is found
+                    }
+                }
+
+                if (isTimeSlotAvailable)
+                {
+                    int results = eventDao.SaveNewEvent(interviewEvent);
+                    if (results == 0)
+                    {
+                        MessageDialog.Show(this, "Failed to save the event", "Failed", MessageDialogStyle.Light);
+                    }
+                    else
+                    {
+                        MessageDialog.Show(this, "Event saved successfully", MessageDialogStyle.Light);
+                        this.Close();
+                    }
+                }
+                else
+                {
+                    MessageDialog.Show(this, "The time period you selected is busy", "Failed", MessageDialogStyle.Light);
+                }
             }
             else
             {
-                MessageDialog.Show(this, "Event saved successfully", MessageDialogStyle.Light);
-                this.Close();
+                MessageDialog.Show(this, "Time start event cannot be later than time end event", "Failed", MessageDialogStyle.Light);
             }
+
+
         }
     }
 }

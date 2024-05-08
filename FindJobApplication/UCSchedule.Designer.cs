@@ -125,6 +125,7 @@
             // 
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.White;
             this.label6.Font = new System.Drawing.Font("Inter", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(723, 6);
             this.label6.Name = "label6";
@@ -273,6 +274,7 @@
             // 
             this.lblMonthYear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMonthYear.AutoSize = true;
+            this.lblMonthYear.BackColor = System.Drawing.Color.White;
             this.lblMonthYear.Font = new System.Drawing.Font("Inter", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.lblMonthYear.Location = new System.Drawing.Point(3, 0);
             this.lblMonthYear.Name = "lblMonthYear";

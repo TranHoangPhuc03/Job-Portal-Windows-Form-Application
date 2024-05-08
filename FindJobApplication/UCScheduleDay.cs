@@ -23,6 +23,8 @@ namespace FindJobApplication
             Dock = DockStyle.Fill;
         }
         public Label LblDay { get => lblDay; set => lblDay = value; }
+        public Label LblCountEvent { get => lblCountEvent; set => lblCountEvent = value; }
+
         public Guna2CustomGradientPanel PnlDay { get => pnlDay; set => pnlDay = value; }
 
         private void pnlDay_Click(object sender, EventArgs e)
