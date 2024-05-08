@@ -42,12 +42,12 @@
             this.pbCompany4 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.pbCompany3 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.pnlPicture = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.pbUser = new Guna.UI2.WinForms.Guna2PictureBox();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.guna2Separator2 = new Guna.UI2.WinForms.Guna2Separator();
             this.btnCancel = new Guna.UI2.WinForms.Guna2Button();
             this.btnSave = new Guna.UI2.WinForms.Guna2Button();
-            this.pnlPicture = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.pbUser = new Guna.UI2.WinForms.Guna2PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbCompany1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCompany2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCompany4)).BeginInit();
@@ -136,9 +136,10 @@
             this.dtpDateEstablish.BackColor = System.Drawing.Color.White;
             this.dtpDateEstablish.BorderRadius = 10;
             this.dtpDateEstablish.Checked = true;
+            this.dtpDateEstablish.CustomFormat = "dd-MM-yyyy";
             this.dtpDateEstablish.FillColor = System.Drawing.Color.White;
             this.dtpDateEstablish.Font = new System.Drawing.Font("Inter", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.dtpDateEstablish.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDateEstablish.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpDateEstablish.Location = new System.Drawing.Point(1, 341);
             this.dtpDateEstablish.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dtpDateEstablish.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
@@ -313,6 +314,34 @@
             this.guna2Panel1.Size = new System.Drawing.Size(643, 448);
             this.guna2Panel1.TabIndex = 5;
             // 
+            // pnlPicture
+            // 
+            this.pnlPicture.BackColor = System.Drawing.Color.White;
+            this.pnlPicture.BorderRadius = 12;
+            this.pnlPicture.BorderThickness = 1;
+            this.pnlPicture.Controls.Add(this.pbUser);
+            this.pnlPicture.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
+            this.pnlPicture.CustomBorderThickness = new System.Windows.Forms.Padding(3);
+            this.pnlPicture.Location = new System.Drawing.Point(212, 9);
+            this.pnlPicture.Name = "pnlPicture";
+            this.pnlPicture.Size = new System.Drawing.Size(215, 215);
+            this.pnlPicture.TabIndex = 36;
+            // 
+            // pbUser
+            // 
+            this.pbUser.BackColor = System.Drawing.Color.Transparent;
+            this.pbUser.BorderRadius = 12;
+            this.pbUser.Image = global::FindJobApplication.Properties.Resources.fpt_logo1;
+            this.pbUser.ImageRotate = 0F;
+            this.pbUser.Location = new System.Drawing.Point(0, 0);
+            this.pbUser.Name = "pbUser";
+            this.pbUser.Size = new System.Drawing.Size(215, 215);
+            this.pbUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbUser.TabIndex = 2;
+            this.pbUser.TabStop = false;
+            this.pbUser.MouseEnter += new System.EventHandler(this.pbUser_MouseEnter);
+            this.pbUser.MouseLeave += new System.EventHandler(this.pbUser_MouseLeave);
+            // 
             // gunaLabel1
             // 
             this.gunaLabel1.AutoSize = true;
@@ -370,34 +399,6 @@
             this.btnSave.TabIndex = 50;
             this.btnSave.Text = "Save";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // pnlPicture
-            // 
-            this.pnlPicture.BackColor = System.Drawing.Color.White;
-            this.pnlPicture.BorderRadius = 12;
-            this.pnlPicture.BorderThickness = 1;
-            this.pnlPicture.Controls.Add(this.pbUser);
-            this.pnlPicture.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
-            this.pnlPicture.CustomBorderThickness = new System.Windows.Forms.Padding(3);
-            this.pnlPicture.Location = new System.Drawing.Point(212, 9);
-            this.pnlPicture.Name = "pnlPicture";
-            this.pnlPicture.Size = new System.Drawing.Size(215, 215);
-            this.pnlPicture.TabIndex = 36;
-            // 
-            // pbUser
-            // 
-            this.pbUser.BackColor = System.Drawing.Color.Transparent;
-            this.pbUser.BorderRadius = 12;
-            this.pbUser.Image = global::FindJobApplication.Properties.Resources.fpt_logo1;
-            this.pbUser.ImageRotate = 0F;
-            this.pbUser.Location = new System.Drawing.Point(0, 0);
-            this.pbUser.Name = "pbUser";
-            this.pbUser.Size = new System.Drawing.Size(215, 215);
-            this.pbUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbUser.TabIndex = 2;
-            this.pbUser.TabStop = false;
-            this.pbUser.MouseEnter += new System.EventHandler(this.pbUser_MouseEnter);
-            this.pbUser.MouseLeave += new System.EventHandler(this.pbUser_MouseLeave);
             // 
             // FCompanyProfileInfomationEdit
             // 

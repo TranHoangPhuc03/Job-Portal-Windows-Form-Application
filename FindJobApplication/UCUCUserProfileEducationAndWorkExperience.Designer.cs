@@ -87,24 +87,26 @@
             this.pbDeleteEducationOrWork.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbDeleteEducationOrWork.Image = global::FindJobApplication.Properties.Resources.delete;
             this.pbDeleteEducationOrWork.Location = new System.Drawing.Point(519, 6);
-            this.pbDeleteEducationOrWork.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbDeleteEducationOrWork.Margin = new System.Windows.Forms.Padding(2);
             this.pbDeleteEducationOrWork.Name = "pbDeleteEducationOrWork";
             this.pbDeleteEducationOrWork.Size = new System.Drawing.Size(36, 23);
             this.pbDeleteEducationOrWork.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbDeleteEducationOrWork.TabIndex = 5;
             this.pbDeleteEducationOrWork.TabStop = false;
+            this.pbDeleteEducationOrWork.Click += new System.EventHandler(this.pbDeleteEducationOrWork_Click);
             // 
             // pbEditEducationOrWork
             // 
             this.pbEditEducationOrWork.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbEditEducationOrWork.Image = global::FindJobApplication.Properties.Resources.edit1;
             this.pbEditEducationOrWork.Location = new System.Drawing.Point(479, 6);
-            this.pbEditEducationOrWork.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbEditEducationOrWork.Margin = new System.Windows.Forms.Padding(2);
             this.pbEditEducationOrWork.Name = "pbEditEducationOrWork";
             this.pbEditEducationOrWork.Size = new System.Drawing.Size(36, 23);
             this.pbEditEducationOrWork.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbEditEducationOrWork.TabIndex = 4;
             this.pbEditEducationOrWork.TabStop = false;
+            this.pbEditEducationOrWork.Click += new System.EventHandler(this.pbEditEducationOrWork_Click);
             // 
             // UCUCUserProfileEducationAndWorkExperience
             // 
@@ -116,7 +118,7 @@
             this.Controls.Add(this.lblStartDay);
             this.Controls.Add(this.lblSchool);
             this.Controls.Add(this.lblMajor);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UCUCUserProfileEducationAndWorkExperience";
             this.Size = new System.Drawing.Size(557, 75);
             ((System.ComponentModel.ISupportInitialize)(this.pbDeleteEducationOrWork)).EndInit();

@@ -1,4 +1,6 @@
-﻿using FindJobApplication.Entities;
+﻿using FindJobApplication.Daos;
+using FindJobApplication.Entities;
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,23 +15,50 @@ namespace FindJobApplication
 {
     public partial class UCUserProfileProject : UserControl
     {
+        UserProfileDao userProfileDao = new UserProfileDao();
+        UserProfile userProfile = null;
         public UCUserProfileProject()
         {
             InitializeComponent();
         }
 
-        public UCUserProfileProject(UserPersonalProject userPersonalProject) : this()
+        public UCUserProfileProject(Account account) : this()
         {
-            this.lblNameProject.Text = userPersonalProject.ProjectName;
-            this.lblStartDay.Text = userPersonalProject.From.ToString("dd-MM-yyyy");
-            this.lblEndDay.Text = userPersonalProject.To.ToString("dd-MM-yyyy");
-            this.lblSeeProject.Tag = userPersonalProject.Description;
+            userProfile = userProfileDao.FindUserProfileByAccountId(account.Id);
+        }
+
+        public UCUserProfileProject(Account account, UserPersonalProject userPersonalProject) : this(account)
+        {
+            lblNameProject.Text = userPersonalProject.ProjectName;
+            lblStartDay.Text = userPersonalProject.From.ToString("dd-MM-yyyy");
+            lblEndDay.Text = userPersonalProject.To.ToString("dd-MM-yyyy");
+            lblSeeProject.Tag = userPersonalProject.Description;
+            Tag = userPersonalProject;
         }
 
         private void lblSeeProject_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            string url = (this.lblSeeProject.Tag).ToString();
+            string url = (lblSeeProject.Tag).ToString();
             System.Diagnostics.Process.Start(url);
+        }
+
+        private void pbEditProject_Click(object sender, EventArgs e)
+        {
+            FUserProfilePersonalProjectEdit fUserProfilePersonalProjectEdit = new FUserProfilePersonalProjectEdit(userProfile.Account, Tag as UserPersonalProject);
+            fUserProfilePersonalProjectEdit.Show();
+        }
+
+        private void pbDeleteProject_Click(object sender, EventArgs e)
+        {
+            int result = userProfileDao.DeleteUserPersonalProject((Tag as UserPersonalProject).Id);
+            if (result == 0)
+            {
+                MessageDialog.Show(ParentForm, "Deleted failed");
+            }
+            else
+            {
+                MessageDialog.Show(ParentForm, "Deleted successfully");
+            }
         }
     }
 }

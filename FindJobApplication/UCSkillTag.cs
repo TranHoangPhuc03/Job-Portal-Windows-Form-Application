@@ -23,15 +23,15 @@ namespace FindJobApplication
             Tag = skill;
         }
 
-        public void ShowBtnDelete()
+        public void ChangeButtonDeleteState()
         {
-            pBDelete.Visible = true;
-            pBDelete.Enabled = true;
+            pBDelete.Visible ^= true;
+            pBDelete.Enabled ^= true;
         }
         private void pBDelete_Click(object sender, EventArgs e)
         {
-            Control parentControl = this.Parent;
-            if (parentControl != null)
+            Control parentControl = Parent;
+            if (!(parentControl is null))
             {
                 parentControl.Controls.Remove(this);
                 Dispose();

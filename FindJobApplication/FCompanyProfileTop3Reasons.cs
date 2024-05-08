@@ -1,4 +1,7 @@
-﻿using System;
+﻿using FindJobApplication.Daos;
+using FindJobApplication.Entities;
+using Guna.UI2.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,14 +15,40 @@ namespace FindJobApplication
 {
     public partial class FCompanyProfileTop3Reasons : Form
     {
+        CompanyProfileDao companyProfileDao = new CompanyProfileDao();
+        CompanyProfile companyProfile = null;
         public FCompanyProfileTop3Reasons()
         {
             InitializeComponent();
         }
+        public FCompanyProfileTop3Reasons(CompanyProfile companyProfile) : this()
+        {
+            this.companyProfile = companyProfile;
+        }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
+        }
+
+        private void FCompanyProfileTop3Reasons_Load(object sender, EventArgs e)
+        {
+            rTxtOverview.Text = companyProfile.Reason;
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            companyProfile.Reason = rTxtOverview.Text;
+            int result = companyProfileDao.UpdateCompanyProfile(companyProfile);
+            if (result == 0)
+            {
+                MessageDialog.Show("Update failed");
+            }
+            else
+            {
+                MessageDialog.Show("Update successfully");
+                Close();
+            }
         }
     }
 }

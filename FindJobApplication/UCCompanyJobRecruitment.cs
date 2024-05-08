@@ -9,19 +9,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FindJobApplication.Entities;
+using FindJobApplication.Utils;
 
 namespace FindJobApplication
 {
     public partial class UCCompanyJobRecruitment : UserControl
     {
-        int companyId;
+        int cnt = 0;
+        CompanyProfile companyProfile = null;
         public UCCompanyJobRecruitment()
         {
             InitializeComponent();
+            Dock = DockStyle.Fill;
         }
-        public UCCompanyJobRecruitment(int companyId) :  this() 
+        public UCCompanyJobRecruitment(CompanyProfile companyProfile) :  this() 
         {
-            this.companyId = companyId;
+            this.companyProfile = companyProfile;
         }
         private void btnBack_Click(object sender, EventArgs e)
         {
@@ -29,27 +32,40 @@ namespace FindJobApplication
             if (parentControl != null)
             {
                 parentControl.Controls.Remove(this);
-                this.Dispose();
+                Dispose();
             }
         }
 
-        public void fillDataToPanel(List<JobPost> dataControlList)
+        public void fillDataToPanel(ICollection<JobPost> jobPosts)
         {
-            //int cnt = 0;
-            //pnlListJob.Controls.Clear(); 
-            //foreach (JobPost obj in dataControlList)
-            //{
-            //    cnt++;
-            //    UCJob uCJob = new UCJob((JobPost)obj);
-            //    this.pnlListJob.Controls.Add(uCJob);
-            //}
-            //lblCountJob.Text = cnt.ToString();
+            pnlListJob.Controls.Clear();
+            HashSet<int> favourites = null;
+            UserProfileDao userProfileDao = new UserProfileDao();
+            if (Session.account.Role == "user")
+            {
+                favourites = new HashSet<int>(
+                    userProfileDao
+                        .FindUserProfileByAccountId(Session.account.Id)
+                        .JobPosts
+                        .Select(row => row.Id)
+                        .ToList()
+                );
+            }
+
+            foreach (JobPost jobPost in jobPosts)
+            {
+                bool isFavourite = favourites != null && favourites.Contains(jobPost.Id);
+                UCJob uCJob = new UCJob(jobPost, isFavourite);
+                pnlListJob.Controls.Add(uCJob);
+                cnt++;
+            }
         }
+
 
         private void UCCompanyJobRecruitment_Load(object sender, EventArgs e)
         {
-            JobPostDao jobPostDao = new JobPostDao();
-            //fillDataToPanel(jobPostDao.FindAllJobPostByCompanyId(companyId));
+            lblCountJob.Text = companyProfile.JobPosts.Count.ToString();
+            fillDataToPanel(companyProfile.JobPosts);
         }
     }
 }

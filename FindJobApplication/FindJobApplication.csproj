@@ -1250,6 +1250,8 @@
     <Content Include="Resources\alert-error.512x512.png" />
     <Content Include="Resources\alert-success.512x512.png" />
     <Content Include="Resources\alert-warning.512x480.png" />
+    <None Include="Resources\pencil-solid.png" />
+    <None Include="Resources\pencil-solid.jpg" />
     <None Include="Resources\calendar.png" />
     <None Include="Resources\calendar-white.png" />
     <None Include="Resources\angle-right-solid.png" />

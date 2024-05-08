@@ -8,6 +8,8 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using System.Xml.Linq;
 using FindJobApplication.Entities;
 using Microsoft.VisualBasic.ApplicationServices;
+using System.Data.Entity;
+using static System.Windows.Forms.Design.AxImporter;
 
 namespace FindJobApplication.Daos
 {
@@ -43,25 +45,6 @@ namespace FindJobApplication.Daos
             return results;
         }
 
-        public int SaveUserEducation(UserEducation userEducation)
-        {
-            db.UserEducations.Add(userEducation);
-            return db.SaveChanges();
-        }
-        public int SaveUserWorkExperience(UserWorkExperience userWorkExperience)
-        {
-            db.UserWorkExperiences.Add(userWorkExperience);
-            return db.SaveChanges();
-        }
-        public int SaveUserPersonalProject(UserPersonalProject userPersonalProject)
-        {
-            db.UserPersonalProjects.Add(userPersonalProject);
-            return db.SaveChanges();
-        }
-        public int SaveUserSkill(int skillId)
-        {
-            return db.SaveChanges();
-        }
         public int SaveUserFollowJob(int userId, int jobPostId)
         {
             var userProfile = FindUserProfileByAccountId(userId);
@@ -71,32 +54,10 @@ namespace FindJobApplication.Daos
         }
         public int UpdateUserProfile(UserProfile userProfile)
         {
-            db.UserProfiles.Attach(userProfile);
+            db.Entry(userProfile).State = EntityState.Modified;
             return db.SaveChanges();
         }
-        
-        public int DeleteUserEducation(int id)
-        {
-            var userEducation = db.UserEducations.Find(id);
-            db.UserEducations.Remove(userEducation);
-            db.UserEducations.Attach(userEducation);
-            return db.SaveChanges();
-        }
-        public int DeleteUserWorkExperience(int id)
-        {
-            var userWorkExperience = db.UserWorkExperiences.Find(id);
-            db.UserWorkExperiences.Remove(userWorkExperience);
-            db.UserWorkExperiences.Attach(userWorkExperience);
-            return db.SaveChanges();
-        }
-        public int DeleteUserPersonalProject(int id)
-        {
-            var userPersonalProject = db.UserPersonalProjects.Find(id);
-            db.UserPersonalProjects.Remove(userPersonalProject);
-            db.UserPersonalProjects.Attach(userPersonalProject);
-            return db.SaveChanges();
-        }
-
+     
         public int DeleteUserFollowJob(int userId, int jobPostId)
         {
             var userProfile = FindUserProfileByAccountId(userId);
@@ -104,6 +65,33 @@ namespace FindJobApplication.Daos
             userProfile.JobPosts.Remove(jobPost);
             db.UserProfiles.Attach(userProfile);
             return db.SaveChanges();
+        }
+        public int DeleteUserEducation(int userEducationId)
+        {
+            var result = db.UserEducations.Find(userEducationId);
+            db.UserEducations.Attach(result);
+            db.UserEducations.Remove(result);
+            return db.SaveChanges();
+        }
+        public int DeleteUserWorkExperience(int userWorkExperienceId)
+        {
+            var result = db.UserWorkExperiences.Find(userWorkExperienceId);
+            db.UserWorkExperiences.Attach(result);
+            db.UserWorkExperiences.Remove(result);
+            return db.SaveChanges();
+        }
+        public int DeleteUserPersonalProject(int userPersonalProjectId)
+        {
+            var result = db.UserPersonalProjects.Find(userPersonalProjectId);
+            db.UserPersonalProjects.Attach(result);
+            db.UserPersonalProjects.Remove(result);
+            return db.SaveChanges();
+        }
+        public void DeleteAllUserSkills(UserProfile userProfile)
+        {
+            db.UserProfiles.Attach(userProfile);
+            userProfile.Skills.Clear();
+            db.SaveChanges();
         }
     }
 }

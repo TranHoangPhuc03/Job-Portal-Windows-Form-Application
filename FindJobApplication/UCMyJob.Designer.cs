@@ -74,7 +74,7 @@
             this.btnListJobSave.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnListJobSave.ImageSize = new System.Drawing.Size(32, 32);
             this.btnListJobSave.Location = new System.Drawing.Point(77, 13);
-            this.btnListJobSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnListJobSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnListJobSave.Name = "btnListJobSave";
             this.btnListJobSave.Size = new System.Drawing.Size(179, 68);
             this.btnListJobSave.TabIndex = 43;
@@ -103,7 +103,7 @@
             this.btnListJobApply.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnListJobApply.ImageSize = new System.Drawing.Size(32, 32);
             this.btnListJobApply.Location = new System.Drawing.Point(331, 13);
-            this.btnListJobApply.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnListJobApply.Margin = new System.Windows.Forms.Padding(2);
             this.btnListJobApply.Name = "btnListJobApply";
             this.btnListJobApply.Size = new System.Drawing.Size(190, 68);
             this.btnListJobApply.TabIndex = 44;
@@ -183,8 +183,7 @@
             // 
             // lblStatusHeader
             // 
-            this.lblStatusHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblStatusHeader.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblStatusHeader.AutoSize = true;
             this.lblStatusHeader.Font = new System.Drawing.Font("Inter", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.lblStatusHeader.Location = new System.Drawing.Point(984, 13);
@@ -195,21 +194,19 @@
             // 
             // icoStatusHeader
             // 
-            this.icoStatusHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.icoStatusHeader.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.icoStatusHeader.Image = global::FindJobApplication.Properties.Resources.status;
             this.icoStatusHeader.ImageRotate = 0F;
             this.icoStatusHeader.Location = new System.Drawing.Point(948, 8);
             this.icoStatusHeader.Name = "icoStatusHeader";
-            this.icoStatusHeader.Size = new System.Drawing.Size(11, 30);
+            this.icoStatusHeader.Size = new System.Drawing.Size(30, 30);
             this.icoStatusHeader.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.icoStatusHeader.TabIndex = 7;
             this.icoStatusHeader.TabStop = false;
             // 
             // lblTimeHeader
             // 
-            this.lblTimeHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTimeHeader.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTimeHeader.AutoSize = true;
             this.lblTimeHeader.Font = new System.Drawing.Font("Inter", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.lblTimeHeader.Location = new System.Drawing.Point(670, 13);
@@ -220,21 +217,18 @@
             // 
             // guna2PictureBox3
             // 
-            this.guna2PictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2PictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2PictureBox3.Image = global::FindJobApplication.Properties.Resources.Mail_Calender;
             this.guna2PictureBox3.ImageRotate = 0F;
             this.guna2PictureBox3.Location = new System.Drawing.Point(630, 10);
             this.guna2PictureBox3.Name = "guna2PictureBox3";
-            this.guna2PictureBox3.Size = new System.Drawing.Size(11, 30);
+            this.guna2PictureBox3.Size = new System.Drawing.Size(30, 30);
             this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox3.TabIndex = 5;
             this.guna2PictureBox3.TabStop = false;
             // 
             // label3
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Inter", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(425, 13);
@@ -245,13 +239,11 @@
             // 
             // guna2PictureBox2
             // 
-            this.guna2PictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2PictureBox2.Image = global::FindJobApplication.Properties.Resources.Company;
             this.guna2PictureBox2.ImageRotate = 0F;
             this.guna2PictureBox2.Location = new System.Drawing.Point(385, 10);
             this.guna2PictureBox2.Name = "guna2PictureBox2";
-            this.guna2PictureBox2.Size = new System.Drawing.Size(11, 30);
+            this.guna2PictureBox2.Size = new System.Drawing.Size(30, 30);
             this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox2.TabIndex = 3;
             this.guna2PictureBox2.TabStop = false;

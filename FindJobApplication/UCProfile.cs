@@ -1,6 +1,7 @@
 ﻿using FindJobApplication.Daos;
 using FindJobApplication.Entities;
 using FindJobApplication.Utils;
+using Microsoft.VisualBasic.ApplicationServices;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -40,69 +41,45 @@ namespace FindJobApplication
             userProfile = userProfileDao.FindUserProfileByAccountId(userId);
         }
 
-        public void hideAllBtn()
-        {
-            btnBack.Visible = true;
-            btnFollow.Visible = true;
-
-            pbEducationEdit.Visible = false;
-            pbIntroductionEdit.Visible = false;
-            pbPersonalProjectEdit.Visible = false;
-            pbProfileEdit.Visible = false;
-            pbSkillsEdit.Visible = false;
-            pbWorkExperienceEdit.Visible = false;
-
-            uCEduaction.pbDeleteEducationOrWork.Visible = false;
-            uCEduaction.pbEditEducationOrWork.Visible = false;
-
-            uCWorkExperience.pbDeleteEducationOrWork.Visible = false;
-            uCWorkExperience.pbEditEducationOrWork.Visible = false;
-
-            uCUserProfileProject.pbDeleteProject.Visible = false;
-            uCUserProfileProject.pbEditProject.Visible = false;
-
-        }
-        public Panel panelProfile { get => pnlProfile; }
-
         private void pbProfileEdit_Click(object sender, EventArgs e)
         {
-            FUserProfileInformationEdit fUserProfileInformationEdit = new FUserProfileInformationEdit();
+            FUserProfileInformationEdit fUserProfileInformationEdit = new FUserProfileInformationEdit(userProfile.Account);
             fUserProfileInformationEdit.Show();
         }
 
         private void pbIntroductionEdit_Click(object sender, EventArgs e)
         {
-            FUserProfileIntroductionEdit fUserProfileIntroductionEdit = new FUserProfileIntroductionEdit();
+            FUserProfileIntroductionEdit fUserProfileIntroductionEdit = new FUserProfileIntroductionEdit(userProfile.Account);
             fUserProfileIntroductionEdit.Show();
         }
 
         private void pbEducationEdit_Click(object sender, EventArgs e)
         {
-            FUserProfileEducationEdit fUserProfileEducationEdit = new FUserProfileEducationEdit();
+            FUserProfileEducationEdit fUserProfileEducationEdit = new FUserProfileEducationEdit(userProfile.Account);
             fUserProfileEducationEdit.Show();
         }
 
         private void pbWorkExperienceEdit_Click(object sender, EventArgs e)
         {
-            FUserProfileWorkExperienceEdit fUserProfileWorkExperienceEdit = new FUserProfileWorkExperienceEdit();
+            FUserProfileWorkExperienceEdit fUserProfileWorkExperienceEdit = new FUserProfileWorkExperienceEdit(userProfile.Account);
             fUserProfileWorkExperienceEdit.Show();
         }
 
         private void pbSkillsEdit_Click(object sender, EventArgs e)
         {
-            FUserProfileSkillsEdit fUserProfileSkillsEdit = new FUserProfileSkillsEdit();   
+            FUserProfileSkillsEdit fUserProfileSkillsEdit = new FUserProfileSkillsEdit(userProfile.Account);   
             fUserProfileSkillsEdit.Show();
         }
 
         private void pbPersonalProjectEdit_Click(object sender, EventArgs e)
         {
-            FUserProfilePersonalProjectEdit fUserProfilePersonalProjectEdit = new FUserProfilePersonalProjectEdit();
+            FUserProfilePersonalProjectEdit fUserProfilePersonalProjectEdit = new FUserProfilePersonalProjectEdit(userProfile.Account);
             fUserProfilePersonalProjectEdit.Show();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            Control parentControl = this.Parent;
+            Control parentControl = Parent;
             if (parentControl != null)
             {
                 parentControl.Controls.Remove(this);
@@ -137,7 +114,7 @@ namespace FindJobApplication
             lblProfileTitle.Text = userProfile.Title;
             lblProfileEmail.Text = userProfile.Account.Email;
             lblProfileGender.Text = userProfile.Gender;
-            lblProfileDateOfBirth.Text = userProfile.DateOfBirth.ToString();
+            lblProfileDateOfBirth.Text = (userProfile.DateOfBirth ?? DateTime.Now).ToString("dd-MM-yyyy");
             lblProfilePhoneNumber.Text = userProfile.PhoneNumber;
             lblProfileAddress.Text = userProfile.Address;
             lblProfileTitle.Text = userProfile.Title;
@@ -146,12 +123,12 @@ namespace FindJobApplication
             pnlEducationDetail.Controls.Clear();
             foreach (var item in userProfile.UserEducations)
             {
-                UCUCUserProfileEducationAndWorkExperience uCUCUserProfileEducationAndWorkExperience = new UCUCUserProfileEducationAndWorkExperience(item);
+                UCUCUserProfileEducationAndWorkExperience uCUCUserProfileEducationAndWorkExperience = new UCUCUserProfileEducationAndWorkExperience(userProfile.Account, item);
                 pnlEducationDetail.Controls.Add(uCUCUserProfileEducationAndWorkExperience);
             }
             foreach (var item in userProfile.UserWorkExperiences)
             {
-                UCUCUserProfileEducationAndWorkExperience uCUCUserProfileEducationAndWorkExperience = new UCUCUserProfileEducationAndWorkExperience(item);
+                UCUCUserProfileEducationAndWorkExperience uCUCUserProfileEducationAndWorkExperience = new UCUCUserProfileEducationAndWorkExperience(userProfile.Account, item);
                 pnlWorkExperienceDetail.Controls.Add(uCUCUserProfileEducationAndWorkExperience);
             }
             foreach (var item in userProfile.Skills)
@@ -161,21 +138,39 @@ namespace FindJobApplication
             }
             foreach(var item in userProfile.UserPersonalProjects)
             {
-                UCUserProfileProject uCUserProfileProject = new UCUserProfileProject(item);
+                UCUserProfileProject uCUserProfileProject = new UCUserProfileProject(userProfile.Account, item);
                 pnlProjectDetail.Controls.Add(uCUserProfileProject);
             }
             ChangeButtonFollowState();
         }
-
         private void btnInbox_Click(object sender, EventArgs e)
         {
-            FSendMail fSendMail = new FSendMail();
+            userProfile = userProfileDao.FindUserProfileByAccountId(userId);
+            FSendMail fSendMail = new FSendMail(userProfile.Account.Email);
             fSendMail.Show();
         }
+        public void hideAllBtn()
+        {
+            btnBack.Visible = true;
+            btnFollow.Visible = true;
+            btnInbox.Visible = true;
+            pbEducationEdit.Visible = false;
+            pbIntroductionEdit.Visible = false;
+            pbPersonalProjectEdit.Visible = false;
+            pbProfileEdit.Visible = false;
+            pbSkillsEdit.Visible = false;
+            pbWorkExperienceEdit.Visible = false;
 
+            uCEduaction.pbDeleteEducationOrWork.Visible = false;
+            uCEduaction.pbEditEducationOrWork.Visible = false;
+
+            uCWorkExperience.pbDeleteEducationOrWork.Visible = false;
+            uCWorkExperience.pbEditEducationOrWork.Visible = false;
+        }
         public void ChangeButtonFollowState()
         {
-            if (Session.account.Account1.Any(row => row.Id == this.userId)) {
+            AccountDao accountDao = new AccountDao();
+            if (accountDao.FindAccountById(Session.account.Id).Account1.Any(row => row.Id == userId)) {
                 btnFollow.Text = "Unfollow";
             }
             else

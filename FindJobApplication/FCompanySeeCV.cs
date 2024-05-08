@@ -13,26 +13,36 @@ namespace FindJobApplication
 {
     public partial class FCompanySeeCV : Form
     {
-        private int userId;
+        string filePath;
         public FCompanySeeCV()
         {
             InitializeComponent();
         }
 
-        public FCompanySeeCV(int userId) : this()
+        public FCompanySeeCV(string filePath) : this()
         {
-            this.userId = userId;
-        }
-        public void LoadCV()
-        {
-            //UCProfile uCProfile = new UCProfile(this.userId);
-            //uCProfile.hideAllBtn();
-            //this.Controls.Add(uCProfile);
+            this.filePath = filePath;
         }
 
         private void FCompanySeeCV_Load(object sender, EventArgs e)
         {
-           // LoadCV();
+            if (System.IO.File.Exists(this.filePath))
+            {
+                try
+                {
+                    Image image = Image.FromFile(filePath);
+                    pBFile.Image = image;
+                }
+                catch (OutOfMemoryException ex)
+                {
+                    MessageBox.Show("An error occurred while loading the image: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Image file does not exist.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
     }
 }

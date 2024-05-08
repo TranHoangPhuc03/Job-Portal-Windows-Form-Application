@@ -1,4 +1,4 @@
-﻿    using FindJobApplication.Daos;
+﻿using FindJobApplication.Daos;
 using FindJobApplication.Entities;
 using FindJobApplication.Utils;
 using Guna.UI2.WinForms;
@@ -16,8 +16,10 @@ namespace FindJobApplication
 {
     public partial class UCSocialPost : UserControl
     {
-        AccountDao accountDao = new AccountDao();
+        public event FillToMainPanelHandler FillToMainPanelClicked = UCPanelMain.UC_RequiredAddControl;
 
+        AccountDao accountDao = new AccountDao();
+        int accountId;
         public UCSocialPost()
         {
             InitializeComponent();
@@ -38,20 +40,39 @@ namespace FindJobApplication
                 this.pnlSkill.Controls.Add(uCUserProfileSkill);
             }
             Tag = socialPost.Id;
+            if (socialPost.AccountID == Session.account.Id)
+            {
+                btnSendMail.Visible = false;
+            }
+            this.accountId = socialPost.AccountID;
         }
 
         public LinkLabel LlblName { get => llblName; }
         private void llblName_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            UCProfile uCProfile = new UCProfile();
-            UCMain.Instance.PnlMid.Controls.Add(uCProfile);
-            uCProfile.hideAllBtn();
-            uCProfile.BringToFront();
+            string role = accountDao.FindAccountById(accountId).Role;
+            if (accountId != Session.account.Id)
+            {
+                if (role == "user")
+                {
+                    UCProfile uCProfile = new UCProfile(accountId);
+                    FillToMainPanelClicked?.Invoke(this, uCProfile);
+                    uCProfile.hideAllBtn();
+                }
+                else
+                {
+                    UCCompanyProfile uCCompanyProfile = new UCCompanyProfile(accountId);
+                    FillToMainPanelClicked?.Invoke(this, uCCompanyProfile);
+                    uCCompanyProfile.hideAllButton();
+                }
+
+            }
         }
 
         private void btnSendMail_Click(object sender, EventArgs e)
         {
-            FSendMail fSendMail = new FSendMail();
+            Account account = accountDao.FindAccountById(accountId);
+            FSendMail fSendMail = new FSendMail(account.Email);
             fSendMail.Show();
         }
     }

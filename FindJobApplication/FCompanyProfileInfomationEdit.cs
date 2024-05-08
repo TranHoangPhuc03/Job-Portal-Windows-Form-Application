@@ -16,11 +16,21 @@ namespace FindJobApplication
 {
     public partial class FCompanyProfileInfomationEdit : Form
     {
-        Image img = Properties.Resources.fpt_logo1;
+        CompanyProfile companyProfile = null;
+        CompanyProfileDao companyProfileDao = new CompanyProfileDao();
+        List<PictureBox> companyImageControls = new List<PictureBox>();
 
         public FCompanyProfileInfomationEdit()
         {
             InitializeComponent();
+        }
+        public FCompanyProfileInfomationEdit(CompanyProfile companyProfile) : this()
+        {
+            this.companyProfile = companyProfile;
+            companyImageControls.Add(pbCompany1);
+            companyImageControls.Add(pbCompany2);
+            companyImageControls.Add(pbCompany3);
+            companyImageControls.Add(pbCompany4);
         }
 
         private void pbCompany1_MouseLeave(object sender, EventArgs e)
@@ -60,53 +70,63 @@ namespace FindJobApplication
         }
         private void pbUser_MouseEnter(object sender, EventArgs e)
         {
-            pbUser.Image = Properties.Resources.camera_Edit1;
+            pbUser.Image = Properties.Resources.camera_Edit;
         }
         private void pbUser_MouseLeave(object sender, EventArgs e)
         {
-            pbUser.Image = img;
+            pbUser.Image = pbUser.InitialImage;
         }
         private void FCompanyProfileInfomationEdit_Load(object sender, EventArgs e)
         {
-            CompanyProfileDao companyProfileDao = new CompanyProfileDao();
-            CompanyProfile companyProfile = companyProfileDao.FindCompanyProfileByAccountId(Session.account.Id);
-            //this.txtNameCompany.Text = companyProfile.Name;
-            //this.txtEmail.Text = companyProfile.Email;
-            this.txtPhoneNumber.Text = companyProfile.PhoneNumber;
-            this.dtpDateEstablish.Text = companyProfile.DateEstablish?.ToString("dd-MM-yyyy") ?? DateTime.Now.ToString("dd-MM-yyy");
-            this.txtCompanySize.Text = companyProfile.CompanySize.ToString();
-            this.txtAddress.Text = companyProfile.Address;
-            this.txtLink.Text = companyProfile.CompanyLink;
+            txtNameCompany.Text = companyProfile.Account.Name;
+            txtEmail.Text = companyProfile.Account.Email;
+            txtPhoneNumber.Text = companyProfile.PhoneNumber;
+            dtpDateEstablish.Text = companyProfile.DateEstablish?.ToString("dd-MM-yyyy") ?? DateTime.Now.ToString("dd-MM-yyy");
+            txtCompanySize.Text = companyProfile.CompanySize.ToString();
+            txtAddress.Text = companyProfile.Address;
+            txtLink.Text = companyProfile.CompanyLink;
+            pbUser.Image = pbUser.InitialImage = ImageUtils.FromBytesToImage(companyProfile.Account.Avatar);
+            int index = 0;
+            foreach (CompanyImage companyImage in companyProfile.CompanyImages)
+            {
+                companyImageControls[index].Image = ImageUtils.FromBytesToImage(companyImage.ImageContent);
+                index++;
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            CompanyProfile companyProfile = new CompanyProfile(
-                    //Id = Session.account.Id,
-                    //this.txtNameCompany.Text,
-                    //this.txtEmail.Text,
-                    //this.txtPhoneNumber.Text,
-                    //this.txtAddress.Text,
-                    //Convert.ToDateTime(this.dtpDateEstablish.Text),
-                    //Convert.ToInt32(this.txtCompanySize.Text),
-                    //this.txtLink.Text
-                );
-
-            CompanyProfileDao companyProfileDao = new CompanyProfileDao();
-            int result = companyProfileDao.UpdateCompanyProfile(companyProfile);
-            if (result > 0)
+            companyProfile.Account.Name = txtNameCompany.Text;
+            companyProfile.Account.Email = txtEmail.Text;
+            companyProfile.PhoneNumber = txtPhoneNumber.Text;
+            companyProfile.Address = txtAddress.Text;
+            companyProfile.DateEstablish = dtpDateEstablish.Value;
+            companyProfile.CompanySize =  Convert.ToInt32(this.txtCompanySize.Text);
+            companyProfile.CompanyLink = txtLink.Text;
+            companyProfile.Account.Avatar = ImageUtils.FromImageToBytes(pbUser.Image);
+            companyProfileDao.DeleteAllCompanyImages(companyProfile);
+            foreach (PictureBox pictureBox in companyImageControls)
             {
-                MessageDialog.Show(this, "Update success");
-                this.btnCancel.PerformClick();
+                companyProfile.CompanyImages.Add(new CompanyImage()
+                {
+                    ImageContent = ImageUtils.FromImageToBytes(pictureBox.Image)
+                });
+            };
+
+            int result = companyProfileDao.UpdateCompanyProfile(companyProfile);
+            if (result == 0)
+            {
+                MessageDialog.Show(this, "Update infomation failed");
             }
             else
             {
-                MessageDialog.Show(this, "Update failed");
+                MessageDialog.Show(this, "Update infomation successfully");
+                Close();
             }
         }
     }
