@@ -40,9 +40,17 @@ namespace FindJobApplication
 
         private void btnSeeCV_Click(object sender, EventArgs e)
         {
-            UCProfile uCProfile = new UCProfile(user.UserId);
-            FillToMainPanelClicked?.Invoke(this, uCProfile);
-            uCProfile.hideAllBtn();
+            if (this.user.CvAttachment == null || this.user.CvAttachment == "")
+            {
+                UCProfile uCProfile = new UCProfile(user.UserId);
+                FillToMainPanelClicked?.Invoke(this, uCProfile);
+                uCProfile.hideAllBtn();
+            }
+            else
+            {
+                FCompanySeeCV fCompanySeeCV = new FCompanySeeCV(this.user.CvAttachment);
+                fCompanySeeCV.Show();
+            }
         }
 
         private void UCCompanySeeProfilePeople_Load(object sender, EventArgs e)
