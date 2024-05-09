@@ -35,17 +35,17 @@ namespace FindJobApplication
             (sender as UserControl).AutoSize ^= true;
         }
 
-        private void btnProfile_Click(object sender, EventArgs e)
+        public void btnProfile_Click(object sender, EventArgs e)
         {
             FillToMainPanelClicked?.Invoke(this, new UCCompanyProfile(Session.account.Id));
         }
 
-        private void btnSetting_Click(object sender, EventArgs e)
+        public void btnSetting_Click(object sender, EventArgs e)
         {
             FillToMainPanelClicked?.Invoke(this, new UCSetting());
         }
 
-        private void btnFollowCV_Click(object sender, EventArgs e)
+        public void btnFollowCV_Click(object sender, EventArgs e)
         {
             FillToMainPanelClicked?.Invoke(this, new UCCompanyListCVFollowing());
         }

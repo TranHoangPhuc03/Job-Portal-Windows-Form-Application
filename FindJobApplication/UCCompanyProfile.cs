@@ -79,18 +79,27 @@ namespace FindJobApplication
             CompanyProfileDao companyProfileDao = new CompanyProfileDao();
             CompanyProfile companyProfile = companyProfileDao.FindCompanyProfileByAccountId(this.companyId);
             JobPostDao jobPostDao = new JobPostDao();   
-            int cnt = jobPostDao.FindAllJobPostByCompanyId(this.companyId).Count;
             pbProfileAvatar.Image = ImageUtils.FromBytesToImage(companyProfile.Account.Avatar);
-            lblCountJob.Text = cnt.ToString();
+            lblCountJob.Text = companyProfile.JobPosts.Count.ToString();
             lblProfileCompany.Text = companyProfile.Account.Name;
             lblProfileAddress.Text = companyProfile.Address;
             lblProfileCompanySize.Text = companyProfile.CompanySize.ToString();
             lblProfilePhone.Text = companyProfile.PhoneNumber;
-            lblProfileDateEstablish.Text = companyProfile.DateEstablish?.ToString("dd-MM-yyyy");
+            lblProfileDateEstablish.Text = (companyProfile.DateEstablish ?? DateTime.Now).ToString("dd-MM-yyyy");
             lblProfileEmail.Text = companyProfile.Account.Email;
             lblProfileLink.Text = companyProfile.CompanyLink;
             rtxtTop3Reason.Text = companyProfile.Reason;
             rTxtOverview.Text = companyProfile.Overview;
+            int numberImages = companyProfile.CompanyImages.Count;
+            foreach (CompanyImage companyImage in companyProfile.CompanyImages)
+            {
+                PictureBox pictureBox = new PictureBox();
+                pictureBox.Image = ImageUtils.FromBytesToImage(companyImage.ImageContent);
+                pictureBox.Width = pnlListPicture.Width / numberImages;
+                pictureBox.Height = pnlListPicture.Height;
+                pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+                pnlListPicture.Controls.Add(pictureBox);
+            }
             ChangeButtonFollowState();
         }
 
@@ -139,6 +148,14 @@ namespace FindJobApplication
             else
             {
                 btnFollow.Text = "Follow";
+            }
+        }
+
+        private void pnlListPicture_Resize(object sender, EventArgs e)
+        {
+            foreach (PictureBox pictureBox in pnlListPicture.Controls)
+            {
+                pictureBox.Width = pnlListPicture.Width / pnlListPicture.Controls.Count - 6;
             }
         }
     }

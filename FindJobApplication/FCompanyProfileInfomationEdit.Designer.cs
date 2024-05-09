@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.txtNameCompany = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtEmail = new Guna.UI2.WinForms.Guna2TextBox();
@@ -48,6 +49,9 @@
             this.guna2Separator2 = new Guna.UI2.WinForms.Guna2Separator();
             this.btnCancel = new Guna.UI2.WinForms.Guna2Button();
             this.btnSave = new Guna.UI2.WinForms.Guna2Button();
+            this.locationcDataSet = new FindJobApplication.LocationcDataSet();
+            this.locationBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.locationTableAdapter = new FindJobApplication.LocationcDataSetTableAdapters.LocationTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pbCompany1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCompany2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCompany4)).BeginInit();
@@ -55,6 +59,8 @@
             this.guna2Panel1.SuspendLayout();
             this.pnlPicture.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbUser)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.locationcDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.locationBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Separator1
@@ -154,21 +160,24 @@
             // 
             this.cbLocation.BackColor = System.Drawing.Color.Transparent;
             this.cbLocation.BorderRadius = 10;
+            this.cbLocation.DataSource = this.locationBindingSource;
+            this.cbLocation.DisplayMember = "Name";
             this.cbLocation.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbLocation.DropDownHeight = 312;
             this.cbLocation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLocation.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbLocation.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbLocation.Font = new System.Drawing.Font("Inter", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.cbLocation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cbLocation.ItemHeight = 33;
-            this.cbLocation.Items.AddRange(new object[] {
-            "Ho Chi Minh"});
+            this.cbLocation.IntegralHeight = false;
+            this.cbLocation.ItemHeight = 39;
             this.cbLocation.Location = new System.Drawing.Point(1, 397);
             this.cbLocation.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.cbLocation.Name = "cbLocation";
-            this.cbLocation.Size = new System.Drawing.Size(301, 39);
+            this.cbLocation.Size = new System.Drawing.Size(301, 45);
             this.cbLocation.StartIndex = 0;
             this.cbLocation.TabIndex = 7;
+            this.cbLocation.ValueMember = "Id";
             // 
             // txtAddress
             // 
@@ -247,8 +256,6 @@
             this.pbCompany1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbCompany1.TabIndex = 11;
             this.pbCompany1.TabStop = false;
-            this.pbCompany1.MouseEnter += new System.EventHandler(this.pbCompany1_MouseEnter);
-            this.pbCompany1.MouseLeave += new System.EventHandler(this.pbCompany1_MouseLeave);
             // 
             // pbCompany2
             // 
@@ -261,8 +268,6 @@
             this.pbCompany2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbCompany2.TabIndex = 12;
             this.pbCompany2.TabStop = false;
-            this.pbCompany2.MouseEnter += new System.EventHandler(this.pbCompany2_MouseEnter);
-            this.pbCompany2.MouseLeave += new System.EventHandler(this.pbCompany2_MouseLeave);
             // 
             // pbCompany4
             // 
@@ -275,8 +280,6 @@
             this.pbCompany4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbCompany4.TabIndex = 13;
             this.pbCompany4.TabStop = false;
-            this.pbCompany4.MouseEnter += new System.EventHandler(this.pbCompany4_MouseEnter);
-            this.pbCompany4.MouseLeave += new System.EventHandler(this.pbCompany4_MouseLeave);
             // 
             // pbCompany3
             // 
@@ -289,8 +292,6 @@
             this.pbCompany3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbCompany3.TabIndex = 13;
             this.pbCompany3.TabStop = false;
-            this.pbCompany3.MouseEnter += new System.EventHandler(this.pbCompany3_MouseEnter);
-            this.pbCompany3.MouseLeave += new System.EventHandler(this.pbCompany3_MouseLeave);
             // 
             // guna2Panel1
             // 
@@ -339,6 +340,7 @@
             this.pbUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbUser.TabIndex = 2;
             this.pbUser.TabStop = false;
+            this.pbUser.Click += new System.EventHandler(this.pbUser_Click);
             this.pbUser.MouseEnter += new System.EventHandler(this.pbUser_MouseEnter);
             this.pbUser.MouseLeave += new System.EventHandler(this.pbUser_MouseLeave);
             // 
@@ -400,6 +402,20 @@
             this.btnSave.Text = "Save";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // locationcDataSet
+            // 
+            this.locationcDataSet.DataSetName = "LocationcDataSet";
+            this.locationcDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // locationBindingSource
+            // 
+            this.locationBindingSource.DataMember = "Location";
+            this.locationBindingSource.DataSource = this.locationcDataSet;
+            // 
+            // locationTableAdapter
+            // 
+            this.locationTableAdapter.ClearBeforeFill = true;
+            // 
             // FCompanyProfileInfomationEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -426,6 +442,8 @@
             this.guna2Panel1.ResumeLayout(false);
             this.pnlPicture.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbUser)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.locationcDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.locationBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -452,5 +470,8 @@
         private Guna.UI2.WinForms.Guna2Button btnSave;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel pnlPicture;
         private Guna.UI2.WinForms.Guna2PictureBox pbUser;
+        private LocationcDataSet locationcDataSet;
+        private System.Windows.Forms.BindingSource locationBindingSource;
+        private LocationcDataSetTableAdapters.LocationTableAdapter locationTableAdapter;
     }
 }
