@@ -36,9 +36,6 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnInbox = new Guna.UI2.WinForms.Guna2Button();
             this.pnlListPicture = new System.Windows.Forms.FlowLayoutPanel();
-            this.pbCompany1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.pbCompany2 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.pbCompany3 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Separator4 = new Guna.UI2.WinForms.Guna2Separator();
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
@@ -76,10 +73,6 @@
             pnlProfileInformation = new Guna.UI.WinForms.GunaElipsePanel();
             pnlProfileInformation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.pnlListPicture.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCompany1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCompany2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCompany3)).BeginInit();
             this.pnlPicture.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbProfileAvatar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbProfileEdit)).BeginInit();
@@ -226,50 +219,12 @@
             // 
             this.pnlListPicture.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlListPicture.Controls.Add(this.pbCompany1);
-            this.pnlListPicture.Controls.Add(this.pbCompany2);
-            this.pnlListPicture.Controls.Add(this.pbCompany3);
             this.pnlListPicture.Location = new System.Drawing.Point(30, 708);
             this.pnlListPicture.Margin = new System.Windows.Forms.Padding(2);
             this.pnlListPicture.Name = "pnlListPicture";
             this.pnlListPicture.Size = new System.Drawing.Size(1103, 244);
             this.pnlListPicture.TabIndex = 39;
-            // 
-            // pbCompany1
-            // 
-            this.pbCompany1.BorderRadius = 4;
-            this.pbCompany1.Image = global::FindJobApplication.Properties.Resources.vanphong2;
-            this.pbCompany1.ImageRotate = 0F;
-            this.pbCompany1.Location = new System.Drawing.Point(3, 3);
-            this.pbCompany1.Name = "pbCompany1";
-            this.pbCompany1.Size = new System.Drawing.Size(340, 230);
-            this.pbCompany1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbCompany1.TabIndex = 32;
-            this.pbCompany1.TabStop = false;
-            // 
-            // pbCompany2
-            // 
-            this.pbCompany2.BorderRadius = 4;
-            this.pbCompany2.Image = global::FindJobApplication.Properties.Resources.vanphong2;
-            this.pbCompany2.ImageRotate = 0F;
-            this.pbCompany2.Location = new System.Drawing.Point(349, 3);
-            this.pbCompany2.Name = "pbCompany2";
-            this.pbCompany2.Size = new System.Drawing.Size(340, 230);
-            this.pbCompany2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbCompany2.TabIndex = 33;
-            this.pbCompany2.TabStop = false;
-            // 
-            // pbCompany3
-            // 
-            this.pbCompany3.BorderRadius = 4;
-            this.pbCompany3.Image = global::FindJobApplication.Properties.Resources.vanphong2;
-            this.pbCompany3.ImageRotate = 0F;
-            this.pbCompany3.Location = new System.Drawing.Point(695, 3);
-            this.pbCompany3.Name = "pbCompany3";
-            this.pbCompany3.Size = new System.Drawing.Size(340, 230);
-            this.pbCompany3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbCompany3.TabIndex = 34;
-            this.pbCompany3.TabStop = false;
+            this.pnlListPicture.Resize += new System.EventHandler(this.pnlListPicture_Resize);
             // 
             // guna2Separator4
             // 
@@ -357,7 +312,6 @@
             // 
             // pbProfileEdit
             // 
-            this.pbProfileEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pbProfileEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbProfileEdit.Image = global::FindJobApplication.Properties.Resources.add;
             this.pbProfileEdit.Location = new System.Drawing.Point(447, 384);
@@ -553,6 +507,8 @@
             // 
             // guna2Separator5
             // 
+            this.guna2Separator5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Separator5.FillColor = System.Drawing.Color.Black;
             this.guna2Separator5.FillStyle = System.Drawing.Drawing2D.DashStyle.Dash;
             this.guna2Separator5.Location = new System.Drawing.Point(44, 95);
@@ -562,6 +518,8 @@
             // 
             // guna2Separator3
             // 
+            this.guna2Separator3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Separator3.FillColor = System.Drawing.Color.Black;
             this.guna2Separator3.FillStyle = System.Drawing.Drawing2D.DashStyle.Dash;
             this.guna2Separator3.Location = new System.Drawing.Point(44, 3);
@@ -583,6 +541,8 @@
             // 
             // rTxtOverview
             // 
+            this.rTxtOverview.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.rTxtOverview.BackColor = System.Drawing.Color.White;
             this.rTxtOverview.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rTxtOverview.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -596,7 +556,6 @@
             // 
             // pBCompanyOverviewEdit
             // 
-            this.pBCompanyOverviewEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pBCompanyOverviewEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pBCompanyOverviewEdit.Image = global::FindJobApplication.Properties.Resources.add;
             this.pBCompanyOverviewEdit.Location = new System.Drawing.Point(435, 40);
@@ -612,6 +571,7 @@
             // 
             this.gunaElipsePanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.gunaElipsePanel2.AutoSize = true;
             this.gunaElipsePanel2.BackColor = System.Drawing.Color.Transparent;
             this.gunaElipsePanel2.BaseColor = System.Drawing.Color.White;
             this.gunaElipsePanel2.Controls.Add(this.guna2Separator2);
@@ -623,11 +583,13 @@
             this.gunaElipsePanel2.Margin = new System.Windows.Forms.Padding(0);
             this.gunaElipsePanel2.Name = "gunaElipsePanel2";
             this.gunaElipsePanel2.Radius = 10;
-            this.gunaElipsePanel2.Size = new System.Drawing.Size(1184, 299);
+            this.gunaElipsePanel2.Size = new System.Drawing.Size(1184, 518);
             this.gunaElipsePanel2.TabIndex = 12;
             // 
             // guna2Separator2
             // 
+            this.guna2Separator2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Separator2.FillColor = System.Drawing.Color.Black;
             this.guna2Separator2.FillStyle = System.Drawing.Drawing2D.DashStyle.Dash;
             this.guna2Separator2.Location = new System.Drawing.Point(44, 99);
@@ -637,6 +599,8 @@
             // 
             // guna2Separator6
             // 
+            this.guna2Separator6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Separator6.FillColor = System.Drawing.Color.Black;
             this.guna2Separator6.FillStyle = System.Drawing.Drawing2D.DashStyle.Dash;
             this.guna2Separator6.Location = new System.Drawing.Point(44, 7);
@@ -658,6 +622,8 @@
             // 
             // rtxtTop3Reason
             // 
+            this.rtxtTop3Reason.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.rtxtTop3Reason.BackColor = System.Drawing.Color.White;
             this.rtxtTop3Reason.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtxtTop3Reason.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -665,14 +631,13 @@
             this.rtxtTop3Reason.Margin = new System.Windows.Forms.Padding(2);
             this.rtxtTop3Reason.Name = "rtxtTop3Reason";
             this.rtxtTop3Reason.ReadOnly = true;
-            this.rtxtTop3Reason.Size = new System.Drawing.Size(851, 104);
+            this.rtxtTop3Reason.Size = new System.Drawing.Size(1007, 380);
             this.rtxtTop3Reason.TabIndex = 27;
             this.rtxtTop3Reason.Text = "Work with the latest technologies\nThe field of securities and finance is attracti" +
     "ve\nContinuously receive professional and skill training";
             // 
             // pbTop3Edit
             // 
-            this.pbTop3Edit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pbTop3Edit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbTop3Edit.Image = global::FindJobApplication.Properties.Resources.add;
             this.pbTop3Edit.Location = new System.Drawing.Point(522, 44);
@@ -717,10 +682,6 @@
             pnlProfileInformation.ResumeLayout(false);
             pnlProfileInformation.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.pnlListPicture.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbCompany1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCompany2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCompany3)).EndInit();
             this.pnlPicture.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbProfileAvatar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbProfileEdit)).EndInit();
@@ -738,6 +699,7 @@
             this.gunaElipsePanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbTop3Edit)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -767,9 +729,6 @@
         private Guna.UI.WinForms.GunaLabel gunaLabel2;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator4;
         private System.Windows.Forms.FlowLayoutPanel pnlListPicture;
-        private Guna.UI2.WinForms.Guna2PictureBox pbCompany1;
-        private Guna.UI2.WinForms.Guna2PictureBox pbCompany2;
-        private Guna.UI2.WinForms.Guna2PictureBox pbCompany3;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator5;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator3;
         private Guna.UI.WinForms.GunaLabel gunaLabel1;

@@ -23,7 +23,7 @@ namespace FindJobApplication
         }
         public FCompanyProfileOverviewEdit(CompanyProfile companyProfile) : this()
         {
-            this.companyProfile = companyProfile;
+            this.companyProfile = companyProfileDao.FindCompanyProfileByAccountId(companyProfile.Id);
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -37,12 +37,13 @@ namespace FindJobApplication
             int result = companyProfileDao.UpdateCompanyProfile(companyProfile);
             if (result == 0)
             {
-                MessageDialog.Show("Update failed");
+                MessageDialog.Show(this, "Update failed");
             }
             else
             {
-                MessageDialog.Show("Update successfully");
+                MessageDialog.Show(this, "Update successfully");
                 Close();
+                FCompanyHome.Instance.UCCompanySubMenuRight.btnProfile_Click(this, new EventArgs());
             }
         }
 

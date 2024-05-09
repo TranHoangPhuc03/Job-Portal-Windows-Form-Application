@@ -18,10 +18,25 @@ namespace FindJobApplication
 {
     public partial class FCompanyHome : Form
     {
+        static FCompanyHome _obj;
+        public static FCompanyHome Instance
+        {
+            get
+            {
+                if (_obj == null)
+                {
+                    _obj = new FCompanyHome();
+                }
+                return _obj;
+            }
+        }
         public FCompanyHome()
         {
             InitializeComponent();
+            _obj = this;
         }
+
+        public UCCompanySubMenuRight UCCompanySubMenuRight { get => ucCompanySubMenuRight;  }
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {

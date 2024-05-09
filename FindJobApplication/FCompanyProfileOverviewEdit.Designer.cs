@@ -60,7 +60,7 @@
             // 
             this.rTxtOverview.BackColor = System.Drawing.Color.White;
             this.rTxtOverview.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.rTxtOverview.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rTxtOverview.Font = new System.Drawing.Font("Inter", 12F);
             this.rTxtOverview.Location = new System.Drawing.Point(17, 130);
             this.rTxtOverview.Margin = new System.Windows.Forms.Padding(2);
             this.rTxtOverview.Name = "rTxtOverview";

@@ -23,51 +23,46 @@ namespace FindJobApplication
         public FCompanyProfileInfomationEdit()
         {
             InitializeComponent();
+            InitialEventForCompanyOfficeImage();
         }
         public FCompanyProfileInfomationEdit(CompanyProfile companyProfile) : this()
         {
-            this.companyProfile = companyProfile;
+            this.companyProfile = companyProfileDao.FindCompanyProfileByAccountId(companyProfile.Id);
+        }
+
+        public void InitialEventForCompanyOfficeImage()
+        {
             companyImageControls.Add(pbCompany1);
             companyImageControls.Add(pbCompany2);
             companyImageControls.Add(pbCompany3);
             companyImageControls.Add(pbCompany4);
+            foreach (PictureBox pictureBox in companyImageControls)
+            {
+                pictureBox.MouseClick += (sender, e) =>
+                {
+                    OpenFileDialog dialog = new OpenFileDialog()
+                    {
+                        FileName = "Select an image file",
+                        Filter = "Image files (*.png; *.jpg; *.jpeg)|*.png; *.jpg; *.jpeg",
+                        Title = "Open image file"
+                    };
+
+                    if (dialog.ShowDialog() == DialogResult.OK)
+                    {
+                        pictureBox.Image = pictureBox.InitialImage = Image.FromFile(dialog.FileName);
+                    }
+                };
+                pictureBox.MouseLeave += (sender, e) =>
+                {
+                    pictureBox.Image = pictureBox.InitialImage;
+                };
+                pictureBox.MouseEnter += (sender, e) =>
+                {
+                    pictureBox.Image = Properties.Resources.camera_Edit;
+                };
+            }
         }
 
-        private void pbCompany1_MouseLeave(object sender, EventArgs e)
-        {
-            pbCompany1.Image = Properties.Resources.VanPhong;
-        }
-        private void pbCompany1_MouseEnter(object sender, EventArgs e)
-        {
-            pbCompany1.Image = Properties.Resources.camera_Edit1;
-
-        }
-        private void pbCompany2_MouseLeave(object sender, EventArgs e)
-        {
-            pbCompany2.Image = Properties.Resources.VanPhong;
-        }
-        private void pbCompany2_MouseEnter(object sender, EventArgs e)
-        {
-            pbCompany2.Image = Properties.Resources.camera_Edit1;
-
-        }
-        private void pbCompany3_MouseLeave(object sender, EventArgs e)
-        {
-            pbCompany3.Image = Properties.Resources.VanPhong;
-        }
-        private void pbCompany3_MouseEnter(object sender, EventArgs e)
-        {
-            pbCompany3.Image = Properties.Resources.camera_Edit1;
-
-        }
-        private void pbCompany4_MouseLeave(object sender, EventArgs e)
-        {
-            pbCompany4.Image = Properties.Resources.VanPhong;
-        }
-        private void pbCompany4_MouseEnter(object sender, EventArgs e)
-        {
-            pbCompany4.Image = Properties.Resources.camera_Edit1;
-        }
         private void pbUser_MouseEnter(object sender, EventArgs e)
         {
             pbUser.Image = Properties.Resources.camera_Edit;
@@ -78,6 +73,7 @@ namespace FindJobApplication
         }
         private void FCompanyProfileInfomationEdit_Load(object sender, EventArgs e)
         {
+            locationTableAdapter.Fill(locationcDataSet.Location);
             txtNameCompany.Text = companyProfile.Account.Name;
             txtEmail.Text = companyProfile.Account.Email;
             txtPhoneNumber.Text = companyProfile.PhoneNumber;
@@ -87,9 +83,18 @@ namespace FindJobApplication
             txtLink.Text = companyProfile.CompanyLink;
             pbUser.Image = pbUser.InitialImage = ImageUtils.FromBytesToImage(companyProfile.Account.Avatar);
             int index = 0;
-            foreach (CompanyImage companyImage in companyProfile.CompanyImages)
+            foreach (PictureBox pictureBox in companyImageControls)
             {
-                companyImageControls[index].Image = ImageUtils.FromBytesToImage(companyImage.ImageContent);
+                if (index < companyProfile.CompanyImages.Count)
+                {
+                    pictureBox.Image = pictureBox.InitialImage = ImageUtils.FromBytesToImage(
+                        companyProfile.CompanyImages.ElementAt(index).ImageContent
+                    );
+                }
+                else
+                {
+                    pictureBox.Image = pictureBox.InitialImage = Properties.Resources.camera_Edit;
+                }
                 index++;
             }
         }
@@ -106,7 +111,7 @@ namespace FindJobApplication
             companyProfile.PhoneNumber = txtPhoneNumber.Text;
             companyProfile.Address = txtAddress.Text;
             companyProfile.DateEstablish = dtpDateEstablish.Value;
-            companyProfile.CompanySize =  Convert.ToInt32(this.txtCompanySize.Text);
+            companyProfile.CompanySize =  Convert.ToInt32(txtCompanySize.Text == "" ? "1" : txtCompanySize.Text);
             companyProfile.CompanyLink = txtLink.Text;
             companyProfile.Account.Avatar = ImageUtils.FromImageToBytes(pbUser.Image);
             companyProfileDao.DeleteAllCompanyImages(companyProfile);
@@ -127,6 +132,22 @@ namespace FindJobApplication
             {
                 MessageDialog.Show(this, "Update infomation successfully");
                 Close();
+                FCompanyHome.Instance.UCCompanySubMenuRight.btnProfile_Click(this, new EventArgs());
+            }
+        }
+
+        private void pbUser_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog()
+            {
+                FileName = "Select an image file",
+                Filter = "Image files (*.png; *.jpg; *.jpeg)|*.png; *.jpg; *.jpeg",
+                Title = "Open image file"
+            };
+
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                pbUser.Image = pbUser.InitialImage = Image.FromFile(dialog.FileName);
             }
         }
     }

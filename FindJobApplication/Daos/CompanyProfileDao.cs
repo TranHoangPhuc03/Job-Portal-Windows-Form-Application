@@ -72,9 +72,13 @@ namespace FindJobApplication.Daos
         }
         public void DeleteAllCompanyImages(CompanyProfile companyProfile)
         {
-            db.CompanyProfiles.Attach(companyProfile);
-            companyProfile.CompanyImages.Clear();
+            var imagesToDelete = db.CompanyImages.Where(ci => ci.CompanyId == companyProfile.Id);
+            foreach (var image in imagesToDelete.ToList())
+            {
+                db.CompanyImages.Remove(image);
+            }
             db.SaveChanges();
         }
+
     }
 }

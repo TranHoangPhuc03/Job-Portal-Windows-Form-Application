@@ -28,11 +28,13 @@ namespace FindJobApplication.Utils
             if (image is null)
                 return null;
 
+            Bitmap newImage = new Bitmap(image);
             using (MemoryStream ms = new MemoryStream())
             {
-                image.Save(ms, image.RawFormat);
+                newImage.Save(ms, ImageFormat.Jpeg);
                 return ms.ToArray();
             }
         }
+
     }
 }
